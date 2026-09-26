@@ -1,0 +1,150 @@
+{
+ "scoring": {
+  "note": "Önem puanı dört bileşenin toplamıdır (en fazla 8). Kanıt gücü: 3 = çok merkezli büyük RKÇ ya da sistematik derleme/meta-analiz, 2 = tek merkezli ya da küçük RKÇ, 1 = gözlemsel ya da nitel çalışma. Hasta odaklı sonuç: 1 = mortalite, morbidite, ağrı, yaşam kalitesi gibi hastanın hissettiği bir sonuç; 0 = laboratuvar ya da ara (surrogate) sonuç. Birinci basamağa uygunluk: 0–2. Pratiğe etkisi: 2 = birinci basamakta bir kararı ya da danışmanlığı doğrudan değiştirebilir, 1 = mevcut yaklaşımı destekler ya da dikkat gerektirir, 0 = bilgi amaçlı."
+ },
+ "issues": [
+  {
+   "id": "2026-09-26",
+   "title": "İlk sayı",
+   "range": "Ağustos – Eylül 2026",
+   "date": "2026-09-26",
+   "items": [
+    {
+     "id": "single-af",
+     "pmid": "42663303", "doi": "10.1056/NEJMoa2607978",
+     "journal": "N Engl J Med", "date": "2026-08-28",
+     "title_en": "Anticoagulation for Atrial Fibrillation with Intermediate Stroke Risk",
+     "title": "Orta inme riskli AF'de DOAK, antikoagülan vermemeye üstün (SINGLE-AF)",
+     "design": "Çok merkezli RKÇ, açık etiket · n=1803",
+     "tags": ["kardiyoloji", "af", "antikoagülan", "doak"],
+     "score": {"kanit": 3, "poem": 1, "bb": 2, "etki": 2},
+     "effect": "Pratiği değiştirebilir",
+     "what": "Güney Kore'de CHA₂DS₂-VASc skoru erkekte 1, kadında 2 olan AF hastaları DOAK ya da antikoagülansız izleme randomize edildi. 24 ayda inme, sistemik emboli, majör kanama ve KV ölümden oluşan bileşik sonlanım DOAK grubunda %0,5, tedavisiz grupta %1,5 oldu. Majör kanama iki grupta benzerdi.",
+     "practice": "Rehberlerde zayıf (sınıf IIa) olan orta riskli hastaya DOAK önerisi ilk kez randomize kanıt aldı. Mutlak fark iki yılda yaklaşık 1 puan; karar hastayla birlikte, kanama riski gözetilerek verilmeli.",
+     "limits": "Tek ülke, ortalama yaş 60, açık etiket; olay sayıları düşük.",
+     "rel": ["esc-af-2024"]
+    },
+    {
+     "id": "om85-orbex",
+     "pmid": "42705251", "doi": "10.1016/S0140-6736(26)01443-1",
+     "journal": "Lancet", "date": "2026-09-07",
+     "title_en": "Use of the bacterial lysate OM-85 for the primary prevention of wheezing lower respiratory illness in preschool children",
+     "title": "OM-85 (bakteri lizatı) okul öncesi çocukta hışıltılı ataklarını önlemedi (ORBEX)",
+     "design": "Çok merkezli çift kör plasebo kontrollü RKÇ · n=822",
+     "tags": ["pediatri", "astım", "hışıltı", "bağışıklık"],
+     "score": {"kanit": 3, "poem": 1, "bb": 2, "etki": 2},
+     "effect": "Kullanımı sorgulatır",
+     "what": "Astım riski yüksek 6–18 aylık çocuklara 2 yıl boyunca her ay 10 gün OM-85 ya da plasebo verildi, ardından 3 yıl izlendi. İlk hışıltılı alt solunum yolu enfeksiyonuna kadar geçen sürede fark yoktu (OM-85 %21, plasebo %18).",
+     "practice": "Tekrarlayan hışıltıyı önlemek amacıyla bakteri lizatı reçetelemek için bu yaş grubunda destekleyici kanıt yok. Ailelerle bu konuda konuşurken kullanılabilir.",
+     "limits": "Yalnızca birincil önleme ve yüksek riskli çocuklar; ABD'deki akademik merkezler.",
+     "rel": ["gina-2026", "bce-izlem-2018"]
+    },
+    {
+     "id": "preggnut",
+     "pmid": "42748429", "doi": "10.1056/NEJMoa2605659",
+     "journal": "N Engl J Med", "date": "2026-09-17",
+     "title_en": "Trial of a Maternal Diet Rich in Eggs and Peanuts to Reduce Infant Allergy",
+     "title": "Gebelik ve emzirmede bol yumurta–yer fıstığı bebek alerjisini azaltmadı (PrEggNut)",
+     "design": "Çok merkezli RKÇ · n=2137",
+     "tags": ["gebelik", "emzirme", "besin alerjisi", "pediatri"],
+     "score": {"kanit": 3, "poem": 1, "bb": 2, "etki": 2},
+     "effect": "Danışmanlığı değiştirir",
+     "what": "Ailesinde alerjik hastalık yükü yüksek bebek bekleyen gebeler, gebeliğin 23. haftasından doğum sonrası 4. aya kadar yumurta ve yer fıstığından zengin ya da standart diyete randomize edildi. Bir yaşında IgE aracılı yumurta/fıstık alerjisi sıklığı benzerdi (%7,8 ve %8,4).",
+     "practice": "Gebelere bebekte alerjiyi önlemek için bu besinleri artırmalarını önermenin bir faydası yok. Kısıtlamaya da gerek yok; normal beslenme sürdürülmeli.",
+     "limits": "Avustralya popülasyonu; sonuç bir yaşla sınırlı.",
+     "rel": ["dob-rehberi-2018"]
+    },
+    {
+     "id": "epos2",
+     "pmid": "42748427", "doi": "10.1056/NEJMoa2603816",
+     "journal": "N Engl J Med", "date": "2026-09-17",
+     "title_en": "Colonoscopy Intervals and Colorectal Cancer Incidence after Adenoma Removal",
+     "title": "Yüksek riskli adenom sonrası ilk kontrol kolonoskopisi 5. yılda, 3. yıla göre daha kötü değil (EPoS II ara analiz)",
+     "design": "Çok merkezli eşdeğerlik (non-inferiority) RKÇ, ara analiz · n=10.799",
+     "tags": ["kanser taraması", "kolonoskopi", "gastroenteroloji"],
+     "score": {"kanit": 3, "poem": 1, "bb": 1, "etki": 1},
+     "effect": "Takipte: rehberler değişebilir",
+     "what": "Yüksek riskli adenomu çıkarılan hastalarda ilk kontrol kolonoskopisi 3. ya da 5. yıla randomize edildi. 5 yıllık kolorektal kanser sıklığı iki grupta neredeyse aynıydı (%0,77 ve %0,82).",
+     "practice": "Şimdilik rehberlerdeki 3 yıllık aralık geçerli. Nihai 10 yıllık sonuçlar gelince kontrol aralıklarının uzaması beklenebilir; hastaya sevk yazarken bu tartışmayı bilmek yararlı.",
+     "limits": "Ara analiz; birincil sonlanım 10. yılda.",
+     "rel": ["kanser-tarama"]
+    },
+    {
+     "id": "antidepressan-qtc",
+     "pmid": "42778211", "doi": "10.1136/bmj-2026-100600",
+     "journal": "BMJ", "date": "2026-09-23",
+     "title_en": "QTc changes and early major adverse cardiovascular events associated with antidepressant treatment for major depressive disorder in adults",
+     "title": "Antidepresanlarda QTc uzaması: essitalopram ve amitriptilin öne çıkıyor, erken KV olay artışı yok",
+     "design": "Bireysel hasta verili ağ meta-regresyonu · 35 RKÇ (QTc), 139 RKÇ (KV olay)",
+     "tags": ["psikiyatri", "depresyon", "ekg", "ilaç güvenliği"],
+     "score": {"kanit": 3, "poem": 0, "bb": 2, "etki": 1},
+     "effect": "İlaç seçiminde dikkat",
+     "what": "Plaseboya göre essitalopram QTc'yi ortalama 8,7 ms, amitriptilin 5,3 ms uzattı. Venlafaksin ve vortioksetin en düşük QTc artışıyla ilişkiliydi. 52 bini aşkın katılımcıda ilk haftalarda majör KV olay artışı görülmedi.",
+     "practice": "Başlangıç QTc'si sınırda, hipokalemisi, ileri yaşı ya da QT uzatan başka ilacı olan hastada essitalopram ve amitriptilin yerine alternatif düşünülebilir; bu hastalarda EKG takibi mantıklı.",
+     "limits": "Sonuçlar ilk 8 haftayla sınırlı; ilaçlar arasında bireysel değişkenlik yüksek.",
+     "rel": []
+    },
+    {
+     "id": "egzersiz-kemik",
+     "pmid": "42716561", "doi": "10.1136/bmj-2026-100561",
+     "journal": "BMJ", "date": "2026-09-09",
+     "title_en": "Effect of exercise on bone health in middle aged and older adults: hierarchical network meta-analysis of randomised trials",
+     "title": "40 yaş üstünde kemik sağlığı için en iyi egzersiz: tempolu yürüyüş/koşu ve aerobik+direnç kombinasyonu",
+     "design": "Ağ meta-analizi · 124 RKÇ, n=18.429",
+     "tags": ["osteoporoz", "egzersiz", "yaşlı sağlığı"],
+     "score": {"kanit": 3, "poem": 0, "bb": 2, "etki": 1},
+     "effect": "Danışmanlığı güçlendirir",
+     "what": "Tempolu yürüyüş ya da koşu ile aerobik ve direnç egzersizlerinin birlikte yapılması kemik mineral yoğunluğunda en tutarlı faydayı sağladı. Klinik olarak anlamlı etki haftada yaklaşık 600 MET-dakika, yani 2–3 saat tempolu yürüyüş dolayında görüldü. Karma aerobik ve beden-zihin egzersizleri (ör. tai chi) kırık riskini de azaltabilir.",
+     "practice": "Osteopeni ve osteoporozlu hastalara somut bir hedef verilebilir: haftada 2–3 saat tempolu yürüyüş, mümkünse direnç çalışmasıyla birlikte.",
+     "limits": "Kanıt kesinliği düşük–orta; kırık sonuçları az sayıda çalışmaya dayanıyor.",
+     "rel": ["temd-osteoporoz-2025"]
+    },
+    {
+     "id": "babybreathe",
+     "pmid": "42613086", "doi": "10.1136/bmj-2026-100242",
+     "journal": "BMJ", "date": "2026-08-18",
+     "title_en": "Effectiveness of the BabyBreathe intervention for maintaining postpartum smoking cessation",
+     "title": "Gebelikte sigarayı bırakanlarda doğum sonu nüksü önleme programı anlamlı fark yaratmadı (BabyBreathe)",
+     "design": "Çok merkezli pragmatik RKÇ · n=887",
+     "tags": ["sigara", "gebelik", "lohusalık"],
+     "score": {"kanit": 3, "poem": 1, "bb": 2, "etki": 1},
+     "effect": "Mevcut yaklaşımı destekler",
+     "what": "Görüşme, e-posta kutusu, mesaj ve uygulamadan oluşan destek programı doğum sonrası 12. ayda sigarasız kalma oranını istatistiksel olarak anlamlı artırmadı (%54,9 ve %49,9). Programı tam alanlarda fayda daha belirgindi.",
+     "practice": "Gebelikte bırakanların yaklaşık yarısı doğum sonrası ilk yılda yeniden başlıyor. Lohusa izlemlerinde sigara sorgusu ve bire bir destek sürdürülmeli.",
+     "limits": "Kör değil; fayda gösteren analiz sonradan (post hoc) yapıldı.",
+     "rel": ["dsb-rehberi"]
+    },
+    {
+     "id": "hallux-rigidus",
+     "pmid": "42574728", "doi": "10.7326/ANNALS-26-00710",
+     "journal": "Ann Intern Med", "date": "2026-08-11",
+     "title_en": "Surgery Versus Watchful Waiting for First Metatarsophalangeal Joint Osteoarthritis",
+     "title": "Ağrılı hallux rigidusta artrodez, izlemeye göre ağrıyı belirgin azalttı",
+     "design": "Tek merkezli RKÇ · n=90",
+     "tags": ["ortopedi", "osteoartrit", "ayak", "sevk"],
+     "score": {"kanit": 2, "poem": 1, "bb": 1, "etki": 1},
+     "effect": "Sevk kararını destekler",
+     "what": "Bir yıldan uzun süredir yürürken ağrısı olan 40 yaş üstü hallux rigidus hastalarında birinci MTP eklem artrodezi, izleme göre 12. ayda yürüme ağrısını 10 üzerinden yaklaşık 5 puan daha fazla azalttı.",
+     "practice": "Konservatif tedaviye rağmen yürüme ağrısı süren hastayı ortopediye yönlendirmek için makul kanıt.",
+     "limits": "Tek merkez, küçük örneklem, izlem 1 yıl.",
+     "rel": []
+    },
+    {
+     "id": "grup-vizit-agri",
+     "pmid": "42767945", "doi": "10.1370/afm.250684",
+     "journal": "Ann Fam Med", "date": "2026-09-21",
+     "title_en": "Social Support in Group Medical Visits for Chronic Pain in Primary Care",
+     "title": "Birinci basamakta kronik ağrı için grup vizitleri: sosyal destek nasıl işliyor?",
+     "design": "RKÇ içinde nitel çalışma · n=26",
+     "tags": ["kronik ağrı", "grup vizit", "biyopsikososyal"],
+     "score": {"kanit": 1, "poem": 0, "bb": 2, "etki": 0},
+     "effect": "Bilgi / fikir",
+     "what": "12 haftalık, klinik bakım, ağrı eğitimi, farkındalık ve hareket içeren grup vizitlerinde hastalar duygusal, bilgisel, değerlendirici ve somut destek aldıklarını anlattı; yalnızlık ve damgalanma hissi azaldı.",
+     "practice": "Kronik ağrılı hastalar için ASM ya da hastane polikliniğinde grup eğitim oturumları düzenlemeye fikir verir.",
+     "limits": "Nitel tasarım; etkinlik sonucu raporlamıyor.",
+     "rel": []
+    }
+   ]
+  }
+ ]
+}

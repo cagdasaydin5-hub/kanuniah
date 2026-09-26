@@ -1,0 +1,725 @@
+{
+ "categories": [
+  {
+   "id": "mevzuat",
+   "label": "Mevzuat & ESH"
+  },
+  {
+   "id": "kronik",
+   "label": "Kronik hastalıklar"
+  },
+  {
+   "id": "kardiyo",
+   "label": "Kardiyovasküler"
+  },
+  {
+   "id": "koruyucu",
+   "label": "Aşı & tarama"
+  },
+  {
+   "id": "anne-cocuk",
+   "label": "Anne-çocuk"
+  },
+  {
+   "id": "palyatif",
+   "label": "Yara, bakım & palyatif"
+  },
+  {
+   "id": "portal",
+   "label": "Kaynak portalları"
+  }
+ ],
+ "guides": [
+  {
+   "id": "esh-palyatif-yonetmelik",
+   "cat": "mevzuat",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Evde Sağlık ve Palyatif Bakım Hizmetlerinin Sunumu ve Koordinasyonuna İlişkin Yönetmelik",
+   "org": "Sağlık Bakanlığı",
+   "year": 2026,
+   "pub": "2026-06-23",
+   "summary": "23.06.2026 tarihli, 33289 sayılı Resmî Gazete'de yayımlandı ve aynı gün yürürlüğe girdi. Önceki Evde Sağlık Hizmeti Sunumu Hakkında Yönetmelik'i kaldırdı. Başvurular ESYS üzerinden ESKOM'a ve aile hekimine aynı anda gider. Aile hekimi 1 iş günü içinde ön değerlendirme yapar; yanıtlanmayan başvuruyu ESKOM en geç 3 iş günü içinde sonuçlandırır. İlk ziyaret sorumlu tabip eşliğinde yapılır.",
+   "note": "Mevcut ESH ve palyatif birimleri 1 yıl içinde yeniden tescil edilmeli. 2018 ve 2020 tarihli HB.FR/HD.FR kodlu eski ESH formları bu yönetmelikten önceye aittir.",
+   "url": "https://www.resmigazete.gov.tr/eskiler/2026/06/20260623-1.htm",
+   "alt": [
+    {
+     "label": "Konsolide metin (Lexpera)",
+     "url": "https://www.lexpera.com.tr/mevzuat/yonetmelikler/evde-saglik-ve-palyatif-bakim-hizmetlerinin-sunumu-ve-koordinasyonuna-iliskin-yonetmelik-1"
+    }
+   ],
+   "kw": "esh evde sağlık palyatif eskom esys tescil yönetmelik resmi gazete",
+   "aud": [
+    "hekim",
+    "personel"
+   ]
+  },
+  {
+   "id": "hyp-tarama-takip",
+   "cat": "mevzuat",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Hastalık Yönetim Platformu (HYP) Tarama ve Takip Kılavuzu",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "year": null,
+   "pub": null,
+   "summary": "Aile hekimliği tarama ve takip katsayısının dayanağı. Hipertansiyon, diyabet, obezite, kardiyovasküler risk değerlendirmesi, 65 yaş üstü çok yönlü yaşlı değerlendirmesi ve kanser taramaları için hedef nüfusu, izlem sıklığını ve başarı oranı tanımlarını verir.",
+   "note": "",
+   "url": "https://hsgm.saglik.gov.tr/depo/birimler/aile-hekimligi-uygulama-ve-gelistirme-db/Dokumanlar/Yonerge/Ek_Hastalik_Yonetim_Platformu_HYP_Tarama_ve_Takip_Kilavuzu_1.pdf",
+   "alt": [
+    {
+     "label": "HYP sayfası",
+     "url": "https://hsgm.saglik.gov.tr/tr/hastalik-yonetim-platformu.html"
+    }
+   ],
+   "kw": "hyp performans katsayı tarama izlem yaşlı kvr obezite",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "hsgm-ht-2025",
+   "cat": "kardiyo",
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Hipertansiyon Tarama ve İzlem Kılavuzu (Erişkin)",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "year": 2025,
+   "pub": "2025-06-13",
+   "summary": "18–40 yaş arası riskli bireylerde yılda bir KB ölçümüyle tarama. Hedefe ulaşmış hastada KVR yüksek/çok yüksekse 6 ayda bir, düşük/ortaysa yılda bir izlem. Regüle olmayan hasta hekimin belirlediği sıklıkta (1–4 hafta) çağrılır. Semptomlu çok yüksek KB hipertansif acil kabul edilip sevk edilir.",
+   "note": "",
+   "url": "https://hsgm.saglik.gov.tr/media/attachments/2025/06/13/ht-tarama-izlem-kilavuzu.pdf",
+   "alt": [],
+   "kw": "hipertansiyon tansiyon kb hyp bakanlık",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "esc-ht-2024",
+   "cat": "kardiyo",
+   "kind": "guide",
+   "scope": "INT",
+   "status": "guncel",
+   "title": "ESC 2024 Yükselmiş Kan Basıncı ve Hipertansiyon Kılavuzu",
+   "org": "ESC",
+   "year": 2024,
+   "pub": "2024-08-30",
+   "summary": "120–139/70–89 mmHg aralığını “yükselmiş KB” olarak ayrı bir kategoriye aldı; bu grupta tedavi kararı KV risk üzerinden verilir. Tolere eden hastaların çoğunda sistolik hedef 120–129 mmHg.",
+   "note": "",
+   "url": "https://www.escardio.org/guidelines/clinical-practice-guidelines/",
+   "alt": [],
+   "kw": "hipertansiyon esc tansiyon hedef",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "esc-hf-2026",
+   "cat": "kardiyo",
+   "kind": "guide",
+   "scope": "INT",
+   "status": "guncel",
+   "title": "ESC 2026 Kalp Yetersizliği Kılavuzu",
+   "org": "ESC",
+   "year": 2026,
+   "pub": "2026-08-28",
+   "summary": "2021 kılavuzunun ve 2023 güncellemesinin yerini aldı. Kalp yetersizliğini A–D evreleriyle ele alıp önleme ve erken tedaviyi öne çıkarıyor; alt tipleri yeniden sınıflandırıyor ve kanıt düzeyi sistemini değiştiriyor.",
+   "note": "",
+   "url": "https://doi.org/10.1093/eurheartj/ehag100",
+   "alt": [
+    {
+     "label": "ESC kılavuzları",
+     "url": "https://www.escardio.org/guidelines/clinical-practice-guidelines/"
+    }
+   ],
+   "kw": "kalp yetersizliği ky hf esc",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "esc-ckd-2026",
+   "cat": "kardiyo",
+   "kind": "guide",
+   "scope": "INT",
+   "status": "guncel",
+   "title": "ESC 2026 Kardiyovasküler Hastalık ve Kronik Böbrek Hastalığı Kılavuzu",
+   "org": "ESC",
+   "year": 2026,
+   "pub": "2026-08-29",
+   "summary": "ESC'nin bu konudaki ilk kılavuzu. Kalp hastalığı olan her hastanın böbrek hastalığı açısından değerlendirilmesini öneriyor.",
+   "note": "",
+   "url": "https://www.escardio.org/guidelines/clinical-practice-guidelines/",
+   "alt": [],
+   "kw": "kbh böbrek kronik böbrek esc",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "esc-rehab-2026",
+   "cat": "kardiyo",
+   "kind": "guide",
+   "scope": "INT",
+   "status": "guncel",
+   "title": "ESC 2026 Kardiyak Rehabilitasyon Kılavuzu",
+   "org": "ESC",
+   "year": 2026,
+   "pub": "2026-08-29",
+   "summary": "İlk ESC kardiyak rehabilitasyon kılavuzu. Rehabilitasyonu MI ve KY dışında AF, kapak replasmanı, konjenital kalp hastalığı ve kanser tedavisine bağlı kardiyak sorunları olanlara da genişletiyor.",
+   "note": "",
+   "url": "https://www.escardio.org/guidelines/clinical-practice-guidelines/",
+   "alt": [],
+   "kw": "rehabilitasyon egzersiz kardiyak esc",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "esc-lipid-2025",
+   "cat": "kardiyo",
+   "kind": "guide",
+   "scope": "INT",
+   "status": "guncel",
+   "title": "ESC/EAS 2025 Dislipidemi Odaklı Güncellemesi",
+   "org": "ESC / EAS",
+   "year": 2025,
+   "pub": "2025-08-29",
+   "summary": "2019 ESC/EAS dislipidemi kılavuzunun odaklı güncellemesi. LDL-K hedefleri ve lipid düşürücü tedavi basamakları için 2019 metniyle birlikte okunur.",
+   "note": "TEMD dislipidemi kılavuzunun son sürümü 2021'dir; güncel kanıt için bu metin esas alınmalı.",
+   "url": "https://www.escardio.org/guidelines/clinical-practice-guidelines/",
+   "alt": [],
+   "kw": "lipid kolesterol ldl statin dislipidemi",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "esc-af-2024",
+   "cat": "kardiyo",
+   "kind": "guide",
+   "scope": "INT",
+   "status": "guncel",
+   "title": "ESC 2024 Atriyal Fibrilasyon Kılavuzu",
+   "org": "ESC",
+   "year": 2024,
+   "pub": "2024-08-30",
+   "summary": "AF-CARE çerçevesi: komorbidite ve risk faktörü yönetimi, inme ve tromboembolinin önlenmesi, semptom kontrolü (hız/ritim) ve dinamik yeniden değerlendirme.",
+   "note": "",
+   "url": "https://www.escardio.org/guidelines/clinical-practice-guidelines/",
+   "alt": [],
+   "kw": "af atriyal fibrilasyon antikoagülan inme",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "esc-ccs-2024",
+   "cat": "kardiyo",
+   "kind": "guide",
+   "scope": "INT",
+   "status": "guncel",
+   "title": "ESC 2024 Kronik Koroner Sendromlar Kılavuzu",
+   "org": "ESC",
+   "year": 2024,
+   "pub": "2024-08-30",
+   "summary": "Stabil koroner arter hastalığında tanısal yaklaşım, ön test olasılığı ve uzun dönem ikincil korunma.",
+   "note": "",
+   "url": "https://www.escardio.org/guidelines/clinical-practice-guidelines/",
+   "alt": [],
+   "kw": "koroner kah anjina kronik koroner sendrom",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "temd-dm-2026",
+   "cat": "kronik",
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "TEMD Diabetes Mellitus ve Komplikasyonlarının Tanı, Tedavi ve İzlem Kılavuzu",
+   "org": "TEMD",
+   "year": 2026,
+   "pub": "2026-04-28",
+   "summary": "Türkiye'de ulusal diyabet rehberi işlevi gören kılavuz; iki yılda bir güncellenir. Tanı kriterleri, tedavi algoritmaları, komplikasyon taraması ve izlem.",
+   "note": "",
+   "url": "https://file.temd.org.tr/Uploads/publications/guides/documents/diabetesmellitus2026.pdf",
+   "alt": [
+    {
+     "label": "TEMD kılavuz listesi",
+     "url": "https://temd.org.tr/yayinlar/kilavuzlar"
+    }
+   ],
+   "kw": "diyabet dm şeker insülin hba1c temd",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "ada-soc-2026",
+   "cat": "kronik",
+   "kind": "guide",
+   "scope": "INT",
+   "status": "guncel",
+   "title": "ADA Standards of Care in Diabetes—2026",
+   "org": "ADA",
+   "year": 2026,
+   "pub": "2025-12-08",
+   "summary": "Diabetes Care'in Ocak 2026 ekinde yayımlandı; her yıl yenilenir. Birinci basamak için kısaltılmış özet ve ücretsiz uygulaması var.",
+   "note": "",
+   "url": "https://professional.diabetes.org/standards-of-care",
+   "alt": [
+    {
+     "label": "Diabetes Care ek sayısı",
+     "url": "https://diabetesjournals.org/care/issue/49/Supplement_1"
+    }
+   ],
+   "kw": "diyabet ada standards of care",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "gold-2026",
+   "cat": "kronik",
+   "kind": "guide",
+   "scope": "INT",
+   "status": "guncel",
+   "title": "GOLD 2026 Raporu ve Cep Kılavuzu (KOAH)",
+   "org": "GOLD",
+   "year": 2026,
+   "pub": "2025-11-20",
+   "summary": "Altıncı majör revizyon. “Hastalık aktivitesi” kavramı eklendi; olgu bulma bölümü genişledi. Tek bir orta alevlenme sonrasında bile tedavi yükseltilmesi öneriliyor. E grubunda başlangıç LABA+LAMA; kan eozinofili >300/µL ise ICS eklenmesi düşünülür.",
+   "note": "",
+   "url": "https://goldcopd.org/2026-gold-report-and-pocket-guide/",
+   "alt": [],
+   "kw": "koah copd gold inhaler alevlenme",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "gina-2026",
+   "cat": "kronik",
+   "kind": "guide",
+   "scope": "INT",
+   "status": "guncel",
+   "title": "GINA 2026 Astım Strateji Raporu",
+   "org": "GINA",
+   "year": 2026,
+   "pub": "2026-05-05",
+   "summary": "Birinci basamak ve acil servis için yaş gruplarına göre dört yeni akut astım akış şeması; çocuklarda geçerli bir şiddet skoru (ör. PRAM) kullanılması güçlü öneri. Ölümcül astım kırmızı bayrakları, inhaler tekniği ve aşı önerileri güncellendi.",
+   "note": "Özet kılavuz ve ağır astım kılavuzu da ücretsiz indirilebilir.",
+   "url": "https://ginasthma.org/2026-gina-strategy-report/",
+   "alt": [],
+   "kw": "astım gina inhaler çocuk atak",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "kdigo-ckd-2024",
+   "cat": "kronik",
+   "kind": "guide",
+   "scope": "INT",
+   "status": "guncel",
+   "title": "KDIGO 2024 Kronik Böbrek Hastalığı Değerlendirme ve Yönetim Kılavuzu",
+   "org": "KDIGO",
+   "year": 2024,
+   "pub": "2024-03-14",
+   "summary": "KBH'nin eGFR ve albüminüri ile sınıflandırılması, risk tahmini ve progresyonu yavaşlatan tedaviler.",
+   "note": "",
+   "url": "https://kdigo.org/guidelines/ckd-evaluation-and-management/",
+   "alt": [],
+   "kw": "kbh böbrek egfr albuminüri kdigo",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "temd-tiroid-2025",
+   "cat": "kronik",
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "TEMD Tiroid Hastalıkları Tanı ve Tedavi Kılavuzu",
+   "org": "TEMD",
+   "year": 2025,
+   "pub": "2025-04-11",
+   "summary": "Hipotiroidi, hipertiroidi, nodül ve gebelikte tiroid hastalıklarına yaklaşım.",
+   "note": "",
+   "url": "https://temd.org.tr/yayinlar/kilavuzlar",
+   "alt": [],
+   "kw": "tiroid tsh hipotiroidi nodül",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "temd-osteoporoz-2025",
+   "cat": "kronik",
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "TEMD Osteoporoz ve Metabolik Kemik Hastalıkları Tanı ve Tedavi Kılavuzu",
+   "org": "TEMD",
+   "year": 2025,
+   "pub": "2025-04-01",
+   "summary": "Osteoporoz taraması, kırık riski değerlendirmesi ve tedavi seçimi.",
+   "note": "",
+   "url": "https://temd.org.tr/yayinlar/kilavuzlar",
+   "alt": [],
+   "kw": "osteoporoz kemik dexa d vitamini",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "temd-obezite-2024",
+   "cat": "kronik",
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "TEMD Obezite Tanı ve Tedavi Kılavuzu",
+   "org": "TEMD",
+   "year": 2024,
+   "pub": "2024-06-01",
+   "summary": "Obezitenin tanısı, eşlik eden hastalıklar ve yaşam tarzı, ilaç ve cerrahi tedavi seçenekleri.",
+   "note": "",
+   "url": "https://temd.org.tr/yayinlar/kilavuzlar",
+   "alt": [],
+   "kw": "obezite kilo bki glp-1",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "asi-takvimi",
+   "cat": "koruyucu",
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Genişletilmiş Bağışıklama Programı ve Güncel Aşı Takvimi",
+   "org": "Sağlık Bakanlığı",
+   "year": null,
+   "pub": null,
+   "summary": "Rutin çocukluk aşı takvimi ve son değişiklikler. Altılı karma aşı (DaBT-İPA-Hib-HepB) programa alındı; doğumdaki HepB dozu devam ediyor. Doğurganlık çağı kadın ve gebelerde Tdab'a geçildi.",
+   "note": "",
+   "url": "https://asi.saglik.gov.tr/bagisiklama-programi-ve-asi-takvimi/asi-takvimindeki-son-guencellemeler.html",
+   "alt": [
+    {
+     "label": "GBP Genelgesi",
+     "url": "https://www.saglik.gov.tr/TR-11080/genisletilmis-bagisiklama-programi-genelgesi.html"
+    }
+   ],
+   "kw": "aşı takvimi gbp çocuk 6lı karma tdab",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "ekmud-eriskin-asi-2025",
+   "cat": "koruyucu",
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "EKMUD Erişkin Bağışıklama Önerileri 2025 (özet tablolar)",
+   "org": "EKMUD",
+   "year": 2025,
+   "pub": "2025-10-10",
+   "summary": "Yaş ve risk grubuna göre erişkin aşı şemaları. ≥60 yaşa tek doz RSV aşısı; ≥50 yaş ve bağışıklığı baskılanmış 18–49 yaşa 2–6 ay arayla 2 doz rekombinant zona; risk gruplarında tek doz PCV20.",
+   "note": "",
+   "url": "https://www.ekmud.org.tr/files/EKMUD_A%C5%9F%C4%B1_Tablo1&2_2025.pdf",
+   "alt": [
+    {
+     "label": "Duyuru",
+     "url": "https://ekmud.org.tr/index.php/haberler/374-eriskin-bagisiklama-rehberi-2025-onerileri-paylasimda"
+    }
+   ],
+   "kw": "erişkin aşı pnömokok zona rsv influenza tetanoz",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "kanser-tarama",
+   "cat": "koruyucu",
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Ulusal Kanser Tarama Standartları (meme, serviks, kolorektal)",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "year": null,
+   "pub": null,
+   "summary": "Meme: 40–69 yaş, 2 yılda bir mamografi. Serviks: 30–65 yaş, 5 yılda bir HPV-DNA ± smear. Kolorektal: 50–70 yaş, 2 yılda bir gaitada gizli kan, 10 yılda bir kolonoskopi.",
+   "note": "Standartların kökeni 2007'dir; uygulamadaki değişiklikler il sağlık müdürlüğü yazılarıyla da takip edilmeli.",
+   "url": "https://hsgm.saglik.gov.tr/tr/kanser-tarama-standartlari",
+   "alt": [],
+   "kw": "kanser tarama ketem mamografi smear hpv kolonoskopi ggk",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "dob-rehberi-2018",
+   "cat": "anne-cocuk",
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Doğum Öncesi Bakım Yönetim Rehberi",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "year": 2018,
+   "pub": "2018-01-01",
+   "summary": "En az dört nitelikli gebe izlemi: ilki 14. haftaya kadar, sonra 18–24, 28–32 ve 36–38. haftalar. Risk değerlendirme formu, demir ve D vitamini desteği akışları, tetanoz aşı takvimi.",
+   "note": "",
+   "url": "https://platform.who.int/docs/default-source/mca-documents/policy-documents/guideline/TUR-MN-21-01-GUIDELINE-2018-tur-Antenatal-Care-Management-Guidelines.pdf",
+   "alt": [
+    {
+     "label": "Bakanlık e-kütüphane",
+     "url": "https://ekutuphane.saglik.gov.tr/Yayin/466"
+    }
+   ],
+   "kw": "gebe gebelik izlem doğum öncesi antenatal",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "dsb-rehberi",
+   "cat": "anne-cocuk",
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Doğum Sonu Bakım Yönetim Rehberi",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "year": 2018,
+   "pub": "2019-01-08",
+   "summary": "Lohusa izlemleri; normal doğum sonrası 24 saat, sezaryen sonrası 48 saat hastanede takip ve taburculuk sonrası ev izlemleri.",
+   "note": "",
+   "url": "https://hsgm.saglik.gov.tr/depo/Yayinlarimiz/Rehberler/DOGUM_SONU_BAKIM_08-01-2019_1.pdf",
+   "alt": [],
+   "kw": "lohusa doğum sonu postpartum izlem",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "bce-izlem-2018",
+   "cat": "anne-cocuk",
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Bebek, Çocuk, Ergen İzlem Protokolleri",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "year": 2018,
+   "pub": "2018-01-01",
+   "summary": "Yenidoğandan ergenliğe kadar izlem takvimi, akış şemaları (sarılık, sepsis riski, büyüme, gelişim) ve danışmanlık yönergeleri. 2019 tarihli genelgeyle uygulamada.",
+   "note": "",
+   "url": "https://ekutuphane.saglik.gov.tr/Ekutuphane/kitaplar/Bebek_Cocuk_Ergen_Izlem_Protokolleri_2018.pdf",
+   "alt": [
+    {
+     "label": "Genelge",
+     "url": "https://hsgm.saglik.gov.tr/depo/Mevzuat/Genelgeler/2019-12_Bebek_Cocuk_Ergen_Izlem_Protokolleri_Genelgesi.pdf"
+    }
+   ],
+   "kw": "bebek çocuk ergen izlem büyüme gelişim sağlam çocuk",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "basinc-yarasi-2025",
+   "cat": "palyatif",
+   "kind": "guide",
+   "scope": "INT",
+   "status": "guncel",
+   "title": "Uluslararası Basınç Yarası/Ülseri Kılavuzu, 4. Baskı",
+   "org": "EPUAP / NPIAP / PPPIA",
+   "year": 2025,
+   "pub": "2025-02-27",
+   "summary": "2019 baskısının yerini alan GRADE tabanlı kılavuz. Önleme önerileri Şubat 2025'te, değerlendirme ve tedavi bölümleri 2025 boyunca yayımlandı; cihaza bağlı basınç yaraları ayrı bölüm.",
+   "note": "Kılavuz metni sitede ücretsiz okunabiliyor.",
+   "url": "https://internationalguideline.com",
+   "alt": [],
+   "kw": "basınç yarası bası yarası dekübit yara bakımı esh",
+   "aud": [
+    "hekim",
+    "personel"
+   ]
+  },
+  {
+   "id": "uspstf",
+   "cat": "portal",
+   "kind": "portal",
+   "scope": "INT",
+   "status": "guncel",
+   "title": "USPSTF Önerileri",
+   "org": "USPSTF",
+   "year": null,
+   "pub": null,
+   "summary": "Tarama ve koruyucu hizmetler için A–D dereceli kanıta dayalı öneriler; yaş ve cinsiyete göre filtrelenebilir.",
+   "note": "",
+   "url": "https://www.uspreventiveservicestaskforce.org/",
+   "alt": [],
+   "kw": "tarama koruyucu uspstf öneri",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "nice",
+   "cat": "portal",
+   "kind": "portal",
+   "scope": "INT",
+   "status": "guncel",
+   "title": "NICE Kılavuzları",
+   "org": "NICE",
+   "year": null,
+   "pub": null,
+   "summary": "Birinci basamağa yakın, uygulamaya dönük İngiliz kılavuzları; konu bazında aranabilir.",
+   "note": "",
+   "url": "https://www.nice.org.uk/guidance",
+   "alt": [],
+   "kw": "nice kılavuz ingiltere",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "temd-liste",
+   "cat": "portal",
+   "kind": "portal",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "TEMD Kılavuzlar ve Arşiv",
+   "org": "TEMD",
+   "year": null,
+   "pub": null,
+   "summary": "Tüm TEMD kılavuzlarının güncel sürümleri ve arşivi (diyabet, tiroid, adrenal, osteoporoz, obezite, hipertansiyon, dislipidemi).",
+   "note": "",
+   "url": "https://temd.org.tr/yayinlar/kilavuzlar",
+   "alt": [],
+   "kw": "temd endokrin kılavuz",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "sks-evde-saglik",
+   "cat": "palyatif",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "aud": [
+    "personel",
+    "hekim"
+   ],
+   "title": "Sağlıkta Kalite Standartları (SKS) – Evde Sağlık",
+   "org": "Sağlık Bakanlığı SHGM",
+   "year": null,
+   "pub": null,
+   "summary": "Evde sağlık birimlerinin kalite değerlendirmesinde esas alınan standart seti: hasta güvenliği, düşme riskinin yönetimi, ilaç ve tıbbi malzeme yönetimi, enfeksiyonların önlenmesi, kayıt ve hasta hakları başlıklarını kapsar.",
+   "note": "Denetime hazırlık ve birim içi prosedürler için başvuru kaynağı.",
+   "url": "https://shgmkalitedb.saglik.gov.tr/TR-15193/saglikta-kalite-standartlari-sks-evde-saglik-yayimlandi.html",
+   "alt": [
+    {
+     "label": "Güncel standartlar",
+     "url": "https://shgmkalitedb.saglik.gov.tr/TR-52460/guncel-standartlar.html"
+    }
+   ],
+   "kw": "sks kalite standart evde sağlık düşme ilaç enfeksiyon hemşire"
+  },
+  {
+   "id": "sks-rehberleri",
+   "cat": "palyatif",
+   "kind": "portal",
+   "scope": "TR",
+   "status": "guncel",
+   "aud": [
+    "personel"
+   ],
+   "title": "SKS Rehberleri",
+   "org": "Sağlık Bakanlığı SHGM",
+   "year": null,
+   "pub": null,
+   "summary": "Kalite standartlarının uygulanmasına yönelik Bakanlık rehberleri; el hijyeni, düşmelerin önlenmesi, güvenli ilaç uygulamaları gibi konularda uygulama örnekleri içerir.",
+   "note": "",
+   "url": "https://shgmkalitedb.saglik.gov.tr/TR,12638/sks-rehberleri.html",
+   "alt": [],
+   "kw": "sks rehber el hijyeni düşme güvenli ilaç hemşire personel"
+  },
+  {
+   "id": "espen-hen-2022",
+   "cat": "palyatif",
+   "kind": "guide",
+   "scope": "INT",
+   "status": "guncel",
+   "aud": [
+    "personel",
+    "hekim"
+   ],
+   "title": "ESPEN Pratik Kılavuz: Evde Enteral Beslenme",
+   "org": "ESPEN",
+   "year": 2022,
+   "pub": "2022-01-07",
+   "summary": "Evde tüple beslenen hastalarda endikasyon, beslenme yolu seçimi (NG, PEG), tüp bakımı ve komplikasyonların yönetimi, formül seçimi ve izlem üzerine uygulamaya dönük öneriler. 2019 tarihli tam kılavuzun kısaltılmış, pratik sürümüdür.",
+   "note": "",
+   "url": "https://www.espen.org/files/ESPEN-Guidelines/ESPEN_practical_guideline_Home_enteral_nutrition.pdf",
+   "alt": [
+    {
+     "label": "PubMed",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/35007816/"
+    },
+    {
+     "label": "2019 tam kılavuz",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/31255350/"
+    }
+   ],
+   "kw": "enteral beslenme peg nazogastrik tüp mama evde beslenme hemşire"
+  },
+  {
+   "id": "who-el-hijyeni",
+   "cat": "palyatif",
+   "kind": "guide",
+   "scope": "INT",
+   "status": "guncel",
+   "aud": [
+    "personel"
+   ],
+   "title": "DSÖ Sağlık Hizmetlerinde El Hijyeni Kılavuzu",
+   "org": "DSÖ",
+   "year": 2009,
+   "pub": "2009-01-15",
+   "summary": "El hijyeninin beş anı (hasta temasından önce, aseptik işlemden önce, vücut sıvısıyla temastan sonra, hasta temasından sonra, hasta çevresiyle temastan sonra) ve alkol bazlı el antiseptiği ile yıkama tekniği.",
+   "note": "",
+   "url": "https://www.who.int/publications/i/item/9789241597906",
+   "alt": [],
+   "kw": "el hijyeni enfeksiyon kontrolü beş an eldiven hemşire"
+  },
+  {
+   "id": "cdc-cauti",
+   "cat": "palyatif",
+   "kind": "guide",
+   "scope": "INT",
+   "status": "guncel",
+   "aud": [
+    "personel",
+    "hekim"
+   ],
+   "title": "CDC Kateterle İlişkili İdrar Yolu Enfeksiyonlarının Önlenmesi",
+   "org": "CDC",
+   "year": 2009,
+   "pub": "2009-01-01",
+   "summary": "Kalıcı üriner kateterin uygun endikasyonları, takma tekniği, kapalı drenaj sisteminin korunması ve kateterin mümkün olan en kısa sürede çıkarılması üzerine öneriler.",
+   "note": "Kılavuz 2009'da yayımlandı, CDC tarafından sonradan güncellenen bölümleri vardır.",
+   "url": "https://www.cdc.gov/infection-control/hcp/cauti/index.html",
+   "alt": [],
+   "kw": "sonda kateter idrar yolu enfeksiyonu foley hemşire"
+  }
+ ]
+}

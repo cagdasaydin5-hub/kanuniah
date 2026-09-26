@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Kanuni Aile Hekimliği">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#0D5A51"/>
+  <rect x="7" y="7" width="50" height="50" rx="10" fill="none" stroke="#E3C07A" stroke-width="1.6"/>
+  <path d="M32 14v10M27 19h10" stroke="#E3C07A" stroke-width="2.6" stroke-linecap="round"/>
+  <text x="32" y="47" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" fill="#FFFFFF" letter-spacing="1">AH</text>
+</svg>
