@@ -1,0 +1,179 @@
+{
+ "_not": "tools/build_pwa.py tarafından üretilir; elle düzenlemeyin.",
+ "groups": [
+  [
+   "bobrek",
+   "Böbrek & ölçüm"
+  ],
+  [
+   "kardiyo",
+   "Kardiyovasküler & antikoagülasyon"
+  ],
+  [
+   "akut",
+   "Akut & enfeksiyon"
+  ],
+  [
+   "metabolik",
+   "Diyabet riski"
+  ],
+  [
+   "yasli",
+   "Evde sağlık & yaşlı"
+  ],
+  [
+   "ruh",
+   "Ruh sağlığı"
+  ],
+  [
+   "cocuk",
+   "Çocuk & gebelik"
+  ],
+  [
+   "asi",
+   "Aşı"
+  ]
+ ],
+ "tools": [
+  {
+   "id": "crcl",
+   "g": "bobrek",
+   "t": "Kreatinin klirensi (Cockcroft-Gault)",
+   "d": "İlaç doz ayarında kullanılan tahmini kreatinin klirensi.",
+   "kw": "crcl cockcroft gault böbrek doz ayarı doak kreatinin klirens"
+  },
+  {
+   "id": "egfr",
+   "g": "bobrek",
+   "t": "eGFR (CKD-EPI 2021, ırk katsayısız)",
+   "d": "Kronik böbrek hastalığı evrelemesi için tahmini GFR.",
+   "kw": "egfr ckd-epi gfr böbrek kbh evre kdigo"
+  },
+  {
+   "id": "vki",
+   "g": "bobrek",
+   "t": "Vücut kitle indeksi ve vücut yüzey alanı",
+   "d": "VKİ sınıfı (DSÖ) ve Mosteller formülüyle vücut yüzey alanı.",
+   "kw": "vki bmi beden kitle obezite vya bsa yüzey alanı mosteller"
+  },
+  {
+   "id": "ca",
+   "g": "bobrek",
+   "t": "Albümine göre düzeltilmiş kalsiyum",
+   "d": "Hipoalbüminemide total kalsiyumun yorumlanması için.",
+   "kw": "kalsiyum düzeltilmiş albümin hiperkalsemi hipokalsemi"
+  },
+  {
+   "id": "cha2ds2va",
+   "g": "kardiyo",
+   "t": "CHA₂DS₂-VA (AF'de inme riski)",
+   "d": "ESC 2024 AF kılavuzunun önerdiği, cinsiyet puanı çıkarılmış skor.",
+   "kw": "cha2ds2va chads vasc af atriyal fibrilasyon inme antikoagülan oak"
+  },
+  {
+   "id": "hasbled",
+   "g": "kardiyo",
+   "t": "HAS-BLED (antikoagülanda kanama riski)",
+   "d": "Kanama riskini ve düzeltilebilir risk faktörlerini belirlemek için.",
+   "kw": "hasbled has-bled kanama riski varfarin antikoagülan"
+  },
+  {
+   "id": "wellsdvt",
+   "g": "kardiyo",
+   "t": "Wells skoru – derin ven trombozu",
+   "d": "DVT ön test olasılığı.",
+   "kw": "wells dvt derin ven trombozu d-dimer"
+  },
+  {
+   "id": "wellspe",
+   "g": "kardiyo",
+   "t": "Wells skoru – pulmoner emboli",
+   "d": "PE ön test olasılığı (iki basamaklı yorum).",
+   "kw": "wells pe pulmoner emboli d-dimer"
+  },
+  {
+   "id": "curb65",
+   "g": "akut",
+   "t": "CRB-65 / CURB-65 (toplum kökenli pnömoni)",
+   "d": "Birinci basamakta laboratuvarsız CRB-65; üre varsa CURB-65.",
+   "kw": "curb65 crb65 pnömoni zatürre yatış"
+  },
+  {
+   "id": "qsofa",
+   "g": "akut",
+   "t": "qSOFA (sepsis şüphesinde kötü seyir riski)",
+   "d": "Enfeksiyon şüphesi olan hastada hızlı yatak başı tarama.",
+   "kw": "qsofa sepsis enfeksiyon"
+  },
+  {
+   "id": "findrisc",
+   "g": "metabolik",
+   "t": "FINDRISC (10 yıllık tip 2 diyabet riski)",
+   "d": "Laboratuvarsız diyabet risk taraması.",
+   "kw": "findrisc diyabet risk tarama tip 2 prediyabet"
+  },
+  {
+   "id": "braden",
+   "g": "yasli",
+   "t": "Braden (basınç yarası riski)",
+   "d": "Evde ve yatan hastada basınç yarası risk değerlendirmesi.",
+   "kw": "braden basınç yarası bası yarası dekübit risk evde sağlık"
+  },
+  {
+   "id": "barthel",
+   "g": "yasli",
+   "t": "Barthel Günlük Yaşam Aktiviteleri İndeksi",
+   "d": "Fonksiyonel bağımlılık düzeyi (0–100).",
+   "kw": "barthel gya günlük yaşam aktiviteleri bağımlılık evde sağlık"
+  },
+  {
+   "id": "katz",
+   "g": "yasli",
+   "t": "Katz Günlük Yaşam Aktiviteleri",
+   "d": "Altı temel aktivitede bağımsızlık.",
+   "kw": "katz gya bağımsızlık yaşlı değerlendirme"
+  },
+  {
+   "id": "morse",
+   "g": "yasli",
+   "t": "Morse Düşme Ölçeği",
+   "d": "Düşme riski değerlendirmesi.",
+   "kw": "morse düşme riski yaşlı evde sağlık"
+  },
+  {
+   "id": "gds15",
+   "g": "ruh",
+   "t": "Geriatrik Depresyon Ölçeği – kısa form (GDS-15)",
+   "d": "Yaşlıda depresyon taraması. Sorular hastaya okunur, evet/hayır yanıtı alınır.",
+   "kw": "gds geriatrik depresyon yaşlı tarama"
+  },
+  {
+   "id": "phq9",
+   "g": "ruh",
+   "t": "PHQ-9 (depresyon şiddeti)",
+   "d": "Son 2 haftada her sorunun ne sıklıkla yaşandığı sorulur.",
+   "kw": "phq9 phq-9 depresyon tarama şiddet"
+  },
+  {
+   "id": "holliday",
+   "g": "cocuk",
+   "t": "Günlük idame sıvı ihtiyacı (Holliday-Segar)",
+   "d": "Kiloya göre günlük ve saatlik idame sıvısı (4-2-1 kuralı).",
+   "kw": "holliday segar sıvı idame 4-2-1 çocuk hidrasyon"
+  },
+  {
+   "id": "gebelik",
+   "g": "cocuk",
+   "t": "Gebelik haftası ve tahmini doğum tarihi",
+   "d": "Son adet tarihine göre (Naegele: SAT + 280 gün).",
+   "kw": "gebelik haftası tdt doğum tarihi sat son adet naegele"
+  },
+  {
+   "id": "asi",
+   "g": "asi",
+   "t": "Aşı planlayıcı (Ulusal Aşı Takvimi 2026)",
+   "d": "Doğum tarihine göre tüm doz tarihleri ve zamanı geçmiş dozlar.",
+   "kw": "aşı takvimi planlayıcı yakalama geciken doz bebek çocuk suçiçeği kkk"
+  }
+ ]
+}

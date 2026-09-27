@@ -33,6 +33,13 @@ if M and R:
                 if not isinstance(s.get(k), int) or not a <= s[k] <= b: err.append("makale %s: puan %s %d-%d arası olmalı" % (p.get("id"), k, a, b))
             for r in p.get("rel", []):
                 if r not in gids: err.append("makale %s: ilgili rehber bulunamadı: %s" % (p["id"], r))
+A = j("araclar.json")
+if A:
+    tids = [t.get("id") for t in A.get("tools", [])]
+    if not tids: err.append("araclar.json: araç yok (python tools/build_pwa.py)")
+    if len(tids) != len(set(tids)): err.append("araclar.json: araç id tekrarı")
+    for t in A.get("tools", []):
+        if not t.get("t"): err.append("araç %s: ad (t) eksik" % t.get("id"))
 if meta and not DATE.match(meta.get("checked","")): err.append("meta.checked tarihi hatalı")
 if err:
     print("\n".join(err)); sys.exit(1)
