@@ -1182,6 +1182,38 @@
    "summary": "Yaşa göre koruyucu sağlık hizmetleri ve taramaların kanıt düzeyleriyle özetlendiği Avustralya aile hekimliği rehberi; USPSTF'ye tamamlayıcı.",
    "url": "https://www.racgp.org.au/clinical-resources/clinical-guidelines/key-racgp-guidelines/view-all-racgp-guidelines/preventive-activities-in-general-practice",
    "kw": "koruyucu tarama red book racgp periyodik"
+  },
+  {
+   "id": "thur-2025",
+   "cat": "kardiyo",
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "aud": [
+    "hekim"
+   ],
+   "title": "Türk Hipertansiyon Uzlaşı Raporu 2025",
+   "org": "TKD · TİHUD · TEMD · TND · THBHD · TAHUD · AGD",
+   "year": 2026,
+   "pub": "2026-02-27",
+   "summary": "Yedi derneğin ortak raporu; TAHUD ilk kez yazarlar arasında. Ofiste ≥140/90 hipertansiyon, 18–79 yaşta hedef 120–130/70–80 mmHg; ≥140/90 olan herkese tercihen tek tablette ikili kombinasyonla başlanır. Artmış KB'de (120–139/80–89) ilaç eşiği ESC 2024'ten daha tutucu (SCORE2 >%15, SCORE2-OP >%20).",
+   "note": "Dinç ≥80 yaş hedefinde tablo (130–140) ile metin (140–150) arasında tutarsızlık var; kırılganlarda hedef 140–150. Öneri sınıfı/kanıt düzeyi vermez, ESC 2024 ile birlikte okunmalı. Tarama sıklığı ve HYP işleyişi için Bakanlık kılavuzu geçerli.",
+   "url": "https://www.archivestsc.com/tr/jvi.aspx?un=TKDA-23791&volume=54&issue=3",
+   "alt": [
+    {
+     "label": "Tam metin PDF",
+     "url": "https://pdf.journalagent.com/tkd/pdfs/TKDA_54_3_207_226.pdf"
+    },
+    {
+     "label": "DOI",
+     "url": "https://doi.org/10.5543/tkda.2026.23791"
+    },
+    {
+     "label": "TAHUD slayt seti",
+     "url": "https://tahud.org.tr/haber/turk-hipertansiyon-uzlasi-raporu-2025"
+    }
+   ],
+   "kw": "hipertansiyon uzlaşı raporu thur tahud kan basıncı hedef kombinasyon tek tablet ekbö akbö kırılgan"
   }
  ]
 }
