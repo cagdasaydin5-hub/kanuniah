@@ -142,9 +142,10 @@
     f1.appendChild(fld("Kullanılan tablet", tablet));
     form.appendChild(f1);
 
-    var kan = document.createElement("input"); kan.type = "checkbox"; kan.name = "kanama";
+    /* Kanamalı hastada doz algoritması kullanılmaz; ayrı onay kutusu yerine sabit uyarı gösterilir. */
+    form.appendChild(el("p", "hint", "Kanama varsa bu araç kullanılmaz: varfarini kesin, hastayı acil değerlendirin (majör kanamada PCC tercih edilir – Holbrook 2012)."));
     var acik = document.createElement("input"); acik.type = "checkbox"; acik.name = "aciklanabilir";
-    var f2 = el("div", "fields col"); f2.appendChild(fld("Hastada kanama var", kan));
+    var f2 = el("div", "fields col");
     var acikLab = fld("Düşük INR'nin açıklanabilir nedeni var (atlanmış doz, yeni ilaç, beslenme değişikliği)", acik);
     acikLab.style.display = "none"; f2.appendChild(acikLab); form.appendChild(f2);
 
@@ -168,7 +169,7 @@
       if (!alg) { res.appendChild(el("span", "hint", "Algoritma yükleniyor…")); return; }
       var tb = +tablet.value;
       var o = hesapla(alg, { hedef: hedef.value, inr: num(inr.value), onceki: num(onceki.value), aciklanabilir: acik.checked,
-        tabletMg: tb, kanama: kan.checked, ceyrekler: gunSel.map(function (s) { return +s.value; }), degisim: num(deg.value) });
+        tabletMg: tb, kanama: false, ceyrekler: gunSel.map(function (s) { return +s.value; }), degisim: num(deg.value) });
       acikLab.style.display = o && o.satir && o.satir.kosul === "aciklanamiyor" ? "" : "none";
       if (!o) { res.appendChild(el("span", "hint", "Hedef aralığı, güncel INR'yi ve şu anki günlük tablet çizelgesini girin.")); return; }
       function p(t, c) { res.appendChild(el("p", c || null, t)); }
