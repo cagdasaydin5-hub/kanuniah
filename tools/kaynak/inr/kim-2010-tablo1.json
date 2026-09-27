@@ -1,0 +1,36 @@
+{
+  "kaynak": "Kim YK, Nieuwlaat R, Connolly SJ, Schulman S, Meijer K, Raju N, Kaatz S, Eikelboom JW. Effect of a simple two-step warfarin dosing algorithm on anticoagulant control as measured by time in therapeutic range: a pilot study. J Thromb Haemost 2010;8(1):101-106. PMID 19840361. DOI 10.1111/j.1538-7836.2009.03652.x",
+  "erisim": "JTH Open Archive tam metni, Table 1 'Two-step warfarin dosing algorithm (maintenance)'; 28.09.2026 tarihinde makale sayfasından birebir aktarıldı.",
+  "kapsam": "Warfarinle STABİL idame hastaları. Son INR sonuçları ve önceki haftalık doz esas alınır.",
+  "dipnotlar": {
+    "*": "Clinical and professional judgement may allow variation in the application of the algorithm.",
+    "†": "The preferred method of vitamin K administration in non-emergency situations is orally. Avoid subcutaneous or intramuscular administration."
+  },
+  "hedef_2_3": [
+    {"inr_min": null, "inr_max": 1.5, "yildiz": true, "eylem": "Increase weekly dose by 15%; repeat INR determination in 7–14 days", "yuzde": 15, "atla": 0, "kontrol": "7–14 gün"},
+    {"inr_min": 1.51, "inr_max": 1.99, "yildiz": true, "eylem": "If falling or low on two or more occasions, increase weekly dose by 10%; repeat INR determination in 7–14 days", "yuzde": 10, "kosul": "iki veya daha fazla ölçümde düşük/düşüyor", "atla": 0, "kontrol": "7–14 gün"},
+    {"inr_min": 2.0, "inr_max": 3.0, "eylem": "No change", "yuzde": 0},
+    {"inr_min": 3.01, "inr_max": 3.99, "yildiz": true, "eylem": "Do not hold warfarin. If rising or high on two or more occasions, decrease weekly dose by 10%; repeat INR determination in 7–14 days", "yuzde": -10, "kosul": "iki veya daha fazla ölçümde yüksek/yükseliyor", "atla": 0, "kontrol": "7–14 gün"},
+    {"inr_min": 4.0, "inr_max": 4.99, "eylem": "Hold for 1 day. Decrease weekly dose by 10%; repeat INR determination in 7–14 days", "yuzde": -10, "atla": 1, "kontrol": "7–14 gün"},
+    {"inr_min": 5.0, "inr_max": 8.99, "eylem": "Hold warfarin. Consider oral vitamin K 2–4 mg† if at increased risk of bleeding. If INR still high 24 h later, consider giving 1–2 mg of additional oral vitamin K† and restart at lower dose (decrease weekly dose by 15%) when INR is therapeutic. Check INR weekly until stable", "yuzde": -15, "atla": "INR hedefe inene kadar", "kontrol": "stabil olana dek haftalık"},
+    {"inr_min": 9.0, "inr_max": null, "eylem": "Hold warfarin and give oral vitamin K 5.0–10.0 mg.† Monitor more frequently and repeat vitamin K if necessary", "yuzde": null, "atla": "kes"}
+  ],
+  "hedef_2_5_3_5": [
+    {"inr_min": null, "inr_max": 1.5, "yildiz": true, "eylem": "Increase weekly dose by 20%; repeat INR determination in 7–14 days", "yuzde": 20, "kontrol": "7–14 gün"},
+    {"inr_min": 1.51, "inr_max": 1.99, "yildiz": true, "eylem": "If unexplained, increase weekly dose by 15%; repeat INR determination in 7–14 days", "yuzde": 15, "kosul": "açıklanamıyorsa", "kontrol": "7–14 gün"},
+    {"inr_min": 2.0, "inr_max": 2.49, "yildiz": true, "eylem": "If falling or low on two or more occasions, increase weekly dose by 10%; repeat INR determination in 7–14 days", "yuzde": 10, "kosul": "iki veya daha fazla ölçümde düşük/düşüyor", "kontrol": "7–14 gün"},
+    {"inr_min": 2.5, "inr_max": 3.5, "eylem": "No change", "yuzde": 0},
+    {"inr_min": 3.51, "inr_max": 4.49, "yildiz": true, "eylem": "Do not hold warfarin. If rising or high on two or more occasions, decrease weekly dose by 10%; repeat INR determination in 7–14 days", "yuzde": -10, "kosul": "iki veya daha fazla ölçümde yüksek/yükseliyor", "kontrol": "7–14 gün"},
+    {"inr_min": 4.5, "inr_max": 4.99, "eylem": "Hold for 1 day. Decrease weekly dose by 10%; repeat INR determination in 7–14 days", "yuzde": -10, "atla": 1, "kontrol": "7–14 gün"},
+    {"inr_min": 5.0, "inr_max": 8.99, "eylem": "(2–3 hedefiyle aynı) Hold warfarin. Consider oral vitamin K 2–4 mg† ... restart at lower dose (decrease weekly dose by 15%) when INR is therapeutic. Check INR weekly until stable", "yuzde": -15, "atla": "INR hedefe inene kadar"},
+    {"inr_min": 9.0, "inr_max": null, "eylem": "(2–3 hedefiyle aynı) Hold warfarin and give oral vitamin K 5.0–10.0 mg.†", "yuzde": null, "atla": "kes"}
+  ],
+  "ciddi_kanama": "Serious bleeding regardless of INR: Hold dose and give intravenous vitamin K 10 mg and fresh frozen plasma, recombinant factor VIIa, or prothrombin complex concentrates, depending on the urgency of the situation",
+  "uygulama_notlari": [
+    "Doz yüzdeleri (15/10/0/-10/-15; 2,5-3,5 için 20/15/10) bu tablodan birebir kullanılabilir.",
+    "Tablodaki K vitamini satırları ACCP 2008 dönemine aittir. Güncel metin için Holbrook 2012 (Chest 141:e152S, PMID 22315259) kullanılmalı: INR 4,5–10 kanamasız rutin K vitamini önerilmez (Grade 2B); INR >10 kanamasız oral K vitamini (Grade 2C); majör kanamada PCC tercih edilir. Araç K vitamini dozu önermesin, uyarı kutusu göstersin.",
+    "Makaledeki algoritma Henry Ford Hospital antikoagülasyon kliniğinden alınmış, uzman deneyimine dayalı, resmi valide edilmemiş; Kim 2010 öncesi-sonrası (randomize değil) çalışmada TTR 2-3 için %67,2→%73,2; 2,5-3,5 için %49,8→%63,8.",
+    "Birinci basamak küme randomize çalışmada üstünlük gösterilmedi: Nieuwlaat 2014, J Thromb Thrombolysis 37:435-42, PMID 23877621.",
+    "'Yıldızlı' satırlarda klinik yargı ile sapma serbesttir; '2 veya daha fazla ölçüm' koşulu için araç önceki INR'yi sormalı."
+  ]
+}

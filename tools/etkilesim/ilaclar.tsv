@@ -1,0 +1,363 @@
+# Türkçe etken madde → DDInter İngilizce adı eşleme tablosu (kaynak dosya).
+# Sütunlar (sekmeyle ayrılır): id  türkçe_ad  diğer_adlar(virgül)  ddinter_adları(; ile, boşsa DDInter verisinde yok)  grup  etiketler(virgül)
+# Etiketler: vka (varfarin), doak, kanama (kanama riskini artıran: antiplatelet, NSAİİ, SSRI/SNRI, parenteral antikoagülan),
+#   nsaii, qt (CredibleMeds "bilinen TdP riski"), sero (serotonerjik), 3a4g (güçlü CYP3A4/P-gp inhibitörü), 3a4 (orta CYP3A4/P-gp inhibitörü),
+#   mao (MAO inhibitörü), ind (güçlü CYP3A4/P-gp indükleyici), statin3a4 (CYP3A4 ile yıkılan statin), raas (ACEİ/ARB/ARNİ), k (potasyum yükselten), diur (diüretik)
+# Ağrı, kas-iskelet
+parasetamol	Parasetamol	asetaminofen	Acetaminophen	agri	
+asa	Asetilsalisilik asit	aspirin, ASA	Acetylsalicylic acid	agri	kanama,nsaii
+ibuprofen	İbuprofen		Ibuprofen	agri	kanama,nsaii
+naproksen	Naproksen		Naproxen	agri	kanama,nsaii
+diklofenak	Diklofenak		Diclofenac	agri	kanama,nsaii
+deksketoprofen	Deksketoprofen			agri	kanama,nsaii
+ketoprofen	Ketoprofen		Ketoprofen	agri	kanama,nsaii
+flurbiprofen	Flurbiprofen		Flurbiprofen	agri	kanama,nsaii
+etodolak	Etodolak		Etodolac	agri	kanama,nsaii
+meloksikam	Meloksikam		Meloxicam	agri	kanama,nsaii
+piroksikam	Piroksikam		Piroxicam	agri	kanama,nsaii
+lornoksikam	Lornoksikam			agri	kanama,nsaii
+tenoksikam	Tenoksikam			agri	kanama,nsaii
+indometazin	İndometazin		Indomethacin	agri	kanama,nsaii
+ketorolak	Ketorolak		Ketorolac	agri	kanama,nsaii
+selekoksib	Selekoksib		Celecoxib	agri	kanama,nsaii
+etorikoksib	Etorikoksib			agri	kanama,nsaii
+nimesulid	Nimesulid			agri	kanama,nsaii
+metamizol	Metamizol	dipiron, novaljin		agri	
+tramadol	Tramadol		Tramadol	agri	sero
+kodein	Kodein		Codeine	agri	
+tapentadol	Tapentadol		Tapentadol	agri	sero
+morfin	Morfin		Morphine	agri	
+oksikodon	Oksikodon		Oxycodone	agri	
+fentanil	Fentanil		Fentanyl	agri	sero
+metadon	Metadon		Methadone	agri	qt,sero
+petidin	Petidin	meperidin	Meperidine	agri	sero
+buprenorfin	Buprenorfin		Buprenorphine	agri	
+pregabalin	Pregabalin		Pregabalin	agri	
+gabapentin	Gabapentin		Gabapentin	agri	
+tiyokolsikozid	Tiyokolşikozid			agri	
+siklobenzaprin	Siklobenzaprin		Cyclobenzaprine	agri	sero
+tizanidin	Tizanidin		Tizanidine	agri	
+baklofen	Baklofen		Baclofen	agri	
+klorzoksazon	Klorzoksazon		Chlorzoxazone	agri	
+metokarbamol	Metokarbamol		Methocarbamol	agri	
+kolsisin	Kolşisin		Colchicine	agri	
+allopurinol	Allopurinol		Allopurinol	agri	
+febuksostat	Febuksostat		Febuxostat	agri	
+# Sindirim
+omeprazol	Omeprazol		Omeprazole	sindirim	
+esomeprazol	Esomeprazol		Esomeprazole	sindirim	
+lansoprazol	Lansoprazol		Lansoprazole	sindirim	
+pantoprazol	Pantoprazol		Pantoprazole	sindirim	
+rabeprazol	Rabeprazol		Rabeprazole	sindirim	
+famotidin	Famotidin		Famotidine	sindirim	
+sukralfat	Sukralfat		Sucralfate	sindirim	
+aluminyum-hidroksit	Alüminyum hidroksit	antasit	Aluminum hydroxide	sindirim	
+magnezyum-hidroksit	Magnezyum hidroksit	antasit	Magnesium hydroxide	sindirim	
+kalsiyum-karbonat	Kalsiyum karbonat		Calcium carbonate	sindirim	
+bizmut	Bizmut subsitrat	bizmut	Bismuth subcitrate potassium	sindirim	
+metoklopramid	Metoklopramid		Metoclopramide	sindirim	
+domperidon	Domperidon			sindirim	qt
+ondansetron	Ondansetron		Ondansetron	sindirim	qt,sero
+trimebutin	Trimebutin			sindirim	
+hiyosin	Hiyosin butilbromür	butilskopolamin, skopolamin	Scopolamine	sindirim	
+mebeverin	Mebeverin			sindirim	
+simetikon	Simetikon		Simethicone	sindirim	
+loperamid	Loperamid		Loperamide	sindirim	
+laktuloz	Laktuloz		Lactulose	sindirim	
+bisakodil	Bisakodil		Bisacodyl	sindirim	
+makrogol	Makrogol	polietilen glikol, PEG	Polyethylene glycol (3350)	sindirim	
+mesalazin	Mesalazin		Mesalazine	sindirim	
+ursodeoksikolik-asit	Ursodeoksikolik asit	UDCA	Ursodeoxycholic acid	sindirim	
+# Diyabet
+metformin	Metformin		Metformin	diyabet	
+gliklazid	Gliklazid			diyabet	
+glimepirid	Glimepirid		Glimepiride	diyabet	
+glibenklamid	Glibenklamid	gliburid	Glyburide	diyabet	
+repaglinid	Repaglinid		Repaglinide	diyabet	
+pioglitazon	Pioglitazon		Pioglitazone	diyabet	
+akarboz	Akarboz		Acarbose	diyabet	
+sitagliptin	Sitagliptin		Sitagliptin	diyabet	
+vildagliptin	Vildagliptin			diyabet	
+linagliptin	Linagliptin		Linagliptin	diyabet	
+saksagliptin	Saksagliptin		Saxagliptin	diyabet	
+empagliflozin	Empagliflozin		Empagliflozin	diyabet	
+dapagliflozin	Dapagliflozin		Dapagliflozin	diyabet	
+liraglutid	Liraglutid		Liraglutide	diyabet	
+semaglutid	Semaglutid		Semaglutide	diyabet	
+dulaglutid	Dulaglutid		Dulaglutide	diyabet	
+eksenatid	Eksenatid		Exenatide	diyabet	
+insulin-glarjin	İnsülin glarjin	insülin	Insulin glargine	diyabet	
+insulin-detemir	İnsülin detemir	insülin	Insulin detemir	diyabet	
+insulin-degludek	İnsülin degludek	insülin	Insulin degludec	diyabet	
+insulin-aspart	İnsülin aspart	insülin	Insulin aspart (aspart)	diyabet	
+insulin-lispro	İnsülin lispro	insülin	Insulin lispro	diyabet	
+insulin-glulisin	İnsülin glulisin	insülin	Insulin glulisine	diyabet	
+insan-insulini	İnsan insülini	regüler insülin, NPH, insülin	Insulin human	diyabet	
+# Lipid
+atorvastatin	Atorvastatin		Atorvastatin	lipid	statin3a4
+rosuvastatin	Rosuvastatin		Rosuvastatin	lipid	
+simvastatin	Simvastatin		Simvastatin	lipid	statin3a4
+pravastatin	Pravastatin		Pravastatin	lipid	
+fluvastatin	Fluvastatin		Fluvastatin	lipid	
+pitavastatin	Pitavastatin		Pitavastatin	lipid	
+ezetimib	Ezetimib		Ezetimibe	lipid	
+fenofibrat	Fenofibrat		Fenofibrate	lipid	
+gemfibrozil	Gemfibrozil		Gemfibrozil	lipid	
+omega-3	Omega-3 yağ asitleri	balık yağı	Omega-3 fatty acids	lipid	
+# Kalp-damar
+amlodipin	Amlodipin		Amlodipine	kv	
+lerkanidipin	Lerkanidipin			kv	
+nifedipin	Nifedipin		Nifedipine	kv	
+felodipin	Felodipin		Felodipine	kv	
+nimodipin	Nimodipin		Nimodipine	kv	
+diltiazem	Diltiazem		Diltiazem	kv	3a4
+verapamil	Verapamil		Verapamil	kv	3a4
+ramipril	Ramipril		Ramipril	kv	raas,k
+perindopril	Perindopril		Perindopril	kv	raas,k
+enalapril	Enalapril		Enalapril	kv	raas,k
+lisinopril	Lisinopril		Lisinopril	kv	raas,k
+kaptopril	Kaptopril		Captopril	kv	raas,k
+trandolapril	Trandolapril		Trandolapril	kv	raas,k
+zofenopril	Zofenopril			kv	raas,k
+valsartan	Valsartan		Valsartan	kv	raas,k
+losartan	Losartan		Losartan	kv	raas,k
+irbesartan	İrbesartan		Irbesartan	kv	raas,k
+kandesartan	Kandesartan			kv	raas,k
+telmisartan	Telmisartan		Telmisartan	kv	raas,k
+olmesartan	Olmesartan		Olmesartan	kv	raas,k
+sakubitril-valsartan	Sakubitril/valsartan	ARNİ	Sacubitril; Valsartan	kv	raas,k
+hidroklorotiyazid	Hidroklorotiyazid	HCTZ	Hydrochlorothiazide	kv	diur,tiyazid
+klortalidon	Klortalidon		Chlorthalidone	kv	diur,tiyazid
+indapamid	İndapamid		Indapamide	kv	diur,tiyazid
+furosemid	Furosemid		Furosemide	kv	diur,loop
+torasemid	Torasemid		Torasemide	kv	diur,loop
+spironolakton	Spironolakton		Spironolactone	kv	k,diur
+eplerenon	Eplerenon		Eplerenone	kv	k,diur
+amilorid	Amilorid		Amiloride	kv	k,diur
+metoprolol	Metoprolol		Metoprolol	kv	
+bisoprolol	Bisoprolol		Bisoprolol	kv	
+nebivolol	Nebivolol		Nebivolol	kv	
+karvedilol	Karvedilol		Carvedilol	kv	
+propranolol	Propranolol		Propranolol	kv	
+atenolol	Atenolol		Atenolol	kv	
+sotalol	Sotalol		Sotalol	kv	qt
+doksazosin	Doksazosin		Doxazosin	kv	
+terazosin	Terazosin		Terazosin	kv	
+moksonidin	Moksonidin			kv	
+metildopa	Metildopa		Methyldopa	kv	
+digoksin	Digoksin		Digoxin	kv	
+amiodaron	Amiodaron		Amiodarone	kv	qt,3a4
+dronedaron	Dronedaron		Dronedarone	kv	qt,3a4g
+propafenon	Propafenon		Propafenone	kv	
+flekainid	Flekainid		Flecainide	kv	qt
+ivabradin	İvabradin		Ivabradine	kv	
+ranolazin	Ranolazin		Ranolazine	kv	
+trimetazidin	Trimetazidin			kv	
+izosorbid-mononitrat	İzosorbid mononitrat		Isosorbide mononitrate	kv	nitrat
+izosorbid-dinitrat	İzosorbid dinitrat		Isosorbide dinitrate	kv	nitrat
+nitrogliserin	Nitrogliserin		Nitroglycerin	kv	nitrat
+# Antitrombotik
+varfarin	Varfarin	kumadin	Warfarin	antitrombotik	vka
+apiksaban	Apiksaban		Apixaban	antitrombotik	doak
+rivaroksaban	Rivaroksaban		Rivaroxaban	antitrombotik	doak
+dabigatran	Dabigatran			antitrombotik	doak
+edoksaban	Edoksaban		Edoxaban	antitrombotik	doak
+klopidogrel	Klopidogrel		Clopidogrel	antitrombotik	kanama
+tikagrelor	Tikagrelor		Ticagrelor	antitrombotik	kanama
+prasugrel	Prasugrel		Prasugrel	antitrombotik	kanama
+silostazol	Silostazol		Cilostazol	antitrombotik	kanama,qt
+dipiridamol	Dipiridamol		Dipyridamole	antitrombotik	kanama
+enoksaparin	Enoksaparin		Enoxaparin	antitrombotik	kanama
+heparin	Heparin		Heparin	antitrombotik	kanama
+# Solunum, alerji
+salbutamol	Salbutamol		Salbutamol	solunum	
+formoterol	Formoterol		Formoterol	solunum	
+salmeterol	Salmeterol		Salmeterol	solunum	
+indakaterol	İndakaterol		Indacaterol	solunum	
+tiotropium	Tiotropium		Tiotropium	solunum	
+ipratropium	İpratropium		Ipratropium	solunum	
+budesonid	Budesonid		Budesonide	solunum	
+flutikazon	Flutikazon		Fluticasone	solunum	
+beklometazon	Beklometazon		Beclomethasone dipropionate	solunum	
+siklesonid	Siklesonid		Ciclesonide	solunum	
+montelukast	Montelukast		Montelukast	solunum	
+teofilin	Teofilin		Theophylline	solunum	
+asetilsistein	N-asetilsistein	NAC	Acetylcysteine	solunum	
+dekstrometorfan	Dekstrometorfan		Dextromethorphan	solunum	sero
+psodoefedrin	Psödoefedrin		Pseudoephedrine	solunum	
+setirizin	Setirizin		Cetirizine	solunum	
+levosetirizin	Levosetirizin		Levocetirizine	solunum	
+loratadin	Loratadin		Loratadine	solunum	
+desloratadin	Desloratadin		Desloratadine	solunum	
+feksofenadin	Feksofenadin		Fexofenadine	solunum	
+bilastin	Bilastin			solunum	
+rupatadin	Rupatadin			solunum	
+feniramin	Feniramin			solunum	
+klorfeniramin	Klorfeniramin		Chlorpheniramine	solunum	
+difenhidramin	Difenhidramin		Diphenhydramine	solunum	
+prometazin	Prometazin		Promethazine	solunum	
+hidroksizin	Hidroksizin		Hydroxyzine	solunum	
+ketotifen	Ketotifen		Ketotifen	solunum	
+# Enfeksiyon
+amoksisilin	Amoksisilin		Amoxicillin	enfeksiyon	
+amoksisilin-klavulanat	Amoksisilin-klavulanik asit	amoksisilin klavulanat	Amoxicillin; Clavulanic acid	enfeksiyon	
+fenoksimetilpenisilin	Fenoksimetilpenisilin	penisilin V	Phenoxymethylpenicillin	enfeksiyon	
+benzatin-penisilin	Benzatin penisilin	penisilin G	Benzylpenicillin	enfeksiyon	
+sefuroksim	Sefuroksim aksetil	sefuroksim	Cefuroxime	enfeksiyon	
+sefiksim	Sefiksim		Cefixime	enfeksiyon	
+sefdinir	Sefdinir		Cefdinir	enfeksiyon	
+sefpodoksim	Sefpodoksim		Cefpodoxime	enfeksiyon	
+sefaleksin	Sefaleksin		Cephalexin	enfeksiyon	
+sefadroksil	Sefadroksil		Cefadroxil	enfeksiyon	
+seftriakson	Seftriakson		Ceftriaxone	enfeksiyon	
+klaritromisin	Klaritromisin		Clarithromycin	enfeksiyon	qt,3a4g
+azitromisin	Azitromisin		Azithromycin	enfeksiyon	qt
+eritromisin	Eritromisin		Erythromycin	enfeksiyon	qt,3a4
+siprofloksasin	Siprofloksasin		Ciprofloxacin	enfeksiyon	qt,1a2g
+levofloksasin	Levofloksasin		Levofloxacin	enfeksiyon	qt
+moksifloksasin	Moksifloksasin		Moxifloxacin	enfeksiyon	qt
+ofloksasin	Ofloksasin		Ofloxacin	enfeksiyon	
+doksisiklin	Doksisiklin		Doxycycline	enfeksiyon	
+tetrasiklin	Tetrasiklin		Tetracycline	enfeksiyon	
+tmp-smx	Trimetoprim-sülfametoksazol	kotrimoksazol, TMP-SMX	Trimethoprim; Sulfamethoxazole	enfeksiyon	k
+nitrofurantoin	Nitrofurantoin		Nitrofurantoin	enfeksiyon	
+fosfomisin	Fosfomisin		Fosfomycin	enfeksiyon	
+metronidazol	Metronidazol		Metronidazole	enfeksiyon	
+ornidazol	Ornidazol			enfeksiyon	
+klindamisin	Klindamisin		Clindamycin	enfeksiyon	
+linezolid	Linezolid		Linezolid	enfeksiyon	sero,mao
+rifampisin	Rifampisin	rifampin	Rifampicin	enfeksiyon	ind
+izoniazid	İzoniazid		Isoniazid	enfeksiyon	
+etambutol	Etambutol		Ethambutol	enfeksiyon	
+pirazinamid	Pirazinamid		Pyrazinamide	enfeksiyon	
+flukonazol	Flukonazol		Fluconazole	enfeksiyon	qt,3a4
+itrakonazol	İtrakonazol		Itraconazole	enfeksiyon	3a4g
+ketokonazol	Ketokonazol		Ketoconazole	enfeksiyon	3a4g
+vorikonazol	Vorikonazol		Voriconazole	enfeksiyon	3a4g
+terbinafin	Terbinafin		Terbinafine	enfeksiyon	
+nistatin	Nistatin		Nystatin	enfeksiyon	
+asiklovir	Asiklovir		Acyclovir	enfeksiyon	
+valasiklovir	Valasiklovir		Valaciclovir	enfeksiyon	
+famsiklovir	Famsiklovir		Famciclovir	enfeksiyon	
+oseltamivir	Oseltamivir		Oseltamivir	enfeksiyon	
+albendazol	Albendazol		Albendazole	enfeksiyon	
+mebendazol	Mebendazol		Mebendazole	enfeksiyon	
+hidroksiklorokin	Hidroksiklorokin		Hydroxychloroquine	enfeksiyon	qt
+# Ruh sağlığı
+sertralin	Sertralin		Sertraline	ruh	sero,kanama
+essitalopram	Essitalopram		Escitalopram	ruh	sero,kanama,qt
+sitalopram	Sitalopram		Citalopram	ruh	sero,kanama,qt
+fluoksetin	Fluoksetin		Fluoxetine	ruh	sero,kanama
+paroksetin	Paroksetin		Paroxetine	ruh	sero,kanama
+fluvoksamin	Fluvoksamin		Fluvoxamine	ruh	sero,kanama,1a2g
+venlafaksin	Venlafaksin		Venlafaxine	ruh	sero,kanama
+duloksetin	Duloksetin		Duloxetine	ruh	sero,kanama
+desvenlafaksin	Desvenlafaksin		Desvenlafaxine	ruh	sero,kanama
+vortioksetin	Vortioksetin		Vortioxetine	ruh	sero
+mirtazapin	Mirtazapin		Mirtazapine	ruh	sero
+trazodon	Trazodon		Trazodone	ruh	sero
+bupropion	Bupropion		Bupropion	ruh	
+agomelatin	Agomelatin			ruh	
+amitriptilin	Amitriptilin		Amitriptyline	ruh	sero
+nortriptilin	Nortriptilin		Nortriptyline	ruh	sero
+imipramin	İmipramin		Imipramine	ruh	sero
+klomipramin	Klomipramin		Clomipramine	ruh	sero
+moklobemid	Moklobemid			ruh	sero,mao
+lityum	Lityum		Lithium carbonate	ruh	sero
+buspiron	Buspiron		Buspirone	ruh	sero
+ketiapin	Ketiapin		Quetiapine	ruh	
+olanzapin	Olanzapin		Olanzapine	ruh	
+risperidon	Risperidon		Risperidone	ruh	
+paliperidon	Paliperidon		Paliperidone	ruh	
+aripiprazol	Aripiprazol		Aripiprazole	ruh	
+amisulprid	Amisülprid		Amisulpride	ruh	
+sulpirid	Sülpirid			ruh	qt
+haloperidol	Haloperidol		Haloperidol	ruh	qt
+klorpromazin	Klorpromazin		Chlorpromazine	ruh	qt
+alprazolam	Alprazolam		Alprazolam	ruh	
+lorazepam	Lorazepam		Lorazepam	ruh	
+diazepam	Diazepam		Diazepam	ruh	
+klonazepam	Klonazepam		Clonazepam	ruh	
+zolpidem	Zolpidem		Zolpidem	ruh	
+melatonin	Melatonin		Melatonin	ruh	
+metilfenidat	Metilfenidat		Methylphenidate	ruh	
+atomoksetin	Atomoksetin		Atomoxetine	ruh	
+donepezil	Donepezil		Donepezil	ruh	qt
+rivastigmin	Rivastigmin		Rivastigmine	ruh	
+galantamin	Galantamin		Galantamine	ruh	
+memantin	Memantin		Memantine	ruh	
+sari-kantaron	Sarı kantaron	St. John's Wort, hypericum	St. John's Wort	ruh	sero,ind
+vareniklin	Vareniklin		Varenicline	ruh	
+naltrekson	Naltrekson		Naltrexone	ruh	
+nikotin	Nikotin	nikotin replasman	Nicotine	ruh	
+# Nöroloji
+levetirasetam	Levetirasetam		Levetiracetam	noro	
+valproat	Valproik asit	valproat, sodyum valproat	Valproic acid	noro	
+karbamazepin	Karbamazepin		Carbamazepine	noro	ind
+okskarbazepin	Okskarbazepin		Oxcarbazepine	noro	
+lamotrijin	Lamotrijin		Lamotrigine	noro	
+topiramat	Topiramat		Topiramate	noro	
+fenitoin	Fenitoin		Phenytoin	noro	ind
+fenobarbital	Fenobarbital		Phenobarbital	noro	ind
+levodopa	Levodopa	levodopa/karbidopa	Levodopa	noro	
+pramipeksol	Pramipeksol		Pramipexole	noro	
+ropinirol	Ropinirol		Ropinirole	noro	
+rasajilin	Rasajilin		Rasagiline	noro	sero,mao
+selejilin	Selejilin		Selegiline	noro	sero,mao
+sumatriptan	Sumatriptan		Sumatriptan	noro	sero
+rizatriptan	Rizatriptan		Rizatriptan	noro	sero
+zolmitriptan	Zolmitriptan		Zolmitriptan	noro	sero
+almotriptan	Almotriptan		Almotriptan	noro	sero
+betahistin	Betahistin			noro	
+flunarizin	Flunarizin			noro	
+sinnarizin	Sinnarizin			noro	
+dimenhidrinat	Dimenhidrinat		Dimenhydrinate	noro	
+# Üroloji
+tamsulosin	Tamsulosin		Tamsulosin	uro	
+alfuzosin	Alfuzosin		Alfuzosin	uro	
+silodosin	Silodosin		Silodosin	uro	
+finasterid	Finasterid		Finasteride	uro	
+dutasterid	Dutasterid		Dutasteride	uro	
+solifenasin	Solifenasin		Solifenacin	uro	
+tolterodin	Tolterodin		Tolterodine	uro	
+oksibutinin	Oksibutinin		Oxybutynin	uro	
+trospiyum	Trospiyum		Trospium	uro	
+mirabegron	Mirabegron		Mirabegron	uro	
+sildenafil	Sildenafil		Sildenafil	uro	pde5
+tadalafil	Tadalafil		Tadalafil	uro	pde5
+vardenafil	Vardenafil		Vardenafil	uro	pde5
+# Endokrin, kemik, kadın sağlığı
+levotiroksin	Levotiroksin		Levothyroxine	endokrin	
+metimazol	Metimazol	tiamazol	Methimazole	endokrin	
+propiltiyourasil	Propiltiyourasil	PTU	Propylthiouracil	endokrin	
+prednizolon	Prednizolon		Prednisolone	endokrin	
+metilprednizolon	Metilprednizolon		Methylprednisolone	endokrin	
+deksametazon	Deksametazon		Dexamethasone	endokrin	
+hidrokortizon	Hidrokortizon		Hydrocortisone	endokrin	
+alendronat	Alendronat		Alendronic acid	endokrin	
+risedronat	Risedronat		Risedronic acid	endokrin	
+ibandronat	İbandronat		Ibandronate	endokrin	
+kolekalsiferol	Kolekalsiferol	D vitamini, D3	Cholecalciferol	endokrin	
+estradiol	Estradiol		Estradiol	endokrin	
+etinilestradiol	Etinilestradiol	kombine oral kontraseptif, KOK	Ethinylestradiol	endokrin	
+levonorgestrel	Levonorgestrel		Levonorgestrel	endokrin	
+drospirenon	Drospirenon		Drospirenone	endokrin	k
+medroksiprogesteron	Medroksiprogesteron		Medroxyprogesterone acetate	endokrin	
+progesteron	Progesteron		Progesterone	endokrin	
+raloksifen	Raloksifen		Raloxifene	endokrin	
+tibolon	Tibolon			endokrin	
+desmopressin	Desmopressin		Desmopressin	endokrin	
+# Vitamin, mineral
+demir	Demir (ferröz sülfat)	demir sülfat, ferröz sülfat	Ferrous sulfate anhydrous	vitamin	
+folik-asit	Folik asit		Folic acid	vitamin	
+b12	B12 vitamini	siyanokobalamin	Cyanocobalamin	vitamin	
+potasyum-klorur	Potasyum klorür	potasyum	Potassium chloride	vitamin	k
+magnezyum	Magnezyum oksit	magnezyum	Magnesium oxide	vitamin	
+cinko	Çinko sülfat	çinko	Zinc sulfate	vitamin	
+# İmmünoloji, dermatoloji
+metotreksat	Metotreksat		Methotrexate	immun	
+azatiyoprin	Azatiyoprin		Azathioprine	immun	
+siklosporin	Siklosporin		Cyclosporine	immun	3a4,pgpg
+leflunomid	Leflunomid		Leflunomide	immun	
+sulfasalazin	Sülfasalazin		Sulfasalazine	immun	
+izotretinoin	İzotretinoin		Isotretinoin	immun	

@@ -205,12 +205,15 @@
   /* ---------- sayfalar ---------- */
   var pages = {
     home: function () {
-      Promise.all([load("rehberler"), load("makaleler"), load("meta")]).then(function (r) {
-        var R = r[0], M = r[1], meta = r[2]; TODAY = meta.checked;
+      /* araç dizini yüklenemezse ana sayfa yine çalışsın */
+      var tools = load("araclar").catch(function () { return { groups: [], tools: [] }; });
+      Promise.all([load("rehberler"), load("makaleler"), load("meta"), tools]).then(function (r) {
+        var R = r[0], M = r[1], meta = r[2], A = r[3]; TODAY = meta.checked;
         var guides = R.guides.filter(function (g) { return g.status !== "arsiv"; });
         var issue = M.issues[0];
         document.getElementById("nGuides").textContent = guides.filter(function (g) { return g.aud.indexOf("hekim") !== -1; }).length;
         document.getElementById("nPapers").textContent = issue ? issue.items.length : 0;
+        if (A.tools.length) document.getElementById("nTools").textContent = A.tools.length;
         document.getElementById("nLaw").textContent = guides.filter(function (g) { return g.kind === "law"; }).length;
         document.getElementById("checked").textContent = fmt(meta.checked);
 
@@ -241,15 +244,26 @@
           li.appendChild(t); li.appendChild(document.createTextNode(x.text)); log.appendChild(li);
         });
 
-        /* genel arama */
+        /* genel arama: rehberler, makaleler ve araçlar birlikte */
         var idx = [];
-        guides.forEach(function (g) { idx.push({ k: g.kind === "law" ? "Mevzuat" : "Rehber", t: g.title, s: g.org + (g.year ? " · " + g.year : ""), h: "rehberler.html#" + g.id, x: fold([g.title, g.org, g.summary, g.kw].join(" ")) }); });
-        M.issues.forEach(function (is) { is.items.forEach(function (p) { idx.push({ k: "Makale", t: p.title, s: p.journal + " · " + fmt(p.date), h: "makaleler.html#" + p.id, x: fold([p.title, p.title_en, p.what, p.practice, (p.tags || []).join(" ")].join(" ")) }); }); });
+        function add(k, t, s, h, extra) { idx.push({ k: k, t: t, s: s, h: h, ft: fold(t), x: fold([t].concat(extra).join(" ")) }); }
+        guides.forEach(function (g) { add(g.kind === "law" ? "Mevzuat" : "Rehber", g.title, g.org + (g.year ? " · " + g.year : ""), "rehberler.html#" + g.id, [g.org, g.summary, g.kw]); });
+        M.issues.forEach(function (is) { is.items.forEach(function (p) { add("Makale", p.title, p.journal + " · " + fmt(p.date), "makaleler.html#" + p.id, [p.title_en, p.journal, p.what, p.practice, p.design, (p.tags || []).join(" ")]); }); });
+        var gl = {}; A.groups.forEach(function (g) { gl[g[0]] = g[1]; });
+        A.tools.forEach(function (x) { add("Araç", x.t, gl[x.g] || "Klinik araç", "araclar.html#" + x.id, [x.d, x.kw, gl[x.g]]); });
         var q = document.getElementById("q"), res = document.getElementById("results");
+        q.addEventListener("keydown", function (e) {
+          var first = res.querySelector("a.hit");
+          if (e.key === "Enter" && first) { e.preventDefault(); location.href = first.href; }
+        });
         q.addEventListener("input", function () {
           var t = terms(q.value); res.textContent = "";
           if (!t.length) { res.hidden = true; return; }
-          var hits = idx.filter(function (i) { return match(i.x, t); }).slice(0, 12);
+          /* başlığında geçenler önce, sonra eklenme sırası */
+          var hits = idx.map(function (i, n) { return { i: i, n: n, top: match(i.ft, t) ? 0 : 1 }; })
+            .filter(function (h) { return match(h.i.x, t); })
+            .sort(function (a, b) { return a.top - b.top || a.n - b.n; })
+            .slice(0, 15).map(function (h) { return h.i; });
           res.hidden = false;
           if (!hits.length) { res.appendChild(el("p", "empty", "Sonuç bulunamadı.")); return; }
           hits.forEach(function (i) {
@@ -297,4 +311,11 @@
   };
 
   if (pages[page]) pages[page]();
+
+  /* çevrimdışı çalışma ve telefona kurulum (PWA) */
+  if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost" || location.hostname === "127.0.0.1")) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("sw.js").catch(function (e) { if (window.console) console.warn("Service worker kaydedilemedi", e); });
+    });
+  }
 })();

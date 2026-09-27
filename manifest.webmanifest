@@ -1,1 +1,20 @@
-{"name":"Kanuni Aile Hekimliği","short_name":"Kanuni AH","start_url":"./","display":"standalone","background_color":"#F3F5F4","theme_color":"#0D5A51","lang":"tr","icons":[{"src":"assets/emblem.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}]}
+{
+ "id": "./",
+ "name": "Kanuni Aile Hekimliği",
+ "short_name": "Kanuni AH",
+ "description": "Aile hekimliği asistanları için güncel rehber, mevzuat, makale ve klinik araçlar. Çevrimdışı da çalışır.",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "background_color": "#F3F5F4",
+ "theme_color": "#0D5A51",
+ "lang": "tr",
+ "dir": "ltr",
+ "categories": ["medical", "education"],
+ "icons": [
+  {"src": "assets/emblem.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"},
+  {"src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+  {"src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+  {"src": "assets/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+ ]
+}

@@ -17,8 +17,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Araç dizini ve service worker'ı üret
+        run: python3 tools/build_pwa.py
+
       - name: Veri dosyalarını denetle
         run: python3 tools/validate.py
+
+      - name: Araç hesaplarını test et
+        run: node --test
 
       - name: FTP bilgileri henüz tanımlı değil
         if: env.FTP_SERVER == ''
@@ -38,4 +44,5 @@ jobs:
             **/.git*/**
             .github/**
             tools/**
+            tests/**
             README.md

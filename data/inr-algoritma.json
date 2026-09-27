@@ -1,0 +1,51 @@
+{
+  "aciklama": "Varfarin idame doz ayarı. Eşikler ve yüzdeler Kim 2010 Tablo 1'den birebir alınmıştır (kaynak kopyası: tools/kaynak/inr/kim-2010-tablo1.json; tests/arac-inr.test.js ikisini satır satır karşılaştırır). Satırlar artan INR sırasındadır; INR, üst sınırı (ust, dahil) kendisinden büyük ya da eşit olan ilk satıra düşer; son satırda ust null. degisim: haftalık dozda %; null = tablo yeni doz vermiyor. kosul: 'iki-olcum' = iki veya daha fazla ölçümde düşük/yüksek ise uygulanır (önceki INR sorulur), 'aciklanamiyor' = açıklanamıyorsa uygulanır. atla: 0, 1 (1 gün ara), 'inr-aralikta' (INR hedefe inene kadar ara, sonra yeni doz), 'kes'. kontrol_gun: sonraki INR için [en erken, en geç] gün; kontrol_metin varsa o gösterilir; ikisi de yoksa önceki kontrol aralığı sürer. yildiz: kaynaktaki * dipnotu (klinik yargıyla sapılabilir). Tablodaki K vitamini önerileri kullanılmaz; yerine yuksek_inr'deki Holbrook 2012 uyarıları gösterilir, doz önerilmez.",
+  "kaynak": {
+    "kunye": "Kim YK, Nieuwlaat R, Connolly SJ, Schulman S, Meijer K, Raju N, Kaatz S, Eikelboom JW. Effect of a simple two-step warfarin dosing algorithm on anticoagulant control as measured by time in therapeutic range: a pilot study. J Thromb Haemost 2010;8(1):101-106. Tablo 1.",
+    "pmid": "19840361",
+    "doi": "10.1111/j.1538-7836.2009.03652.x",
+    "url": "https://doi.org/10.1111/j.1538-7836.2009.03652.x",
+    "kapsam": "Varfarinle stabil idame hastaları; son INR ve önceki haftalık doz esas alınır."
+  },
+  "hedefler": {
+    "2-3": {
+      "ad": "2,0–3,0",
+      "alt": 2.0,
+      "ust": 3.0,
+      "satirlar": [
+        { "aralik": "≤ 1,50", "ust": 1.5, "degisim": 15, "kosul": null, "atla": 0, "kontrol_gun": [7, 14], "yildiz": true, "dogrulama": "Kim 2010 Tablo 1" },
+        { "aralik": "1,51–1,99", "ust": 1.99, "degisim": 10, "kosul": "iki-olcum", "atla": 0, "kontrol_gun": [7, 14], "yildiz": true, "dogrulama": "Kim 2010 Tablo 1" },
+        { "aralik": "2,00–3,00", "ust": 3.0, "degisim": 0, "kosul": null, "atla": 0, "kontrol_gun": null, "yildiz": false, "dogrulama": "Kim 2010 Tablo 1" },
+        { "aralik": "3,01–3,99", "ust": 3.99, "degisim": -10, "kosul": "iki-olcum", "atla": 0, "kontrol_gun": [7, 14], "yildiz": true, "dogrulama": "Kim 2010 Tablo 1" },
+        { "aralik": "4,00–4,99", "ust": 4.99, "degisim": -10, "kosul": null, "atla": 1, "kontrol_gun": [7, 14], "yildiz": false, "dogrulama": "Kim 2010 Tablo 1" },
+        { "aralik": "5,00–8,99", "ust": 8.99, "degisim": -15, "kosul": null, "atla": "inr-aralikta", "kontrol_gun": null, "kontrol_metin": "INR stabil olana dek haftalık", "yildiz": false, "dogrulama": "Kim 2010 Tablo 1" },
+        { "aralik": "≥ 9,00", "ust": null, "degisim": null, "kosul": null, "atla": "kes", "kontrol_gun": null, "kontrol_metin": "daha sık izlem", "yildiz": false, "dogrulama": "Kim 2010 Tablo 1" }
+      ]
+    },
+    "2.5-3.5": {
+      "ad": "2,5–3,5",
+      "alt": 2.5,
+      "ust": 3.5,
+      "satirlar": [
+        { "aralik": "≤ 1,50", "ust": 1.5, "degisim": 20, "kosul": null, "atla": 0, "kontrol_gun": [7, 14], "yildiz": true, "dogrulama": "Kim 2010 Tablo 1" },
+        { "aralik": "1,51–1,99", "ust": 1.99, "degisim": 15, "kosul": "aciklanamiyor", "atla": 0, "kontrol_gun": [7, 14], "yildiz": true, "dogrulama": "Kim 2010 Tablo 1" },
+        { "aralik": "2,00–2,49", "ust": 2.49, "degisim": 10, "kosul": "iki-olcum", "atla": 0, "kontrol_gun": [7, 14], "yildiz": true, "dogrulama": "Kim 2010 Tablo 1" },
+        { "aralik": "2,50–3,50", "ust": 3.5, "degisim": 0, "kosul": null, "atla": 0, "kontrol_gun": null, "yildiz": false, "dogrulama": "Kim 2010 Tablo 1" },
+        { "aralik": "3,51–4,49", "ust": 4.49, "degisim": -10, "kosul": "iki-olcum", "atla": 0, "kontrol_gun": [7, 14], "yildiz": true, "dogrulama": "Kim 2010 Tablo 1" },
+        { "aralik": "4,50–4,99", "ust": 4.99, "degisim": -10, "kosul": null, "atla": 1, "kontrol_gun": [7, 14], "yildiz": false, "dogrulama": "Kim 2010 Tablo 1" },
+        { "aralik": "5,00–8,99", "ust": 8.99, "degisim": -15, "kosul": null, "atla": "inr-aralikta", "kontrol_gun": null, "kontrol_metin": "INR stabil olana dek haftalık", "yildiz": false, "dogrulama": "Kim 2010 Tablo 1" },
+        { "aralik": "≥ 9,00", "ust": null, "degisim": null, "kosul": null, "atla": "kes", "kontrol_gun": null, "kontrol_metin": "daha sık izlem", "yildiz": false, "dogrulama": "Kim 2010 Tablo 1" }
+      ]
+    }
+  },
+  "yuksek_inr": [
+    { "kosul": "inr-4.5-10", "alt": 4.5, "ust": 10, "metin": "INR 4,5–10 ve kanama yok: rutin K vitamini önerilmez (Holbrook 2012, derece 2B).", "dogrulama": "kim-2010-tablo1.json uygulama_notlari (Holbrook 2012)" },
+    { "kosul": "inr-10-ustu", "alt": 10, "ust": null, "metin": "INR > 10 ve kanama yok: oral K vitamini önerilir (Holbrook 2012, derece 2C). Doz için kılavuza bakın.", "dogrulama": "kim-2010-tablo1.json uygulama_notlari (Holbrook 2012)" },
+    { "kosul": "kanama", "metin": "Kanama var: INR değerinden bağımsız olarak varfarini kesin ve hastayı acil değerlendirin; dozu bu araçla ayarlamayın. Majör kanamada protrombin kompleks konsantresi (PCC) tercih edilir (Holbrook 2012).", "dogrulama": "kim-2010-tablo1.json ciddi_kanama + uygulama_notlari (Holbrook 2012)" }
+  ],
+  "destek": [
+    { "kunye": "Holbrook A ve ark. Evidence-based management of anticoagulant therapy: Antithrombotic Therapy and Prevention of Thrombosis, 9th ed: ACCP Evidence-Based Clinical Practice Guidelines. Chest 2012;141(2 Suppl):e152S-e184S.", "pmid": "22315259", "url": "https://doi.org/10.1378/chest.11-2295" },
+    { "kunye": "Nieuwlaat R ve ark. Cluster randomized controlled trial of a simple warfarin maintenance dosing algorithm versus usual care among primary care practices. J Thromb Thrombolysis 2014;37(4):435-42.", "pmid": "23877621", "url": "https://doi.org/10.1007/s11239-013-0969-x" },
+    { "kunye": "Mearns ES ve ark. Quality of vitamin K antagonist control and outcomes in atrial fibrillation patients: a meta-analysis and meta-regression. Thromb J 2014;12:14.", "pmid": "25024644", "url": "https://doi.org/10.1186/1477-9560-12-14" }
+  ]
+}
