@@ -20,6 +20,9 @@ jobs:
       - name: Veri dosyalarını denetle
         run: python3 tools/validate.py
 
+      - name: Araç hesaplarını test et
+        run: node --test
+
       - name: FTP bilgileri henüz tanımlı değil
         if: env.FTP_SERVER == ''
         run: echo "FTP secret'ları tanımlanmadığı için yükleme atlandı. README'deki adımlara bakın."
@@ -38,4 +41,5 @@ jobs:
             **/.git*/**
             .github/**
             tools/**
+            tests/**
             README.md

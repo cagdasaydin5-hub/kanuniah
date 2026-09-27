@@ -225,7 +225,7 @@ PAGES["araclar.html"] = head("Araçlar · Kanuni Aile Hekimliği",
   <p class="empty" id="empty" hidden>Bu aramayla eşleşen araç yok.</p>
   <p class="method">Bu araçlar karar desteği içindir; sonuç, hastanın klinik değerlendirmesinin yerine geçmez. İlaç dozu veren araçlar uzman kontrolünden sonra eklenecektir.</p>
 </div>
-""" % ICON + FOOT.replace("{extra}", '<script src="assets/araclar.js" defer></script>\n')
+""" % ICON + FOOT.replace("{extra}", '<script src="assets/araclar.js" defer></script>\n<script src="assets/arac-mama.js" defer></script>\n')
 
 for name, html in PAGES.items():
     html = html.replace("{extra}", "")
