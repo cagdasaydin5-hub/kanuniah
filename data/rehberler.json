@@ -64,49 +64,6 @@
    ]
   },
   {
-   "id": "hyp-tarama-takip",
-   "cat": "mevzuat",
-   "kind": "law",
-   "scope": "TR",
-   "status": "guncel",
-   "title": "Hastalık Yönetim Platformu (HYP) Tarama ve Takip Kılavuzu",
-   "org": "Halk Sağlığı Genel Müdürlüğü",
-   "year": null,
-   "pub": null,
-   "summary": "Aile hekimliği tarama ve takip katsayısının dayanağı. Hipertansiyon, diyabet, obezite, kardiyovasküler risk değerlendirmesi, 65 yaş üstü çok yönlü yaşlı değerlendirmesi ve kanser taramaları için hedef nüfusu, izlem sıklığını ve başarı oranı tanımlarını verir.",
-   "note": "",
-   "url": "https://hsgm.saglik.gov.tr/depo/birimler/aile-hekimligi-uygulama-ve-gelistirme-db/Dokumanlar/Yonerge/Ek_Hastalik_Yonetim_Platformu_HYP_Tarama_ve_Takip_Kilavuzu_1.pdf",
-   "alt": [
-    {
-     "label": "HYP sayfası",
-     "url": "https://hsgm.saglik.gov.tr/tr/hastalik-yonetim-platformu.html"
-    }
-   ],
-   "kw": "hyp performans katsayı tarama izlem yaşlı kvr obezite",
-   "aud": [
-    "hekim"
-   ]
-  },
-  {
-   "id": "hsgm-ht-2025",
-   "cat": "kardiyo",
-   "kind": "guide",
-   "scope": "TR",
-   "status": "guncel",
-   "title": "Hipertansiyon Tarama ve İzlem Kılavuzu (Erişkin)",
-   "org": "Halk Sağlığı Genel Müdürlüğü",
-   "year": 2025,
-   "pub": "2025-06-13",
-   "summary": "18–40 yaş arası riskli bireylerde yılda bir KB ölçümüyle tarama. Hedefe ulaşmış hastada KVR yüksek/çok yüksekse 6 ayda bir, düşük/ortaysa yılda bir izlem. Regüle olmayan hasta hekimin belirlediği sıklıkta (1–4 hafta) çağrılır. Semptomlu çok yüksek KB hipertansif acil kabul edilip sevk edilir.",
-   "note": "",
-   "url": "https://hsgm.saglik.gov.tr/media/attachments/2025/06/13/ht-tarama-izlem-kilavuzu.pdf",
-   "alt": [],
-   "kw": "hipertansiyon tansiyon kb hyp bakanlık",
-   "aud": [
-    "hekim"
-   ]
-  },
-  {
    "id": "esc-ht-2024",
    "cat": "kardiyo",
    "kind": "guide",
@@ -861,69 +818,6 @@
    "aud": [
     "hekim"
    ],
-   "id": "periyodik-muayene",
-   "cat": "koruyucu",
-   "title": "Periyodik Muayene Rehberi",
-   "org": "Halk Sağlığı Genel Müdürlüğü",
-   "summary": "Erişkinlerde yaş ve cinsiyete göre periyodik sağlık muayenesinde yapılacak sorgulama, ölçüm, tarama ve danışmanlık başlıklarını toplayan birinci basamak rehberi.",
-   "url": "https://hsgm.saglik.gov.tr/depo/birimler/kronik-hastaliklar-ve-yasli-sagligi-db/Dokumanlar/Kitaplar/Periyodik_Muayene_Rehberi.pdf",
-   "kw": "periyodik muayene check-up tarama erişkin koruyucu"
-  },
-  {
-   "kind": "guide",
-   "scope": "TR",
-   "status": "guncel",
-   "year": 2025,
-   "pub": null,
-   "note": "",
-   "alt": [],
-   "aud": [
-    "hekim"
-   ],
-   "id": "kvr-kilavuz-2025",
-   "cat": "kardiyo",
-   "title": "Kardiyovasküler Risk Değerlendirmesi Kılavuzu",
-   "org": "Halk Sağlığı Genel Müdürlüğü",
-   "summary": "Aile hekimliğinde kardiyovasküler risk hesaplama ve risk düzeyine göre izlem sıklığını tarif eden Bakanlık kılavuzu; HYP'deki KVR modülünün dayanağı.",
-   "url": "https://hsgm.saglik.gov.tr/media/attachments/2025/06/13/kardiyovaskuler-risk-degerlendirmesi-kilavuzu.pdf",
-   "kw": "kvr kardiyovasküler risk score2 hyp izlem"
-  },
-  {
-   "kind": "guide",
-   "scope": "TR",
-   "status": "guncel",
-   "year": 2025,
-   "pub": null,
-   "note": "",
-   "alt": [
-    {
-     "label": "Aile sağlığı çalışanları sürümü",
-     "url": "https://hsgm.saglik.gov.tr/media/attachments/2025/06/13/asC-yasli-degerlendirme-kilavuzu.pdf"
-    }
-   ],
-   "aud": [
-    "hekim",
-    "personel"
-   ],
-   "id": "yasli-degerlendirme-ah",
-   "cat": "yasli",
-   "title": "Çok Yönlü Yaşlı Değerlendirmesi ve İzlemi Kılavuzu (Aile Hekimleri İçin)",
-   "org": "Halk Sağlığı Genel Müdürlüğü",
-   "summary": "65 yaş üstü bireylerde düşme, kırılganlık, bilişsel durum, beslenme, polifarmasi ve fonksiyonel kapasitenin birinci basamakta nasıl değerlendirilip izleneceği.",
-   "url": "https://hsgm.saglik.gov.tr/media/attachments/2025/06/13/Cok-yonlu-yasli-degereldnirmesi-ve-Izlemi-kilavuzu-ah.pdf",
-   "kw": "yaşlı değerlendirme kırılganlık düşme demans polifarmasi geriatri"
-  },
-  {
-   "kind": "guide",
-   "scope": "TR",
-   "status": "guncel",
-   "year": null,
-   "pub": null,
-   "note": "",
-   "alt": [],
-   "aud": [
-    "hekim"
-   ],
    "id": "yasli-tani-tedavi",
    "cat": "yasli",
    "title": "Yaşlı Sağlığı Tanı Tedavi Rehberi",
@@ -951,26 +845,6 @@
    "summary": "KOAH ve diğer kronik solunum hastalarının evde izlemi: uzun süreli oksijen, cihaz kullanımı ve evde bakım ekibinin yapacakları.",
    "url": "https://hsgm.saglik.gov.tr/depo/birimler/kronik-hastaliklar-ve-yasli-sagligi-db/Dokumanlar/Rehberler/Gogus_Hastaliklarinda_Evde_Saglik_Hizmeti.pdf",
    "kw": "evde sağlık koah oksijen konsantratör bipap solunum"
-  },
-  {
-   "kind": "guide",
-   "scope": "TR",
-   "status": "guncel",
-   "year": 2025,
-   "pub": null,
-   "note": "",
-   "alt": [],
-   "aud": [
-    "personel",
-    "hekim"
-   ],
-   "id": "vital-bulgular-asc",
-   "cat": "kronik",
-   "title": "Kronik Hastalıklarda Vital Bulguların Ölçülmesi ve Yaşam Tarzı Önerileri Kılavuzu (Aile Sağlığı Çalışanları İçin)",
-   "org": "Halk Sağlığı Genel Müdürlüğü",
-   "summary": "Tansiyon, nabız, boy-kilo, bel çevresi gibi ölçümlerin doğru tekniği ve kronik hastalara verilecek yaşam tarzı önerileri; hemşire ve ebeler için.",
-   "url": "https://hsgm.saglik.gov.tr/media/attachments/2025/06/13/kronik-hastaliklarda-vital-bulgularin-Olculmesi-ve-yasam-tarzi-Onerileri-kilavuzu.pdf",
-   "kw": "vital bulgu tansiyon ölçümü bel çevresi yaşam tarzı hemşire ebe"
   },
   {
    "kind": "guide",
@@ -1057,34 +931,6 @@
    "summary": "Prematüre, düşük doğum ağırlıklı ve yenidoğan yoğun bakımdan çıkan bebeklerin birinci basamakta izlem takvimi ve dikkat edilecek konular.",
    "url": "https://hsgm.saglik.gov.tr/depo/birimler/cocuk-ergen-sagligi-db/Dokumanlar/Kitaplar/Yuksek_Riskli_Bebek_Izlem_Rehberi.pdf",
    "kw": "prematüre riskli bebek izlem ydbü"
-  },
-  {
-   "kind": "guide",
-   "scope": "TR",
-   "status": "guncel",
-   "year": null,
-   "pub": null,
-   "note": "",
-   "alt": [
-    {
-     "label": "D vitamini programı",
-     "url": "https://hsgm.saglik.gov.tr/tr/beslenme-programlari/d-vitamini-eksikligi-onleme-kontrol-programi.html"
-    },
-    {
-     "label": "Demir Gibi Türkiye",
-     "url": "https://hsgm.saglik.gov.tr/tr/beslenme-programlari/demir-gibi-turkiye.html"
-    }
-   ],
-   "aud": [
-    "hekim"
-   ],
-   "id": "d-vitamini-demir",
-   "cat": "anne-cocuk",
-   "title": "D Vitamini ve Demir Destek Programları",
-   "org": "Halk Sağlığı Genel Müdürlüğü",
-   "summary": "Bebek, çocuk ve gebelerde Bakanlığın ücretsiz D vitamini ve demir desteği programlarının uygulanma esasları.",
-   "url": "https://hsgm.saglik.gov.tr/depo/birimler/cocuk-ergen-sagligi-db/Programlar/D_vitamini_Rehberi.pdf",
-   "kw": "d vitamini demir profilaksi bebek gebe anemi raşitizm"
   },
   {
    "kind": "guide",
@@ -1197,7 +1043,7 @@
    "year": 2026,
    "pub": "2026-02-27",
    "summary": "Yedi derneğin ortak raporu; TAHUD ilk kez yazarlar arasında. Ofiste ≥140/90 hipertansiyon, 18–79 yaşta hedef 120–130/70–80 mmHg; ≥140/90 olan herkese tercihen tek tablette ikili kombinasyonla başlanır. Artmış KB'de (120–139/80–89) ilaç eşiği ESC 2024'ten daha tutucu (SCORE2 >%15, SCORE2-OP >%20).",
-   "note": "Dinç ≥80 yaş hedefinde tablo (130–140) ile metin (140–150) arasında tutarsızlık var; kırılganlarda hedef 140–150. Öneri sınıfı/kanıt düzeyi vermez, ESC 2024 ile birlikte okunmalı. Tarama sıklığı ve HYP işleyişi için Bakanlık kılavuzu geçerli.",
+   "note": "Dinç ≥80 yaş hedefinde tablo (130–140) ile metin (140–150) arasında tutarsızlık var; kırılganlarda hedef 140–150. Öneri sınıfı/kanıt düzeyi vermez, ESC 2024 ile birlikte okunmalı.",
    "url": "https://www.archivestsc.com/tr/jvi.aspx?un=TKDA-23791&volume=54&issue=3",
    "alt": [
     {

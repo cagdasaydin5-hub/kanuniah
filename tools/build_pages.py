@@ -112,7 +112,7 @@ PAGES["index.html"] = head("Kanuni Aile Hekimliği",
     <a class="tile" href="makaleler.html"><span class="n" id="nPapers">–</span><b>Haftanın makaleleri</b><span>Birinci basamak için önem sırasıyla, Türkçe özet</span></a>
     <a class="tile" href="araclar.html"><span class="n">20</span><b>Araçlar</b><span>Böbrek, AF, pnömoni, bası yarası, yaşlı değerlendirme, aşı planlayıcı</span></a>
     <a class="tile" href="personel.html"><span class="n" id="nStaff">–</span><b>Hemşire &amp; personel</b><span>Yara, beslenme, enfeksiyon kontrolü, kalite standartları</span></a>
-    <a class="tile" href="rehberler.html"><span class="n" id="nLaw">–</span><b>Mevzuat</b><span>Evde sağlık, palyatif bakım, aile hekimliği düzenlemeleri</span></a>
+    <a class="tile" href="rehberler.html"><span class="n" id="nLaw">–</span><b>Mevzuat</b><span>Evde sağlık ve palyatif bakım düzenlemeleri</span></a>
   </div>
 
   <section class="block">
@@ -186,7 +186,7 @@ PAGES["hakkinda.html"] = head("Hakkımızda · Kanuni Aile Hekimliği",
 
     <h2>Neler var?</h2>
     <ul>
-      <li><b>Rehberler ve mevzuat:</b> Türk ve uluslararası klinik rehberler; evde sağlık, palyatif bakım ve aile hekimliği mevzuatı.</li>
+      <li><b>Rehberler ve mevzuat:</b> Türk ve uluslararası klinik rehberler; evde sağlık ve palyatif bakım mevzuatı.</li>
       <li><b>Haftanın makaleleri:</b> Birinci basamağı ilgilendiren önemli çalışmalar, Türkçe özet ve şeffaf bir önem puanıyla.</li>
       <li><b>Hemşire ve personel köşesi:</b> Bakım, enfeksiyon kontrolü ve kalite standartlarıyla ilgili kaynaklar.</li>
     </ul>
@@ -225,7 +225,7 @@ PAGES["araclar.html"] = head("Araçlar · Kanuni Aile Hekimliği",
   <div class="page-head">
     <div class="eyebrow">Klinik araçlar</div>
     <h1>Araçlar</h1>
-    <p class="lede">Poliklinikte, sahada ve evde sağlık ziyaretinde en sık gereken hesaplayıcılar. Her aracın altında kaynağı yazar. Hesaplar yalnızca bu cihazda yapılır; girilen değerler hiçbir yere gönderilmez ve kaydedilmez.</p>
+    <p class="lede">Poliklinikte, serviste ve evde sağlık ziyaretinde en sık gereken hesaplayıcılar. Her aracın altında kaynağı yazar. Hesaplar yalnızca bu cihazda yapılır; girilen değerler hiçbir yere gönderilmez ve kaydedilmez.</p>
   </div>
   <div class="bar">
     <label class="search" for="q">%s<input id="q" type="search" placeholder="Araç ara: ör. böbrek, AF, bası yarası, depresyon, aşı" autocomplete="off"></label>
