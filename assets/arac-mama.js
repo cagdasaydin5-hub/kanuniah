@@ -171,6 +171,15 @@
     return { score: s, cls: s >= 12 ? "normal" : s >= 8 ? "risk" : "malnutrisyon" };
   }
 
+  /* ---------- SUT 4.2.8.A (yetişkin) ---------- */
+  function sut428(v) {
+    var muaf = v.m1 || v.m2 || v.m3;
+    if (muaf) return { durum: "muaf", yatan: !!v.m1 };
+    var any = v.k1 || v.k2 || v.k3 || v.k4 || v.k5;
+    if (!any) return null;
+    return { durum: (v.k1 || v.k2) && v.k3 && (v.k4 || v.k5) ? "karsilaniyor" : "karsilanmiyor" };
+  }
+
   /* ---------- mama kataloğu ---------- */
   var TUR = [["standart", "Standart"], ["yuksek-protein", "Yüksek protein"], ["diyabetik", "Diyabetik"],
              ["bobrek", "Böbrek"], ["lifli", "Lifli"], ["peptit", "Peptit"]];
@@ -270,6 +279,36 @@
       note: "Her ürünün değerleri yalnızca üreticinin resmi ürün sayfasından alınır; bağlantı ürün kartındadır. Reçetelemeden önce güncel etiketi kontrol edin."
     },
     {
+      id: "sut-enteral", g: "enteral", t: "SUT 4.2.8.A – yetişkinde enteral ürün raporu",
+      d: "SGK'nın enteral beslenme ürünü bedelini ödeme koşulları: malnütrisyon tanımı, rapor süresi ve içeriği.",
+      kw: "sut sgk rapor enteral mama sağlık kurulu malnütrisyon 1200 kcal kıvam artırıcı reçete 4.2.8",
+      col: true,
+      empty: "Hastanın durumuna uyan maddeleri işaretleyin. Koşulsuz gruplardan biri varsa malnütrisyon tanımı aranmaz.",
+      f: [{ k: "head", l: "Malnütrisyon koşulu aranmayan hastalar:" },
+          { id: "m1", k: "chk", l: "Yatan hasta" },
+          { id: "m2", k: "chk", l: "Kanser hastası" },
+          { id: "m3", k: "chk", l: "Tüple beslenen hasta (orogastrik, nazogastrik, nazoenterik sonda ya da gastrostomi, jejunostomi, gastrojejunostomi)" },
+          { k: "head", l: "Malnütrisyon tanımı – 1, 2 ve 3 birlikte gerekir:" },
+          { id: "k1", k: "chk", l: "1a. İstemsiz kilo kaybı: son 6 ayda %5'ten fazla ya da 6 aydan uzun sürede %10'dan fazla" },
+          { id: "k2", k: "chk", l: "1b. VKİ: 70 yaş ve üzerinde 22'nin, 70 yaşın altında 20'nin altında (1a ya da 1b yeterli)" },
+          { id: "k3", k: "chk", l: "2. Malnütrisyona yol açan eşlik eden hastalık ya da travma" },
+          { id: "k4", k: "chk", l: "3a. Besin alımında azalma: 1 hafta boyunca enerji ihtiyacının %50'sinden az ya da 2 hafta boyunca herhangi bir azalma" },
+          { id: "k5", k: "chk", l: "3b. Sindirimi ya da emilimi bozan bir gastrointestinal hastalık (3a ya da 3b yeterli)" }],
+      calc: function (v) {
+        var x = sut428(v); if (!x) return null;
+        var icerik = "Raporda: ürünün adı, günlük kalori ihtiyacı ve buna göre günlük kullanım miktarı, vücut ağırlığı, boy ve varsa eşlik eden hastalığın ICD-10 kodu. Reçete en fazla 30 günlük doz.";
+        if (x.durum === "muaf") return { main: "Malnütrisyon koşulu aranmaz", level: "ok",
+          sub: (x.yatan ? "Yatan hastada rapor koşulu yoktur. " : "") + "Yatan hastalar dışında bu durumun yazıldığı 6 ay süreli (nörolojik hastalıklarda 1 yıl) sağlık kurulu raporuyla tüm hekimler reçete edebilir. " + icerik };
+        if (x.durum === "karsilaniyor") return { main: "SUT malnütrisyon tanımı karşılanıyor", level: "ok",
+          sub: "3 ay süreli sağlık kurulu raporuyla tüm hekimler reçete edebilir; günlük en fazla 1200 kcal. " + icerik };
+        return { main: "Tanım karşılanmıyor", level: "mid",
+          sub: "Kilo kaybı ya da VKİ ölçütü (1), eşlik eden hastalık ya da travma (2) ve besin alımında azalma ya da GİS hastalığı (3) birlikte gerekir. Diyet tedavisi ya da obezite cerrahisine bağlı kilo kaybı malnütrisyon sayılmaz." };
+      },
+      src: [["Sağlık Uygulama Tebliği, madde 4.2.8.A – SGK, 29.08.2026 değişiklikleri işlenmiş güncel metin",
+             "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04"]],
+      note: "Diğer hükümler (aynı madde): kıvam artırıcı ürünler – inme, kronik nörolojik bozukluk, baş-boyun kanseri ve cerrahi rezeksiyona bağlı yutma güçlüğünde; nöroloji, KBB, genel cerrahi, beyin cerrahisi, anestezi ve yoğun bakım, geriatri, tıbbi onkoloji ya da radyasyon onkolojisi uzmanlarından en az birinin bulunduğu sağlık kurulu raporuyla tüm uzman hekimler, ayda en fazla iki kutu. Dallı zincirli aminoasitten zengin ürünler – evre 2 ve üzeri ensefalopatili karaciğer yetmezliğinde, malnütrisyon ölçütü aranmadan, gastroenteroloji ya da iç hastalıkları uzman raporuyla tüm hekimler. Özet kendi cümlelerimizledir; karar için metnin kendisine bakın."
+    },
+    {
       id: "nrs2002", g: "enteral", t: "NRS-2002 (beslenme riski taraması)",
       d: "Yatan ve evde izlenen erişkinde malnütrisyon riskini tarar.",
       kw: "nrs 2002 nrs-2002 malnütrisyon beslenme riski tarama kondrup espen",
@@ -332,7 +371,7 @@
     }
   ];
 
-  var api = { Ek: Ek, TOOLS: TOOLS, GROUPS: GROUPS, TUR: TUR, nrs2002: nrs2002, mnasf: mnasf, filterProducts: filterProducts };
+  var api = { Ek: Ek, TOOLS: TOOLS, GROUPS: GROUPS, TUR: TUR, nrs2002: nrs2002, mnasf: mnasf, sut428: sut428, filterProducts: filterProducts };
   if (typeof window !== "undefined" && typeof document !== "undefined") {
     window.KanuniEk = Ek;
     var go = function () { Ek.register(GROUPS, TOOLS); };

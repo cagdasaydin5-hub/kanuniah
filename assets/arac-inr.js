@@ -53,7 +53,8 @@
   }
   function kucuk(a, b) { for (var i = 0; i < a.length; i++) { if (a[i] !== b[i]) return a[i] < b[i]; } return false; }
 
-  /* Ana hesap. g: {hedef:"2-3"|"2.5-3.5", inr, ceyrekler[7], tabletMg, kanama, degisim (hekimin %'si; boşsa NaN)} */
+  /* Ana hesap. g: {hedef:"2-3"|"2.5-3.5", inr, onceki (önceki INR; yoksa NaN), aciklanabilir (düşüklüğün açıklanabilir
+     nedeni var mı), ceyrekler[7], tabletMg, kanama, degisim (hekimin %'si; boşsa NaN)} */
   function hesapla(alg, g) {
     var hedef = alg.hedefler[g.hedef];
     if (!hedef || !(g.inr > 0)) return null;
@@ -63,15 +64,25 @@
       out.uyarilar.push(yuksek(alg, "kanama").metin);
       return out;
     }
-    if (g.inr >= 4.5 && g.inr <= 10) out.uyarilar.push(yuksek(alg, "inr-4.5-10").metin);
+    if (g.inr >= 4.5 - EPS && g.inr <= 10 + EPS) out.uyarilar.push(yuksek(alg, "inr-4.5-10").metin);
     else if (g.inr > 10) out.uyarilar.push(yuksek(alg, "inr-10-ustu").metin);
-    var eski = haftalikMg(g.ceyrekler, g.tabletMg);
     var satir = satirBul(hedef, g.inr);
-    out.satir = satir; out.eskiMg = eski; out.onerilen = satir.degisim;
+    out.satir = satir;
     out.aralikta = g.inr >= hedef.alt - EPS && g.inr <= hedef.ust + EPS;
-    out.yakin = !out.aralikta && g.inr >= hedef.alt - 0.5 - EPS && g.inr <= hedef.ust + 0.5 + EPS; // aralığın en çok 0,5 dışında
+    /* Koşullu satırlar. 'iki-olcum': önceki INR de aralığın aynı tarafındaysa (iki ölçümde düşük ya da yüksek) uygulanır.
+       'aciklanamiyor': düşüklüğün açıklanabilir nedeni yoksa uygulanır. Koşul sağlanmazsa tablo doz değişikliği önermez. */
+    out.kosul = null;
+    if (satir.kosul === "iki-olcum") {
+      if (!(g.onceki > 0)) out.kosul = "bekliyor";
+      else out.kosul = (satir.degisim > 0 ? g.onceki < hedef.alt - EPS : g.onceki > hedef.ust + EPS) ? "saglandi" : "saglanmadi";
+    } else if (satir.kosul === "aciklanamiyor") out.kosul = g.aciklanabilir ? "saglanmadi" : "saglandi";
+    out.onerilen = satir.degisim == null ? null : out.kosul === "saglanmadi" ? 0 : satir.degisim;
+    var eski = haftalikMg(g.ceyrekler, g.tabletMg);
+    out.eskiMg = eski;
     if (!(eski > 0)) return out;
-    var uyg = isFinite(g.degisim) ? g.degisim : satir.degisim;
+    var hekim = isFinite(g.degisim);
+    if (!hekim && (out.kosul === "bekliyor" || out.onerilen == null)) return out; // karar önceki INR'ye bağlı ya da tablo doz vermiyor
+    var uyg = hekim ? g.degisim : out.onerilen;
     out.uygulanan = uyg;
     out.hedefMg = eski * (1 + uyg / 100);
     out.plan = dagit(out.hedefMg, g.tabletMg);
@@ -80,10 +91,20 @@
   }
   function yuksek(alg, kosul) { return alg.yuksek_inr.filter(function (x) { return x.kosul === kosul; })[0]; }
 
-  function atlaYazi(a) {
-    if (a === "inr-aralikta") return "INR hedef aralığa inene kadar varfarine ara verin, sonra yeni haftalık dozla devam edin.";
-    if (a > 0) return a + " doz atlayın, sonra yeni haftalık dozla devam edin.";
+  function atlaYazi(s) {
+    if (s.atla === "kes") return "Varfarini kesin. Tablo bu INR düzeyinde yeni doz vermez; yeniden başlama dozunu hekim belirler.";
+    if (s.atla === "inr-aralikta") return "Varfarine ara verin; INR hedef aralığa inince yeni (azaltılmış) haftalık dozla yeniden başlayın.";
+    if (s.atla > 0) return s.atla + " gün varfarin vermeyin, sonra yeni haftalık dozla devam edin.";
+    if (s.degisim < 0) return "Varfarine ara vermeyin.";
     return "";
+  }
+  function kontrolYazi(s) {
+    var kg = s.kontrol_gun;
+    if (s.kontrol_metin) return "Sonraki INR: " + s.kontrol_metin + ".";
+    if (!kg) return "Sonraki INR: önceki kontrol aralığını sürdürün.";
+    var d0 = new Date(); d0.setHours(0, 0, 0, 0);
+    var tarih = function (n) { var d = new Date(d0.getTime()); d.setDate(d.getDate() + n); return d.toLocaleDateString("tr-TR", { day: "numeric", month: "long", weekday: "short" }); };
+    return "Sonraki INR: " + (kg[0] === kg[1] ? kg[0] + " gün sonra (" + tarih(kg[0]) + ")" : kg[0] + "–" + kg[1] + " gün sonra (" + tarih(kg[0]) + " – " + tarih(kg[1]) + ")") + ".";
   }
 
   /* ---------- arayüz ---------- */
@@ -113,15 +134,19 @@
 
     var f1 = el("div", "fields");
     var hedef = sel("hedef", [["2-3", "2,0–3,0"], ["2.5-3.5", "2,5–3,5"]]);
-    var inr = txt("inr");
+    var inr = txt("inr"), onceki = txt("onceki", "koşullu satırlarda sorulur");
     var tablet = sel("tablet", [["5", "5 mg"], ["2", "2 mg"]]);
     f1.appendChild(fld("Hedef INR aralığı", hedef));
     f1.appendChild(fld("Güncel INR", inr));
+    f1.appendChild(fld("Önceki INR", onceki));
     f1.appendChild(fld("Kullanılan tablet", tablet));
     form.appendChild(f1);
 
     var kan = document.createElement("input"); kan.type = "checkbox"; kan.name = "kanama";
-    var f2 = el("div", "fields col"); f2.appendChild(fld("Hastada kanama var", kan)); form.appendChild(f2);
+    var acik = document.createElement("input"); acik.type = "checkbox"; acik.name = "aciklanabilir";
+    var f2 = el("div", "fields col"); f2.appendChild(fld("Hastada kanama var", kan));
+    var acikLab = fld("Düşük INR'nin açıklanabilir nedeni var (atlanmış doz, yeni ilaç, beslenme değişikliği)", acik);
+    acikLab.style.display = "none"; f2.appendChild(acikLab); form.appendChild(f2);
 
     form.appendChild(el("p", "hint", "Şu an kullandığı günlük tablet sayısı (¼ tablet adımlarıyla):"));
     var f3 = el("div", "fields"); f3.style.gridTemplateColumns = "repeat(auto-fit,minmax(118px,1fr))";
@@ -142,28 +167,45 @@
       res.innerHTML = ""; res.className = "result";
       if (!alg) { res.appendChild(el("span", "hint", "Algoritma yükleniyor…")); return; }
       var tb = +tablet.value;
-      var o = hesapla(alg, { hedef: hedef.value, inr: num(inr.value), tabletMg: tb, kanama: kan.checked,
-        ceyrekler: gunSel.map(function (s) { return +s.value; }), degisim: num(deg.value) });
-      if (!o) { res.appendChild(el("span", "hint", "Hedef aralığı, güncel INR'yi ve günlük tablet çizelgesini girin.")); return; }
+      var o = hesapla(alg, { hedef: hedef.value, inr: num(inr.value), onceki: num(onceki.value), aciklanabilir: acik.checked,
+        tabletMg: tb, kanama: kan.checked, ceyrekler: gunSel.map(function (s) { return +s.value; }), degisim: num(deg.value) });
+      acikLab.style.display = o && o.satir && o.satir.kosul === "aciklanamiyor" ? "" : "none";
+      if (!o) { res.appendChild(el("span", "hint", "Hedef aralığı, güncel INR'yi ve şu anki günlük tablet çizelgesini girin.")); return; }
       function p(t, c) { res.appendChild(el("p", c || null, t)); }
-      if (o.kanama) { res.className += " high"; res.appendChild(el("b", null, "Kanama – acil değerlendirme")); o.uyarilar.forEach(function (u) { p(u, "warn"); }); return; }
+      function uyar() { o.uyarilar.forEach(function (u) { p(u, "warn"); }); }
+      if (o.kanama) { res.className += " high"; res.appendChild(el("b", null, "Kanama – acil değerlendirme")); uyar(); return; }
       var s = o.satir, isaret = function (x) { return (x > 0 ? "+" : x < 0 ? "−" : "") + "%" + fmt(Math.abs(x), 1); };
-      deg.placeholder = "önerilen " + isaret(s.degisim);
-      if (!(o.eskiMg > 0)) {
-        res.appendChild(el("b", null, "INR " + s.aralik + " → önerilen " + isaret(s.degisim)));
-        o.uyarilar.forEach(function (u) { p(u, "warn"); });
-        p("Yeni dozu hesaplamak için günlük tablet çizelgesini girin.");
+      deg.placeholder = o.onerilen == null ? "tabloda yok" : "önerilen " + isaret(o.onerilen);
+      res.className += " " + (o.aralikta ? "ok" : s.atla ? "high" : "mid");
+      var satirYazi = "INR " + fmt(num(inr.value), 2) + " (hedef " + o.hedef.ad + "; Kim 2010 satırı " + s.aralik + ")";
+      var kosulYazi = "";
+      if (o.kosul === "bekliyor") kosulYazi = "Bu satırda doz, INR iki veya daha fazla ölçümde " + (s.degisim > 0 ? "düşük" : "yüksek") + " ise değiştirilir: önceki INR'yi girin.";
+      else if (s.kosul === "iki-olcum") kosulYazi = o.kosul === "saglandi" ?
+        "Önceki INR de aralığın " + (s.degisim > 0 ? "altında" : "üstünde") + ": iki ölçümde " + (s.degisim > 0 ? "düşük" : "yüksek") + " → " + isaret(s.degisim) + "." :
+        "Önceki INR aralığın " + (s.degisim > 0 ? "altında" : "üstünde") + " değil: tek ölçüm, tablo doz değişikliği önermez.";
+      else if (s.kosul === "aciklanamiyor") kosulYazi = o.kosul === "saglandi" ? "Açıklanabilir neden yok → " + isaret(s.degisim) + "." :
+        "Açıklanabilir neden var: tablo doz değişikliği önermez; nedeni düzeltin.";
+      if (!o.plan) {
+        res.appendChild(el("b", null, o.kosul === "bekliyor" ? "Önceki INR gerekli" : o.onerilen == null ? "Varfarini kesin" :
+          "Önerilen değişim " + isaret(o.onerilen)));
+        uyar();
+        p(satirYazi + ".");
+        if (kosulYazi) p(kosulYazi);
+        var a0 = atlaYazi(s); if (a0) p(a0);
+        if (!(o.eskiMg > 0)) p("Yeni haftalık dozu hesaplamak için şu anki günlük tablet çizelgesini girin.");
+        else if (o.onerilen == null) p("Yeniden başlama dozunu belirlediyseniz değişim % alanına girerek günlere dağılımı görebilirsiniz.");
+        p(kontrolYazi(s));
         return;
       }
-      res.className += " " + (o.aralikta ? "ok" : (s.atla ? "high" : "mid"));
       res.appendChild(el("b", null, fmt(o.eskiMg, 2) + " → " + fmt(o.plan.toplam, 2) + " mg/hafta"));
-      o.uyarilar.forEach(function (u) { p(u, "warn"); });
-      p("INR " + fmt(num(inr.value), 2) + " (hedef " + o.hedef.ad + ", algoritma satırı " + s.aralik + "): önerilen değişim " + isaret(s.degisim) +
-        (o.uygulanan !== s.degisim ? "; hekimin uyguladığı " + isaret(o.uygulanan) : "") +
-        ". Hedeflenen " + fmt(o.hedefMg, 2) + " mg, tabletle ulaşılan " + fmt(o.plan.toplam, 2) + " mg; gerçekleşen değişim " + isaret(o.gerceklesen) + ".");
-      var a = atlaYazi(s.atla); if (a) p(a);
-      if (o.uygulanan === 0) p("Haftalık doz değişmez; mevcut çizelgeyle devam edin.");
+      uyar();
+      p(satirYazi + ": önerilen değişim " + (o.onerilen == null ? "tabloda yok" : isaret(o.onerilen)) +
+        (o.uygulanan !== o.onerilen ? "; hekimin uyguladığı " + isaret(o.uygulanan) : "") + ".");
+      if (kosulYazi) p(kosulYazi);
+      var a = atlaYazi(s); if (a) p(a);
+      if (o.uygulanan === 0) p("Haftalık doz değişmez; şu anki çizelgeyle devam edin.");
       else {
+        p("Hedeflenen " + fmt(o.hedefMg, 2) + " mg; " + tb + " mg tabletle ulaşılan " + fmt(o.plan.toplam, 2) + " mg; gerçekleşen değişim " + isaret(o.gerceklesen) + ".");
         var tw = el("div", "tablewrap"), t = el("table", "asi"), th = el("tr");
         ["Gün", "Tablet (" + tb + " mg)", "Doz"].forEach(function (h) { th.appendChild(el("th", null, h)); });
         var thead = el("thead"); thead.appendChild(th); t.appendChild(thead);
@@ -174,13 +216,8 @@
         });
         t.appendChild(tbody); t.style.minWidth = "0"; tw.appendChild(t); res.appendChild(tw);
       }
-      var kg = s.kontrol_gun;
-      if (kg) {
-        var d0 = new Date(); d0.setHours(0, 0, 0, 0);
-        var tarih = function (n) { var d = new Date(d0.getTime()); d.setDate(d.getDate() + n); return d.toLocaleDateString("tr-TR", { day: "numeric", month: "long", weekday: "short" }); };
-        p("Sonraki INR: " + (kg[0] === kg[1] ? kg[0] + " gün sonra (" + tarih(kg[0]) + ")" : kg[0] + "–" + kg[1] + " gün sonra (" + tarih(kg[0]) + " – " + tarih(kg[1]) + ")") + ".");
-      } else p("Sonraki INR: önceki kontrol aralığını sürdürün.");
-      if (o.yakin && alg.notlar && alg.notlar[0]) p(alg.notlar[0].metin);
+      p(kontrolYazi(s));
+      if (s.yildiz) p("Bu satırda klinik yargıyla algoritmadan sapılabilir (Kim 2010, Tablo 1 dipnotu).");
     }
     form.addEventListener("input", run); form.addEventListener("change", run);
     reset.addEventListener("click", function () { form.reset(); run(); });
@@ -193,11 +230,11 @@
     d: "INR ve haftalık doza göre yeni haftalık doz, ¼/½ tabletle günlük dağılım ve sonraki INR zamanı.",
     kw: "varfarin warfarin coumadin orfarin inr doz ayarı antikoagülan kumadin k vitamini kanama",
     custom: build,
-    src: [["Kim YK ve ark. J Thromb Haemost 2010;8:101–6 (iki basamaklı idame algoritması)", "https://pubmed.ncbi.nlm.nih.gov/19840361/"],
-          ["Van Spall HGC ve ark. Circulation 2012;126:2309–16", "https://pubmed.ncbi.nlm.nih.gov/23027801/"],
-          ["Holbrook A ve ark. Chest 2012;141:e152S–84S", "https://pubmed.ncbi.nlm.nih.gov/22315259/"],
-          ["Nieuwlaat R ve ark. J Thromb Thrombolysis 2014;37:435–42", "https://pubmed.ncbi.nlm.nih.gov/23877621/"]],
-    note: "Algoritma eşikleri kaynak PDF ile karşılaştırılıp doğrulanana kadar taslaktır. Birinci basamakta yapılan küme randomize çalışmada bu algoritma olağan bakıma üstün bulunmadı (ortalama TTR %72,1'e karşı %71,4; p = 0,73 – Nieuwlaat 2014). Öneri hekim kararının yerine geçmez; ilaç etkileşimi, beslenme değişikliği ve uyum ayrıca değerlendirilmelidir."
+    src: [["Kim YK ve ark. J Thromb Haemost 2010;8:101–6, Tablo 1 (iki basamaklı idame algoritması)", "https://doi.org/10.1111/j.1538-7836.2009.03652.x"],
+          ["Holbrook A ve ark. Chest 2012;141:e152S–84S (yüksek INR ve kanama)", "https://doi.org/10.1378/chest.11-2295"],
+          ["Nieuwlaat R ve ark. J Thromb Thrombolysis 2014;37:435–42", "https://doi.org/10.1007/s11239-013-0969-x"],
+          ["Mearns ES ve ark. Thromb J 2014;12:14", "https://doi.org/10.1186/1477-9560-12-14"]],
+    note: "Eşikler ve yüzdeler Kim 2010 Tablo 1'den birebir alınmıştır; algoritma varfarinle stabil idame hastaları içindir. Tablodaki K vitamini dozları kullanılmaz; yerine Holbrook 2012 uyarıları gösterilir. Algoritma bir antikoagülasyon kliniğinin deneyimine dayanır ve resmi olarak valide edilmemiştir: Kim 2010'daki öncesi–sonrası çalışmada TTR hedef 2–3'te %67,2'den %73,2'ye, 2,5–3,5'te %49,8'den %63,8'e çıktı; birinci basamakta yapılan küme randomize çalışmada olağan bakıma üstün bulunmadı (ortalama TTR %72,1'e karşı %71,4; p = 0,73 – Nieuwlaat 2014). AF'de VKA meta-analizinde tromboembolilerin %57'si INR < 2, kanamaların %42'si INR > 3 iken oldu (Mearns 2014). Öneri hekim kararının yerine geçmez; ilaç etkileşimi, beslenme ve uyum ayrıca değerlendirilmelidir."
   };
 
   if (typeof window !== "undefined" && typeof document !== "undefined") {

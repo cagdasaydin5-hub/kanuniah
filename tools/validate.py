@@ -81,16 +81,20 @@ if INR is not None:
         rows, onceki = h.get("satirlar") or [], -1
         if not rows: err.append("inr-algoritma %s: satır yok" % hid)
         for n, s in enumerate(rows):
-            for kk in ("aralik", "ust", "degisim", "atla", "kontrol_gun", "dogrulama"):
+            for kk in ("aralik", "ust", "degisim", "kosul", "atla", "kontrol_gun", "yildiz", "dogrulama"):
                 if kk not in s: err.append("inr-algoritma %s satır %d: '%s' eksik" % (hid, n + 1, kk))
             u = s.get("ust")
             if u is None and n != len(rows) - 1: err.append("inr-algoritma %s: üst sınırı olmayan satır yalnızca sonda olabilir" % hid)
             if u is not None:
                 if not sayi(u, 0, 20) or u <= onceki: err.append("inr-algoritma %s satır %d: ust artan sırada sayı olmalı" % (hid, n + 1))
                 else: onceki = u
-            if not sayi(s.get("degisim"), -50, 50): err.append("inr-algoritma %s satır %d: degisim -50..50 olmalı" % (hid, n + 1))
             a = s.get("atla")
-            if not (a == "inr-aralikta" or (isinstance(a, int) and 0 <= a <= 3)): err.append("inr-algoritma %s satır %d: atla 0-3 ya da 'inr-aralikta'" % (hid, n + 1))
+            if not (a in ("inr-aralikta", "kes") or (isinstance(a, int) and not isinstance(a, bool) and 0 <= a <= 3)):
+                err.append("inr-algoritma %s satır %d: atla 0-3, 'inr-aralikta' ya da 'kes'" % (hid, n + 1))
+            if s.get("degisim") is None:
+                if a != "kes": err.append("inr-algoritma %s satır %d: degisim yalnızca atla 'kes' iken boş olabilir" % (hid, n + 1))
+            elif not sayi(s.get("degisim"), -50, 50): err.append("inr-algoritma %s satır %d: degisim -50..50 olmalı" % (hid, n + 1))
+            if s.get("kosul") not in (None, "iki-olcum", "aciklanamiyor"): err.append("inr-algoritma %s satır %d: kosul null|iki-olcum|aciklanamiyor" % (hid, n + 1))
             kg = s.get("kontrol_gun")
             if kg is not None and not (isinstance(kg, list) and len(kg) == 2 and all(sayi(x, 1, 84) for x in kg) and kg[0] <= kg[1]):
                 err.append("inr-algoritma %s satır %d: kontrol_gun [en erken, en geç] gün olmalı" % (hid, n + 1))

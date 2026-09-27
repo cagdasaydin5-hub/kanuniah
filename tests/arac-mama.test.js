@@ -61,3 +61,17 @@ test("Araç tanımları: her araçta grup, başlık ve (katalog dışında) kayn
     if (!t.custom) assert.ok(t.src.length && t.src.every((s) => /^https:\/\//.test(s[1])));
   }
 });
+
+test("SUT 4.2.8.A (yetişkin): 1 (kilo kaybı ya da VKİ) + 2 + 3 birlikte; koşulsuz gruplar", () => {
+  assert.equal(M.sut428({}), null);
+  assert.deepEqual(M.sut428({ k1: 1, k3: 1, k4: 1 }), { durum: "karsilaniyor" });
+  assert.deepEqual(M.sut428({ k2: 1, k3: 1, k5: 1 }), { durum: "karsilaniyor" });
+  assert.deepEqual(M.sut428({ k1: 1, k2: 1, k4: 1, k5: 1 }), { durum: "karsilanmiyor" }, "eşlik eden hastalık yok");
+  assert.deepEqual(M.sut428({ k3: 1, k4: 1 }), { durum: "karsilanmiyor" }, "kilo/VKİ ölçütü yok");
+  assert.deepEqual(M.sut428({ k1: 1, k3: 1 }), { durum: "karsilanmiyor" }, "alım azalması yok");
+  assert.equal(M.sut428({ m2: 1 }).durum, "muaf");
+  assert.equal(M.sut428({ m3: 1, k1: 1 }).durum, "muaf");
+  const t = M.TOOLS.find((x) => x.id === "sut-enteral");
+  assert.match(t.calc({ k1: 1, k3: 1, k4: 1 }).sub, /3 ay .*1200 kcal.*30 günlük/);
+  assert.match(t.calc({ m3: 1 }).sub, /6 ay .*nörolojik hastalıklarda 1 yıl/);
+});

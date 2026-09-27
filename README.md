@@ -63,14 +63,21 @@ Repo ayarlarında (Settings → Secrets and variables → Actions) şu gizli de�
 
 ### `data/inr-algoritma.json`
 
-Varfarin aracının eşikleri koddan ayrı tutulur. Kaynak: Kim YK ve ark. J Thromb Haemost 2010;8:101–6
-(iki basamaklı idame algoritması; PMID 19840361); destek: Van Spall 2012 (PMID 23027801), Holbrook 2012
-(PMID 22315259), Nieuwlaat 2014 (PMID 23877621).
+Varfarin aracının eşikleri koddan ayrı tutulur ve **Kim YK ve ark. J Thromb Haemost 2010;8:101–6, Tablo 1**'den
+birebir alınmıştır. Kaynağın kopyası `tools/kaynak/inr/kim-2010-tablo1.json`'dadır; `tests/arac-inr.test.js`
+iki dosyayı satır satır karşılaştırır (eşik, %, koşul, doz atlama, kontrol zamanı). Tablo değişirse önce kaynak kopyası,
+sonra veri dosyası güncellenir.
 
 - `hedefler["2-3"]`, `hedefler["2.5-3.5"]`: artan INR sırasında satırlar. INR, `ust` değeri (dahil) kendisinden
-  büyük ya da eşit olan ilk satıra düşer; son satırda `ust: null`. `degisim` haftalık dozda önerilen %, `atla`
-  atlanacak doz sayısı ya da `"inr-aralikta"`, `kontrol_gun` sonraki INR için [en erken, en geç] gün.
-- `yuksek_inr`: INR 4,5–10, INR > 10 ve kanama uyarı metinleri. `notlar`: aralığa yakın tek sapma notu.
-- Her satırda `dogrulama` alanı vardır. Eşikler kaynak PDF ile karşılaştırılıp doğrulanınca bu alan
-  `"YYYY-AA-GG tarihinde PDF ile doğrulandı"` gibi güncellenir; eşik değişirse `tests/arac-inr.test.js`
-  içindeki sınır örnekleri de güncellenir.
+  büyük ya da eşit olan ilk satıra düşer; son satırda `ust: null`.
+- `degisim`: haftalık dozda % (`null` = tablo yeni doz vermiyor). `kosul`: `"iki-olcum"` (önceki INR de aralığın aynı
+  tarafındaysa uygulanır; araç önceki INR'yi sorar) ya da `"aciklanamiyor"`. `atla`: `0`, `1` (1 gün ara),
+  `"inr-aralikta"`, `"kes"`. `kontrol_gun` / `kontrol_metin`: sonraki INR. `yildiz`: klinik yargıyla sapılabilir.
+- Tablodaki K vitamini dozları kullanılmaz; `yuksek_inr` Holbrook 2012 uyarılarını (INR 4,5–10, > 10, kanama)
+  doz vermeden gösterir.
+
+### Kaynak dosyaları (`tools/kaynak/`)
+
+Bulut ortamının erişemediği resmi metinlerin kopyaları (SUT güncel metni, SGK/TİTCK listeleri, Kim 2010 Tablo 1,
+Mearns 2014). Sunucuya yüklenmez. SUT 4.2.8.A kartı `tools/kaynak/sut/sut-guncel-2026-08-29.docx` içindeki
+yürürlükteki (üstü çizili olmayan) metinden hazırlanmıştır.
