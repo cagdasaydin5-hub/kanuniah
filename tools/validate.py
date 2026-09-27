@@ -39,7 +39,8 @@ RESMI = {"Nutricia": ("nutricia.com.tr", "nutricia.com"),
          "Abbott": ("abbott.com.tr", "abbottnutrition.com.tr", "abbott.com", "abbottnutrition.com"),
          "Nestlé": ("nestlehealthscience.com.tr", "nestlehealthscience.com"),
          "Fresenius Kabi": ("fresenius-kabi.com",)}
-TURLER = {"standart", "yuksek-protein", "diyabetik", "bobrek", "lifli", "peptit"}
+TURLER = {"standart", "yuksek-protein", "yuksek-enerji", "diyabetik", "bobrek", "lifli", "peptit", "immun"}
+YOLLAR = {"tup", "oral", "oral-tup"}
 def sayi(x, a, b):
     return isinstance(x, (int, float)) and not isinstance(x, bool) and a <= x <= b
 if MAMA is not None:
@@ -47,7 +48,7 @@ if MAMA is not None:
     ids = set()
     for u in MAMA.get("urunler") or []:
         i = u.get("id")
-        for k in ("id","ad","uretici","tur","form","kcal_ml","protein_100ml","lif_100ml","su_100ml","kaynak","dogrulama"):
+        for k in ("id","ad","uretici","tur","form","kcal_ml","protein_100ml","lif_100ml","kaynak","dogrulama"):
             if k not in u: err.append("mama %s: '%s' eksik" % (i, k))
         if i in ids: err.append("mama id tekrarı: %s" % i)
         ids.add(i)
@@ -56,10 +57,12 @@ if MAMA is not None:
         if not isinstance(t, list) or not t or not set(t) <= TURLER: err.append("mama %s: tur %s değerlerinden oluşan boş olmayan liste olmalı" % (i, "|".join(sorted(TURLER))))
         if not sayi(u.get("kcal_ml"), 0.5, 2.5): err.append("mama %s: kcal_ml 0,5–2,5 arası sayı olmalı" % i)
         if not sayi(u.get("protein_100ml"), 0, 15): err.append("mama %s: protein_100ml 0–15 arası sayı olmalı" % i)
-        if not sayi(u.get("lif_100ml"), 0, 5): err.append("mama %s: lif_100ml 0–5 arası sayı olmalı" % i)
-        if not sayi(u.get("su_100ml"), 40, 100): err.append("mama %s: su_100ml 40–100 arası sayı olmalı" % i)
+        if u.get("lif_100ml") is not None and not sayi(u.get("lif_100ml"), 0, 5): err.append("mama %s: lif_100ml 0–5 arası sayı ya da null (kaynakta belirtilmemiş) olmalı" % i)
+        if u.get("su_100ml") is not None and not sayi(u.get("su_100ml"), 40, 100): err.append("mama %s: su_100ml 40–100 arası sayı olmalı" % i)
+        if u.get("osm") is not None and not sayi(u.get("osm"), 150, 1000): err.append("mama %s: osm (mOsm/L) 150–1000 arası olmalı" % i)
+        if u.get("yol") is not None and u.get("yol") not in YOLLAR: err.append("mama %s: yol %s olmalı" % (i, "|".join(sorted(YOLLAR))))
         if u.get("form") == "sivi":
-            if not sayi(u.get("ambalaj_ml"), 50, 2000): err.append("mama %s: sıvı üründe ambalaj_ml 50–2000 arası olmalı" % i)
+            if u.get("ambalaj_ml") is not None and not sayi(u.get("ambalaj_ml"), 50, 2000): err.append("mama %s: sıvı üründe ambalaj_ml 50–2000 arası ya da null olmalı" % i)
         elif u.get("form") == "toz":
             for k, a, b in (("ambalaj_g", 50, 2000), ("olcek_g", 1, 50), ("olcek_ml", 5, 500)):
                 if not sayi(u.get(k), a, b): err.append("mama %s: toz üründe %s %d–%d arası olmalı" % (i, k, a, b))

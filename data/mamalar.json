@@ -1,4 +1,340 @@
 {
-  "aciklama": "Türkiye'de satılan yetişkin enteral/oral beslenme ürünleri. Her değer yalnızca üreticinin resmi ürün sayfasından alınır; doğrulanamayan ürün eklenmez. Alanlar için README'ye bakın.",
-  "urunler": []
+ "aciklama": "Türkiye'de satılan yetişkin enteral/oral beslenme ürünleri. Her değer yalnızca üreticinin Türkiye resmi ürün sayfasından alınır; sayfada 100 mL dışında (şişe başına) verilen değerler 100 mL'ye çevrilmiştir. Sayfada belirtilmeyen alan null bırakılır. Abbott ve Fresenius Kabi ürünleri, Türkiye resmi sitelerinde ürün sayfası bulunamadığı için (28.09.2026) eklenmedi. Alanlar için README'ye bakın.",
+ "urunler": [
+  {
+   "id": "nutrison",
+   "ad": "Nutrison",
+   "uretici": "Nutricia",
+   "tur": [
+    "standart"
+   ],
+   "form": "sivi",
+   "yol": "tup",
+   "kcal_ml": 1.0,
+   "protein_100ml": 4.0,
+   "lif_100ml": 0,
+   "osm": 270,
+   "ambalaj_ml": 500,
+   "kaynak": "https://www.nutricia.com/tr-tr/urunlerimiz/nutrison",
+   "dogrulama": "2026-09-28",
+   "not": "İlave lif içermez."
+  },
+  {
+   "id": "nutrison-diason",
+   "ad": "Nutrison Advanced Diason",
+   "uretici": "Nutricia",
+   "tur": [
+    "diyabetik",
+    "lifli"
+   ],
+   "form": "sivi",
+   "yol": "tup",
+   "kcal_ml": 1.03,
+   "protein_100ml": 4.3,
+   "lif_100ml": 1.5,
+   "osm": 300,
+   "ambalaj_ml": 500,
+   "kaynak": "https://www.nutricia.com/tr-tr/urunlerimiz/nutrison-advanced-diason",
+   "dogrulama": "2026-09-28"
+  },
+  {
+   "id": "nutrison-diason-energy-hp",
+   "ad": "Nutrison Advanced Diason Energy HP",
+   "uretici": "Nutricia",
+   "tur": [
+    "diyabetik",
+    "yuksek-enerji",
+    "yuksek-protein",
+    "lifli"
+   ],
+   "form": "sivi",
+   "yol": "tup",
+   "kcal_ml": 1.5,
+   "protein_100ml": 7.7,
+   "lif_100ml": 1.5,
+   "osm": 395,
+   "ambalaj_ml": 500,
+   "kaynak": "https://www.nutricia.com/tr-tr/urunlerimiz/nutrison-advanced-diason-energy-hp",
+   "dogrulama": "2026-09-28"
+  },
+  {
+   "id": "nutrison-peptisorb",
+   "ad": "Nutrison Advanced Peptisorb",
+   "uretici": "Nutricia",
+   "tur": [
+    "peptit"
+   ],
+   "form": "sivi",
+   "yol": "tup",
+   "kcal_ml": 1.0,
+   "protein_100ml": 4.0,
+   "lif_100ml": 0,
+   "osm": 455,
+   "ambalaj_ml": 500,
+   "kaynak": "https://www.nutricia.com/tr-tr/urunlerimiz/nutrison-advanced-peptisorb",
+   "dogrulama": "2026-09-28",
+   "not": "MCT 834 mg/100 mL."
+  },
+  {
+   "id": "nutrison-cubison",
+   "ad": "Nutrison Advanced Cubison",
+   "uretici": "Nutricia",
+   "tur": [
+    "immun",
+    "yuksek-protein",
+    "lifli"
+   ],
+   "form": "sivi",
+   "yol": "tup",
+   "kcal_ml": 1.04,
+   "protein_100ml": 5.5,
+   "lif_100ml": 1.5,
+   "osm": 315,
+   "ambalaj_ml": 500,
+   "kaynak": "https://www.nutricia.com/tr-tr/urunlerimiz/nutrison-advanced-cubison",
+   "dogrulama": "2026-09-28",
+   "not": "Arjinin 0,85 g, çinko 2 mg, C vitamini 38 mg /100 mL (yara iyileşmesi)."
+  },
+  {
+   "id": "fortimel-energy",
+   "ad": "Fortimel Energy",
+   "uretici": "Nutricia",
+   "tur": [
+    "yuksek-enerji"
+   ],
+   "form": "sivi",
+   "yol": "oral",
+   "kcal_ml": 1.5,
+   "protein_100ml": 5.9,
+   "lif_100ml": 0,
+   "osm": 455,
+   "ambalaj_ml": null,
+   "kaynak": "https://www.nutricia.com/tr-tr/urunlerimiz/fortimel-energy",
+   "dogrulama": "2026-09-28",
+   "not": "Çikolata aromalıda 0,3 g/100 mL lif ve 450 mOsm/L; ambalaj hacmi sayfada belirtilmemiş."
+  },
+  {
+   "id": "fortimel-energy-multi-fibre",
+   "ad": "Fortimel Energy Multi Fibre",
+   "uretici": "Nutricia",
+   "tur": [
+    "yuksek-enerji",
+    "lifli"
+   ],
+   "form": "sivi",
+   "yol": "oral",
+   "kcal_ml": 1.54,
+   "protein_100ml": 6.0,
+   "lif_100ml": 2.2,
+   "osm": 455,
+   "ambalaj_ml": 200,
+   "kaynak": "https://www.nutricia.com/tr-tr/urunlerimiz/fortimel-energy-multi-fibre",
+   "dogrulama": "2026-09-28"
+  },
+  {
+   "id": "fortimel-forticare",
+   "ad": "Fortimel Forticare",
+   "uretici": "Nutricia",
+   "tur": [
+    "yuksek-enerji",
+    "yuksek-protein"
+   ],
+   "form": "sivi",
+   "yol": "oral",
+   "kcal_ml": 2.45,
+   "protein_100ml": 14.6,
+   "lif_100ml": 0,
+   "osm": 570,
+   "ambalaj_ml": 125,
+   "kaynak": "https://www.nutricia.com/tr-tr/urunlerimiz/fortimel-forticare",
+   "dogrulama": "2026-09-28",
+   "not": "EPA+DHA 1465 mg/100 mL."
+  },
+  {
+   "id": "diasip",
+   "ad": "Diasip",
+   "uretici": "Nutricia",
+   "tur": [
+    "diyabetik",
+    "lifli"
+   ],
+   "form": "sivi",
+   "yol": "oral",
+   "kcal_ml": 1.04,
+   "protein_100ml": 4.9,
+   "lif_100ml": 2.5,
+   "osm": 365,
+   "ambalaj_ml": 200,
+   "kaynak": "https://www.nutricia.com/tr-tr/urunlerimiz/diasip",
+   "dogrulama": "2026-09-28"
+  },
+  {
+   "id": "resource-energy",
+   "ad": "Resource Energy",
+   "uretici": "Nestlé",
+   "tur": [
+    "yuksek-enerji"
+   ],
+   "form": "sivi",
+   "yol": "oral-tup",
+   "kcal_ml": 1.5,
+   "protein_100ml": 5.5,
+   "lif_100ml": null,
+   "osm": 488,
+   "ambalaj_ml": 200,
+   "kaynak": "https://www.nestlehealthscience.com.tr/markalar/resource/resource-energy",
+   "dogrulama": "2026-09-28"
+  },
+  {
+   "id": "resource-protein",
+   "ad": "Resource Protein",
+   "uretici": "Nestlé",
+   "tur": [
+    "yuksek-protein"
+   ],
+   "form": "sivi",
+   "yol": "oral-tup",
+   "kcal_ml": 1.25,
+   "protein_100ml": 9.4,
+   "lif_100ml": null,
+   "osm": 390,
+   "ambalaj_ml": 200,
+   "kaynak": "https://www.nestlehealthscience.com.tr/markalar/resource/resource-protein",
+   "dogrulama": "2026-09-28",
+   "not": "Çikolata aromalıda ozmolarite 450 mOsm/L."
+  },
+  {
+   "id": "resource-2-0",
+   "ad": "Resource 2.0",
+   "uretici": "Nestlé",
+   "tur": [
+    "yuksek-enerji",
+    "yuksek-protein"
+   ],
+   "form": "sivi",
+   "yol": "oral-tup",
+   "kcal_ml": 2.0,
+   "protein_100ml": 9.0,
+   "lif_100ml": null,
+   "osm": 520,
+   "ambalaj_ml": 200,
+   "kaynak": "https://www.nestlehealthscience.com.tr/markalar/resource/resource-2-0",
+   "dogrulama": "2026-09-28"
+  },
+  {
+   "id": "resource-2-0-fibre",
+   "ad": "Resource 2.0 Fibre",
+   "uretici": "Nestlé",
+   "tur": [
+    "yuksek-enerji",
+    "yuksek-protein",
+    "lifli"
+   ],
+   "form": "sivi",
+   "yol": "oral-tup",
+   "kcal_ml": 2.0,
+   "protein_100ml": 9.0,
+   "lif_100ml": 2.5,
+   "osm": 520,
+   "ambalaj_ml": 190,
+   "kaynak": "https://www.nestlehealthscience.com.tr/markalar/resource/resource-2-0-fibre",
+   "dogrulama": "2026-09-28",
+   "not": "Prebiyotik lif (FOS-GOS)."
+  },
+  {
+   "id": "resource-diabet",
+   "ad": "Resource Diabet",
+   "uretici": "Nestlé",
+   "tur": [
+    "diyabetik",
+    "yuksek-protein",
+    "lifli"
+   ],
+   "form": "sivi",
+   "yol": "oral-tup",
+   "kcal_ml": 1.0,
+   "protein_100ml": 7.0,
+   "lif_100ml": 2.0,
+   "osm": 218,
+   "ambalaj_ml": 200,
+   "kaynak": "https://www.nestlehealthscience.com.tr/markalar/resource/resource-diabet",
+   "dogrulama": "2026-09-28",
+   "not": "Çözünür lif (kısmi hidrolize guar gum); izomaltuloz ve tatlandırıcı içerir."
+  },
+  {
+   "id": "impact-enteral",
+   "ad": "Impact Enteral",
+   "uretici": "Nestlé",
+   "tur": [
+    "immun",
+    "yuksek-protein"
+   ],
+   "form": "sivi",
+   "yol": "tup",
+   "kcal_ml": 1.01,
+   "protein_100ml": 5.6,
+   "lif_100ml": null,
+   "osm": 298,
+   "ambalaj_ml": 500,
+   "kaynak": "https://www.nestlehealthscience.com.tr/markalar/impact/impact-enteral",
+   "dogrulama": "2026-09-28",
+   "not": "Arjinin, omega-3 ve RNA içerir; hemodinamik olarak instabil, ağır septik hastada uygun değil."
+  },
+  {
+   "id": "isosource-protein",
+   "ad": "Isosource Protein",
+   "uretici": "Nestlé",
+   "tur": [
+    "yuksek-protein"
+   ],
+   "form": "sivi",
+   "yol": null,
+   "kcal_ml": 1.3,
+   "protein_100ml": 6.7,
+   "lif_100ml": null,
+   "osm": 319,
+   "ambalaj_ml": 500,
+   "kaynak": "https://www.nestlehealthscience.com.tr/markalar/isosource/isosource-protein",
+   "dogrulama": "2026-09-28",
+   "not": "MCT ve omega-3 içerir."
+  },
+  {
+   "id": "novasource-gi-control",
+   "ad": "Novasource GI Control",
+   "uretici": "Nestlé",
+   "tur": [
+    "lifli"
+   ],
+   "form": "sivi",
+   "yol": null,
+   "kcal_ml": 1.1,
+   "protein_100ml": 4.1,
+   "lif_100ml": 2.1,
+   "osm": 290,
+   "ambalaj_ml": 500,
+   "kaynak": "https://www.nestlehealthscience.com.tr/markalar/novasource/novasource-gi-control",
+   "dogrulama": "2026-09-28",
+   "not": "Çözünür lif (kısmi hidrolize guar gum); MCT içerir."
+  },
+  {
+   "id": "modulen-ibd",
+   "ad": "Modulen IBD",
+   "uretici": "Nestlé",
+   "tur": [
+    "standart"
+   ],
+   "form": "toz",
+   "yol": "oral-tup",
+   "kcal_ml": 1.0,
+   "protein_100ml": 3.6,
+   "lif_100ml": null,
+   "osm": 290,
+   "ambalaj_g": 400,
+   "olcek_g": 8.3,
+   "olcek_ml": 41.7,
+   "kaynak": "https://www.nestlehealthscience.com.tr/markalar/modulen/modulen",
+   "dogrulama": "2026-09-28",
+   "not": "Crohn hastalığı; 5 yaş üzeri. Standart sulandırma: 6 ölçek (50 g) + 210 mL su = 250 mL, 250 kcal. Protein değeri 72 g/400 g tozdan hesaplanmıştır."
+  }
+ ]
 }

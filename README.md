@@ -31,11 +31,14 @@ Her ürün **yalnızca üreticinin resmi ürün sayfasında** doğrulanan değer
 |---|---|
 | `id`, `ad` | Tekil kimlik, ürün adı |
 | `uretici` | `Nutricia`, `Abbott`, `Nestlé` ya da `Fresenius Kabi` |
-| `tur` | Liste: `standart`, `yuksek-protein`, `diyabetik`, `bobrek`, `lifli`, `peptit` |
+| `tur` | Liste: `standart`, `yuksek-enerji`, `yuksek-protein`, `diyabetik`, `bobrek`, `lifli`, `peptit`, `immun` |
 | `form` | `sivi` ya da `toz` |
-| `kcal_ml`, `protein_100ml`, `lif_100ml`, `su_100ml` | Kullanıma hazır ürün için (toz üründe standart sulandırmada) enerji kcal/mL, protein/lif g/100 mL, su mL/100 mL |
-| `ambalaj_ml` | Sıvı üründe şişe/paket hacmi |
+| `yol` | `tup`, `oral` ya da `oral-tup`; sayfada belirtilmemişse `null` |
+| `kcal_ml`, `protein_100ml`, `lif_100ml` | Kullanıma hazır ürün için (toz üründe standart sulandırmada) enerji kcal/mL, protein ve lif g/100 mL. Şişe başına verilen değerler 100 mL'ye çevrilir. Lif sayfada belirtilmemişse `null` (0 değil). |
+| `osm`, `su_100ml` | İsteğe bağlı: ozmolarite (mOsm/L) ve su (mL/100 mL) |
+| `ambalaj_ml` | Sıvı üründe şişe/paket hacmi; sayfada yoksa `null` |
 | `ambalaj_g`, `olcek_g`, `olcek_ml` | Toz üründe kutu ağırlığı, bir ölçek (g) ve bir ölçekle hazırlanan hacim (mL) |
+| `not` | İsteğe bağlı kısa açıklama (aroma farkı, özel içerik, hesaplama notu) |
 | `kaynak` | Üreticinin resmi ürün sayfası (https; alan adı `validate.py`'deki listede olmalı) |
 | `dogrulama` | Değerlerin kaynakta son kontrol edildiği tarih (YYYY-AA-GG) |
 

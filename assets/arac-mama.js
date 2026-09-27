@@ -181,8 +181,9 @@
   }
 
   /* ---------- mama kataloğu ---------- */
-  var TUR = [["standart", "Standart"], ["yuksek-protein", "Yüksek protein"], ["diyabetik", "Diyabetik"],
-             ["bobrek", "Böbrek"], ["lifli", "Lifli"], ["peptit", "Peptit"]];
+  var TUR = [["standart", "Standart"], ["yuksek-enerji", "Yüksek enerji"], ["yuksek-protein", "Yüksek protein"], ["diyabetik", "Diyabetik"],
+             ["bobrek", "Böbrek"], ["lifli", "Lifli"], ["peptit", "Peptit"], ["immun", "İmmün / yara"]];
+  var YOL = { tup: "Tüple", oral: "Ağızdan", "oral-tup": "Ağızdan ya da tüple" };
   function turAdi(id) { var t = TUR.filter(function (x) { return x[0] === id; })[0]; return t ? t[1] : id; }
 
   function filterProducts(list, tur, q) {
@@ -226,9 +227,12 @@
     function row(k, v) { dl.appendChild(el("dt", null, k)); dl.appendChild(el("dd", null, v)); }
     row("Enerji", fmt(p.kcal_ml, 2) + " kcal/mL");
     row("Protein", fmt(p.protein_100ml, 1) + " g/100 mL");
-    row("Lif", fmt(p.lif_100ml, 1) + " g/100 mL");
-    row("Ambalaj", p.form === "toz" ? p.ambalaj_g + " g toz" : p.ambalaj_ml + " mL");
+    row("Lif", p.lif_100ml == null ? "belirtilmemiş" : fmt(p.lif_100ml, 1) + " g/100 mL");
+    if (p.osm) row("Ozmolarite", p.osm + " mOsm/L");
+    row("Kullanım", YOL[p.yol] || "belirtilmemiş");
+    row("Ambalaj", p.form === "toz" ? p.ambalaj_g + " g toz" : p.ambalaj_ml ? p.ambalaj_ml + " mL" : "belirtilmemiş");
     c.appendChild(dl);
+    if (p.not) c.appendChild(el("p", "hint", p.not));
     var a = el("a", null, "Üretici ürün sayfası ↗"); a.href = p.kaynak; a.target = "_blank"; a.rel = "noopener"; c.appendChild(a);
     return c;
   }
