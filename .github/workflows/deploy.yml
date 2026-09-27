@@ -17,6 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Araç dizini ve service worker'ı üret
+        run: python3 tools/build_pwa.py
+
       - name: Veri dosyalarını denetle
         run: python3 tools/validate.py
 
