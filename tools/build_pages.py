@@ -10,7 +10,7 @@ ORG = "Kanuni Eğitim ve Araştırma Hastanesi Aile Hekimliği Kliniği"
 TODAY = json.load(open("data/meta.json", encoding="utf-8"))["checked"]
 
 NAV = [("home", "./", "Ana sayfa"), ("rehberler", "rehberler.html", "Rehberler"),
-       ("makaleler", "makaleler.html", "Makaleler"), ("araclar", "araclar.html", "Araçlar"), ("personel", "personel.html", "Hemşire &amp; personel"),
+       ("makaleler", "makaleler.html", "Makaleler"), ("araclar", "araclar.html", "Araçlar"),
        ("hakkinda", "hakkinda.html", "Hakkımızda")]
 
 
@@ -77,7 +77,7 @@ FOOT = """</main>
 ICON = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>'
 
 JSONLD = """<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Kanuni Aile Hekimliği","url":"%s/","inLanguage":"tr","description":"Aile hekimliği asistanları, hemşireler ve klinik personeli için güncel rehber, mevzuat ve makale kaynağı.","publisher":{"@type":"Organization","name":"%s","url":"%s/","logo":"%s/assets/emblem.svg"}}
+{"@context":"https://schema.org","@type":"WebSite","name":"Kanuni Aile Hekimliği","url":"%s/","inLanguage":"tr","description":"Aile hekimliği asistanları için güncel rehber, mevzuat ve makale kaynağı.","publisher":{"@type":"Organization","name":"%s","url":"%s/","logo":"%s/assets/emblem.svg"}}
 </script>
 """ % (SITE, ORG, SITE, SITE)
 
@@ -96,12 +96,12 @@ BAR_GUIDES = """  <div class="bar">
 PAGES = {}
 
 PAGES["index.html"] = head("Kanuni Aile Hekimliği",
-    "Kanuni EAH Aile Hekimliği Kliniği'nin güncel rehber, mevzuat ve makale kaynağı: asistanlar, hemşireler ve personel için.",
+    "Kanuni EAH Aile Hekimliği Kliniği'nin güncel rehber, mevzuat, makale ve araç kaynağı: aile hekimliği asistanları için.",
     "", "home") + """<div class="wrap">
   <section class="hero">
     <div class="eyebrow">Kanuni EAH · Aile Hekimliği Kliniği</div>
     <h1>Klinikte ihtiyaç duyulan her şey, tek yerde.</h1>
-    <p class="lede">Güncel rehberler, mevzuat, haftanın önemli makaleleri ve hemşire–personel kaynakları. Her pazartesi kontrol edilir; son kontrol <b id="checked"></b>.</p>
+    <p class="lede">Güncel rehberler, mevzuat, haftanın önemli makaleleri ve klinik hesaplayıcılar. Her pazartesi kontrol edilir; son kontrol <b id="checked"></b>.</p>
     <label class="search" for="q">%s<input id="q" type="search" placeholder="Ne arıyorsunuz? ör. hipertansiyon, ESKOM, basınç yarası, PEG, aşı" autocomplete="off"></label>
     <div class="results" id="results" hidden></div>
     <div class="notice" id="notice" hidden></div>
@@ -111,7 +111,6 @@ PAGES["index.html"] = head("Kanuni Aile Hekimliği",
     <a class="tile" href="rehberler.html"><span class="n" id="nGuides">–</span><b>Rehberler</b><span>Türk ve uluslararası klinik rehberler, özetleriyle</span></a>
     <a class="tile" href="makaleler.html"><span class="n" id="nPapers">–</span><b>Haftanın makaleleri</b><span>Birinci basamak için önem sırasıyla, Türkçe özet</span></a>
     <a class="tile" href="araclar.html"><span class="n">20</span><b>Araçlar</b><span>Böbrek, AF, pnömoni, bası yarası, yaşlı değerlendirme, aşı planlayıcı</span></a>
-    <a class="tile" href="personel.html"><span class="n" id="nStaff">–</span><b>Hemşire &amp; personel</b><span>Yara, beslenme, enfeksiyon kontrolü, kalite standartları</span></a>
     <a class="tile" href="rehberler.html"><span class="n" id="nLaw">–</span><b>Mevzuat</b><span>Evde sağlık ve palyatif bakım düzenlemeleri</span></a>
   </div>
 
@@ -144,16 +143,6 @@ PAGES["rehberler.html"] = head("Rehberler · Kanuni Aile Hekimliği",
   </div>
 """ + BAR_GUIDES + "</div>\n" + FOOT
 
-PAGES["personel.html"] = head("Hemşire & Personel · Kanuni Aile Hekimliği",
-    "Hemşireler ve klinik personeli için yara bakımı, enteral beslenme, enfeksiyon kontrolü ve kalite standartları kaynakları.",
-    "personel.html", "personel") + """<div class="wrap">
-  <div class="page-head">
-    <div class="eyebrow">Hemşire ve personel köşesi</div>
-    <h1>Hemşire &amp; personel</h1>
-    <p class="lede">Sahada en sık gereken bakım ve güvenlik kaynakları: basınç yarası, tüple beslenme, sonda bakımı, el hijyeni, kalite standartları ve evde sağlık mevzuatı. Birime özel iş akışları eklendikçe burada yer alacak.</p>
-  </div>
-""" + BAR_GUIDES + "</div>\n" + FOOT
-
 PAGES["makaleler.html"] = head("Haftanın Makaleleri · Kanuni Aile Hekimliği",
     "Birinci basamak için haftanın önemli makaleleri: Türkçe özet, kanıt düzeyi, pratiğe etkisi ve şeffaf önem puanı.",
     "makaleler.html", "makaleler") + """<div class="wrap">
@@ -182,13 +171,13 @@ PAGES["hakkinda.html"] = head("Hakkımızda · Kanuni Aile Hekimliği",
     <h1>Bu site kimin, ne için?</h1>
   </div>
   <div class="prose">
-    <p>Bu site, <b>%s</b> tarafından, klinikte çalışan asistan hekimlerin, hemşirelerin ve tüm personelin ihtiyaç duyduğu güncel bilgiye tek yerden ve hızlıca ulaşabilmesi için hazırlanır. İlk olarak evde sağlık biriminin ihtiyaçlarıyla başladı; zamanla kliniğin tüm alanlarını kapsayacak şekilde genişliyor.</p>
+    <p>Bu site, <b>%s</b> tarafından, kliniğin aile hekimliği asistanlarının ihtiyaç duyduğu güncel bilgiye tek yerden ve hızlıca ulaşabilmesi için hazırlanır. İlk olarak evde sağlık biriminin ihtiyaçlarıyla başladı; zamanla kliniğin tüm alanlarını kapsayacak şekilde genişliyor.</p>
 
     <h2>Neler var?</h2>
     <ul>
       <li><b>Rehberler ve mevzuat:</b> Türk ve uluslararası klinik rehberler; evde sağlık ve palyatif bakım mevzuatı.</li>
       <li><b>Haftanın makaleleri:</b> Birinci basamağı ilgilendiren önemli çalışmalar, Türkçe özet ve şeffaf bir önem puanıyla.</li>
-      <li><b>Hemşire ve personel köşesi:</b> Bakım, enfeksiyon kontrolü ve kalite standartlarıyla ilgili kaynaklar.</li>
+      <li><b>Araçlar:</b> Böbrek fonksiyonu, risk skorları, yaşlı değerlendirme ölçekleri ve aşı planlayıcı gibi klinik hesaplayıcılar.</li>
     </ul>
 
     <h2>İçerik ilkeleri</h2>
@@ -244,7 +233,7 @@ for name, html in PAGES.items():
         f.write(html)
 
 urls = "".join("  <url><loc>%s/%s</loc><lastmod>%s</lastmod></url>\n" % (SITE, p, TODAY)
-               for p in ["", "rehberler.html", "makaleler.html", "araclar.html", "personel.html", "hakkinda.html"])
+               for p in ["", "rehberler.html", "makaleler.html", "araclar.html", "hakkinda.html"])
 with open("sitemap.xml", "w", encoding="utf-8", newline="\n") as f:
     f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n%s</urlset>\n' % urls)
 print("Sayfalar üretildi:", ", ".join(PAGES))

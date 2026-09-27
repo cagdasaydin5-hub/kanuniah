@@ -1,12 +1,12 @@
 # kanuniah.tr
 
-Kanuni Eğitim ve Araştırma Hastanesi Aile Hekimliği Kliniği'nin bilgi portalı: rehberler ve mevzuat, haftanın makaleleri, hemşire ve personel köşesi.
+Kanuni Eğitim ve Araştırma Hastanesi Aile Hekimliği Kliniği'nin bilgi portalı: rehberler ve mevzuat, haftanın makaleleri, klinik araçlar.
 
 ## Yapı
 
 - Statik site: HTML + CSS + JS, sunucu tarafı kod ya da veritabanı yok.
 - İçerik `data/` altındaki JSON dosyalarında:
-  - `rehberler.json` – rehber, mevzuat ve personel kaynakları (`aud`: `hekim` / `personel`)
+  - `rehberler.json` – rehber ve mevzuat kaynakları
   - `makaleler.json` – haftanın makaleleri (her hafta `issues` dizisinin başına yeni sayı eklenir)
   - `meta.json` – son kontrol tarihi ve güncelleme günlüğü
 - Sayfa iskeletleri `tools/build_pages.py` ile üretilir (üst menü, alt bilgi, sitemap).

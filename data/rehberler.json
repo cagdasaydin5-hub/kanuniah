@@ -59,8 +59,7 @@
    ],
    "kw": "esh evde sağlık palyatif eskom esys tescil yönetmelik resmi gazete",
    "aud": [
-    "hekim",
-    "personel"
+    "hekim"
    ]
   },
   {
@@ -517,8 +516,7 @@
    "alt": [],
    "kw": "basınç yarası bası yarası dekübit yara bakımı esh",
    "aud": [
-    "hekim",
-    "personel"
+    "hekim"
    ]
   },
   {
@@ -585,7 +583,6 @@
    "scope": "TR",
    "status": "guncel",
    "aud": [
-    "personel",
     "hekim"
    ],
    "title": "Sağlıkta Kalite Standartları (SKS) – Evde Sağlık",
@@ -604,32 +601,12 @@
    "kw": "sks kalite standart evde sağlık düşme ilaç enfeksiyon hemşire"
   },
   {
-   "id": "sks-rehberleri",
-   "cat": "palyatif",
-   "kind": "portal",
-   "scope": "TR",
-   "status": "guncel",
-   "aud": [
-    "personel"
-   ],
-   "title": "SKS Rehberleri",
-   "org": "Sağlık Bakanlığı SHGM",
-   "year": null,
-   "pub": null,
-   "summary": "Kalite standartlarının uygulanmasına yönelik Bakanlık rehberleri; el hijyeni, düşmelerin önlenmesi, güvenli ilaç uygulamaları gibi konularda uygulama örnekleri içerir.",
-   "note": "",
-   "url": "https://shgmkalitedb.saglik.gov.tr/TR,12638/sks-rehberleri.html",
-   "alt": [],
-   "kw": "sks rehber el hijyeni düşme güvenli ilaç hemşire personel"
-  },
-  {
    "id": "espen-hen-2022",
    "cat": "palyatif",
    "kind": "guide",
    "scope": "INT",
    "status": "guncel",
    "aud": [
-    "personel",
     "hekim"
    ],
    "title": "ESPEN Pratik Kılavuz: Evde Enteral Beslenme",
@@ -652,32 +629,12 @@
    "kw": "enteral beslenme peg nazogastrik tüp mama evde beslenme hemşire"
   },
   {
-   "id": "who-el-hijyeni",
-   "cat": "palyatif",
-   "kind": "guide",
-   "scope": "INT",
-   "status": "guncel",
-   "aud": [
-    "personel"
-   ],
-   "title": "DSÖ Sağlık Hizmetlerinde El Hijyeni Kılavuzu",
-   "org": "DSÖ",
-   "year": 2009,
-   "pub": "2009-01-15",
-   "summary": "El hijyeninin beş anı (hasta temasından önce, aseptik işlemden önce, vücut sıvısıyla temastan sonra, hasta temasından sonra, hasta çevresiyle temastan sonra) ve alkol bazlı el antiseptiği ile yıkama tekniği.",
-   "note": "",
-   "url": "https://www.who.int/publications/i/item/9789241597906",
-   "alt": [],
-   "kw": "el hijyeni enfeksiyon kontrolü beş an eldiven hemşire"
-  },
-  {
    "id": "cdc-cauti",
    "cat": "palyatif",
    "kind": "guide",
    "scope": "INT",
    "status": "guncel",
    "aud": [
-    "personel",
     "hekim"
    ],
    "title": "CDC Kateterle İlişkili İdrar Yolu Enfeksiyonlarının Önlenmesi",
@@ -835,8 +792,7 @@
    "note": "",
    "alt": [],
    "aud": [
-    "hekim",
-    "personel"
+    "hekim"
    ],
    "id": "gogus-evde-saglik",
    "cat": "palyatif",
@@ -941,8 +897,7 @@
    "note": "",
    "alt": [],
    "aud": [
-    "hekim",
-    "personel"
+    "hekim"
    ],
    "id": "ergen-cep",
    "cat": "anne-cocuk",
@@ -961,7 +916,6 @@
    "note": "",
    "alt": [],
    "aud": [
-    "personel",
     "hekim"
    ],
    "id": "emzirme-rehberi",
@@ -1132,8 +1086,7 @@
     }
    ],
    "aud": [
-    "hekim",
-    "personel"
+    "hekim"
    ],
    "id": "yasli-degerlendirme-ah",
    "cat": "yasli",
@@ -1152,7 +1105,6 @@
    "note": "",
    "alt": [],
    "aud": [
-    "personel",
     "hekim"
    ],
    "id": "vital-bulgular-asc",

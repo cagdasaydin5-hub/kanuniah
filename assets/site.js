@@ -64,7 +64,6 @@
     if (isNew(g)) m.appendChild(el("span", "tag new", "Yeni"));
     if (g.kind === "law") m.appendChild(el("span", "tag law", "Mevzuat"));
     if (g.scope === "INT") m.appendChild(el("span", "tag int", "Uluslararası"));
-    if ((g.aud || []).indexOf("personel") !== -1) m.appendChild(el("span", "tag staff", "Hemşire & personel"));
     if (g.status === "arsiv") m.appendChild(el("span", "tag arch", "Arşiv"));
     b.appendChild(m);
     var h = el("h3"); h.appendChild(ext(g.url, g.title)); b.appendChild(h);
@@ -144,7 +143,7 @@
     return art;
   }
 
-  /* ---------- filtrelenebilir rehber listesi (Rehberler ve Personel sayfaları) ---------- */
+  /* ---------- filtrelenebilir rehber listesi (Rehberler sayfası) ---------- */
   function guideList(opts) {
     Promise.all([load("rehberler"), load("meta")]).then(function (r) {
       var R = r[0]; TODAY = r[1].checked;
@@ -212,7 +211,6 @@
         var issue = M.issues[0];
         document.getElementById("nGuides").textContent = guides.filter(function (g) { return g.aud.indexOf("hekim") !== -1; }).length;
         document.getElementById("nPapers").textContent = issue ? issue.items.length : 0;
-        document.getElementById("nStaff").textContent = guides.filter(function (g) { return g.aud.indexOf("personel") !== -1; }).length;
         document.getElementById("nLaw").textContent = guides.filter(function (g) { return g.kind === "law"; }).length;
         document.getElementById("checked").textContent = fmt(meta.checked);
 
@@ -267,9 +265,6 @@
       guideList({ filter: function (g) { return (g.aud || []).indexOf("hekim") !== -1; } });
     },
 
-    personel: function () {
-      guideList({ filter: function (g) { return (g.aud || []).indexOf("personel") !== -1; } });
-    },
 
     makaleler: function () {
       Promise.all([load("makaleler"), load("rehberler"), load("meta")]).then(function (r) {
