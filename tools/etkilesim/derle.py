@@ -22,7 +22,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 TSV = os.path.join(ROOT, "tools", "etkilesim", "ilaclar.tsv")
 OUT = os.path.join(ROOT, "data", "etkilesim")
 RANK = {"Major": 3, "Moderate": 2, "Minor": 1, "Unknown": 0}
-ETIKET = {"mao", "vka", "doak", "kanama", "nsaii", "qt", "sero", "3a4g", "3a4", "ind", "statin3a4", "raas", "k", "diur"}
+ETIKET = {"pgpg", "1a2g", "pde5", "nitrat", "tiyazid", "loop", "mao", "vka", "doak", "kanama", "nsaii", "qt", "sero", "3a4g", "3a4", "ind", "statin3a4", "raas", "k", "diur"}
 
 
 def tablo_oku():

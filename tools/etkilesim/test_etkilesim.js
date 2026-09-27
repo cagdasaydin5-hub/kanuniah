@@ -187,3 +187,67 @@ test("en fazla 15 ilaç; 15 ilaçla çözümleme 105 çifti değerlendirir", () 
   const beklenen = ids.length * (ids.length - 1) / 2;
   assert.ok(n <= beklenen && n >= beklenen - veriYok.size * 14);
 });
+
+/* ---------- klinik incelemede eklenen ciddi sınıf kuralları ---------- */
+
+function ciddiKural(a, b, { kon = false, kaynak } = {}) {
+  const R = calis(a, b);
+  const c = cift(R, a, b);
+  assert.ok(c, `${a} + ${b} listede yok`);
+  assert.ok(R.ciftler.Major.includes(c), `${a} + ${b} Ciddi grubunda değil`);
+  assert.equal(c.sev, "Major");
+  assert.equal(R.kapsamDisi.length, 0, `${a} + ${b} kontrol edilemeyen listesinde kalmamalı`);
+  assert.equal(R.kayitYok.length, 0);
+  const n = c.not.find((x) => x.sev === "Major");
+  assert.ok(n, `${a} + ${b}: ciddi not yok`);
+  assert.ok(n.kay.length > 0 && n.kay.every(([k, u]) => k && /^https:\/\/pubmed\.ncbi\.nlm\.nih\.gov\/\d+\/$/.test(u)), "kaynak künyesi");
+  if (kaynak) assert.ok(n.kay.some(([k]) => k.includes(kaynak)), `${a} + ${b}: ${kaynak} kaynağı yok`);
+  assert.equal(c.kon, kon, `${a} + ${b} kontrendike işareti`);
+  return c;
+}
+
+test("1) PDE5 inhibitörü + nitrat: kontrendike, Ciddi", () => {
+  for (const p of ["sildenafil", "tadalafil", "vardenafil"])
+    for (const n of ["izosorbid-mononitrat", "izosorbid-dinitrat", "nitrogliserin"])
+      ciddiKural(p, n, { kon: true, kaynak: "Webb" });
+  assert.ok(!cift(calis("sildenafil", "amlodipin"), "sildenafil", "amlodipin")?.kural);
+});
+
+test("2) Tizanidin + güçlü CYP1A2 inhibitörü: kontrendike, Ciddi", () => {
+  ciddiKural("tizanidin", "siprofloksasin", { kon: true, kaynak: "Granfors" });
+  ciddiKural("tizanidin", "fluvoksamin", { kon: true, kaynak: "Granfors" });
+  assert.ok(!cift(calis("tizanidin", "levofloksasin"), "tizanidin", "levofloksasin")?.kural);
+});
+
+test("3) Lityum + ACEİ/ARB, tiyazid/kıvrım diüretiği, NSAİİ: Ciddi", () => {
+  for (const b of ["ramipril", "enalapril", "losartan", "valsartan", "hidroklorotiyazid", "indapamid", "furosemid", "torasemid", "ibuprofen", "naproksen", "diklofenak"])
+    ciddiKural("lityum", b, { kaynak: "Juurlink" });
+  assert.ok(!cift(calis("lityum", "spironolakton"), "lityum", "spironolakton")?.kural);
+});
+
+test("4) Digoksin + amiodaron, verapamil, klaritromisin, dronedaron: Ciddi", () => {
+  for (const b of ["amiodaron", "verapamil", "klaritromisin", "dronedaron"]) ciddiKural("digoksin", b);
+  assert.ok(!cift(calis("digoksin", "azitromisin"), "digoksin", "azitromisin")?.kural);
+});
+
+test("5) Kolşisin + güçlü CYP3A4/P-gp inhibitörü: Ciddi", () => {
+  for (const b of ["klaritromisin", "itrakonazol", "ketokonazol", "vorikonazol", "dronedaron", "siklosporin"])
+    ciddiKural("kolsisin", b, { kaynak: "Hung" });
+  assert.ok(!cift(calis("kolsisin", "azitromisin"), "kolsisin", "azitromisin")?.kural);
+});
+
+test("6) Metformin tek başına seçildiğinde eGFR < 30 bilgi kutusu", () => {
+  const R = calis("metformin");
+  assert.equal(R.bilgi.length, 1);
+  assert.match(R.bilgi[0].metin, /eGFR 30[^.]*altında kontrendike/);
+  assert.match(R.bilgi[0].kay[0][0], /KDIGO 2022/);
+  assert.equal(calis("metformin", "ramipril").bilgi.length, 1);
+  assert.equal(calis("gliklazid", "ramipril").bilgi.length, 0);
+});
+
+test("sınıf kuralı DDInter'de zaten ciddi olan çifti tekrar işaretlemez", () => {
+  const c = cift(calis("digoksin", "klaritromisin"), "digoksin", "klaritromisin");
+  assert.equal(c.lv, "Major");
+  assert.equal(c.kural, false);
+  assert.ok(c.not.some((n) => n.kay.length));
+});

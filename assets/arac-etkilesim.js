@@ -105,13 +105,64 @@
       o: "Kısa süreli ve düşük dozda kullanın; yaşlı, KBH ya da dehidratasyonda kreatinin ve tansiyonu izleyin." }
   ];
 
+  /* Kaynak künyeleri (PubMed'de doğrulandı) */
+  function pm(kunye, pmid) { return [kunye, "https://pubmed.ncbi.nlm.nih.gov/" + pmid + "/"]; }
+  var KAY = {
+    webb: pm("Webb DJ ve ark. J Am Coll Cardiol 2000;36:25–31", "10898408"),
+    granforsCipro: pm("Granfors MT ve ark. Clin Pharmacol Ther 2004;76:598–606", "15592331"),
+    granforsFluv: pm("Granfors MT ve ark. Clin Pharmacol Ther 2004;75:331–41", "15060511"),
+    juurlinkLi: pm("Juurlink DN ve ark. J Am Geriatr Soc 2004;52:794–8", "15086664"),
+    finley: pm("Finley PR. Clin Pharmacokinet 2016;55:925–41", "26936045"),
+    juurlinkDig: pm("Juurlink DN ve ark. JAMA 2003;289:1652–8", "12672733"),
+    moysey: pm("Moysey JO ve ark. Br Med J 1981;282:272", "6779981"),
+    klein: pm("Klein HO ve ark. Circulation 1982;65:998–1003", "7074765"),
+    hohnloser: pm("Hohnloser SH ve ark. Circ Arrhythm Electrophysiol 2014;7:1019–25", "25378467"),
+    hung: pm("Hung IF ve ark. Clin Infect Dis 2005;41:291–300", "16007523"),
+    terkeltaub: pm("Terkeltaub RA ve ark. Arthritis Rheum 2011;63:2226–37", "21480191"),
+    kdigo: pm("KDIGO 2022 Diyabet ve KBH kılavuzu. Kidney Int 2022;102(5S):S1–S127", "36272764")
+  };
+
+  /* DDInter indirme verisinde bulunmayan ya da düşük düzeyde görünen kontrendike/ciddi çiftler.
+     sev: "Major" olan kural, çifti DDInter düzeyinden bağımsız olarak "Ciddi" grubuna taşır. */
+  var DIG_ARTIRAN = ["amiodaron", "verapamil", "klaritromisin", "dronedaron"];
+  var CIDDI = [
+    { t: function (a, b) { return has(a, "pde5") && has(b, "nitrat"); }, sev: "Major", kon: true,
+      m: "PDE5 inhibitörü nitratların (NO vericiler) vazodilatör etkisini güçlendirir; ağır ve uzun süren hipotansiyon, senkop, miyokard iskemisi.",
+      o: "Birlikte kullanım kontrendikedir. Nitrat kullanan hastaya PDE5 inhibitörü verilmez; PDE5 inhibitörü alan hastada göğüs ağrısında nitrat vermeden önce son doz sorulmalı (sildenafil/vardenafil için en az 24 saat, tadalafil için en az 48 saat).",
+      kay: [KAY.webb] },
+    { t: function (a, b) { return a.id === "tizanidin" && has(b, "1a2g"); }, sev: "Major", kon: true,
+      m: "Güçlü CYP1A2 inhibisyonu tizanidin yıkımını durdurur: plazma düzeyi siprofloksasinle ~10 kat, fluvoksaminle ~33 kat artar; ağır hipotansiyon, bradikardi ve sedasyon.",
+      o: "Birlikte kullanım kontrendikedir. Kas gevşetici gerekiyorsa başka bir ilaç seçin ya da antibiyotik/antidepresan için CYP1A2'yi inhibe etmeyen bir alternatif kullanın.",
+      kay: [KAY.granforsCipro, KAY.granforsFluv] },
+    { t: function (a, b) { return a.id === "lityum" && (has(b, "raas") || has(b, "tiyazid") || has(b, "loop") || (has(b, "nsaii") && b.id !== "asa")); }, sev: "Major",
+      m: "Lityum böbrekten sodyumla birlikte atılır; ACEİ/ARB, tiyazid ve kıvrım diüretikleri ile NSAİİ lityum klirensini azaltır ve lityum düzeyini yükseltir. Toksisite: tremor, ataksi, konfüzyon, ishal, kusma.",
+      o: "Mümkünse kombinasyondan kaçının. Kaçınılamıyorsa başlangıçtan ~5–7 gün sonra ve doz değişikliklerinde serum lityum, kreatinin ve sodyum düzeyine bakın; lityum dozunu gerekirse azaltın. Özellikle yaşlıda ilk ay yüksek risklidir. Hastaya toksisite belirtilerini ve kusma/ishal/dehidratasyonda hekime başvurmasını anlatın.",
+      kay: [KAY.juurlinkLi, KAY.finley] },
+    { t: function (a, b) { return a.id === "digoksin" && DIG_ARTIRAN.indexOf(b.id) >= 0; }, sev: "Major",
+      m: "P-glikoprotein inhibisyonu (amiodaron, dronedaron, verapamil, klaritromisin) ve azalmış böbrek atılımı digoksin düzeyini belirgin artırır; bradikardi, AV blok, bulantı, görme bozukluğu, aritmi.",
+      o: "Dronedaronla birlikte kullanımdan kaçının. Amiodaron ya da verapamil başlarken digoksin dozunu yaklaşık yarıya indirmeyi düşünün, 1 hafta içinde ve sonra düzenli digoksin düzeyi ve EKG. Klaritromisin yerine digoksinle etkileşmeyen bir antibiyotik seçin (ör. amoksisilin).",
+      kay: [KAY.juurlinkDig, KAY.moysey, KAY.klein, KAY.hohnloser] },
+    { t: function (a, b) { return a.id === "kolsisin" && (has(b, "3a4g") || has(b, "pgpg")); }, sev: "Major",
+      m: "Kolşisin CYP3A4 ile yıkılır ve P-glikoprotein ile atılır; güçlü inhibitörler kolşisin düzeyini birkaç kat artırır. Kas hasarı, rabdomiyoliz, pansitopeni; böbrek ya da karaciğer yetmezliğinde ölümcül olabilir.",
+      o: "Böbrek ya da karaciğer işlevi bozuk hastada birlikte kullanım kontrendikedir. Diğer hastalarda inhibitörü kullanırken kolşisine ara verin ya da dozu belirgin azaltın; mümkünse etkileşmeyen alternatif seçin (ör. klaritromisin yerine azitromisin).",
+      kay: [KAY.hung, KAY.terkeltaub] }
+  ];
+
+  /* Tek başına seçildiğinde de gösterilen ilaç bilgi kutuları */
+  var BILGI = {
+    metformin: { baslik: "Metformin: böbrek işlevine dikkat",
+      metin: "eGFR 30 mL/dk/1,73 m²'nin altında kontrendikedir (laktik asidoz riski). eGFR 30–44 arasında yeni başlanmaz; kullanan hastada doz azaltılır (günlük en çok 1000 mg). eGFR en az yılda bir, 60'ın altındaysa 3–6 ayda bir izlenir. İyotlu kontrast, dehidratasyon ve akut hastalıkta geçici olarak kesilmesi düşünülmelidir.",
+      kay: [KAY.kdigo] }
+  };
+
   function kuralNotlari(a, b) {
     var out = [];
-    KURAL.forEach(function (k) {
-      if (k.t(a, b) || k.t(b, a)) out.push({ m: k.m, o: k.o });
+    CIDDI.concat(KURAL).forEach(function (k) {
+      if (k.t(a, b) || k.t(b, a)) out.push({ m: k.m, o: k.o, sev: k.sev || null, kon: !!k.kon, kay: k.kay || [] });
     });
     return out;
   }
+  var RANK = { Major: 3, Moderate: 2, Minor: 1, Unknown: 0 };
 
   /* ---------- çözümleme ----------
      byId: ilaclar.json'daki ilaçlar (id → kayıt); secili: id dizisi; dosyalar: id → ilac/<id>.json içeriği.
@@ -119,7 +170,8 @@
   function analiz(byId, secili, dosyalar) {
     var ds = secili.map(function (id) { return byId[id]; });
     var R = { kutular: [], ciftler: { Major: [], Moderate: [], Minor: [], Unknown: [], Not: [] },
-              kayitYok: [], kapsamDisi: [], veriYok: ds.filter(function (d) { return !d.dd.length; }), ayniEtken: [] };
+              kayitYok: [], kapsamDisi: [], veriYok: ds.filter(function (d) { return !d.dd.length; }), ayniEtken: [],
+              bilgi: ds.filter(function (d) { return BILGI[d.id]; }).map(function (d) { return BILGI[d.id]; }) };
     for (var i = 0; i < ds.length; i++) {
       for (var j = i + 1; j < ds.length; j++) {
         var a = ds[i], b = ds[j];
@@ -129,7 +181,11 @@
         if (dosyalar[a.id] && dosyalar[a.id].x[b.id]) lv = dosyalar[a.id].x[b.id];
         else if (dosyalar[b.id] && dosyalar[b.id].x[a.id]) lv = dosyalar[b.id].x[a.id];
         var c = { a: a, b: b, lv: lv, not: kuralNotlari(a, b) };
-        if (lv) R.ciftler[lv].push(c);
+        /* Ciddi sınıf kuralı DDInter düzeyinden yüksekse ya da DDInter'de kayıt yoksa çift "Ciddi" grubuna alınır */
+        c.kural = c.not.some(function (n) { return n.sev === "Major"; }) && (!lv || RANK[lv] < RANK.Major);
+        c.kon = c.not.some(function (n) { return n.kon; });
+        c.sev = c.kural ? "Major" : lv;
+        if (c.sev) R.ciftler[c.sev].push(c);
         else if (c.not.length) R.ciftler.Not.push(c);
         else if (!a.dd.length || !b.dd.length) { /* veriYok listesinde gösterilir */ }
         else if (!a.k && !b.k) R.kapsamDisi.push(c);
@@ -180,7 +236,7 @@
     return R;
   }
 
-  if (typeof module !== "undefined") module.exports = { fold: fold, indeksle: indeksle, ara: ara, coz: coz, analiz: analiz, kuralNotlari: kuralNotlari, EN_COK: EN_COK };
+  if (typeof module !== "undefined") module.exports = { KAY: KAY, BILGI: BILGI, fold: fold, indeksle: indeksle, ara: ara, coz: coz, analiz: analiz, kuralNotlari: kuralNotlari, EN_COK: EN_COK };
   if (typeof window === "undefined" || typeof document === "undefined") return;
 
   /* ---------- arayüz ---------- */
@@ -210,13 +266,24 @@
     ".etk-grp details summary{cursor:pointer;color:var(--pine);font-weight:600}" +
     ".etk-note{margin:10px 0 0;font-size:13.5px;color:var(--muted)}";
 
+  function kaynakP(kay) {
+    var p = el("p", "etk-note"); p.appendChild(el("i", null, "Kaynak: "));
+    kay.forEach(function (k, i) { if (i) p.appendChild(document.createTextNode(" · ")); p.appendChild(link(k[0], k[1])); });
+    return p;
+  }
+
   function pairItem(c, withLv) {
     var li = el("li", "etk-pair");
-    if (withLv) li.appendChild(el("span", "etk-lv " + (c.lv || "Not"), c.lv ? DUZEY_AD[c.lv] : "Klinik not"));
+    var sev = c.sev || c.lv;
+    if (withLv) li.appendChild(el("span", "etk-lv " + (sev || "Not"),
+      c.kural ? (c.kon ? "Kontrendike" : "Ciddi") + " (sınıf kuralı)" : sev ? DUZEY_AD[sev] : "Klinik not"));
     li.appendChild(el("span", null, c.a.ad + " + " + c.b.ad));
+    if (c.kural) li.appendChild(el("p", "etk-note", c.lv ? "DDInter düzeyi: " + DUZEY_AD[c.lv] + "; klinik kaynaklara göre ciddi kabul edildi."
+      : "DDInter indirme verisinde bu çift yok; klinik kaynaklara göre ciddi kabul edildi."));
     c.not.forEach(function (n) {
       var p1 = el("p"); p1.appendChild(el("i", null, "Mekanizma: ")); p1.appendChild(document.createTextNode(n.m)); li.appendChild(p1);
       var p2 = el("p"); p2.appendChild(el("i", null, "Öneri: ")); p2.appendChild(document.createTextNode(n.o)); li.appendChild(p2);
+      if (n.kay.length) li.appendChild(kaynakP(n.kay));
     });
     if (c.lv && c.a.ddid.length && c.b.ddid.length) {
       var p = el("p", "etk-note"); p.appendChild(document.createTextNode("Mekanizma ve yönetim için DDInter: "));
@@ -322,6 +389,11 @@
         b.addEventListener("click", function () { cikar(id); inp.focus(); }); sel.appendChild(b);
       });
       res.innerHTML = "";
+      secili.forEach(function (id) {
+        var b = BILGI[id]; if (!b) return;
+        var bx = el("div", "result etk-box mid"); bx.appendChild(el("b", null, b.baslik)); bx.appendChild(el("p", null, b.metin));
+        bx.appendChild(kaynakP(b.kay)); res.appendChild(bx);
+      });
       if (secili.length < EN_AZ) {
         var r0 = el("div", "result"); r0.appendChild(el("span", "hint", "En az iki ilaç ekleyin; tüm ikili etkileşimler ciddiyete göre burada listelenir.")); res.appendChild(r0); return;
       }
@@ -331,7 +403,7 @@
 
       R.kutular.forEach(function (k) {
         var bx = el("div", "result etk-box " + k.sev); bx.appendChild(el("b", null, k.baslik)); bx.appendChild(el("p", null, k.metin));
-        if (k.ciftler.length) { var ul = el("ul"); k.ciftler.forEach(function (c) { ul.appendChild(pairItem({ a: c.a, b: c.b, lv: c.lv, not: [] }, true)); }); bx.appendChild(ul); }
+        if (k.ciftler.length) { var ul = el("ul"); k.ciftler.forEach(function (c) { ul.appendChild(pairItem({ a: c.a, b: c.b, lv: c.lv, sev: c.sev, kural: c.kural, kon: c.kon, not: [] }, true)); }); bx.appendChild(ul); }
         res.appendChild(bx);
       });
       if (R.ayniEtken.length) {
@@ -342,7 +414,7 @@
       var toplam = DUZEY.reduce(function (s, lv) { return s + R.ciftler[lv].length; }, 0);
       var n = secili.length, cift = n * (n - 1) / 2;
       var sum = el("div", "result " + (R.ciftler.Major.length ? "high" : R.ciftler.Moderate.length ? "mid" : "ok"));
-      sum.appendChild(el("b", null, cift + " çiftten " + toplam + " etkileşim kaydı"));
+      sum.appendChild(el("b", null, cift + " çiftten " + toplam + " etkileşim"));
       sum.appendChild(el("p", null, "Ciddi " + R.ciftler.Major.length + " · Orta " + R.ciftler.Moderate.length + " · Hafif " + R.ciftler.Minor.length +
         " · Düzeyi belirtilmemiş " + R.ciftler.Unknown.length + (R.ciftler.Not.length ? " · Yalnız klinik not " + R.ciftler.Not.length : "")));
       res.appendChild(sum);
@@ -394,7 +466,8 @@
   }
 
   /* ---------- araçlar sayfasına kart ekleme ---------- */
-  var KART = { id: "etkilesim", g: "ilac", gl: "İlaç etkileşimi", t: "İlaç etkileşimi denetleyici (DDInter)",
+  var GROUPS = [["ilac", "İlaç etkileşimi"]];
+  var KART = { id: "etkilesim", g: "ilac", gl: GROUPS[0][1], t: "İlaç etkileşimi denetleyici (DDInter)",
     d: "2–15 ilaç girin; tüm ikili etkileşimler ciddiyete göre listelenir. Varfarin, DOAK, QT ve serotonerjik kombinasyonlar için ayrı uyarı.",
     kw: "ilaç etkileşimi etkilesim interaksiyon ddinter varfarin doak qt serotonin sendromu polifarmasi" };
 

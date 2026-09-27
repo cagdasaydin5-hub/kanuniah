@@ -126,11 +126,11 @@ kandesartan	Kandesartan			kv	raas,k
 telmisartan	Telmisartan		Telmisartan	kv	raas,k
 olmesartan	Olmesartan		Olmesartan	kv	raas,k
 sakubitril-valsartan	Sakubitril/valsartan	ARNİ	Sacubitril; Valsartan	kv	raas,k
-hidroklorotiyazid	Hidroklorotiyazid	HCTZ	Hydrochlorothiazide	kv	diur
-klortalidon	Klortalidon		Chlorthalidone	kv	diur
-indapamid	İndapamid		Indapamide	kv	diur
-furosemid	Furosemid		Furosemide	kv	diur
-torasemid	Torasemid		Torasemide	kv	diur
+hidroklorotiyazid	Hidroklorotiyazid	HCTZ	Hydrochlorothiazide	kv	diur,tiyazid
+klortalidon	Klortalidon		Chlorthalidone	kv	diur,tiyazid
+indapamid	İndapamid		Indapamide	kv	diur,tiyazid
+furosemid	Furosemid		Furosemide	kv	diur,loop
+torasemid	Torasemid		Torasemide	kv	diur,loop
 spironolakton	Spironolakton		Spironolactone	kv	k,diur
 eplerenon	Eplerenon		Eplerenone	kv	k,diur
 amilorid	Amilorid		Amiloride	kv	k,diur
@@ -153,9 +153,9 @@ flekainid	Flekainid		Flecainide	kv	qt
 ivabradin	İvabradin		Ivabradine	kv	
 ranolazin	Ranolazin		Ranolazine	kv	
 trimetazidin	Trimetazidin			kv	
-izosorbid-mononitrat	İzosorbid mononitrat		Isosorbide mononitrate	kv	
-izosorbid-dinitrat	İzosorbid dinitrat		Isosorbide dinitrate	kv	
-nitrogliserin	Nitrogliserin		Nitroglycerin	kv	
+izosorbid-mononitrat	İzosorbid mononitrat		Isosorbide mononitrate	kv	nitrat
+izosorbid-dinitrat	İzosorbid dinitrat		Isosorbide dinitrate	kv	nitrat
+nitrogliserin	Nitrogliserin		Nitroglycerin	kv	nitrat
 # Antitrombotik
 varfarin	Varfarin	kumadin	Warfarin	antitrombotik	vka
 apiksaban	Apiksaban		Apixaban	antitrombotik	doak
@@ -213,7 +213,7 @@ seftriakson	Seftriakson		Ceftriaxone	enfeksiyon
 klaritromisin	Klaritromisin		Clarithromycin	enfeksiyon	qt,3a4g
 azitromisin	Azitromisin		Azithromycin	enfeksiyon	qt
 eritromisin	Eritromisin		Erythromycin	enfeksiyon	qt,3a4
-siprofloksasin	Siprofloksasin		Ciprofloxacin	enfeksiyon	qt
+siprofloksasin	Siprofloksasin		Ciprofloxacin	enfeksiyon	qt,1a2g
 levofloksasin	Levofloksasin		Levofloxacin	enfeksiyon	qt
 moksifloksasin	Moksifloksasin		Moxifloxacin	enfeksiyon	qt
 ofloksasin	Ofloksasin		Ofloxacin	enfeksiyon	
@@ -249,7 +249,7 @@ essitalopram	Essitalopram		Escitalopram	ruh	sero,kanama,qt
 sitalopram	Sitalopram		Citalopram	ruh	sero,kanama,qt
 fluoksetin	Fluoksetin		Fluoxetine	ruh	sero,kanama
 paroksetin	Paroksetin		Paroxetine	ruh	sero,kanama
-fluvoksamin	Fluvoksamin		Fluvoxamine	ruh	sero,kanama
+fluvoksamin	Fluvoksamin		Fluvoxamine	ruh	sero,kanama,1a2g
 venlafaksin	Venlafaksin		Venlafaxine	ruh	sero,kanama
 duloksetin	Duloksetin		Duloxetine	ruh	sero,kanama
 desvenlafaksin	Desvenlafaksin		Desvenlafaxine	ruh	sero,kanama
@@ -323,8 +323,9 @@ tolterodin	Tolterodin		Tolterodine	uro
 oksibutinin	Oksibutinin		Oxybutynin	uro	
 trospiyum	Trospiyum		Trospium	uro	
 mirabegron	Mirabegron		Mirabegron	uro	
-sildenafil	Sildenafil		Sildenafil	uro	
-tadalafil	Tadalafil		Tadalafil	uro	
+sildenafil	Sildenafil		Sildenafil	uro	pde5
+tadalafil	Tadalafil		Tadalafil	uro	pde5
+vardenafil	Vardenafil		Vardenafil	uro	pde5
 # Endokrin, kemik, kadın sağlığı
 levotiroksin	Levotiroksin		Levothyroxine	endokrin	
 metimazol	Metimazol	tiamazol	Methimazole	endokrin	
@@ -356,7 +357,7 @@ cinko	Çinko sülfat	çinko	Zinc sulfate	vitamin
 # İmmünoloji, dermatoloji
 metotreksat	Metotreksat		Methotrexate	immun	
 azatiyoprin	Azatiyoprin		Azathioprine	immun	
-siklosporin	Siklosporin		Cyclosporine	immun	3a4
+siklosporin	Siklosporin		Cyclosporine	immun	3a4,pgpg
 leflunomid	Leflunomid		Leflunomide	immun	
 sulfasalazin	Sülfasalazin		Sulfasalazine	immun	
 izotretinoin	İzotretinoin		Isotretinoin	immun	
