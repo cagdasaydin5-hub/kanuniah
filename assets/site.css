@@ -169,14 +169,14 @@ details.tool summary .td{color:var(--muted);font-size:14.5px}
 .fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 16px;margin-top:14px}
 .fields.col{grid-template-columns:1fr}
 .fld{display:flex;flex-direction:column;gap:5px;font-size:14.5px;font-weight:600}
-.fld.chk{flex-direction:row;align-items:flex-start;gap:10px;font-weight:400;cursor:pointer;padding:6px 8px;border-radius:8px}
+.fld.chk{font-family:inherit;font-size:15px;color:var(--ink);flex-direction:row;align-items:flex-start;gap:10px;font-weight:400;cursor:pointer;padding:6px 8px;border-radius:8px}
 .fld.chk:hover{background:var(--sunk)}
 .fld.chk input{margin-top:4px;accent-color:var(--pine);width:18px;height:18px;flex:none}
 .fld.chk span{flex:1}
 .fld .pts{font-style:normal;font-family:var(--mono);font-size:12.5px;color:var(--muted);padding-top:2px}
 .inp{display:flex;align-items:center;gap:8px}
 .inp i{font-style:normal;font-size:13px;color:var(--muted);white-space:nowrap}
-.fld input[type=text],.fld input[type=date],.fld select{font:inherit;font-weight:400;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 10px;width:100%;min-width:0}
+.fld input[type=text],.fld input[type=search],.fld input[type=date],.fld select{font:inherit;font-weight:400;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 10px;width:100%;min-width:0}
 .fld input:focus,.fld select:focus{border-color:var(--pine);outline:none;box-shadow:0 0 0 3px var(--pine-soft)}
 .result{margin-top:16px;padding:14px 16px;border-radius:var(--radius);background:var(--sunk);border-left:4px solid var(--grey)}
 .result b{display:block;font-family:var(--mono);font-size:21px;font-weight:500;line-height:1.3}
@@ -210,7 +210,8 @@ table.asi tr.done td.st{color:var(--pine);font-weight:700}
 
 @media (max-width:640px){
   .top .wrap{padding-block:8px}
-  nav.main{margin-left:0;width:100%;overflow-x:auto;flex-wrap:nowrap}
+  nav.main{margin-left:-9px;width:calc(100% + 9px);flex-wrap:wrap;gap:2px 0}
+  nav.main a{white-space:nowrap;font-size:14.5px;padding:6px 9px}
   .bar{top:0;position:static}
   li.g{grid-template-columns:1fr}
   .yr{font-size:15px}
