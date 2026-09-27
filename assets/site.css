@@ -63,7 +63,7 @@ h1{font-family:var(--serif);font-weight:700;font-size:clamp(28px,4.6vw,44px);lin
 .notice{display:flex;gap:12px;align-items:flex-start;background:var(--law-soft);border:1px solid color-mix(in srgb,var(--law) 30%,transparent);border-radius:var(--radius);padding:14px 16px;margin-block:10px 4px}
 .notice strong{color:var(--law)}
 .notice p{margin:0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-block:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-block:22px}
 .tile{display:flex;flex-direction:column;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;text-decoration:none;color:var(--ink);transition:border-color .15s}
 .tile:hover{border-color:var(--pine)}
 .tile .n{font-family:var(--mono);font-size:26px;color:var(--pine);line-height:1}
