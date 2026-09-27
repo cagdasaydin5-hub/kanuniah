@@ -16,3 +16,13 @@ Bu klasördeki dosyalar resmî kurum sitelerinden, Türkiye IP'siyle **28 Eylül
 Notlar:
 - Ek-4/A tam listesi 08.04.2026 tarihlidir; sonraki haftalık SGK duyurularıyla değişmiş olabilir. Araçta "SGK listesinde" bilgisi bu tarihle birlikte gösterilmeli.
 - Rapor/uzman/yazabilir hekim bilgisi yalnızca `sut-guncel-2026-08-29.docx` metninden alınmalı; ilgili madde numarası (ör. 4.2.x) kayda yazılmalı.
+
+## Ek: SUT paketindeki EK-4 listeleri (29.08.2026 paketi)
+
+| Dosya | Açıklama |
+|---|---|
+| `ek-4a-bedeli-odenecek-ilaclar-sut-paketi-2026-08-29.xlsx` | Ek-4/A'nın 29.08.2026 SUT paketindeki hâli (08.04.2026 listesinden daha güncel; önce bu kullanılmalı). |
+| `ek-4f-rapor-ile-verilen-ilaclar.doc` | **EK-4/F: Ayakta tedavide sağlık raporu (uzman hekim / sağlık kurulu) ile verilebilecek ilaçlar.** SUT metninde ilaca özel hüküm yoksa rapor koşulu buradan alınır (ör. donepezil, memantin). |
+| `ek-4e-sistemik-antimikrobik-recete-kurallari.docx` | EK-4/E: Sistemik antimikrobik ve diğer ilaçların reçeteleme kuralları (hangi uzmanın yazabileceği). |
+| `ek-4d-katilim-payindan-muaf-ilaclar.doc` | EK-4/D: Katılım payından muaf ilaçlar. |
+| `ek-4b-tibbi-mamalar.xlsx` | EK-4/B: Özel tıbbi amaçlı diyet ürünleri/mamalar. |
