@@ -15,16 +15,19 @@ Kanuni Eğitim ve Araştırma Hastanesi Aile Hekimliği Kliniği'nin bilgi porta
 
 ## Reçete ve rapor aracı
 
-`assets/arac-sut.js` araçlar sayfasına bir kart ekler: etken madde ya da tıbbi malzeme aranınca reçete türü, SGK ödeme listesi (Ek-4/A), rapor gereği, raporu düzenleyecek uzman, raporla yazabilecek hekimler, SUT maddesi ve bağlantısı tek kartta görünür. Veri `data/sut.json`'dadır.
+`assets/arac-sut.js` araçlar sayfasına bir kart ekler: etken madde ya da tıbbi malzeme aranınca reçete türü, SGK ödeme listesi (Ek-4/A), rapor gereği, raporu düzenleyecek uzman, raporla yazabilecek hekimler, SUT maddesi, metinden kısa alıntı ve kaynak tek kartta görünür. Veri `data/sut.json`'dadır.
 
 - Kapsam: aile hekimliğinde sık kullanılan 150 etken madde (antihipertansif, antidiyabetik, statin, antikoagülan/antiagregan, KOAH/astım, antidepresan, antipsikotik, demans, osteoporoz, PPI, opioid/analjezik) ve 4 tıbbi malzeme raporu (hasta bezi, havalı yatak, oksijen konsantratörü, enteral ürün).
-- Kaynak: yalnızca Resmî Gazete'deki güncel SUT metni, SGK ve TİTCK. Başka site, özet ya da hafıza kullanılmaz.
-- Doğrulanamayan alan `null` bırakılır; sayfada "kaynakta doğrulanamadı" yazar. Tahminle doldurulmaz.
-- Her kayıtta `kaynak` (üst düzey `sources` anahtarları) ve `kontrol` (YYYY-AA-GG) bulunur. `durum`, dolu alan sayısına göre `dogrulandi`, `kismen` ya da `dogrulanamadi` olmalıdır.
-- Alan değerleri: `recete` beyaz | kirmizi | yesil | mor | turuncu (yalnız ilaçta); `odeme` true | false; `rapor` gerekmez | uzman-hekim | saglik-kurulu | kosullu; `raporUzman` ve `yazabilir` metin listesi; `sut` madde numarası (ör. 4.2.12) ve `sutUrl` birlikte.
-- Bir kaydı doğrularken: alanı doldurun, `kaynak`a kullandığınız belgeyi, `kontrol`e bugünün tarihini yazın; en sonda üst düzey `checked`i güncelleyin (sayfadaki "SUT sık değişir; son kontrol: …" uyarısı buradan gelir).
-- `tools/validate.py` bu kuralları denetler; bağlantılar yalnızca mevzuat.gov.tr, resmigazete.gov.tr, sgk.gov.tr ve titck.gov.tr olabilir.
-- Durum (27.09.2026): ilk kontrolde resmî kaynaklara erişilemedi; tüm düzenleyici alanlar boş, kayıtlar `dogrulanamadi`.
+- Kaynaklar `tools/kaynak/sut/` klasöründedir (her dosyanın kaynağı ve tarihi o klasörün README'sinde). Başka site, özet ya da hafıza kullanılmaz.
+  - **Reçete türü**: TİTCK SKRS e-reçete aktif ürün listesi; kaydın `atc` alanındaki ATC adlarına sahip ürünlerin "Reçete Türü" değerleri (birden fazla renk varsa hepsi). Aktif listede ürünü olmayan etken maddede `null`.
+  - **SGK ödeme**: Ek-4/A 08.04.2026 tam listesi + klasördeki iki değişiklik dosyası (2026/37 ve 25.09.2026 İGÖK); TİTCK ürünleri barkodla eşlenir, en az bir ürün Ek-4/A'da aktifse `true`. Aradaki haftalık SGK duyuruları klasörde olmadığından işlenmedi; bu `odemeNot`'ta yazar.
+  - **Rapor, uzman, yazabilen hekim, madde**: yalnızca `sut-guncel-2026-08-29.docx`. Üstü çizili (yürürlükten kalkmış) hükümler yok sayılır. Her kayıtta madde numarası (`sut`) ve metinden kısa alıntı (`alinti`) vardır; alıntılar RG değişiklik notları "(Ek:/Değişik:/Mülga: … Yürürlük: …)" çıkarılmış metinle birebir aynıdır, " … " ayrı parçaları ayırır. Etken madde SUT'ta adıyla değil sınıfıyla geçiyorsa (ör. SSRI, bifosfonat, analog insülin) eşleme `not` alanında yazar.
+  - **Tıbbi malzeme**: SUT 3.3.34 (hasta bezi), 3.3.6/3.3.6.B (oksijen konsantratörü), 4.2.8.A (enteral ürün) ve EK-3/C listeleri. Havalı yatak kaynaklarda bulunamadı.
+- Metinde bulunamayan alan `null` bırakılır; sayfada "kaynakta doğrulanamadı" yazar. SUT'ta özel hükmü olmayan ilaçların rapor koşulu SUT eki EK-4/F'de olabilir; bu liste klasörde yok.
+- Alan değerleri: `recete` [beyaz | kirmizi | yesil | mor | turuncu] (yalnız ilaçta); `odeme` true | false (+ `odemeNot`); `rapor` gerekmez | uzman-hekim | saglik-kurulu | kosullu; `raporUzman` ve `yazabilir` metin listesi (`raporUzman: []` yalnızca rapor gerekmezse); `sut` madde listesi, `sutUrl` ve `alinti` birlikte.
+- `durum`, dolu alan sayısına göre `dogrulandi`, `kismen` ya da `dogrulanamadi` olmalıdır. Kaynaklar güncellenince üst düzey `checked` ve kayıtların `kontrol` tarihi yenilenir; sayfadaki "SUT sık değişir; son kontrol: …" uyarısı `checked`'ten gelir.
+- `tools/validate.py` bu kuralları denetler; bağlantılar yalnızca mevzuat.gov.tr, resmigazete.gov.tr, sgk.gov.tr ve titck.gov.tr olabilir, `dosya` alanındaki kaynak dosyalar repoda bulunmalıdır.
+- Durum (28.09.2026): 80 kayıt tüm alanlarıyla, 66 kayıt kısmen dolu; 8 kayıtta hiçbir alan doğrulanamadı.
 
 ## Yerelde açmak
 

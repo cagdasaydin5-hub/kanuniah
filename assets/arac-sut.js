@@ -21,9 +21,13 @@
     var dd = el("dd");
     if (v == null) dd.appendChild(unv());
     else if (fmt) { var r = fmt(v); if (typeof r === "string") dd.textContent = r; else dd.appendChild(r); }
-    else dd.textContent = Array.isArray(v) ? v.join(", ") : String(v);
+    else if (Array.isArray(v)) {
+      if (v.length === 1) dd.textContent = v[0];
+      else { var ul = el("ul"); ul.style.cssText = "margin:0;padding-left:18px"; v.forEach(function (t) { ul.appendChild(el("li", null, t)); }); dd.appendChild(ul); }
+    } else dd.textContent = String(v);
     return dd;
   }
+  function small(dd, txt) { if (txt) { var s = el("small", null, txt); s.style.cssText = "display:block;color:var(--muted);font-size:13px;margin-top:2px"; dd.appendChild(s); } return dd; }
 
   function card(x, D) {
     var res = el("div", "result");
@@ -32,22 +36,28 @@
     res.className += x.durum === "dogrulandi" ? " ok" : " mid";
     res.appendChild(el("b", null, x.ad));
     var grp = (D.groups.filter(function (g) { return g[0] === x.grup; })[0] || [0, ""])[1];
-    res.appendChild(el("p", null, grp + (x.durum === "dogrulandi" ? " · tüm alanlar kaynakla doğrulandı" :
-      x.durum === "kismen" ? " · bazı alanlar kaynakta doğrulanamadı" : " · bu kaydın alanları henüz kaynakta doğrulanamadı")));
+    res.appendChild(el("p", null, grp + (x.durum === "dogrulandi" ? " · tüm alanlar kaynakta bulundu" :
+      x.durum === "kismen" ? " · bazı alanlar kaynakta doğrulanamadı" : " · bu kaydın alanları kaynakta doğrulanamadı")));
     var dl = el("dl", "kv");
     function row(t, dd) { dl.appendChild(el("dt", null, t)); dl.appendChild(dd); }
-    if (x.tur === "ilac") row("Reçete türü", ddVal(x.recete, function (v) { return RECETE[v]; }));
-    row("SGK ödeme listesi", ddVal(x.odeme, function (v) { return x.tur === "ilac" ? (v ? "Ek-4/A'da (bedeli ödenir)" : "Ek-4/A'da yok") : (v ? "SGK karşılar" : "SGK karşılamaz"); }));
+    if (x.tur === "ilac") row("Reçete türü", small(ddVal(x.recete, function (v) { return v.map(function (r) { return RECETE[r]; }).join(" · "); }),
+      x.recete && x.atc && x.atc.length ? "TİTCK aktif ürün listesi, " + x.urun + " ürün (" + x.atc.join("; ") + ")" : ""));
+    row("SGK ödeme listesi", small(ddVal(x.odeme, function (v) { return x.tur === "ilac" ? (v ? "Ek-4/A'da (bedeli ödenir)" : "Ek-4/A'da yok") : (v ? "SGK karşılar (koşullu)" : "SGK karşılamaz"); }), x.odemeNot));
     row("Rapor", ddVal(x.rapor, function (v) { return RAPOR[v]; }));
-    row("Raporu düzenleyen", ddVal(x.raporUzman));
+    row("Raporu düzenleyen", x.raporUzman && !x.raporUzman.length ? ddVal("Rapor gerekmez") : ddVal(x.raporUzman));
     row("Raporla yazabilen", ddVal(x.yazabilir));
-    row("SUT maddesi", ddVal(x.sut, function (v) { return x.sutUrl ? link("SUT " + v, x.sutUrl) : "SUT " + v; }));
+    row("SUT maddesi", ddVal(x.sut, function (v) { var t = "SUT " + v.join(", "); return x.sutUrl ? link(t, x.sutUrl) : t; }));
+    if (x.alinti) {
+      var q = el("dd"), bq = el("blockquote", null, "“" + x.alinti + "”");
+      bq.style.cssText = "margin:0;padding-left:10px;border-left:3px solid var(--line);font-size:14.5px;color:var(--muted)"; q.appendChild(bq); row("SUT metninden", q);
+    }
+    if (x.not) row("Not", ddVal(x.not));
     var kd = el("dd");
     x.kaynak.forEach(function (k, i) { var s = D.sources[k]; if (!s) return; if (i) kd.appendChild(document.createTextNode(" · ")); kd.appendChild(link(s.kurum + " – " + s.ad, s.url)); });
     row("Kaynak", kd);
     row("Kontrol tarihi", ddVal(trDate(x.kontrol)));
     res.appendChild(dl);
-    if (!n) res.appendChild(el("p", "hint", "Boş alanlar tahminle doldurulmaz. Karar vermeden önce yukarıdaki resmî kaynaklara bakın."));
+    if (n < (x.tur === "ilac" ? 6 : 5)) res.appendChild(el("p", "hint", "Boş alanlar tahminle doldurulmaz. Karar vermeden önce yukarıdaki resmî kaynaklara bakın."));
     return res;
   }
 
