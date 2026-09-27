@@ -40,7 +40,7 @@ S = j("sut.json")
 RESMI = re.compile(r"^https://(www\.)?(mevzuat\.gov\.tr|resmigazete\.gov\.tr|sgk\.gov\.tr|titck\.gov\.tr)/")
 RECETE = ("beyaz","kirmizi","yesil","mor","turuncu")
 RAPOR = ("gerekmez","uzman-hekim","saglik-kurulu","kosullu")
-MADDE = re.compile(r"^\d+(\.\d+)+(\.[A-ZÇĞİÖŞÜ](-\d+)?)?$")
+MADDE = re.compile(r"^(\d+(\.\d+)+(\.[A-ZÇĞİÖŞÜ](-\d+)?)?|EK-4/[EF] \d+(\.\d+)?(-\d+)?)$")
 def metinler(v): return isinstance(v, list) and all(isinstance(s, str) and s.strip() for s in v)
 if S:
     if not DATE.match(S.get("checked","")): err.append("sut.checked tarihi YYYY-AA-GG olmalı")
@@ -72,12 +72,15 @@ if S:
             err.append("sut %s: raporUzman metin listesi olmalı (boş liste yalnızca rapor gerekmez ise)" % i)
         if v["yazabilir"] is not None and not (metinler(v["yazabilir"]) and v["yazabilir"]): err.append("sut %s: yazabilir dolu metin listesi ya da null" % i)
         if v["sut"] is not None and not (metinler(v["sut"]) and v["sut"] and all(MADDE.match(m) for m in v["sut"])):
-            err.append("sut %s: sut madde numaraları listesi olmalı (ör. [\"4.2.28.A-1\"])" % i)
+            err.append("sut %s: sut madde numaraları listesi olmalı (ör. [\"4.2.28.A-1\", \"EK-4/F 51\"])" % i)
         if (v["sut"] is None) != (x.get("sutUrl") is None) or (v["sut"] is None) != (x.get("alinti") is None):
             err.append("sut %s: sut, sutUrl ve alinti birlikte dolu ya da birlikte null olmalı" % i)
         if x.get("sutUrl") is not None and not RESMI.match(x["sutUrl"]): err.append("sut %s: sutUrl resmî kaynak olmalı" % i)
         if x.get("alinti") is not None and not (20 <= len(x["alinti"]) <= 700): err.append("sut %s: alıntı kısa olmalı (20-700 karakter)" % i)
-        if v["rapor"] is not None and "sut-guncel" not in x.get("kaynak", []): err.append("sut %s: rapor bilgisi yalnızca SUT metninden (sut-guncel) alınır" % i)
+        if v["rapor"] is not None and not {"sut-guncel","sgk-ek4f","sgk-ek4e"} & set(x.get("kaynak", [])): err.append("sut %s: rapor bilgisi yalnızca SUT metni ya da EK-4/F, EK-4/E'den alınır" % i)
+        for m in v["sut"] or []:
+            if m.startswith("EK-4/F") and "sgk-ek4f" not in x.get("kaynak", []): err.append("sut %s: EK-4/F maddesi için sgk-ek4f kaynağı gerekli" % i)
+            if m.startswith("EK-4/E") and "sgk-ek4e" not in x.get("kaynak", []): err.append("sut %s: EK-4/E maddesi için sgk-ek4e kaynağı gerekli" % i)
         if v.get("recete") is not None and "titck-skrs" not in x.get("kaynak", []): err.append("sut %s: reçete türü için titck-skrs kaynağı gerekli" % i)
         dolu = [k for k in alan if v[k] is not None]
         beklenen = "dogrulandi" if len(dolu) == len(alan) else "kismen" if dolu else "dogrulanamadi"

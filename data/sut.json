@@ -1,6 +1,6 @@
 {
  "checked": "2026-09-28",
- "not": "Reçete türü TİTCK SKRS e-reçete aktif ürün listesinden (22.09.2026, ATC adına göre); ödeme durumu SGK Ek-4/A'dan (barkod eşleşmesiyle); rapor, uzman, yazabilen hekim ve madde numarası yalnızca SUT'un 29.08.2026 değişiklikleri işlenmiş güncel metninden (üstü çizili hükümler hariç) alınmıştır. Metinde bulunamayan alan null bırakılır ve sayfada 'kaynakta doğrulanamadı' yazar.",
+ "not": "Reçete türü TİTCK SKRS e-reçete aktif ürün listesinden (22.09.2026, ATC adına göre); ödeme durumu SGK Ek-4/A'dan (barkod eşleşmesiyle); rapor, uzman, yazabilen hekim ve madde numarası SUT'un 29.08.2026 değişiklikleri işlenmiş güncel metninden, SUT'ta hüküm yoksa aynı paketteki EK-4/F ve EK-4/E listelerinden (üstü çizili hükümler hariç) alınmıştır. Metinde bulunamayan alan null bırakılır ve sayfada 'kaynakta doğrulanamadı' yazar.",
  "groups": [
   [
    "antihipertansif",
@@ -64,11 +64,23 @@
    "url": "https://www.titck.gov.tr/dinamikmodul/43",
    "dosya": "tools/kaynak/sut/titck-skrs-erecete-ilac-listesi-2026-09-22.xlsx"
   },
-  "sgk-ek4a-2026-04-08": {
-   "ad": "Bedeli Ödenecek İlaçlar Listesi (Ek-4/A), RG 08.04.2026 / 33218",
+  "sgk-ek4a-2026-08-29": {
+   "ad": "Bedeli Ödenecek İlaçlar Listesi (Ek-4/A), 29.08.2026 SUT paketi",
    "kurum": "SGK",
-   "url": "https://sgk.gov.tr/duyuru/detay/08042026-Tarihli-ve-33218-Sayili-Resm-Gazetede-Yayimlanan-Sosyal-Guvenlik-Kurumu-Saglik-Uygulama-Tebliginde-Degisiklik-Yapilmasina-Dair-Teblig-2026-04-08-04-56-20",
-   "dosya": "tools/kaynak/sut/sgk-ek-4a-bedeli-odenecek-ilaclar-2026-04-08.xlsx"
+   "url": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
+   "dosya": "tools/kaynak/sut/ek-4a-bedeli-odenecek-ilaclar-sut-paketi-2026-08-29.xlsx"
+  },
+  "sgk-ek4f": {
+   "ad": "EK-4/F Ayakta tedavide sağlık raporu ile verilebilecek ilaçlar listesi (29.08.2026 SUT paketi)",
+   "kurum": "SGK",
+   "url": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
+   "dosya": "tools/kaynak/sut/ek-4f-rapor-ile-verilen-ilaclar.doc"
+  },
+  "sgk-ek4e": {
+   "ad": "EK-4/E Sistemik antimikrobik ve diğer ilaçların reçeteleme kuralları (29.08.2026 SUT paketi)",
+   "kurum": "SGK",
+   "url": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
+   "dosya": "tools/kaynak/sut/ek-4e-sistemik-antimikrobik-recete-kurallari.docx"
   },
   "sgk-ek4a-2026-37": {
    "ad": "Bedeli Ödenecek İlaçlar Listesinde Yapılan Düzenlemeler Hakkında Duyuru 2026/37 (23.09.2026)",
@@ -103,7 +115,7 @@
    ],
    "urun": 25,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 23/25 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 25/25 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -112,13 +124,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "nifedipin",
@@ -133,7 +145,7 @@
    ],
    "urun": 2,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -142,13 +154,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "lerkanidipin",
@@ -163,7 +175,7 @@
    ],
    "urun": 4,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 4/4 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 4/4 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -172,13 +184,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "lasidipin",
@@ -193,7 +205,7 @@
    ],
    "urun": 1,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -202,13 +214,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "felodipin",
@@ -223,7 +235,7 @@
    ],
    "urun": 1,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -232,13 +244,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "diltiazem",
@@ -253,7 +265,7 @@
    ],
    "urun": 5,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 5/5 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 5/5 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -262,13 +274,14 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
-    "sgk-ek4a-2026-09-25"
+    "sgk-ek4a-2026-09-25",
+    "sgk-ek4e"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "EK-4/E 13-25 yalnızca diltiazemin topikal formlarını düzenler (genel cerrahi, kadın doğum ya da iç hastalıkları); oral formlar için hüküm bulunamadı."
   },
   {
    "id": "verapamil",
@@ -283,7 +296,7 @@
    ],
    "urun": 4,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 4/4 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 4/4 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -292,13 +305,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "ramipril",
@@ -313,7 +326,7 @@
    ],
    "urun": 6,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 6/6 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 6/6 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -322,13 +335,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "enalapril",
@@ -343,7 +356,7 @@
    ],
    "urun": 2,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -352,13 +365,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "lisinopril",
@@ -373,7 +386,7 @@
    ],
    "urun": 6,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 6/6 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 6/6 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -382,13 +395,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "perindopril",
@@ -403,7 +416,7 @@
    ],
    "urun": 3,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 3/3 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 3/3 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -412,13 +425,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "kaptopril",
@@ -433,7 +446,7 @@
    ],
    "urun": 3,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 3/3 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 3/3 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -442,13 +455,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "losartan",
@@ -463,22 +476,32 @@
    ],
    "urun": 6,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 6/6 (TİTCK aktif listesindeki ürünler)",
-   "rapor": null,
-   "raporUzman": null,
-   "yazabilir": null,
-   "sut": null,
-   "sutUrl": null,
-   "alinti": null,
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 6/6 (TİTCK aktif listesindeki ürünler)",
+   "rapor": "kosullu",
+   "raporUzman": [
+    "Uzman hekim (EK-4/F'de uzmanlık dalı belirtilmemiş; SUT 4.1.3)"
+   ],
+   "yazabilir": [
+    "Tüm hekimler (raporla, en fazla 3 aylık)",
+    "Aile hekimleri: raporsuz, ayda en fazla 1 kutu"
+   ],
+   "sut": [
+    "4.1.8",
+    "EK-4/F 51"
+   ],
+   "sutUrl": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
+   "alinti": "Anjiotensin reseptör blokerleri (İrbesartan, Kandesartan, Losartan, Telmisartan,Valsartan, Rilmeniden, Moksonidin, Olmesartan, Eprosartan Mesilat, kombinasyonları dahil) … Anjiotensin reseptör blokerleri ve kombinasyonları, raporsuz olarak ayda en fazla bir kutu olarak aile hekimlerince reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
-    "sgk-ek4a-2026-09-25"
+    "sgk-ek4a-2026-09-25",
+    "sut-guncel",
+    "sgk-ek4f"
    ],
    "kontrol": "2026-09-28",
-   "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "durum": "dogrulandi",
+   "not": "Diğer antihipertansiflerle kombinasyonlarda monoterapiyle kan basıncının yeterince kontrol edilemediği raporda belirtilmelidir."
   },
   {
    "id": "valsartan",
@@ -493,22 +516,32 @@
    ],
    "urun": 6,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 6/6 (TİTCK aktif listesindeki ürünler)",
-   "rapor": null,
-   "raporUzman": null,
-   "yazabilir": null,
-   "sut": null,
-   "sutUrl": null,
-   "alinti": null,
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 6/6 (TİTCK aktif listesindeki ürünler)",
+   "rapor": "kosullu",
+   "raporUzman": [
+    "Uzman hekim (EK-4/F'de uzmanlık dalı belirtilmemiş; SUT 4.1.3)"
+   ],
+   "yazabilir": [
+    "Tüm hekimler (raporla, en fazla 3 aylık)",
+    "Aile hekimleri: raporsuz, ayda en fazla 1 kutu"
+   ],
+   "sut": [
+    "4.1.8",
+    "EK-4/F 51"
+   ],
+   "sutUrl": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
+   "alinti": "Anjiotensin reseptör blokerleri (İrbesartan, Kandesartan, Losartan, Telmisartan,Valsartan, Rilmeniden, Moksonidin, Olmesartan, Eprosartan Mesilat, kombinasyonları dahil) … Anjiotensin reseptör blokerleri ve kombinasyonları, raporsuz olarak ayda en fazla bir kutu olarak aile hekimlerince reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
-    "sgk-ek4a-2026-09-25"
+    "sgk-ek4a-2026-09-25",
+    "sut-guncel",
+    "sgk-ek4f"
    ],
    "kontrol": "2026-09-28",
-   "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "durum": "dogrulandi",
+   "not": "Diğer antihipertansiflerle kombinasyonlarda monoterapiyle kan basıncının yeterince kontrol edilemediği raporda belirtilmelidir."
   },
   {
    "id": "irbesartan",
@@ -523,22 +556,32 @@
    ],
    "urun": 8,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 8/8 (TİTCK aktif listesindeki ürünler)",
-   "rapor": null,
-   "raporUzman": null,
-   "yazabilir": null,
-   "sut": null,
-   "sutUrl": null,
-   "alinti": null,
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 8/8 (TİTCK aktif listesindeki ürünler)",
+   "rapor": "kosullu",
+   "raporUzman": [
+    "Uzman hekim (EK-4/F'de uzmanlık dalı belirtilmemiş; SUT 4.1.3)"
+   ],
+   "yazabilir": [
+    "Tüm hekimler (raporla, en fazla 3 aylık)",
+    "Aile hekimleri: raporsuz, ayda en fazla 1 kutu"
+   ],
+   "sut": [
+    "4.1.8",
+    "EK-4/F 51"
+   ],
+   "sutUrl": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
+   "alinti": "Anjiotensin reseptör blokerleri (İrbesartan, Kandesartan, Losartan, Telmisartan,Valsartan, Rilmeniden, Moksonidin, Olmesartan, Eprosartan Mesilat, kombinasyonları dahil) … Anjiotensin reseptör blokerleri ve kombinasyonları, raporsuz olarak ayda en fazla bir kutu olarak aile hekimlerince reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
-    "sgk-ek4a-2026-09-25"
+    "sgk-ek4a-2026-09-25",
+    "sut-guncel",
+    "sgk-ek4f"
    ],
    "kontrol": "2026-09-28",
-   "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "durum": "dogrulandi",
+   "not": "Diğer antihipertansiflerle kombinasyonlarda monoterapiyle kan basıncının yeterince kontrol edilemediği raporda belirtilmelidir."
   },
   {
    "id": "kandesartan",
@@ -553,22 +596,32 @@
    ],
    "urun": 17,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 17/17 (TİTCK aktif listesindeki ürünler)",
-   "rapor": null,
-   "raporUzman": null,
-   "yazabilir": null,
-   "sut": null,
-   "sutUrl": null,
-   "alinti": null,
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 17/17 (TİTCK aktif listesindeki ürünler)",
+   "rapor": "kosullu",
+   "raporUzman": [
+    "Uzman hekim (EK-4/F'de uzmanlık dalı belirtilmemiş; SUT 4.1.3)"
+   ],
+   "yazabilir": [
+    "Tüm hekimler (raporla, en fazla 3 aylık)",
+    "Aile hekimleri: raporsuz, ayda en fazla 1 kutu"
+   ],
+   "sut": [
+    "4.1.8",
+    "EK-4/F 51"
+   ],
+   "sutUrl": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
+   "alinti": "Anjiotensin reseptör blokerleri (İrbesartan, Kandesartan, Losartan, Telmisartan,Valsartan, Rilmeniden, Moksonidin, Olmesartan, Eprosartan Mesilat, kombinasyonları dahil) … Anjiotensin reseptör blokerleri ve kombinasyonları, raporsuz olarak ayda en fazla bir kutu olarak aile hekimlerince reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
-    "sgk-ek4a-2026-09-25"
+    "sgk-ek4a-2026-09-25",
+    "sut-guncel",
+    "sgk-ek4f"
    ],
    "kontrol": "2026-09-28",
-   "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "durum": "dogrulandi",
+   "not": "Diğer antihipertansiflerle kombinasyonlarda monoterapiyle kan basıncının yeterince kontrol edilemediği raporda belirtilmelidir."
   },
   {
    "id": "telmisartan",
@@ -583,22 +636,32 @@
    ],
    "urun": 3,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 3/3 (TİTCK aktif listesindeki ürünler)",
-   "rapor": null,
-   "raporUzman": null,
-   "yazabilir": null,
-   "sut": null,
-   "sutUrl": null,
-   "alinti": null,
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 3/3 (TİTCK aktif listesindeki ürünler)",
+   "rapor": "kosullu",
+   "raporUzman": [
+    "Uzman hekim (EK-4/F'de uzmanlık dalı belirtilmemiş; SUT 4.1.3)"
+   ],
+   "yazabilir": [
+    "Tüm hekimler (raporla, en fazla 3 aylık)",
+    "Aile hekimleri: raporsuz, ayda en fazla 1 kutu"
+   ],
+   "sut": [
+    "4.1.8",
+    "EK-4/F 51"
+   ],
+   "sutUrl": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
+   "alinti": "Anjiotensin reseptör blokerleri (İrbesartan, Kandesartan, Losartan, Telmisartan,Valsartan, Rilmeniden, Moksonidin, Olmesartan, Eprosartan Mesilat, kombinasyonları dahil) … Anjiotensin reseptör blokerleri ve kombinasyonları, raporsuz olarak ayda en fazla bir kutu olarak aile hekimlerince reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
-    "sgk-ek4a-2026-09-25"
+    "sgk-ek4a-2026-09-25",
+    "sut-guncel",
+    "sgk-ek4f"
    ],
    "kontrol": "2026-09-28",
-   "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "durum": "dogrulandi",
+   "not": "Diğer antihipertansiflerle kombinasyonlarda monoterapiyle kan basıncının yeterince kontrol edilemediği raporda belirtilmelidir."
   },
   {
    "id": "olmesartan",
@@ -613,22 +676,32 @@
    ],
    "urun": 7,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 7/7 (TİTCK aktif listesindeki ürünler)",
-   "rapor": null,
-   "raporUzman": null,
-   "yazabilir": null,
-   "sut": null,
-   "sutUrl": null,
-   "alinti": null,
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 7/7 (TİTCK aktif listesindeki ürünler)",
+   "rapor": "kosullu",
+   "raporUzman": [
+    "Uzman hekim (EK-4/F'de uzmanlık dalı belirtilmemiş; SUT 4.1.3)"
+   ],
+   "yazabilir": [
+    "Tüm hekimler (raporla, en fazla 3 aylık)",
+    "Aile hekimleri: raporsuz, ayda en fazla 1 kutu"
+   ],
+   "sut": [
+    "4.1.8",
+    "EK-4/F 51"
+   ],
+   "sutUrl": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
+   "alinti": "Anjiotensin reseptör blokerleri (İrbesartan, Kandesartan, Losartan, Telmisartan,Valsartan, Rilmeniden, Moksonidin, Olmesartan, Eprosartan Mesilat, kombinasyonları dahil) … Anjiotensin reseptör blokerleri ve kombinasyonları, raporsuz olarak ayda en fazla bir kutu olarak aile hekimlerince reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
-    "sgk-ek4a-2026-09-25"
+    "sgk-ek4a-2026-09-25",
+    "sut-guncel",
+    "sgk-ek4f"
    ],
    "kontrol": "2026-09-28",
-   "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "durum": "dogrulandi",
+   "not": "Diğer antihipertansiflerle kombinasyonlarda monoterapiyle kan basıncının yeterince kontrol edilemediği raporda belirtilmelidir."
   },
   {
    "id": "hidroklorotiyazid",
@@ -651,7 +724,7 @@
    ],
    "kontrol": "2026-09-28",
    "durum": "dogrulanamadi",
-   "not": "TİTCK SKRS aktif ürün listesinde (22.09.2026) bu etken maddeyle ürün bulunamadı; reçete türü ve Ek-4/A eşleşmesi yapılamadı. SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "TİTCK SKRS aktif ürün listesinde (22.09.2026) bu etken maddeyle ürün bulunamadı; reçete türü ve Ek-4/A eşleşmesi yapılamadı. SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "indapamid",
@@ -666,7 +739,7 @@
    ],
    "urun": 5,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 5/5 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 5/5 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -675,13 +748,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "klortalidon",
@@ -704,7 +777,7 @@
    ],
    "kontrol": "2026-09-28",
    "durum": "dogrulanamadi",
-   "not": "TİTCK SKRS aktif ürün listesinde (22.09.2026) bu etken maddeyle ürün bulunamadı; reçete türü ve Ek-4/A eşleşmesi yapılamadı. SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "TİTCK SKRS aktif ürün listesinde (22.09.2026) bu etken maddeyle ürün bulunamadı; reçete türü ve Ek-4/A eşleşmesi yapılamadı. SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "furosemid",
@@ -719,7 +792,7 @@
    ],
    "urun": 12,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 12/12 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 12/12 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -728,13 +801,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "torasemid",
@@ -749,22 +822,30 @@
    ],
    "urun": 2,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
-   "rapor": null,
-   "raporUzman": null,
-   "yazabilir": null,
-   "sut": null,
-   "sutUrl": null,
-   "alinti": null,
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
+   "rapor": "kosullu",
+   "raporUzman": [
+    "200 mg: nefroloji (1 yıl)"
+   ],
+   "yazabilir": [
+    "200 mg: nefroloji ve iç hastalıkları uzmanları"
+   ],
+   "sut": [
+    "EK-4/F 88"
+   ],
+   "sutUrl": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
+   "alinti": "Torasemid 200 mg; 10-40 mg dozlarda kullanıma rağmen volüm yükünün veya ödemin devam ettiği, eGFR <30 mI/dk ağır böbrek yetersizliği olan hastalarda, bu durumların belirtildiği nefroloji uzman hekimi tarafından düzenlenen 1 yıl süreli uzman hekim raporuna istinaden nefroloji ve iç hastalıkları uzman hekimleri tarafından reçete edilmesi halinde bedeli Kurumca karşılanır.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
-    "sgk-ek4a-2026-09-25"
+    "sgk-ek4a-2026-09-25",
+    "sut-guncel",
+    "sgk-ek4f"
    ],
    "kontrol": "2026-09-28",
-   "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "durum": "dogrulandi",
+   "not": "Hüküm yalnızca 200 mg formu kapsar; diğer dozlar için kaynaklarda hüküm bulunamadı."
   },
   {
    "id": "spironolakton",
@@ -779,7 +860,7 @@
    ],
    "urun": 4,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 4/4 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 4/4 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -788,13 +869,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "eplerenon",
@@ -809,22 +890,31 @@
    ],
    "urun": 2,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
-   "rapor": null,
-   "raporUzman": null,
-   "yazabilir": null,
-   "sut": null,
-   "sutUrl": null,
-   "alinti": null,
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
+   "rapor": "uzman-hekim",
+   "raporUzman": [
+    "Kardiyoloji"
+   ],
+   "yazabilir": [
+    "Tüm hekimler (kardiyoloji raporuyla)"
+   ],
+   "sut": [
+    "4.1.8",
+    "EK-4/F 58"
+   ],
+   "sutUrl": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
+   "alinti": "Yalnızca spironolakton tedavisi altındayken jinekomasti gelişen veya spironolaktonu tolere edemeyen; … kardiyoloji uzman hekimlerince düzenlenen rapora istinaden tüm hekimlerce reçetelenebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
-    "sgk-ek4a-2026-09-25"
+    "sgk-ek4a-2026-09-25",
+    "sut-guncel",
+    "sgk-ek4f"
    ],
    "kontrol": "2026-09-28",
-   "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "durum": "dogrulandi",
+   "not": "Akut MI sonrası KY ile LVEF ≤%40 ya da NYHA II KY ile LVEF ≤%30 koşulu."
   },
   {
    "id": "metoprolol",
@@ -839,7 +929,7 @@
    ],
    "urun": 15,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 15/15 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 15/15 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -848,13 +938,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "bisoprolol",
@@ -869,7 +959,7 @@
    ],
    "urun": 7,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 7/7 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 7/7 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -878,13 +968,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "nebivolol",
@@ -899,7 +989,7 @@
    ],
    "urun": 8,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 7/8 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 7/8 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -908,13 +998,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "karvedilol",
@@ -929,7 +1019,7 @@
    ],
    "urun": 14,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 14/14 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 14/14 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -938,13 +1028,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "atenolol",
@@ -959,7 +1049,7 @@
    ],
    "urun": 3,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 3/3 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 3/3 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -968,13 +1058,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "doksazosin",
@@ -989,22 +1079,31 @@
    ],
    "urun": 7,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 7/7 (TİTCK aktif listesindeki ürünler)",
-   "rapor": null,
-   "raporUzman": null,
-   "yazabilir": null,
-   "sut": null,
-   "sutUrl": null,
-   "alinti": null,
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 7/7 (TİTCK aktif listesindeki ürünler)",
+   "rapor": "kosullu",
+   "raporUzman": [
+    "Benign prostat hiperplazisinde: üroloji (1 yıl)"
+   ],
+   "yazabilir": [
+    "BPH'de: üroloji uzmanı (raporsuz)",
+    "BPH'de: tüm hekimler (üroloji raporuyla)"
+   ],
+   "sut": [
+    "EK-4/E 13-3"
+   ],
+   "sutUrl": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
+   "alinti": "Benign prostat hiperplazisi endikasyonunda üroloji uzman hekimince veya bu uzman hekimin düzenlediği 1 yıl süreli uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
-    "sgk-ek4a-2026-09-25"
+    "sgk-ek4a-2026-09-25",
+    "sut-guncel",
+    "sgk-ek4e"
    ],
    "kontrol": "2026-09-28",
-   "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "durum": "dogrulandi",
+   "not": "Hüküm yalnızca BPH endikasyonu içindir; hipertansiyon endikasyonu için kaynaklarda hüküm bulunamadı."
   },
   {
    "id": "moksonidin",
@@ -1016,18 +1115,27 @@
    "urun": 0,
    "odeme": null,
    "odemeNot": null,
-   "rapor": null,
-   "raporUzman": null,
-   "yazabilir": null,
-   "sut": null,
-   "sutUrl": null,
-   "alinti": null,
+   "rapor": "kosullu",
+   "raporUzman": [
+    "Uzman hekim (EK-4/F'de uzmanlık dalı belirtilmemiş; SUT 4.1.3)"
+   ],
+   "yazabilir": [
+    "Tüm hekimler (raporla, en fazla 3 aylık)",
+    "Aile hekimleri: raporsuz, ayda en fazla 1 kutu"
+   ],
+   "sut": [
+    "4.1.8",
+    "EK-4/F 51"
+   ],
+   "sutUrl": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
+   "alinti": "Anjiotensin reseptör blokerleri (İrbesartan, Kandesartan, Losartan, Telmisartan,Valsartan, Rilmeniden, Moksonidin, Olmesartan, Eprosartan Mesilat, kombinasyonları dahil) … Anjiotensin reseptör blokerleri ve kombinasyonları, raporsuz olarak ayda en fazla bir kutu olarak aile hekimlerince reçete edilebilir.",
    "kaynak": [
-    "sut-guncel"
+    "sut-guncel",
+    "sgk-ek4f"
    ],
    "kontrol": "2026-09-28",
-   "durum": "dogrulanamadi",
-   "not": "TİTCK SKRS aktif ürün listesinde (22.09.2026) bu etken maddeyle ürün bulunamadı; reçete türü ve Ek-4/A eşleşmesi yapılamadı. SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "durum": "kismen",
+   "not": "TİTCK SKRS aktif ürün listesinde (22.09.2026) bu etken maddeyle ürün bulunamadı; reçete türü ve Ek-4/A eşleşmesi yapılamadı. EK-4/F 51 moksonidini ARB maddesinde sayar. Diğer antihipertansiflerle kombinasyonlarda monoterapiyle kan basıncının yeterince kontrol edilemediği raporda belirtilmelidir."
   },
   {
    "id": "sakubitril-valsartan",
@@ -1042,7 +1150,7 @@
    ],
    "urun": 9,
    "odeme": false,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 0/9 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 0/9 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -1051,13 +1159,14 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
-    "sgk-ek4a-2026-09-25"
+    "sgk-ek4a-2026-09-25",
+    "sgk-ek4f"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "EK-4/F 51 ARB'leri 'kombinasyonları dahil' kapsar; sakubitril+valsartanın bu kapsamda olup olmadığı metinde açıkça yazmıyor, bu yüzden rapor alanları boş bırakıldı."
   },
   {
    "id": "metformin",
@@ -1072,7 +1181,7 @@
    ],
    "urun": 15,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 13/15 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 13/15 (TİTCK aktif listesindeki ürünler)",
    "rapor": "gerekmez",
    "raporUzman": [],
    "yazabilir": [
@@ -1085,7 +1194,7 @@
    "alinti": "Metformin, sulfonilüreler, metformin+sulfonilüre kombinasyonları, alfa glukozidaz inhibitörleri ve insan insülinleri tüm hekimler tarafından reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -1106,7 +1215,7 @@
    ],
    "urun": 13,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 13/13 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 13/13 (TİTCK aktif listesindeki ürünler)",
    "rapor": "gerekmez",
    "raporUzman": [],
    "yazabilir": [
@@ -1119,7 +1228,7 @@
    "alinti": "Metformin, sulfonilüreler, metformin+sulfonilüre kombinasyonları, alfa glukozidaz inhibitörleri ve insan insülinleri tüm hekimler tarafından reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -1141,7 +1250,7 @@
    ],
    "urun": 9,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 8/9 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 8/9 (TİTCK aktif listesindeki ürünler)",
    "rapor": "gerekmez",
    "raporUzman": [],
    "yazabilir": [
@@ -1154,7 +1263,7 @@
    "alinti": "Metformin, sulfonilüreler, metformin+sulfonilüre kombinasyonları, alfa glukozidaz inhibitörleri ve insan insülinleri tüm hekimler tarafından reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -1210,7 +1319,7 @@
    ],
    "urun": 11,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 11/11 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 11/11 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Endokrinoloji",
@@ -1229,7 +1338,7 @@
    "alinti": "Analog insülinler, pioglitazon, pioglitazonun oral kombinasyonları veya pioglitazonun insülin ile kombine kullanımları endokrinoloji, iç hastalıkları, çocuk sağlığı ve hastalıkları ve kardiyoloji uzman hekimlerince veya bu hekimlerce düzenlenen uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -1250,7 +1359,7 @@
    ],
    "urun": 4,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 4/4 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 4/4 (TİTCK aktif listesindeki ürünler)",
    "rapor": "gerekmez",
    "raporUzman": [],
    "yazabilir": [
@@ -1263,7 +1372,7 @@
    "alinti": "Metformin, sulfonilüreler, metformin+sulfonilüre kombinasyonları, alfa glukozidaz inhibitörleri ve insan insülinleri tüm hekimler tarafından reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -1285,7 +1394,7 @@
    ],
    "urun": 5,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 5/5 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 5/5 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Endokrinoloji",
@@ -1302,7 +1411,7 @@
    "alinti": "DPP-4 antagonistleri (sitagliptin, vildagliptin, saksagliptin, linagliptin, alogliptin), DPP-4 antagonistlerinin diğer oral antidiyabetiklerle kombine preperatları; metformin ve/veya sülfonilürelerin maksimum tolere edilebilir dozlarında yeterli glisemik kontrol sağlanamamış hastalarda; endokrinoloji uzman hekimleri ile iç hastalıkları uzman hekimlerince veya bu hekimlerce düzenlenen uzman hekim raporu ile tüm hekimlerce reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -1323,7 +1432,7 @@
    ],
    "urun": 9,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 8/9 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 8/9 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Endokrinoloji",
@@ -1340,7 +1449,7 @@
    "alinti": "DPP-4 antagonistleri (sitagliptin, vildagliptin, saksagliptin, linagliptin, alogliptin), DPP-4 antagonistlerinin diğer oral antidiyabetiklerle kombine preperatları; metformin ve/veya sülfonilürelerin maksimum tolere edilebilir dozlarında yeterli glisemik kontrol sağlanamamış hastalarda; endokrinoloji uzman hekimleri ile iç hastalıkları uzman hekimlerince veya bu hekimlerce düzenlenen uzman hekim raporu ile tüm hekimlerce reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -1361,7 +1470,7 @@
    ],
    "urun": 1,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Endokrinoloji",
@@ -1378,7 +1487,7 @@
    "alinti": "DPP-4 antagonistleri (sitagliptin, vildagliptin, saksagliptin, linagliptin, alogliptin), DPP-4 antagonistlerinin diğer oral antidiyabetiklerle kombine preperatları; metformin ve/veya sülfonilürelerin maksimum tolere edilebilir dozlarında yeterli glisemik kontrol sağlanamamış hastalarda; endokrinoloji uzman hekimleri ile iç hastalıkları uzman hekimlerince veya bu hekimlerce düzenlenen uzman hekim raporu ile tüm hekimlerce reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -1399,7 +1508,7 @@
    ],
    "urun": 10,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 9/10 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 10/10 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Endokrinoloji",
@@ -1416,7 +1525,7 @@
    "alinti": "DPP-4 antagonistleri (sitagliptin, vildagliptin, saksagliptin, linagliptin, alogliptin), DPP-4 antagonistlerinin diğer oral antidiyabetiklerle kombine preperatları; metformin ve/veya sülfonilürelerin maksimum tolere edilebilir dozlarında yeterli glisemik kontrol sağlanamamış hastalarda; endokrinoloji uzman hekimleri ile iç hastalıkları uzman hekimlerince veya bu hekimlerce düzenlenen uzman hekim raporu ile tüm hekimlerce reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -1437,7 +1546,7 @@
    ],
    "urun": 12,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 11/12 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 12/12 (TİTCK aktif listesindeki ürünler)",
    "rapor": "kosullu",
    "raporUzman": [
     "Tip 2 diyabet: endokrinoloji ya da iç hastalıkları",
@@ -1456,7 +1565,7 @@
    "alinti": "Sodyum-glukoz ko-transporter 2 (SGLT2) inhibitörleri (dapagliflozin, empagliflozin) … en az bir kardiyoloji uzman hekiminin yer aldığı 1 yıl süreli sağlık kurulu raporuna istinaden tüm hekimler tarafından reçete edilmesi halinde bedelleri Kurumca karşılanır.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -1477,7 +1586,7 @@
    ],
    "urun": 12,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 10/12 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 10/12 (TİTCK aktif listesindeki ürünler)",
    "rapor": "kosullu",
    "raporUzman": [
     "Tip 2 diyabet: endokrinoloji ya da iç hastalıkları",
@@ -1496,7 +1605,7 @@
    "alinti": "Sodyum-glukoz ko-transporter 2 (SGLT2) inhibitörleri (dapagliflozin, empagliflozin) … en az bir kardiyoloji uzman hekiminin yer aldığı 1 yıl süreli sağlık kurulu raporuna istinaden tüm hekimler tarafından reçete edilmesi halinde bedelleri Kurumca karşılanır.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -1517,7 +1626,7 @@
    ],
    "urun": 2,
    "odeme": false,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 0/2 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 0/2 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -1526,13 +1635,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "dulaglutid",
@@ -1547,7 +1656,7 @@
    ],
    "urun": 2,
    "odeme": false,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 0/2 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 0/2 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -1556,13 +1665,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "semaglutid",
@@ -1577,7 +1686,7 @@
    ],
    "urun": 8,
    "odeme": false,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 0/8 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 0/8 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -1586,13 +1695,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "insulin-glarjin",
@@ -1607,7 +1716,7 @@
    ],
    "urun": 4,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 4/4 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 4/4 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Endokrinoloji",
@@ -1626,7 +1735,7 @@
    "alinti": "Analog insülinler, pioglitazon, pioglitazonun oral kombinasyonları veya pioglitazonun insülin ile kombine kullanımları endokrinoloji, iç hastalıkları, çocuk sağlığı ve hastalıkları ve kardiyoloji uzman hekimlerince veya bu hekimlerce düzenlenen uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -1648,7 +1757,7 @@
    ],
    "urun": 1,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Endokrinoloji",
@@ -1667,7 +1776,7 @@
    "alinti": "Analog insülinler, pioglitazon, pioglitazonun oral kombinasyonları veya pioglitazonun insülin ile kombine kullanımları endokrinoloji, iç hastalıkları, çocuk sağlığı ve hastalıkları ve kardiyoloji uzman hekimlerince veya bu hekimlerce düzenlenen uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -1723,7 +1832,7 @@
    ],
    "urun": 3,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 3/3 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 3/3 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Endokrinoloji",
@@ -1742,7 +1851,7 @@
    "alinti": "Analog insülinler, pioglitazon, pioglitazonun oral kombinasyonları veya pioglitazonun insülin ile kombine kullanımları endokrinoloji, iç hastalıkları, çocuk sağlığı ve hastalıkları ve kardiyoloji uzman hekimlerince veya bu hekimlerce düzenlenen uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -1765,7 +1874,7 @@
    ],
    "urun": 8,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 8/8 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 8/8 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Endokrinoloji",
@@ -1784,7 +1893,7 @@
    "alinti": "Analog insülinler, pioglitazon, pioglitazonun oral kombinasyonları veya pioglitazonun insülin ile kombine kullanımları endokrinoloji, iç hastalıkları, çocuk sağlığı ve hastalıkları ve kardiyoloji uzman hekimlerince veya bu hekimlerce düzenlenen uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -1806,7 +1915,7 @@
    ],
    "urun": 1,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Endokrinoloji",
@@ -1825,7 +1934,7 @@
    "alinti": "Analog insülinler, pioglitazon, pioglitazonun oral kombinasyonları veya pioglitazonun insülin ile kombine kullanımları endokrinoloji, iç hastalıkları, çocuk sağlığı ve hastalıkları ve kardiyoloji uzman hekimlerince veya bu hekimlerce düzenlenen uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -1849,7 +1958,7 @@
    ],
    "urun": 8,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 8/8 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 8/8 (TİTCK aktif listesindeki ürünler)",
    "rapor": "gerekmez",
    "raporUzman": [],
    "yazabilir": [
@@ -1862,7 +1971,7 @@
    "alinti": "Metformin, sulfonilüreler, metformin+sulfonilüre kombinasyonları, alfa glukozidaz inhibitörleri ve insan insülinleri tüm hekimler tarafından reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -1883,7 +1992,7 @@
    ],
    "urun": 36,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 36/36 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 36/36 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Başlangıç dozları: uzman hekim",
@@ -1900,7 +2009,7 @@
    "alinti": "Statinler ve kolestiramin, daha önce kullanmayan hastalarda, uzman hekim raporuna dayanılarak kullanılmaya başlanır; … Bu ilaçlar uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -1922,7 +2031,7 @@
    ],
    "urun": 23,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 22/23 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 22/23 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Başlangıç dozları: uzman hekim",
@@ -1939,7 +2048,7 @@
    "alinti": "Statinler ve kolestiramin, daha önce kullanmayan hastalarda, uzman hekim raporuna dayanılarak kullanılmaya başlanır; … Bu ilaçlar uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -1992,7 +2101,7 @@
    ],
    "urun": 3,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 3/3 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 3/3 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Başlangıç dozları: uzman hekim",
@@ -2009,7 +2118,7 @@
    "alinti": "Statinler ve kolestiramin, daha önce kullanmayan hastalarda, uzman hekim raporuna dayanılarak kullanılmaya başlanır; … Bu ilaçlar uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -2031,7 +2140,7 @@
    ],
    "urun": 3,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/3 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/3 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Kardiyoloji",
@@ -2049,7 +2158,7 @@
    "alinti": "En az 6 ay boyunca statinlerle tedavi edilmiş olmasına rağmen LDL düzeyi 100 mg/dL’nin üzerinde kalan hastalarda bu durumun belgelenmesi koşuluyla ve kardiyoloji, iç hastalıkları, nöroloji ya da kalp ve damar cerrahisi uzman hekimlerinden biri tarafından düzenlenen uzman hekim raporuna istinaden tüm hekimlerce reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -2070,7 +2179,7 @@
    ],
    "urun": 11,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 11/11 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 11/11 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Kardiyoloji",
@@ -2089,7 +2198,7 @@
    "alinti": "kardiyoloji, kalp ve damar cerrahisi, endokrinoloji, iç hastalıkları, nöroloji uzman hekimlerince düzenlenecek uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -2111,7 +2220,7 @@
    ],
    "urun": 1,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Kardiyoloji",
@@ -2130,7 +2239,7 @@
    "alinti": "kardiyoloji, kalp ve damar cerrahisi, endokrinoloji, iç hastalıkları, nöroloji uzman hekimlerince düzenlenecek uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -2152,7 +2261,7 @@
    ],
    "urun": 5,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 5/5 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 5/5 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -2161,13 +2270,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "apiksaban",
@@ -2182,7 +2291,7 @@
    ],
    "urun": 18,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 16/18 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 18/18 (TİTCK aktif listesindeki ürünler)",
    "rapor": "saglik-kurulu",
    "raporUzman": [
     "AF: en az biri kardiyoloji ya da nöroloji olmak üzere kardiyoloji, iç hastalıkları, göğüs hastalıkları, kalp damar cerrahisi, girişimsel radyoloji, beyin cerrahisi ve nöroloji uzmanlarından en az üçünün bulunduğu sağlık kurulu (1 yıl)",
@@ -2201,7 +2310,7 @@
    "alinti": "İlk iki rapor süresi (toplam 24 ay) sonunda, sonraki raporlar kardiyoloji, iç hastalıkları, göğüs hastalıkları, kalp damar cerrahisi, girişimsel radyoloji işlemi yapan radyoloji, beyin ve sinir cerrahisi ve nöroloji uzman hekimlerince düzenlenen uzman hekim raporuna istinaden bu hekimlerce ve aile hekimlerince reçete edilmesi halinde bedeli ödenir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -2223,7 +2332,7 @@
    ],
    "urun": 17,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 16/17 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 16/17 (TİTCK aktif listesindeki ürünler)",
    "rapor": "saglik-kurulu",
    "raporUzman": [
     "AF: en az biri kardiyoloji ya da nöroloji olmak üzere kardiyoloji, iç hastalıkları, göğüs hastalıkları, kalp damar cerrahisi, girişimsel radyoloji, beyin cerrahisi ve nöroloji uzmanlarından en az üçünün bulunduğu sağlık kurulu (1 yıl)",
@@ -2236,20 +2345,22 @@
    ],
    "sut": [
     "4.2.15.D-1",
-    "4.2.15.D-2"
+    "4.2.15.D-2",
+    "EK-4/F 54"
    ],
    "sutUrl": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
    "alinti": "İlk iki rapor süresi (toplam 24 ay) sonunda, sonraki raporlar kardiyoloji, iç hastalıkları, göğüs hastalıkları, kalp damar cerrahisi, girişimsel radyoloji işlemi yapan radyoloji, beyin ve sinir cerrahisi ve nöroloji uzman hekimlerince düzenlenen uzman hekim raporuna istinaden bu hekimlerce ve aile hekimlerince reçete edilmesi halinde bedeli ödenir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
-    "sut-guncel"
+    "sut-guncel",
+    "sgk-ek4f"
    ],
    "kontrol": "2026-09-28",
    "durum": "dogrulandi",
-   "not": "AF'de varfarinle INR 2-3 tutulamaması ya da varfarin altında serebrovasküler olay koşulu aranır (4.2.15.D-1)."
+   "not": "AF'de varfarinle INR 2-3 tutulamaması ya da varfarin altında serebrovasküler olay koşulu aranır (4.2.15.D-1). EK-4/F 54: elektif kalça/diz protezinde DVT profilaksisi için ortopedi raporuyla (diz 1, kalça 3 kutu)."
   },
   {
    "id": "dabigatran",
@@ -2264,7 +2375,7 @@
    ],
    "urun": 2,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
    "rapor": "saglik-kurulu",
    "raporUzman": [
     "AF: en az biri kardiyoloji ya da nöroloji olmak üzere kardiyoloji, iç hastalıkları, göğüs hastalıkları, kalp damar cerrahisi, girişimsel radyoloji, beyin cerrahisi ve nöroloji uzmanlarından en az üçünün bulunduğu sağlık kurulu (1 yıl)",
@@ -2277,20 +2388,22 @@
    ],
    "sut": [
     "4.2.15.D-1",
-    "4.2.15.D-2"
+    "4.2.15.D-2",
+    "EK-4/F 53"
    ],
    "sutUrl": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
    "alinti": "İlk iki rapor süresi (toplam 24 ay) sonunda, sonraki raporlar kardiyoloji, iç hastalıkları, göğüs hastalıkları, kalp damar cerrahisi, girişimsel radyoloji işlemi yapan radyoloji, beyin ve sinir cerrahisi ve nöroloji uzman hekimlerince düzenlenen uzman hekim raporuna istinaden bu hekimlerce ve aile hekimlerince reçete edilmesi halinde bedeli ödenir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
-    "sut-guncel"
+    "sut-guncel",
+    "sgk-ek4f"
    ],
    "kontrol": "2026-09-28",
    "durum": "dogrulandi",
-   "not": "AF'de varfarinle INR 2-3 tutulamaması ya da varfarin altında serebrovasküler olay koşulu aranır (4.2.15.D-1)."
+   "not": "AF'de varfarinle INR 2-3 tutulamaması ya da varfarin altında serebrovasküler olay koşulu aranır (4.2.15.D-1). EK-4/F 53: elektif kalça/diz protezinde DVT profilaksisi için ortopedi raporuyla (diz 10, kalça 35 gün)."
   },
   {
    "id": "edoksaban",
@@ -2305,7 +2418,7 @@
    ],
    "urun": 2,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
    "rapor": "saglik-kurulu",
    "raporUzman": [
     "AF: en az biri kardiyoloji ya da nöroloji olmak üzere kardiyoloji, iç hastalıkları, göğüs hastalıkları, kalp damar cerrahisi, girişimsel radyoloji, beyin cerrahisi ve nöroloji uzmanlarından en az üçünün bulunduğu sağlık kurulu (1 yıl)",
@@ -2324,7 +2437,7 @@
    "alinti": "İlk iki rapor süresi (toplam 24 ay) sonunda, sonraki raporlar kardiyoloji, iç hastalıkları, göğüs hastalıkları, kalp damar cerrahisi, girişimsel radyoloji işlemi yapan radyoloji, beyin ve sinir cerrahisi ve nöroloji uzman hekimlerince düzenlenen uzman hekim raporuna istinaden bu hekimlerce ve aile hekimlerince reçete edilmesi halinde bedeli ödenir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -2346,7 +2459,7 @@
    ],
    "urun": 12,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 11/12 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 11/12 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Herhangi bir uzman hekim (en fazla 6 ay)",
@@ -2364,7 +2477,7 @@
    "alinti": "Uzman hekim tarafından düzenlenen en fazla 6 ay süreli kullanılacak ilacın dozunu gösteren uzman hekim raporuna dayanılarak tedaviye başlanır ve bu rapora istinaden tüm hekimler tarafından reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -2386,7 +2499,7 @@
    ],
    "urun": 7,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 7/7 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 7/7 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -2395,13 +2508,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "klopidogrel",
@@ -2416,7 +2529,7 @@
    ],
    "urun": 11,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 11/11 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 11/11 (TİTCK aktif listesindeki ürünler)",
    "rapor": "kosullu",
    "raporUzman": [
     "Kardiyoloji, iç hastalıkları, nöroloji, kalp damar cerrahisi ya da acil tıp (en fazla 12 ay)",
@@ -2433,7 +2546,7 @@
    "alinti": "kardiyoloji, iç hastalıkları, nöroloji, kalp damar cerrahisi veya acil tıp uzman hekimlerinden biri tarafından düzenlenen ve 12 ayı geçmemek üzere kullanım süresinin belirtildiği uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilebilir. … İlk iki rapor süresi sonunda (toplam 24 ay), sonraki raporlar en fazla 12 ay sürelerle aile hekimliği uzman hekimlerince de düzenlenebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -2454,7 +2567,7 @@
    ],
    "urun": 8,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 6/8 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 6/8 (TİTCK aktif listesindeki ürünler)",
    "rapor": "saglik-kurulu",
    "raporUzman": [
     "Kardiyoloji ya da kalp damar cerrahisi uzmanının bulunduğu sağlık kurulu (1 yıl)"
@@ -2470,7 +2583,7 @@
    "alinti": "kardiyoloji veya kalp damar cerrahisi uzman hekimlerinden birinin bulunduğu 1 yıl süreli sağlık kurulu raporuna dayanılarak kardiyoloji, kalp damar cerrahisi veya iç hastalıkları uzman hekimleri tarafından reçetelenir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -2491,7 +2604,7 @@
    ],
    "urun": 2,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
    "rapor": "saglik-kurulu",
    "raporUzman": [
     "En az bir kardiyoloji ya da kalp damar cerrahisi uzmanının bulunduğu sağlık kurulu (1 yıl)"
@@ -2507,7 +2620,7 @@
    "alinti": "en az bir kardiyoloji veya kalp damar cerrahi uzman hekiminin yer aldığı 1 yıl süreli sağlık kurulu raporuna dayanılarak yine bu hekimlerce ya da iç hastalıkları uzman hekimlerince reçetelenebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -2529,7 +2642,7 @@
    ],
    "urun": 11,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 11/11 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 11/11 (TİTCK aktif listesindeki ürünler)",
    "rapor": "gerekmez",
    "raporUzman": [],
    "yazabilir": null,
@@ -2541,7 +2654,7 @@
    "alinti": "Kısa etkili solunum yolu beta-agonistini (SABA) veya kısa etkili solunum yolu beta-agonistini (SABA) ve obstrüktif solunum yolu hastalıklarında kullanılan kısa etkili antikolinerjik maddeyi (SAMA) kombine olarak içeren ürünler (SABA+SAMA) inhale formları 4.2.24.A numaralı maddesinde yer alan hükümlerden istisnadır.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -2563,7 +2676,7 @@
    ],
    "urun": 2,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -2572,13 +2685,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "tiotropium",
@@ -2593,7 +2706,7 @@
    ],
    "urun": 7,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 7/7 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 7/7 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Göğüs hastalıkları",
@@ -2613,7 +2726,7 @@
    "alinti": "indakaterol, glikopironyum, indakaterol+glikopironyum, tiotropium, vilanterol+flutikazon, vilanterol+umeklidinyum, tiotropium+olodaterol, beklometazon+formoterol+glikopronyum veya flutikazon furoat+umeklidinyum+vilanterol etken maddeli ilaçlar; göğüs hastalıkları, göğüs cerrahisi, iç hastalıkları, çocuk sağlığı ve hastalıkları veya kardiyoloji uzman hekimleri tarafından veya bu uzman hekimlerden biri tarafından düzenlenen uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilmesi halinde bedelleri Kurumca karşılanır.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -2634,7 +2747,7 @@
    ],
    "urun": 4,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 4/4 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 4/4 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Göğüs hastalıkları",
@@ -2654,7 +2767,7 @@
    "alinti": "indakaterol, glikopironyum, indakaterol+glikopironyum, tiotropium, vilanterol+flutikazon, vilanterol+umeklidinyum, tiotropium+olodaterol, beklometazon+formoterol+glikopronyum veya flutikazon furoat+umeklidinyum+vilanterol etken maddeli ilaçlar; göğüs hastalıkları, göğüs cerrahisi, iç hastalıkları, çocuk sağlığı ve hastalıkları veya kardiyoloji uzman hekimleri tarafından veya bu uzman hekimlerden biri tarafından düzenlenen uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilmesi halinde bedelleri Kurumca karşılanır.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -2683,7 +2796,7 @@
    ],
    "kontrol": "2026-09-28",
    "durum": "dogrulanamadi",
-   "not": "TİTCK SKRS aktif ürün listesinde (22.09.2026) bu etken maddeyle ürün bulunamadı; reçete türü ve Ek-4/A eşleşmesi yapılamadı. SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "TİTCK SKRS aktif ürün listesinde (22.09.2026) bu etken maddeyle ürün bulunamadı; reçete türü ve Ek-4/A eşleşmesi yapılamadı. SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "formoterol",
@@ -2698,7 +2811,7 @@
    ],
    "urun": 1,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Astım: göğüs hastalıkları, göğüs cerrahisi, alerji, iç hastalıkları, çocuk sağlığı ve hastalıkları",
@@ -2716,7 +2829,7 @@
    "alinti": "Bu uzman hekimlerden biri tarafından düzenlenen uzman hekim raporu mevcut ise tedavinin devamı için diğer hekimlerce de reçete edilebilir. … göğüs hastalıkları, göğüs cerrahisi, iç hastalıkları, çocuk sağlığı ve hastalıkları veya kardiyoloji uzman hekimleri tarafından veya bu uzman hekimlerden biri tarafından düzenlenen uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilmesi halinde bedelleri Kurumca karşılanır.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -2769,7 +2882,7 @@
    ],
    "urun": 1,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Göğüs hastalıkları",
@@ -2789,7 +2902,7 @@
    "alinti": "indakaterol, glikopironyum, indakaterol+glikopironyum, tiotropium, vilanterol+flutikazon, vilanterol+umeklidinyum, tiotropium+olodaterol, beklometazon+formoterol+glikopronyum veya flutikazon furoat+umeklidinyum+vilanterol etken maddeli ilaçlar; göğüs hastalıkları, göğüs cerrahisi, iç hastalıkları, çocuk sağlığı ve hastalıkları veya kardiyoloji uzman hekimleri tarafından veya bu uzman hekimlerden biri tarafından düzenlenen uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilmesi halinde bedelleri Kurumca karşılanır.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -2810,7 +2923,7 @@
    ],
    "urun": 9,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 9/9 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 9/9 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -2819,13 +2932,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "flutikazon-propiyonat",
@@ -2840,7 +2953,7 @@
    ],
    "urun": 15,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 15/15 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 15/15 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -2849,13 +2962,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "beklometazon",
@@ -2878,7 +2991,7 @@
    ],
    "kontrol": "2026-09-28",
    "durum": "dogrulanamadi",
-   "not": "TİTCK SKRS aktif ürün listesinde (22.09.2026) bu etken maddeyle ürün bulunamadı; reçete türü ve Ek-4/A eşleşmesi yapılamadı. SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "TİTCK SKRS aktif ürün listesinde (22.09.2026) bu etken maddeyle ürün bulunamadı; reçete türü ve Ek-4/A eşleşmesi yapılamadı. SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "montelukast",
@@ -2893,7 +3006,7 @@
    ],
    "urun": 22,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 22/22 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 22/22 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "İç hastalıkları",
@@ -2906,19 +3019,22 @@
     "Diğer hekimler (bu uzmanlardan birinin raporuyla)"
    ],
    "sut": [
-    "4.2.24.A"
+    "4.2.24.A",
+    "EK-4/F 62"
    ],
    "sutUrl": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
    "alinti": "Montelukast, zafirlukast; iç hastalıkları, çocuk sağlığı ve hastalıkları, göğüs hastalıkları ve alerji uzman hekimleri tarafından veya bu uzman hekimlerden biri tarafından düzenlenen uzman hekim raporuna dayanılarak diğer hekimlerce de reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
-    "sut-guncel"
+    "sut-guncel",
+    "sgk-ek4f"
    ],
    "kontrol": "2026-09-28",
-   "durum": "dogrulandi"
+   "durum": "dogrulandi",
+   "not": "EK-4/F 62: antihistaminiklere dirençli kronik idiyopatik ürtikerde alerji/immünoloji, çocuk, göğüs, iç hastalıkları ya da dermatoloji uzmanı raporsuz; bu uzmanların raporuyla tüm hekimler."
   },
   {
    "id": "teofilin",
@@ -2933,7 +3049,7 @@
    ],
    "urun": 16,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 16/16 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 16/16 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -2942,13 +3058,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "roflumilast",
@@ -2992,7 +3108,7 @@
    ],
    "urun": 17,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 17/17 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 17/17 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Astım: göğüs hastalıkları, göğüs cerrahisi, alerji, iç hastalıkları, çocuk sağlığı ve hastalıkları",
@@ -3010,7 +3126,7 @@
    "alinti": "Bu uzman hekimlerden biri tarafından düzenlenen uzman hekim raporu mevcut ise tedavinin devamı için diğer hekimlerce de reçete edilebilir. … göğüs hastalıkları, göğüs cerrahisi, iç hastalıkları, çocuk sağlığı ve hastalıkları veya kardiyoloji uzman hekimleri tarafından veya bu uzman hekimlerden biri tarafından düzenlenen uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilmesi halinde bedelleri Kurumca karşılanır.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3031,7 +3147,7 @@
    ],
    "urun": 28,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 27/28 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 27/28 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Astım: göğüs hastalıkları, göğüs cerrahisi, alerji, iç hastalıkları, çocuk sağlığı ve hastalıkları",
@@ -3049,7 +3165,7 @@
    "alinti": "Bu uzman hekimlerden biri tarafından düzenlenen uzman hekim raporu mevcut ise tedavinin devamı için diğer hekimlerce de reçete edilebilir. … göğüs hastalıkları, göğüs cerrahisi, iç hastalıkları, çocuk sağlığı ve hastalıkları veya kardiyoloji uzman hekimleri tarafından veya bu uzman hekimlerden biri tarafından düzenlenen uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilmesi halinde bedelleri Kurumca karşılanır.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3070,7 +3186,7 @@
    ],
    "urun": 4,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 4/4 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 4/4 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Astım: göğüs hastalıkları, göğüs cerrahisi, alerji, iç hastalıkları, çocuk sağlığı ve hastalıkları",
@@ -3088,7 +3204,7 @@
    "alinti": "Bu uzman hekimlerden biri tarafından düzenlenen uzman hekim raporu mevcut ise tedavinin devamı için diğer hekimlerce de reçete edilebilir. … göğüs hastalıkları, göğüs cerrahisi, iç hastalıkları, çocuk sağlığı ve hastalıkları veya kardiyoloji uzman hekimleri tarafından veya bu uzman hekimlerden biri tarafından düzenlenen uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilmesi halinde bedelleri Kurumca karşılanır.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3143,7 +3259,7 @@
    ],
    "urun": 3,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 3/3 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 3/3 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Göğüs hastalıkları",
@@ -3163,7 +3279,7 @@
    "alinti": "indakaterol, glikopironyum, indakaterol+glikopironyum, tiotropium, vilanterol+flutikazon, vilanterol+umeklidinyum, tiotropium+olodaterol, beklometazon+formoterol+glikopronyum veya flutikazon furoat+umeklidinyum+vilanterol etken maddeli ilaçlar; göğüs hastalıkları, göğüs cerrahisi, iç hastalıkları, çocuk sağlığı ve hastalıkları veya kardiyoloji uzman hekimleri tarafından veya bu uzman hekimlerden biri tarafından düzenlenen uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilmesi halinde bedelleri Kurumca karşılanır.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3184,7 +3300,7 @@
    ],
    "urun": 1,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Astım: göğüs hastalıkları, göğüs cerrahisi, alerji, iç hastalıkları, çocuk sağlığı ve hastalıkları",
@@ -3202,7 +3318,7 @@
    "alinti": "Bu uzman hekimlerden biri tarafından düzenlenen uzman hekim raporu mevcut ise tedavinin devamı için diğer hekimlerce de reçete edilebilir. … göğüs hastalıkları, göğüs cerrahisi, iç hastalıkları, çocuk sağlığı ve hastalıkları veya kardiyoloji uzman hekimleri tarafından veya bu uzman hekimlerden biri tarafından düzenlenen uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilmesi halinde bedelleri Kurumca karşılanır.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3223,7 +3339,7 @@
    ],
    "urun": 2,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "KOAH: göğüs hastalıkları, göğüs cerrahisi, iç hastalıkları, çocuk sağlığı ve hastalıkları, kardiyoloji",
@@ -3242,7 +3358,7 @@
    "alinti": "indakaterol, glikopironyum, indakaterol+glikopironyum, tiotropium, vilanterol+flutikazon, vilanterol+umeklidinyum, tiotropium+olodaterol, beklometazon+formoterol+glikopronyum veya flutikazon furoat+umeklidinyum+vilanterol etken maddeli ilaçlar; göğüs hastalıkları, göğüs cerrahisi, iç hastalıkları, çocuk sağlığı ve hastalıkları veya kardiyoloji uzman hekimleri tarafından veya bu uzman hekimlerden biri tarafından düzenlenen uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilmesi halinde bedelleri Kurumca karşılanır.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3264,7 +3380,7 @@
    ],
    "urun": 7,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 7/7 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 7/7 (TİTCK aktif listesindeki ürünler)",
    "rapor": "kosullu",
    "raporUzman": [
     "Psikiyatri (1 yıldan uzun kullanımda ya da bu gruplar arasında ilaç değişiminde)"
@@ -3280,7 +3396,7 @@
    "alinti": "Trisiklik, tetrasiklik ve SSRI grubu antidepresanlar tüm hekimlerce toplam 1 yıl süre ile reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3302,7 +3418,7 @@
    ],
    "urun": 36,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 33/36 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 32/36 (TİTCK aktif listesindeki ürünler)",
    "rapor": "kosullu",
    "raporUzman": [
     "Psikiyatri (1 yıldan uzun kullanımda ya da bu gruplar arasında ilaç değişiminde)"
@@ -3318,7 +3434,7 @@
    "alinti": "Trisiklik, tetrasiklik ve SSRI grubu antidepresanlar tüm hekimlerce toplam 1 yıl süre ile reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3340,7 +3456,7 @@
    ],
    "urun": 5,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 5/5 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 5/5 (TİTCK aktif listesindeki ürünler)",
    "rapor": "kosullu",
    "raporUzman": [
     "Psikiyatri (1 yıldan uzun kullanımda ya da bu gruplar arasında ilaç değişiminde)"
@@ -3356,7 +3472,7 @@
    "alinti": "Trisiklik, tetrasiklik ve SSRI grubu antidepresanlar tüm hekimlerce toplam 1 yıl süre ile reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3378,7 +3494,7 @@
    ],
    "urun": 6,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 6/6 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 6/6 (TİTCK aktif listesindeki ürünler)",
    "rapor": "kosullu",
    "raporUzman": [
     "Psikiyatri (1 yıldan uzun kullanımda ya da bu gruplar arasında ilaç değişiminde)"
@@ -3394,7 +3510,7 @@
    "alinti": "Trisiklik, tetrasiklik ve SSRI grubu antidepresanlar tüm hekimlerce toplam 1 yıl süre ile reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3416,7 +3532,7 @@
    ],
    "urun": 10,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 10/10 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 10/10 (TİTCK aktif listesindeki ürünler)",
    "rapor": "kosullu",
    "raporUzman": [
     "Psikiyatri (1 yıldan uzun kullanımda ya da bu gruplar arasında ilaç değişiminde)"
@@ -3432,7 +3548,7 @@
    "alinti": "Trisiklik, tetrasiklik ve SSRI grubu antidepresanlar tüm hekimlerce toplam 1 yıl süre ile reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3454,7 +3570,7 @@
    ],
    "urun": 1,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
    "rapor": "kosullu",
    "raporUzman": [
     "Psikiyatri (1 yıldan uzun kullanımda ya da bu gruplar arasında ilaç değişiminde)"
@@ -3470,7 +3586,7 @@
    "alinti": "Trisiklik, tetrasiklik ve SSRI grubu antidepresanlar tüm hekimlerce toplam 1 yıl süre ile reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3492,7 +3608,7 @@
    ],
    "urun": 10,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 10/10 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 10/10 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Psikiyatri",
@@ -3511,7 +3627,7 @@
    "alinti": "SNRI, SSRE, RIMA, NASSA grubu antidepresanların psikiyatri, nöroloji veya geriatri uzman hekimlerinden biri tarafından reçete edilmesi veya bu uzman hekimlerden biri tarafından düzenlenen uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilmesi halinde",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3533,7 +3649,7 @@
    ],
    "urun": 18,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 16/18 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 16/18 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Psikiyatri",
@@ -3553,7 +3669,7 @@
    "alinti": "SNRI, SSRE, RIMA, NASSA grubu antidepresanların psikiyatri, nöroloji veya geriatri uzman hekimlerinden biri tarafından reçete edilmesi veya bu uzman hekimlerden biri tarafından düzenlenen uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilmesi halinde … Duloksetin; diyabetik periferal nöropatik ağrı tedavisinde; endokrinoloji ve metabolizma hastalıkları uzman hekimleri tarafından veya üçüncü basamak sağlık kurumlarında nöroloji uzman hekimleri tarafından reçete edilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3575,7 +3691,7 @@
    ],
    "urun": 13,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 13/13 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 13/13 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Psikiyatri",
@@ -3594,7 +3710,7 @@
    "alinti": "SNRI, SSRE, RIMA, NASSA grubu antidepresanların psikiyatri, nöroloji veya geriatri uzman hekimlerinden biri tarafından reçete edilmesi veya bu uzman hekimlerden biri tarafından düzenlenen uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilmesi halinde",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3616,7 +3732,7 @@
    ],
    "urun": 5,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/5 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/5 (TİTCK aktif listesindeki ürünler)",
    "rapor": "kosullu",
    "raporUzman": [
     "Psikiyatri"
@@ -3632,7 +3748,7 @@
    "alinti": "Bupropiyon HCl, trazodon uzatılmış salımlı formları ve agomelatin içeren ürünlerin yalnızca orta veya ağır depresif bozukluk tedavisinde",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3654,7 +3770,7 @@
    ],
    "urun": 6,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 4/6 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 4/6 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Psikiyatri"
@@ -3670,7 +3786,7 @@
    "alinti": "Bupropiyon HCl, trazodon uzatılmış salımlı formları ve agomelatin içeren ürünlerin yalnızca orta veya ağır depresif bozukluk tedavisinde",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3692,7 +3808,7 @@
    ],
    "urun": 1,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Psikiyatri"
@@ -3708,7 +3824,7 @@
    "alinti": "Bupropiyon HCl, trazodon uzatılmış salımlı formları ve agomelatin içeren ürünlerin yalnızca orta veya ağır depresif bozukluk tedavisinde",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3730,7 +3846,7 @@
    ],
    "urun": 10,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 10/10 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 10/10 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Psikiyatri"
@@ -3746,7 +3862,7 @@
    "alinti": "vortioksetin etkin maddeli ilaçların majör depresif epizotların tedavisinde psikiyatri uzman hekimleri tarafından veya psikiyatri uzman hekimlerince düzenlenen uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilmesi halinde bedelleri Kurumca karşılanır.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3767,7 +3883,7 @@
    ],
    "urun": 2,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
    "rapor": "kosullu",
    "raporUzman": [
     "Psikiyatri (1 yıldan uzun kullanımda ya da bu gruplar arasında ilaç değişiminde)"
@@ -3783,7 +3899,7 @@
    "alinti": "Trisiklik, tetrasiklik ve SSRI grubu antidepresanlar tüm hekimlerce toplam 1 yıl süre ile reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3805,7 +3921,7 @@
    ],
    "urun": 76,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 72/76 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 76/76 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Psikiyatri",
@@ -3822,7 +3938,7 @@
    "alinti": "psikiyatri uzman hekimlerince veya psikiyatri uzman hekimlerince düzenlenecek uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilmesi halinde bedelleri Kurumca karşılanır. … Atipik antipsikotik ilaçlar, demansta; psikiyatri, nöroloji veya geriatri uzman hekimleri tarafından veya bu hekimlerden biri tarafından düzenlenen uzman hekim raporuna dayanılarak tüm hekimler tarafından reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3843,7 +3959,7 @@
    ],
    "urun": 57,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 57/57 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 57/57 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Psikiyatri",
@@ -3860,7 +3976,7 @@
    "alinti": "psikiyatri uzman hekimlerince veya psikiyatri uzman hekimlerince düzenlenecek uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilmesi halinde bedelleri Kurumca karşılanır. … Atipik antipsikotik ilaçlar, demansta; psikiyatri, nöroloji veya geriatri uzman hekimleri tarafından veya bu hekimlerden biri tarafından düzenlenen uzman hekim raporuna dayanılarak tüm hekimler tarafından reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3881,7 +3997,7 @@
    ],
    "urun": 34,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 33/34 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 33/34 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Psikiyatri",
@@ -3898,7 +4014,7 @@
    "alinti": "psikiyatri uzman hekimlerince veya psikiyatri uzman hekimlerince düzenlenecek uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilmesi halinde bedelleri Kurumca karşılanır. … Atipik antipsikotik ilaçlar, demansta; psikiyatri, nöroloji veya geriatri uzman hekimleri tarafından veya bu hekimlerden biri tarafından düzenlenen uzman hekim raporuna dayanılarak tüm hekimler tarafından reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3919,7 +4035,7 @@
    ],
    "urun": 33,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 32/33 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 32/33 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Psikiyatri",
@@ -3936,7 +4052,7 @@
    "alinti": "psikiyatri uzman hekimlerince veya psikiyatri uzman hekimlerince düzenlenecek uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilmesi halinde bedelleri Kurumca karşılanır. … Atipik antipsikotik ilaçlar, demansta; psikiyatri, nöroloji veya geriatri uzman hekimleri tarafından veya bu hekimlerden biri tarafından düzenlenen uzman hekim raporuna dayanılarak tüm hekimler tarafından reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3957,7 +4073,7 @@
    ],
    "urun": 8,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 8/8 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 8/8 (TİTCK aktif listesindeki ürünler)",
    "rapor": "gerekmez",
    "raporUzman": [],
    "yazabilir": [
@@ -3970,7 +4086,7 @@
    "alinti": "Yeni nesil (atipik) antipsikotikler dışındaki antipsikotik ilaçlar tüm hekimlerce yukarıdaki kısıtlamalar olmaksızın reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -3992,7 +4108,7 @@
    ],
    "urun": 16,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 16/16 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 16/16 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Psikiyatri",
@@ -4009,7 +4125,7 @@
    "alinti": "psikiyatri uzman hekimlerince veya psikiyatri uzman hekimlerince düzenlenecek uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilmesi halinde bedelleri Kurumca karşılanır. … Atipik antipsikotik ilaçlar, demansta; psikiyatri, nöroloji veya geriatri uzman hekimleri tarafından veya bu hekimlerden biri tarafından düzenlenen uzman hekim raporuna dayanılarak tüm hekimler tarafından reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -4030,7 +4146,7 @@
    ],
    "urun": 2,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Psikiyatri",
@@ -4047,7 +4163,7 @@
    "alinti": "psikiyatri uzman hekimlerince veya psikiyatri uzman hekimlerince düzenlenecek uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilmesi halinde bedelleri Kurumca karşılanır. … Atipik antipsikotik ilaçlar, demansta; psikiyatri, nöroloji veya geriatri uzman hekimleri tarafından veya bu hekimlerden biri tarafından düzenlenen uzman hekim raporuna dayanılarak tüm hekimler tarafından reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -4068,7 +4184,7 @@
    ],
    "urun": 2,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "Psikiyatri",
@@ -4085,7 +4201,7 @@
    "alinti": "psikiyatri uzman hekimlerince veya psikiyatri uzman hekimlerince düzenlenecek uzman hekim raporuna dayanılarak tüm hekimlerce reçete edilmesi halinde bedelleri Kurumca karşılanır. … Atipik antipsikotik ilaçlar, demansta; psikiyatri, nöroloji veya geriatri uzman hekimleri tarafından veya bu hekimlerden biri tarafından düzenlenen uzman hekim raporuna dayanılarak tüm hekimler tarafından reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -4107,22 +4223,33 @@
    ],
    "urun": 23,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 22/23 (TİTCK aktif listesindeki ürünler)",
-   "rapor": null,
-   "raporUzman": null,
-   "yazabilir": null,
-   "sut": null,
-   "sutUrl": null,
-   "alinti": null,
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 22/23 (TİTCK aktif listesindeki ürünler)",
+   "rapor": "uzman-hekim",
+   "raporUzman": [
+    "Nöroloji",
+    "Geriatri",
+    "Psikiyatri"
+   ],
+   "yazabilir": [
+    "Bu uzmanlar (raporsuz)",
+    "Tüm hekimler (bu uzmanların raporuyla)"
+   ],
+   "sut": [
+    "4.1.8",
+    "EK-4/F 7"
+   ],
+   "sutUrl": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
+   "alinti": "Donepezil HCI, Galantamine, Memantine, Rivastigmin, Riluzol (Nöroloji, geriatri, psikiyatri uzman hekimlerince raporsuz, bu hekimlerce düzenlenecek uzman hekim raporuna dayanılarak tüm hekimlerce",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
-    "sgk-ek4a-2026-09-25"
+    "sgk-ek4a-2026-09-25",
+    "sut-guncel",
+    "sgk-ek4f"
    ],
    "kontrol": "2026-09-28",
-   "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "durum": "dogrulandi"
   },
   {
    "id": "rivastigmin",
@@ -4137,22 +4264,33 @@
    ],
    "urun": 5,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 5/5 (TİTCK aktif listesindeki ürünler)",
-   "rapor": null,
-   "raporUzman": null,
-   "yazabilir": null,
-   "sut": null,
-   "sutUrl": null,
-   "alinti": null,
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 5/5 (TİTCK aktif listesindeki ürünler)",
+   "rapor": "uzman-hekim",
+   "raporUzman": [
+    "Nöroloji",
+    "Geriatri",
+    "Psikiyatri"
+   ],
+   "yazabilir": [
+    "Bu uzmanlar (raporsuz)",
+    "Tüm hekimler (bu uzmanların raporuyla)"
+   ],
+   "sut": [
+    "4.1.8",
+    "EK-4/F 7"
+   ],
+   "sutUrl": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
+   "alinti": "Donepezil HCI, Galantamine, Memantine, Rivastigmin, Riluzol (Nöroloji, geriatri, psikiyatri uzman hekimlerince raporsuz, bu hekimlerce düzenlenecek uzman hekim raporuna dayanılarak tüm hekimlerce",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
-    "sgk-ek4a-2026-09-25"
+    "sgk-ek4a-2026-09-25",
+    "sut-guncel",
+    "sgk-ek4f"
    ],
    "kontrol": "2026-09-28",
-   "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "durum": "dogrulandi"
   },
   {
    "id": "galantamin",
@@ -4164,18 +4302,29 @@
    "urun": 0,
    "odeme": null,
    "odemeNot": null,
-   "rapor": null,
-   "raporUzman": null,
-   "yazabilir": null,
-   "sut": null,
-   "sutUrl": null,
-   "alinti": null,
+   "rapor": "uzman-hekim",
+   "raporUzman": [
+    "Nöroloji",
+    "Geriatri",
+    "Psikiyatri"
+   ],
+   "yazabilir": [
+    "Bu uzmanlar (raporsuz)",
+    "Tüm hekimler (bu uzmanların raporuyla)"
+   ],
+   "sut": [
+    "4.1.8",
+    "EK-4/F 7"
+   ],
+   "sutUrl": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
+   "alinti": "Donepezil HCI, Galantamine, Memantine, Rivastigmin, Riluzol (Nöroloji, geriatri, psikiyatri uzman hekimlerince raporsuz, bu hekimlerce düzenlenecek uzman hekim raporuna dayanılarak tüm hekimlerce",
    "kaynak": [
-    "sut-guncel"
+    "sut-guncel",
+    "sgk-ek4f"
    ],
    "kontrol": "2026-09-28",
-   "durum": "dogrulanamadi",
-   "not": "TİTCK SKRS aktif ürün listesinde (22.09.2026) bu etken maddeyle ürün bulunamadı; reçete türü ve Ek-4/A eşleşmesi yapılamadı. SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "durum": "kismen",
+   "not": "TİTCK SKRS aktif ürün listesinde (22.09.2026) bu etken maddeyle ürün bulunamadı; reçete türü ve Ek-4/A eşleşmesi yapılamadı."
   },
   {
    "id": "memantin",
@@ -4190,22 +4339,33 @@
    ],
    "urun": 33,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 32/33 (TİTCK aktif listesindeki ürünler)",
-   "rapor": null,
-   "raporUzman": null,
-   "yazabilir": null,
-   "sut": null,
-   "sutUrl": null,
-   "alinti": null,
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 32/33 (TİTCK aktif listesindeki ürünler)",
+   "rapor": "uzman-hekim",
+   "raporUzman": [
+    "Nöroloji",
+    "Geriatri",
+    "Psikiyatri"
+   ],
+   "yazabilir": [
+    "Bu uzmanlar (raporsuz)",
+    "Tüm hekimler (bu uzmanların raporuyla)"
+   ],
+   "sut": [
+    "4.1.8",
+    "EK-4/F 7"
+   ],
+   "sutUrl": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
+   "alinti": "Donepezil HCI, Galantamine, Memantine, Rivastigmin, Riluzol (Nöroloji, geriatri, psikiyatri uzman hekimlerince raporsuz, bu hekimlerce düzenlenecek uzman hekim raporuna dayanılarak tüm hekimlerce",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
-    "sgk-ek4a-2026-09-25"
+    "sgk-ek4a-2026-09-25",
+    "sut-guncel",
+    "sgk-ek4f"
    ],
    "kontrol": "2026-09-28",
-   "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "durum": "dogrulandi"
   },
   {
    "id": "alendronat",
@@ -4220,7 +4380,7 @@
    ],
    "urun": 2,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "İç hastalıkları",
@@ -4241,7 +4401,7 @@
    "alinti": "Bifosfanat grubu ilaçlar; iç hastalıkları, fiziksel tıp ve rehabilitasyon, ortopedi ve travmatoloji, romatoloji, tıbbi ekoloji ve hidroklimatoloji, kadın hastalıkları ve doğum, endokrinoloji uzmanları tarafından düzenlenen uzman hekim raporu ile tüm uzman hekimlerce reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -4263,7 +4423,7 @@
    ],
    "urun": 1,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "İç hastalıkları",
@@ -4284,7 +4444,7 @@
    "alinti": "Bifosfanat grubu ilaçlar; iç hastalıkları, fiziksel tıp ve rehabilitasyon, ortopedi ve travmatoloji, romatoloji, tıbbi ekoloji ve hidroklimatoloji, kadın hastalıkları ve doğum, endokrinoloji uzmanları tarafından düzenlenen uzman hekim raporu ile tüm uzman hekimlerce reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -4306,7 +4466,7 @@
    ],
    "urun": 8,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 8/8 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 8/8 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "İç hastalıkları",
@@ -4327,7 +4487,7 @@
    "alinti": "Bifosfanat grubu ilaçlar; iç hastalıkları, fiziksel tıp ve rehabilitasyon, ortopedi ve travmatoloji, romatoloji, tıbbi ekoloji ve hidroklimatoloji, kadın hastalıkları ve doğum, endokrinoloji uzmanları tarafından düzenlenen uzman hekim raporu ile tüm uzman hekimlerce reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -4349,7 +4509,7 @@
    ],
    "urun": 12,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 12/12 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 12/12 (TİTCK aktif listesindeki ürünler)",
    "rapor": "uzman-hekim",
    "raporUzman": [
     "İç hastalıkları",
@@ -4370,7 +4530,7 @@
    "alinti": "Bifosfanat grubu ilaçlar; iç hastalıkları, fiziksel tıp ve rehabilitasyon, ortopedi ve travmatoloji, romatoloji, tıbbi ekoloji ve hidroklimatoloji, kadın hastalıkları ve doğum, endokrinoloji uzmanları tarafından düzenlenen uzman hekim raporu ile tüm uzman hekimlerce reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -4392,7 +4552,7 @@
    ],
    "urun": 2,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 2/2 (TİTCK aktif listesindeki ürünler)",
    "rapor": "saglik-kurulu",
    "raporUzman": [
     "Osteoporoz: iç hastalıkları, fiziksel tıp ve rehabilitasyon, romatoloji, ortopedi ve travmatoloji, kadın hastalıkları ve doğum ya da endokrinolojiden en az birinin bulunduğu sağlık kurulu",
@@ -4408,7 +4568,7 @@
    "alinti": "uzman hekimlerinden en az birinin yer aldığı ve bu durumların belirtildiği sağlık kurulu raporuna istinaden tüm uzman hekimlerce reçete edilmesi halinde bedelleri Kurumca karşılanır.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -4430,7 +4590,7 @@
    ],
    "urun": 1,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 1/1 (TİTCK aktif listesindeki ürünler)",
    "rapor": "saglik-kurulu",
    "raporUzman": [
     "Endokrinoloji ya da fiziksel tıp ve rehabilitasyon ve/veya geriatri uzmanının bulunduğu sağlık kurulu (24 hafta)"
@@ -4445,7 +4605,7 @@
    "alinti": "bu durumların belirtildiği 24 hafta süreli endokrinoloji veya fizik tedavi ve rehabilitasyon ve/veya geriatri uzmanının bulunduğu sağlık kurulu raporuna dayanılarak uzman hekimler tarafından reçete edilmesi halinde Kurumca bedelleri karşılanır.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -4496,22 +4656,26 @@
    ],
    "urun": 53,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 50/53 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 50/53 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
-   "sut": null,
-   "sutUrl": null,
-   "alinti": null,
+   "sut": [
+    "EK-4/E 13-31"
+   ],
+   "sutUrl": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
+   "alinti": "Kolekalsiferol (Vitamin D3) mono preparatları | Yalnızca ruhsatlı endikasyonlarında reçetelenmesi halinde bedelleri Kurumca karşılanır.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
-    "sgk-ek4a-2026-09-25"
+    "sgk-ek4a-2026-09-25",
+    "sut-guncel",
+    "sgk-ek4e"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "EK-4/E yalnızca endikasyon kısıtı getirir; rapor ya da uzman koşulu yazmaz."
   },
   {
    "id": "omeprazol",
@@ -4526,7 +4690,7 @@
    ],
    "urun": 8,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 8/8 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 8/8 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -4535,13 +4699,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "esomeprazol",
@@ -4556,7 +4720,7 @@
    ],
    "urun": 11,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 11/11 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 11/11 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -4565,13 +4729,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "lansoprazol",
@@ -4586,7 +4750,7 @@
    ],
    "urun": 13,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 13/13 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 13/13 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -4595,13 +4759,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "pantoprazol",
@@ -4616,22 +4780,26 @@
    ],
    "urun": 37,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 36/37 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 36/37 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
-   "sut": null,
-   "sutUrl": null,
-   "alinti": null,
+   "sut": [
+    "EK-4/E 13-6"
+   ],
+   "sutUrl": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
+   "alinti": "20 mg. formlarının H. pylori endikasyonunda kullanılmaması ve diğer endikasyonlarında günde en fazla 2x1 dozda kullanılması",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
-    "sgk-ek4a-2026-09-25"
+    "sgk-ek4a-2026-09-25",
+    "sut-guncel",
+    "sgk-ek4e"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "EK-4/E yalnızca doz ve endikasyon kısıtı getirir; rapor ya da uzman koşulu yazmaz."
   },
   {
    "id": "rabeprazol",
@@ -4646,7 +4814,7 @@
    ],
    "urun": 8,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 8/8 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 8/8 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -4655,13 +4823,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "parasetamol",
@@ -4676,7 +4844,7 @@
    ],
    "urun": 42,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 37/42 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 38/42 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -4685,13 +4853,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "ibuprofen",
@@ -4706,7 +4874,7 @@
    ],
    "urun": 29,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 28/29 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 28/29 (TİTCK aktif listesindeki ürünler)",
    "rapor": "kosullu",
    "raporUzman": [
     "Büyük ambalaj: tek uzman hekim raporu"
@@ -4722,7 +4890,7 @@
    "alinti": "Antiinflamatuar ve antiromatizmal grubu ilaçların solid-oral formlarında büyük ambalaj kapsamına giren ilaçlar, ayakta tedavide tek uzman hekim tarafından düzenlenen sağlık raporuna dayanılarak reçete edilir, en küçük ambalajlı formları ise rapor aranmaksızın reçete edilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -4744,7 +4912,7 @@
    ],
    "urun": 18,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 17/18 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 17/18 (TİTCK aktif listesindeki ürünler)",
    "rapor": "kosullu",
    "raporUzman": [
     "Büyük ambalaj: tek uzman hekim raporu"
@@ -4760,7 +4928,7 @@
    "alinti": "Antiinflamatuar ve antiromatizmal grubu ilaçların solid-oral formlarında büyük ambalaj kapsamına giren ilaçlar, ayakta tedavide tek uzman hekim tarafından düzenlenen sağlık raporuna dayanılarak reçete edilir, en küçük ambalajlı formları ise rapor aranmaksızın reçete edilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -4782,7 +4950,7 @@
    ],
    "urun": 30,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 30/30 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 30/30 (TİTCK aktif listesindeki ürünler)",
    "rapor": "kosullu",
    "raporUzman": [
     "Büyük ambalaj: tek uzman hekim raporu"
@@ -4798,7 +4966,7 @@
    "alinti": "Antiinflamatuar ve antiromatizmal grubu ilaçların solid-oral formlarında büyük ambalaj kapsamına giren ilaçlar, ayakta tedavide tek uzman hekim tarafından düzenlenen sağlık raporuna dayanılarak reçete edilir, en küçük ambalajlı formları ise rapor aranmaksızın reçete edilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -4820,7 +4988,7 @@
    ],
    "urun": 23,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 22/23 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 23/23 (TİTCK aktif listesindeki ürünler)",
    "rapor": "kosullu",
    "raporUzman": [
     "Büyük ambalaj: tek uzman hekim raporu"
@@ -4836,7 +5004,7 @@
    "alinti": "Antiinflamatuar ve antiromatizmal grubu ilaçların solid-oral formlarında büyük ambalaj kapsamına giren ilaçlar, ayakta tedavide tek uzman hekim tarafından düzenlenen sağlık raporuna dayanılarak reçete edilir, en küçük ambalajlı formları ise rapor aranmaksızın reçete edilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -4858,7 +5026,7 @@
    ],
    "urun": 18,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 17/18 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 16/18 (TİTCK aktif listesindeki ürünler)",
    "rapor": "kosullu",
    "raporUzman": [
     "Büyük ambalaj: tek uzman hekim raporu"
@@ -4874,7 +5042,7 @@
    "alinti": "Antiinflamatuar ve antiromatizmal grubu ilaçların solid-oral formlarında büyük ambalaj kapsamına giren ilaçlar, ayakta tedavide tek uzman hekim tarafından düzenlenen sağlık raporuna dayanılarak reçete edilir, en küçük ambalajlı formları ise rapor aranmaksızın reçete edilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -4896,7 +5064,7 @@
    ],
    "urun": 10,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 9/10 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 9/10 (TİTCK aktif listesindeki ürünler)",
    "rapor": "kosullu",
    "raporUzman": [
     "Büyük ambalaj: tek uzman hekim raporu"
@@ -4912,7 +5080,7 @@
    "alinti": "Antiinflamatuar ve antiromatizmal grubu ilaçların solid-oral formlarında büyük ambalaj kapsamına giren ilaçlar, ayakta tedavide tek uzman hekim tarafından düzenlenen sağlık raporuna dayanılarak reçete edilir, en küçük ambalajlı formları ise rapor aranmaksızın reçete edilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -4934,7 +5102,7 @@
    ],
    "urun": 3,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 3/3 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 3/3 (TİTCK aktif listesindeki ürünler)",
    "rapor": "kosullu",
    "raporUzman": [
     "Büyük ambalaj: tek uzman hekim raporu"
@@ -4950,7 +5118,7 @@
    "alinti": "Antiinflamatuar ve antiromatizmal grubu ilaçların solid-oral formlarında büyük ambalaj kapsamına giren ilaçlar, ayakta tedavide tek uzman hekim tarafından düzenlenen sağlık raporuna dayanılarak reçete edilir, en küçük ambalajlı formları ise rapor aranmaksızın reçete edilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -5002,7 +5170,7 @@
    ],
    "urun": 11,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 11/11 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 11/11 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -5011,13 +5179,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "tramadol",
@@ -5032,7 +5200,7 @@
    ],
    "urun": 8,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 8/8 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 8/8 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -5041,13 +5209,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "kodein-parasetamol",
@@ -5062,7 +5230,7 @@
    ],
    "urun": 5,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 5/5 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 5/5 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -5071,13 +5239,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "morfin",
@@ -5092,22 +5260,30 @@
    ],
    "urun": 5,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 5/5 (TİTCK aktif listesindeki ürünler)",
-   "rapor": null,
-   "raporUzman": null,
-   "yazabilir": null,
-   "sut": null,
-   "sutUrl": null,
-   "alinti": null,
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 5/5 (TİTCK aktif listesindeki ürünler)",
+   "rapor": "uzman-hekim",
+   "raporUzman": [
+    "Uzman hekim (dal belirtilmemiş)"
+   ],
+   "yazabilir": [
+    "Uzman hekimler (raporsuz)",
+    "Pratisyen dahil tüm hekimler (uzman hekim raporuyla)"
+   ],
+   "sut": [
+    "EK-4/E 13-1"
+   ],
+   "sutUrl": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
+   "alinti": "Morfin, Petidin | UH-P … Ayaktan tedavide uzman hekimlerce veya uzman hekim raporuna bağlı olarak pratisyen hekimler dahil tüm hekimlerce, yatarak tedavide ise tüm hekimlerce reçete edilebilir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
-    "sgk-ek4a-2026-09-25"
+    "sgk-ek4a-2026-09-25",
+    "sut-guncel",
+    "sgk-ek4e"
    ],
    "kontrol": "2026-09-28",
-   "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "durum": "dogrulandi"
   },
   {
    "id": "oksikodon",
@@ -5122,7 +5298,7 @@
    ],
    "urun": 3,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 3/3 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 3/3 (TİTCK aktif listesindeki ürünler)",
    "rapor": null,
    "raporUzman": null,
    "yazabilir": null,
@@ -5131,13 +5307,13 @@
    "alinti": null,
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25"
    ],
    "kontrol": "2026-09-28",
    "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "fentanil-transdermal",
@@ -5152,22 +5328,30 @@
    ],
    "urun": 5,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 5/5 (TİTCK aktif listesindeki ürünler)",
-   "rapor": null,
-   "raporUzman": null,
-   "yazabilir": null,
-   "sut": null,
-   "sutUrl": null,
-   "alinti": null,
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 5/5 (TİTCK aktif listesindeki ürünler)",
+   "rapor": "uzman-hekim",
+   "raporUzman": [
+    "Uzman hekim (EK-4/F'de uzmanlık dalı belirtilmemiş; SUT 4.1.3)"
+   ],
+   "yazabilir": [
+    "Tüm hekimler (raporla, en fazla 3 aylık)"
+   ],
+   "sut": [
+    "4.1.8",
+    "EK-4/F 9"
+   ],
+   "sutUrl": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
+   "alinti": "Fentanyl Transdermal TTS, Fentanyl sitratın oral ve pastil formları … düzenlenen sağlık raporuna dayanılarak tüm hekimlerce reçete edilebilir. En fazla 3 aylık tedavi dozunda reçete edilmesi halinde bedelleri ödenir.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
-    "sgk-ek4a-2026-09-25"
+    "sgk-ek4a-2026-09-25",
+    "sut-guncel",
+    "sgk-ek4f"
    ],
    "kontrol": "2026-09-28",
-   "durum": "kismen",
-   "not": "SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "durum": "dogrulandi"
   },
   {
    "id": "tapentadol",
@@ -5190,7 +5374,7 @@
    ],
    "kontrol": "2026-09-28",
    "durum": "dogrulanamadi",
-   "not": "TİTCK SKRS aktif ürün listesinde (22.09.2026) bu etken maddeyle ürün bulunamadı; reçete türü ve Ek-4/A eşleşmesi yapılamadı. SUT metninde bu etken madde için özel hüküm bulunamadı. Rapor koşulu SUT eki EK-4/F listesinde olabilir; bu liste kaynak klasöründe yok."
+   "not": "TİTCK SKRS aktif ürün listesinde (22.09.2026) bu etken maddeyle ürün bulunamadı; reçete türü ve Ek-4/A eşleşmesi yapılamadı. SUT metninde, EK-4/F ve EK-4/E listelerinde bu etken madde için rapor ya da reçeteleme hükmü bulunamadı."
   },
   {
    "id": "pregabalin",
@@ -5205,7 +5389,7 @@
    ],
    "urun": 32,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 31/32 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 30/32 (TİTCK aktif listesindeki ürünler)",
    "rapor": "saglik-kurulu",
    "raporUzman": [
     "Nöropatik ağrı: romatoloji, algoloji, deri ve zührevi hastalıklar, endokrinoloji, nöroloji, fiziksel tıp ve rehabilitasyon, nefroloji, ortopedi ve travmatoloji, geriatri ya da beyin cerrahisinden en az birinin bulunduğu sağlık kurulu (2. ya da 3. basamak, 6 ay)",
@@ -5224,7 +5408,7 @@
    "alinti": "nefroloji, ortopedi ve travmatoloji, geriatri veya beyin cerrahisi uzman hekimlerinden en az birinin yer aldığı ikinci veya üçüncü basamak sağlık hizmeti sunucularında düzenlenen 6 ay süreli sağlık kurulu raporuna istinaden bu hekimlerce reçete edilmesi halinde bedelleri Kurumca karşılanır.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -5246,7 +5430,7 @@
    ],
    "urun": 18,
    "odeme": true,
-   "odemeNot": "Ek-4/A 08.04.2026 + 25.09.2026'ya kadarki değişiklikler (yalnızca 2026/37 ve 25.09.2026 İGÖK duyuruları işlendi; aradaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 16/18 (TİTCK aktif listesindeki ürünler)",
+   "odemeNot": "Ek-4/A 29.08.2026 SUT paketi + sonraki 2026/37 (23.09.2026) ve 25.09.2026 İGÖK değişiklikleri (29.08–23.09 arasındaki haftalık duyurular kaynak klasöründe yok); Ek-4/A'da aktif ürün: 16/18 (TİTCK aktif listesindeki ürünler)",
    "rapor": "saglik-kurulu",
    "raporUzman": [
     "Nöropatik ağrı: nöroloji, beyin cerrahisi, fiziksel tıp ve rehabilitasyon, algoloji, deri ve zührevi hastalıklar, romatoloji, ortopedi ve travmatoloji, geriatri ya da endokrinolojiden en az birinin bulunduğu sağlık kurulu (2. ya da 3. basamak, 6 ay)",
@@ -5263,7 +5447,7 @@
    "alinti": "nöroloji, beyin cerrahisi, fiziksel tıp ve rehabilitasyon, algoloji, deri ve zührevi hastalıkları, romatoloji, ortopedi ve travmatoloji, geriatri veya endokrinoloji ve metabolizma hastalıkları uzman hekimlerinden en az birinin yer aldığı ikinci veya üçüncü basamak sağlık hizmeti sunucularında düzenlenen 6 ay süreli sağlık kurulu raporuna istinaden bu hekimlerce reçete edilmesi halinde bedelleri Kurumca karşılanır.",
    "kaynak": [
     "titck-skrs",
-    "sgk-ek4a-2026-04-08",
+    "sgk-ek4a-2026-08-29",
     "sgk-ek4a-2026-37",
     "sgk-ek4a-2026-09-25",
     "sut-guncel"
@@ -5363,7 +5547,8 @@
     "Tüm hekimler (raporla)"
    ],
    "sut": [
-    "4.2.8.A"
+    "4.2.8.A",
+    "EK-4/F 13"
    ],
    "sutUrl": "https://www.sgk.gov.tr/duyuru/detay/29082026-SUT-Degisiklik-Tebligi-Islenmis-Guncel-2013-SUT-2026-08-31-03-06-04",
    "alinti": "Bu durumların belirtildiği 3 ay süreli sağlık kurulu raporuna dayanılarak tüm hekimlerce günlük en fazla 1200 kcal dozda reçete edilmesi halinde Kurumca bedelleri ödenir.",
@@ -5371,11 +5556,12 @@
    "odemeNot": "SUT 4.2.8.A: malnütrisyon tanımı ve rapor koşulları sağlanırsa bedeli ödenir; en fazla 30 günlük doz.",
    "kaynak": [
     "sut-guncel",
+    "sgk-ek4f",
     "sgk-ek3c"
    ],
    "kontrol": "2026-09-28",
    "durum": "dogrulandi",
-   "not": "Erişkinde malnütrisyon: 6 ayda %5'ten fazla istemsiz kilo kaybı ya da VKİ eşikleri, eşlik eden hastalık ve besin alımında azalma birlikte aranır."
+   "not": "Erişkinde malnütrisyon: 6 ayda %5'ten fazla istemsiz kilo kaybı ya da VKİ eşikleri, eşlik eden hastalık ve besin alımında azalma birlikte aranır. EK-4/F 13: her türlü enteral ve parenteral beslenme ürünü SUT 4.2.8 esaslarına göre."
   }
  ]
 }

@@ -46,10 +46,13 @@
     row("Rapor", ddVal(x.rapor, function (v) { return RAPOR[v]; }));
     row("Raporu düzenleyen", x.raporUzman && !x.raporUzman.length ? ddVal("Rapor gerekmez") : ddVal(x.raporUzman));
     row("Raporla yazabilen", ddVal(x.yazabilir));
-    row("SUT maddesi", ddVal(x.sut, function (v) { var t = "SUT " + v.join(", "); return x.sutUrl ? link(t, x.sutUrl) : t; }));
+    row("SUT maddesi", ddVal(x.sut, function (v) {
+      var t = v.map(function (m) { return /^\d/.test(m) ? "SUT " + m : m; }).join(", ");
+      return x.sutUrl ? link(t, x.sutUrl) : t;
+    }));
     if (x.alinti) {
       var q = el("dd"), bq = el("blockquote", null, "“" + x.alinti + "”");
-      bq.style.cssText = "margin:0;padding-left:10px;border-left:3px solid var(--line);font-size:14.5px;color:var(--muted)"; q.appendChild(bq); row("SUT metninden", q);
+      bq.style.cssText = "margin:0;padding-left:10px;border-left:3px solid var(--line);font-size:14.5px;color:var(--muted)"; q.appendChild(bq); row("Kaynak metinden", q);
     }
     if (x.not) row("Not", ddVal(x.not));
     var kd = el("dd");
