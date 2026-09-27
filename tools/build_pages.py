@@ -10,7 +10,7 @@ ORG = "Kanuni Eğitim ve Araştırma Hastanesi Aile Hekimliği Kliniği"
 TODAY = json.load(open("data/meta.json", encoding="utf-8"))["checked"]
 
 NAV = [("home", "./", "Ana sayfa"), ("rehberler", "rehberler.html", "Rehberler"),
-       ("makaleler", "makaleler.html", "Makaleler"), ("personel", "personel.html", "Hemşire &amp; personel"),
+       ("makaleler", "makaleler.html", "Makaleler"), ("araclar", "araclar.html", "Araçlar"), ("personel", "personel.html", "Hemşire &amp; personel"),
        ("hakkinda", "hakkinda.html", "Hakkımızda")]
 
 
@@ -70,9 +70,9 @@ FOOT = """</main>
   </div>
 </footer>
 <script src="assets/site.js" defer></script>
-</body>
+{extra}</body>
 </html>
-""".format(org=ORG)
+""".format(org=ORG, extra="{extra}")
 
 ICON = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>'
 
@@ -110,6 +110,7 @@ PAGES["index.html"] = head("Kanuni Aile Hekimliği",
   <div class="grid">
     <a class="tile" href="rehberler.html"><span class="n" id="nGuides">–</span><b>Rehberler</b><span>Türk ve uluslararası klinik rehberler, özetleriyle</span></a>
     <a class="tile" href="makaleler.html"><span class="n" id="nPapers">–</span><b>Haftanın makaleleri</b><span>Birinci basamak için önem sırasıyla, Türkçe özet</span></a>
+    <a class="tile" href="araclar.html"><span class="n">20</span><b>Araçlar</b><span>Böbrek, AF, pnömoni, bası yarası, yaşlı değerlendirme, aşı planlayıcı</span></a>
     <a class="tile" href="personel.html"><span class="n" id="nStaff">–</span><b>Hemşire &amp; personel</b><span>Yara, beslenme, enfeksiyon kontrolü, kalite standartları</span></a>
     <a class="tile" href="rehberler.html"><span class="n" id="nLaw">–</span><b>Mevzuat</b><span>Evde sağlık, palyatif bakım, aile hekimliği düzenlemeleri</span></a>
   </div>
@@ -218,12 +219,32 @@ PAGES["404.html"] = head("Sayfa bulunamadı · Kanuni Aile Hekimliği", "Aradı�
 </div>
 """ + FOOT
 
+PAGES["araclar.html"] = head("Araçlar · Kanuni Aile Hekimliği",
+    "Aile hekimliği ve evde sağlık için klinik hesaplayıcılar: böbrek fonksiyonu, CHA2DS2-VA, HAS-BLED, Wells, CURB-65, FINDRISC, Braden, Barthel, GDS, PHQ-9 ve aşı planlayıcı.",
+    "araclar.html", "araclar") + """<div class="wrap">
+  <div class="page-head">
+    <div class="eyebrow">Klinik araçlar</div>
+    <h1>Araçlar</h1>
+    <p class="lede">Poliklinikte, sahada ve evde sağlık ziyaretinde en sık gereken hesaplayıcılar. Her aracın altında kaynağı yazar. Hesaplar yalnızca bu cihazda yapılır; girilen değerler hiçbir yere gönderilmez ve kaydedilmez.</p>
+  </div>
+  <div class="bar">
+    <label class="search" for="q">%s<input id="q" type="search" placeholder="Araç ara: ör. böbrek, AF, bası yarası, depresyon, aşı" autocomplete="off"></label>
+    <div class="chips" id="chips" role="group" aria-label="Grup"></div>
+    <div class="opts"><span class="count" id="count"></span></div>
+  </div>
+  <div class="tools" id="tools"></div>
+  <p class="empty" id="empty" hidden>Bu aramayla eşleşen araç yok.</p>
+  <p class="method">Bu araçlar karar desteği içindir; sonuç, hastanın klinik değerlendirmesinin yerine geçmez. İlaç dozu veren araçlar uzman kontrolünden sonra eklenecektir.</p>
+</div>
+""" % ICON + FOOT.replace("{extra}", '<script src="assets/araclar.js" defer></script>\n')
+
 for name, html in PAGES.items():
+    html = html.replace("{extra}", "")
     with open(name, "w", encoding="utf-8", newline="\n") as f:
         f.write(html)
 
 urls = "".join("  <url><loc>%s/%s</loc><lastmod>%s</lastmod></url>\n" % (SITE, p, TODAY)
-               for p in ["", "rehberler.html", "makaleler.html", "personel.html", "hakkinda.html"])
+               for p in ["", "rehberler.html", "makaleler.html", "araclar.html", "personel.html", "hakkinda.html"])
 with open("sitemap.xml", "w", encoding="utf-8", newline="\n") as f:
     f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n%s</urlset>\n' % urls)
 print("Sayfalar üretildi:", ", ".join(PAGES))
