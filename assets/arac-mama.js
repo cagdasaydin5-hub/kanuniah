@@ -100,7 +100,9 @@
       });
       Array.prototype.forEach.call(chips.querySelectorAll(".chip"), function (b) {
         b.setAttribute("aria-pressed", b.dataset.g === state.g ? "true" : "false");
-        if (b.dataset.g === "all") { var c = b.querySelector(".c"); if (c) c.textContent = String(all.length); }
+        var c = b.querySelector(".c");
+        if (c) c.textContent = String(b.dataset.g === "all" ? all.length :
+          Array.prototype.filter.call(all, function (d) { return d._g === b.dataset.g; }).length);
       });
       var cnt = document.getElementById("count"), em = document.getElementById("empty");
       if (cnt) cnt.textContent = n + " araç";
@@ -126,8 +128,9 @@
       newGroups.forEach(function (g) {
         if (groups.some(function (x) { return x[0] === g[0]; })) return;
         groups.push(g);
+        if (chips.querySelector('.chip[data-g="' + g[0] + '"]')) return; // araclar.js'teki mevcut grup
         var b = el("button", "chip", g[1]); b.type = "button"; b.dataset.g = g[0];
-        b.appendChild(el("span", "c", String(tools.filter(function (t) { return t.g === g[0]; }).length)));
+        b.appendChild(el("span", "c", ""));
         chips.appendChild(b);
       });
       tools.forEach(function (t) {

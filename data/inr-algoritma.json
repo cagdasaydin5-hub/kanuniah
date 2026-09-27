@@ -1,0 +1,64 @@
+{
+  "aciklama": "Varfarin idame doz ayarlama algoritması. Satırlar artan INR sırasındadır; INR, üst sınırı (ust, dahil) kendisinden büyük ya da eşit olan ilk satıra düşer; son satırın üst sınırı yoktur (null). degisim: haftalık toplam dozda önerilen % değişim. atla: yeni doza geçmeden atlanacak doz sayısı; 'inr-aralikta' = INR hedef aralığa inene kadar ara ver. kontrol_gun: bir sonraki INR kontrolü için gün aralığı [en erken, en geç]; null = önceki kontrol aralığı sürdürülür.",
+  "kaynak": {
+    "kunye": "Kim YK, Nieuwlaat R, Connolly SJ, Schulman S, Meijer K, Raju N, Kaatz S, Eikelboom JW. Effect of a simple two-step warfarin dosing algorithm on anticoagulant control as measured by time in therapeutic range: a pilot study. J Thromb Haemost 2010;8(1):101-6.",
+    "pmid": "19840361",
+    "doi": "10.1111/j.1538-7836.2009.03652.x",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/19840361/"
+  },
+  "destek": [
+    {
+      "kunye": "Van Spall HGC ve ark. Variation in warfarin dose adjustment practice is responsible for differences in the quality of anticoagulation control between centers and countries (RE-LY). Circulation 2012;126(19):2309-16.",
+      "pmid": "23027801",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23027801/",
+      "ozet": "RE-LY algoritması: INR aralıktaysa değişiklik yok, aralık dışındaysa haftalık dozda %10–15 değişim. Algoritmaya uyumlu doz kararları arttıkça TTR arttı."
+    },
+    {
+      "kunye": "Holbrook A ve ark. Evidence-based management of anticoagulant therapy: Antithrombotic Therapy and Prevention of Thrombosis, 9th ed: ACCP Evidence-Based Clinical Practice Guidelines. Chest 2012;141(2 Suppl):e152S-e184S.",
+      "pmid": "22315259",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22315259/"
+    },
+    {
+      "kunye": "Nieuwlaat R ve ark. Cluster randomized controlled trial of a simple warfarin maintenance dosing algorithm versus usual care among primary care practices. J Thromb Thrombolysis 2014;37(4):435-42.",
+      "pmid": "23877621",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23877621/",
+      "ozet": "Kanada'da birinci basamakta (hedef INR 2–3) algoritma olağan bakıma üstün bulunmadı: ortalama TTR %72,1'e karşı %71,4 (p = 0,73)."
+    }
+  ],
+  "hedefler": {
+    "2-3": {
+      "ad": "2,0–3,0",
+      "alt": 2.0,
+      "ust": 3.0,
+      "satirlar": [
+        { "aralik": "≤ 1,50", "ust": 1.5, "degisim": 15, "atla": 0, "kontrol_gun": [7, 7], "dogrulama": "PDF ile karşılaştırılacak" },
+        { "aralik": "1,51–1,99", "ust": 1.99, "degisim": 10, "atla": 0, "kontrol_gun": [7, 14], "dogrulama": "PDF ile karşılaştırılacak" },
+        { "aralik": "2,00–3,00", "ust": 3.0, "degisim": 0, "atla": 0, "kontrol_gun": null, "dogrulama": "PDF ile karşılaştırılacak" },
+        { "aralik": "3,01–3,99", "ust": 3.99, "degisim": -10, "atla": 0, "kontrol_gun": [7, 14], "dogrulama": "PDF ile karşılaştırılacak" },
+        { "aralik": "4,00–4,99", "ust": 4.99, "degisim": -10, "atla": 1, "kontrol_gun": [7, 7], "dogrulama": "PDF ile karşılaştırılacak" },
+        { "aralik": "≥ 5,00", "ust": null, "degisim": -15, "atla": "inr-aralikta", "kontrol_gun": [1, 3], "dogrulama": "PDF ile karşılaştırılacak" }
+      ]
+    },
+    "2.5-3.5": {
+      "ad": "2,5–3,5",
+      "alt": 2.5,
+      "ust": 3.5,
+      "satirlar": [
+        { "aralik": "≤ 2,00", "ust": 2.0, "degisim": 15, "atla": 0, "kontrol_gun": [7, 7], "dogrulama": "PDF ile karşılaştırılacak" },
+        { "aralik": "2,01–2,49", "ust": 2.49, "degisim": 10, "atla": 0, "kontrol_gun": [7, 14], "dogrulama": "PDF ile karşılaştırılacak" },
+        { "aralik": "2,50–3,50", "ust": 3.5, "degisim": 0, "atla": 0, "kontrol_gun": null, "dogrulama": "PDF ile karşılaştırılacak" },
+        { "aralik": "3,51–4,49", "ust": 4.49, "degisim": -10, "atla": 0, "kontrol_gun": [7, 14], "dogrulama": "PDF ile karşılaştırılacak" },
+        { "aralik": "4,50–5,49", "ust": 5.49, "degisim": -10, "atla": 1, "kontrol_gun": [7, 7], "dogrulama": "PDF ile karşılaştırılacak" },
+        { "aralik": "≥ 5,50", "ust": null, "degisim": -15, "atla": "inr-aralikta", "kontrol_gun": [1, 3], "dogrulama": "PDF ile karşılaştırılacak" }
+      ]
+    }
+  },
+  "yuksek_inr": [
+    { "kosul": "inr-4.5-10", "alt": 4.5, "ust": 10, "metin": "INR 4,5–10 ve kanama yok: rutin K vitamini önerilmez (Holbrook 2012, derece 2B).", "dogrulama": "PDF ile karşılaştırılacak" },
+    { "kosul": "inr-10-ustu", "alt": 10, "ust": null, "metin": "INR > 10 ve kanama yok: oral K vitamini önerilir (Holbrook 2012, derece 2C).", "dogrulama": "PDF ile karşılaştırılacak" },
+    { "kosul": "kanama", "metin": "Kanama var: acil değerlendirme gerekir; dozu bu araçla ayarlamayın. Majör kanamada hızlı geri döndürme için plazma yerine 4 faktörlü protrombin kompleks konsantresi ve ek olarak yavaş IV 5–10 mg K vitamini önerilir (Holbrook 2012, derece 2C).", "dogrulama": "PDF ile karşılaştırılacak" }
+  ],
+  "notlar": [
+    { "metin": "Daha önce INR'si stabil olan hastada aralığın en çok 0,5 altında ya da üstünde tek bir değer: dozu değiştirmeden 1–2 hafta içinde INR tekrarı önerilir (Holbrook 2012, derece 2C).", "dogrulama": "PDF ile karşılaştırılacak" }
+  ]
+}

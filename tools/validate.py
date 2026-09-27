@@ -71,6 +71,33 @@ if MAMA is not None:
         if not host or not any(host == d or host.endswith("." + d) for d in RESMI.get(u.get("uretici"), ())):
             err.append("mama %s: kaynak üreticinin resmi sitesinde https adresi olmalı" % i)
         if not DATE.match(str(u.get("dogrulama", ""))): err.append("mama %s: dogrulama tarihi YYYY-AA-GG olmalı" % i)
+INR = j("inr-algoritma.json")
+if INR is not None:
+    k = INR.get("kaynak", {})
+    if not str(k.get("url", "")).startswith("https://") or not k.get("kunye"): err.append("inr-algoritma: kaynak künyesi ve https bağlantısı gerekli")
+    for hid in ("2-3", "2.5-3.5"):
+        h = INR.get("hedefler", {}).get(hid)
+        if not h: err.append("inr-algoritma: hedef %s eksik" % hid); continue
+        rows, onceki = h.get("satirlar") or [], -1
+        if not rows: err.append("inr-algoritma %s: satır yok" % hid)
+        for n, s in enumerate(rows):
+            for kk in ("aralik", "ust", "degisim", "atla", "kontrol_gun", "dogrulama"):
+                if kk not in s: err.append("inr-algoritma %s satır %d: '%s' eksik" % (hid, n + 1, kk))
+            u = s.get("ust")
+            if u is None and n != len(rows) - 1: err.append("inr-algoritma %s: üst sınırı olmayan satır yalnızca sonda olabilir" % hid)
+            if u is not None:
+                if not sayi(u, 0, 20) or u <= onceki: err.append("inr-algoritma %s satır %d: ust artan sırada sayı olmalı" % (hid, n + 1))
+                else: onceki = u
+            if not sayi(s.get("degisim"), -50, 50): err.append("inr-algoritma %s satır %d: degisim -50..50 olmalı" % (hid, n + 1))
+            a = s.get("atla")
+            if not (a == "inr-aralikta" or (isinstance(a, int) and 0 <= a <= 3)): err.append("inr-algoritma %s satır %d: atla 0-3 ya da 'inr-aralikta'" % (hid, n + 1))
+            kg = s.get("kontrol_gun")
+            if kg is not None and not (isinstance(kg, list) and len(kg) == 2 and all(sayi(x, 1, 84) for x in kg) and kg[0] <= kg[1]):
+                err.append("inr-algoritma %s satır %d: kontrol_gun [en erken, en geç] gün olmalı" % (hid, n + 1))
+        ic = [s for s in rows if s.get("degisim") == 0]
+        if len(ic) != 1 or ic[0].get("ust") != h.get("ust"): err.append("inr-algoritma %s: hedef aralık satırı (degisim 0) tek olmalı ve üst sınırı hedefin üst sınırı olmalı" % hid)
+    for kosul in ("inr-4.5-10", "inr-10-ustu", "kanama"):
+        if not any(x.get("kosul") == kosul and x.get("metin") for x in INR.get("yuksek_inr", [])): err.append("inr-algoritma: yuksek_inr '%s' eksik" % kosul)
 if meta and not DATE.match(meta.get("checked","")): err.append("meta.checked tarihi hatalı")
 if err:
     print("\n".join(err)); sys.exit(1)
