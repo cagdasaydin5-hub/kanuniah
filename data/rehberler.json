@@ -17,8 +17,16 @@
    "label": "Aşı & tarama"
   },
   {
+   "id": "bulasici",
+   "label": "Bulaşıcı hastalık & profilaksi"
+  },
+  {
    "id": "anne-cocuk",
    "label": "Anne-çocuk"
+  },
+  {
+   "id": "yasli",
+   "label": "Yaşlı sağlığı"
   },
   {
    "id": "palyatif",
@@ -404,20 +412,24 @@
    "kind": "guide",
    "scope": "TR",
    "status": "guncel",
-   "title": "Genişletilmiş Bağışıklama Programı ve Güncel Aşı Takvimi",
+   "title": "Ulusal Aşı Takvimi 2026 (çocukluk ve erişkin)",
    "org": "Sağlık Bakanlığı",
-   "year": null,
-   "pub": null,
-   "summary": "Rutin çocukluk aşı takvimi ve son değişiklikler. Altılı karma aşı (DaBT-İPA-Hib-HepB) programa alındı; doğumdaki HepB dozu devam ediyor. Doğurganlık çağı kadın ve gebelerde Tdab'a geçildi.",
-   "note": "",
-   "url": "https://asi.saglik.gov.tr/bagisiklama-programi-ve-asi-takvimi/asi-takvimindeki-son-guencellemeler.html",
+   "year": 2026,
+   "pub": "2026-09-01",
+   "summary": "Bakanlığın güncel aşı kartı: çocukluk dönemi takvimi, sağlıklı erişkin, 65 yaş üstü, gebe ve risk grubu aşıları tek sayfada. 1 Eylül 2026'dan itibaren 48. ayda suçiçeği ikinci dozu takvime girdi; ikinci dozu olmayan ve 72. ayını doldurmamış çocuklara yakalama aşısı yapılıyor.",
+   "note": "HPV aşısı henüz ulusal takvimde yok (Eylül 2026).",
+   "url": "https://hsgm.saglik.gov.tr/depo/birimler/asi-ile-onlenebilir-hastaliklar-db/dokumanlar/asi_karti_2026.pdf",
    "alt": [
+    {
+     "label": "Son güncellemeler",
+     "url": "https://asi.saglik.gov.tr/bagisiklama-programi-ve-asi-takvimi/asi-takvimindeki-son-guencellemeler.html"
+    },
     {
      "label": "GBP Genelgesi",
      "url": "https://www.saglik.gov.tr/TR-11080/genisletilmis-bagisiklama-programi-genelgesi.html"
     }
    ],
-   "kw": "aşı takvimi gbp çocuk 6lı karma tdab",
+   "kw": "aşı takvimi gbp çocuk 6lı karma tdab suçiçeği 2. doz 48. ay yakalama erişkin gebe 65 yaş",
    "aud": [
     "hekim"
    ]
@@ -720,6 +732,456 @@
    "url": "https://www.cdc.gov/infection-control/hcp/cauti/index.html",
    "alt": [],
    "kw": "sonda kateter idrar yolu enfeksiyonu foley hemşire"
+  },
+  {
+   "kind": "portal",
+   "scope": "TR",
+   "status": "guncel",
+   "year": null,
+   "pub": null,
+   "note": "",
+   "alt": [
+    {
+     "label": "TAHUD erişkin risk grubu algoritması",
+     "url": "https://tahud.org.tr/kitap/eriskin-risk-grubu-bagisiklama-algoritmasi"
+    }
+   ],
+   "aud": [
+    "hekim"
+   ],
+   "id": "asi-eriskin-portal",
+   "cat": "koruyucu",
+   "title": "Aşı Portalı – Erişkin aşılama",
+   "org": "Sağlık Bakanlığı",
+   "summary": "Bakanlığın erişkin ve risk grubu aşılamasına dair halka ve sağlık çalışanlarına açık sayfası; aşı takvimi güncellemeleri de aynı portalda duyuruluyor.",
+   "url": "https://asi.saglik.gov.tr/kimlere-asi-yapilir/eriskin-asilama.html",
+   "kw": "erişkin aşı risk grubu pnömokok grip hepatit b meningokok"
+  },
+  {
+   "kind": "portal",
+   "scope": "TR",
+   "status": "guncel",
+   "year": null,
+   "pub": null,
+   "note": "",
+   "alt": [
+    {
+     "label": "Yenidoğan (topuk kanı) taraması",
+     "url": "https://hsgm.saglik.gov.tr/tr/tarama-programlari/ntp.html"
+    },
+    {
+     "label": "Yenidoğan işitme",
+     "url": "https://hsgm.saglik.gov.tr/tr/tarama-programlari/yenidogan-isitme-taramasi-programi.html"
+    },
+    {
+     "label": "Evlilik öncesi SMA",
+     "url": "https://hsgm.saglik.gov.tr/tr/tarama-programlari/evlilik-oncesi-sma-tasiyici-tarama-programi.html"
+    },
+    {
+     "label": "Hemoglobinopati",
+     "url": "https://hsgm.saglik.gov.tr/tr/tarama-programlari/hemoglobinopati-kontrol-programi.html"
+    }
+   ],
+   "aud": [
+    "hekim"
+   ],
+   "id": "tarama-programlari",
+   "cat": "koruyucu",
+   "title": "HSGM Tarama Programları (yenidoğan, görme, işitme, GKD, evlilik öncesi)",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "summary": "Bakanlığın yürüttüğü tüm çocukluk ve evlilik öncesi tarama programlarının resmi sayfaları: topuk kanı, yenidoğan ve okul çağı işitme, yenidoğan/okul öncesi/okul çağı görme, gelişimsel kalça displazisi, SMA taşıyıcılığı ve hemoglobinopati.",
+   "url": "https://hsgm.saglik.gov.tr/tr/programlar/tarama-programlari.html",
+   "kw": "tarama topuk kanı fenilketonüri hipotiroidi biyotinidaz kistik fibrozis sma işitme görme gkd hemoglobinopati talasemi evlilik öncesi"
+  },
+  {
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "year": null,
+   "pub": null,
+   "note": "",
+   "alt": [],
+   "aud": [
+    "hekim"
+   ],
+   "id": "gkd-rehberi",
+   "cat": "koruyucu",
+   "title": "Gelişimsel Kalça Displazisi Tarama Rehberi",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "summary": "GKD tarama programında fizik muayene, ultrasonografi zamanlaması ve sevk akışını anlatan uygulama rehberi.",
+   "url": "https://hsgm.saglik.gov.tr/depo/birimler/cocuk-ergen-sagligi-db/Dokumanlar/Kitaplar/GKD_Rehberi.pdf",
+   "kw": "gkd kalça displazisi ortolani barlow usg bebek"
+  },
+  {
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "year": null,
+   "pub": null,
+   "note": "",
+   "alt": [],
+   "aud": [
+    "hekim"
+   ],
+   "id": "gorme-tarama",
+   "cat": "koruyucu",
+   "title": "Görme Taraması Rehberi",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "summary": "Yenidoğan, okul öncesi ve okul çağı görme taramalarında birinci basamağın yapacağı muayeneler, kullanılan testler ve sevk ölçütleri.",
+   "url": "https://hsgm.saglik.gov.tr/depo/birimler/cocuk-ergen-sagligi-db/Dokumanlar/Kitaplar/Gorme_Taramasi_Rehberi.pdf",
+   "kw": "görme tarama kırmızı refle ambliyopi şaşılık"
+  },
+  {
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "year": null,
+   "pub": null,
+   "note": "",
+   "alt": [],
+   "aud": [
+    "hekim"
+   ],
+   "id": "kdkh-tarama",
+   "cat": "koruyucu",
+   "title": "Kritik Doğuştan Kalp Hastalıkları Tarama Programı Rehberi",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "summary": "Yenidoğanda pulse oksimetri ile kritik doğuştan kalp hastalığı taramasının nasıl yapılacağı ve pozitif sonuçta izlenecek yol.",
+   "url": "https://hsgm.saglik.gov.tr/depo/birimler/cocuk-ergen-sagligi-db/Dokumanlar/Rehberler/KRITIK_DOGUSTAN_KALP_HASTALIKLARI_REHBER.pdf",
+   "kw": "pulse oksimetri yenidoğan kalp tarama"
+  },
+  {
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "year": null,
+   "pub": null,
+   "note": "",
+   "alt": [],
+   "aud": [
+    "hekim"
+   ],
+   "id": "periyodik-muayene",
+   "cat": "koruyucu",
+   "title": "Periyodik Muayene Rehberi",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "summary": "Erişkinlerde yaş ve cinsiyete göre periyodik sağlık muayenesinde yapılacak sorgulama, ölçüm, tarama ve danışmanlık başlıklarını toplayan birinci basamak rehberi.",
+   "url": "https://hsgm.saglik.gov.tr/depo/birimler/kronik-hastaliklar-ve-yasli-sagligi-db/Dokumanlar/Kitaplar/Periyodik_Muayene_Rehberi.pdf",
+   "kw": "periyodik muayene check-up tarama erişkin koruyucu"
+  },
+  {
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "year": 2025,
+   "pub": null,
+   "note": "",
+   "alt": [],
+   "aud": [
+    "hekim"
+   ],
+   "id": "kvr-kilavuz-2025",
+   "cat": "kardiyo",
+   "title": "Kardiyovasküler Risk Değerlendirmesi Kılavuzu",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "summary": "Aile hekimliğinde kardiyovasküler risk hesaplama ve risk düzeyine göre izlem sıklığını tarif eden Bakanlık kılavuzu; HYP'deki KVR modülünün dayanağı.",
+   "url": "https://hsgm.saglik.gov.tr/media/attachments/2025/06/13/kardiyovaskuler-risk-degerlendirmesi-kilavuzu.pdf",
+   "kw": "kvr kardiyovasküler risk score2 hyp izlem"
+  },
+  {
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "year": 2025,
+   "pub": null,
+   "note": "",
+   "alt": [
+    {
+     "label": "Aile sağlığı çalışanları sürümü",
+     "url": "https://hsgm.saglik.gov.tr/media/attachments/2025/06/13/asC-yasli-degerlendirme-kilavuzu.pdf"
+    }
+   ],
+   "aud": [
+    "hekim",
+    "personel"
+   ],
+   "id": "yasli-degerlendirme-ah",
+   "cat": "yasli",
+   "title": "Çok Yönlü Yaşlı Değerlendirmesi ve İzlemi Kılavuzu (Aile Hekimleri İçin)",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "summary": "65 yaş üstü bireylerde düşme, kırılganlık, bilişsel durum, beslenme, polifarmasi ve fonksiyonel kapasitenin birinci basamakta nasıl değerlendirilip izleneceği.",
+   "url": "https://hsgm.saglik.gov.tr/media/attachments/2025/06/13/Cok-yonlu-yasli-degereldnirmesi-ve-Izlemi-kilavuzu-ah.pdf",
+   "kw": "yaşlı değerlendirme kırılganlık düşme demans polifarmasi geriatri"
+  },
+  {
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "year": null,
+   "pub": null,
+   "note": "",
+   "alt": [],
+   "aud": [
+    "hekim"
+   ],
+   "id": "yasli-tani-tedavi",
+   "cat": "yasli",
+   "title": "Yaşlı Sağlığı Tanı Tedavi Rehberi",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "summary": "Yaşlılarda sık görülen sorunların (bilişsel bozukluk, depresyon, inkontinans, düşme, ilaç kullanımı vb.) birinci basamakta tanı ve tedavi yaklaşımı.",
+   "url": "https://hsgm.saglik.gov.tr/depo/birimler/kronik-hastaliklar-ve-yasli-sagligi-db/Dokumanlar/Kitaplar/Yasli_Sagligi_Tani_Tedavi_Rehberi.pdf",
+   "kw": "yaşlı geriatri demans inkontinans depresyon"
+  },
+  {
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "year": null,
+   "pub": null,
+   "note": "",
+   "alt": [],
+   "aud": [
+    "hekim",
+    "personel"
+   ],
+   "id": "gogus-evde-saglik",
+   "cat": "palyatif",
+   "title": "Göğüs Hastalıklarında Evde Sağlık Hizmeti",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "summary": "KOAH ve diğer kronik solunum hastalarının evde izlemi: uzun süreli oksijen, cihaz kullanımı ve evde bakım ekibinin yapacakları.",
+   "url": "https://hsgm.saglik.gov.tr/depo/birimler/kronik-hastaliklar-ve-yasli-sagligi-db/Dokumanlar/Rehberler/Gogus_Hastaliklarinda_Evde_Saglik_Hizmeti.pdf",
+   "kw": "evde sağlık koah oksijen konsantratör bipap solunum"
+  },
+  {
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "year": 2025,
+   "pub": null,
+   "note": "",
+   "alt": [],
+   "aud": [
+    "personel",
+    "hekim"
+   ],
+   "id": "vital-bulgular-asc",
+   "cat": "kronik",
+   "title": "Kronik Hastalıklarda Vital Bulguların Ölçülmesi ve Yaşam Tarzı Önerileri Kılavuzu (Aile Sağlığı Çalışanları İçin)",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "summary": "Tansiyon, nabız, boy-kilo, bel çevresi gibi ölçümlerin doğru tekniği ve kronik hastalara verilecek yaşam tarzı önerileri; hemşire ve ebeler için.",
+   "url": "https://hsgm.saglik.gov.tr/media/attachments/2025/06/13/kronik-hastaliklarda-vital-bulgularin-Olculmesi-ve-yasam-tarzi-Onerileri-kilavuzu.pdf",
+   "kw": "vital bulgu tansiyon ölçümü bel çevresi yaşam tarzı hemşire ebe"
+  },
+  {
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "year": 2025,
+   "pub": null,
+   "note": "",
+   "alt": [],
+   "aud": [
+    "hekim"
+   ],
+   "id": "zehirlenme-rehberi",
+   "cat": "kronik",
+   "title": "Zehirlenme Tanı ve Tedavi Rehberi",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "summary": "Sık görülen ilaç, kimyasal, mantar, hayvan ısırığı/sokması ve karbonmonoksit zehirlenmelerinde ilk değerlendirme ve tedavi. Ulusal Zehir Danışma Merkezi: 114.",
+   "url": "https://hsgm.saglik.gov.tr/media/attachments/2025/07/03/zehirlenme-tani-ve-tedavi-rehberi.pdf",
+   "kw": "zehirlenme uzem 114 antidot mantar karbonmonoksit"
+  },
+  {
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "year": 2026,
+   "pub": null,
+   "note": "",
+   "alt": [
+    {
+     "label": "Tüm TB rehberleri",
+     "url": "https://hsgm.saglik.gov.tr/tr/dokumanlar-tuberkuloz/rehberler.html"
+    }
+   ],
+   "aud": [
+    "hekim"
+   ],
+   "id": "tb-rehber-2026",
+   "cat": "bulasici",
+   "title": "Tüberküloz Tanı ve Tedavi Rehberi 2026",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "summary": "Tüberkülozun tanısı, tedavi rejimleri, temaslı muayenesi ve latent tüberküloz enfeksiyonunun yönetimi için Bakanlığın güncel ulusal rehberi.",
+   "url": "https://hsgm.saglik.gov.tr/depo/birimler/tuberkuloz-db/Dokumanlar/Rehberler/Tuberkuloz_Tani_ve_Tedavi_Rehberi_2026.pdf",
+   "kw": "tüberküloz verem ltbi ppd igra temaslı dgt vsd izoniazid"
+  },
+  {
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "year": 2019,
+   "pub": null,
+   "note": "",
+   "alt": [
+    {
+     "label": "Tek sayfa algoritma",
+     "url": "https://hsgm.saglik.gov.tr/depo/birimler/zoonotik-ve-vektorel-hastaliklar-db/Dokumanlar/Afisler-Brosurler/Kuduz_Profilaksi_Algoritmasi_Basim_logolu_20.03.2019.pdf"
+    }
+   ],
+   "aud": [
+    "hekim"
+   ],
+   "id": "kuduz-rehber",
+   "cat": "bulasici",
+   "title": "Kuduz Profilaksi Rehberi",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "summary": "Kuduz riskli temasta yara bakımı, temas kategorisine göre aşı ve immünglobulin kararı, aşı şemaları ve hayvan gözlemi.",
+   "url": "https://hsgm.saglik.gov.tr/depo/Yayinlarimiz/Rehberler/Kuduz_Profilaksi_Rehberi.pdf",
+   "kw": "kuduz riskli temas ısırık köpek kedi aşı immünglobulin"
+  },
+  {
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "year": null,
+   "pub": null,
+   "note": "",
+   "alt": [],
+   "aud": [
+    "hekim"
+   ],
+   "id": "yuksek-riskli-bebek",
+   "cat": "anne-cocuk",
+   "title": "Yüksek Riskli Bebek İzlem Rehberi",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "summary": "Prematüre, düşük doğum ağırlıklı ve yenidoğan yoğun bakımdan çıkan bebeklerin birinci basamakta izlem takvimi ve dikkat edilecek konular.",
+   "url": "https://hsgm.saglik.gov.tr/depo/birimler/cocuk-ergen-sagligi-db/Dokumanlar/Kitaplar/Yuksek_Riskli_Bebek_Izlem_Rehberi.pdf",
+   "kw": "prematüre riskli bebek izlem ydbü"
+  },
+  {
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "year": null,
+   "pub": null,
+   "note": "",
+   "alt": [
+    {
+     "label": "D vitamini programı",
+     "url": "https://hsgm.saglik.gov.tr/tr/beslenme-programlari/d-vitamini-eksikligi-onleme-kontrol-programi.html"
+    },
+    {
+     "label": "Demir Gibi Türkiye",
+     "url": "https://hsgm.saglik.gov.tr/tr/beslenme-programlari/demir-gibi-turkiye.html"
+    }
+   ],
+   "aud": [
+    "hekim"
+   ],
+   "id": "d-vitamini-demir",
+   "cat": "anne-cocuk",
+   "title": "D Vitamini ve Demir Destek Programları",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "summary": "Bebek, çocuk ve gebelerde Bakanlığın ücretsiz D vitamini ve demir desteği programlarının uygulanma esasları.",
+   "url": "https://hsgm.saglik.gov.tr/depo/birimler/cocuk-ergen-sagligi-db/Programlar/D_vitamini_Rehberi.pdf",
+   "kw": "d vitamini demir profilaksi bebek gebe anemi raşitizm"
+  },
+  {
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "year": null,
+   "pub": null,
+   "note": "",
+   "alt": [],
+   "aud": [
+    "hekim",
+    "personel"
+   ],
+   "id": "ergen-cep",
+   "cat": "anne-cocuk",
+   "title": "Birinci Basamak İçin Ergen Sağlığına Yaklaşım Cep Kitabı",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "summary": "Ergen görüşmesi, gizlilik, büyüme-ergenlik değerlendirmesi, risk davranışları ve sık sorunlara birinci basamak yaklaşımı.",
+   "url": "https://hsgm.saglik.gov.tr/depo/birimler/cocuk-ergen-sagligi-db/Dokumanlar/Kitaplar/Birinci_basamak_saglik_calisanlari_icin_ergen_sagligina_ve_sorunlarina_yaklasim_cep_kitap.pdf",
+   "kw": "ergen heeadsss puberte adolesan"
+  },
+  {
+   "kind": "guide",
+   "scope": "TR",
+   "status": "guncel",
+   "year": null,
+   "pub": null,
+   "note": "",
+   "alt": [],
+   "aud": [
+    "personel",
+    "hekim"
+   ],
+   "id": "emzirme-rehberi",
+   "cat": "anne-cocuk",
+   "title": "Resimli Emzirme Rehberi",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "summary": "Emzirme pozisyonları, doğru kavrama, süt sağma-saklama ve sık emzirme sorunları; anneye danışmanlık için görsel rehber.",
+   "url": "https://hsgm.saglik.gov.tr/depo/birimler/cocuk-ergen-sagligi-db/Dokumanlar/Kitaplar/1_2_RESIMLI_EMZIRME_REHBERI_300X200.pdf",
+   "kw": "emzirme anne sütü laktasyon"
+  },
+  {
+   "kind": "portal",
+   "scope": "INT",
+   "status": "guncel",
+   "year": null,
+   "pub": null,
+   "note": "",
+   "alt": [],
+   "aud": [
+    "hekim"
+   ],
+   "id": "nice-cks",
+   "cat": "portal",
+   "title": "NICE Clinical Knowledge Summaries (CKS)",
+   "org": "NICE",
+   "summary": "Birinci basamak için yazılmış, 370'ten fazla konuda kısa ve pratik tanı-tedavi özetleri. Günlük poliklinikte en hızlı başvurulabilecek kaynaklardan biri.",
+   "url": "https://cks.nice.org.uk/",
+   "kw": "cks nice birinci basamak özet primary care"
+  },
+  {
+   "kind": "portal",
+   "scope": "INT",
+   "status": "guncel",
+   "year": null,
+   "pub": null,
+   "note": "",
+   "alt": [],
+   "aud": [
+    "hekim"
+   ],
+   "id": "aafp-afp",
+   "cat": "portal",
+   "title": "American Family Physician (AAFP)",
+   "org": "AAFP",
+   "summary": "Aile hekimliğine yönelik derleme makaleleri, kanıt özetleri ve pratik kılavuz yorumları.",
+   "url": "https://www.aafp.org/pubs/afp.html",
+   "kw": "aafp afp aile hekimliği derleme"
+  },
+  {
+   "kind": "guide",
+   "scope": "INT",
+   "status": "guncel",
+   "year": null,
+   "pub": null,
+   "note": "",
+   "alt": [],
+   "aud": [
+    "hekim"
+   ],
+   "id": "racgp-red-book",
+   "cat": "koruyucu",
+   "title": "RACGP Red Book – Birinci Basamakta Koruyucu Hizmetler",
+   "org": "RACGP",
+   "summary": "Yaşa göre koruyucu sağlık hizmetleri ve taramaların kanıt düzeyleriyle özetlendiği Avustralya aile hekimliği rehberi; USPSTF'ye tamamlayıcı.",
+   "url": "https://www.racgp.org.au/clinical-resources/clinical-guidelines/key-racgp-guidelines/view-all-racgp-guidelines/preventive-activities-in-general-practice",
+   "kw": "koruyucu tarama red book racgp periyodik"
   }
  ]
 }
