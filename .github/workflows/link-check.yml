@@ -1,0 +1,50 @@
+name: Bağlantı denetimi
+
+on:
+  schedule:
+    - cron: "17 1 * * *"   # her gece 04:17 (TSİ)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: link-check
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Bağlantıları denetle
+        id: links
+        run: |
+          python3 tools/check_links.py --out report.md
+          cat report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Issue'yu oluştur, güncelle ya da kapat
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BROKEN: ${{ steps.links.outputs.broken }}
+          LABEL: kirik-link
+          TITLE: Kırık bağlantılar (gece denetimi)
+        run: |
+          gh label create "$LABEL" --color B60205 --description "Gece bağlantı denetimi" --force >/dev/null
+          num=$(gh issue list --label "$LABEL" --state open --limit 1 --json number --jq '.[0].number // empty')
+          if [ "${BROKEN:-0}" -gt 0 ]; then
+            if [ -n "$num" ]; then
+              gh issue edit "$num" --title "$TITLE ($BROKEN)" --body-file report.md
+              echo "#$num güncellendi."
+            else
+              gh issue create --title "$TITLE ($BROKEN)" --label "$LABEL" --body-file report.md
+            fi
+          elif [ -n "$num" ]; then
+            gh issue edit "$num" --title "$TITLE (0)" --body-file report.md
+            gh issue close "$num" --reason completed --comment "Son denetimde kırık bağlantı kalmadı; issue kapatıldı."
+          else
+            echo "Kırık bağlantı yok."
+          fi

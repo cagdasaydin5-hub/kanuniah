@@ -39,6 +39,10 @@ def head(title, desc, path, page):
 <meta name="theme-color" content="#0D5A51">
 <link rel="icon" href="assets/emblem.svg" type="image/svg+xml">
 <link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Kanuni AH">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
@@ -102,7 +106,7 @@ PAGES["index.html"] = head("Kanuni Aile Hekimliği",
     <div class="eyebrow">Kanuni EAH · Aile Hekimliği Kliniği</div>
     <h1>Klinikte ihtiyaç duyulan her şey, tek yerde.</h1>
     <p class="lede">Güncel rehberler, mevzuat, haftanın önemli makaleleri ve klinik hesaplayıcılar. Her pazartesi kontrol edilir; son kontrol <b id="checked"></b>.</p>
-    <label class="search" for="q">%s<input id="q" type="search" placeholder="Ne arıyorsunuz? ör. hipertansiyon, ESKOM, basınç yarası, PEG, aşı" autocomplete="off"></label>
+    <label class="search" for="q">%s<input id="q" type="search" placeholder="Rehber, makale ya da araç arayın: ör. hipertansiyon, ESKOM, CURB-65, Braden, aşı" autocomplete="off"></label>
     <div class="results" id="results" hidden></div>
     <div class="notice" id="notice" hidden></div>
   </section>
@@ -110,7 +114,7 @@ PAGES["index.html"] = head("Kanuni Aile Hekimliği",
   <div class="grid">
     <a class="tile" href="rehberler.html"><span class="n" id="nGuides">–</span><b>Rehberler</b><span>Türk ve uluslararası klinik rehberler, özetleriyle</span></a>
     <a class="tile" href="makaleler.html"><span class="n" id="nPapers">–</span><b>Haftanın makaleleri</b><span>Birinci basamak için önem sırasıyla, Türkçe özet</span></a>
-    <a class="tile" href="araclar.html"><span class="n">20</span><b>Araçlar</b><span>Böbrek, AF, pnömoni, bası yarası, yaşlı değerlendirme, aşı planlayıcı</span></a>
+    <a class="tile" href="araclar.html"><span class="n" id="nTools">–</span><b>Araçlar</b><span>Böbrek, AF, pnömoni, bası yarası, yaşlı değerlendirme, aşı planlayıcı</span></a>
     <a class="tile" href="rehberler.html"><span class="n" id="nLaw">–</span><b>Mevzuat</b><span>Evde sağlık ve palyatif bakım düzenlemeleri</span></a>
   </div>
 
@@ -223,9 +227,9 @@ PAGES["araclar.html"] = head("Araçlar · Kanuni Aile Hekimliği",
   </div>
   <div class="tools" id="tools"></div>
   <p class="empty" id="empty" hidden>Bu aramayla eşleşen araç yok.</p>
-  <p class="method">Bu araçlar karar desteği içindir; sonuç, hastanın klinik değerlendirmesinin yerine geçmez. İlaç dozu veren araçlar uzman kontrolünden sonra eklenecektir.</p>
+  <p class="method">Bu araçlar karar desteği içindir; sonuç, hastanın klinik değerlendirmesinin yerine geçmez. Doz öneren araçlar (varfarin) yayımlanmış bir algoritmaya dayanır; son karar hekime aittir.</p>
 </div>
-""" % ICON + FOOT.replace("{extra}", '<script src="assets/araclar.js" defer></script>\n<script src="assets/arac-mama.js" defer></script>\n<script src="assets/arac-inr.js" defer></script>\n')
+""" % ICON + FOOT.replace("{extra}", '<script src="assets/araclar.js" defer></script>\n<script src="assets/arac-sut.js" defer></script>\n<script src="assets/arac-etkilesim.js" defer></script>\n<script src="assets/arac-mama.js" defer></script>\n<script src="assets/arac-inr.js" defer></script>\n')
 
 for name, html in PAGES.items():
     html = html.replace("{extra}", "")
@@ -237,3 +241,7 @@ urls = "".join("  <url><loc>%s/%s</loc><lastmod>%s</lastmod></url>\n" % (SITE, p
 with open("sitemap.xml", "w", encoding="utf-8", newline="\n") as f:
     f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n%s</urlset>\n' % urls)
 print("Sayfalar üretildi:", ", ".join(PAGES))
+
+# Araç dizini (data/araclar.json) ve service worker (sw.js) sayfalardan sonra üretilir
+import runpy
+runpy.run_path(os.path.join(ROOT, "tools", "build_pwa.py"), run_name="__main__")

@@ -135,7 +135,7 @@
     var f1 = el("div", "fields");
     var hedef = sel("hedef", [["2-3", "2,0–3,0"], ["2.5-3.5", "2,5–3,5"]]);
     var inr = txt("inr"), onceki = txt("onceki", "koşullu satırlarda sorulur");
-    var tablet = sel("tablet", [["5", "5 mg"], ["2", "2 mg"]]);
+    var tablet = sel("tablet", [["5", "5 mg"], ["10", "10 mg"]]); // Türkiye'de ruhsatlı varfarin tabletleri: 5 ve 10 mg (TİTCK e-reçete listesi, 22.09.2026)
     f1.appendChild(fld("Hedef INR aralığı", hedef));
     f1.appendChild(fld("Güncel INR", inr));
     f1.appendChild(fld("Önceki INR", onceki));

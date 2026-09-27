@@ -102,7 +102,65 @@ if INR is not None:
         if len(ic) != 1 or ic[0].get("ust") != h.get("ust"): err.append("inr-algoritma %s: hedef aralık satırı (degisim 0) tek olmalı ve üst sınırı hedefin üst sınırı olmalı" % hid)
     for kosul in ("inr-4.5-10", "inr-10-ustu", "kanama"):
         if not any(x.get("kosul") == kosul and x.get("metin") for x in INR.get("yuksek_inr", [])): err.append("inr-algoritma: yuksek_inr '%s' eksik" % kosul)
+A = j("araclar.json")
+if A:
+    tids = [t.get("id") for t in A.get("tools", [])]
+    if not tids: err.append("araclar.json: araç yok (python tools/build_pwa.py)")
+    if len(tids) != len(set(tids)): err.append("araclar.json: araç id tekrarı")
+    for t in A.get("tools", []):
+        if not t.get("t"): err.append("araç %s: ad (t) eksik" % t.get("id"))
 if meta and not DATE.match(meta.get("checked","")): err.append("meta.checked tarihi hatalı")
+
+# Reçete ve rapor (data/sut.json): düzenleyici alan ya null (kaynakta doğrulanamadı) ya da kaynağa dayalı değerdir.
+S = j("sut.json")
+RESMI = re.compile(r"^https://(www\.)?(mevzuat\.gov\.tr|resmigazete\.gov\.tr|sgk\.gov\.tr|titck\.gov\.tr)/")
+RECETE = ("beyaz","kirmizi","yesil","mor","turuncu")
+RAPOR = ("gerekmez","uzman-hekim","saglik-kurulu","kosullu")
+MADDE = re.compile(r"^(\d+(\.\d+)+(\.[A-ZÇĞİÖŞÜ](-\d+)?)?|EK-4/[EF] \d+(\.\d+)?(-\d+)?)$")
+def metinler(v): return isinstance(v, list) and all(isinstance(s, str) and s.strip() for s in v)
+if S:
+    if not DATE.match(S.get("checked","")): err.append("sut.checked tarihi YYYY-AA-GG olmalı")
+    srcs, grps = S.get("sources", {}), {g[0] for g in S.get("groups", [])}
+    for k, s in srcs.items():
+        if not RESMI.match(str(s.get("url",""))): err.append("sut kaynak %s: url yalnızca mevzuat/Resmî Gazete/SGK/TİTCK olabilir" % k)
+        if s.get("dosya") and not os.path.exists(os.path.join(ROOT, s["dosya"])): err.append("sut kaynak %s: dosya yok: %s" % (k, s["dosya"]))
+    ids = set()
+    for x in S.get("items", []):
+        i = x.get("id")
+        if i in ids: err.append("sut id tekrarı: %s" % i)
+        ids.add(i)
+        alan = ["odeme","rapor","raporUzman","yazabilir","sut"] + (["recete"] if x.get("tur") == "ilac" else [])
+        for k in ["id","tur","ad","grup","kaynak","kontrol","durum","sutUrl","alinti","odemeNot"] + alan:
+            if k not in x: err.append("sut %s: '%s' eksik (doğrulanamadıysa null yazın)" % (i, k))
+        if x.get("tur") not in ("ilac","malzeme"): err.append("sut %s: tur ilac|malzeme" % i)
+        if x.get("tur") == "malzeme" and "recete" in x: err.append("sut %s: malzemede recete alanı olmaz" % i)
+        if x.get("grup") not in grps: err.append("sut %s: bilinmeyen grup %s" % (i, x.get("grup")))
+        if not DATE.match(str(x.get("kontrol",""))): err.append("sut %s: kontrol tarihi YYYY-AA-GG olmalı" % i)
+        elif S.get("checked") and x["kontrol"] > S["checked"]: err.append("sut %s: kontrol tarihi sut.checked'ten ileri olamaz" % i)
+        if not x.get("kaynak") or any(k not in srcs for k in x.get("kaynak", [])): err.append("sut %s: kaynak boş ya da sources'ta yok" % i)
+        v = {k: x.get(k) for k in alan}
+        if v.get("recete") is not None and not (metinler(v["recete"]) and v["recete"] and set(v["recete"]) <= set(RECETE) and len(set(v["recete"])) == len(v["recete"])):
+            err.append("sut %s: recete %s değerlerinden oluşan liste olmalı" % (i, "|".join(RECETE)))
+        if v["odeme"] is not None and not isinstance(v["odeme"], bool): err.append("sut %s: odeme true|false|null" % i)
+        if (v["odeme"] is None) != (x.get("odemeNot") is None): err.append("sut %s: odeme doluysa odemeNot (kaynak ve tarih) da dolu olmalı" % i)
+        if v["rapor"] is not None and v["rapor"] not in RAPOR: err.append("sut %s: rapor %s olmalı" % (i, "|".join(RAPOR)))
+        if v["raporUzman"] is not None and not (metinler(v["raporUzman"]) and (v["raporUzman"] or v["rapor"] == "gerekmez")):
+            err.append("sut %s: raporUzman metin listesi olmalı (boş liste yalnızca rapor gerekmez ise)" % i)
+        if v["yazabilir"] is not None and not (metinler(v["yazabilir"]) and v["yazabilir"]): err.append("sut %s: yazabilir dolu metin listesi ya da null" % i)
+        if v["sut"] is not None and not (metinler(v["sut"]) and v["sut"] and all(MADDE.match(m) for m in v["sut"])):
+            err.append("sut %s: sut madde numaraları listesi olmalı (ör. [\"4.2.28.A-1\", \"EK-4/F 51\"])" % i)
+        if (v["sut"] is None) != (x.get("sutUrl") is None) or (v["sut"] is None) != (x.get("alinti") is None):
+            err.append("sut %s: sut, sutUrl ve alinti birlikte dolu ya da birlikte null olmalı" % i)
+        if x.get("sutUrl") is not None and not RESMI.match(x["sutUrl"]): err.append("sut %s: sutUrl resmî kaynak olmalı" % i)
+        if x.get("alinti") is not None and not (20 <= len(x["alinti"]) <= 700): err.append("sut %s: alıntı kısa olmalı (20-700 karakter)" % i)
+        if v["rapor"] is not None and not {"sut-guncel","sgk-ek4f","sgk-ek4e"} & set(x.get("kaynak", [])): err.append("sut %s: rapor bilgisi yalnızca SUT metni ya da EK-4/F, EK-4/E'den alınır" % i)
+        for m in v["sut"] or []:
+            if m.startswith("EK-4/F") and "sgk-ek4f" not in x.get("kaynak", []): err.append("sut %s: EK-4/F maddesi için sgk-ek4f kaynağı gerekli" % i)
+            if m.startswith("EK-4/E") and "sgk-ek4e" not in x.get("kaynak", []): err.append("sut %s: EK-4/E maddesi için sgk-ek4e kaynağı gerekli" % i)
+        if v.get("recete") is not None and "titck-skrs" not in x.get("kaynak", []): err.append("sut %s: reçete türü için titck-skrs kaynağı gerekli" % i)
+        dolu = [k for k in alan if v[k] is not None]
+        beklenen = "dogrulandi" if len(dolu) == len(alan) else "kismen" if dolu else "dogrulanamadi"
+        if x.get("durum") != beklenen: err.append("sut %s: durum '%s' olmalı (dolu alan %d/%d)" % (i, beklenen, len(dolu), len(alan)))
 if err:
     print("\n".join(err)); sys.exit(1)
 print("Veri dosyaları geçerli.")

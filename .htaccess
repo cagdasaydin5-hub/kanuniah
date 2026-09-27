@@ -22,7 +22,11 @@ AddDefaultCharset UTF-8
   <FilesMatch "\.json$">
     Header set Cache-Control "no-cache"
   </FilesMatch>
-  <FilesMatch "\.(css|js|svg)$">
+  <FilesMatch "\.(css|js|svg|png)$">
     Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+  # Service worker ve manifest her açılışta denetlensin (yeni sürüm hemen kurulsun)
+  <FilesMatch "^(sw\.js|manifest\.webmanifest)$">
+    Header set Cache-Control "no-cache"
   </FilesMatch>
 </IfModule>
