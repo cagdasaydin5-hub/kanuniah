@@ -32,6 +32,10 @@
   [
    "asi",
    "Aşı"
+  ],
+  [
+   "ilac",
+   "İlaç etkileşimi"
   ]
  ],
  "tools": [
@@ -174,6 +178,13 @@
    "t": "Aşı planlayıcı (Ulusal Aşı Takvimi 2026)",
    "d": "Doğum tarihine göre tüm doz tarihleri ve zamanı geçmiş dozlar.",
    "kw": "aşı takvimi planlayıcı yakalama geciken doz bebek çocuk suçiçeği kkk"
+  },
+  {
+   "id": "etkilesim",
+   "g": "ilac",
+   "t": "İlaç etkileşimi denetleyici (DDInter)",
+   "d": "2–15 ilaç girin; tüm ikili etkileşimler ciddiyete göre listelenir. Varfarin, DOAK, QT ve serotonerjik kombinasyonlar için ayrı uyarı.",
+   "kw": "ilaç etkileşimi etkilesim interaksiyon ddinter varfarin doak qt serotonin sendromu polifarmasi"
   }
  ]
 }

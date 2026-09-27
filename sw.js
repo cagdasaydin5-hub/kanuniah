@@ -1,7 +1,7 @@
 /* Kanuni Aile Hekimliği – service worker.
    Otomatik üretildi: tools/build_pwa.py. Elle düzenlemeyin; sürüm, dosyaların içeriğinden hesaplanır. */
 "use strict";
-var VERSION = "dae2255c9e9c";
+var VERSION = "9b10d8bfbaf2";
 var CACHE = "kanuniah-" + VERSION;
 var RUNTIME = "kanuniah-runtime";
 var PRECACHE = [
@@ -18,6 +18,7 @@ var PRECACHE = [
   "data/meta.json",
   "data/rehberler.json",
   "assets/apple-touch-icon.png",
+  "assets/arac-etkilesim.js",
   "assets/araclar.js",
   "assets/emblem.svg",
   "assets/icon-192.png",
