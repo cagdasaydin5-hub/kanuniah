@@ -1,7 +1,7 @@
 /* Kanuni Aile Hekimliği – service worker.
    Otomatik üretildi: tools/build_pwa.py. Elle düzenlemeyin; sürüm, dosyaların içeriğinden hesaplanır. */
 "use strict";
-var VERSION = "f0ae328485c5";
+var VERSION = "416d47caefcf";
 var CACHE = "kanuniah-" + VERSION;
 var RUNTIME = "kanuniah-runtime";
 var PRECACHE = [
@@ -12,8 +12,10 @@ var PRECACHE = [
   "index.html",
   "makaleler.html",
   "rehberler.html",
+  "takvim.html",
   "manifest.webmanifest",
   "data/araclar.json",
+  "data/etkinlikler.json",
   "data/inr-algoritma.json",
   "data/makaleler.json",
   "data/mamalar.json",
@@ -31,7 +33,8 @@ var PRECACHE = [
   "assets/icon-512.png",
   "assets/icon-maskable-512.png",
   "assets/site.css",
-  "assets/site.js"
+  "assets/site.js",
+  "assets/takvim.js"
 ];
 
 self.addEventListener("install", function (e) {

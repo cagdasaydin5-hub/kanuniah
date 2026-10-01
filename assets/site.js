@@ -207,6 +207,11 @@
     home: function () {
       /* araç dizini yüklenemezse ana sayfa yine çalışsın */
       var tools = load("araclar").catch(function () { return { groups: [], tools: [] }; });
+      load("etkinlikler").then(function (E) {
+        var bugun = new Date().toISOString().slice(0, 10);
+        var n = E.etkinlikler.filter(function (e) { return (e.bitis || e.baslangic || "9999") >= bugun; }).length;
+        var x = document.getElementById("nEvents"); if (x) x.textContent = n;
+      }).catch(function () {});
       Promise.all([load("rehberler"), load("makaleler"), load("meta"), tools]).then(function (r) {
         var R = r[0], M = r[1], meta = r[2], A = r[3]; TODAY = meta.checked;
         var guides = R.guides.filter(function (g) { return g.status !== "arsiv"; });

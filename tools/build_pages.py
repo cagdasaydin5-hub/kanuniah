@@ -11,6 +11,7 @@ TODAY = json.load(open("data/meta.json", encoding="utf-8"))["checked"]
 
 NAV = [("home", "./", "Ana sayfa"), ("rehberler", "rehberler.html", "Rehberler"),
        ("makaleler", "makaleler.html", "Makaleler"), ("araclar", "araclar.html", "Araçlar"),
+       ("takvim", "takvim.html", "Takvim"),
        ("hakkinda", "hakkinda.html", "Hakkımızda")]
 
 
@@ -115,6 +116,7 @@ PAGES["index.html"] = head("Kanuni Aile Hekimliği",
     <a class="tile" href="rehberler.html"><span class="n" id="nGuides">–</span><b>Rehberler</b><span>Türk ve uluslararası klinik rehberler, özetleriyle</span></a>
     <a class="tile" href="makaleler.html"><span class="n" id="nPapers">–</span><b>Haftanın makaleleri</b><span>Birinci basamak için önem sırasıyla, Türkçe özet</span></a>
     <a class="tile" href="araclar.html"><span class="n" id="nTools">–</span><b>Araçlar</b><span>Böbrek, AF, pnömoni, bası yarası, yaşlı değerlendirme, aşı planlayıcı</span></a>
+    <a class="tile" href="takvim.html"><span class="n" id="nEvents">–</span><b>Etkinlik takvimi</b><span>Yaklaşan kongre, sempozyum ve kurslar; bildiri son tarihleri</span></a>
     <a class="tile" href="rehberler.html"><span class="n" id="nLaw">–</span><b>Mevzuat</b><span>Evde sağlık ve palyatif bakım düzenlemeleri</span></a>
   </div>
 
@@ -231,13 +233,36 @@ PAGES["araclar.html"] = head("Araçlar · Kanuni Aile Hekimliği",
 </div>
 """ % ICON + FOOT.replace("{extra}", '<script src="assets/araclar.js" defer></script>\n<script src="assets/arac-sut.js" defer></script>\n<script src="assets/arac-etkilesim.js" defer></script>\n<script src="assets/arac-mama.js" defer></script>\n<script src="assets/arac-inr.js" defer></script>\n')
 
+PAGES["takvim.html"] = head("Etkinlik Takvimi · Kanuni Aile Hekimliği",
+    "Türkiye'de aile hekimliğini ilgilendiren kongre, sempozyum, kurs ve okullar: tarih sırasıyla, bildiri ve kayıt son tarihleriyle.",
+    "takvim.html", "takvim") + """<div class="wrap">
+  <div class="page-head">
+    <div class="eyebrow">Kongre ve sempozyumlar</div>
+    <h1>Etkinlik takvimi</h1>
+    <p class="lede">Türkiye'de düzenlenen ve aile hekimliğini ilgilendiren etkinlikler, tarih sırasıyla. Renk ve yazı kalınlığı önemi gösterir. Bilgiler resmi sayfadan alınır; kayıt öncesi resmi sayfayı kontrol edin.</p>
+    <div class="lejant" id="lejant"></div>
+  </div>
+  <div class="tk-yakin" id="yakin" hidden></div>
+  <div class="bar">
+    <label class="search" for="q">%s<input id="q" type="search" placeholder="Etkinlik, şehir ya da düzenleyen ara" autocomplete="off"></label>
+    <div class="chips" id="chips" role="group" aria-label="Tür"></div>
+    <div class="opts">
+      <label><input type="checkbox" id="showPast"> Geçmiş etkinlikleri göster</label>
+      <span class="count" id="count"></span>
+    </div>
+  </div>
+  <div id="events"></div>
+  <p class="method">Takvim her pazartesi güncellenir. Listede olmayan bir etkinlik görürseniz kliniğe iletin; resmi sayfasından doğrulanıp eklenir.</p>
+</div>
+""" % ICON + FOOT.replace("{extra}", '<script src="assets/takvim.js" defer></script>\n')
+
 for name, html in PAGES.items():
     html = html.replace("{extra}", "")
     with open(name, "w", encoding="utf-8", newline="\n") as f:
         f.write(html)
 
 urls = "".join("  <url><loc>%s/%s</loc><lastmod>%s</lastmod></url>\n" % (SITE, p, TODAY)
-               for p in ["", "rehberler.html", "makaleler.html", "araclar.html", "hakkinda.html"])
+               for p in ["", "rehberler.html", "makaleler.html", "araclar.html", "takvim.html", "hakkinda.html"])
 with open("sitemap.xml", "w", encoding="utf-8", newline="\n") as f:
     f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n%s</urlset>\n' % urls)
 print("Sayfalar üretildi:", ", ".join(PAGES))

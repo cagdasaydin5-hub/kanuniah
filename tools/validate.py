@@ -105,6 +105,27 @@ if INR is not None:
         if len(ic) != 1 or ic[0].get("ust") != h.get("ust"): err.append("inr-algoritma %s: hedef aralık satırı (degisim 0) tek olmalı ve üst sınırı hedefin üst sınırı olmalı" % hid)
     for kosul in ("inr-4.5-10", "inr-10-ustu", "kanama"):
         if not any(x.get("kosul") == kosul and x.get("metin") for x in INR.get("yuksek_inr", [])): err.append("inr-algoritma: yuksek_inr '%s' eksik" % kosul)
+E = j("etkinlikler.json")
+if E is not None:
+    ids, dz = set(), {z.get("id") for z in E.get("duzeyler", [])}
+    for e in E.get("etkinlikler", []):
+        i = e.get("id")
+        if not i or i in ids: err.append("etkinlik id eksik ya da tekrar: %s" % i)
+        ids.add(i)
+        for k in ("ad", "tur", "duzey", "kapsam", "dogrulama"):
+            if not e.get(k): err.append("etkinlik %s: '%s' eksik" % (i, k))
+        if e.get("duzey") not in dz: err.append("etkinlik %s: duzey %s tanımsız" % (i, e.get("duzey")))
+        if e.get("tur") not in ("kongre", "sempozyum", "kurs", "okul", "arastirma", "webinar"): err.append("etkinlik %s: tur geçersiz" % i)
+        if e.get("kapsam") not in ("bolgesel", "ulusal", "uluslararasi"): err.append("etkinlik %s: kapsam geçersiz" % i)
+        b, s = e.get("baslangic"), e.get("bitis")
+        if b is None and not e.get("yil"): err.append("etkinlik %s: baslangic ya da yil gerekli" % i)
+        for x in [b, s] + list((e.get("tarihler") or {}).values()) + [e.get("dogrulama")]:
+            if x is not None and not DATE.match(str(x)): err.append("etkinlik %s: tarih YYYY-AA-GG olmalı (%s)" % (i, x))
+        if b and s and s < b: err.append("etkinlik %s: bitis başlangıçtan önce" % i)
+        u = e.get("url")
+        if u is not None and not str(u).startswith("https://"): err.append("etkinlik %s: url https olmalı" % i)
+        if not u and not e.get("kaynak"): err.append("etkinlik %s: url ya da kaynak gerekli" % i)
+
 A = j("araclar.json")
 if A:
     tids = [t.get("id") for t in A.get("tools", [])]
