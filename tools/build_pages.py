@@ -177,7 +177,7 @@ PAGES["hakkinda.html"] = head("Hakkımızda · Trabzon Kanuni EAH Aile Hekimliğ
     <h1>Bu site kimin, ne için?</h1>
   </div>
   <div class="prose">
-    <p>Bu site, <b>%s</b> tarafından, kliniğin aile hekimliği asistanlarının ihtiyaç duyduğu güncel bilgiye tek yerden ve hızlıca ulaşabilmesi için hazırlanır. İlk olarak evde sağlık biriminin ihtiyaçlarıyla başladı; zamanla kliniğin tüm alanlarını kapsayacak şekilde genişliyor.</p>
+    <p>Bu site, <b>%s</b> tarafından, anabilim dalının aile hekimliği asistanlarının ihtiyaç duyduğu güncel bilgiye tek yerden ve hızlıca ulaşabilmesi için hazırlanır. İlk olarak evde sağlık biriminin ihtiyaçlarıyla başladı; zamanla kliniğin tüm alanlarını kapsayacak şekilde genişliyor.</p>
 
     <h2>Neler var?</h2>
     <ul>
