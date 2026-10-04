@@ -59,6 +59,33 @@
     return r.length === 1 ? r[0] : null;
   }
 
+  /* Serbest metinden (anamnez, epikriz, reçete) ilaç adlarını ayıklar; çok sözcüklü adlar ve ek almış
+     biçimler (ör. "varfarinin") bulunur. Çakışmalarda en uzun ad kazanır. */
+  function metinden(ilaclar, text) {
+    var t = " " + fold(text) + " ", bul = [], sonuc = [], goruldu = {};
+    ilaclar.forEach(function (d) {
+      d._adlar.forEach(function (a) {
+        if (a.length < 3) return;
+        var from = 0, i;
+        while ((i = t.indexOf(" " + a, from)) >= 0) {
+          var son = i + 1 + a.length, c = t.charAt(son);
+          if (c === " " || (a.length >= 5 && /[a-z]/.test(c))) bul.push([i, son, d]);
+          from = i + 1;
+        }
+      });
+    });
+    bul.sort(function (x, y) { return (y[1] - y[0]) - (x[1] - x[0]) || x[0] - y[0]; });
+    var alinan = [];
+    bul.forEach(function (m) {
+      if (alinan.some(function (z) { return m[0] < z[1] && z[0] < m[1]; })) return;
+      alinan.push(m);
+    });
+    alinan.sort(function (x, y) { return x[0] - y[0]; }).forEach(function (m) {
+      if (!goruldu[m[2].id]) { goruldu[m[2].id] = 1; sonuc.push(m[2]); }
+    });
+    return sonuc;
+  }
+
   /* ---------- sınıf kuralları (DDInter dışı, kliniğin eklediği kısa notlar) ---------- */
   var ANTIKOAG = function (d) { return has(d, "vka") || has(d, "doak"); };
   var KURAL = [
@@ -241,7 +268,7 @@
     return R;
   }
 
-  if (typeof module !== "undefined") module.exports = { KAY: KAY, BILGI: BILGI, fold: fold, indeksle: indeksle, ara: ara, coz: coz, analiz: analiz, kuralNotlari: kuralNotlari, EN_COK: EN_COK };
+  if (typeof module !== "undefined") module.exports = { KAY: KAY, BILGI: BILGI, fold: fold, indeksle: indeksle, ara: ara, coz: coz, metinden: metinden, analiz: analiz, kuralNotlari: kuralNotlari, EN_COK: EN_COK };
   if (typeof window === "undefined" || typeof document === "undefined") return;
 
   /* ---------- arayüz ---------- */
@@ -363,6 +390,14 @@
     }
     function kapat() { cur = []; act = -1; oneriCiz(); }
 
+    function metinEkle(text) {
+      var bul = metinden(ilaclar, text), yeni = bul.filter(function (d) { return secili.indexOf(d.id) < 0; });
+      var bos = EN_COK - secili.length;
+      yeni.slice(0, Math.max(bos, 0)).forEach(ekle);
+      msg.textContent = !bul.length ? "Metinde tanınan ilaç adı bulunamadı."
+        : yeni.length ? (Math.min(yeni.length, Math.max(bos, 0)) + " ilaç eklendi" + (yeni.length > bos ? "; en fazla " + EN_COK + " ilaç eklenebildiği için " + (yeni.length - Math.max(bos, 0)) + " ilaç eklenmedi." : "."))
+        : "Metindeki ilaçlar zaten ekli.";
+    }
     function coklu(text) {
       var parts = text.split(/[,;\n+]+/).map(function (s) { return s.trim(); }).filter(Boolean), bulunmayan = [];
       parts.forEach(function (p) { var d = coz(ilaclar, p); if (d) ekle(d); else bulunmayan.push(p); });
@@ -371,7 +406,7 @@
 
     inp.addEventListener("input", function () {
       if (!hazir) return;
-      if (/[,;\n]/.test(inp.value)) { coklu(inp.value); inp.value = ""; kapat(); return; }
+      if (/[,;\n]/.test(inp.value)) { metinEkle(inp.value); inp.value = ""; kapat(); return; }
       cur = ara(ilaclar, inp.value, 8); act = cur.length ? 0 : -1; oneriCiz();
     });
     inp.addEventListener("keydown", function (e) {
@@ -380,13 +415,12 @@
       else if (e.key === "Enter") {
         e.preventDefault();
         if (act >= 0 && cur[act]) { ekle(cur[act]); inp.value = ""; kapat(); }
-        else if (inp.value.trim()) { coklu(inp.value); inp.value = ""; kapat(); }
+        else if (inp.value.trim()) { metinEkle(inp.value); inp.value = ""; kapat(); }
       } else if (e.key === "Escape") kapat();
-      else if (e.key === "Backspace" && !inp.value && secili.length) cikar(secili[secili.length - 1]);
     });
     inp.addEventListener("paste", function (e) {
       var t = (e.clipboardData || window.clipboardData).getData("text");
-      if (hazir && /[,;\n]/.test(t)) { e.preventDefault(); coklu(t); kapat(); }
+      if (hazir && /[\s,;+]/.test(t.trim()) && metinden(ilaclar, t).length) { e.preventDefault(); metinEkle(t); kapat(); }
     });
     inp.addEventListener("blur", function () { setTimeout(kapat, 100); });
     reset.addEventListener("click", function () { secili = []; inp.value = ""; msg.textContent = ""; kapat(); ciz(); });
