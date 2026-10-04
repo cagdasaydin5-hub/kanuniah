@@ -1442,15 +1442,10 @@
    "org": "Cumhurbaşkanlığı",
    "year": 2026,
    "pub": "2026-05-19",
-   "summary": "Kamu ve özel tüm sağlık kuruluşlarında sağlık raporlarının nasıl düzenleneceğini yeniden düzenler. Başvuru e-Nabız beyan formuyla başlar; sorun beyan edilmezse e-Nabız üzerinden doğrudan sağlık durum belgesi alınabilir. Tek hekim istirahatına sınır getirir (bir seferde en çok 10 gün, kontrolle 20 gün, kişi başı yılda 40 gün). Sağlık kurulu türlerini, e-Rapor'u, rapor başvuru merkezlerini ve sürücü/silah ruhsatı raporlarını da kapsar.",
-   "note": "RG 33258, Karar Sayısı 11361; yayımı tarihinde yürürlüğe girdi. Dayanakları: 1219, 3359, 5258 sayılı kanunlar ve 1 sayılı CBK. Hangi eski düzenlemeleri kaldırdığı doğrulanamadı; eski rapor yönergeleri yerine bunu esas alın.",
-   "url": "https://www.resmigazete.gov.tr/19.05.2026",
-   "alt": [
-    {
-     "label": "Haber (Alomaliye, tam metin)",
-     "url": "https://www.alomaliye.com/2026/05/19/saglik-raporlari-yonetmeligi-karar-sayisi-11361/"
-    }
-   ],
+   "summary": "Sağlık raporlarının başvuru, muayene ve düzenlenme esaslarını; sağlık kurullarını, istirahat, engelli, sürücü, silah ruhsatı ve evlilik öncesi raporları, adli raporları ve itiraz yollarını tek metinde toplar. Genel sağlık durumu için önce e-Nabız üzerinden sağlık durum belgesi istenir; hekime başvuru gerekiyorsa rapor düzenlenir. Tek hekim bir defada en çok 10 gün istirahat verebilir, kontrol muayenesiyle 10 gün daha eklenebilir; 20 günü aşan istirahat sağlık kurulunca verilir. Aynı kişiye tek hekimce bir yılda verilen istirahat toplamı 40 günü geçemez.",
+   "note": "RG 19.05.2026, sayı 33258; Cumhurbaşkanı Kararı 11361. Yayımı tarihinde yürürlüğe girdi.",
+   "url": "https://www.resmigazete.gov.tr/eskiler/2026/05/20260519-12.pdf",
+   "alt": [],
    "kw": "sağlık raporları yönetmeliği 2026 e-rapor istirahat sağlık durum belgesi sağlık kurulu e-nabız",
    "aud": [
     "hekim"
@@ -1909,8 +1904,8 @@
    "year": 2026,
    "pub": "2026-04-28",
    "summary": "GETAT uygulamalarının yalnızca Bakanlıkça yetkilendirilmiş merkez ve ünitelerde, ilgili alanda sertifikası olan kişilerce yapılabileceğini düzenler. Uygulama alanları yönetmelik ekinde, endikasyonlar Bakanlık klinik rehberlerinde belirlenir. Aydınlatılmış onam ve 24 saat içinde advers olay bildirimi zorunludur; GETAT, standart tıbbi tedaviyi geciktiremez ve onun yerine geçemez.",
-   "note": "RG 33237. 27.10.2014 tarihli (RG 29158) eski yönetmeliği yürürlükten kaldırdı.",
-   "url": "https://www.resmigazete.gov.tr/28.04.2026",
+   "note": "RG 28.04.2026, sayı 33237. 27.10.2014 tarihli ve 29158 sayılı eski GETAT Yönetmeliği'ni yürürlükten kaldırdı.",
+   "url": "https://www.resmigazete.gov.tr/eskiler/2026/04/20260428-2.htm",
    "alt": [],
    "kw": "getat geleneksel tamamlayıcı tıp akupunktur hacamat fitoterapi sertifika",
    "aud": [
