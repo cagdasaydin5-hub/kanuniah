@@ -216,7 +216,7 @@
         var R = r[0], M = r[1], meta = r[2], A = r[3]; TODAY = meta.checked;
         var guides = R.guides.filter(function (g) { return g.status !== "arsiv"; });
         var issue = M.issues[0];
-        document.getElementById("nGuides").textContent = guides.filter(function (g) { return g.aud.indexOf("hekim") !== -1; }).length;
+        document.getElementById("nGuides").textContent = guides.filter(function (g) { return g.aud.indexOf("hekim") !== -1 && g.kind !== "law"; }).length;
         document.getElementById("nPapers").textContent = issue ? issue.items.length : 0;
         if (A.tools.length) document.getElementById("nTools").textContent = A.tools.length;
         document.getElementById("nLaw").textContent = guides.filter(function (g) { return g.kind === "law"; }).length;
@@ -228,7 +228,7 @@
           var p = el("p"); p.appendChild(el("strong", null, "Yeni mevzuat: "));
           laws.forEach(function (g, i) {
             if (i) p.appendChild(document.createTextNode("; "));
-            var a = el("a", null, g.title); a.href = "rehberler.html#" + g.id; p.appendChild(a);
+            var a = el("a", null, g.title); a.href = "mevzuat.html#" + g.id; p.appendChild(a);
             p.appendChild(document.createTextNode(" (" + fmt(g.pub) + ")"));
           });
           n.appendChild(p);
@@ -260,7 +260,7 @@
         /* genel arama: rehberler, makaleler ve araçlar birlikte */
         var idx = [];
         function add(k, t, s, h, extra) { idx.push({ k: k, t: t, s: s, h: h, ft: fold(t), x: fold([t].concat(extra).join(" ")) }); }
-        guides.forEach(function (g) { add(g.kind === "law" ? "Mevzuat" : "Rehber", g.title, g.org + (g.year ? " · " + g.year : ""), "rehberler.html#" + g.id, [g.org, g.summary, g.kw]); });
+        guides.forEach(function (g) { add(g.kind === "law" ? "Mevzuat" : "Rehber", g.title, g.org + (g.year ? " · " + g.year : ""), (g.kind === "law" ? "mevzuat.html#" : "rehberler.html#") + g.id, [g.org, g.summary, g.kw]); });
         M.issues.forEach(function (is) { is.items.forEach(function (p) { add("Makale", p.title, p.journal + " · " + fmt(p.date), "makaleler.html#" + p.id, [p.title_en, p.journal, p.what, p.practice, p.design, (p.tags || []).join(" ")]); }); });
         var gl = {}; A.groups.forEach(function (g) { gl[g[0]] = g[1]; });
         A.tools.forEach(function (x) { add("Araç", x.t, gl[x.g] || "Klinik araç", "araclar.html#" + x.id, [x.d, x.kw, gl[x.g]]); });
@@ -289,7 +289,10 @@
     },
 
     rehberler: function () {
-      guideList({ filter: function (g) { return (g.aud || []).indexOf("hekim") !== -1; } });
+      guideList({ filter: function (g) { return (g.aud || []).indexOf("hekim") !== -1 && g.kind !== "law"; } });
+    },
+    mevzuat: function () {
+      guideList({ filter: function (g) { return g.kind === "law"; } });
     },
 
 

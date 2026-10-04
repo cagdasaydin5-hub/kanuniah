@@ -10,6 +10,7 @@ ORG = "Trabzon Kanuni Eğitim ve Araştırma Hastanesi Aile Hekimliği Anabilim 
 TODAY = json.load(open("data/meta.json", encoding="utf-8"))["checked"]
 
 NAV = [("home", "./", "Ana sayfa"), ("rehberler", "rehberler.html", "Rehberler"),
+       ("mevzuat", "mevzuat.html", "Mevzuat"),
        ("makaleler", "makaleler.html", "Makaleler"), ("araclar", "araclar.html", "Araçlar"),
        ("takvim", "takvim.html", "Takvim"),
        ("hakkinda", "hakkinda.html", "Hakkımızda")]
@@ -117,7 +118,7 @@ PAGES["index.html"] = head("Trabzon Kanuni EAH Aile Hekimliği",
     <a class="tile" href="makaleler.html"><span class="n" id="nPapers">–</span><b>Haftanın makaleleri</b><span>Birinci basamak için önem sırasıyla, Türkçe özet</span></a>
     <a class="tile" href="araclar.html"><span class="n" id="nTools">–</span><b>Araçlar</b><span>Böbrek, AF, pnömoni, bası yarası, yaşlı değerlendirme, aşı planlayıcı</span></a>
     <a class="tile" href="takvim.html"><span class="n" id="nEvents">–</span><b>Etkinlik takvimi</b><span>Yaklaşan kongre, sempozyum ve kurslar; bildiri son tarihleri</span></a>
-    <a class="tile" href="rehberler.html"><span class="n" id="nLaw">–</span><b>Mevzuat</b><span>Evde sağlık ve palyatif bakım düzenlemeleri</span></a>
+    <a class="tile" href="mevzuat.html"><span class="n" id="nLaw">–</span><b>Mevzuat</b><span>Kanun, yönetmelik ve genelgeler</span></a>
   </div>
 
   <section class="block">
@@ -140,12 +141,22 @@ PAGES["index.html"] = head("Trabzon Kanuni EAH Aile Hekimliği",
 """ % ICON + JSONLD + FOOT
 
 PAGES["rehberler.html"] = head("Rehberler · Trabzon Kanuni EAH Aile Hekimliği",
-    "Aile hekimliği için güncel Türk ve uluslararası klinik rehberler ve mevzuat; kısa özetler ve resmi kaynak bağlantıları.",
+    "Aile hekimliği için güncel Türk ve uluslararası klinik rehberler; kısa özetler ve resmi kaynak bağlantıları.",
     "rehberler.html", "rehberler") + """<div class="wrap">
   <div class="page-head">
-    <div class="eyebrow">Rehberler ve mevzuat</div>
+    <div class="eyebrow">Klinik rehberler</div>
     <h1>Rehberler</h1>
     <p class="lede">Her kayıt resmi kaynağa bağlanır. Yeni sürüm çıktığında kayıt güncellenir, eski sürüm arşive alınır.</p>
+  </div>
+""" + BAR_GUIDES + "</div>\n" + FOOT
+
+PAGES["mevzuat.html"] = head("Mevzuat · Trabzon Kanuni EAH Aile Hekimliği",
+    "Aile hekimliğini ilgilendiren kanun, yönetmelik ve genelgeler; kısa özetler ve resmi kaynak bağlantıları.",
+    "mevzuat.html", "mevzuat") + """<div class="wrap">
+  <div class="page-head">
+    <div class="eyebrow">Mevzuat</div>
+    <h1>Mevzuat</h1>
+    <p class="lede">Kanun, yönetmelik ve genelgeler; her kayıt Resmî Gazete ya da Bakanlık sayfasına bağlanır. Değişiklik çıktığında kayıt güncellenir, eski metin arşive alınır.</p>
   </div>
 """ + BAR_GUIDES + "</div>\n" + FOOT
 
@@ -181,7 +192,8 @@ PAGES["hakkinda.html"] = head("Hakkımızda · Trabzon Kanuni EAH Aile Hekimliğ
 
     <h2>Neler var?</h2>
     <ul>
-      <li><b>Rehberler ve mevzuat:</b> Türk ve uluslararası klinik rehberler; evde sağlık ve palyatif bakım mevzuatı.</li>
+      <li><b>Rehberler:</b> Türk ve uluslararası klinik rehberler.</li>
+      <li><b>Mevzuat:</b> aile hekimliğini ilgilendiren kanun, yönetmelik ve genelgeler.</li>
       <li><b>Haftanın makaleleri:</b> Birinci basamağı ilgilendiren önemli çalışmalar, Türkçe özet ve şeffaf bir önem puanıyla.</li>
       <li><b>Araçlar:</b> Böbrek fonksiyonu, risk skorları, yaşlı değerlendirme ölçekleri ve aşı planlayıcı gibi klinik hesaplayıcılar.</li>
     </ul>
@@ -262,7 +274,7 @@ for name, html in PAGES.items():
         f.write(html)
 
 urls = "".join("  <url><loc>%s/%s</loc><lastmod>%s</lastmod></url>\n" % (SITE, p, TODAY)
-               for p in ["", "rehberler.html", "makaleler.html", "araclar.html", "takvim.html", "hakkinda.html"])
+               for p in ["", "rehberler.html", "mevzuat.html", "makaleler.html", "araclar.html", "takvim.html", "hakkinda.html"])
 with open("sitemap.xml", "w", encoding="utf-8", newline="\n") as f:
     f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n%s</urlset>\n' % urls)
 print("Sayfalar üretildi:", ", ".join(PAGES))
