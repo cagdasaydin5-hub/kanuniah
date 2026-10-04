@@ -7,7 +7,11 @@
   var VERI = "data/etkilesim/";
   var EN_AZ = 2, EN_COK = 15;
   var DUZEY = ["Major", "Moderate", "Minor", "Unknown"];
-  var DUZEY_AD = { Major: "Ciddi (Major)", Moderate: "Orta (Moderate)", Minor: "Hafif (Minor)", Unknown: "Düzeyi belirtilmemiş" };
+  var DUZEY_AD = { Major: "Ciddi", Moderate: "Orta", Minor: "Hafif", Unknown: "Düzeyi belirtilmemiş" };
+  var DUZEY_NE = { Major: "Mümkünse birlikte kullanmayın. Zorunluysa doz ayarı ve yakın izlem gerekir.",
+    Moderate: "Birlikte kullanılabilir; izlem, doz ayarı ya da başka bir ilaç gerekebilir.",
+    Minor: "Klinik önemi genellikle düşüktür.",
+    Unknown: "Etkileşim bildirilmiş, ciddiyeti belirtilmemiş." };
 
   /* ---------- yardımcılar ---------- */
   function fold(s) {
@@ -285,11 +289,12 @@
       var p2 = el("p"); p2.appendChild(el("i", null, "Öneri: ")); p2.appendChild(document.createTextNode(n.o)); li.appendChild(p2);
       if (n.kay.length) li.appendChild(kaynakP(n.kay));
     });
+    if (!c.not.length && sev && DUZEY_NE[sev]) { var pn = el("p"); pn.appendChild(el("i", null, "Ne yapmalı: ")); pn.appendChild(document.createTextNode(DUZEY_NE[sev])); li.appendChild(pn); }
     if (c.lv && c.a.ddid.length && c.b.ddid.length) {
-      var p = el("p", "etk-note"); p.appendChild(document.createTextNode("Mekanizma ve yönetim için DDInter: "));
-      p.appendChild(link(c.a.dd.join(" + "), "https://ddinter.scbdd.com/ddinter/drug-detail/" + c.a.ddid[0] + "/"));
+      var p = el("p", "etk-note"); p.appendChild(document.createTextNode("Etkileşimin nasıl oluştuğu ve ayrıntılı öneri (İngilizce): "));
+      p.appendChild(link(c.a.ad + " sayfası", "https://ddinter.scbdd.com/ddinter/drug-detail/" + c.a.ddid[0] + "/"));
       p.appendChild(document.createTextNode(" · "));
-      p.appendChild(link(c.b.dd.join(" + "), "https://ddinter.scbdd.com/ddinter/drug-detail/" + c.b.ddid[0] + "/"));
+      p.appendChild(link(c.b.ad + " sayfası", "https://ddinter.scbdd.com/ddinter/drug-detail/" + c.b.ddid[0] + "/"));
       li.appendChild(p);
     }
     return li;
@@ -403,7 +408,6 @@
 
       R.kutular.forEach(function (k) {
         var bx = el("div", "result etk-box " + k.sev); bx.appendChild(el("b", null, k.baslik)); bx.appendChild(el("p", null, k.metin));
-        if (k.ciftler.length) { var ul = el("ul"); k.ciftler.forEach(function (c) { ul.appendChild(pairItem({ a: c.a, b: c.b, lv: c.lv, sev: c.sev, kural: c.kural, kon: c.kon, not: [] }, true)); }); bx.appendChild(ul); }
         res.appendChild(bx);
       });
       if (R.ayniEtken.length) {
@@ -414,14 +418,16 @@
       var toplam = DUZEY.reduce(function (s, lv) { return s + R.ciftler[lv].length; }, 0);
       var n = secili.length, cift = n * (n - 1) / 2;
       var sum = el("div", "result " + (R.ciftler.Major.length ? "high" : R.ciftler.Moderate.length ? "mid" : "ok"));
-      sum.appendChild(el("b", null, cift + " çiftten " + toplam + " etkileşim"));
-      sum.appendChild(el("p", null, "Ciddi " + R.ciftler.Major.length + " · Orta " + R.ciftler.Moderate.length + " · Hafif " + R.ciftler.Minor.length +
-        " · Düzeyi belirtilmemiş " + R.ciftler.Unknown.length + (R.ciftler.Not.length ? " · Yalnız klinik not " + R.ciftler.Not.length : "")));
+      sum.appendChild(el("b", null, toplam ? toplam + " etkileşim bulundu" : "Etkileşim bulunmadı"));
+      var parca = [];
+      DUZEY.forEach(function (lv) { if (R.ciftler[lv].length) parca.push(R.ciftler[lv].length + " " + DUZEY_AD[lv].toLowerCase()); });
+      if (R.ciftler.Not.length) parca.push(R.ciftler.Not.length + " klinik not");
+      sum.appendChild(el("p", null, n + " ilaç, " + cift + " ikili kontrol edildi" + (parca.length ? ": " + parca.join(", ") + "." : ".")));
       res.appendChild(sum);
 
-      if (R.ciftler.Major.length) res.appendChild(group("Ciddi (Major)", R.ciftler.Major, "Major", true));
-      if (R.ciftler.Moderate.length) res.appendChild(group("Orta (Moderate)", R.ciftler.Moderate, "Moderate", true));
-      if (R.ciftler.Minor.length) res.appendChild(group("Hafif (Minor)", R.ciftler.Minor, "Minor", true));
+      if (R.ciftler.Major.length) res.appendChild(group("Ciddi", R.ciftler.Major, "Major", true));
+      if (R.ciftler.Moderate.length) res.appendChild(group("Orta", R.ciftler.Moderate, "Moderate", true));
+      if (R.ciftler.Minor.length) res.appendChild(group("Hafif", R.ciftler.Minor, "Minor", true));
       if (R.ciftler.Not.length) res.appendChild(group("DDInter verisinde kaydı yok, sınıf özelliği nedeniyle not düşülen çiftler", R.ciftler.Not, "Not", true,
         "Bu çiftler DDInter indirme verisinde yer almıyor; not, ilaçların sınıf özelliğine (serotonerjik, QT uzatan, kanama riski vb.) dayanır."));
       if (R.ciftler.Unknown.length) res.appendChild(group("Düzeyi belirtilmemiş", R.ciftler.Unknown, "Unknown", false,
