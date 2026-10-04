@@ -332,6 +332,13 @@
   if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost" || location.hostname === "127.0.0.1")) {
     window.addEventListener("load", function () {
       navigator.serviceWorker.register("sw.js").catch(function (e) { if (window.console) console.warn("Service worker kaydedilemedi", e); });
+      /* yeni sürüm yüklenince sayfayı bir kez yenile; eski önbellekteki betik kullanılmasın */
+      if (navigator.serviceWorker.controller) {
+        var yenilendi = false;
+        navigator.serviceWorker.addEventListener("controllerchange", function () {
+          if (yenilendi) return; yenilendi = true; location.reload();
+        });
+      }
     });
   }
 })();
