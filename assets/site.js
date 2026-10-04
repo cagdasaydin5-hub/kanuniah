@@ -82,6 +82,7 @@
     var an = isNew(a) ? 1 : 0, bn = isNew(b) ? 1 : 0;
     if (an !== bn) return bn - an;
     if (a.status !== b.status) return a.status === "arsiv" ? 1 : -1;
+    if (a.sira || b.sira) return (a.sira || 999) - (b.sira || 999);
     return (b.year || 0) - (a.year || 0) || a.title.localeCompare(b.title, "tr");
   }
 
