@@ -81,31 +81,6 @@
    "dogrulama": "2026-10-01"
   },
   {
-   "id": "dkahk-2026",
-   "ad": "4. Uluslararası Doğu Karadeniz Aile Hekimliği Kongresi (DKAHK 2026)",
-   "tur": "kongre",
-   "duzey": 2,
-   "kapsam": "uluslararasi",
-   "baslangic": "2026-06-04",
-   "bitis": "2026-06-06",
-   "saat": null,
-   "sehir": "Ordu",
-   "yer": null,
-   "bicim": "yuz-yuze",
-   "duzenleyen": null,
-   "ucret": "ucretli",
-   "url": "https://www.kongreuzmani.com/4-uluslararasi-dogu-karadeniz-aile-hekimligi-kongresi-dkahk-2026.html",
-   "kaynak": null,
-   "tarihler": {
-    "bildiri": null,
-    "erken_kayit": null,
-    "burs": null
-   },
-   "konu": [],
-   "not": null,
-   "dogrulama": "2026-10-01"
-  },
-  {
    "id": "guz-okulu-20",
    "ad": "20. Aile Hekimliği Güz Okulu",
    "tur": "okul",
