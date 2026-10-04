@@ -104,7 +104,7 @@ PAGES["index.html"] = head("Trabzon Kanuni EAH Aile Hekimliği",
     "Trabzon Kanuni EAH Aile Hekimliği Kliniği'nin güncel rehber, mevzuat, makale ve araç kaynağı: aile hekimliği asistanları için.",
     "", "home") + """<div class="wrap">
   <section class="hero">
-    <div class="eyebrow">Kanuni EAH · Aile Hekimliği Kliniği</div>
+    <div class="eyebrow">Trabzon Kanuni EAH · Aile Hekimliği Kliniği</div>
     <h1>Klinikte ihtiyaç duyulan her şey, tek yerde.</h1>
     <p class="lede">Güncel rehberler, mevzuat, haftanın önemli makaleleri ve klinik hesaplayıcılar. Her pazartesi kontrol edilir; son kontrol <b id="checked"></b>.</p>
     <label class="search" for="q">%s<input id="q" type="search" placeholder="Rehber, makale ya da araç arayın: ör. hipertansiyon, ESKOM, CURB-65, Braden, aşı" autocomplete="off"></label>
