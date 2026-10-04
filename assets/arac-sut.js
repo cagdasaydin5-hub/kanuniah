@@ -91,6 +91,19 @@
       var hit = D.items.filter(function (x) { return fold(x.ad) === q; })[0];
       var many = hit ? [hit] : D.items.filter(function (x) { return fold(x.ad + " " + (x.ara || "")).indexOf(q) >= 0; });
       if (many.length === 1) { out.appendChild(card(many[0], D)); return; }
+      if (!many.length) {
+        // Yapıştırılan serbest metin (ör. "Rosuvastatin 10 mg 1x1, apiksaban 5 mg"): içindeki kayıtlı adları bul.
+        var t = " " + q + " ", metin = D.items.filter(function (x) {
+          var a = fold(x.ad); if (a.length < 4) return false;
+          var i = t.indexOf(" " + a); if (i < 0) return false;
+          var c = t.charAt(i + 1 + a.length); return c === " " || (a.length >= 5 && /[a-z]/.test(c));
+        });
+        if (metin.length) {
+          if (metin.length > 1) out.appendChild(el("p", "hint", "Metinde " + metin.length + " kayıtlı ad bulundu" + (metin.length > 8 ? " (ilk 8 gösteriliyor)" : "") + ":"));
+          metin.slice(0, 8).forEach(function (x) { out.appendChild(card(x, D)); });
+          return;
+        }
+      }
       if (!many.length) { out.appendChild(el("p", "hint", "Bu adla kayıt yok. Kapsam: aile hekimliğinde sık kullanılan 150 etken madde ve 4 tıbbi malzeme raporu.")); return; }
       var p = el("p", "hint", many.length + " eşleşme: ");
       many.slice(0, 12).forEach(function (x, i) {
