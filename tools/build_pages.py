@@ -243,7 +243,7 @@ PAGES["araclar.html"] = head("Araçlar · Trabzon Kanuni EAH Aile Hekimliği",
   <p class="empty" id="empty" hidden>Bu aramayla eşleşen araç yok.</p>
   <p class="method">Bu araçlar karar desteği içindir; sonuç, hastanın klinik değerlendirmesinin yerine geçmez. Doz öneren araçlar (varfarin) yayımlanmış bir algoritmaya dayanır; son karar hekime aittir.</p>
 </div>
-""" % ICON + FOOT.replace("{extra}", '<script src="assets/araclar.js" defer></script>\n<script src="assets/arac-sut.js" defer></script>\n<script src="assets/arac-etkilesim.js" defer></script>\n<script src="assets/arac-mama.js" defer></script>\n<script src="assets/arac-inr.js" defer></script>\n')
+""" % ICON + FOOT.replace("{extra}", '<script src="assets/araclar.js" defer></script>\n<script src="assets/arac-sut.js" defer></script>\n<script src="assets/arac-etkilesim.js" defer></script>\n<script src="assets/arac-mama.js" defer></script>\n<script src="assets/arac-inr.js" defer></script>\n<script src="assets/arac-asi-eriskin.js" defer></script>\n')
 
 PAGES["takvim.html"] = head("Etkinlik Takvimi · Trabzon Kanuni EAH Aile Hekimliği",
     "Türkiye'de aile hekimliğini ilgilendiren kongre, sempozyum, kurs ve okullar: tarih sırasıyla, bildiri ve kayıt son tarihleriyle.",

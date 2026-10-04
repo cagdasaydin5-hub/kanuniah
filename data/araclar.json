@@ -188,6 +188,13 @@
    "kw": "aşı takvimi planlayıcı yakalama geciken doz bebek çocuk suçiçeği kkk"
   },
   {
+   "id": "asi-eriskin",
+   "g": "asi",
+   "t": "Erişkin ve risk grubu aşı planlayıcı",
+   "d": "Yaş, gebelik, hastalık, meslek ve önceki aşılara göre Td, KKK, hepatit A/B, pnömokok, grip, meningokok, suçiçeği, Hib önerileri.",
+   "kw": "aşı erişkin yetişkin risk grubu pnömokok kpa13 ppa23 hepatit b td tdap grip gebe sağlık çalışanı meningokok aspleni nakil hiv suçiçeği kkk"
+  },
+  {
    "id": "etkilesim",
    "g": "ilac",
    "t": "İlaç etkileşimi denetleyici (DDInter)",
