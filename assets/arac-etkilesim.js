@@ -184,7 +184,8 @@
         var lv = null;
         if (dosyalar[a.id] && dosyalar[a.id].x[b.id]) lv = dosyalar[a.id].x[b.id];
         else if (dosyalar[b.id] && dosyalar[b.id].x[a.id]) lv = dosyalar[b.id].x[a.id];
-        var c = { a: a, b: b, lv: lv, not: kuralNotlari(a, b) };
+        var iid = ((dosyalar[a.id] || {}).i || {})[b.id] || ((dosyalar[b.id] || {}).i || {})[a.id] || null;
+        var c = { a: a, b: b, lv: lv, iid: iid, not: kuralNotlari(a, b) };
         /* Ciddi sınıf kuralı DDInter düzeyinden yüksekse ya da DDInter'de kayıt yoksa çift "Ciddi" grubuna alınır */
         c.kural = c.not.some(function (n) { return n.sev === "Major"; }) && (!lv || RANK[lv] < RANK.Major);
         c.kon = c.not.some(function (n) { return n.kon; });
@@ -290,7 +291,11 @@
       if (n.kay.length) li.appendChild(kaynakP(n.kay));
     });
     if (!c.not.length && sev && DUZEY_NE[sev]) { var pn = el("p"); pn.appendChild(el("i", null, "Ne yapmalı: ")); pn.appendChild(document.createTextNode(DUZEY_NE[sev])); li.appendChild(pn); }
-    if (c.lv && c.a.ddid.length && c.b.ddid.length) {
+    if (c.lv && c.iid) {
+      var pi = el("p", "etk-note");
+      pi.appendChild(link("Bu etkileşimin açıklaması ve yönetimi (DDInter, İngilizce) →", "https://ddinter.scbdd.com/ddinter/interact/" + c.iid + "/"));
+      li.appendChild(pi);
+    } else if (c.lv && c.a.ddid.length && c.b.ddid.length) {
       var p = el("p", "etk-note"); p.appendChild(document.createTextNode("Etkileşimin nasıl oluştuğu ve ayrıntılı öneri (İngilizce): "));
       p.appendChild(link(c.a.ad + " sayfası", "https://ddinter.scbdd.com/ddinter/drug-detail/" + c.a.ddid[0] + "/"));
       p.appendChild(document.createTextNode(" · "));
