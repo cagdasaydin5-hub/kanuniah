@@ -1,4 +1,4 @@
-/* Kanuni Aile Hekimliği – site betiği. Veriler /data/*.json dosyalarından okunur. */
+/* Trabzon Kanuni EAH Aile Hekimliği – site betiği. Veriler /data/*.json dosyalarından okunur. */
 (function () {
   "use strict";
 

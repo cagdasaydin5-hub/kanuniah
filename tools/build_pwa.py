@@ -83,7 +83,7 @@ def precache_list():
     return [f for f in files if os.path.exists(f)]
 
 
-SW = """/* Kanuni Aile Hekimliği – service worker.
+SW = """/* Trabzon Kanuni EAH Aile Hekimliği – service worker.
    Otomatik üretildi: tools/build_pwa.py. Elle düzenlemeyin; sürüm, dosyaların içeriğinden hesaplanır. */
 "use strict";
 var VERSION = "%(version)s";

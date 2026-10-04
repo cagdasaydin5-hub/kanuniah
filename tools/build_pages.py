@@ -6,7 +6,7 @@ import os, json, datetime
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 SITE = "https://kanuniah.tr"
-ORG = "Kanuni Eğitim ve Araştırma Hastanesi Aile Hekimliği Kliniği"
+ORG = "Trabzon Kanuni Eğitim ve Araştırma Hastanesi Aile Hekimliği Kliniği"
 TODAY = json.load(open("data/meta.json", encoding="utf-8"))["checked"]
 
 NAV = [("home", "./", "Ana sayfa"), ("rehberler", "rehberler.html", "Rehberler"),
@@ -33,7 +33,7 @@ def head(title, desc, path, page):
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{site}/{path}">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Kanuni Aile Hekimliği">
+<meta property="og:site_name" content="Trabzon Kanuni EAH Aile Hekimliği">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:locale" content="tr_TR">
@@ -55,7 +55,7 @@ def head(title, desc, path, page):
   <div class="wrap">
     <a class="brand" href="./" aria-label="Ana sayfa">
       <img src="assets/emblem.svg" alt="" width="36" height="36">
-      <span><b>Kanuni Aile Hekimliği</b><small>Kanuni EAH · Aile Hekimliği Kliniği</small></span>
+      <span><b>Trabzon Kanuni EAH</b><small>Aile Hekimliği Kliniği</small></span>
     </a>
     <nav class="main" aria-label="Ana menü">
 {nav}
@@ -69,7 +69,7 @@ def head(title, desc, path, page):
 FOOT = """</main>
 <footer class="site">
   <div class="wrap">
-    <div><b>Kanuni Aile Hekimliği</b>{org} asistanları tarafından hazırlanır ve her hafta güncellenir.</div>
+    <div><b>Trabzon Kanuni EAH Aile Hekimliği</b>{org} asistanları tarafından hazırlanır ve her hafta güncellenir.</div>
     <div><b>Önemli not</b>Buradaki özetler hızlı başvuru içindir; tanı ve tedavi kararı hekime aittir. Karar vermeden önce kaynağın kendisine bakın.</div>
     <div><b>Kaynak ilkesi</b>Yalnızca resmi kaynaklara bağlantı verilir; belgelerin kopyası barındırılmaz. Sitede hasta verisi bulunmaz.</div>
   </div>
@@ -82,7 +82,7 @@ FOOT = """</main>
 ICON = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>'
 
 JSONLD = """<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Kanuni Aile Hekimliği","url":"%s/","inLanguage":"tr","description":"Aile hekimliği asistanları için güncel rehber, mevzuat ve makale kaynağı.","publisher":{"@type":"Organization","name":"%s","url":"%s/","logo":"%s/assets/emblem.svg"}}
+{"@context":"https://schema.org","@type":"WebSite","name":"Trabzon Kanuni EAH Aile Hekimliği","url":"%s/","inLanguage":"tr","description":"Aile hekimliği asistanları için güncel rehber, mevzuat ve makale kaynağı.","publisher":{"@type":"Organization","name":"%s","url":"%s/","logo":"%s/assets/emblem.svg"}}
 </script>
 """ % (SITE, ORG, SITE, SITE)
 
@@ -100,8 +100,8 @@ BAR_GUIDES = """  <div class="bar">
 
 PAGES = {}
 
-PAGES["index.html"] = head("Kanuni Aile Hekimliği",
-    "Kanuni EAH Aile Hekimliği Kliniği'nin güncel rehber, mevzuat, makale ve araç kaynağı: aile hekimliği asistanları için.",
+PAGES["index.html"] = head("Trabzon Kanuni EAH Aile Hekimliği",
+    "Trabzon Kanuni EAH Aile Hekimliği Kliniği'nin güncel rehber, mevzuat, makale ve araç kaynağı: aile hekimliği asistanları için.",
     "", "home") + """<div class="wrap">
   <section class="hero">
     <div class="eyebrow">Kanuni EAH · Aile Hekimliği Kliniği</div>
@@ -139,7 +139,7 @@ PAGES["index.html"] = head("Kanuni Aile Hekimliği",
 </div>
 """ % ICON + JSONLD + FOOT
 
-PAGES["rehberler.html"] = head("Rehberler · Kanuni Aile Hekimliği",
+PAGES["rehberler.html"] = head("Rehberler · Trabzon Kanuni EAH Aile Hekimliği",
     "Aile hekimliği için güncel Türk ve uluslararası klinik rehberler ve mevzuat; kısa özetler ve resmi kaynak bağlantıları.",
     "rehberler.html", "rehberler") + """<div class="wrap">
   <div class="page-head">
@@ -149,7 +149,7 @@ PAGES["rehberler.html"] = head("Rehberler · Kanuni Aile Hekimliği",
   </div>
 """ + BAR_GUIDES + "</div>\n" + FOOT
 
-PAGES["makaleler.html"] = head("Haftanın Makaleleri · Kanuni Aile Hekimliği",
+PAGES["makaleler.html"] = head("Haftanın Makaleleri · Trabzon Kanuni EAH Aile Hekimliği",
     "Birinci basamak için haftanın önemli makaleleri: Türkçe özet, kanıt düzeyi, pratiğe etkisi ve şeffaf önem puanı.",
     "makaleler.html", "makaleler") + """<div class="wrap">
   <div class="page-head">
@@ -169,8 +169,8 @@ PAGES["makaleler.html"] = head("Haftanın Makaleleri · Kanuni Aile Hekimliği",
 </div>
 """ % ICON + FOOT
 
-PAGES["hakkinda.html"] = head("Hakkımızda · Kanuni Aile Hekimliği",
-    "Kanuni EAH Aile Hekimliği Kliniği'nin bilgi portalı: amaç, içerik ilkeleri ve güncelleme yöntemi.",
+PAGES["hakkinda.html"] = head("Hakkımızda · Trabzon Kanuni EAH Aile Hekimliği",
+    "Trabzon Kanuni EAH Aile Hekimliği Kliniği'nin bilgi portalı: amaç, içerik ilkeleri ve güncelleme yöntemi.",
     "hakkinda.html", "hakkinda") + """<div class="wrap">
   <div class="page-head">
     <div class="eyebrow">Hakkımızda</div>
@@ -206,7 +206,7 @@ PAGES["hakkinda.html"] = head("Hakkımızda · Kanuni Aile Hekimliği",
 </div>
 """ % ORG + FOOT
 
-PAGES["404.html"] = head("Sayfa bulunamadı · Kanuni Aile Hekimliği", "Aradığınız sayfa bulunamadı.", "404.html", "none") + """<div class="wrap">
+PAGES["404.html"] = head("Sayfa bulunamadı · Trabzon Kanuni EAH Aile Hekimliği", "Aradığınız sayfa bulunamadı.", "404.html", "none") + """<div class="wrap">
   <div class="page-head">
     <h1>Bu sayfa bulunamadı</h1>
     <p class="lede">Bağlantı değişmiş olabilir. <a href="./">Ana sayfaya dönün</a> ya da arama kutusunu kullanın.</p>
@@ -214,7 +214,7 @@ PAGES["404.html"] = head("Sayfa bulunamadı · Kanuni Aile Hekimliği", "Aradı�
 </div>
 """ + FOOT
 
-PAGES["araclar.html"] = head("Araçlar · Kanuni Aile Hekimliği",
+PAGES["araclar.html"] = head("Araçlar · Trabzon Kanuni EAH Aile Hekimliği",
     "Aile hekimliği ve evde sağlık için klinik hesaplayıcılar: böbrek fonksiyonu, CHA2DS2-VA, HAS-BLED, Wells, CURB-65, FINDRISC, Braden, Barthel, GDS, PHQ-9 ve aşı planlayıcı.",
     "araclar.html", "araclar") + """<div class="wrap">
   <div class="page-head">
@@ -233,7 +233,7 @@ PAGES["araclar.html"] = head("Araçlar · Kanuni Aile Hekimliği",
 </div>
 """ % ICON + FOOT.replace("{extra}", '<script src="assets/araclar.js" defer></script>\n<script src="assets/arac-sut.js" defer></script>\n<script src="assets/arac-etkilesim.js" defer></script>\n<script src="assets/arac-mama.js" defer></script>\n<script src="assets/arac-inr.js" defer></script>\n')
 
-PAGES["takvim.html"] = head("Etkinlik Takvimi · Kanuni Aile Hekimliği",
+PAGES["takvim.html"] = head("Etkinlik Takvimi · Trabzon Kanuni EAH Aile Hekimliği",
     "Türkiye'de aile hekimliğini ilgilendiren kongre, sempozyum, kurs ve okullar: tarih sırasıyla, bildiri ve kayıt son tarihleriyle.",
     "takvim.html", "takvim") + """<div class="wrap">
   <div class="page-head">
