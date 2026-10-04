@@ -246,7 +246,15 @@
         var log = document.getElementById("log");
         meta.log.slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; }).slice(0, 8).forEach(function (x) {
           var li = el("li"); var t = el("time", null, fmt(x.date)); t.dateTime = x.date;
-          li.appendChild(t); li.appendChild(document.createTextNode(x.text)); log.appendChild(li);
+          li.appendChild(t);
+          if (x.items) x.items.forEach(function (it, i) {
+            if (i) li.appendChild(document.createTextNode(" · "));
+            var lab = it.ad + ": " + it.n;
+            if (it.href) { var a = el("a", null, lab); a.href = it.href; li.appendChild(a); }
+            else li.appendChild(document.createTextNode(lab));
+          });
+          else li.appendChild(document.createTextNode(x.text));
+          log.appendChild(li);
         });
 
         /* genel arama: rehberler, makaleler ve araçlar birlikte */

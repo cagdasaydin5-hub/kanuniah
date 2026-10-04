@@ -134,6 +134,11 @@ if A:
     for t in A.get("tools", []):
         if not t.get("t"): err.append("araç %s: ad (t) eksik" % t.get("id"))
 if meta and not DATE.match(meta.get("checked","")): err.append("meta.checked tarihi hatalı")
+for x in (meta or {}).get("log", []):
+    if not DATE.match(x.get("date", "")): err.append("meta.log tarihi hatalı: %r" % x)
+    for it in x.get("items", []):
+        if not it.get("ad") or not isinstance(it.get("n"), int): err.append("meta.log kalemi hatalı: %r" % it)
+    if not x.get("items") and not x.get("text"): err.append("meta.log kaydı boş: %r" % x)
 
 # Reçete ve rapor (data/sut.json): düzenleyici alan ya null (kaynakta doğrulanamadı) ya da kaynağa dayalı değerdir.
 S = j("sut.json")

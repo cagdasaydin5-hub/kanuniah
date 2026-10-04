@@ -3,19 +3,48 @@
  "log": [
   {
    "date": "2026-10-01",
-   "text": "Etkinlik takvimine 43 etkinlik eklendi."
+   "items": [
+    {
+     "ad": "Eklenen etkinlik",
+     "n": 43,
+     "href": "takvim.html"
+    }
+   ]
   },
   {
    "date": "2026-09-27",
-   "text": "Rehber eklendi: Türk Hipertansiyon Uzlaşı Raporu 2025, Aşı Takvimi 2026, tarama programları, yaşlı sağlığı, Tüberküloz 2026, kuduz ve 6 Bakanlık kılavuzu."
-  },
-  {
-   "date": "2026-09-27",
-   "text": "Rehber çıkarıldı: ASM idari işleyişine yönelik 7 kaynak."
+   "items": [
+    {
+     "ad": "Eklenen rehber",
+     "n": 20,
+     "href": "rehberler.html"
+    },
+    {
+     "ad": "Çıkarılan mevzuat",
+     "n": 1,
+     "href": null
+    }
+   ]
   },
   {
    "date": "2026-09-26",
-   "text": "Rehber kütüphanesi ve haftanın makaleleri (ilk sayı) yayında."
+   "items": [
+    {
+     "ad": "Eklenen makale",
+     "n": 9,
+     "href": "makaleler.html"
+    },
+    {
+     "ad": "Eklenen rehber",
+     "n": 30,
+     "href": "rehberler.html"
+    },
+    {
+     "ad": "Eklenen mevzuat",
+     "n": 3,
+     "href": "rehberler.html"
+    }
+   ]
   }
  ]
 }
