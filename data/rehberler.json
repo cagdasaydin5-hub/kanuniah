@@ -35,12 +35,44 @@
   {
    "id": "portal",
    "label": "Kaynak portalları"
+  },
+  {
+   "id": "mv-temel",
+   "label": "Temel kanunlar"
+  },
+  {
+   "id": "mv-hekimlik",
+   "label": "Hekimlik ve hasta hakları"
+  },
+  {
+   "id": "mv-rapor",
+   "label": "Rapor ve adli işlemler"
+  },
+  {
+   "id": "mv-halk",
+   "label": "Aşı, bulaşıcı hastalık, tütün"
+  },
+  {
+   "id": "mv-ilac",
+   "label": "İlaç ve reçete"
+  },
+  {
+   "id": "mv-hastane",
+   "label": "Hastane ve uzmanlık eğitimi"
+  },
+  {
+   "id": "mv-getat",
+   "label": "GETAT"
+  },
+  {
+   "id": "mv-esh",
+   "label": "Evde sağlık ve palyatif"
   }
  ],
  "guides": [
   {
    "id": "esh-palyatif-yonetmelik",
-   "cat": "mevzuat",
+   "cat": "mv-esh",
    "kind": "law",
    "scope": "TR",
    "status": "guncel",
@@ -578,7 +610,7 @@
   },
   {
    "id": "sks-evde-saglik",
-   "cat": "palyatif",
+   "cat": "mv-esh",
    "kind": "law",
    "scope": "TR",
    "status": "guncel",
@@ -1142,6 +1174,748 @@
    "summary": "Bebek, çocuk ve gebelerde Bakanlığın ücretsiz D vitamini ve demir desteği programlarının uygulanma esasları.",
    "url": "https://hsgm.saglik.gov.tr/depo/birimler/cocuk-ergen-sagligi-db/Programlar/D_vitamini_Rehberi.pdf",
    "kw": "d vitamini demir profilaksi bebek gebe anemi raşitizm"
+  },
+  {
+   "id": "tababet-kanunu-1219",
+   "cat": "mv-temel",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Tababet ve Şuabatı San'atlarının Tarzı İcrasına Dair Kanun",
+   "org": "TBMM",
+   "year": 1928,
+   "pub": "1928-04-14",
+   "summary": "Hekimlik ve diğer sağlık mesleklerini kimlerin, hangi şartlarla yapabileceğini belirleyen temel meslek kanunudur. Diploma ve tescil, yetkisiz uygulama, reçete, reklam yasağı ve meslekten men gibi konuları düzenler. Hekimin yetki ve sorumluluklarının yasal dayanağıdır.",
+   "note": "RG 863. Birçok kez değişti (6514 ve 6569 sayılı kanunlarla değişik metinleri mevzuat.gov.tr'de var); güncel konsolide metni mevzuat.gov.tr'den kontrol edin.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=1219&MevzuatTur=1&MevzuatTertip=3",
+   "alt": [],
+   "kw": "1219 tababet hekimlik meslek icrası diploma yetki reklam",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "saglik-hizmetleri-temel-kanunu-3359",
+   "cat": "mv-temel",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Sağlık Hizmetleri Temel Kanunu",
+   "org": "TBMM",
+   "year": 1987,
+   "pub": "1987-05-15",
+   "summary": "Sağlık hizmetlerinin planlanması, sunulması ve Bakanlığın yetkileri için temel çerçeveyi çizer. Sağlık personelinin hukuki sorumluluğu, mesleki sorumluluk sigortası ve sağlık çalışanına yönelik şiddete karşı koruma hükümleri bu kanundadır. Sağlık alanındaki yönetmeliklerin büyük kısmı bu kanuna dayanır.",
+   "note": "RG 19461. Şiddete ilişkin hükümler 7406 sayılı Kanunla (2022) güçlendirildi; ek 12. madde 6514, 7151 ve 7243 sayılı kanunlarla değişti.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=3359&MevzuatTur=1&MevzuatTertip=5",
+   "alt": [],
+   "kw": "3359 sağlık hizmetleri temel kanunu şiddet malpraktis sorumluluk sigortası",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "aile-hekimligi-kanunu-5258",
+   "cat": "mv-temel",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Aile Hekimliği Kanunu",
+   "org": "TBMM",
+   "year": 2004,
+   "pub": "2004-12-09",
+   "summary": "Aile hekimliğinin tanımını yapar; kişiye yönelik koruyucu sağlık hizmetleri ile birinci basamak teşhis, tedavi ve rehabilitasyonun aile hekimince verileceğini belirler. Aile hekimliği uygulamasına ilişkin yönetmeliklerin dayanağıdır.",
+   "note": "RG 25665.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=5258&MevzuatTur=1&MevzuatTertip=5",
+   "alt": [],
+   "kw": "5258 aile hekimliği kanunu birinci basamak koruyucu sağlık",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "aile-hekimligi-uygulama-yonetmeligi",
+   "cat": "mv-temel",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Aile Hekimliği Uygulama Yönetmeliği",
+   "org": "Sağlık Bakanlığı",
+   "year": 2013,
+   "pub": "2013-01-25",
+   "summary": "Aile hekiminin ve aile sağlığı çalışanının görev, yetki ve sorumluluklarını tanımlar: izlemler, taramalar, bağışıklama, evde ve gezici hizmet, sevk. Klinikte aile hekiminin hangi hizmetlerden sorumlu olduğunun ayrıntılı kaynağıdır.",
+   "note": "RG 28539. Son değişiklik RG 09.04.2026/33219: uzaktan sağlık hizmeti yetkisi, şiddete uğrayan hekim için kayıt nakli, asgari donanıma nabız oksimetre eklendi; uyum için son tarih 01.09.2026.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=17051&MevzuatTur=7&MevzuatTertip=5",
+   "alt": [],
+   "kw": "aile hekimliği uygulama yönetmeliği görev tanımı izlem uzaktan sağlık hizmeti",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "umumi-hifzissihha-kanunu-1593",
+   "cat": "mv-temel",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Umumi Hıfzıssıhha Kanunu",
+   "org": "TBMM",
+   "year": 1930,
+   "pub": "1930-05-06",
+   "summary": "Bulaşıcı hastalıklarla mücadele, ihbar zorunluluğu, aşılama, karantina, ölü muayenesi ve defin gibi halk sağlığı konularının temel kanunudur. Hekimin bulaşıcı hastalık bildirimi ve ölüm işlemlerindeki yükümlülükleri buraya dayanır.",
+   "note": "RG 1489. Yürürlükten kalkmış hükümleri mevzuat.gov.tr'de ayrıca listelenir.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=1593&MevzuatTur=1&MevzuatTertip=3",
+   "alt": [],
+   "kw": "1593 umumi hıfzıssıhha bulaşıcı hastalık ihbar aşı defin karantina",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "sosyal-sigortalar-gss-kanunu-5510",
+   "cat": "mv-temel",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Sosyal Sigortalar ve Genel Sağlık Sigortası Kanunu",
+   "org": "TBMM",
+   "year": 2006,
+   "pub": "2006-06-16",
+   "summary": "Genel sağlık sigortasının kapsamını, finansmanı karşılanan sağlık hizmetlerini ve geçici iş göremezlik (istirahat) ödeneği gibi kısa vadeli sigorta haklarını düzenler. Reçete, rapor ve istirahatın SGK karşısındaki sonuçlarının yasal temelidir.",
+   "note": "RG 26200.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=5510&MevzuatTur=1&MevzuatTertip=5",
+   "alt": [],
+   "kw": "5510 genel sağlık sigortası gss sgk iş göremezlik istirahat",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "cbk-1-saglik-bakanligi",
+   "cat": "mv-temel",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "1 Sayılı Cumhurbaşkanlığı Teşkilatı Hakkında Cumhurbaşkanlığı Kararnamesi (Sağlık Bakanlığı bölümü)",
+   "org": "Cumhurbaşkanlığı",
+   "year": 2018,
+   "pub": "2018-07-10",
+   "summary": "Sağlık Bakanlığının görevlerini, merkez ve taşra teşkilatını (il sağlık müdürlükleri, genel müdürlükler) ve bağlı kuruluşlarını belirler. 663 sayılı KHK'nın yerini alan teşkilat düzenlemesidir.",
+   "note": "RG 30474.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=1&MevzuatTur=19&MevzuatTertip=5",
+   "alt": [],
+   "kw": "1 sayılı cbk cumhurbaşkanlığı kararnamesi sağlık bakanlığı teşkilat 663 khk",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "hasta-haklari-yonetmeligi",
+   "cat": "mv-hekimlik",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Hasta Hakları Yönetmeliği",
+   "org": "Sağlık Bakanlığı",
+   "year": 1998,
+   "pub": "1998-08-01",
+   "summary": "Hastanın bilgi alma, seçme, mahremiyet, tedaviyi reddetme ve rıza haklarını düzenler; tıbbi müdahale öncesi aydınlatılmış onamın temel dayanağıdır. Küçükler ve kısıtlılarda kimin onam vereceğini ve hastanın başvuru yollarını da belirler.",
+   "note": "RG 23420. 2014, 2016 (RG 29927) ve 16.01.2019'da değiştirildi.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=4847&MevzuatTur=7&MevzuatTertip=5",
+   "alt": [],
+   "kw": "hasta hakları aydınlatılmış onam rıza mahremiyet tedaviyi ret",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "tibbi-deontoloji-nizamnamesi",
+   "cat": "mv-hekimlik",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Tıbbi Deontoloji Nizamnamesi",
+   "org": "Bakanlar Kurulu",
+   "year": 1960,
+   "pub": "1960-02-19",
+   "summary": "Hekimin hastaya, meslektaşlarına ve topluma karşı etik ödevlerini sayar: sır saklama, hastayı bırakmama, acil yardım, konsültasyon, ücret ve reklam kuralları. Yaşı eski olsa da hekimlik etiğinin bağlayıcı metni olarak yürürlüktedir.",
+   "note": "RG 10436; BKK 13.01.1960, 4/12578.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=412578&MevzuatTur=2&MevzuatTertip=3",
+   "alt": [],
+   "kw": "tıbbi deontoloji nizamnamesi etik meslek sırrı konsültasyon",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "kisisel-saglik-verileri-yonetmeligi",
+   "cat": "mv-hekimlik",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Kişisel Sağlık Verileri Hakkında Yönetmelik",
+   "org": "Sağlık Bakanlığı",
+   "year": 2019,
+   "pub": "2019-06-21",
+   "summary": "Sağlık verilerinin hangi amaçla işlenebileceğini, kimlerin erişebileceğini, nasıl saklanıp aktarılacağını ve e-Nabız üzerinden hasta erişimini düzenler. Hekimin hasta kaydına erişim ve paylaşım sınırlarının belirleyicisidir.",
+   "note": "RG 30808.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=32610&MevzuatTur=7&MevzuatTertip=5",
+   "alt": [
+    {
+     "label": "Resmî Gazete",
+     "url": "https://www.resmigazete.gov.tr/eskiler/2019/06/20190621-3.htm"
+    }
+   ],
+   "kw": "kişisel sağlık verileri kvkk e-nabız gizlilik veri paylaşımı",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "kvkk-6698",
+   "cat": "mv-hekimlik",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Kişisel Verilerin Korunması Kanunu",
+   "org": "TBMM",
+   "year": 2016,
+   "pub": "2016-04-07",
+   "summary": "Kişisel verilerin işlenme şartlarını belirler; sağlık verisini özel nitelikli veri olarak sınıflar ve sır saklama yükümlülüğü altındaki kişilerce işlenmesini düzenler. Hasta bilgilerinin paylaşılmasında hekimin yasal sınırını çizer.",
+   "note": "RG 29677.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6698&MevzuatTur=1&MevzuatTertip=5",
+   "alt": [],
+   "kw": "kvkk 6698 kişisel veri özel nitelikli sağlık verisi",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "beyaz-kod-genelgesi",
+   "cat": "mv-hekimlik",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Hukuki Yardım ve Beyaz Kod Uygulaması Genelgesi",
+   "org": "Sağlık Bakanlığı",
+   "year": null,
+   "pub": null,
+   "summary": "Sağlık çalışanına yönelik şiddette izlenecek yolu belirler: 113 Beyaz Kod hattı ve beyazkod.saglik.gov.tr üzerinden bildirim, kurumun adli makamlara başvurması ve çalışana Bakanlık hukuki yardımı. Şiddet sonrası hekimin haklarını ve kurumun yükümlülüklerini bilmek için temel kaynaktır.",
+   "note": "Beyaz Kod ilk kez 14.05.2012 tarihli Çalışan Güvenliği Genelgesi ile kuruldu. Ceza tarafı: 7406 sayılı Kanun (2022) ile sağlık çalışanını kasten yaralama CMK 100 tutuklama katalog suçu oldu, TCK 82/86/102 kapsamında ceza artırımı getirildi.",
+   "url": "https://www.saglik.gov.tr/TR-1972/hukuki-yardim-ve-beyaz-kod-uygulamasi-genelgesi-yayimlandi.html",
+   "alt": [
+    {
+     "label": "Beyaz Kod",
+     "url": "https://beyazkod.saglik.gov.tr/Giris.aspx"
+    }
+   ],
+   "kw": "beyaz kod 113 sağlıkta şiddet çalışan güvenliği hukuki yardım",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "ttb-kanunu-6023",
+   "cat": "mv-hekimlik",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Türk Tabipleri Birliği Kanunu",
+   "org": "TBMM",
+   "year": 1953,
+   "pub": "1953-01-31",
+   "summary": "Tabip odaları ile TTB'nin kuruluşunu, üyeliği, meslek etiği denetimini ve disiplin cezalarını düzenler. Hekimin oda kaydı ve meslek içi disiplin süreçlerinin yasal temelidir.",
+   "note": "RG 8323.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6023&MevzuatTur=1&MevzuatTertip=3",
+   "alt": [],
+   "kw": "6023 türk tabipleri birliği tabip odası disiplin etik",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "saglik-raporlari-yonetmeligi-2026",
+   "cat": "mv-rapor",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Sağlık Raporları Yönetmeliği",
+   "org": "Cumhurbaşkanlığı",
+   "year": 2026,
+   "pub": "2026-05-19",
+   "summary": "Kamu ve özel tüm sağlık kuruluşlarında sağlık raporlarının nasıl düzenleneceğini yeniden düzenler. Başvuru e-Nabız beyan formuyla başlar; sorun beyan edilmezse e-Nabız üzerinden doğrudan sağlık durum belgesi alınabilir. Tek hekim istirahatına sınır getirir (bir seferde en çok 10 gün, kontrolle 20 gün, kişi başı yılda 40 gün). Sağlık kurulu türlerini, e-Rapor'u, rapor başvuru merkezlerini ve sürücü/silah ruhsatı raporlarını da kapsar.",
+   "note": "RG 33258, Karar Sayısı 11361; yayımı tarihinde yürürlüğe girdi. Dayanakları: 1219, 3359, 5258 sayılı kanunlar ve 1 sayılı CBK. Hangi eski düzenlemeleri kaldırdığı doğrulanamadı; eski rapor yönergeleri yerine bunu esas alın.",
+   "url": "https://www.resmigazete.gov.tr/19.05.2026",
+   "alt": [
+    {
+     "label": "Haber (Alomaliye, tam metin)",
+     "url": "https://www.alomaliye.com/2026/05/19/saglik-raporlari-yonetmeligi-karar-sayisi-11361/"
+    }
+   ],
+   "kw": "sağlık raporları yönetmeliği 2026 e-rapor istirahat sağlık durum belgesi sağlık kurulu e-nabız",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "surucu-saglik-sartlari-yonetmeligi",
+   "cat": "mv-rapor",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Sürücü Adayları ve Sürücülerde Aranacak Sağlık Şartları ile Muayenelerine Dair Yönetmelik",
+   "org": "Sağlık Bakanlığı",
+   "year": 2006,
+   "pub": "2006-09-26",
+   "summary": "Sürücü belgesi gruplarına göre aranan sağlık şartlarını (göz, kardiyovasküler, diyabet, epilepsi, psikiyatri vb.) ve sürücü raporunun hangi hekim veya kurulca verileceğini belirler. Aile hekiminin sürücü raporunda hangi durumda uzmana veya kurula yönlendireceğini bu metin gösterir.",
+   "note": "RG 26301. 2015, 13.06.2020 ve 30.09.2021'de değişti. Sürücü komisyonu 2026 Sağlık Raporları Yönetmeliği'nde de düzenleniyor; iki metni birlikte okuyun.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=10664&MevzuatTur=7&MevzuatTertip=5",
+   "alt": [],
+   "kw": "sürücü raporu ehliyet sağlık şartları sürücü komisyonu",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "eriskin-engellilik-degerlendirmesi",
+   "cat": "mv-rapor",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Erişkinler İçin Engellilik Değerlendirmesi Hakkında Yönetmelik",
+   "org": "Sağlık Bakanlığı",
+   "year": 2019,
+   "pub": "2019-02-20",
+   "summary": "18 yaş ve üstü kişilere verilecek engellilik sağlık kurulu raporlarının usulünü, yetkili hastaneleri ve engel oranı hesaplama kurallarını belirler. Hastayı engelli raporuna yönlendirirken başvuru ve itiraz yolunu bilmek için gereklidir.",
+   "note": "RG 30692.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=31275&MevzuatTur=7&MevzuatTertip=5",
+   "alt": [],
+   "kw": "engellilik raporu erişkin engel oranı sağlık kurulu",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "cozger-yonetmeligi",
+   "cat": "mv-rapor",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Çocuklar İçin Özel Gereksinim Değerlendirmesi Hakkında Yönetmelik",
+   "org": "Sağlık Bakanlığı",
+   "year": 2019,
+   "pub": "2019-02-20",
+   "summary": "18 yaş altındaki çocuklar için Çocuk Özel Gereksinim Raporu'nun (ÇÖZGER) düzenlenmesini, yetkili hastaneleri ve gereksinim düzeyinin nasıl belirleneceğini tanımlar. Çocuk hastaları özel eğitim ve sosyal haklar için yönlendirmede kullanılır.",
+   "note": "RG 30692 (Erişkin Engellilik Yönetmeliği ile aynı gün).",
+   "url": "https://www.resmigazete.gov.tr/eskiler/2019/02/20190220-1.htm",
+   "alt": [],
+   "kw": "çözger çocuk özel gereksinim raporu engelli çocuk",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "memur-hastalik-raporlari-yonetmeligi",
+   "cat": "mv-rapor",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Devlet Memurlarına Verilecek Hastalık Raporları ile Hastalık ve Refakat İznine İlişkin Usul ve Esaslar Hakkında Yönetmelik",
+   "org": "Bakanlar Kurulu",
+   "year": 2011,
+   "pub": "2011-10-29",
+   "summary": "Devlet memurlarına verilecek istirahat raporlarının süre sınırlarını, tek hekim ve kurul raporu ayrımını ve refakat iznini düzenler. Memur hastaya rapor yazarken SGK'lı çalışandan farklı kuralları gösterir.",
+   "note": "BKK 2011/2226. 2026 Sağlık Raporları Yönetmeliği ile birlikte değerlendirin.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=20112226&MevzuatTur=3&MevzuatTertip=5",
+   "alt": [],
+   "kw": "memur raporu hastalık izni refakat izni istirahat 657",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "sosyal-sigorta-islemleri-yonetmeligi",
+   "cat": "mv-rapor",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Sosyal Sigorta İşlemleri Yönetmeliği",
+   "org": "SGK",
+   "year": 2010,
+   "pub": "2010-05-12",
+   "summary": "5510 sayılı Kanunun uygulamasını düzenler; geçici iş göremezlik belgesinin (istirahat raporu) düzenlenmesi, onaylanması ve ödenek koşulları burada yer alır. SGK'lı çalışana e-rapor düzenlerken uyulacak kuralların kaynağıdır.",
+   "note": "RG 27579.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=13973&MevzuatTur=7&MevzuatTertip=5",
+   "alt": [],
+   "kw": "sgk istirahat raporu geçici iş göremezlik e-rapor sosyal sigorta işlemleri",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "mezarlik-cenaze-defin-yonetmeligi",
+   "cat": "mv-rapor",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Mezarlık Yerlerinin İnşaası ile Cenaze Nakil ve Defin İşlemleri Hakkında Yönetmelik",
+   "org": "Sağlık Bakanlığı",
+   "year": null,
+   "pub": null,
+   "summary": "Ölüm sonrası ölü muayenesi, defin ruhsatı, cenaze nakli ve mezarlık şartlarını düzenler. Evde veya kurum dışında ölümde hekimin ölüm belgesi ve defin ruhsatı yükümlülüğünün ayrıntılarını içerir.",
+   "note": null,
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=13730&MevzuatTur=7&MevzuatTertip=5",
+   "alt": [],
+   "kw": "defin ruhsatı ölü muayenesi ölüm belgesi cenaze nakli",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "olum-bildirimi-talimati",
+   "cat": "mv-rapor",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Ölüm Bildirimi Talimatı",
+   "org": "İçişleri Bakanlığı (NVİGM)",
+   "year": 2013,
+   "pub": "2013-03-08",
+   "summary": "Sağlık Bakanlığının 2012/05 sayılı genelgesiyle başlayan Ölüm Bildirim Sistemi (ÖBS) uygulamasını nüfus işlemleri yönünden açıklar. Ölüm belgesinin ÖBS'ye girilmesi ve nüfus müdürlüğüne 10 gün içinde ulaştırılması gibi kuralları içerir.",
+   "note": "Sağlık tarafındaki dayanak: Sağlık Bakanlığı 2012/05 sayılı genelge (ÖBS).",
+   "url": "https://www.nvi.gov.tr/kurumlar/nvi.gov.tr/mevzuat/nufusmevzuat/talimat/nufusislemleri/08032013-olum_bildirimi.pdf",
+   "alt": [],
+   "kw": "ölüm bildirim sistemi öbs ölüm belgesi nüfus",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "tck-5237",
+   "cat": "mv-rapor",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Türk Ceza Kanunu",
+   "org": "TBMM",
+   "year": 2004,
+   "pub": "2004-10-12",
+   "summary": "Hekimi doğrudan ilgilendiren suçları içerir: sağlık mesleği mensubunun suçu bildirmemesi (md. 280), taksirle yaralama/öldürme, sır ifşası ve sahte rapor. Adli olgu bildirimi ve adli rapor yükümlülüğünün ceza hukuku dayanağıdır.",
+   "note": "RG 25611. 7406 sayılı Kanun (2022) ile sağlık çalışanına karşı işlenen bazı suçlarda ceza artırımı getirildi.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=5237&MevzuatTur=1&MevzuatTertip=5",
+   "alt": [],
+   "kw": "tck 280 adli olgu bildirim adli rapor taksir sır ifşası",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "gbp-genelgesi-2009-17",
+   "cat": "mv-halk",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Genişletilmiş Bağışıklama Programı Genelgesi (2009/17)",
+   "org": "Sağlık Bakanlığı",
+   "year": 2009,
+   "pub": "2009-03-13",
+   "summary": "Ulusal aşı programının yürütülmesini, aşı takvimini, soğuk zinciri ve aşı sonrası istenmeyen etkilerin izlenmesini düzenleyen sürekli genelgedir. Birinci basamakta aşılamanın temel kuralları buradadır; takvim değişiklikleri Bakanlık duyurularıyla güncellenir.",
+   "note": "2008/14 sayılı genelgenin yerini aldı. Güncel aşı takvimi için asi.saglik.gov.tr.",
+   "url": "https://asi.saglik.gov.tr/bagisiklama-programi-ve-asi-takvimi/asi-takvimindeki-son-guencellemeler.html",
+   "alt": [],
+   "kw": "gbp aşı takvimi bağışıklama soğuk zincir asiste",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "bulasici-hastaliklar-surveyans-yonetmeligi",
+   "cat": "mv-halk",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Bulaşıcı Hastalıklar Sürveyans ve Kontrol Esasları Yönetmeliği",
+   "org": "Sağlık Bakanlığı",
+   "year": 2007,
+   "pub": "2007-05-30",
+   "summary": "Bildirimi zorunlu bulaşıcı hastalıkların listesini, bildirim yollarını, salgın incelemesini ve kontrol önlemlerini belirler. Hekimin hangi hastalığı ne kadar sürede bildireceğinin dayanağıdır.",
+   "note": "RG 26537. Son değişiklik 22.04.2020 (COVID-19 eklendi).",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=11347&MevzuatTur=7&MevzuatTertip=5",
+   "alt": [],
+   "kw": "bulaşıcı hastalık bildirimi sürveyans salgın zorunlu bildirim",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "bulasici-ihbar-bildirim-genelgesi-2015-18",
+   "cat": "mv-halk",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Bulaşıcı Hastalıkların İhbar ve Bildirim Sistemi Genelgesi (2015/18)",
+   "org": "Sağlık Bakanlığı",
+   "year": 2015,
+   "pub": "2015-10-23",
+   "summary": "Bildirimi zorunlu hastalıkların elektronik bildirim düzenini belirler. Aile hekimleri bildirimi her gün sağlık bilgi sistemi üzerinden yapar, diğer kurumlar Form-014 ile TSM'ye iletir. Hastanelerde sürveyans sorumlusu atanmasını zorunlu tutar.",
+   "note": "Bildirim grupları (A–D) 2004 tarihli İhbar ve Bildirim Sistemi Yönergesi'nden gelir.",
+   "url": "https://hsgm.saglik.gov.tr/tr/dokumanlar-bulasicihastaliklar.html",
+   "alt": [
+    {
+     "label": "Bildirim Yönergesi (2004)",
+     "url": "https://hsgm.saglik.gov.tr/depo/Mevzuat/Yonergeler/Bulasici_Hastaliklarin_Ihbari_ve_Bildirim_Sistemi_Yonergesi.pdf"
+    }
+   ],
+   "kw": "form 014 bulaşıcı hastalık ihbar bildirim aile hekimi tsm",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "tutun-kanunu-4207",
+   "cat": "mv-halk",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Tütün Ürünlerinin Zararlarının Önlenmesi ve Kontrolü Hakkında Kanun",
+   "org": "TBMM",
+   "year": 1996,
+   "pub": "1996-11-26",
+   "summary": "Kapalı alanlarda ve sağlık kuruluşlarında tütün kullanım yasağını, reklam ve satış kısıtlamalarını ve tütün kontrolü önlemlerini düzenler. Sağlık tesisinde dumansız ortamı sağlamanın ve tütün bırakma hizmetlerinin yasal dayanağıdır.",
+   "note": "RG 22829. Kapsamı 2008 ve 6487 sayılı Kanunla (2013) genişletildi.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=4207&MevzuatTur=1&MevzuatTertip=5",
+   "alt": [],
+   "kw": "4207 tütün sigara yasağı dumansız hava sahası sigara bırakma",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "sut-saglik-uygulama-tebligi",
+   "cat": "mv-ilac",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Sosyal Güvenlik Kurumu Sağlık Uygulama Tebliği (SUT)",
+   "org": "SGK",
+   "year": 2013,
+   "pub": "2013-03-24",
+   "summary": "SGK'nın ödediği ilaç ve tıbbi hizmetlerin kurallarını belirler: reçete yazma esasları, raporlu ilaçlar, uzman hekim zorunlulukları, ilaç kullanım ilkeleri ve ödeme listeleri. Birinci basamakta reçetenin eczanede geri dönmemesi için sürekli bakılan metindir.",
+   "note": "RG 28597 (mükerrer). Sık değişir; son tespit edilen değişiklik RG 29.06.2026/33295.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=17229&MevzuatTur=9&MevzuatTertip=5",
+   "alt": [],
+   "kw": "sut sağlık uygulama tebliği reçete raporlu ilaç sgk geri ödeme",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "ilaclarin-guvenliligi-yonetmeligi",
+   "cat": "mv-ilac",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "İlaçların Güvenliliği Hakkında Yönetmelik",
+   "org": "TİTCK",
+   "year": 2014,
+   "pub": "2014-04-15",
+   "summary": "Farmakovijilans sistemini düzenler; sağlık mesleği mensuplarının advers ilaç reaksiyonlarını TÜFAM'a bildirme yükümlülüğünü ve il farmakovijilans irtibat yapısını tanımlar. Klinikte şüpheli yan etki görüldüğünde izlenecek yolun dayanağıdır.",
+   "note": "RG 28973. Kapsamlı değişiklik RG 21.07.2022/31899.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=19578&MevzuatTur=7&MevzuatTertip=5",
+   "alt": [],
+   "kw": "farmakovijilans advers etki bildirimi tüfam yan etki ilaç güvenliliği",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "kirmizi-yesil-recete-genelgesi",
+   "cat": "mv-ilac",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Kırmızı ve Yeşil Reçeteler Hakkında Genelge",
+   "org": "TİTCK",
+   "year": null,
+   "pub": null,
+   "summary": "Uyuşturucu (kırmızı reçete) ve psikotrop (yeşil reçete) ilaçların reçetelenme kurallarını belirler: liste dışı ilaç yazılamaz, yeşil reçetede aynı etken maddeden en çok 2 kutu, reçete tekrarlanamaz, doz sınırlarına uyulur. Kontrole tabi ilaç yazarken başvurulacak temel kaynaktır.",
+   "note": "Temel kurallar TİTCK'nın 14.03.2016 tarihli 2016/3 sayılı Kontrole Tabi Madde ve Müstahzarlara İlişkin Reçeteler Hakkında Genelgesi'nde. Bu adla bir yönetmelik bulunamadı; konu genelgelerle düzenleniyor.",
+   "url": "https://titck.gov.tr/mevzuat/kirmizi-ve-yesil-receteler-hakkinda-genelge-27122018173052",
+   "alt": [],
+   "kw": "kırmızı reçete yeşil reçete psikotrop uyuşturucu kontrole tabi ilaç",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "uyusturucu-murakabe-kanunu-2313",
+   "cat": "mv-ilac",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Uyuşturucu Maddelerin Murakabesi Hakkında Kanun",
+   "org": "TBMM",
+   "year": 1933,
+   "pub": "1933-06-24",
+   "summary": "Uyuşturucu ve psikotrop maddelerin üretimi, ticareti ve tıbbi kullanımının devlet denetimini düzenler. Kırmızı ve yeşil reçete sisteminin yasal dayanağıdır.",
+   "note": "Uygulama yönetmeliği: 2313 Sayılı Kanunun Uygulanmasına İlişkin Yönetmelik (mevzuat.gov.tr no 5039).",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=2313&MevzuatTur=1&MevzuatTertip=3",
+   "alt": [],
+   "kw": "2313 uyuşturucu murakabe kontrole tabi madde narkotik",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "yatakli-tedavi-kurumlari-isletme-yonetmeligi",
+   "cat": "mv-hastane",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Yataklı Tedavi Kurumları İşletme Yönetmeliği",
+   "org": "Bakanlar Kurulu",
+   "year": 1983,
+   "pub": "1983-01-13",
+   "summary": "Hastanelerin işleyişini, servis şefi, sorumlu hekim, nöbetçi hekim ve asistanın görevlerini, nöbet ve konsültasyon düzenini, hasta kabul ve taburculuk işlemlerini düzenler. Hastanede nöbet ve görev sınırları konusunda başvurulan temel metindir.",
+   "note": "RG 17927. Birçok hükmü sonraki düzenlemelerle değişti.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=85319&MevzuatTur=3&MevzuatTertip=5",
+   "alt": [],
+   "kw": "yataklı tedavi kurumları işletme nöbet asistan görev konsültasyon",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "uzmanlik-egitimi-yonetmeligi-2022",
+   "cat": "mv-hastane",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Tıpta ve Diş Hekimliğinde Uzmanlık Eğitimi Yönetmeliği",
+   "org": "Sağlık Bakanlığı",
+   "year": 2022,
+   "pub": "2022-09-03",
+   "summary": "Uzmanlık eğitiminin yapısını, Tıpta Uzmanlık Kurulu'nu, eğitim sorumlularını, çekirdek müfredata uyumu, rotasyonları ve tez/bitirme sınavını düzenler. Asistan nöbetini ayda en çok 8 ile sınırlar, nöbet sonrası dinlenmeyi zorunlu tutar.",
+   "note": "26.04.2014 tarihli (RG 28983) eski yönetmeliğin yerini aldı.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=39700&MevzuatTur=7&MevzuatTertip=5",
+   "alt": [],
+   "kw": "uzmanlık eğitimi asistan tuk rotasyon tez nöbet sınırı",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "tukmos-aile-hekimligi-mufredati",
+   "cat": "mv-hastane",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Aile Hekimliği Uzmanlık Eğitimi Çekirdek Müfredatı (TUKMOS, v2.4)",
+   "org": "Tıpta Uzmanlık Kurulu",
+   "year": null,
+   "pub": null,
+   "summary": "Aile hekimliği asistanlarının kazanması gereken yetkinlikleri, rotasyonları ve eğitim ortamlarını belirleyen ulusal çekirdek müfredattır. Asistanın karnesi ve rotasyon planı buna göre yapılır.",
+   "note": "Bulunan sürüm v2.4; önceki sürüm v2.3.",
+   "url": "https://shgmtescil.saglik.gov.tr/Eklenti/34104/0/ailehekimligimufredatv24pdf.pdf",
+   "alt": [],
+   "kw": "tukmos çekirdek müfredat aile hekimliği uzmanlık eğitimi rotasyon yetkinlik",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "acil-servis-hizmetleri-tebligi",
+   "cat": "mv-hastane",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Yataklı Sağlık Tesislerinde Acil Servis Hizmetlerinin Uygulama Usul ve Esasları Hakkında Tebliğ",
+   "org": "Sağlık Bakanlığı",
+   "year": 2022,
+   "pub": "2022-09-13",
+   "summary": "Acil servislerin seviyelendirilmesini (I–III), personel, fiziki ve donanım şartlarını, triyaj, gözlem ve konsültasyon düzenini belirler. Acil nöbetinde hekimin görev ve sorumluluk çerçevesini çizer.",
+   "note": "RG 31952. 13.05.2023 ve 11.10.2024'te değişti.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=39719&MevzuatTur=9&MevzuatTertip=5",
+   "alt": [],
+   "kw": "acil servis tebliği triyaj acil nöbet seviyelendirme konsültasyon",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "acil-saglik-hizmetleri-yonetmeligi",
+   "cat": "mv-hastane",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Acil Sağlık Hizmetleri Yönetmeliği",
+   "org": "Sağlık Bakanlığı",
+   "year": 2000,
+   "pub": "2000-05-11",
+   "summary": "112 acil sağlık hizmetlerinin, istasyonların, komuta kontrol merkezlerinin ve hastane öncesi acil bakımın işleyişini düzenler. Sevk, nakil ve hastane öncesi müdahalede hekimin rolünü tanımlar.",
+   "note": "RG 24046.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=4798&MevzuatTur=7&MevzuatTertip=5",
+   "alt": [],
+   "kw": "112 acil sağlık hizmetleri hastane öncesi nakil",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "saglikta-kalite-yonetmeligi",
+   "cat": "mv-hastane",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Sağlıkta Kalitenin Geliştirilmesi ve Değerlendirilmesine Dair Yönetmelik",
+   "org": "Sağlık Bakanlığı",
+   "year": 2015,
+   "pub": "2015-06-27",
+   "summary": "Sağlık tesislerinde kalite yönetimini, hasta ve çalışan güvenliğini ve memnuniyetini, SKS öz değerlendirmesini ve kalite birimlerini düzenler. Hasta güvenliği uygulamalarının (kimlik doğrulama, ilaç güvenliği, olay bildirimi) üst düzenlemesidir.",
+   "note": "RG 29399. Son değişiklik RG 26.05.2023/32202.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=20859&MevzuatTur=7&MevzuatTertip=5",
+   "alt": [],
+   "kw": "sağlıkta kalite sks hasta güvenliği çalışan güvenliği",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "basamaklandirma-yonetmeligi",
+   "cat": "mv-hastane",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Sağlık Hizmet Sunucularının Basamaklandırılmasına Dair Yönetmelik",
+   "org": "Sağlık Bakanlığı",
+   "year": 2022,
+   "pub": "2022-02-10",
+   "summary": "Sağlık tesislerinin birinci, ikinci ve üçüncü basamak olarak sınıflandırılmasını ve basamakların hizmet kapsamını belirler. Sevk ve hastanın hangi basamakta karşılanacağına dair çerçeveyi verir.",
+   "note": "14.04.2022 ve 30.07.2022'de değişti.",
+   "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=39362&MevzuatTur=7&MevzuatTertip=5",
+   "alt": [],
+   "kw": "basamaklandırma birinci basamak ikinci basamak sevk zinciri",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "getat-yonetmeligi-2026",
+   "cat": "mv-getat",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Geleneksel ve Tamamlayıcı Tıp Uygulamaları Yönetmeliği",
+   "org": "Sağlık Bakanlığı",
+   "year": 2026,
+   "pub": "2026-04-28",
+   "summary": "GETAT uygulamalarının yalnızca Bakanlıkça yetkilendirilmiş merkez ve ünitelerde, ilgili alanda sertifikası olan kişilerce yapılabileceğini düzenler. Uygulama alanları yönetmelik ekinde, endikasyonlar Bakanlık klinik rehberlerinde belirlenir. Aydınlatılmış onam ve 24 saat içinde advers olay bildirimi zorunludur; GETAT, standart tıbbi tedaviyi geciktiremez ve onun yerine geçemez.",
+   "note": "RG 33237. 27.10.2014 tarihli (RG 29158) eski yönetmeliği yürürlükten kaldırdı.",
+   "url": "https://www.resmigazete.gov.tr/28.04.2026",
+   "alt": [],
+   "kw": "getat geleneksel tamamlayıcı tıp akupunktur hacamat fitoterapi sertifika",
+   "aud": [
+    "hekim"
+   ]
   }
  ]
 }
