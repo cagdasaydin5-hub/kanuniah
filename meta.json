@@ -1,0 +1,80 @@
+{
+ "checked": "2026-10-05",
+ "log": [
+  {
+   "date": "2026-10-05",
+   "items": [
+    {
+     "ad": "Eklenen makale",
+     "n": 7,
+     "href": "makaleler.html"
+    },
+    {
+     "ad": "Eklenen rehber",
+     "n": 1,
+     "href": "rehberler.html"
+    },
+    {
+     "ad": "Eklenen etkinlik",
+     "n": 1,
+     "href": "takvim.html"
+    },
+    {
+     "ad": "Güncellenen etkinlik",
+     "n": 9,
+     "href": "takvim.html"
+    },
+    {
+     "ad": "Eklenen mevzuat",
+     "n": 22,
+     "href": "mevzuat.html"
+    }
+   ]
+  },
+  {
+   "date": "2026-10-01",
+   "items": [
+    {
+     "ad": "Eklenen etkinlik",
+     "n": 43,
+     "href": "takvim.html"
+    }
+   ]
+  },
+  {
+   "date": "2026-09-27",
+   "items": [
+    {
+     "ad": "Eklenen rehber",
+     "n": 20,
+     "href": "rehberler.html"
+    },
+    {
+     "ad": "Çıkarılan mevzuat",
+     "n": 1,
+     "href": null
+    }
+   ]
+  },
+  {
+   "date": "2026-09-26",
+   "items": [
+    {
+     "ad": "Eklenen makale",
+     "n": 9,
+     "href": "makaleler.html"
+    },
+    {
+     "ad": "Eklenen rehber",
+     "n": 30,
+     "href": "rehberler.html"
+    },
+    {
+     "ad": "Eklenen mevzuat",
+     "n": 3,
+     "href": "mevzuat.html"
+    }
+   ]
+  }
+ ]
+}
