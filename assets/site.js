@@ -93,7 +93,7 @@
     var body = el("div", "body");
     var jr = el("div", "jr");
     var jb = el("b", null, p.journal); jr.appendChild(jb);
-    jr.appendChild(document.createTextNode(" · " + fmt(p.date)));
+    jr.appendChild(document.createTextNode(" · " + (p.date ? fmt(p.date) : p.year)));
     body.appendChild(jr);
     var h = el("h3"); h.appendChild(ext("https://pubmed.ncbi.nlm.nih.gov/" + p.pmid + "/", p.title)); body.appendChild(h);
     body.appendChild(el("p", "en", p.title_en));
@@ -119,6 +119,7 @@
       }
     }
     body.appendChild(dl);
+    if (p.score) {
     var why = el("details", "why");
     why.appendChild(el("summary", null, "Önem puanı nasıl hesaplandı?"));
     var t = el("table"); var s = p.score;
@@ -127,12 +128,14 @@
     });
     why.appendChild(t);
     body.appendChild(why);
+    }
     var l = el("div", "links");
     l.appendChild(ext("https://pubmed.ncbi.nlm.nih.gov/" + p.pmid + "/", "PubMed ↗"));
     if (p.doi) l.appendChild(ext("https://doi.org/" + p.doi, "Makale (DOI) ↗"));
     body.appendChild(l);
     art.appendChild(body);
 
+    if (!p.score) { art.style.gridTemplateColumns = "1fr"; return art; }
     var sc = el("div", "score");
     sc.setAttribute("aria-label", "Önem puanı " + dots(p.score) + " / 5");
     sc.appendChild(el("div", "lbl", "Önem"));
@@ -213,8 +216,8 @@
         var n = E.etkinlikler.filter(function (e) { return (e.bitis || e.baslangic || "9999") >= bugun; }).length;
         var x = document.getElementById("nEvents"); if (x) x.textContent = n;
       }).catch(function () {});
-      Promise.all([load("rehberler"), load("makaleler"), load("meta"), tools]).then(function (r) {
-        var R = r[0], M = r[1], meta = r[2], A = r[3]; TODAY = meta.checked;
+      Promise.all([load("rehberler"), load("makaleler"), load("meta"), tools, load("temel-makaleler").catch(function () { return { makaleler: [] }; })]).then(function (r) {
+        var R = r[0], M = r[1], meta = r[2], A = r[3], T = r[4]; TODAY = meta.checked;
         var guides = R.guides.filter(function (g) { return g.status !== "arsiv"; });
         var issue = M.issues[0];
         document.getElementById("nGuides").textContent = guides.filter(function (g) { return g.aud.indexOf("hekim") !== -1 && g.kind !== "law"; }).length;
@@ -262,7 +265,8 @@
         var idx = [];
         function add(k, t, s, h, extra) { idx.push({ k: k, t: t, s: s, h: h, ft: fold(t), x: fold([t].concat(extra).join(" ")) }); }
         guides.forEach(function (g) { add(g.kind === "law" ? "Mevzuat" : "Rehber", g.title, g.org + (g.year ? " · " + g.year : ""), (g.kind === "law" ? "mevzuat.html#" : "rehberler.html#") + g.id, [g.org, g.summary, g.kw]); });
-        M.issues.forEach(function (is) { is.items.forEach(function (p) { add("Makale", p.title, p.journal + " · " + fmt(p.date), "makaleler.html#" + p.id, [p.title_en, p.journal, p.what, p.practice, p.design, (p.tags || []).join(" ")]); }); });
+        M.issues.forEach(function (is) { is.items.forEach(function (p) { add("Makale", p.title, p.journal + " · " + fmt(p.date), "haftanin-makaleleri.html#" + p.id, [p.title_en, p.journal, p.what, p.practice, p.design, (p.tags || []).join(" ")]); }); });
+        T.makaleler.forEach(function (p) { add("Makale", p.title, p.journal + " · " + p.year, "makaleler.html#" + p.id, [p.title_en, p.journal, p.what, p.practice, p.design, (p.tags || []).join(" ")]); });
         var gl = {}; A.groups.forEach(function (g) { gl[g[0]] = g[1]; });
         A.tools.forEach(function (x) { add("Araç", x.t, gl[x.g] || "Klinik araç", "araclar.html#" + x.id, [x.d, x.kw, gl[x.g]]); });
         var q = document.getElementById("q"), res = document.getElementById("results");
@@ -298,6 +302,40 @@
 
 
     makaleler: function () {
+      Promise.all([load("temel-makaleler"), load("rehberler"), load("meta")]).then(function (r) {
+        var D = r[0], R = r[1]; TODAY = r[2].checked;
+        var byId = {}; R.guides.forEach(function (g) { byId[g.id] = g; });
+        document.getElementById("aciklama").textContent = D.aciklama;
+        var wrap = document.getElementById("issues"), q = document.getElementById("q"), count = document.getElementById("count"), chips = document.getElementById("chips");
+        D.makaleler.forEach(function (p) { p._h = fold([p.title, p.title_en, p.journal, p.year, p.what, p.practice, p.why, p.design, (p.tags || []).join(" ")].join(" ")); });
+        var konu = "all";
+        function chip(id, ad) {
+          var b = el("button", "chip", ad); b.type = "button"; b.dataset.k = id;
+          b.addEventListener("click", function () { konu = id; render(); });
+          chips.appendChild(b);
+        }
+        chip("all", "Tümü"); D.konular.forEach(function (k) { chip(k.id, k.ad); });
+        function render() {
+          var t = terms(q.value); wrap.textContent = ""; var n = 0;
+          [].forEach.call(chips.children, function (b) { b.setAttribute("aria-pressed", b.dataset.k === konu ? "true" : "false"); });
+          D.konular.forEach(function (k) {
+            if (konu !== "all" && konu !== k.id) return;
+            var items = D.makaleler.filter(function (p) { return p.konu === k.id && match(p._h, t); });
+            if (!items.length) return;
+            var h = el("div", "issue-head"); h.appendChild(el("h2", null, k.ad)); h.appendChild(el("span", null, items.length + " makale"));
+            wrap.appendChild(h);
+            items.forEach(function (p) { wrap.appendChild(paperCard(p, byId)); n++; });
+          });
+          if (!n) wrap.appendChild(el("p", "empty", "Bu aramayla eşleşen makale yok."));
+          count.textContent = n + " makale";
+        }
+        q.addEventListener("input", render);
+        render();
+        if (location.hash) { var tg = document.getElementById(location.hash.slice(1)); if (tg) tg.scrollIntoView(); }
+      }).catch(fail);
+    },
+
+    haftalik: function () {
       Promise.all([load("makaleler"), load("rehberler"), load("meta")]).then(function (r) {
         var M = r[0], R = r[1]; TODAY = r[2].checked;
         var byId = {}; R.guides.forEach(function (g) { byId[g.id] = g; });

@@ -33,6 +33,20 @@ if M and R:
                 if not isinstance(s.get(k), int) or not a <= s[k] <= b: err.append("makale %s: puan %s %d-%d arası olmalı" % (p.get("id"), k, a, b))
             for r in p.get("rel", []):
                 if r not in gids: err.append("makale %s: ilgili rehber bulunamadı: %s" % (p["id"], r))
+TM = j("temel-makaleler.json")
+if TM and R:
+    gids2 = {g["id"] for g in R["guides"]}
+    kons = {k["id"] for k in TM["konular"]}; tid = set(); tpm = set()
+    for p in TM["makaleler"]:
+        for k in ("id","pmid","journal","year","title","title_en","design","konu","what","practice"):
+            if k not in p: err.append("temel makale %s: '%s' eksik" % (p.get("id"), k))
+        if p.get("id") in tid: err.append("temel makale id tekrarı: %s" % p.get("id"))
+        if p.get("pmid") in tpm: err.append("temel makale pmid tekrarı: %s" % p.get("pmid"))
+        tid.add(p.get("id")); tpm.add(p.get("pmid"))
+        if p.get("konu") not in kons: err.append("temel makale %s: bilinmeyen konu %s" % (p.get("id"), p.get("konu")))
+        if not isinstance(p.get("year"), int): err.append("temel makale %s: year sayı olmalı" % p.get("id"))
+        for r in p.get("rel", []):
+            if r not in gids2: err.append("temel makale %s: ilgili rehber bulunamadı: %s" % (p["id"], r))
 MAMA = j("mamalar.json")
 # Üretici -> resmi alan adları (kaynak URL'si bunlardan birinde ya da alt alan adında olmalı)
 RESMI = {"Nutricia": ("nutricia.com.tr", "nutricia.com"),

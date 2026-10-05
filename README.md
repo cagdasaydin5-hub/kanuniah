@@ -7,7 +7,8 @@ Trabzon Kanuni Eğitim ve Araştırma Hastanesi Aile Hekimliği Anabilim Dalı'n
 - Statik site: HTML + CSS + JS, sunucu tarafı kod ya da veritabanı yok.
 - İçerik `data/` altındaki JSON dosyalarında:
   - `rehberler.json` – rehber ve mevzuat kaynakları
-  - `makaleler.json` – haftanın makaleleri (her hafta `issues` dizisinin başına yeni sayı eklenir)
+  - `temel-makaleler.json` – Makaleler sayfasındaki kalıcı kitaplık (konuya göre önemli eski çalışmalar)
+  - `makaleler.json` – Haftanın makaleleri sayfası (her hafta `issues` dizisinin başına yeni sayı eklenir)
   - `meta.json` – son kontrol tarihi ve güncelleme günlüğü
   - `mamalar.json` – enteral/oral beslenme ürünleri kataloğu (alanlar aşağıda)
   - `inr-algoritma.json` – varfarin idame doz algoritmasının eşikleri (aşağıda)

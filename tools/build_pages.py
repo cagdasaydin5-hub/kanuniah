@@ -11,7 +11,7 @@ TODAY = json.load(open("data/meta.json", encoding="utf-8"))["checked"]
 
 NAV = [("home", "./", "Ana sayfa"), ("rehberler", "rehberler.html", "Rehberler"),
        ("mevzuat", "mevzuat.html", "Mevzuat"),
-       ("makaleler", "makaleler.html", "Makaleler"), ("araclar", "araclar.html", "Araçlar"),
+       ("makaleler", "makaleler.html", "Makaleler"), ("haftalik", "haftanin-makaleleri.html", "Haftanın makaleleri"), ("araclar", "araclar.html", "Araçlar"),
        ("takvim", "takvim.html", "Takvim"),
        ("hakkinda", "hakkinda.html", "Hakkımızda")]
 
@@ -115,7 +115,7 @@ PAGES["index.html"] = head("Trabzon Kanuni EAH Aile Hekimliği",
 
   <div class="grid">
     <a class="tile" href="rehberler.html"><span class="n" id="nGuides">–</span><b>Rehberler</b><span>Türk ve uluslararası klinik rehberler, özetleriyle</span></a>
-    <a class="tile" href="makaleler.html"><span class="n" id="nPapers">–</span><b>Haftanın makaleleri</b><span>Birinci basamak için önem sırasıyla, Türkçe özet</span></a>
+    <a class="tile" href="haftanin-makaleleri.html"><span class="n" id="nPapers">–</span><b>Haftanın makaleleri</b><span>Birinci basamak için önem sırasıyla, Türkçe özet</span></a>
     <a class="tile" href="araclar.html"><span class="n" id="nTools">–</span><b>Araçlar</b><span>Böbrek, AF, pnömoni, bası yarası, yaşlı değerlendirme, aşı planlayıcı</span></a>
     <a class="tile" href="takvim.html"><span class="n" id="nEvents">–</span><b>Etkinlik takvimi</b><span>Yaklaşan kongre, sempozyum ve kurslar; bildiri son tarihleri</span></a>
     <a class="tile" href="mevzuat.html"><span class="n" id="nLaw">–</span><b>Mevzuat</b><span>Kanun, yönetmelik ve genelgeler</span></a>
@@ -123,7 +123,7 @@ PAGES["index.html"] = head("Trabzon Kanuni EAH Aile Hekimliği",
 
   <section class="block">
     <h2>Bu haftanın öne çıkan makaleleri</h2>
-    <p class="sub">Önem puanına göre ilk üç. <a class="more" href="makaleler.html">Tüm liste →</a></p>
+    <p class="sub">Önem puanına göre ilk üç. <a class="more" href="haftanin-makaleleri.html">Tüm liste →</a> · <a class="more" href="makaleler.html">Önemli makaleler kitaplığı →</a></p>
     <div id="topPapers"></div>
   </section>
 
@@ -160,9 +160,9 @@ PAGES["mevzuat.html"] = head("Mevzuat · Trabzon Kanuni EAH Aile Hekimliği",
   </div>
 """ + BAR_GUIDES + "</div>\n" + FOOT
 
-PAGES["makaleler.html"] = head("Haftanın Makaleleri · Trabzon Kanuni EAH Aile Hekimliği",
+PAGES["haftanin-makaleleri.html"] = head("Haftanın Makaleleri · Trabzon Kanuni EAH Aile Hekimliği",
     "Birinci basamak için haftanın önemli makaleleri: Türkçe özet, kanıt düzeyi, pratiğe etkisi ve şeffaf önem puanı.",
-    "makaleler.html", "makaleler") + """<div class="wrap">
+    "haftanin-makaleleri.html", "haftalik") + """<div class="wrap">
   <div class="page-head">
     <div class="eyebrow">Literatür</div>
     <h1>Haftanın makaleleri</h1>
@@ -175,6 +175,24 @@ PAGES["makaleler.html"] = head("Haftanın Makaleleri · Trabzon Kanuni EAH Aile 
       <label><input type="checkbox" id="byScore" checked> Önem puanına göre sırala</label>
       <span class="count" id="count"></span>
     </div>
+  </div>
+  <div id="issues"></div>
+</div>
+""" % ICON + FOOT
+
+PAGES["makaleler.html"] = head("Makaleler · Trabzon Kanuni EAH Aile Hekimliği",
+    "Birinci basamak pratiğini şekillendirmiş önemli çalışmalar: konuya göre kalıcı kitaplık, Türkçe özet ve PubMed bağlantısı.",
+    "makaleler.html", "makaleler") + """<div class="wrap">
+  <div class="page-head">
+    <div class="eyebrow">Literatür</div>
+    <h1>Önemli makaleler</h1>
+    <p class="lede" id="aciklama"></p>
+    <p class="lede">Güncel çalışmalar için <a href="haftanin-makaleleri.html">Haftanın makaleleri</a> sayfasına bakın.</p>
+  </div>
+  <div class="bar">
+    <label class="search" for="q">%s<input id="q" type="search" placeholder="Makalelerde ara: ör. SPRINT, statin, gebelik" autocomplete="off"></label>
+    <div class="chips" id="chips"></div>
+    <div class="opts"><span class="count" id="count"></span></div>
   </div>
   <div id="issues"></div>
 </div>
@@ -274,7 +292,7 @@ for name, html in PAGES.items():
         f.write(html)
 
 urls = "".join("  <url><loc>%s/%s</loc><lastmod>%s</lastmod></url>\n" % (SITE, p, TODAY)
-               for p in ["", "rehberler.html", "mevzuat.html", "makaleler.html", "araclar.html", "takvim.html", "hakkinda.html"])
+               for p in ["", "rehberler.html", "mevzuat.html", "makaleler.html", "haftanin-makaleleri.html", "araclar.html", "takvim.html", "hakkinda.html"])
 with open("sitemap.xml", "w", encoding="utf-8", newline="\n") as f:
     f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n%s</urlset>\n' % urls)
 print("Sayfalar üretildi:", ", ".join(PAGES))

@@ -229,6 +229,25 @@
    ]
   },
   {
+   "id": "udmi-5-2026",
+   "cat": "kardiyo",
+   "kind": "guide",
+   "scope": "INT",
+   "status": "guncel",
+   "title": "Miyokard İnfarktüsünün Beşinci Evrensel Tanımı (2026)",
+   "org": "ESC / ACC / AHA / WHF",
+   "year": 2026,
+   "pub": "2026-08-28",
+   "summary": "Miyokard infarktüsü tanımını güncelleyen ortak uzlaşı belgesi. MI'yı primer, sekonder ve işlemle ilişkili olmak üzere üç klinik tipe ayırıyor; troponin yorumunda cinsiyete özgü eşikleri esas alıyor. Etiyolojiyi aydınlatmak için görüntüleme kullanımını ve ICD-11 kodlamasını tarif ediyor.",
+   "note": "Troponin yüksekliği olan hastayı sevk ederken ya da epikriz okurken terminoloji için başvuru kaynağı.",
+   "url": "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/fifth-universal-definition-myocardial-infarction/",
+   "alt": [],
+   "kw": "miyokard infarktüsü mi tanım troponin evrensel tanım akut koroner sendrom",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
    "id": "temd-dm-2026",
    "cat": "kronik",
    "kind": "guide",

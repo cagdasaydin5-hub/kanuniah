@@ -53,7 +53,7 @@
     "yaşlı sağlığı"
    ],
    "not": "Tema: Sağlıklı yaş alma.",
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "guney-2026",
@@ -78,7 +78,7 @@
    },
    "konu": [],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "guz-okulu-20",
@@ -103,7 +103,7 @@
    },
    "konu": [],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "asm30-bogaz-2026",
@@ -130,7 +130,7 @@
     "enfeksiyon"
    ],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "asm30-mast-2026",
@@ -157,7 +157,7 @@
     "alerji"
    ],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "asm30-antifungal-2026",
@@ -184,7 +184,7 @@
     "dermatoloji"
    ],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "amasya-integratif-2026",
@@ -211,7 +211,7 @@
     "integratif tıp"
    ],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "denizli-koruyucu-hekimlik-4",
@@ -238,7 +238,7 @@
     "koruyucu hekimlik"
    ],
    "not": "Salon henüz ilan edilmedi.",
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "ankakon-2026",
@@ -263,7 +263,7 @@
    },
    "konu": [],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "tahud-tv-influenza-2026",
@@ -291,7 +291,7 @@
     "influenza"
    ],
    "not": "Konuşmacı Prof. Dr. Tufan Tükek. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "asm30-kuru-goz-2026",
@@ -318,7 +318,7 @@
     "göz"
    ],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "asm30-gorh-2026",
@@ -345,7 +345,7 @@
     "gastroenteroloji"
    ],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "asm30-konstipasyon-2026",
@@ -372,7 +372,7 @@
     "gastroenteroloji"
    ],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "asm30-dispepsi-2026",
@@ -399,7 +399,7 @@
     "gastroenteroloji"
    ],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "tahud-tv-obezite-2026",
@@ -426,7 +426,7 @@
     "obezite"
    ],
    "not": "Konuşmacı Prof. Dr. Mehmet Sargın. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "tahud-tv-adolesan-asi-2026",
@@ -454,7 +454,7 @@
     "adolesan"
    ],
    "not": "Konuşmacı Prof. Dr. Zehra Aycan. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "asm30-agri-kesici-2026",
@@ -482,7 +482,7 @@
     "hukuk"
    ],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "asm30-ortopedi-2026",
@@ -510,7 +510,7 @@
     "sevk"
    ],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "imsa-2026",
@@ -522,22 +522,22 @@
    "bitis": "2026-10-28",
    "saat": null,
    "sehir": "Sinop",
-   "yer": "Sinop Üniversitesi",
+   "yer": "Sinop Üniversitesi 15 Temmuz Yerleşkesi",
    "bicim": "hibrit",
    "duzenleyen": "Sinop Üniversitesi Bağımlılıkla Mücadele Uygulama ve Araştırma Merkezi",
-   "ucret": null,
+   "ucret": "ucretli",
    "url": "https://imsa.sinop.edu.tr/",
    "kaynak": null,
    "tarihler": {
     "bildiri": null,
-    "erken_kayit": null,
+    "erken_kayit": "2026-10-09",
     "burs": null
    },
    "konu": [
     "bağımlılık"
    ],
    "not": "Tarih kurum dışı duyurudan alındı.",
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "ahekon-2026",
@@ -562,7 +562,7 @@
    },
    "konu": [],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "tahud-29-ekim-2026",
@@ -591,7 +591,7 @@
     "bildiri hazırlama"
    ],
    "not": "Asistanlara yönelik. AHEKON ile aynı güne denk geliyor.",
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "asm30-dispepsi-2-2026",
@@ -618,7 +618,7 @@
     "gastroenteroloji"
    ],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "asm30-antihistaminik-2026",
@@ -645,7 +645,7 @@
     "alerji"
    ],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "ikon-2026",
@@ -664,13 +664,13 @@
    "url": "https://www.ikon.org.tr/genel-bilgiler",
    "kaynak": null,
    "tarihler": {
-    "bildiri": null,
+    "bildiri": "2026-09-30",
     "erken_kayit": null,
     "burs": null
    },
    "konu": [],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "tahud-tv-maternal-asi-2026",
@@ -698,7 +698,7 @@
     "gebelik"
    ],
    "not": "Konuşmacı Prof. Dr. Dilek Şahin. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "ah-arastirma-gunleri-2026",
@@ -710,22 +710,22 @@
    "bitis": "2026-11-14",
    "saat": null,
    "sehir": "Denizli",
-   "yer": "Pamukkale Üniversitesi",
+   "yer": "Pamukkale Üniversitesi Tıp Fakültesi",
    "bicim": "yuz-yuze",
    "duzenleyen": "Aile Hekimliği Akademisi",
-   "ucret": null,
+   "ucret": "ucretli",
    "url": "https://ailehekimligiakademisi.org/",
    "kaynak": null,
    "tarihler": {
-    "bildiri": null,
+    "bildiri": "2026-10-26",
     "erken_kayit": null,
     "burs": null
    },
    "konu": [
     "araştırma"
    ],
-   "not": null,
-   "dogrulama": "2026-10-01"
+   "not": "Asistanlar için burs başvurusu var (son tarih açıklanmadı); 12 Ekim 2026 sonrası iptalde iade yok.",
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "inhsc-2026",
@@ -752,7 +752,7 @@
     "sağlık hizmetleri"
    ],
    "not": "Bildiri ayrıntıları henüz yayımlanmadı.",
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "kedd-dob-2026",
@@ -781,7 +781,7 @@
     "beslenme"
    ],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "asm30-zor-konstipasyon-2026",
@@ -808,7 +808,7 @@
     "gastroenteroloji"
    ],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "geriatri-kursu-17",
@@ -835,7 +835,7 @@
     "geriatri"
    ],
    "not": "Ücret 3.500 TL; tam katılıma sertifika.",
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "utek-2026",
@@ -863,7 +863,7 @@
     "uzmanlık eğitimi"
    ],
    "not": "Son kayıt 2 Kasım 2026.",
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "palyatif-7-2026",
@@ -892,7 +892,7 @@
     "yara bakımı"
    ],
    "not": "EAPC iş birliğiyle; kurslar var.",
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "asi-kongresi-2026",
@@ -907,7 +907,7 @@
    "yer": "JW Marriott Hotel",
    "bicim": "yuz-yuze",
    "duzenleyen": "Teletıp ve Eğitim Derneği",
-   "ucret": null,
+   "ucret": "ucretli",
    "url": "https://www.kongre.asiveimmunizasyon.org/",
    "kaynak": null,
    "tarihler": {
@@ -919,7 +919,7 @@
     "aşı"
    ],
    "not": "Tüm branşlardan uzman ve asistanlara açık.",
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "tahud-tv-kalp-yetersizligi-2026",
@@ -946,7 +946,7 @@
     "kalp yetersizliği"
    ],
    "not": "Konuşmacılar Prof. Dr. Ahmet Çelik, Prof. Dr. Simten Malha. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "uhsk-2026",
@@ -958,7 +958,7 @@
    "bitis": "2026-12-05",
    "saat": null,
    "sehir": "Antalya",
-   "yer": null,
+   "yer": "Akka Hotel Antedon",
    "bicim": "yuz-yuze",
    "duzenleyen": "Halk Sağlığı Uzmanları Derneği (HASUDER)",
    "ucret": "ucretli",
@@ -966,14 +966,14 @@
    "kaynak": null,
    "tarihler": {
     "bildiri": null,
-    "erken_kayit": null,
+    "erken_kayit": "2026-10-31",
     "burs": null
    },
    "konu": [
     "halk sağlığı"
    ],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "asi-kursu-8",
@@ -1000,7 +1000,7 @@
     "aşı"
    ],
    "not": "Ağırlıklı olarak çocukluk çağı aşılaması.",
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "ecim-2026",
@@ -1019,7 +1019,7 @@
    "url": "https://ecim2026turkiye.org/",
    "kaynak": null,
    "tarihler": {
-    "bildiri": null,
+    "bildiri": "2026-09-30",
     "erken_kayit": null,
     "burs": null
    },
@@ -1027,7 +1027,7 @@
     "integratif tıp"
    ],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "daahk-2027",
@@ -1046,13 +1046,13 @@
    "url": "https://daahk.org/genel-bilgiler/",
    "kaynak": null,
    "tarihler": {
-    "bildiri": null,
-    "erken_kayit": null,
+    "bildiri": "2027-03-23",
+    "erken_kayit": "2027-01-17",
     "burs": null
    },
    "konu": [],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "izahed-2027",
@@ -1072,12 +1072,12 @@
    "kaynak": null,
    "tarihler": {
     "bildiri": null,
-    "erken_kayit": null,
+    "erken_kayit": "2027-03-10",
     "burs": null
    },
    "konu": [],
    "not": null,
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "tahud-ulusal-2027",
@@ -1096,13 +1096,13 @@
    "url": "https://www.ulusalaile.com/",
    "kaynak": null,
    "tarihler": {
-    "bildiri": null,
-    "erken_kayit": null,
+    "bildiri": "2027-04-09",
+    "erken_kayit": "2027-01-22",
     "burs": null
    },
    "konu": [],
    "not": "Önemli tarihler sitede görsel olarak yayımlanmış; metin olarak doğrulanınca eklenecek.",
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "egekon-2027",
@@ -1129,7 +1129,32 @@
     "acil tıp"
    ],
    "not": "Acil tıp özel oturumlarıyla. Kayıt 15.000 TL + KDV.",
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
+  },
+  {
+   "id": "dogu-karadeniz-5-2027",
+   "ad": "5. Uluslararası Doğu Karadeniz Aile Hekimliği Kongresi",
+   "tur": "kongre",
+   "duzey": 2,
+   "kapsam": "uluslararasi",
+   "baslangic": "2027-06-03",
+   "bitis": "2027-06-05",
+   "saat": null,
+   "sehir": "Ordu",
+   "yer": "Anemon Hotel",
+   "bicim": "yuz-yuze",
+   "duzenleyen": "Kotyora Aile Hekimliği Sağlık Yönetimi ve Eğitim Derneği (KAHSED)",
+   "ucret": "ucretli",
+   "url": "https://www.kahsed.com/",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": "2026-10-30",
+    "burs": null
+   },
+   "konu": [],
+   "not": "Tema: Ömür boyu sağlık için bir reçete. Kayıt açık; 30 Ekim 2026'ya kadar önceki kongre fiyatları geçerli.",
+   "dogrulama": "2026-10-05"
   },
   {
    "id": "karadeniz-6",
@@ -1155,7 +1180,7 @@
    },
    "konu": [],
    "not": "Tarihler henüz açıklanmadı (sitede 'güncellenmektedir').",
-   "dogrulama": "2026-10-01"
+   "dogrulama": "2026-10-05"
   }
  ]
 }

@@ -1,0 +1,1474 @@
+{
+ "aciklama": "Birinci basamak pratiğini şekillendirmiş önemli çalışmalar. Haftalık listeden ayrı, kalıcı bir kitaplıktır; yeni haftalık makaleler buraya otomatik eklenmez.",
+ "konular": [
+  {
+   "id": "kardiyovaskuler",
+   "ad": "Kardiyovasküler"
+  },
+  {
+   "id": "diyabet-metabolik",
+   "ad": "Diyabet ve metabolik"
+  },
+  {
+   "id": "enfeksiyon-solunum",
+   "ad": "Enfeksiyon ve solunum"
+  },
+  {
+   "id": "ruh-agri",
+   "ad": "Ruh sağlığı ve ağrı"
+  },
+  {
+   "id": "yasli-palyatif",
+   "ad": "Yaşlı sağlığı ve palyatif"
+  },
+  {
+   "id": "onleme-tarama",
+   "ad": "Önleme ve tarama"
+  },
+  {
+   "id": "kadin-cocuk",
+   "ad": "Kadın ve çocuk sağlığı"
+  },
+  {
+   "id": "aile-hekimligi",
+   "ad": "Aile hekimliği ve sağlık hizmeti"
+  }
+ ],
+ "makaleler": [
+  {
+   "id": "stewart-1995",
+   "pmid": "7728691",
+   "doi": "",
+   "journal": "CMAJ",
+   "year": 1995,
+   "title_en": "Effective physician-patient communication and health outcomes: a review.",
+   "title": "Etkili hekim-hasta iletişimi, incelenen 21 çalışmanın 16'sında daha iyi hasta sonuçlarıyla ilişkili",
+   "design": "Derleme · 21 RKÇ ve analitik çalışma",
+   "konu": "aile-hekimligi",
+   "tags": [
+    "hasta merkezli görüşme",
+    "iletişim",
+    "hasta sonuçları",
+    "derleme"
+   ],
+   "what": "MEDLINE'da 1983-1993 arası yayımlanan, hekim-hasta iletişimini ve hasta sağlık sonuçlarını inceleyen RKÇ ve analitik çalışmalar derlendi. Ölçütleri karşılayan 21 çalışmanın 16'sı olumlu, 4'ü anlamsız, 1'i belirsiz sonuç bildirdi. Hem öykü alma hem de yönetim planını tartışma bölümünde iletişim kalitesi sonuçları etkiledi; en sık etkilenenler duygusal sağlık, semptom çözülmesi, işlev, fizyolojik ölçümler ve ağrı kontrolüydü.",
+   "practice": "Görüşmede iletişim kalitesi yalnızca memnuniyeti değil, semptom, işlev ve bazı fizyolojik ölçümleri de etkileyebilir; iletişim becerisi klinik bir beceri olarak eğitimde yer almalıdır.",
+   "why": "Hasta merkezli iletişimin klinik sonuçlarla ilişkisini gösteren ve tıp eğitimi müfredatlarında sık anılan klasik derlemedir.",
+   "limits": "Yalnızca 1983-1993 arası çalışmalar taranmıştır; çoğu çalışmada ilişki gösterilmiş, ancak nedensellik ve etki büyüklüğü özetten çıkarılamaz.",
+   "rel": []
+  },
+  {
+   "id": "little-2001",
+   "pmid": "11222423",
+   "doi": "10.1136/bmj.322.7284.468",
+   "journal": "BMJ",
+   "year": 2001,
+   "title_en": "Preferences of patients for patient centred approach to consultation in primary care: observational study.",
+   "title": "Birinci basamak hastaları iletişim, ortaklık ve sağlığı geliştirmeyi içeren hasta merkezli yaklaşımı güçlü biçimde istiyor",
+   "design": "Anket çalışması (gözlemsel) · n=865 hasta, üç hekim muayenehanesi",
+   "konu": "aile-hekimligi",
+   "tags": [
+    "hasta merkezli görüşme",
+    "hasta tercihleri",
+    "iletişim",
+    "birinci basamak"
+   ],
+   "what": "Üç hekimin bekleme salonundaki ardışık hastalara muayene öncesi anket uygulandı; 824 hasta (%95) anketi geri verdi. Faktör analizi üç alan belirledi: iletişim (%88-99 katılım), ortaklık (%77-87) ve sağlığı geliştirme (%85-89). Hastaların %63'ü muayene, yalnızca dörtte biri reçete istiyordu; iyi iletişimi güçlü isteyenler kendini daha kötü hisseden, sık başvuran ve ücretli işi olmayan kişilerdi.",
+   "practice": "Hastaların büyük çoğunluğu görüşmede iyi iletişim, ortaklık ve sağlık geliştirme bekler; reçete beklentisi sanıldığından düşük olabilir. Psikososyal olarak kırılgan ya da kendini kötü hisseden hastalarda hasta merkezli yaklaşım özellikle önemlidir.",
+   "why": "Hasta merkezli görüşmenin hasta tercihleriyle örtüştüğünü gösteren sık anılan birinci basamak çalışmasıdır.",
+   "limits": "Yalnızca üç muayenehanede yapılan anket çalışmasıdır; yazarlar reçete isteği güçlü olan popülasyonlarda tercihlerin hafife alınmış olabileceğini belirtir.",
+   "rel": []
+  },
+  {
+   "id": "starfield-2005",
+   "pmid": "16202000",
+   "doi": "10.1111/j.1468-0009.2005.00409.x",
+   "journal": "Milbank Q",
+   "year": 2005,
+   "title_en": "Contribution of primary care to health systems and health.",
+   "title": "Birinci basamak hastalığı ve ölümü önlemeye yardımcı olur ve sağlıkta daha adil bir dağılımla ilişkilidir",
+   "design": "Anlatımsal derleme (birinci basamak kanıtının sentezi)",
+   "konu": "aile-hekimligi",
+   "tags": [
+    "birinci basamak",
+    "sağlık sistemi",
+    "eşitlik",
+    "derleme"
+   ],
+   "what": "Derleme, birinci basamağın sağlığı geliştirici etkisini gösteren birikmiş kanıtı özetler. Kanıtlar birinci basamağın, ister hekim sayısı, ister düzenli bir bakım kaynağı olması, ister birinci basamak özelliklerinin alınması olarak tanımlansın, hastalığı ve ölümü önlemeye yardımcı olduğunu gösterir. Uzmanlık bakımının aksine birinci basamak, toplumda sağlığın daha eşit dağılımıyla ilişkilidir.",
+   "practice": "Sağlık sistemlerinde birinci basamağın güçlendirilmesi, hem toplum sağlığı hem de sağlıkta eşitlik açısından savunulabilir bir politikadır.",
+   "why": "Birinci basamağın sağlık sistemindeki yerini savunan sağlık politikası tartışmalarında sık başvurulan temel derlemedir.",
+   "limits": "Sistematik meta-analiz değil, anlatımsal derlemedir; özetten çalışma sayısı veya sayısal etki büyüklüğü çıkarılamaz. Çoğu veri gözlemsel çalışmalardan gelir.",
+   "rel": []
+  },
+  {
+   "id": "welch-overdiagnosis-2010",
+   "pmid": "20413742",
+   "doi": "10.1093/jnci/djq099",
+   "journal": "J Natl Cancer Inst",
+   "year": 2010,
+   "title_en": "Overdiagnosis in cancer.",
+   "title": "Kanser taramasında aşırı tanı: mamografide yaklaşık %25, PSA'da %60'a varan oranlar",
+   "design": "Derleme (RKÇ'lerden aşırı tanı büyüklüğü tahmini)",
+   "konu": "aile-hekimligi",
+   "tags": [
+    "aşırı tanı",
+    "tarama",
+    "kanser",
+    "karar paylaşımı"
+   ],
+   "what": "Makale, ileride belirti ya da ölüme yol açmayacak 'kanser' tanısı olan aşırı tanıyı özetler; bunun için sessiz bir hastalık havuzu ve onu saptayan faaliyetlerin (özellikle tarama) bulunması gerektiğini belirtir. RKÇ'lerden tahmin edilen aşırı tanı oranları mamografiyle saptanan meme kanserlerinde yaklaşık %25, akciğer grafisi ve/veya balgamla saptanan akciğer kanserlerinde %50, PSA ile saptanan prostat kanserlerinde %60'tır. Gözlemsel verilerde BT ile akciğer, nöroblastom, tiroid, melanom ve böbrek kanserinde de aşırı tanıya işaret edilir.",
+   "practice": "Tarama önerirken hastaların erken tanının yarar-zarar dengesi, özellikle aşırı tanı konusunda dürüstçe bilgilendirilmesi gerekir. Tarama kararında paylaşılan karar verme yaklaşımını destekler.",
+   "why": "Kanser taramasının zararlarını ve aşırı tanıyı tartışan temel referanslardan biridir.",
+   "limits": "Anlatımsal bir derlemedir; aşırı tanı büyüklüğü tahminleri belirsizdir ve yazarlar daha iyi tahminlere gereksinim olduğunu belirtir.",
+   "rel": []
+  },
+  {
+   "id": "barnett-2012",
+   "pmid": "22579043",
+   "doi": "10.1016/S0140-6736(12)60240-2",
+   "journal": "Lancet",
+   "year": 2012,
+   "title_en": "Epidemiology of multimorbidity and implications for health care, research, and medical education: a cross-sectional study.",
+   "title": "Çoklu hastalık tüm hastaların %23,2'sinde görüldü ve çoğu 65 yaş altındaydı; yoksul bölgelerde 10-15 yıl daha erken başlıyor",
+   "design": "Kesitsel çalışma · n=1.751.841 kişi, İskoçya'da 314 muayenehane",
+   "konu": "aile-hekimligi",
+   "tags": [
+    "çoklu hastalık",
+    "epidemiyoloji",
+    "sosyoekonomik düzey",
+    "ruh sağlığı"
+   ],
+   "what": "İskoçya'da 40 hastalık verisiyle çoklu hastalık (iki veya daha fazla hastalık) dağılımı incelendi. Hastaların %23,2'si çoklu hastalıklıydı; yaş arttıkça sıklık artsa da mutlak sayı 65 yaş altında daha yüksekti (210.500'e karşı 194.996). En yoksul bölgelerde çoklu hastalık en varlıklı bölgelere göre 10-15 yıl erken başlıyordu; fiziksel hastalık sayısı arttıkça ruhsal hastalık olasılığı da yükseliyordu.",
+   "practice": "Birinci basamakta hasta başına tek hastalığa göre kurgulanmış bakım yerine, bütüncül ve sürekli bakım veren, özellikle dezavantajlı grupları gözeten bir yaklaşım gerekir. Çoklu hastalıklı hastada ruhsal eşlik eden hastalıklara dikkat edilmelidir.",
+   "why": "Çoklu hastalığın yaşlılarla sınırlı olmadığını gösteren ve tek hastalık odaklı sağlık sistemini sorgulatan temel epidemiyolojik çalışmadır.",
+   "limits": "Kesitsel tasarım olup zamansal ilişki kurulamaz; veri İskoçya'daki bir muayenehane örneğinden ve 2007 yılına aittir.",
+   "rel": []
+  },
+  {
+   "id": "smith-multimorbidity-2016",
+   "pmid": "26976529",
+   "doi": "10.1002/14651858.CD006560.pub3",
+   "journal": "Cochrane Database Syst Rev",
+   "year": 2016,
+   "title_en": "Interventions for improving outcomes in patients with multimorbidity in primary care and community settings.",
+   "title": "Çoklu hastalıkta birinci basamak girişimleri klinik sonuçları az değiştirdi; depresyon gibi hedeflenen risk faktörlerinde yarar görüldü",
+   "design": "Cochrane sistematik derleme · 18 RKÇ",
+   "konu": "aile-hekimligi",
+   "tags": [
+    "çoklu hastalık",
+    "birinci basamak",
+    "Cochrane",
+    "bakım organizasyonu"
+   ],
+   "what": "Birinci basamak ve toplum ortamında çoklu hastalığı olan kişilere yönelik 18 RKÇ'de karmaşık girişimler incelendi; 12 çalışmada ana öğe bakımın organizasyonunu değiştirmekti (vaka yönetimi, çok disiplinli ekip). Klinik sonuçlarda az fark ya da fark yoktu (orta kesinlik); ruh sağlığı sonuçları iyileşti (yüksek kesinlik). Sağlık hizmeti kullanımında belirgin değişiklik olmayabileceği belirtildi.",
+   "practice": "Çoklu hastalıkta tek bir model yerine depresyon ya da işlevsel güçlük gibi belirli risk faktörlerini hedefleyen girişimler daha umut vericidir. Bakım organizasyonu değişiklikleri tek başına klinik sonuçları belirgin değiştirmeyebilir.",
+   "why": "Çoklu hastalık yönetiminde neyin işe yaradığına dair kanıt boşluğunu özetleyen başlıca Cochrane derlemesidir.",
+   "limits": "Dahil edilen RKÇ sayısı azdır ve çalışmalar heterojendir; maliyet verileri sınırlıydı. Kanıt kesinliği düşükten yükseğe değişiyordu.",
+   "rel": []
+  },
+  {
+   "id": "barker-2017",
+   "pmid": "28148478",
+   "doi": "10.1136/bmj.j84",
+   "journal": "BMJ",
+   "year": 2017,
+   "title_en": "Association between continuity of care in general practice and hospital admissions for ambulatory care sensitive conditions: cross sectional study of routinely collected, person level data.",
+   "title": "Aile hekimliğinde bakım sürekliliği arttıkça ayaktan bakıma duyarlı hastane yatışları azalıyor",
+   "design": "Kesitsel çalışma · n=230.472 hasta (62-82 yaş), 200 muayenehane (İngiltere)",
+   "konu": "aile-hekimligi",
+   "tags": [
+    "bakım sürekliliği",
+    "hastane yatışı",
+    "yaşlı",
+    "birinci basamak"
+   ],
+   "what": "İngiltere'de 62-82 yaş hastaların birinci ve ikinci basamak kayıtları bağlanarak sürekliliğin (en sık görülen hekimle temas oranı) ayaktan bakıma duyarlı hastalıklar nedeniyle yatışlarla ilişkisi incelendi. Ortalama süreklilik indeksi 0,61 idi. Süreklilik indeksinde 0,2'lik artış, bu yatışlarda %6,22 azalma (%95 GA 4,87-7,55) ile ilişkiliydi; ilişki birinci basamağı yoğun kullananlarda daha belirgindi.",
+   "practice": "Aile hekimliğinde süreklilik, özellikle birinci basamağı sık kullanan yaşlı hastalarda önlenebilir hastane yatışlarını azaltabilecek bir hedef olarak ele alınabilir.",
+   "why": "Bakım sürekliliğini sağlık hizmeti kullanımıyla ilişkilendiren, büyük örnekli ve sık anılan bir çalışmadır.",
+   "limits": "Kesitsel tasarım olduğundan nedensellik gösterilemez; yalnızca İngiltere'de ve 62-82 yaş grubunda iki yıllık veriyle yapılmıştır.",
+   "rel": []
+  },
+  {
+   "id": "pereira-gray-2018",
+   "pmid": "29959146",
+   "doi": "10.1136/bmjopen-2017-021161",
+   "journal": "BMJ Open",
+   "year": 2018,
+   "title_en": "Continuity of care with doctors-a matter of life and death? A systematic review of continuity of care and mortality.",
+   "title": "Hekimle bakım sürekliliği arttıkça mortalite azalıyor: 22 çalışmanın 18'inde anlamlı azalma",
+   "design": "Sistematik derleme (meta-analizsiz) · 22 gözlemsel çalışma",
+   "konu": "aile-hekimligi",
+   "tags": [
+    "bakım sürekliliği",
+    "mortalite",
+    "aile hekimliği",
+    "sistematik derleme"
+   ],
+   "what": "MEDLINE, Embase ve Web of Science'ta 1996-2017 arası tarama yapıldı; 726 makaleden 22'si ölçütleri karşıladı. Yöntem heterojenliği nedeniyle sonuçlar birleştirilemedi. Yüksek kaliteli 18 çalışma (%81,8) süreklilik arttıkça mortalitede istatistiksel olarak anlamlı azalma bildirdi; bunların 16'sı tüm nedenlere bağlı ölümdü. Etki hem pratisyen hem uzman hekimlerle sürekliliğte görüldü.",
+   "practice": "Aynı hekimle sürdürülen ilişki, aile hekimliği bakımında korunması gereken bir değerdir; sürekliliği azaltan randevu ve organizasyon düzenlemeleri bu açıdan değerlendirilmelidir.",
+   "why": "Bakım sürekliliğinin mortaliteyle ilişkisini ilk kez sistematik biçimde derleyen çalışmadır.",
+   "limits": "Tüm kanıt gözlemsel (kohort ve kesitsel); nedensellik gösterilemez. Süreklilik ve mortalite ölçümlerinin heterojenliği meta-analizi engelledi.",
+   "rel": []
+  },
+  {
+   "id": "fit-1996",
+   "pmid": "8950879",
+   "doi": "10.1016/s0140-6736(96)07088-2",
+   "journal": "Lancet",
+   "year": 1996,
+   "title_en": "Randomised trial of effect of alendronate on risk of fracture in women with existing vertebral fractures",
+   "title": "Vertebral kırığı olan postmenopozal kadınlarda alendronat vertebral ve diğer klinik kırıkları azalttı (FIT)",
+   "design": "Randomize, çift kör, plasebo kontrollü çalışma · n=2027",
+   "konu": "diyabet-metabolik",
+   "tags": [
+    "osteoporoz",
+    "alendronat",
+    "vertebra kırığı",
+    "postmenopoz"
+   ],
+   "what": "55-81 yaş, femur boynu KMY'si düşük ve en az bir vertebral kırığı olan 2027 kadın alendronat (1022) veya plasebo (1005) aldı ve 36 ay izlendi. Yeni morfometrik vertebral kırık alendronat grubunda %8,0, plasebo grubunda %15,0 idi (RR 0,53; %95 GA 0,41-0,68). Klinik kırık %13,6'ya karşı %18,2 (RH 0,72), kalça kırığı için RH 0,49 bulundu; yan olay sayısı gruplar arasında farklı değildi.",
+   "practice": "Vertebral kırığı olan düşük kemik kitleli postmenopozal kadınlarda bisfosfonat tedavisinin kırık önlemedeki yerini destekler.",
+   "why": "Osteoporoz tedavisi kararlarına ilişkin temel kanıtlardandır.",
+   "limits": "Yalnızca mevcut vertebral kırığı olan kadınlar bildirilmiştir; takip 36 aydır.",
+   "rel": []
+  },
+  {
+   "id": "dpp-2002",
+   "pmid": "11832527",
+   "doi": "10.1056/NEJMoa012512",
+   "journal": "N Engl J Med",
+   "year": 2002,
+   "title_en": "Reduction in the incidence of type 2 diabetes with lifestyle intervention or metformin",
+   "title": "Yaşam tarzı değişikliği diyabet gelişimini %58, metformin %31 azalttı; yaşam tarzı metformine üstündü (DPP)",
+   "design": "Randomize kontrollü çalışma · n=3234",
+   "konu": "diyabet-metabolik",
+   "tags": [
+    "prediyabet",
+    "yaşam tarzı",
+    "metformin",
+    "diyabet önleme"
+   ],
+   "what": "Açlık ve yüklenme sonrası glukozu yüksek, diyabeti olmayan 3234 kişi plasebo, metformin (günde iki kez 850 mg) veya yaşam tarzı programına (en az %7 kilo kaybı, haftada 150 dk aktivite) randomize edildi. Ortalama 2,8 yıl takipte diyabet insidansı 100 kişi-yılda plasebo 11,0, metformin 7,8, yaşam tarzı 4,8 idi; azalma sırasıyla %31 ve %58 bulundu.",
+   "practice": "Prediyabette yoğun yaşam tarzı desteği birinci basamakta öncelikli girişimdir; metformin seçilmiş hastalarda düşünülebilir.",
+   "why": "Diyabet önleme programlarının temel dayanağıdır.",
+   "limits": "Ortalama takip 2,8 yıl; katılımcıların ortalama VKİ'si 34,0 olup sonuçlar bu özellikteki yüksek riskli kişilere aittir.",
+   "rel": [
+    "ada-soc-2026"
+   ]
+  },
+  {
+   "id": "accord-glucose-2008",
+   "pmid": "18539917",
+   "doi": "10.1056/NEJMoa0802743",
+   "journal": "N Engl J Med",
+   "year": 2008,
+   "title_en": "Effects of intensive glucose lowering in type 2 diabetes",
+   "title": "HbA1c'yi normale yaklaştırmaya yönelik yoğun tedavi mortaliteyi artırdı, majör kardiyovasküler olayları anlamlı azaltmadı (ACCORD)",
+   "design": "Randomize kontrollü çalışma · n=10.251",
+   "konu": "diyabet-metabolik",
+   "tags": [
+    "tip 2 diyabet",
+    "glisemik hedef",
+    "hipoglisemi",
+    "mortalite"
+   ],
+   "what": "Ortalama yaşı 62,2 olan ve HbA1c medyanı %8,1 olan 10.251 tip 2 diyabetli hasta, HbA1c hedefi <%6,0 (yoğun) veya %7,0-7,9 (standart) gruplarına atandı. Ortalama 3,5 yıl sonra yoğun tedavi ölüm artışı nedeniyle durduruldu; birincil sonlanım HR 0,90 (%95 GA 0,78-1,04), ölüm HR 1,22 (%95 GA 1,01-1,46) idi. Yardım gerektiren hipoglisemi ve 10 kg üzeri kilo artışı yoğun grupta daha sık görüldü.",
+   "practice": "Kardiyovasküler hastalığı olan veya riski yüksek tip 2 diyabetlilerde HbA1c'yi agresif biçimde normale çekmek yerine bireyselleştirilmiş hedef gerekir.",
+   "why": "Diyabette glisemik hedeflerin bireyselleştirilmesi yaklaşımının temel dayanaklarındandır.",
+   "limits": "Yüksek riskli, uzun süredir diyabeti olan hastalar; yoğun kol erken durduruldu (ortalama 3,5 yıl).",
+   "rel": [
+    "ada-soc-2026"
+   ]
+  },
+  {
+   "id": "ukpds80-2008",
+   "pmid": "18784090",
+   "doi": "10.1056/NEJMoa0806470",
+   "journal": "N Engl J Med",
+   "year": 2008,
+   "title_en": "10-year follow-up of intensive glucose control in type 2 diabetes",
+   "title": "Yeni tanı tip 2 diyabette erken yoğun glukoz kontrolünün yararı, HbA1c farkı kaybolsa da 10 yıl boyunca sürdü (UKPDS 80)",
+   "design": "Randomize çalışmanın uzun dönem izlemi · n=5102 (4209 randomize)",
+   "konu": "diyabet-metabolik",
+   "tags": [
+    "tip 2 diyabet",
+    "metformin",
+    "glisemik kontrol",
+    "uzun dönem izlem"
+   ],
+   "what": "Yeni tanı tip 2 diyabetli 5102 hastanın 4209'u konvansiyonel (diyet) veya yoğun tedaviye (sülfonilüre, insülin veya kilolu hastalarda metformin) randomize edilmişti. Çalışma sonrası izlemde HbA1c farkı ilk yıldan sonra kayboldu. Sülfonilüre-insülin grubunda 10. yılda mikrovasküler hastalıkta %24, miyokard enfarktüsünde %15 ve ölümde %13 risk azalması vardı; metformin grubunda miyokard enfarktüsünde %33, ölümde %27 azalma görüldü.",
+   "practice": "Yeni tanı diyabette erken ve etkili glisemik kontrolün uzun dönem yararı olabileceğini destekler; kilolu hastalarda metformin ilk tercih olarak değerlendirilir.",
+   "why": "Diyabette erken kontrol ve metformin yaklaşımının dayanaklarındandır.",
+   "limits": "Çalışma sonrası izlemde bir kısım hasta anketle izlendi; hastalar yeni tanı ve konvansiyonel tedaviye karşı randomize edilmişti.",
+   "rel": [
+    "ada-soc-2026"
+   ]
+  },
+  {
+   "id": "look-ahead-2013",
+   "pmid": "23796131",
+   "doi": "10.1056/NEJMoa1212914",
+   "journal": "N Engl J Med",
+   "year": 2013,
+   "title_en": "Cardiovascular effects of intensive lifestyle intervention in type 2 diabetes",
+   "title": "Tip 2 diyabetli kilolu/obez hastalarda yoğun yaşam tarzı müdahalesi kardiyovasküler olayları azaltmadı (Look AHEAD)",
+   "design": "Randomize kontrollü çalışma · n=5145",
+   "konu": "diyabet-metabolik",
+   "tags": [
+    "tip 2 diyabet",
+    "obezite",
+    "yaşam tarzı",
+    "kardiyovasküler olay"
+   ],
+   "what": "Kilolu veya obez tip 2 diyabetli 5145 hasta, kalori kısıtlaması ve fiziksel aktiviteyle kilo kaybı hedefleyen yoğun müdahale veya diyabet eğitimi/desteği (kontrol) grubuna randomize edildi. Medyan 9,6 yıl sonra çalışma futilite nedeniyle durduruldu. Birincil sonlanım 100 kişi-yılda 1,83'e karşı 1,92 idi (HR 0,95; %95 GA 0,83-1,09). Kilo kaybı 1. yılda %8,6'ya karşı %0,7 idi.",
+   "practice": "Yaşam tarzı müdahalesi kilo ve glisemik göstergeleri iyileştirse de bu çalışmada kardiyovasküler olayları azaltmamıştır; hedefler buna göre gerçekçi konulmalıdır.",
+   "why": "Diyabette yaşam tarzı müdahalesinin kardiyovasküler sonuçlarını sorgulayan önemli bir çalışmadır.",
+   "limits": "Kilolu/obez diyabetliler; çalışma futilite nedeniyle erken durduruldu.",
+   "rel": [
+    "ada-soc-2026"
+   ]
+  },
+  {
+   "id": "empa-reg-2015",
+   "pmid": "26378978",
+   "doi": "10.1056/NEJMoa1504720",
+   "journal": "N Engl J Med",
+   "year": 2015,
+   "title_en": "Empagliflozin, Cardiovascular Outcomes, and Mortality in Type 2 Diabetes",
+   "title": "Yüksek riskli tip 2 diyabette empagliflozin, birleşik kardiyovasküler sonlanımı ve tüm nedenli ölümü plaseboya göre azalttı (EMPA-REG OUTCOME)",
+   "design": "Randomize, plasebo kontrollü çalışma · n=7020 (tedavi alan)",
+   "konu": "diyabet-metabolik",
+   "tags": [
+    "tip 2 diyabet",
+    "sglt2 inhibitörü",
+    "kardiyovasküler sonuç",
+    "kalp yetmezliği"
+   ],
+   "what": "Kardiyovasküler riski yüksek tip 2 diyabetli 7020 hasta empagliflozin 10 mg, 25 mg veya plasebo aldı (medyan gözlem 3,1 yıl). Birincil sonlanım empagliflozin grubunda %10,5, plaseboda %12,1 idi (HR 0,86; %95,02 GA 0,74-0,99). Kardiyovasküler ölüm %3,7'ye karşı %5,9, kalp yetmezliği yatışı %2,7'ye karşı %4,1 bulundu; miyokard enfarktüsü ve inmede fark yoktu, genital enfeksiyon arttı.",
+   "practice": "Yerleşik kardiyovasküler hastalığı olan tip 2 diyabetlilerde SGLT2 inhibitörü seçimini destekler; genital enfeksiyon riski hastaya anlatılmalıdır.",
+   "why": "SGLT2 inhibitörlerinin kardiyovasküler yararına ilişkin ilk büyük sonuç çalışmalarındandır.",
+   "limits": "Yüksek riskli seçilmiş hastalar; medyan 3,1 yıl takip; çalışma sponsorludur.",
+   "rel": [
+    "ada-soc-2026"
+   ]
+  },
+  {
+   "id": "trust-2017",
+   "pmid": "28402245",
+   "doi": "10.1056/NEJMoa1603825",
+   "journal": "N Engl J Med",
+   "year": 2017,
+   "title_en": "Thyroid Hormone Therapy for Older Adults with Subclinical Hypothyroidism",
+   "title": "65 yaş üstünde subklinik hipotiroidide levotiroksin semptom ve yorgunluk skorlarında fayda sağlamadı (TRUST)",
+   "design": "Randomize, çift kör, plasebo kontrollü çalışma · n=737",
+   "konu": "diyabet-metabolik",
+   "tags": [
+    "subklinik hipotiroidi",
+    "levotiroksin",
+    "yaşlı",
+    "tsh"
+   ],
+   "what": "TSH düzeyi 4,60-19,99 mIU/L ve serbest T4 normal olan, 65 yaş ve üzeri 737 kişi levotiroksin (368) veya plasebo (369) aldı. Bir yılda TSH levotiroksin grubunda 3,63, plasebo grubunda 5,48 mIU/L idi; hipotiroidi semptom skoru ve yorgunluk skorunda fark saptanmadı. Seçilmiş ciddi yan olaylarda anlamlı fazlalık görülmedi.",
+   "practice": "Yaşlılarda hafif subklinik hipotiroidiyi yalnızca TSH değerine bakarak levotiroksinle tedavi etmeyi desteklemez.",
+   "why": "Subklinik hipotiroidide tedavi kararlarına ilişkin sık anılan randomize çalışmadır.",
+   "limits": "Yalnızca 65 yaş üstü ve TSH <20 mIU/L olan kişiler; birincil sonlanımlar semptom ve yorgunluk skorlarıdır.",
+   "rel": []
+  },
+  {
+   "id": "step1-2021",
+   "pmid": "33567185",
+   "doi": "10.1056/NEJMoa2032183",
+   "journal": "N Engl J Med",
+   "year": 2021,
+   "title_en": "Once-Weekly Semaglutide in Adults with Overweight or Obesity",
+   "title": "Obezitede haftalık semaglutid 2,4 mg, 68 haftada plaseboya göre belirgin kilo kaybı sağladı (STEP 1)",
+   "design": "Randomize, çift kör, plasebo kontrollü çalışma · n=1961",
+   "konu": "diyabet-metabolik",
+   "tags": [
+    "obezite",
+    "semaglutid",
+    "kilo kaybı",
+    "glp-1"
+   ],
+   "what": "VKİ 30 ve üzeri (veya ek bir kilo ile ilişkili durumla 27 ve üzeri), diyabeti olmayan 1961 yetişkin 2:1 oranında haftalık semaglutid 2,4 mg veya plasebo ile 68 hafta tedavi edildi; ikisine de yaşam tarzı müdahalesi eklendi. Ortalama kilo değişimi %-14,9'a karşı %-2,4 idi (fark -12,4 yüzde puan). En az %5 kilo kaybı %86,4'e karşı %31,5'te sağlandı. Gastrointestinal nedenle bırakma %4,5'e karşı %0,8 idi.",
+   "practice": "Diyabeti olmayan obez hastalarda yaşam tarzı desteğine ek farmakolojik seçenek olduğunu gösterir; kullanım koşulları ve erişim ülkeye göre değişir.",
+   "why": "Obezitenin ilaç tedavisinde kullanılan GLP-1 temelli yaklaşımların temel çalışmasıdır.",
+   "limits": "Diyabeti olmayanlar; tedavi süresi 68 hafta; çalışma sponsorludur.",
+   "rel": []
+  },
+  {
+   "id": "torch-2007",
+   "pmid": "17314337",
+   "doi": "10.1056/NEJMoa063070",
+   "journal": "N Engl J Med",
+   "year": 2007,
+   "title_en": "Salmeterol and fluticasone propionate and survival in chronic obstructive pulmonary disease.",
+   "title": "KOAH'ta salmeterol+flutikazon, plaseboya göre ölüm riskinde anlamlılık sınırında azalma ve daha az alevlenme sağladı, pnömoni arttı (TORCH)",
+   "design": "Çift kör RKÇ · n=6112 (etkinlik popülasyonu), 3 yıl",
+   "konu": "enfeksiyon-solunum",
+   "tags": [
+    "koah",
+    "inhaler",
+    "kortikosteroid",
+    "pnömoni"
+   ],
+   "what": "KOAH'lı hastalarda salmeterol 50 mcg + flutikazon 500 mcg (günde 2 kez) tek inhalerde; plasebo, tek başına salmeterol ve tek başına flutikazonla 3 yıl karşılaştırıldı. Üç yılda ölüm oranı kombinasyonda %12,6, plasebo grubunda %15,2 idi (HR 0,825; %95 GA 0,681-1,002; P=0,052). Yıllık alevlenme sayısı 1,13'ten 0,85'e düştü. Flutikazon içeren kollarda pnömoni daha sık bildirildi (%19,6 ve %18,3'e karşı plasebo %12,3).",
+   "practice": "Alevlenmesi olan KOAH hastasında ICS/LABA kombinasyonunun alevlenme ve yaşam kalitesi yararı ile pnömoni riski birlikte düşünülmelidir. Birincil sonuç olan mortalitede anlamlılık sınırı aşılmadı.",
+   "why": "Kombine inhaler tedavisinin KOAH'taki yarar-zarar dengesini tartışmak için temel çalışmalardandır.",
+   "limits": "Birincil sonuç (ölüm) önceden belirlenen anlamlılık düzeyine ulaşmadı. Çalışma 3 yıl süreliydi ve yalnızca KOAH hastalarında yapıldı.",
+   "rel": []
+  },
+  {
+   "id": "neuraminidaz-inhibitorleri-cochrane-2014",
+   "pmid": "24718923",
+   "doi": "10.1002/14651858.CD008965.pub4",
+   "journal": "Cochrane Database Syst Rev",
+   "year": 2014,
+   "title_en": "Neuraminidase inhibitors for preventing and treating influenza in adults and children.",
+   "title": "Oseltamivir ve zanamivir grip semptom süresini az kısalttı; komplikasyon etkisi belirsiz, oseltamivirde bulantı-kusma arttı",
+   "design": "Cochrane sistematik derleme · klinik çalışma raporlarından 46 çalışma (oseltamivir 9623, zanamivir 14.628 katılımcı)",
+   "konu": "enfeksiyon-solunum",
+   "tags": [
+    "grip",
+    "oseltamivir",
+    "zanamivir",
+    "antiviral"
+   ],
+   "what": "Üretici firmaların klinik çalışma raporlarına dayanan derlemede, erişkinlerde oseltamivir ilk semptom düzelmesine kadar geçen süreyi 16,8 saat kısalttı (7 günden 6,3 güne); zanamivir 0,60 gün kısalttı. Oseltamivirin hastaneye yatışa anlamlı etkisi yoktu. Oseltamivir erişkinlerde bulantı (RD %3,66) ve kusmayı (RD %4,56) artırdı. Profilakside her iki ilaç semptomatik grip riskini azalttı.",
+   "practice": "Sağlıklı erişkinde rutin grip tedavisinde semptom süresine etkisi küçüktür; yan etkiler ve fayda dengesi birlikte tartılmalıdır. Komplikasyonları azalttığı konusunda bu derleme kesin bir sonuç vermez.",
+   "why": "Grip antiviralleri hakkındaki kanıt tartışmasının merkezindeki, yayımlanmamış verileri de kullanan bir derlemedir.",
+   "limits": "Tüm çalışmalar üretici sponsorluğundaydı; raporlama ve yanlılık sorunları belirtilmiştir. Pnömoni gibi komplikasyonlar için tanı tanımları yoktu.",
+   "rel": []
+  },
+  {
+   "id": "ibuprofen-fosfomisin-iye-2015",
+   "pmid": "26698878",
+   "doi": "10.1136/bmj.h6544",
+   "journal": "BMJ",
+   "year": 2015,
+   "title_en": "Ibuprofen versus fosfomycin for uncomplicated urinary tract infection in women: randomised controlled trial.",
+   "title": "Komplike olmayan İYE'de ibuprofen daha az antibiyotik kürü gerektirdi ancak semptom yükü ve piyelonefrit daha fazlaydı",
+   "design": "Çift kör RKÇ · 42 aile hekimliği muayenehanesi, fosfomisin n=246, ibuprofen n=248",
+   "konu": "enfeksiyon-solunum",
+   "tags": [
+    "idrar yolu enfeksiyonu",
+    "ibuprofen",
+    "fosfomisin",
+    "antibiyotik tasarrufu"
+   ],
+   "what": "Tipik İYE semptomları olan 18-65 yaş kadınlarda tek doz fosfomisin 3 g ile 3 gün ibuprofen 3×400 mg karşılaştırıldı; gerekirse ek antibiyotik verildi. İbuprofen grubu anlamlı olarak daha az antibiyotik kürü aldı, ancak toplam semptom yükü daha yüksekti ve piyelonefrit daha fazla görüldü. İbuprofenle tedavi edilen kadınların üçte ikisi antibiyotiksiz iyileşti.",
+   "practice": "Antibiyotikten kaçınmak isteyen ve biraz daha fazla semptomu kabul eden, hafif-orta şikâyetli kadınlarda ilk basamakta semptomatik tedavi konuşulabilir bir seçenektir. Kötüleşme açısından yakın izlem ve geri dönüş planı gerekir.",
+   "why": "Antibiyotik kullanımını azaltmaya yönelik İYE stratejileri tartışmalarında sıkça anılan bir birinci basamak çalışmasıdır.",
+   "limits": "Sonuçlar tüm komplike olmayan İYE'lere değil, hafif-orta şikâyetli kadınlara uygulanabilir. İbuprofen grubunda piyelonefrit daha fazlaydı.",
+   "rel": []
+  },
+  {
+   "id": "gecikmeli-recete-cochrane-2017",
+   "pmid": "28881007",
+   "doi": "10.1002/14651858.CD004417.pub5",
+   "journal": "Cochrane Database Syst Rev",
+   "year": 2017,
+   "title_en": "Delayed antibiotic prescriptions for respiratory infections.",
+   "title": "Gecikmeli antibiyotik reçetesi, hemen verilen reçeteye göre antibiyotik kullanımını belirgin azalttı; semptom kontrolü çoğu sonuçta benzerdi",
+   "design": "Cochrane sistematik derleme · 11 çalışma, 3555 katılımcı",
+   "konu": "enfeksiyon-solunum",
+   "tags": [
+    "antibiyotik",
+    "üsye",
+    "gecikmeli reçete",
+    "stewardship"
+   ],
+   "what": "Solunum yolu enfeksiyonlarında (otitis media, streptokok farenjiti, öksürük, boğaz ağrısı, soğuk algınlığı) gecikmeli reçete, hemen reçete ve antibiyotiksiz stratejiler karşılaştırıldı. Gecikmeli reçete, hemen reçeteye göre antibiyotik kullanımını anlamlı azalttı (OR 0,04); bildirilen kullanım %31'e karşı %93 idi. Hasta memnuniyeti gecikmeli ve hemen reçete arasında anlamlı farklı değildi (%86'ya karşı %91). Hiç antibiyotik vermeme ise kullanımı gecikmeli reçeteden de azalttı (%14'e karşı %28).",
+   "practice": "Antibiyotiğin gerekliliğinden emin olunamayan, güvenle izlenebilecek hastada gecikmeli reçete, hemen reçeteye makul bir alternatiftir. Güvenli görülüyorsa 'antibiyotiksiz, düzelmezse tekrar başvur' yaklaşımı en az antibiyotik kullanımı sağlar.",
+   "why": "Birinci basamakta antibiyotik reçeteleme stratejilerini tartışırken sık başvurulan temel derlemelerdendir.",
+   "limits": "Dahil edilen çalışmalar orta kalitedeydi ve çoğunda klinik sonuçlar için veri sınırlıydı; hiçbir çalışma antibiyotik direncini değerlendirmedi. Otitis media ve boğaz ağrısında hemen verilen antibiyotik semptomları hafif düzeyde daha çok iyileştirdi.",
+   "rel": []
+  },
+  {
+   "id": "prokalsitonin-cochrane-2017",
+   "pmid": "29025194",
+   "doi": "10.1002/14651858.CD007498.pub3",
+   "journal": "Cochrane Database Syst Rev",
+   "year": 2017,
+   "title_en": "Procalcitonin to initiate or discontinue antibiotics in acute respiratory tract infections.",
+   "title": "Prokalsitonin rehberliği akut solunum yolu enfeksiyonlarında antibiyotik süresini 2,4 gün kısalttı, mortaliteyi artırmadı",
+   "design": "Bireysel katılımcı verili sistematik derleme/meta-analiz · 26 RKÇ, 6708 katılımcı",
+   "konu": "enfeksiyon-solunum",
+   "tags": [
+    "prokalsitonin",
+    "antibiyotik",
+    "solunum yolu enfeksiyonu",
+    "stewardship"
+   ],
+   "what": "Akut solunum yolu enfeksiyonu olan erişkinlerde prokalsitonin algoritmasıyla yönlendirilen antibiyotik tedavisi, olağan bakımla karşılaştırıldı. 30 günde ölüm prokalsitonin grubunda %8,6, kontrol grubunda %10,0 idi (düzeltilmiş OR 0,83). Tedavi başarısızlığı anlamlı farklı değildi (%23,0'a karşı %24,9). Antibiyotik süresi 5,7 güne karşı 8,1 gündü ve antibiyotik yan etkileri %16,3'e karşı %22,1 idi.",
+   "practice": "Prokalsitonin ölçümü olan merkezlerde antibiyotiği başlatma ve kesme kararına yardımcı olabilir. Birinci basamak çalışmalarında ölüm olay sayısı çok az olduğundan mortalite sonucu bu ortam için tahmin edilemedi.",
+   "why": "Biyobelirteç rehberli antibiyotik kullanımı tartışmalarının temel kaynaklarından biridir.",
+   "limits": "Bireysel katılımcı verisi 32 uygun RKÇ'nin 26'sından elde edildi. Bağışıklığı baskılanmış hastalar ve solunum dışı enfeksiyonlar için doğrulama gerektiği yazarlarca belirtilmiştir.",
+   "rel": []
+  },
+  {
+   "id": "sygma1-2018",
+   "pmid": "29768149",
+   "doi": "10.1056/NEJMoa1715274",
+   "journal": "N Engl J Med",
+   "year": 2018,
+   "title_en": "Inhaled Combined Budesonide-Formoterol as Needed in Mild Asthma.",
+   "title": "Hafif astımda gerektiğinde budesonid-formoterol, terbutalinden iyi kontrol ve daha az ağır alevlenme sağladı (SYGMA 1)",
+   "design": "52 haftalık çift kör RKÇ · n=3849 randomize (3836 analiz)",
+   "konu": "enfeksiyon-solunum",
+   "tags": [
+    "astım",
+    "budesonid-formoterol",
+    "ihtiyaç halinde",
+    "alevlenme"
+   ],
+   "what": "Hafif astımlı 12 yaş ve üzeri hastalarda gerektiğinde budesonid-formoterol, gerektiğinde terbutalin ve düzenli budesonid + gerektiğinde terbutalin karşılaştırıldı. İyi kontrollü hafta oranı budesonid-formoterol grubunda terbutalinden yüksekti (%34,4'e karşı %31,1) fakat düzenli budesonidden düşüktü (%44,4). Yıllık ağır alevlenme oranı terbutalin 0,20, budesonid-formoterol 0,07, düzenli budesonid 0,09 idi. Budesonid-formoterol grubunda glukokortikoid dozu düzenli budesonid grubunun %17'siydi.",
+   "practice": "Hafif astımda yalnızca kısa etkili beta-agonist kullanımına alternatif olarak, gerektiğinde ICS-formoterol yaklaşımı alevlenme açısından avantaj sağlar. Semptom kontrolünde düzenli ICS daha üstündü.",
+   "why": "Hafif astımda gerektiğinde ICS-formoterol yaklaşımını destekleyen temel çalışmalardandır.",
+   "limits": "Çalışma 52 hafta sürdü ve ilaç firması tarafından finanse edildi. Düzenli budesonid kolunda uyum %78,9 idi.",
+   "rel": [
+    "gina-2026"
+   ]
+  },
+  {
+   "id": "grip-asisi-cochrane-2018",
+   "pmid": "29388196",
+   "doi": "10.1002/14651858.CD001269.pub6",
+   "journal": "Cochrane Database Syst Rev",
+   "year": 2018,
+   "title_en": "Vaccines for preventing influenza in healthy adults.",
+   "title": "İnaktive grip aşısı sağlıklı erişkinlerde grip riskini %2,3'ten %0,9'a indirdi, hastaneye yatışta etki belirsiz",
+   "design": "Cochrane sistematik derleme · 52 klinik çalışma, 80.000'den fazla kişi",
+   "konu": "enfeksiyon-solunum",
+   "tags": [
+    "grip aşısı",
+    "aşı",
+    "sağlıklı erişkin",
+    "önleme"
+   ],
+   "what": "Sağlıklı erişkinlerde grip aşılarının etkinlik ve güvenliği incelendi. İnaktive parenteral aşı gribi %2,3'ten %0,9'a düşürdü (RR 0,41), grip benzeri hastalığı %21,5'ten %18,1'e indirdi (RR 0,84). Hastaneye yatışta küçük, kesin olmayan bir azalma bulundu (RR 0,96; %95 GA 0,85-1,08). Aşı ateşi %1,5'ten %2,3'e çıkardı.",
+   "practice": "Sağlıklı erişkinde aşının mutlak yararı küçüktür; grip benzeri hastalıkta fayda ortama göre değişir. Aşı önerilerini yaparken bu mutlak yarar ve düşük riskli yan etkiler dürüstçe aktarılmalıdır.",
+   "why": "Grip aşısının sağlıklı erişkindeki etkisine dair en çok başvurulan sistematik derlemelerdendir.",
+   "limits": "Çalışmalar 1969-2009 arası tek sezonlarda yapıldı; hastaneye yatış ve işe gelmeme için kanıt düzeyi düşüktür. Çalışmaların %29'u endüstri destekliydi.",
+   "rel": []
+  },
+  {
+   "id": "recovery-deksametazon-2020",
+   "pmid": "32678530",
+   "doi": "10.1056/NEJMoa2021436",
+   "journal": "N Engl J Med",
+   "year": 2020,
+   "title_en": "Dexamethasone in Hospitalized Patients with Covid-19.",
+   "title": "Hastanedeki COVID-19 hastalarında deksametazon, oksijen veya mekanik ventilasyon alanlarda 28 günlük ölümü azalttı (RECOVERY)",
+   "design": "Kontrollü, açık etiketli RKÇ · deksametazon n=2104, olağan bakım n=4321",
+   "konu": "enfeksiyon-solunum",
+   "tags": [
+    "covid-19",
+    "deksametazon",
+    "kortikosteroid",
+    "mortalite"
+   ],
+   "what": "Hastanedeki COVID-19 hastalarında 10 güne kadar günde 6 mg deksametazon, olağan bakımla karşılaştırıldı. 28 günlük ölüm deksametazon grubunda %22,9, olağan bakım grubunda %25,7 idi (yaşa göre düzeltilmiş rate ratio 0,83). Mekanik ventilasyondakilerde ölüm %29,3'e karşı %41,4, oksijen alanlarda %23,3'e karşı %26,2 idi. Solunum desteği almayanlarda yarar görülmedi (%17,8'e karşı %14,0).",
+   "practice": "Birinci basamakta doğrudan uygulanmaz; ancak hastaneye yönlendirilen hastalarda oksijen ihtiyacının önemini ve kortikosteroidin hangi hastada fayda sağladığını gösterir. Solunum desteği gerektirmeyenlerde yarar yoktu.",
+   "why": "COVID-19'da sistemik kortikosteroid kullanımına dair rehber önerilerinin temel dayanağıdır.",
+   "limits": "Açık etiketli tasarım ve hastane popülasyonu; sonuçlar ayaktan hastalara genellenemez.",
+   "rel": []
+  },
+  {
+   "id": "whi-2002",
+   "pmid": "12117397",
+   "doi": "10.1001/jama.288.3.321",
+   "journal": "JAMA",
+   "year": 2002,
+   "title_en": "Risks and benefits of estrogen plus progestin in healthy postmenopausal women: principal results From the Women's Health Initiative randomized controlled trial.",
+   "title": "Östrojen artı progestin, sağlıklı postmenopozal kadınlarda risklerin yararları aştığı gerekçesiyle erken durduruldu (WHI)",
+   "design": "Çok merkezli, plasebo kontrollü RKÇ · n=16.608 (50-79 yaş, rahmi yerinde)",
+   "konu": "kadin-cocuk",
+   "tags": [
+    "menopoz",
+    "hormon tedavisi",
+    "WHI",
+    "kardiyovasküler"
+   ],
+   "what": "Kadınlara günde konjuge at östrojeni 0,625 mg artı medroksiprogesteron asetat 2,5 mg ya da plasebo verildi; ortalama 5,2 yıllık izlemden sonra çalışma durduruldu. Koroner kalp hastalığı HR 1,29, invaziv meme kanseri HR 1,26, inme HR 1,41, pulmoner emboli HR 2,13 bulundu; kolorektal kanser HR 0,63 ve kalça kırığı HR 0,66 ile azaldı. Genel mortalite değişmedi (HR 0,98).",
+   "practice": "Birincil koruma amacıyla (örn. koroner kalp hastalığından korunma) bu kombine rejimin başlanması ya da sürdürülmesi önerilmez. Menopozda hormon tedavisi kararı bireysel risk-yarar değerlendirmesiyle verilir.",
+   "why": "Menopozal hormon tedavisine yaklaşımı köklü biçimde değiştiren ve ilgili rehber önerilerinin temelini oluşturan çalışmadır.",
+   "limits": "Yalnızca bir kombine rejim (konjuge östrojen + medroksiprogesteron) incelendi; ortalama izlem 5,2 yıldır. Katılımcılar semptomatik menopoz dönemindeki kadınlardan çok, sağlıklı 50-79 yaş grubuydu.",
+   "rel": []
+  },
+  {
+   "id": "achois-2005",
+   "pmid": "15951574",
+   "doi": "10.1056/NEJMoa042973",
+   "journal": "N Engl J Med",
+   "year": 2005,
+   "title_en": "Effect of treatment of gestational diabetes mellitus on pregnancy outcomes.",
+   "title": "Gestasyonel diyabetin tedavisi ciddi perinatal komplikasyonları azalttı (ACHOIS)",
+   "design": "Çok merkezli RKÇ · n=1000 (490 müdahale, 510 rutin bakım)",
+   "konu": "kadin-cocuk",
+   "tags": [
+    "gebelik",
+    "gestasyonel diyabet",
+    "perinatal sonuçlar",
+    "insülin"
+   ],
+   "what": "24-34. haftalarda gestasyonel diyabeti olan kadınlar diyet önerisi, kan şekeri izlemi ve gerektiğinde insülin ya da rutin bakım aldı. Ciddi perinatal komplikasyonlar müdahale grubunda %1, rutin bakımda %4 görüldü (düzeltilmiş RR 0,33; %95 GA 0,14-0,75). Müdahale grubunda yenidoğan servisine yatış (%71'e karşı %61) ve doğum indüksiyonu (%39'a karşı %29) daha sık, sezaryen oranı benzerdi (%31 ve %32).",
+   "practice": "Gestasyonel diyabetin saptanıp tedavi edilmesi ciddi perinatal morbiditeyi azaltır; ancak yenidoğan yatışı ve indüksiyon oranlarında artış da beklenebilir. Gebelikte tarama ve izlem kararlarında bu denge göz önünde tutulur.",
+   "why": "Gestasyonel diyabeti tarayıp tedavi etmenin gerekçesini ortaya koyan temel RKÇ'lerden biridir.",
+   "limits": "Kadınlar 24-34. haftalarda dahil edildi; daha erken gebelik haftalarına ve hafif hiperglisemiye genellemek özetten mümkün değildir. Ruh hali ve yaşam kalitesi verileri 573 kadında mevcuttu.",
+   "rel": [
+    "ada-soc-2026"
+   ]
+  },
+  {
+   "id": "lidegaard-2011",
+   "pmid": "22027398",
+   "doi": "10.1136/bmj.d6423",
+   "journal": "BMJ",
+   "year": 2011,
+   "title_en": "Risk of venous thromboembolism from use of oral contraceptives containing different progestogens and oestrogen doses: Danish cohort study, 2001-9.",
+   "title": "Desogestrel, gestoden ve drospirenonlu kombine oral kontraseptifler, levonorgestrelli olanlara göre en az iki kat venöz tromboemboli riski taşıdı",
+   "design": "Ulusal kayıt tabanlı kohort · 8.010.290 kadın-yılı gözlem, 4246 ilk VTE olayı",
+   "konu": "kadin-cocuk",
+   "tags": [
+    "kontrasepsiyon",
+    "venöz tromboemboli",
+    "oral kontraseptif",
+    "kohort"
+   ],
+   "what": "Danimarka'da 15-49 yaş, tromboz öyküsü olmayan kadınlar 2001-2009 arasında izlendi. Hormonal kontrasepsiyon kullanmayanlara göre 30-40 µg etinilestradiollü preparatlarda VTE göreli riski levonorgestrelle 2,9; desogestrelle 6,6; gestodenle 6,2; drospirenonla 6,4 bulundu. Levonorgestrel referans alındığında desogestrel, gestoden ve drospirenon için oran yaklaşık 2 idi; yalnızca progestinli haplarda ve hormonlu rahim içi araçlarda artış görülmedi.",
+   "practice": "Kombine oral kontraseptif seçerken VTE riski açısından levonorgestrelli preparatlar daha düşük riskli bir seçenektir. Yalnızca progestinli yöntemler ve hormonlu RİA, VTE riski açısından daha az endişe yaratır.",
+   "why": "Kombine oral kontraseptiflerde progestin türüne göre tromboz riski tartışmasının temel kaynaklarından biridir.",
+   "limits": "Gözlemsel kayıt çalışmasıdır; tanıların yalnızca %67'si kesin olarak doğrulanmıştı. Mutlak risk düşük olup bir olayı önlemek için 2000 kadının preparat değiştirmesi gerekeceği varsayımsal olarak hesaplanmıştır.",
+   "rel": []
+  },
+  {
+   "id": "hoberman-2011",
+   "pmid": "21226576",
+   "doi": "10.1056/NEJMoa0912254",
+   "journal": "N Engl J Med",
+   "year": 2011,
+   "title_en": "Treatment of acute otitis media in children under 2 years of age.",
+   "title": "6-23 aylık çocuklarda akut otitis mediada amoksisilin-klavulanat, klinik başarısızlığı plaseboya göre azalttı",
+   "design": "Plasebo kontrollü RKÇ · n=291 (6-23 aylık)",
+   "konu": "kadin-cocuk",
+   "tags": [
+    "akut otitis media",
+    "çocuk",
+    "antibiyotik",
+    "pediatri"
+   ],
+   "what": "Katı kriterlerle tanı konan akut otitis media'lı 291 çocuk 10 gün amoksisilin-klavulanat ya da plasebo aldı. Sürekli semptom çözülmesi 7. günde %67'ye karşı %53 idi (genel P=0,04). Klinik başarısızlık 4-5. günde %4'e karşı %23, 10-12. günde %16'ya karşı %51 bulundu; ishal ve bez dermatiti antibiyotik grubunda daha sıktı.",
+   "practice": "Tanı kriterleri katı uygulandığında küçük çocuklarda antibiyotiğin yararı vardır; bu da bekle-gör yaklaşımını seçerken tanının kesinliğinin önemini gösterir. Antibiyotiğe bağlı yan etkiler (ishal, dermatit) karar sırasında hatırlanmalıdır.",
+   "why": "Küçük çocuklarda otitis media için antibiyotik başlama ve bekleme kararlarını tartışan temel RKÇ'lerden biridir.",
+   "limits": "Tek ilaç (amoksisilin-klavulanat) ve 10 günlük kür incelendi; semptom çözülmesinde genel fark sınırlıydı (P=0,14). Sonuçlar yalnızca katı tanı kriterleriyle seçilmiş 6-23 aylık çocuklar için geçerlidir.",
+   "rel": []
+  },
+  {
+   "id": "victora-2016",
+   "pmid": "26869575",
+   "doi": "10.1016/S0140-6736(15)01024-7",
+   "journal": "Lancet",
+   "year": 2016,
+   "title_en": "Breastfeeding in the 21st century: epidemiology, mechanisms, and lifelong effect.",
+   "title": "Emzirme çocuk enfeksiyonlarına ve anne meme kanserine karşı koruyucu; yaygınlaştırılması yılda 823.000 çocuk ölümünü önleyebilir",
+   "design": "Meta-analizli sistematik derleme (Lancet Breastfeeding Series)",
+   "konu": "kadin-cocuk",
+   "tags": [
+    "emzirme",
+    "meta-analiz",
+    "çocuk sağlığı",
+    "anne sağlığı"
+   ],
+   "what": "Meta-analizler emzirmenin çocukluk enfeksiyonlarına ve maloklüzyona karşı koruma sağladığını, zekayı artırdığını, aşırı kilo ve diyabet riskini muhtemelen azalttığını gösterdi. Astım gibi alerjik hastalıklar, kan basıncı ve kolesterolle ilişki bulunmadı; uzun emzirmede diş çürüğü artmıştı. Emzirenlerde meme kanserine karşı koruma ve doğum aralığında artış görüldü; emzirmenin neredeyse evrensel hale gelmesiyle yılda 823.000 beş yaş altı çocuk ölümü ve 20.000 meme kanseri ölümü önlenebileceği tahmin edildi.",
+   "practice": "Hem anne hem çocuk yararları emzirmeyi destekleme ve danışmanlık vermeyi birinci basamakta öncelikli bir hizmet haline getirir. Yüksek gelirli ülkelerde de yarar olduğu belirtilir.",
+   "why": "Emzirmeyi teşvik eden halk sağlığı ve klinik önerilerin sık başvurulan kanıt özetidir.",
+   "limits": "Derleme büyük ölçüde gözlemsel çalışmalara dayanır; karıştırıcı faktörler sonuçları etkileyebilir. Özetten ayrıntılı kalite değerlendirmesi çıkarılamaz.",
+   "rel": []
+  },
+  {
+   "id": "aspre-2017",
+   "pmid": "28657417",
+   "doi": "10.1056/NEJMoa1704559",
+   "journal": "N Engl J Med",
+   "year": 2017,
+   "title_en": "Aspirin versus Placebo in Pregnancies at High Risk for Preterm Preeclampsia.",
+   "title": "Yüksek riskli gebelerde düşük doz aspirin, preterm preeklampsi sıklığını plaseboya göre azalttı (ASPRE)",
+   "design": "Çok merkezli, çift kör, plasebo kontrollü RKÇ · n=1776 randomize (analizde 1620)",
+   "konu": "kadin-cocuk",
+   "tags": [
+    "gebelik",
+    "preeklampsi",
+    "aspirin",
+    "önleme"
+   ],
+   "what": "Preterm preeklampsi açısından yüksek riskli tekil gebeler 11-14. haftadan 36. haftaya kadar günde 150 mg aspirin ya da plasebo aldı. Preterm preeklampsi aspirin grubunda 13 kişide (%1,6), plasebo grubunda 35 kişide (%4,3) görüldü (OR 0,38; %95 GA 0,20-0,74). Neonatal yan etkiler ve diğer yan etkiler gruplar arasında anlamlı farklı değildi.",
+   "practice": "Yüksek riskli gebeliklerde erken dönemde başlanan düşük doz aspirin, preterm preeklampsiyi önlemede kanıta dayalı bir seçenektir. Risk değerlendirmesi ve erken başlama kararı gebelik izleminde önem kazanır.",
+   "why": "Gebelikte aspirin ile preeklampsi önlemeye ilişkin rehber önerilerinin temel dayanaklarından biridir.",
+   "limits": "Katılımcılar preterm preeklampsi için yüksek riskli seçilmiş gebelerdi; 152 kadın onamını geri çekti. Birincil sonlanım preterm preeklampsidir, term preeklampsi için sonuç özetten çıkarılamaz.",
+   "rel": []
+  },
+  {
+   "id": "cats-2017",
+   "pmid": "28249134",
+   "doi": "10.1056/NEJMoa1606205",
+   "journal": "N Engl J Med",
+   "year": 2017,
+   "title_en": "Treatment of Subclinical Hypothyroidism or Hypothyroxinemia in Pregnancy.",
+   "title": "Gebelikte subklinik hipotiroidi veya hipotiroksinemide levotiroksin, çocukların 5 yaş IQ'sunu anlamlı değiştirmedi",
+   "design": "İki ayrı çift kör, plasebo kontrollü RKÇ · n=677 (subklinik hipotiroidi) ve n=526 (hipotiroksinemi)",
+   "konu": "kadin-cocuk",
+   "tags": [
+    "gebelik",
+    "tiroid",
+    "levotiroksin",
+    "hipotiroidi"
+   ],
+   "what": "20. gebelik haftasından önce taranan, subklinik hipotiroidisi (TSH 4,00 mU/L ve üzeri, normal serbest T4) veya hipotiroksinemisi olan kadınlara levotiroksin ya da plasebo verildi. Subklinik hipotiroidi çalışmasında çocukların medyan IQ'su levotiroksin grubunda 97, plasebo grubunda 94 (P=0,71); hipotiroksinemi çalışmasında 94 ve 91 (P=0,30) bulundu. Diğer nörobilişsel ve gebelik sonlanımlarında da anlamlı fark yoktu.",
+   "practice": "Gebelikte subklinik hipotiroidi veya izole hipotiroksineminin 8-20. haftalarda tedavisi, çocuğun bilişsel sonuçlarını iyileştirmedi; bu nedenle bu durumlar için rutin tarama ve tedavi kararında temkinli olmayı destekler.",
+   "why": "Gebelikte hafif tiroid fonksiyon bozukluklarını tedavi etme alışkanlığını sorgulatan başlıca RKÇ'dir.",
+   "limits": "Tedavi 8-20. haftalar arasında başlatıldı; daha erken başlamanın etkisi özetten bilinemez. Birincil sonlanım çocuğun IQ'su olup izlem 5 yaşa kadardır.",
+   "rel": []
+  },
+  {
+   "id": "hviid-2019",
+   "pmid": "30831578",
+   "doi": "10.7326/M18-2101",
+   "journal": "Ann Intern Med",
+   "year": 2019,
+   "title_en": "Measles, Mumps, Rubella Vaccination and Autism: A Nationwide Cohort Study.",
+   "title": "KKK aşısı otizm riskini artırmadı; Danimarka'da 657.461 çocuklu ulusal kohort",
+   "design": "Ulusal kohort · n=657.461 çocuk, 5.025.754 kişi-yılı izlem",
+   "konu": "kadin-cocuk",
+   "tags": [
+    "aşı güvenliği",
+    "KKK",
+    "otizm",
+    "kohort"
+   ],
+   "what": "1999-2010 doğumlu Danimarkalı çocuklar kayıtlardan izlendi; 6517 çocuğa otizm tanısı kondu. KKK aşılı ve aşısız çocuk karşılaştırmasında tam düzeltilmiş otizm HR'si 0,93 (%95 GA 0,85-1,02) bulundu. Kardeşinde otizm öyküsü olanlar, risk faktörleri ve diğer aşılar gibi alt gruplarda ve aşı sonrası zaman dilimlerinde de artmış risk saptanmadı.",
+   "practice": "Ebeveynlerin aşı-otizm kaygısına yanıt verirken KKK aşısının otizm riskini artırmadığını gösteren büyük bir kohort verisine dayanılabilir. Bu veri aşı danışmanlığında güvence sağlar.",
+   "why": "Aşı-otizm ilişkisi iddialarına karşı güçlü ve sık atıf yapılan nüfus temelli kanıt sunar.",
+   "limits": "Bireysel hasta dosyaları incelenmedi; kayıt tabanlı gözlemsel bir kohorttur. Takip 2013'e kadardır.",
+   "rel": []
+  },
+  {
+   "id": "hyvet-2008",
+   "pmid": "18378519",
+   "doi": "10.1056/NEJMoa0801369",
+   "journal": "N Engl J Med",
+   "year": 2008,
+   "title_en": "Treatment of hypertension in patients 80 years of age or older",
+   "title": "80 yaş ve üzerinde indapamid (±perindopril) tedavisi ölüm ve kalp yetmezliğini azalttı (HYVET)",
+   "design": "Randomize, plasebo kontrollü çalışma · n=3845",
+   "konu": "kardiyovaskuler",
+   "tags": [
+    "hipertansiyon",
+    "ileri yaş",
+    "indapamid",
+    "inme"
+   ],
+   "what": "Sürekli sistolik kan basıncı 160 mmHg ve üzeri olan, 80 yaş ve üzeri 3845 hasta indapamid (gerekirse perindopril eklenerek) veya plasebo aldı; hedef 150/80 mmHg idi. Medyan 1,8 yıl takipte inme %30 azaldı (P=0,06), tüm nedenli ölüm %21 (P=0,02), kalp yetmezliği %64 azaldı. Ciddi yan olaylar aktif grupta daha az bildirildi.",
+   "practice": "Çok yaşlı hastalarda belirgin yüksek tansiyonun tedavi edilmesinin yarar sağlayabildiğini gösterir; hedef olarak 150/80 mmHg kullanılmıştır.",
+   "why": "Çok yaşlı hastalarda antihipertansif tedaviye ilişkin temel kanıttır.",
+   "limits": "Birincil sonlanım olan inmede azalma anlamlılık sınırında kaldı; takip kısa (medyan 1,8 yıl) ve kardiyovasküler hastalık öyküsü olanlar az (%11,8).",
+   "rel": [
+    "esc-ht-2024"
+   ]
+  },
+  {
+   "id": "jupiter-2008",
+   "pmid": "18997196",
+   "doi": "10.1056/NEJMoa0807646",
+   "journal": "N Engl J Med",
+   "year": 2008,
+   "title_en": "Rosuvastatin to prevent vascular events in men and women with elevated C-reactive protein",
+   "title": "LDL kolesterolü düşük ama CRP yüksek sağlıklı kişilerde rosuvastatin majör kardiyovasküler olayları azalttı (JUPITER)",
+   "design": "Randomize, plasebo kontrollü çalışma · n=17.802",
+   "konu": "kardiyovaskuler",
+   "tags": [
+    "statin",
+    "primer korunma",
+    "crp",
+    "rosuvastatin"
+   ],
+   "what": "LDL kolesterolü <130 mg/dL ve yüksek duyarlıklı CRP düzeyi 2,0 mg/L ve üzeri olan 17.802 görünüşte sağlıklı kişi rosuvastatin 20 mg veya plasebo aldı. Medyan 1,9 yıl sonra çalışma durduruldu; birleşik sonlanım 100 kişi-yılda 0,77'ye karşı 1,36 idi (HR 0,56; %95 GA 0,46-0,69). Rosuvastatin grubunda hekim bildirimli diyabet daha sık görüldü.",
+   "practice": "Primer korunmada statin kararında LDL dışında CRP gibi risk göstergelerinin tartışılmasına yol açmıştır; her hastada CRP ölçümünü gerektirmez.",
+   "why": "Primer korunmada statin kullanımı tartışmalarında sık anılan çalışmadır.",
+   "limits": "Erken durduruldu (medyan 1,9 yıl); yalnızca CRP yüksek, LDL düşük seçilmiş kişileri kapsar; diyabet bildirimi artmıştır.",
+   "rel": [
+    "esc-lipid-2025"
+   ]
+  },
+  {
+   "id": "accord-bp-2010",
+   "pmid": "20228401",
+   "doi": "10.1056/NEJMoa1001286",
+   "journal": "N Engl J Med",
+   "year": 2010,
+   "title_en": "Effects of intensive blood-pressure control in type 2 diabetes mellitus",
+   "title": "Tip 2 diyabette sistolik hedef <120 mmHg, ana kardiyovasküler sonlanımı azaltmadı; inme azaldı, ciddi yan etkiler arttı (ACCORD BP)",
+   "design": "Randomize kontrollü çalışma · n=4733",
+   "konu": "kardiyovaskuler",
+   "tags": [
+    "hipertansiyon",
+    "tip 2 diyabet",
+    "kan basıncı hedefi",
+    "inme"
+   ],
+   "what": "Kardiyovasküler olay riski yüksek tip 2 diyabetli 4733 katılımcı sistolik hedef <120 veya <140 mmHg gruplarına randomize edildi (ortalama takip 4,7 yıl). Birleşik sonlanım yıllık %1,87'ye karşı %2,09 idi (HR 0,88; %95 GA 0,73-1,06; P=0,20). İnme yıllık %0,32'ye karşı %0,53 (HR 0,59) bulundu; ciddi ilaca bağlı yan etkiler %3,3'e karşı %1,3 idi.",
+   "practice": "Diyabetli hastalarda <120 mmHg hedefi ana kardiyovasküler sonlanımda fayda göstermedi; hedef belirlerken inme riski ile yan etki artışı birlikte değerlendirilmelidir.",
+   "why": "Diyabetli hastalarda tansiyon hedeflerine ilişkin rehber tartışmalarının temel dayanağıdır.",
+   "limits": "Yalnızca yüksek riskli tip 2 diyabetli hastalar; birincil sonlanımda fark saptanmadı, inme ikincil sonlanımdı.",
+   "rel": [
+    "ada-soc-2026",
+    "esc-ht-2024"
+   ]
+  },
+  {
+   "id": "ctt-2010",
+   "pmid": "21067804",
+   "doi": "10.1016/S0140-6736(10)61350-5",
+   "journal": "Lancet",
+   "year": 2010,
+   "title_en": "Efficacy and safety of more intensive lowering of LDL cholesterol: a meta-analysis of data from 170,000 participants in 26 randomised trials",
+   "title": "LDL kolesterolün daha yoğun düşürülmesi majör vasküler olayları daha fazla azalttı; her 1 mmol/L düşüşte olay hızı yaklaşık beşte bir azaldı (CTT)",
+   "design": "Bireysel katılımcı verili meta-analiz · 26 RKÇ, yaklaşık 170.000 katılımcı",
+   "konu": "kardiyovaskuler",
+   "tags": [
+    "statin",
+    "ldl kolesterol",
+    "meta-analiz",
+    "kardiyovasküler risk"
+   ],
+   "what": "Yoğun ve daha az yoğun statin rejimlerini (5 çalışma; 39.612 kişi) ve statin ile kontrolü (21 çalışma; 129.526 kişi) karşılaştıran bireysel veri meta-analizidir. Daha yoğun rejimler majör vasküler olayları %15 daha fazla azalttı. Her 1,0 mmol/L LDL düşüşü için olay oranı 0,78 (%95 GA 0,76-0,80) bulundu; kanser insidansı ve kansere bağlı ölümlerde anlamlı etki görülmedi.",
+   "practice": "Statin tedavisinde LDL düşüşünün büyüklüğünün fayda ile ilişkili olduğunu gösterir ve yoğun statin kararlarına zemin oluşturur.",
+   "why": "Lipid düşürme rehberlerinin temel kanıtlarından biridir.",
+   "limits": "Dahil edilen çalışmalar en az 2 yıl ve 1000 katılımcı ölçütünü sağlayan statin RKÇ'leridir; yoğun-yoğun olmayan karşılaştırmasında yalnızca 5 çalışma vardır.",
+   "rel": [
+    "esc-lipid-2025"
+   ]
+  },
+  {
+   "id": "aristotle-2011",
+   "pmid": "21870978",
+   "doi": "10.1056/NEJMoa1107039",
+   "journal": "N Engl J Med",
+   "year": 2011,
+   "title_en": "Apixaban versus warfarin in patients with atrial fibrillation",
+   "title": "Atriyal fibrilasyonda apiksaban, varfarine göre inme/sistemik emboliyi, majör kanamayı ve ölümü azalttı (ARISTOTLE)",
+   "design": "Randomize, çift kör çalışma · n=18.201",
+   "konu": "kardiyovaskuler",
+   "tags": [
+    "atriyal fibrilasyon",
+    "antikoagülan",
+    "apiksaban",
+    "varfarin"
+   ],
+   "what": "En az bir ek inme risk faktörü olan atriyal fibrilasyonlu 18.201 hasta apiksaban 5 mg günde iki kez veya varfarin (hedef INR 2,0-3,0) aldı. Medyan 1,8 yılda inme veya sistemik emboli yıllık %1,27'ye karşı %1,60 (HR 0,79; %95 GA 0,66-0,95), majör kanama %2,13'e karşı %3,09 (HR 0,69), tüm nedenli ölüm %3,52'ye karşı %3,94 idi.",
+   "practice": "Atriyal fibrilasyonda varfarin yerine doğrudan oral antikoagülan seçimini destekleyen kanıtlardan biridir; ilaç seçimi hasta özelliklerine göre yapılır.",
+   "why": "Atriyal fibrilasyonda antikoagülan tedavi rehberlerinin dayanaklarındandır.",
+   "limits": "Takip medyan 1,8 yıl; çalışma sponsorludur ve ilaç firması finansmanıyla yürütülmüştür.",
+   "rel": [
+    "esc-af-2024"
+   ]
+  },
+  {
+   "id": "paradigm-hf-2014",
+   "pmid": "25176015",
+   "doi": "10.1056/NEJMoa1409077",
+   "journal": "N Engl J Med",
+   "year": 2014,
+   "title_en": "Angiotensin-neprilysin inhibition versus enalapril in heart failure",
+   "title": "EF azalmış kalp yetmezliğinde LCZ696, enalaprile göre kardiyovasküler ölüm ve kalp yetmezliği yatışını azalttı (PARADIGM-HF)",
+   "design": "Randomize, çift kör çalışma · n=8442",
+   "konu": "kardiyovaskuler",
+   "tags": [
+    "kalp yetmezliği",
+    "sakubitril-valsartan",
+    "enalapril",
+    "ef azalmış"
+   ],
+   "what": "Sınıf II-IV kalp yetmezliği ve EF %40 ve altı olan 8442 hasta LCZ696 (günde iki kez 200 mg) veya enalapril (günde iki kez 10 mg) aldı. Medyan 27 ayda çalışma erken durduruldu; kardiyovasküler ölüm veya kalp yetmezliği yatışı %21,8'e karşı %26,5 (HR 0,80; %95 GA 0,73-0,87) idi. LCZ696 grubunda hipotansiyon ve anjiyoödem daha sık, böbrek yetmezliği, hiperkalemi ve öksürük daha az görüldü.",
+   "practice": "EF azalmış kalp yetmezliğinde ACE inhibitörü yerine sakubitril-valsartan seçeneğini destekler; başlama kararı genellikle uzman değerlendirmesiyle verilir.",
+   "why": "EF azalmış kalp yetmezliği tedavisinde kullanılan ilaç stratejilerine ilişkin temel çalışmadır.",
+   "limits": "Enalapril ile karşılaştırma; erken durduruldu (medyan 27 ay); çalışma sponsorludur.",
+   "rel": []
+  },
+  {
+   "id": "sprint-2015",
+   "pmid": "26551272",
+   "doi": "10.1056/NEJMoa1511939",
+   "journal": "N Engl J Med",
+   "year": 2015,
+   "title_en": "A Randomized Trial of Intensive versus Standard Blood-Pressure Control",
+   "title": "Diyabetsiz yüksek riskli hastalarda sistolik hedef <120 mmHg, <140'a göre kardiyovasküler olayları ve ölümü azalttı (SPRINT)",
+   "design": "Randomize kontrollü çalışma · n=9361",
+   "konu": "kardiyovaskuler",
+   "tags": [
+    "hipertansiyon",
+    "kan basıncı hedefi",
+    "kardiyovasküler risk",
+    "rkç"
+   ],
+   "what": "Sistolik kan basıncı 130 mmHg ve üzeri, kardiyovasküler riski artmış, diyabeti olmayan 9361 kişi sistolik hedef <120 veya <140 mmHg gruplarına randomize edildi. Medyan 3,26 yıl sonra çalışma erken durduruldu; birleşik sonlanım yıllık %1,65'e karşı %2,19 (HR 0,75; %95 GA 0,64-0,89), tüm nedenlere bağlı ölüm HR 0,73 idi. Hipotansiyon, senkop, elektrolit bozukluğu ve akut böbrek hasarı yoğun grupta daha sık görüldü.",
+   "practice": "Diyabeti olmayan yüksek riskli hastalarda daha sıkı tansiyon hedefi düşünülebilir; ancak yan etkiler ve hastanın kırılganlığı birlikte tartılmalıdır.",
+   "why": "Güncel hipertansiyon hedeflerine ilişkin tartışmanın temel çalışmalarından biridir.",
+   "limits": "Diyabeti olmayan, yüksek riskli seçilmiş bir popülasyon; çalışma erken durduruldu (medyan 3,26 yıl).",
+   "rel": [
+    "esc-ht-2024"
+   ]
+  },
+  {
+   "id": "aspree-2018",
+   "pmid": "30221597",
+   "doi": "10.1056/NEJMoa1805819",
+   "journal": "N Engl J Med",
+   "year": 2018,
+   "title_en": "Effect of Aspirin on Cardiovascular Events and Bleeding in the Healthy Elderly",
+   "title": "Yaşlılarda düşük doz aspirin primer korunmada kardiyovasküler hastalığı anlamlı azaltmadı, majör kanamayı artırdı (ASPREE)",
+   "design": "Randomize, plasebo kontrollü çalışma · n=19.114",
+   "konu": "kardiyovaskuler",
+   "tags": [
+    "aspirin",
+    "primer korunma",
+    "yaşlı",
+    "kanama"
+   ],
+   "what": "Kardiyovasküler hastalığı, demansı ve dizabilitesi olmayan, 70 yaş ve üzeri (ABD'de siyah ve Hispanik kişilerde 65 yaş ve üzeri) 19.114 kişi 100 mg aspirin veya plasebo aldı. Medyan 4,7 yılda kardiyovasküler hastalık 1000 kişi-yılda 10,7'ye karşı 11,3 (HR 0,95; %95 GA 0,83-1,08), majör kanama 8,6'ya karşı 6,2 (HR 1,38) idi.",
+   "practice": "Kardiyovasküler hastalığı olmayan yaşlılarda rutin düşük doz aspirin başlamak için güçlü bir gerekçe sunmaz; kanama riski dikkate alınmalıdır.",
+   "why": "Yaşlılarda primer korunma amaçlı aspirin önerilerinin temel dayanağıdır.",
+   "limits": "Sağlıklı, topluma yerleşik yaşlılar; takip medyan 4,7 yıl; sonuçlar kardiyovasküler hastalığı olanlara uygulanamaz.",
+   "rel": []
+  },
+  {
+   "id": "erspc-2009",
+   "pmid": "19297566",
+   "doi": "10.1056/NEJMoa0810084",
+   "journal": "N Engl J Med",
+   "year": 2009,
+   "title_en": "Screening and prostate-cancer mortality in a randomized European study.",
+   "title": "PSA taraması prostat kanseri ölümünü %20 azalttı, fakat aşırı tanı riski yüksekti (ERSPC)",
+   "design": "Randomize kontrollü çalışma · 162.243 erkek (çekirdek yaş grubu)",
+   "konu": "onleme-tarama",
+   "tags": [
+    "prostat kanseri",
+    "psa",
+    "tarama",
+    "aşırı tanı"
+   ],
+   "what": "55-69 yaş arası erkekler yaklaşık 4 yılda bir PSA taramasına veya taramasız kontrole randomize edildi. Medyan 9 yıllık izlemde prostat kanseri ölümü için hız oranı 0,80 idi (%95 GA 0,65-0,98). Mutlak fark 1000 erkekte 0,71 ölümdü; bir ölümü önlemek için 1410 erkeğin taranması ve 48 ek vakanın tedavi edilmesi gerekti.",
+   "practice": "Asemptomatik erkekte PSA taraması konusunda hastayla, ölüm azalması ile aşırı tanı ve gereksiz tedavi dengesini içeren paylaşılmış karar verilmelidir.",
+   "why": "Prostat kanseri taramasına ilişkin tartışmanın ve rehber önerilerinin ana çalışmalarından biridir.",
+   "limits": "Bu rapor medyan 9 yıllık izlemdir; aşırı tanı riski yüksekti ve ana analiz önceden belirlenen 55-69 yaş çekirdek grubuna aittir.",
+   "rel": []
+  },
+  {
+   "id": "nlst-2011",
+   "pmid": "21714641",
+   "doi": "10.1056/NEJMoa1102873",
+   "journal": "N Engl J Med",
+   "year": 2011,
+   "title_en": "Reduced lung-cancer mortality with low-dose computed tomographic screening.",
+   "title": "Düşük doz BT taramasıyla akciğer kanseri ölümleri %20 azaldı (NLST)",
+   "design": "Randomize kontrollü çalışma · n=53.454",
+   "konu": "onleme-tarama",
+   "tags": [
+    "akciğer kanseri",
+    "tarama",
+    "düşük doz bt",
+    "sigara"
+   ],
+   "what": "Akciğer kanseri riski yüksek 53.454 kişi, üç yıllık düşük doz BT veya akciğer grafisi taramasına randomize edildi. Akciğer kanseri ölümü BT grubunda 100.000 kişi-yılda 247, grafi grubunda 309 idi; bağıl azalma %20,0 (%95 GA 6,8-26,7; P=0,004). Tüm nedenli ölüm %6,7 azaldı. BT'de pozitif testlerin %96,4'ü yalancı pozitifti.",
+   "practice": "Yüksek riskli ağır sigara içicilerinde düşük doz BT taraması, ölümü azaltan bir seçenektir; yalancı pozitif oranı yüksek olduğundan uygun hasta seçimi ve bilgilendirme gerekir.",
+   "why": "Akciğer kanseri tarama önerilerinin temel dayanağı olan ilk büyük RKÇ'dir.",
+   "limits": "ABD'de 33 merkezde yüksek riskli kişilerde yapıldı; bulgular daha düşük riskli kişilere genellenemez.",
+   "rel": []
+  },
+  {
+   "id": "lee-fiziksel-inaktivite-2012",
+   "pmid": "22818936",
+   "doi": "10.1016/S0140-6736(12)61031-9",
+   "journal": "Lancet",
+   "year": 2012,
+   "title_en": "Effect of physical inactivity on major non-communicable diseases worldwide: an analysis of burden of disease and life expectancy.",
+   "title": "Fiziksel inaktivite dünyada erken ölümlerin %9'una neden oluyor",
+   "design": "Nüfus düzeyinde hastalık yükü ve yaşam beklentisi analizi",
+   "konu": "onleme-tarama",
+   "tags": [
+    "fiziksel aktivite",
+    "hareketsizlik",
+    "hastalık yükü",
+    "yaşam beklentisi"
+   ],
+   "what": "Nüfusa atfedilebilir fraksiyonlar ve yaşam tablosu analiziyle fiziksel inaktivitenin yükü tahmin edildi. İnaktivitenin koroner kalp hastalığı yükünün %6'sına, tip 2 diyabetin %7'sine, meme ve kolon kanserlerinin %10'una ve erken ölümlerin %9'una (2008'de 57 milyon ölümün 5,3 milyondan fazlası) neden olduğu hesaplandı. İnaktivitenin ortadan kalkması dünya nüfusunun yaşam beklentisini 0,68 yıl artırırdı.",
+   "practice": "Her vizitte fiziksel aktivite sorgulaması ve yönlendirmesi yapmak, önemli bir bulaşıcı olmayan hastalık yükünü azaltabilecek ucuz bir önleme girişimidir.",
+   "why": "Fiziksel aktivitenin halk sağlığı önemini sayısal olarak ortaya koyan sık atıf yapılan bir analizdir.",
+   "limits": "Gözlemsel çalışmalardan elde edilmiş risk tahminlerine dayanan modelleme çalışmasıdır; nedensellik varsayımları ve muhafazakâr kabuller içerir.",
+   "rel": []
+  },
+  {
+   "id": "hpv-tarama-ronco-2014",
+   "pmid": "24192252",
+   "doi": "10.1016/S0140-6736(13)62218-7",
+   "journal": "Lancet",
+   "year": 2013,
+   "title_en": "Efficacy of HPV-based screening for prevention of invasive cervical cancer: follow-up of four European randomised controlled trials.",
+   "title": "HPV temelli tarama, sitolojiye göre invaziv serviks kanserine karşı %60-70 daha fazla koruma sağladı",
+   "design": "Dört Avrupa RKÇ'sinin birleşik izlemi · n=176.464 kadın",
+   "konu": "onleme-tarama",
+   "tags": [
+    "serviks kanseri",
+    "hpv testi",
+    "tarama",
+    "sitoloji"
+   ],
+   "what": "20-64 yaş arası kadınlar HPV temelli veya sitoloji temelli taramaya randomize edildi ve medyan 6,5 yıl izlendi. İnvaziv serviks kanseri hız oranı 0,60 idi (%95 GA 0,40-0,89); ilk 2,5 yıldan sonra 0,45 (0,25-0,81). Başlangıç testi negatif kadınlarda hız oranı 0,30 bulundu. En düşük oran 30-34 yaşta görüldü.",
+   "practice": "HPV testi, 30 yaşından itibaren sitolojiye göre daha güçlü koruma sağlar ve tarama aralığının en az 5 yıla uzatılmasını destekler.",
+   "why": "HPV temelli serviks taramasına geçişi destekleyen temel RKÇ kanıtıdır.",
+   "limits": "Sonlanım izlem süresi kısaydı (medyan 6,5 yıl) ve invaziv kanser sayısı düşüktü (107); sonuçlar dört farklı çalışma ortamına bağlıdır.",
+   "rel": []
+  },
+  {
+   "id": "aspree-2018-30221596",
+   "pmid": "30221596",
+   "doi": "10.1056/NEJMoa1800722",
+   "journal": "N Engl J Med",
+   "year": 2018,
+   "title_en": "Effect of Aspirin on Disability-free Survival in the Healthy Elderly.",
+   "title": "Düşük doz aspirin sağlıklı yaşlılarda sakatlıksız sağkalımı uzatmadı, majör kanamayı artırdı (ASPREE)",
+   "design": "Çift kör randomize kontrollü çalışma · n=19.114",
+   "konu": "onleme-tarama",
+   "tags": [
+    "aspirin",
+    "birincil korunma",
+    "yaşlı",
+    "kanama"
+   ],
+   "what": "70 yaş ve üzeri (ABD'de siyah ve Hispanikler için 65 yaş ve üzeri), kardiyovasküler hastalığı, demansı ve fiziksel engeli olmayan kişiler günde 100 mg aspirin veya plasebo aldı. Ölüm, demans veya kalıcı fiziksel engelden oluşan birleşik sonlanım iki grupta benzerdi (HR 1,01; %95 GA 0,92-1,11). Majör kanama aspirinde daha sıktı (%3,8'e karşı %2,8; HR 1,38).",
+   "practice": "Kardiyovasküler hastalığı olmayan sağlıklı yaşlıda birincil korunma amacıyla rutin aspirin başlamak için güçlü bir gerekçe yoktur; kanama riski dikkate alınmalıdır.",
+   "why": "Yaşlıda birincil korunmada aspirin kararlarını doğrudan etkileyen temel çalışmadır.",
+   "limits": "Medyan 4,7 yıllık izlemde sonlandırıldı; sağlıklı, bağımsız yaşayan yaşlıları kapsar, mevcut damar hastalığı olanlara uygulanamaz; son yılda uyum yaklaşık %62-64'tü.",
+   "rel": []
+  },
+  {
+   "id": "predimed-2018",
+   "pmid": "29897866",
+   "doi": "10.1056/NEJMoa1800389",
+   "journal": "N Engl J Med",
+   "year": 2018,
+   "title_en": "Primary Prevention of Cardiovascular Disease with a Mediterranean Diet Supplemented with Extra-Virgin Olive Oil or Nuts.",
+   "title": "Zeytinyağı veya kuruyemişle desteklenmiş Akdeniz diyeti, yüksek riskli kişilerde majör kardiyovasküler olayları azalttı (PREDIMED)",
+   "design": "Randomize kontrollü çalışma (düzeltilmiş yeniden analiz) · n=7.447",
+   "konu": "onleme-tarama",
+   "tags": [
+    "akdeniz diyeti",
+    "diyet",
+    "kardiyovasküler",
+    "birincil korunma"
+   ],
+   "what": "Kardiyovasküler riski yüksek, 55-80 yaş arası 7.447 kişi, zeytinyağı veya kuruyemişle desteklenmiş Akdeniz diyetine ya da yağı azaltma önerisine (kontrol) atandı. Medyan 4,8 yıl izlemde majör kardiyovasküler olay için HR zeytinyağı grubunda 0,69 (%95 GA 0,53-0,91), kuruyemiş grubunda 0,72 (0,54-0,95) idi. Yazarlar randomizasyon protokol sapmaları nedeniyle önceki raporu geri çekip düzeltilmiş analiz yayımladı.",
+   "practice": "Yüksek riskli kişilere Akdeniz tarzı beslenmeyi zeytinyağı ve kuruyemiş ağırlıklı önermek, kardiyovasküler korunma için kanıt destekli bir diyet danışmanlığıdır.",
+   "why": "Diyetle kardiyovasküler korunma önerilerinde en çok anılan RKÇ'lerden biridir.",
+   "limits": "Randomizasyon sapmaları nedeniyle ilk yayın geri çekildi; sonuçlar ağırlıklı olarak İspanya'daki yüksek riskli kişilere aittir.",
+   "rel": []
+  },
+  {
+   "id": "cochrane-nrt-2018",
+   "pmid": "29852054",
+   "doi": "10.1002/14651858.CD000146.pub5",
+   "journal": "Cochrane Database Syst Rev",
+   "year": 2018,
+   "title_en": "Nicotine replacement therapy versus control for smoking cessation.",
+   "title": "Nikotin replasman tedavisi, sigarayı bırakma şansını %50-60 artırdı (Cochrane)",
+   "design": "Sistematik derleme ve meta-analiz · 133 çalışma, n=64.640",
+   "konu": "onleme-tarama",
+   "tags": [
+    "sigara bırakma",
+    "nikotin replasmanı",
+    "cochrane",
+    "yama"
+   ],
+   "what": "Bırakmaya motive kişilerde NRT, plasebo veya tedavisiz kontrolle karşılaştırıldı. Herhangi bir NRT için en az 6 ay sonra bırakma RR'si 1,55 idi (%95 GA 1,49-1,61); sakız için 1,49, yama için 1,64, nazal sprey için 2,02 bulundu. Etki ek destek yoğunluğundan büyük ölçüde bağımsızdı. Yan etkiler çoğunlukla ürüne bağlı lokal irritasyondu; göğüs ağrısı veya çarpıntı nadirdi.",
+   "practice": "Sigarayı bırakmak isteyen her hastaya lisanslı NRT formlarından birini önermek, yoğun destek olmasa da bırakma şansını artırır.",
+   "why": "Sigara bırakma farmakoterapisinin etkisini gösteren en sağlam kanıtlardan biridir.",
+   "limits": "Çalışmaların çoğu yüksek veya belirsiz yanlılık riskliydi (düşük riskli çalışmalarla sonuç değişmedi); yalnızca bırakmaya motive kişileri kapsar.",
+   "rel": []
+  },
+  {
+   "id": "nordicc-2022",
+   "pmid": "36214590",
+   "doi": "10.1056/NEJMoa2208375",
+   "journal": "N Engl J Med",
+   "year": 2022,
+   "title_en": "Effect of Colonoscopy Screening on Risks of Colorectal Cancer and Related Death.",
+   "title": "Tek seferlik kolonoskopi davetiyle 10 yılda kolorektal kanser riski azaldı, ölüm anlamlı azalmadı (NordICC)",
+   "design": "Pragmatik randomize çalışma · n=84.585",
+   "konu": "onleme-tarama",
+   "tags": [
+    "kolorektal kanser",
+    "kolonoskopi",
+    "tarama",
+    "davet"
+   ],
+   "what": "55-64 yaş arası kişiler tek seferlik tarama kolonoskopisine davet veya davetsiz olağan bakıma randomize edildi. Davet edilenlerin %42,0'si kolonoskopi yaptırdı. 10 yılda kolorektal kanser riski %0,98'e karşı %1,20 idi (RR 0,82; %95 GA 0,70-0,93). Kolorektal kanser ölümü RR 0,90 (%95 GA 0,64-1,16) bulundu ve anlamlı değildi; tüm nedenli ölümde fark yoktu.",
+   "practice": "Kolonoskopiye davet edilen kişilerin yalnızca bir kısmı tarama yaptırdığı için katılım oranını artırmak önemlidir; ölüm azalmasının gösterilememesi tarama danışmanlığında dikkate alınmalıdır.",
+   "why": "Kolonoskopi taramasının gerçek etkisini randomize olarak sınayan en önemli çalışmalardan biridir.",
+   "limits": "Davet edilenlerin %42,0'si katıldı, bu yüzden niyet-taraması analizinde etki tam tarama etkisini yansıtmayabilir; ölüm için izlem süresi sınırlı olabilir.",
+   "rel": []
+  },
+  {
+   "id": "antidepresan-siddet-2010",
+   "pmid": "20051569",
+   "doi": "10.1001/jama.2009.1943",
+   "journal": "JAMA",
+   "year": 2010,
+   "title_en": "Antidepressant drug effects and depression severity: a patient-level meta-analysis.",
+   "title": "Antidepresanların plaseboya üstünlüğü başlangıç depresyon şiddetiyle arttı; hafif-orta depresyonda fark çok küçük kaldı",
+   "design": "Bireysel hasta verili meta-analiz · 6 çalışma, 718 hasta",
+   "konu": "ruh-agri",
+   "tags": [
+    "depresyon",
+    "antidepresan",
+    "plasebo",
+    "şiddet"
+   ],
+   "what": "En az 6 hafta süren plasebo kontrollü antidepresan çalışmalarında hasta düzeyinde veri toplandı. HDRS puanı 23'ün altındaki hastalarda ilaç-plasebo farkının etki büyüklüğü 0,20'nin altında tahmin edildi. Fark, başlangıç şiddeti arttıkça büyüdü ve HDRS 25'te NICE'ın klinik anlamlılık eşiğini aştı. Çok şiddetli depresyonda yarar belirgindi.",
+   "practice": "Hafif ve orta şiddetli depresyonda ilaç tedavisinin plaseboya üstünlüğü ortalama olarak minimal olabileceğinden, ilk basamakta psikososyal yaklaşımlar ve şiddete göre tedavi kararı daha anlamlı hale gelir.",
+   "why": "Antidepresan yararının depresyon şiddetine bağlı olduğu fikrinin temel kaynaklarından biridir.",
+   "limits": "Yalnızca 6 çalışma ve 718 hasta; veri sağlayan yazarların çalışmalarıyla sınırlıydı ve sadece erişkin ayaktan hastalar dahil edildi.",
+   "rel": []
+  },
+  {
+   "id": "calm-anksiyete-2010",
+   "pmid": "20483968",
+   "doi": "10.1001/jama.2010.608",
+   "journal": "JAMA",
+   "year": 2010,
+   "title_en": "Delivery of evidence-based treatment for multiple anxiety disorders in primary care: a randomized controlled trial.",
+   "title": "Birinci basamakta koordineli anksiyete bakımı (CALM), olağan bakıma göre anksiyete belirtilerini daha çok azalttı",
+   "design": "Randomize kontrollü etkinlik çalışması · 17 birinci basamak kliniği, n=1004",
+   "konu": "ruh-agri",
+   "tags": [
+    "anksiyete",
+    "iş birlikçi bakım",
+    "bdt",
+    "birinci basamak"
+   ],
+   "what": "Panik, yaygın anksiyete, sosyal anksiyete ve TSSB'li 1004 hastada CALM modeli (BDT, ilaç veya her ikisi, bakım yöneticisi ve web tabanlı izlem) olağan bakımla karşılaştırıldı. BSI-12 farkı 6, 12 ve 18. aylarda anlamlıydı. 12. ayda yanıt oranı %63,66'ya karşı %44,68, remisyon %51,49'a karşı %33,28 idi (NNT yaklaşık 5,3 ve 5,5).",
+   "practice": "Birinci basamakta anksiyete bozukluklarında yapılandırılmış, bakım yöneticisi destekli ve BDT/ilaç seçeneği sunan bir bakım modeli olağan bakımdan daha iyi sonuç verebilir. Bu model ekip ve izlem altyapısı gerektirir.",
+   "why": "Birinci basamakta anksiyete için iş birlikçi bakım modellerinin temel çalışmalarındandır.",
+   "limits": "Çalışma ABD'deki 17 klinikte yapıldı; İngilizce veya İspanyolca konuşan 18-75 yaş hastalarla sınırlıdır ve sağlık sistemi altyapısı gerektirir.",
+   "rel": []
+  },
+  {
+   "id": "egzersiz-depresyon-cochrane-2013",
+   "pmid": "24026850",
+   "doi": "10.1002/14651858.CD004366.pub6",
+   "journal": "Cochrane Database Syst Rev",
+   "year": 2013,
+   "title_en": "Exercise for depression.",
+   "title": "Egzersiz depresyonda orta düzey etki gösterdi; yöntemsel olarak sağlam çalışmalarda etki küçüldü",
+   "design": "Cochrane sistematik derleme/meta-analiz · 39 RKÇ, 2326 katılımcı",
+   "konu": "ruh-agri",
+   "tags": [
+    "depresyon",
+    "egzersiz",
+    "psikoterapi",
+    "non-farmakolojik"
+   ],
+   "what": "Depresyonu olan erişkinlerde egzersiz, tedavisiz veya kontrol müdahalesiyle karşılaştırıldı. 35 çalışmada (1356 katılımcı) birleşik SMD -0,62 idi; yalnızca yöntemsel olarak sağlam 6 çalışmada etki anlamsız kaldı (SMD -0,18). Egzersiz psikolojik tedavi (SMD -0,03) ve ilaç tedavisi (SMD -0,11) ile anlamlı fark göstermedi.",
+   "practice": "Egzersiz hafif-orta depresyonda ilaç dışı bir seçenek olarak önerilebilir. Tedavi karşılaştırmaları az sayıda ve küçük çalışmaya dayandığı için üstünlük iddiası yapılmamalıdır.",
+   "why": "Depresyonda egzersiz önerisinin kanıt temelini oluşturan Cochrane derlemesidir.",
+   "limits": "Çalışmaların çoğunda yanlılık riski vardı ve yalnızca 6'sı yüksek kaliteliydi; karşılaştırmalar küçük örneklemlere dayanır.",
+   "rel": []
+  },
+  {
+   "id": "pace-parasetamol-2014",
+   "pmid": "25064594",
+   "doi": "10.1016/S0140-6736(14)60805-9",
+   "journal": "Lancet",
+   "year": 2014,
+   "title_en": "Efficacy of paracetamol for acute low-back pain: a double-blind, randomised controlled trial.",
+   "title": "Akut bel ağrısında parasetamol, plaseboya göre iyileşme süresini kısaltmadı (PACE)",
+   "design": "Çift kör, çift kukla, plasebo kontrollü RKÇ · 235 birinci basamak merkezi, n=1652",
+   "konu": "ruh-agri",
+   "tags": [
+    "bel ağrısı",
+    "parasetamol",
+    "akut ağrı",
+    "analjezik"
+   ],
+   "what": "Akut bel ağrılı hastalar düzenli parasetamol, gerektiğinde parasetamol veya plasebo almak üzere 1:1:1 randomize edildi (550, 549 ve 553 katılımcı). Ortanca iyileşme süresi düzenli grupta 17 gün, gerektiğinde grupta 17 gün, plasebo grubunda 16 gündü (düzenli ve plasebo HR 0,99). Yan etki bildiren hasta oranları gruplar arasında benzerdi.",
+   "practice": "Akut bel ağrısında parasetamolün iyileşmeyi hızlandırdığına dair destek bulunmadı; tedavi kararında hastaya doğru bilgi ve ağrı yönetimi önerileri öne çıkar.",
+   "why": "Akut bel ağrısında parasetamolün ilk basamak olarak önerilmesini sorgulatan temel bir çalışmadır.",
+   "limits": "Çalışma Sydney'deki birinci basamak merkezlerinde, akut bel ağrısında ve 3 aylık izlemle yapıldı; kronik ağrıya genellenemez.",
+   "rel": []
+  },
+  {
+   "id": "bti-kronik-uykusuzluk-2015",
+   "pmid": "26054060",
+   "doi": "10.7326/M14-2841",
+   "journal": "Ann Intern Med",
+   "year": 2015,
+   "title_en": "Cognitive Behavioral Therapy for Chronic Insomnia: A Systematic Review and Meta-analysis.",
+   "title": "Kronik uykusuzlukta bilişsel davranışçı tedavi (BDT-i) uykuya dalma süresini 19 dakika kısalttı, yan etki bildirilmedi",
+   "design": "Sistematik derleme ve meta-analiz · 20 çalışma, 1162 katılımcı",
+   "konu": "ruh-agri",
+   "tags": [
+    "uykusuzluk",
+    "bdt-i",
+    "non-farmakolojik",
+    "uyku"
+   ],
+   "what": "Kronik insomnisi olan erişkinlerde yüz yüze çok bileşenli BDT-i, etkisiz karşılaştırıcılarla kıyaslandı. Tedavi sonrası uykuya dalma süresi 19,03 dakika, uyku sonrası uyanıklık 26,00 dakika kısaldı; uyku etkinliği %9,91 arttı. Toplam uyku süresindeki artış 7,61 dakika olup anlamlı değildi. Değişimler sonraki zamanlarda da sürdü ve yan etki bildirilmedi.",
+   "practice": "Kronik uykusuzlukta ilaç başlamadan önce BDT-i ilk basamak olarak düşünülmelidir. Etki özellikle uykuya dalma ve gece uyanıklığında görülür.",
+   "why": "BDT-i'nin kronik uykusuzlukta birinci basamak tedavi olarak önerilmesinin temel dayanaklarından biridir.",
+   "limits": "Dar dahil etme ölçütleri nedeniyle eşlik eden tıbbi veya psikiyatrik hastalığı olanlara genellenemez; geç dönem tahminlerinin doğruluğu daha belirsizdi.",
+   "rel": []
+  },
+  {
+   "id": "antidepresan-21-ilac-2018",
+   "pmid": "29477251",
+   "doi": "10.1016/S0140-6736(17)32802-7",
+   "journal": "Lancet",
+   "year": 2018,
+   "title_en": "Comparative efficacy and acceptability of 21 antidepressant drugs for the acute treatment of adults with major depressive disorder: a systematic review and network meta-analysis.",
+   "title": "21 antidepresanın tamamı plasebodan etkiliydi; ilaçlar arası farklar küçük, tolerabilite farkları belirgindi",
+   "design": "Sistematik derleme ve ağ meta-analizi · 522 çalışma, 116.477 katılımcı",
+   "konu": "ruh-agri",
+   "tags": [
+    "depresyon",
+    "antidepresan",
+    "ağ meta-analizi",
+    "tolerabilite"
+   ],
+   "what": "Majör depresif bozukluğu olan erişkinlerde akut tedavide 21 antidepresan karşılaştırıldı. Tüm ilaçlar plasebodan etkiliydi (OR amitriptilinde 2,13, reboksetinde 1,37). Kabul edilebilirlik açısından yalnızca agomelatin ve fluoksetin plasebodan daha az bırakma ile ilişkiliydi, klomipramin ise plasebodan kötüydü. Plasebo kontrollü çalışmalar dahil edildiğinde ilaçlar arası farklar küçük kaldı.",
+   "practice": "İlaç seçiminde etkinlik farkları küçük olduğundan tolerabilite, yan etki profili ve hasta tercihi belirleyici olur. Sonuçlar bireysel hasta kararında rehber niteliğindedir.",
+   "why": "Antidepresan seçimine dair rehberlerde ve kanıt tartışmalarında sıkça başvurulan büyük bir ağ meta-analizidir.",
+   "limits": "Kanıtın kesinliği orta ile çok düşük arasındaydı; çalışmaların %9'u yüksek yanlılık riskliydi. Dirençli, psikotik veya ciddi eşlik eden hastalığı olan hastalar dışlandı.",
+   "rel": []
+  },
+  {
+   "id": "space-opioid-2018",
+   "pmid": "29509867",
+   "doi": "10.1001/jama.2018.0899",
+   "journal": "JAMA",
+   "year": 2018,
+   "title_en": "Effect of Opioid vs Nonopioid Medications on Pain-Related Function in Patients With Chronic Back Pain or Hip or Knee Osteoarthritis Pain: The SPACE Randomized Clinical Trial.",
+   "title": "Kronik bel/diz-kalça ağrısında opioid, opioid olmayan ilaçlara göre 12 ayda işlevi iyileştirmedi, yan etkiler arttı (SPACE)",
+   "design": "Pragmatik, 12 aylık randomize çalışma · n=240",
+   "konu": "ruh-agri",
+   "tags": [
+    "opioid",
+    "kronik ağrı",
+    "bel ağrısı",
+    "osteoartrit"
+   ],
+   "what": "Orta-şiddetli kronik bel veya kalça/diz osteoartrit ağrısı olan 240 hastada opioid ve opioid olmayan ilaç stratejileri 12 ay karşılaştırıldı. Ağrı ilişkili işlevde fark yoktu (BPI girişim 3,4'e karşı 3,3). Ağrı şiddeti opioid dışı grupta daha iyiydi (4,0'a karşı 3,5) ve ilaca bağlı belirtiler opioid grubunda daha fazlaydı (1,8'e karşı 0,9).",
+   "practice": "Kronik bel ve diz/kalça ağrısında opioid başlamak işlevsel yarar sağlamadı; parasetamol veya NSAİİ temelli strateji ilk tercih olarak tutulabilir. Bu bulgu opioid başlanmasını desteklemez.",
+   "why": "Kronik kas-iskelet ağrısında opioid başlanmasını sorgulayan önemli bir randomize çalışmadır.",
+   "limits": "Çalışma Gaziler İşleri birinci basamak kliniklerinde yapıldı; hastaların çoğu erkekti (kadın %13,0) ve örneklem küçüktü.",
+   "rel": []
+  },
+  {
+   "id": "kronik-bel-agrisi-egzersiz-2021",
+   "pmid": "34580864",
+   "doi": "10.1002/14651858.CD009790.pub2",
+   "journal": "Cochrane Database Syst Rev",
+   "year": 2021,
+   "title_en": "Exercise therapy for chronic low back pain.",
+   "title": "Egzersiz tedavisi kronik bel ağrısında ağrıyı azalttı; işlev ve diğer tedavilere göre farklar küçüktü",
+   "design": "Cochrane sistematik derleme/meta-analiz · 249 RKÇ",
+   "konu": "ruh-agri",
+   "tags": [
+    "bel ağrısı",
+    "egzersiz",
+    "kronik ağrı",
+    "non-farmakolojik"
+   ],
+   "what": "Kronik spesifik olmayan bel ağrılı erişkinlerde egzersiz, tedavisiz, olağan bakım veya plasebo ile karşılaştırıldı. En erken izlemde ağrıda MD -15,2 (klinik olarak önemli), işlev kısıtlılığında MD -6,8 bulundu ve işlevdeki fark önceden belirlenen önem eşiğini karşılamadı. Diğer konservatif tedavilere göre farklar küçüktü (ağrı MD -9,1). Egzersiz, eğitime tek başına göre üstündü; manuel terapiyle fark yoktu.",
+   "practice": "Kronik bel ağrısında egzersiz önerisi ağrı için makul bir tedavi seçeneğidir. Egzersiz türü tercihi hastanın uyumuna göre yapılabilir.",
+   "why": "Kronik bel ağrısında egzersizin yerine ilişkin temel Cochrane derlemesidir.",
+   "limits": "Çalışmaların çoğunda yanlılık riski vardı (%79'unda performans yanlılığı); kanıt düzeyi çoğunlukla orta idi. 2018 sonrası uygun çalışmalar henüz çıkarılmamıştır.",
+   "rel": []
+  },
+  {
+   "id": "fried-frajilite-fenotipi-2001",
+   "pmid": "11253156",
+   "doi": "10.1093/gerona/56.3.m146",
+   "journal": "J Gerontol A Biol Sci Med Sci",
+   "year": 2001,
+   "title_en": "Frailty in older adults: evidence for a phenotype.",
+   "title": "Frajilite beş ölçütle tanımlandı ve düşme, bağımlılık, yatış ve ölümü öngördü (Fried)",
+   "design": "Kohort (Cardiovascular Health Study) · n=5.317",
+   "konu": "yasli-palyatif",
+   "tags": [
+    "frajilite",
+    "fenotip",
+    "yaşlı",
+    "öngörü"
+   ],
+   "what": "65 yaş ve üzeri 5.317 kişide kilo kaybı, tükenmişlik, kavrama gücü zayıflığı, yavaş yürüme ve düşük fiziksel aktivite ölçütlerinden üçü veya fazlası frajilite olarak tanımlandı. Toplumdaki prevalans %6,9 bulundu. Bu fenotip 3 yıllık düşme, hareket kısıtlılığı veya günlük yaşam aktivitesi bağımlılığı, hastane yatışı ve ölümü bağımsız olarak öngördü (düzeltilmiş HR 1,29-2,24).",
+   "practice": "Yaşlı hastada frajiliteyi bu beş ölçütle sorgulamak, komorbidite ve engellilikten ayrı bir risk grubunu belirlemeye yardım eder; ara evredeki hastalar da yüksek risklidir.",
+   "why": "Frajilitenin klinik tanımı ve sonraki araştırma ile uygulamalar için en çok başvurulan çerçevelerden biridir.",
+   "limits": "Gözlemsel bir kohorttur ve nedensellik gösteremez; çalışma toplumdaki yaşlılarda yapıldı, bu yüzden hastane veya bakımevi popülasyonuna doğrudan uygulanamaz.",
+   "rel": []
+  },
+  {
+   "id": "temel-erken-palyatif-2010",
+   "pmid": "20818875",
+   "doi": "10.1056/NEJMoa1000678",
+   "journal": "N Engl J Med",
+   "year": 2010,
+   "title_en": "Early palliative care for patients with metastatic non-small-cell lung cancer.",
+   "title": "Metastatik akciğer kanserinde erken palyatif bakım yaşam kalitesini ve duygudurumu iyileştirdi",
+   "design": "Randomize kontrollü çalışma · n=151",
+   "konu": "yasli-palyatif",
+   "tags": [
+    "palyatif bakım",
+    "kanser",
+    "yaşam kalitesi",
+    "erken"
+   ],
+   "what": "Yeni tanılı metastatik küçük hücreli dışı akciğer kanserli hastalar standart onkolojik bakıma erken palyatif bakım eklenmesi veya yalnızca standart bakım için randomize edildi. Erken palyatif bakım grubunda 12. haftada yaşam kalitesi daha iyiydi (FACT-L 98,0'a karşı 91,5; P=0,03), depresif belirti daha az görüldü (%16'ya karşı %38) ve yaşamın sonunda agresif bakım daha az uygulandı (%33'e karşı %54). Medyan sağkalım 11,6'ya karşı 8,9 ay bulundu.",
+   "practice": "İleri evre hastalıkta palyatif bakımı yalnızca yaşamın son döneminde değil, tanıdan sonra erken devreye sokmak yaşam kalitesi açısından yararlı olabilir.",
+   "why": "Palyatif bakımın hastalık seyrine erken entegrasyonunu destekleyen en bilinen RKÇ'dir.",
+   "limits": "Tek merkezli, küçük bir çalışmadır ve yalnızca metastatik akciğer kanserinde yapıldı; birincil sonlanım 12. haftada yaşam kalitesiydi, sağkalım bulgusu ikincildi.",
+   "rel": []
+  },
+  {
+   "id": "finger-2015",
+   "pmid": "25771249",
+   "doi": "10.1016/S0140-6736(15)60461-5",
+   "journal": "Lancet",
+   "year": 2015,
+   "title_en": "A 2 year multidomain intervention of diet, exercise, cognitive training, and vascular risk monitoring versus control to prevent cognitive decline in at-risk elderly people (FINGER): a randomised controlled trial.",
+   "title": "Çok alanlı yaşam tarzı müdahalesi riskli yaşlılarda bilişsel işlevi korudu (FINGER)",
+   "design": "Çift kör randomize kontrollü çalışma · n=1.260",
+   "konu": "yasli-palyatif",
+   "tags": [
+    "demans",
+    "bilişsel gerileme",
+    "yaşam tarzı",
+    "önleme"
+   ],
+   "what": "60-77 yaş arası, CAIDE demans riski skoru en az 6 olan ve bilişi ortalama veya biraz altında olan kişiler 2 yıl boyunca diyet, egzersiz, bilişsel eğitim ve vasküler risk izlemi içeren müdahale veya genel sağlık önerisi için randomize edildi. Nöropsikolojik test bataryası Z skorundaki yıllık değişim farkı 0,022 idi (%95 GA 0,002-0,042; p=0,030). Müdahale grubunda yan etkiler daha fazlaydı (%7'ye karşı %1), en sık kas-iskelet ağrısıydı.",
+   "practice": "Bilişsel gerileme riski taşıyan yaşlılarda diyet, egzersiz, bilişsel uyarım ve vasküler risk kontrolünü birlikte ele alan bir yaklaşım bilişi korumaya yardım edebilir; etki büyüklüğü küçüktür.",
+   "why": "Demans önleme için çok alanlı yaşam tarzı yaklaşımının ilk büyük randomize kanıtlarından biridir.",
+   "limits": "2 yıllık bir kanıt-ilkesi çalışmasıdır; etki küçük, gruplar arasındaki fark sınırdadır ve demans gelişimi sonlanım olarak incelenmedi.",
+   "rel": []
+  },
+  {
+   "id": "destek-yuzeyleri-basi-yarasi-2015",
+   "pmid": "26333288",
+   "doi": "10.1002/14651858.CD001735.pub5",
+   "journal": "Cochrane Database Syst Rev",
+   "year": 2015,
+   "title_en": "Support surfaces for pressure ulcer prevention.",
+   "title": "Yüksek özellikli köpük yataklar riskli hastalarda basınç yarası insidansını azalttı (Cochrane)",
+   "design": "Sistematik derleme ve meta-analiz · 59 çalışma",
+   "konu": "yasli-palyatif",
+   "tags": [
+    "baskı yarası",
+    "yatak",
+    "önleme",
+    "cochrane"
+   ],
+   "what": "Basınç azaltıcı destek yüzeylerinin basınç yarası insidansına etkisi, standart yüzeylerle ve birbiriyle karşılaştırıldı. Standart hastane köpük yataklarına alternatif köpük yatakların riskli kişilerde basınç yarası insidansını azalttığı görüldü (RR 0,40; %95 GA 0,21-0,74). Tıbbi sınıf koyun postu da yarayı önledi (RR 0,56; %95 GA 0,32-0,97). Alternan basınçlı ve sabit düşük basınçlı cihazların birbirine üstünlüğü belirsizdi.",
+   "practice": "Evde veya kurumda yatağa bağımlı, yüksek riskli hastada standart yerine daha yüksek özellikli köpük yatak kullanmak makul bir önlemdir; hangi pahalı cihazın daha iyi olduğu belirsizdir.",
+   "why": "Basınç yarası önlemede destek yüzeyi seçiminin kanıt temelini özetleyen yaygın başvuru kaynağıdır.",
+   "limits": "Dahil edilen çalışmaların bir kısmı yarı-randomize ve kalitesi değişkendi; karşılaştırmalı etkililik belirsizliğini koruyor.",
+   "rel": []
+  },
+  {
+   "id": "cga-hastane-cochrane-2017",
+   "pmid": "28898390",
+   "doi": "10.1002/14651858.CD006211.pub3",
+   "journal": "Cochrane Database Syst Rev",
+   "year": 2017,
+   "title_en": "Comprehensive geriatric assessment for older adults admitted to hospital.",
+   "title": "Hastanede kapsamlı geriatrik değerlendirme, hastaların evde yaşayarak sağ kalma olasılığını artırdı (Cochrane)",
+   "design": "Sistematik derleme ve meta-analiz · 29 RKÇ, n=13.766",
+   "konu": "yasli-palyatif",
+   "tags": [
+    "geriatrik değerlendirme",
+    "hastane",
+    "bakımevi",
+    "cochrane"
+   ],
+   "what": "Akut bakım veya rehabilitasyon için yatan yaşlılarda hastane içi kapsamlı geriatrik değerlendirme, olağan bakımla karşılaştırıldı. CGA 3-12 ay sonra hastaların sağ ve evde olma olasılığını artırdı (RR 1,06; %95 GA 1,01-1,10) ve bakımevine yatışı azalttı (RR 0,80; %95 GA 0,72-0,89); mortalite ve bağımlılıkta fark yoktu (mortalite RR 1,00).",
+   "practice": "Kırılgan yaşlıların hastane yatışında geriatrik değerlendirme yapan ekiplere erişim, evde yaşamın sürdürülmesi için anlamlı olabilir; birinci basamak sevk ve taburculuk planlamasında bunu akılda tutmak yararlıdır.",
+   "why": "Yaşlı bakımında kapsamlı geriatrik değerlendirmenin yerini belirleyen temel sistematik derlemedir.",
+   "limits": "Çalışmalar çoğunlukla yüksek gelirli ülkelerdeki hastane ortamında yapıldı; maliyet-etkililik kanıtı düşük kesinlikteydi.",
+   "rel": []
+  },
+  {
+   "id": "cochrane-egzersiz-dusme-2019",
+   "pmid": "30703272",
+   "doi": "10.1002/14651858.CD012424.pub2",
+   "journal": "Cochrane Database Syst Rev",
+   "year": 2019,
+   "title_en": "Exercise for preventing falls in older people living in the community.",
+   "title": "Egzersiz, toplumda yaşayan yaşlılarda düşme hızını %23 azalttı (Cochrane)",
+   "design": "Sistematik derleme ve meta-analiz · 108 RKÇ, n=23.407",
+   "konu": "yasli-palyatif",
+   "tags": [
+    "düşme",
+    "egzersiz",
+    "denge",
+    "cochrane"
+   ],
+   "what": "60 yaş üstü, toplumda yaşayan kişilerde egzersiz müdahaleleri düşme önleme açısından incelendi. Egzersiz düşme hızını azalttı (RaR 0,77; %95 GA 0,71-0,83) ve en az bir kez düşenlerin oranını da düşürdü (RR 0,85). Denge ve fonksiyonel egzersizler düşme hızını %24, birden çok egzersiz türünün birleşimi %34 azalttı; Tai Chi için etki daha az kesindi.",
+   "practice": "Düşme riski olan yaşlıya denge ve fonksiyonel egzersiz içeren bir program önermek kanıta dayalıdır; yalnızca direnç egzersizi, dans veya yürüme programlarının düşmeye etkisi belirsizdir.",
+   "why": "Yaşlıda düşme önleme önerilerinin temel kanıt dayanaklarından biridir.",
+   "limits": "Çalışmaların çoğunda yanlılık riski belirsiz veya yüksekti; düşmeyle ilişkili kırık ve tıbbi başvuru gibi diğer sonuçlarda kanıt düşük kesinlikteydi.",
+   "rel": []
+  },
+  {
+   "id": "ewgsop2-sarkopeni-2019",
+   "pmid": "30312372",
+   "doi": "10.1093/ageing/afy169",
+   "journal": "Age Ageing",
+   "year": 2019,
+   "title_en": "Sarcopenia: revised European consensus on definition and diagnosis.",
+   "title": "Sarkopeni tanısında düşük kas gücü esas alındı; EWGSOP2 algoritması güncellendi",
+   "design": "Uzlaşı bildirisi (konsensus)",
+   "konu": "yasli-palyatif",
+   "tags": [
+    "sarkopeni",
+    "kas gücü",
+    "tanı",
+    "konsensus"
+   ],
+   "what": "Avrupa Yaşlılarda Sarkopeni Çalışma Grubu 2010 tanımını güncelledi. Sarkopeni bir kas hastalığı (kas yetmezliği) olarak ele alındı; düşük kas gücü temel özellik, düşük kas miktarı ve niteliği tanıyı doğrulayan bulgu, kötü fiziksel performans ise ağır sarkopeni göstergesi sayıldı. Vaka bulma, tanı ve ağırlık belirleme için algoritma ve ölçüm eşik değerleri sunuldu.",
+   "practice": "Sarkopeniden şüphelenilen yaşlıda önce kas gücüne bakmak ve gerekirse kas miktarıyla doğrulamak, erken tespit ve tedaviye yönlendirmek için pratik bir yoldur.",
+   "why": "Sarkopeninin güncel tanı ve derecelendirme yaklaşımının temel başvuru kaynağıdır.",
+   "limits": "Uzman uzlaşısıdır, randomize çalışma değildir; eşik değerlerin farklı popülasyonlarda doğrulanması gereklidir.",
+   "rel": []
+  },
+  {
+   "id": "operam-2021",
+   "pmid": "34257088",
+   "doi": "10.1136/bmj.n1585",
+   "journal": "BMJ",
+   "year": 2021,
+   "title_en": "Optimizing Therapy to Prevent Avoidable Hospital Admissions in Multimorbid Older Adults (OPERAM): cluster randomised controlled trial.",
+   "title": "Hastanede STOPP/START temelli ilaç optimizasyonu, ilaçla ilişkili hastane yatışını azaltmadı (OPERAM)",
+   "design": "Kümelenmiş randomize kontrollü çalışma · n=2008",
+   "konu": "yasli-palyatif",
+   "tags": [
+    "polifarmasi",
+    "deprescribing",
+    "stopp/start",
+    "multimorbidite"
+   ],
+   "what": "70 yaş üstü, en az 3 kronik hastalığı ve en az 5 ilacı olan hastanede yatan hastalarda doktor ve eczacı ortaklığıyla yapılan yapılandırılmış ilaç optimizasyonu usual care ile karşılaştırıldı. Müdahale grubunda %86,1 hastada uygunsuz reçeteleme saptandı ve %62,1'inde en az bir öneri uygulandı; ancak ilaçla ilişkili ilk yatış HR 0,95 (%95 GA 0,77-1,17) bulundu. Düşme ve ölüm için de anlamlı fark yoktu.",
+   "practice": "İlaç gözden geçirmeyle uygunsuz reçetelemeyi azaltmak mümkündür, ancak bu tek başına ilaçla ilişkili yatışı azaltmayı garanti etmez; deprescribing sonuçları hasta bazlı hedeflerle izlenmelidir.",
+   "why": "Polifarmasi yönetiminde yapılandırılmış ilaç gözden geçirmenin gerçek sonuç etkisini sınayan önemli bir olumsuz sonuçlu RKÇ'dir.",
+   "limits": "Hastanede yatan Avrupalı hastalarda yapıldı; müdahale ilaç reçetelemeyi değiştirdi ama birincil sonlanım etkilenmedi, bulgular birinci basamağa doğrudan genellenmeyebilir.",
+   "rel": []
+  }
+ ]
+}

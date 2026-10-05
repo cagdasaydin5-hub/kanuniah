@@ -1,9 +1,29 @@
 {
- "checked": "2026-09-26",
+ "checked": "2026-10-05",
  "log": [
   {
    "date": "2026-10-05",
    "items": [
+    {
+     "ad": "Eklenen makale",
+     "n": 7,
+     "href": "haftanin-makaleleri.html"
+    },
+    {
+     "ad": "Eklenen rehber",
+     "n": 1,
+     "href": "rehberler.html"
+    },
+    {
+     "ad": "Eklenen etkinlik",
+     "n": 1,
+     "href": "takvim.html"
+    },
+    {
+     "ad": "Güncellenen etkinlik",
+     "n": 9,
+     "href": "takvim.html"
+    },
     {
      "ad": "Eklenen mevzuat",
      "n": 22,
@@ -42,7 +62,7 @@
     {
      "ad": "Eklenen makale",
      "n": 9,
-     "href": "makaleler.html"
+     "href": "haftanin-makaleleri.html"
     },
     {
      "ad": "Eklenen rehber",
