@@ -1,7 +1,7 @@
 /* Trabzon Kanuni EAH Aile Hekimliği – service worker.
    Otomatik üretildi: tools/build_pwa.py. Elle düzenlemeyin; sürüm, dosyaların içeriğinden hesaplanır. */
 "use strict";
-var VERSION = "70139aacbf91";
+var VERSION = "67208c6501de";
 var CACHE = "kanuniah-" + VERSION;
 var RUNTIME = "kanuniah-runtime";
 var PRECACHE = [
@@ -96,6 +96,8 @@ self.addEventListener("fetch", function (e) {
   if (req.method !== "GET") return;
   var url = new URL(req.url);
   if (url.origin === self.location.origin) {
+    /* şifreli eğitim bölümü: hiçbir zaman önbelleğe alınmaz, doğrudan ağdan gelir */
+    if (url.pathname.indexOf("/egitim/") === 0 || url.pathname === "/egitim") return;
     if (req.mode === "navigate") { e.respondWith(networkFirst(req, "index.html")); return; }
     var path = url.pathname.slice(self.registration.scope.length - self.location.origin.length);
     if (/^data\/.*\.json$/.test(path) || /\.(html|webmanifest)$/.test(path)) { e.respondWith(networkFirst(req)); return; }

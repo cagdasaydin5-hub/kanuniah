@@ -365,12 +365,29 @@
     }
   };
 
+  /* giriş düğmesi: eğitim sayfası bir kez açılınca menüde "Eğitim" görünür (koruma sunucudaki şifredir; bu yalnızca görünümdür) */
+  (function () {
+    var KEY = "kah_giris", a = document.querySelector("a[data-login]"), egitimde = page === "egitim";
+    var on = false;
+    try { if (egitimde) localStorage.setItem(KEY, "1"); on = localStorage.getItem(KEY) === "1"; } catch (e) {}
+    var kok = egitimde ? "../" : "";
+    if (a && on) {
+      a.textContent = "Eğitim"; a.href = kok + "egitim/"; a.removeAttribute("data-login");
+      if (egitimde) a.setAttribute("aria-current", "page");
+    }
+    var c = document.getElementById("cikis");
+    if (c) c.addEventListener("click", function () {
+      try { localStorage.removeItem(KEY); } catch (e) {}
+      location.href = "../";
+    });
+  })();
+
   if (pages[page]) pages[page]();
 
   /* çevrimdışı çalışma ve telefona kurulum (PWA) */
   if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost" || location.hostname === "127.0.0.1")) {
     window.addEventListener("load", function () {
-      navigator.serviceWorker.register("sw.js").catch(function (e) { if (window.console) console.warn("Service worker kaydedilemedi", e); });
+      navigator.serviceWorker.register("/sw.js").catch(function (e) { if (window.console) console.warn("Service worker kaydedilemedi", e); });
       /* yeni sürüm yüklenince sayfayı bir kez yenile; eski önbellekteki betik kullanılmasın */
       if (navigator.serviceWorker.controller) {
         var yenilendi = false;

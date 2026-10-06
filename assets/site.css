@@ -37,6 +37,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 nav.main{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
 nav.main a{text-decoration:none;color:var(--ink);font-weight:600;font-size:15px;padding:7px 11px;border-radius:8px}
 nav.main a:hover{background:var(--sunk)}
+nav.main a.login{border:1px solid var(--line);margin-left:6px}
 nav.main a[aria-current="page"]{background:var(--pine-soft);color:var(--pine)}
 
 /* giriş */

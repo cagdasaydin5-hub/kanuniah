@@ -21,6 +21,7 @@ def nav(page):
     for p, h, t in NAV:
         cur = ' aria-current="page"' if p == page else ""
         out.append('      <a href="%s"%s>%s</a>' % (h, cur, t))
+    out.append('      <a class="login" href="egitim/" data-login>Giriş</a>')
     return "\n".join(out)
 
 
@@ -290,6 +291,32 @@ for name, html in PAGES.items():
     html = html.replace("{extra}", "")
     with open(name, "w", encoding="utf-8", newline="\n") as f:
         f.write(html)
+
+
+# Şifreli eğitim bölümü (egitim/): koruma sunucuda DirectAdmin "Parola Korumalı Dizinler" ile yapılır.
+# egitim/.htaccess ve .htpasswd depoda tutulmaz; sunucuda oluşturulur ve dağıtım onlara dokunmaz.
+import re
+def alt_klasor(html):
+    html = re.sub(r'(href|src)="(?!https?:|#|\.\./|mailto:)([^"]*)"',
+                  lambda m: '%s="../%s"' % (m.group(1), "" if m.group(2) in ("./", "") else m.group(2)), html)
+    return html.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<meta name="robots" content="noindex, nofollow">', 1)
+
+EGITIM = head("Eğitim · Trabzon Kanuni EAH Aile Hekimliği",
+    "Anabilim Dalı asistanlarına özel eğitim materyalleri ve oryantasyon rehberleri.",
+    "egitim/", "egitim") + """<div class="wrap">
+  <div class="page-head">
+    <div class="eyebrow">Yalnızca asistanlara</div>
+    <h1>Eğitim ve oryantasyon</h1>
+    <p class="lede">Anabilim Dalı asistanlarına yönelik oryantasyon rehberleri ve eğitim materyalleri burada toplanır. Bu bölüm arama motorlarında görünmez; hasta verisi içermez.</p>
+  </div>
+  <p class="empty">Materyaller yakında eklenecek.</p>
+  <p><button type="button" class="chip" id="cikis">Çıkış yap</button></p>
+</div>
+""" + FOOT
+EGITIM = alt_klasor(EGITIM.replace("{extra}", ""))
+os.makedirs("egitim", exist_ok=True)
+with open("egitim/index.html", "w", encoding="utf-8", newline="\n") as f:
+    f.write(EGITIM)
 
 urls = "".join("  <url><loc>%s/%s</loc><lastmod>%s</lastmod></url>\n" % (SITE, p, TODAY)
                for p in ["", "rehberler.html", "mevzuat.html", "makaleler.html", "haftanin-makaleleri.html", "araclar.html", "takvim.html", "hakkinda.html"])
