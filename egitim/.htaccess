@@ -1,0 +1,6 @@
+Options -Indexes
+DirectoryIndex index.php
+# Sayfa kaynakları yalnızca index.php üzerinden, giriş yapılınca verilir
+<FilesMatch "^(icerik|giris)\.html$">
+  Require all denied
+</FilesMatch>

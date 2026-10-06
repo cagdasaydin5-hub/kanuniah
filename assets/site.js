@@ -378,7 +378,6 @@
     var c = document.getElementById("cikis");
     if (c) c.addEventListener("click", function () {
       try { localStorage.removeItem(KEY); } catch (e) {}
-      location.href = "../";
     });
   })();
 

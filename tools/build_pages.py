@@ -293,15 +293,20 @@ for name, html in PAGES.items():
         f.write(html)
 
 
-# Şifreli eğitim bölümü (egitim/): koruma sunucuda DirectAdmin "Parola Korumalı Dizinler" ile yapılır.
-# egitim/.htaccess ve .htpasswd depoda tutulmaz; sunucuda oluşturulur ve dağıtım onlara dokunmaz.
+# Şifreli eğitim bölümü (egitim/): PHP oturum girişi. index.php giriş yoksa giris.html, varsa icerik.html verir.
+# Kullanıcı adı ve şifre özeti yalnızca sunucuda (egitim/.htsifre.php, kurulum.php ile oluşur); depoda yoktur.
 import re
 def alt_klasor(html):
     html = re.sub(r'(href|src)="(?!https?:|#|\.\./|mailto:)([^"]*)"',
                   lambda m: '%s="../%s"' % (m.group(1), "" if m.group(2) in ("./", "") else m.group(2)), html)
     return html.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<meta name="robots" content="noindex, nofollow">', 1)
 
-EGITIM = head("Eğitim · Trabzon Kanuni EAH Aile Hekimliği",
+def egitim_yaz(ad, html):
+    os.makedirs("egitim", exist_ok=True)
+    with open("egitim/" + ad, "w", encoding="utf-8", newline="\n") as f:
+        f.write(alt_klasor(html.replace("{extra}", "")))
+
+egitim_yaz("icerik.html", head("Eğitim · Trabzon Kanuni EAH Aile Hekimliği",
     "Anabilim Dalı asistanlarına özel eğitim materyalleri ve oryantasyon rehberleri.",
     "egitim/", "egitim") + """<div class="wrap">
   <div class="page-head">
@@ -310,13 +315,23 @@ EGITIM = head("Eğitim · Trabzon Kanuni EAH Aile Hekimliği",
     <p class="lede">Anabilim Dalı asistanlarına yönelik oryantasyon rehberleri ve eğitim materyalleri burada toplanır. Bu bölüm arama motorlarında görünmez; hasta verisi içermez.</p>
   </div>
   <p class="empty">Materyaller yakında eklenecek.</p>
-  <p><button type="button" class="chip" id="cikis">Çıkış yap</button></p>
+  <p><a class="chip" id="cikis" href="?cikis=1">Çıkış yap</a></p>
 </div>
-""" + FOOT
-EGITIM = alt_klasor(EGITIM.replace("{extra}", ""))
-os.makedirs("egitim", exist_ok=True)
-with open("egitim/index.html", "w", encoding="utf-8", newline="\n") as f:
-    f.write(EGITIM)
+""" + FOOT)
+
+egitim_yaz("giris.html", head("Giriş · Trabzon Kanuni EAH Aile Hekimliği",
+    "Asistan girişi.", "egitim/", "egitim-giris") + """<div class="wrap">
+  <form class="giris" method="post" action="./" autocomplete="on">
+    <div class="eyebrow">Yalnızca asistanlara</div>
+    <h1>Giriş</h1>
+    <p class="sub">Eğitim ve oryantasyon materyalleri için kullanıcı adı ve şifrenizi girin.</p>
+    <!--HATA-->
+    <label>Kullanıcı adı<input name="k" type="text" autocomplete="username" autocapitalize="none" required autofocus></label>
+    <label>Şifre<input name="s" type="password" autocomplete="current-password" required></label>
+    <button type="submit" class="btn">Giriş yap</button>
+  </form>
+</div>
+""" + FOOT)
 
 urls = "".join("  <url><loc>%s/%s</loc><lastmod>%s</lastmod></url>\n" % (SITE, p, TODAY)
                for p in ["", "rehberler.html", "mevzuat.html", "makaleler.html", "haftanin-makaleleri.html", "araclar.html", "takvim.html", "hakkinda.html"])

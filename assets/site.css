@@ -224,3 +224,14 @@ table.asi tr.done td.st{color:var(--pine);font-weight:700}
   .count{margin-left:0;width:100%}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* giriş formu (egitim/) */
+form.giris{max-width:380px;margin:48px auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;display:grid;gap:14px}
+form.giris h1{font-family:var(--serif);font-size:28px;margin:0}
+form.giris .sub{margin:0;color:var(--muted);font-size:15px}
+form.giris label{display:grid;gap:5px;font-weight:600;font-size:14.5px}
+form.giris input{font:inherit;font-weight:400;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+form.giris input:focus{outline:2px solid var(--pine);outline-offset:1px}
+form.giris .btn{font:inherit;font-weight:700;padding:11px 14px;border:0;border-radius:8px;background:var(--pine);color:#fff;cursor:pointer}
+.giris-hata{margin:0;padding:9px 12px;border-radius:8px;background:#fbe9e7;color:#8a1c10;font-size:14.5px;font-weight:600}
+a.chip{text-decoration:none;display:inline-block}
