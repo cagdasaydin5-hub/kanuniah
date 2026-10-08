@@ -210,6 +210,65 @@
     return { dikkat: dikkat, bilgi: bilgi };
   }
 
+
+  /* ---------- yapıştırılan sonuç metnini okuma ---------- */
+  function katla(t) {
+    return String(t).replace(/İ/g, "i").replace(/I/g, "i").toLowerCase().replace(/ı/g, "i").replace(/ş/g, "s").replace(/ğ/g, "g").replace(/ü/g, "u").replace(/ö/g, "o").replace(/ç/g, "c");
+  }
+  /* alan: [takma adlar]; null = tanınır ama kullanılmaz (yanlış eşleşmeyi önlemek için metni tüketir) */
+  var ADLAR = {
+    hb: ["hemoglobin", "hgb", "hb"], rbc: ["eritrosit", "rbc", "kirmizi kan hucresi", "kirmizi kure"], mcv: ["mcv"], mch: ["mch"],
+    rdw: ["rdw-cv", "rdw cv", "rdw"], plt: ["trombosit", "plt"], ferritin: ["ferritin"],
+    demir: ["serum demiri", "demir (fe)", "demir", "iron"], tibc: ["demir baglama kapasitesi", "total demir baglama kapasitesi", "tdbk", "tibc"],
+    na: ["sodyum", "na"], cl: ["klorur", "klor", "cl"], hco3: ["bikarbonat", "hco3"], ca: ["kalsiyum", "ca"], alb: ["albumin", "alb"],
+    kr: ["kreatinin", "creatinine"], ure: ["ure", "urea"], bun: ["bun", "kan ure azotu"], ast: ["ast", "sgot"], alt: ["alt", "sgpt"],
+    glk: ["aclik kan sekeri", "kan sekeri", "glukoz", "glucose", "glikoz", "aks"], a1c: ["hemoglobin a1c", "glikozile hemoglobin", "hba1c", "a1c"],
+    ins: ["insulin"], tk: ["total kolesterol", "toplam kolesterol", "kolesterol"], hdl: ["hdl kolesterol", "hdl-kolesterol", "hdl"], tg: ["trigliserid", "trigliserit", "tg"]
+  };
+  var YOKSAY = ["rdw-sd", "rdw sd", "mchc", "kreatinin klirensi", "kreatinin kinaz", "kreatin kinaz", "ldl kolesterol", "ldl-kolesterol", "ldl", "vldl", "ubbk", "uibc",
+    "hematokrit", "hct", "mpv", "pdw", "pct", "wbc", "lokosit", "lokosit", "notrofil", "lenfosit", "monosit", "eozinofil", "bazofil", "potasyum", "k+", "idrar", "crp", "tsh", "gfr", "egfr", "ck-mb", "total bilirubin", "direkt bilirubin", "alp", "ggt", "ldh", "magnezyum", "fosfor"];
+  var ALIAS = (function () {
+    var l = [];
+    Object.keys(ADLAR).forEach(function (k) { ADLAR[k].forEach(function (a) { l.push([a, k]); }); });
+    YOKSAY.forEach(function (a) { l.push([a, null]); });
+    l.sort(function (x, y) { return y[0].length - x[0].length; });
+    return l;
+  })();
+  function kacir(a) { return a.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+  var ALIAS_RE = new RegExp("(^|[^a-z0-9])(" + ALIAS.map(function (x) { return kacir(x[0]); }).join("|") + ")(?![a-z0-9])", "g");
+  var ALIAS_MAP = (function () { var m = {}; ALIAS.forEach(function (x) { if (!(x[0] in m)) m[x[0]] = x[1]; }); return m; })();
+
+  /* Metindeki test adlarını bulur; her adın ardından gelen ilk sayıyı sonuç sayar (sonraki test adına ya da satır sonuna kadar). */
+  function metinOku(metin) {
+    var t = katla(metin), bul = [], m, sonuc = { degerler: {}, yas: NaN, cins: "", okunan: [] };
+    var ym = /(?:^|[^a-z])yas\s*[:=]?\s*(\d{1,3})(?![\d.,])/.exec(t); if (ym) sonuc.yas = parseInt(ym[1], 10);
+    var cm = /cinsiyet\s*[:=]?\s*(kadin|erkek|bayan|k|e)\b/.exec(t); if (cm) sonuc.cins = (cm[1] === "kadin" || cm[1] === "bayan" || cm[1] === "k") ? "k" : "e";
+    ALIAS_RE.lastIndex = 0;
+    while ((m = ALIAS_RE.exec(t))) {
+      var bas = m.index + m[1].length;
+      bul.push({ ad: m[2], alan: ALIAS_MAP[m[2]], bas: bas, son: bas + m[2].length });
+      ALIAS_RE.lastIndex = bas + m[2].length;
+    }
+    bul.forEach(function (b, i) {
+      if (!b.alan) return;
+      var bitis = i + 1 < bul.length ? bul[i + 1].bas : t.length, parca = t.slice(b.son, bitis), nl = parca.indexOf("\n");
+      if (nl >= 0) parca = parca.slice(0, nl);
+      var re = /([<>]?)\s*(-?\d+(?:[.,]\d+)?)/g, n;
+      while ((n = re.exec(parca))) {
+        if (n[1]) break; // "<0,5" gibi sınır değerleri sonuç değildir
+        var v = parseFloat(n[2].replace(",", "."));
+        if (!isFinite(v)) break;
+        var a = b.alan;
+        if (a === "bun") { a = "ure"; v = v * 2.14; }
+        if (a === "plt" && v > 2000) v = v / 1000;
+        if (a === "rdw" && v > 30) break; // RDW-SD (fL) olabilir
+        if (!(a in sonuc.degerler)) { sonuc.degerler[a] = Math.round(v * 100) / 100; sonuc.okunan.push([a, sonuc.degerler[a]]); }
+        break;
+      }
+    });
+    return sonuc;
+  }
+
   /* ---------- kart ---------- */
   var CSS = ".lab [hidden]{display:none!important}" +
     ".lab fieldset{border:1px solid var(--line);border-radius:6px;margin:12px 0 0;padding:8px 12px 12px}" +
@@ -224,7 +283,8 @@
     ".lab .bul b{display:block}.lab .bul p{margin:4px 0 0;font-size:14.5px}" +
     ".lab .ks{margin:6px 0 0;padding:0;list-style:none;font-size:12.5px;color:var(--muted)}.lab .ks li{margin:2px 0}" +
     ".lab h4{margin:16px 0 4px;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}" +
-    ".lab .not{font-size:13.5px;color:var(--muted);margin:10px 0 0}";
+    ".lab .not{font-size:13.5px;color:var(--muted);margin:10px 0 0}" +
+    ".lab textarea.yap{width:100%;box-sizing:border-box;font:inherit;font-size:15px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 10px;resize:vertical}";
 
   var ALANLAR = [
     ["Hemogram", [["hb", "Hb", "g/dL"], ["rbc", "RBC", "10¹²/L"], ["mcv", "MCV", "fL"], ["mch", "MCH", "pg"], ["rdw", "RDW-CV", "%"], ["plt", "Trombosit", "10⁹/L (bin/µL)"]]],
@@ -245,6 +305,19 @@
     var form = el("form", "tool-body lab"); form.addEventListener("submit", function (e) { e.preventDefault(); });
     host.appendChild(form);
     form.appendChild(el("p", "not", "Bu araç tanı koymaz; girdiğiniz değerlere ve hasta bilgisine göre dikkat edilecek noktaları hatırlatır. Boş bıraktığınız değerler atlanır. Referans aralıkları laboratuvara göre değişir. Hasta adı ve kimlik bilgisi girmeyin; hiçbir şey kaydedilmez ya da gönderilmez."));
+
+    var fp = el("fieldset"); fp.appendChild(el("legend", null, "Sonuçları yapıştırın"));
+    var ta = document.createElement("textarea"); ta.name = "yapistir"; ta.rows = 6; ta.className = "yap";
+    ta.placeholder = "HBYS ya da laboratuvar çıktısını kopyalayıp buraya yapıştırın (hemogram, biyokimya, lipid, HbA1c… hepsi birlikte). Değerler aşağıdaki alanlara otomatik dolar; yanlış okunanı alanda düzeltebilirsiniz. Yaş ve cinsiyet metinde varsa onlar da okunur.";
+    fp.appendChild(ta); var okuma = el("p", "not"); fp.appendChild(okuma); form.appendChild(fp);
+    ta.addEventListener("input", function () {
+      var r = metinOku(ta.value), n = 0, gor = [];
+      Object.keys(r.degerler).forEach(function (k) { var inp = form.elements[k]; if (inp) { inp.value = String(r.degerler[k]).replace(".", ","); n++; gor.push(k.toUpperCase() + " " + String(r.degerler[k]).replace(".", ",")); } });
+      if (ok(r.yas) && form.elements.yas) form.elements.yas.value = String(r.yas);
+      if (r.cins && form.elements.cins) form.elements.cins.value = r.cins;
+      okuma.textContent = ta.value.trim() ? (n ? n + " değer okundu: " + gor.join(", ") + (ok(r.yas) ? "; yaş " + r.yas : "") + (r.cins ? "; " + (r.cins === "k" ? "kadın" : "erkek") : "") + ". Birimleri (mg/dL, g/dL) ve değerleri kontrol edin." : "Tanınan bir test adı bulunamadı.") : "";
+      run();
+    });
 
     var f0 = el("fieldset"); f0.appendChild(el("legend", null, "Hasta")); var g0 = el("div", "grid");
     function sayi(ad, etiket, birim) {
@@ -293,15 +366,15 @@
       else out.appendChild(el("p", "not", "Girilen değerlerle uyarı çıkmadı. Bu, normal olduğu anlamına gelmez."));
       if (r.bilgi.length) { out.appendChild(el("h4", null, "Hesaplanan değerler ve notlar")); r.bilgi.forEach(function (x) { out.appendChild(bulKart(x, "bl")); }); }
     }
-    form.addEventListener("input", run); form.addEventListener("change", run);
-    reset.addEventListener("click", function () { form.reset(); run(); });
+    form.addEventListener("input", function (e) { if (e.target !== ta) run(); }); form.addEventListener("change", run);
+    reset.addEventListener("click", function () { form.reset(); okuma.textContent = ""; run(); });
     run();
   }
 
   var TOOL = {
     id: "lab", g: "lab", t: "Laboratuvar değerlendirici",
     d: "Hemogram, biyokimya, elektrolit, KCFT, lipid ve glukozdan hesaplanan göstergeler; yaş, cinsiyet, hastalık ve ilaca göre dikkat edilecek noktalar, her biri kaynaklı.",
-    kw: "laboratuvar tahlil hemogram cbc bft kcft elektrolit mentzer talasemi demir eksikliği anemi indeks düzeltilmiş sodyum kalsiyum anyon açığı egfr fib-4 apri hba1c homa ldl friedewald ferritin mcv rdw",
+    kw: "yapıştır kopyala laboratuvar tahlil hemogram cbc bft kcft elektrolit mentzer talasemi demir eksikliği anemi indeks düzeltilmiş sodyum kalsiyum anyon açığı egfr fib-4 apri hba1c homa ldl friedewald ferritin mcv rdw",
     custom: build,
     src: [S.patra, S.kumar, S.ntaios, S.inker, S.kdigo, S.shah, S.mcpherson, S.spasovski, S.katz, S.hillier, S.payne, S.figge, S.ada, S.temd, S.pasricha],
     note: "Bu araç tanı koymaz. Eşiklerin ve formüllerin kaynakları her uyarının altında verilir; kaynağı doğrulanamayan eşikler kullanılmamıştır (ör. potasyum ve sodyum için üst sınır uyarıları, ferritin kesim noktası). WHO anemi eşiklerinin bağlantısı eklenmemiştir. Değerler tarayıcıda hesaplanır, kaydedilmez ya da gönderilmez."
@@ -311,5 +384,5 @@
     var go = function () { if (window.KanuniEk) window.KanuniEk.register([["lab", "Laboratuvar"]], [TOOL]); };
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", go); else go();
   }
-  if (typeof module !== "undefined") module.exports = { degerlendir: degerlendir, egfr: egfr, fib4: fib4, apri: apri, indeksler: indeksler, kalsiyumDuzeltilmis: kalsiyumDuzeltilmis, sodyumDuzeltilmis: sodyumDuzeltilmis, anyonAcigi: anyonAcigi, anyonAcigiDuzeltilmis: anyonAcigiDuzeltilmis, ldlFriedewald: ldlFriedewald, homaIr: homaIr, ortGlukoz: ortGlukoz, TOOL: TOOL };
+  if (typeof module !== "undefined") module.exports = { metinOku: metinOku, degerlendir: degerlendir, egfr: egfr, fib4: fib4, apri: apri, indeksler: indeksler, kalsiyumDuzeltilmis: kalsiyumDuzeltilmis, sodyumDuzeltilmis: sodyumDuzeltilmis, anyonAcigi: anyonAcigi, anyonAcigiDuzeltilmis: anyonAcigiDuzeltilmis, ldlFriedewald: ldlFriedewald, homaIr: homaIr, ortGlukoz: ortGlukoz, TOOL: TOOL };
 })();

@@ -35,3 +35,25 @@ test("her uyarının kaynağı var (MCV makrositoz hariç)", () => {
   const r = L.degerlendir({ yas: 55, cins: "k", hb: 9, rbc: 4.5, mcv: 70, mch: 21, rdw: 18, na: 128, glk: 250, a1c: 7.2, acl: true, kr: 1.5, durum: {}, ilac: { tiyazid: true } });
   r.dikkat.filter(x => !/makrositoz/.test(x.b)).forEach(x => assert.ok(x.k.length, x.b));
 });
+
+test("yapıştırılan metin okunur", () => {
+  const metin = [
+    "Yaş: 55  Cinsiyet: Kadın",
+    "HEMOGLOBİN\t10,2\tg/dL\t12-16",
+    "Eritrosit (RBC)\t4,59\t10^6/uL",
+    "MCV 77 fL  MCH 22 pg  MCHC 31 g/dL  RDW-CV 17,3 %  RDW-SD 48",
+    "Trombosit 245.000 /uL",
+    "Hemoglobin A1c (HbA1c) 7,2 %",
+    "Glukoz (açlık) 126 mg/dL",
+    "Sodyum 128 mmol/L  Potasyum 4,1",
+    "Kreatinin 1,5  Kreatinin klirensi 45",
+    "HDL Kolesterol 40  LDL Kolesterol 120  Total Kolesterol 200  Trigliserid 150",
+    "BUN 20"
+  ].join("\n");
+  const r = L.metinOku(metin), d = r.degerler;
+  assert.equal(r.yas, 55); assert.equal(r.cins, "k");
+  assert.equal(d.hb, 10.2); assert.equal(d.rbc, 4.59); assert.equal(d.mcv, 77); assert.equal(d.mch, 22);
+  assert.equal(d.rdw, 17.3); assert.equal(d.plt, 245); assert.equal(d.a1c, 7.2); assert.equal(d.glk, 126);
+  assert.equal(d.na, 128); assert.equal(d.kr, 1.5); assert.equal(d.hdl, 40); assert.equal(d.tk, 200); assert.equal(d.tg, 150);
+  assert.equal(d.ure, 42.8);
+});
