@@ -33,8 +33,46 @@
     adag: ["Nathan DM ve ark. Diabetes Care 2008;31:1473 (HbA1c – ortalama glukoz)", "https://pubmed.ncbi.nlm.nih.gov/18540046/"],
     homa: ["Matthews DR ve ark. Diabetologia 1985;28:412 (HOMA)", "https://pubmed.ncbi.nlm.nih.gov/3899825/"],
     tyg: ["Simental-Mendía LE ve ark. Metab Syndr Relat Disord 2008;6:299 (TyG indeksi)", "https://pubmed.ncbi.nlm.nih.gov/19067533/"],
+    lam: ["Lam JR ve ark. JAMA 2013;310:2435 (PPI/H2 blokerleri ve B12 eksikliği)", "https://doi.org/10.1001/jama.2013.280490"],
+    hess: ["Hess MW ve ark. Aliment Pharmacol Ther 2012;36:405 (PPI'ya bağlı hipomagnezemi, sistematik derleme)", "https://doi.org/10.1111/j.1365-2036.2012.05201.x"],
+    aroda: ["Aroda VR ve ark. J Clin Endocrinol Metab 2016;101:1754 (uzun süreli metformin ve B12 eksikliği, DPPOS)", "https://doi.org/10.1210/jc.2015-3754"],
+    peters: ["Peters AL ve ark. Diabetes Care 2015;38:1687 (SGLT2 inhibitörleri ve ötglisemik ketoasidoz)", "https://doi.org/10.2337/dc15-0843"],
+    antoniou: ["Antoniou T ve ark. Arch Intern Med 2010;170:1045 (TMP-SMX, ACE-i/ARB ve hiperkalemi)", "https://doi.org/10.1001/archinternmed.2010.142"],
+    palmer: ["Palmer BF, Clegg DJ. Nephrol Dial Transplant 2024;39:1097 (hiperkalemi ve RAAS inhibitörleri)", "https://doi.org/10.1093/ndt/gfae056"],
+    baker: ["Baker M, Perazella MA. Am J Kidney Dis 2020;76:546 (KBH'de NSAİİ güvenliği)", "https://doi.org/10.1053/j.ajkd.2020.03.023"],
+    newman: ["Newman CB ve ark. Arterioscler Thromb Vasc Biol 2019;39:e38 (AHA: statin güvenliği)", "https://doi.org/10.1161/ATV.0000000000000073"],
+    botros: ["Botros M, Sikaris KA. Clin Biochem Rev 2013;34:117 (De Ritis oranı)", "https://pubmed.ncbi.nlm.nih.gov/24353357/"],
+    rubio: ["Rubio-Tapia A ve ark. ACG çölyak kılavuzu. Am J Gastroenterol 2013;108:656", "https://doi.org/10.1038/ajg.2013.79"],
+    picker: ["De Picker L ve ark. Psychosomatics 2014;55:536 (antidepresanlar ve hiponatremi)", "https://doi.org/10.1016/j.psym.2014.01.010"],
     friedewald: ["Friedewald WT ve ark. Clin Chem 1972;18:499", "https://pubmed.ncbi.nlm.nih.gov/4337382/"]
   };
+
+  /* ---------- ilaç → sınıf (data/etkilesim/ilaclar.json'daki id'ler) ---------- */
+  var SINIF = {
+    metformin: ["metformin"],
+    hipoglisemik: ["gliklazid", "glimepirid", "glibenklamid", "repaglinid", "insulin-glarjin", "insulin-detemir", "insulin-degludek", "insulin-aspart", "insulin-lispro", "insulin-glulisin", "insan-insulini"],
+    sglt2: ["empagliflozin", "dapagliflozin"],
+    tiyazid: ["hidroklorotiyazid", "klortalidon", "indapamid"],
+    doak: ["apiksaban", "rivaroksaban", "dabigatran", "edoksaban"],
+    demir: ["demir"],
+    raas: ["ramipril", "perindopril", "enalapril", "lisinopril", "kaptopril", "trandolapril", "zofenopril", "valsartan", "losartan", "irbesartan", "kandesartan", "telmisartan", "olmesartan", "sakubitril-valsartan"],
+    mra: ["spironolakton", "eplerenon"],
+    ppi: ["omeprazol", "esomeprazol", "lansoprazol", "pantoprazol", "rabeprazol"],
+    nsaii: ["ibuprofen", "naproksen", "diklofenak", "deksketoprofen", "ketoprofen", "flurbiprofen", "etodolak", "meloksikam", "piroksikam", "lornoksikam", "tenoksikam", "indometazin", "ketorolak", "selekoksib", "etorikoksib", "nimesulid"],
+    ssri: ["sertralin", "essitalopram", "sitalopram", "fluoksetin", "paroksetin", "fluvoksamin", "venlafaksin"],
+    statin: ["atorvastatin", "rosuvastatin", "simvastatin", "pravastatin", "fluvastatin", "pitavastatin"],
+    tmpsmx: ["tmp-smx"]
+  };
+  /* İlaç id listesi → {sinif: true} ve sınıfı olmayan id'ler */
+  function ilacSiniflari(idler) {
+    var s = {}, yok = [];
+    idler.forEach(function (id) {
+      var bulundu = false;
+      Object.keys(SINIF).forEach(function (k) { if (SINIF[k].indexOf(id) >= 0) { s[k] = true; bulundu = true; } });
+      if (!bulundu) yok.push(id);
+    });
+    return { siniflar: s, yok: yok };
+  }
 
   var EPS = 1e-9;
   function ok(x) { return typeof x === "number" && isFinite(x); }
@@ -79,6 +117,8 @@
     function dk(b, m, k) { dikkat.push({ b: b, m: m, k: k || [] }); }
     function bl(b, m, k) { bilgi.push({ b: b, m: m, k: k || [] }); }
 
+    var egfrV = (ok(g.kr) && yasVar && cinsVar) ? egfr(g.kr, g.yas, kadin) : NaN;
+
     /* --- hemogram --- */
     var esik = D.gebe ? 11 : (cinsVar ? (kadin ? 12 : 13) : NaN);
     var anemi = ok(g.hb) && ok(esik) && g.hb < esik;
@@ -121,11 +161,30 @@
     }
     if (ok(g.demir) && ok(g.tibc) && g.tibc > 0) bl("Transferrin satürasyonu: %" + fmt(g.demir / g.tibc * 100, 0), "Demir / TİBC × 100.", []);
 
+    /* --- ilaç ve hastalık bağlamı (eşik içermeyen, kaynaklı izlem hatırlatmaları) --- */
+    var b12ipucu = anemi || makro, b12on = b12ipucu ? "Anemi ya da makrositoz var; " : "";
+    if (I.metformin) (b12ipucu ? dk : bl)("Metformin kullanımı: B12 eksikliği açısından", b12on + "uzun süreli metformin kullanımında biyokimyasal B12 eksikliği ve anemi daha sık bulunmuştur, kullanım yılı arttıkça risk artar; B12 düzeyi ölçümü düşünülür.", [S.aroda]);
+    if (I.ppi) {
+      (b12ipucu ? dk : bl)("Proton pompa inhibitörü kullanımı: B12 eksikliği açısından", b12on + "iki yıl ve üzeri PPI kullanımı B12 eksikliği ile ilişkilidir (OR yaklaşık 1,65; yüksek dozda daha belirgin).", [S.lam]);
+      bl("Proton pompa inhibitörü kullanımı: hipomagnezemi", "PPI'ya bağlı hipomagnezemi bir sınıf etkisidir, medyan 5,5 yıllık kullanımdan sonra ortaya çıkmıştır (14 gün–13 yıl); ilaç kesilince hızla düzelir. Belirtili ya da açıklanamayan hipokalsemi/hipokalemide magnezyum bakılır.", [S.hess]);
+    }
+    if (I.tmpsmx && I.raas) dk("TMP-SMX ve ACE inhibitörü/ARB birlikte", "66 yaş üstü hastalarda amoksisiline göre yaklaşık 7 kat (düzeltilmiş OR 6,7) hiperkalemi nedenli hastane yatışı riski bildirilmiştir. Potasyum ve kreatinin ölçümü gerekir; uygunsa başka antibiyotik düşünülür.", [S.antoniou]);
+    if (I.raas || I.mra) bl("ACE inhibitörü / ARB / MRA: potasyum ve kreatinin izlemi", "Bu araçta potasyum alanı yoktur; potasyumu kendi laboratuvar aralığınıza göre değerlendirin. Hiperkalemide önce ilaç öyküsü gözden geçirilir; ancak RAAS inhibitörünün kesilmesi ya da doz azaltılması kalp yetersizliği ve proteinürik böbrek hastalığında sonuçlar için zararlı olabileceğinden önerilmez, potasyum bağlayıcılar ve SGLT2 inhibitörleri kullanımı sürdürmeye yardım edebilir.", [S.palmer]);
+    if (I.nsaii && (D.kby || D.kky || (ok(egfrV) && egfrV < 60)))
+      dk("NSAİİ kullanımı: böbrek / kalp yetersizliği riski", "NSAİİ; akut böbrek hasarı, GFH kaybının ilerlemesi, elektrolit bozuklukları ve hipervolemi ile kalp yetersizliğinde kötüleşme ile ilişkilidir. Risk GFH düzeyine ve eşlik eden hastalıklara göre değişir; kullanım bireysel ve temkinli değerlendirilmelidir.", [S.baker]);
+    if (I.sglt2) bl("SGLT2 inhibitörü: ötglisemik ketoasidoz", "Glukoz yüksek olmasa da ketoasidoz gelişebilir; bulantı, kusma, halsizlik ya da metabolik asidoz varsa idrar/serum ketonu bakılır.", [S.peters]);
+    if (I.statin && (ok(g.alt) || ok(g.ast))) bl("Statin kullanımı: karaciğer enzimleri", "Ciddi statin hepatotoksisitesi (≈%0,001) ve rabdomiyoliz (<%0,1) nadirdir; kas yakınmalarının çoğu CK yükselmeden olur. Enzim yüksekliğinde başka nedenler de birlikte değerlendirilir.", [S.newman]);
+    if ((D.alkol || D.yagli || D.karaciger) && ok(g.ast) && ok(g.alt) && g.alt > 0)
+      bl("AST/ALT (De Ritis) oranı = " + fmt(g.ast / g.alt, 2), "Alkol ilişkili hastalıkta AST genellikle ALT'den yüksektir; ancak oran hastalığın süresine ve ağırlığına göre değişir (alkolden günler sonra ALT yükselebilir, akut viral hepatitte AST>ALT ağır seyri gösterebilir). Kronik viral hepatit, alkol ve yağlı karaciğerde yüksek oran fibrozis/siroz gibi uzun dönem komplikasyonlarla ilişkilidir. Tek başına tanı koydurmaz.", [S.botros]);
+    if (D.colyak && (anemi || mikro)) bl("Çölyak / emilim bozukluğu ve anemi", "Demir eksikliği anemisi ve karaciğer enzim yüksekliği çölyak hastalığının sık görülen sistem dışı bulgularıdır. Yineleyen ya da dirençli anemide glütensiz diyete uyum ve serolojik izlem gözden geçirilir.", [S.rubio]);
+
     /* --- elektrolit ve metabolik --- */
     if (ok(g.na) && g.na < 135) {
       var m = "Hiponatremi tanımı: serum sodyum <135 mmol/L.";
+      var nk = [S.spasovski];
       if (I.tiyazid) m += " Tiyazid ya da tiyazid benzeri diüretik kullanılıyor: ilaca bağlı hiponatremi akla getirilmeli.";
-      dk("Sodyum düşük (" + fmt(g.na, 0) + " mmol/L)", m + " Ölçülen osmolalite, hacim durumu ve idrar sodyumu ile nedeni ayrılır.", [S.spasovski]);
+      if (I.ssri) { m += " SSRI/venlafaksin kullanılıyor: antidepresana bağlı hiponatremi akla getirilmeli" + (I.tiyazid ? "; tiyazid ile birlikteliği riski belirgin artırır (OR yaklaşık 11–13)" : "") + "."; nk.push(S.picker); }
+      dk("Sodyum düşük (" + fmt(g.na, 0) + " mmol/L)", m + " Ölçülen osmolalite, hacim durumu ve idrar sodyumu ile nedeni ayrılır.", nk);
     }
     if (ok(g.na) && ok(g.glk) && g.glk > 100) {
       var k1 = sodyumDuzeltilmis(g.na, g.glk, 1.6), k2 = sodyumDuzeltilmis(g.na, g.glk, 2.4);
@@ -296,8 +355,11 @@
     ["Lipid", [["tk", "Toplam kolesterol", "mg/dL"], ["hdl", "HDL", "mg/dL"], ["tg", "Trigliserid", "mg/dL"]]]
   ];
   var DURUM = [["dm", "Diyabet"], ["kky", "Kalp yetersizliği"], ["kby", "Kronik böbrek hastalığı"], ["karaciger", "Bilinen siroz / ileri karaciğer hastalığı"],
-    ["enflamasyon", "Aktif enflamasyon / kronik hastalık"], ["hemoglobinopati", "Bilinen talasemi / hemoglobinopati"], ["transfuzyon", "Son aylarda transfüzyon"], ["gebe", "Gebe"]];
-  var ILAC = [["metformin", "Metformin"], ["hipoglisemik", "Sülfonilüre ya da insülin"], ["tiyazid", "Tiyazid / indapamid"], ["doak", "DOAK (apiksaban, rivaroksaban, edoksaban, dabigatran)"], ["demir", "Demir tedavisi (son 3 ay)"]];
+    ["enflamasyon", "Aktif enflamasyon / kronik hastalık"], ["hemoglobinopati", "Bilinen talasemi / hemoglobinopati"], ["transfuzyon", "Son aylarda transfüzyon"], ["gebe", "Gebe"],
+    ["alkol", "Alkol kullanım bozukluğu / düzenli alkol"], ["colyak", "Çölyak / emilim bozukluğu"], ["yagli", "Yağlı karaciğer (MASLD) ya da kronik viral hepatit"]];
+  var ILAC = [["metformin", "Metformin"], ["hipoglisemik", "Sülfonilüre, glinid ya da insülin"], ["sglt2", "SGLT2 inhibitörü (empagliflozin, dapagliflozin)"], ["tiyazid", "Tiyazid / indapamid"],
+    ["raas", "ACE inhibitörü / ARB / sakubitril-valsartan"], ["mra", "Spironolakton / eplerenon"], ["nsaii", "NSAİİ (ibuprofen, diklofenak, naproksen, meloksikam…)"], ["ppi", "Proton pompa inhibitörü"],
+    ["ssri", "SSRI ya da venlafaksin"], ["statin", "Statin"], ["tmpsmx", "Trimetoprim-sülfametoksazol"], ["doak", "DOAK (apiksaban, rivaroksaban, edoksaban, dabigatran)"], ["demir", "Demir tedavisi (son 3 ay)"]];
 
   function build(host) {
     var Ek = window.KanuniEk, el = Ek.el;
@@ -331,7 +393,32 @@
     function chk(ad, etiket) { var l = el("label", "chk"); var c = document.createElement("input"); c.type = "checkbox"; c.name = ad; l.appendChild(c); l.appendChild(el("span", null, etiket)); return l; }
     DURUM.forEach(function (x) { f0.appendChild(chk("d_" + x[0], x[1])); });
     form.appendChild(f0);
-    var fi = el("fieldset"); fi.appendChild(el("legend", null, "Kullandığı ilaçlar")); ILAC.forEach(function (x) { fi.appendChild(chk("i_" + x[0], x[1])); }); form.appendChild(fi);
+    var fi = el("fieldset"); fi.appendChild(el("legend", null, "Kullandığı ilaçlar"));
+    var tai = document.createElement("textarea"); tai.name = "ilacYapistir"; tai.rows = 3; tai.className = "yap";
+    tai.placeholder = "Sürekli ilaç listesini yapıştırın ya da yazın (etken madde ya da ticari ad; ör. Glucophage, Coversyl, Nexium, Lipitor…). Tanınan ilaçların sınıfı aşağıda otomatik işaretlenir.";
+    fi.appendChild(tai); var ilacOku = el("p", "not"); fi.appendChild(ilacOku);
+    var ilacVeri = null, ilacBekle = null;
+    function ilacYukle() {
+      if (ilacVeri) return Promise.resolve(ilacVeri);
+      if (!ilacBekle) ilacBekle = fetch("data/etkilesim/ilaclar.json").then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (j) {
+        var E = window.KanuniEtkilesim; E.indeksle(j.ilaclar); ilacVeri = j.ilaclar; return ilacVeri;
+      });
+      return ilacBekle;
+    }
+    function ilacTara() {
+      if (!tai.value.trim()) { ilacOku.textContent = ""; return; }
+      if (!window.KanuniEtkilesim) { ilacOku.textContent = "İlaç veritabanı bu sayfada yüklenemedi; sınıfları aşağıdan işaretleyin."; return; }
+      ilacYukle().then(function (liste) {
+        var bul = window.KanuniEtkilesim.metinden(liste, tai.value), r = ilacSiniflari(bul.map(function (d) { return d.id; }));
+        ILAC.forEach(function (x) { var c = form.elements["i_" + x[0]]; if (r.siniflar[x[0]] && c) c.checked = true; });
+        var ad = function (idler) { return bul.filter(function (d) { return idler.indexOf(d.id) >= 0; }).map(function (d) { return d.ad; }).join(", "); };
+        var ilk = bul.filter(function (d) { return r.yok.indexOf(d.id) < 0; }).map(function (d) { return d.ad; }).join(", ");
+        ilacOku.textContent = bul.length ? bul.length + " ilaç tanındı. Sınıfı işaretlenen: " + (ilk || "yok") + (r.yok.length ? ". Sınıf kuralı bulunmayan (uyarı üretmez): " + ad(r.yok) : "") + ". Yanlış tanınanı aşağıdan kaldırabilirsiniz." : "Tanınan bir ilaç adı bulunamadı.";
+        run();
+      }).catch(function () { ilacOku.textContent = "İlaç veritabanı yüklenemedi; sınıfları aşağıdan işaretleyin."; });
+    }
+    tai.addEventListener("input", ilacTara);
+    ILAC.forEach(function (x) { fi.appendChild(chk("i_" + x[0], x[1])); }); form.appendChild(fi);
 
     ALANLAR.forEach(function (grup) {
       var fs = el("fieldset"); fs.appendChild(el("legend", null, grup[0])); var gr = el("div", "grid");
@@ -366,17 +453,17 @@
       else out.appendChild(el("p", "not", "Girilen değerlerle uyarı çıkmadı. Bu, normal olduğu anlamına gelmez."));
       if (r.bilgi.length) { out.appendChild(el("h4", null, "Hesaplanan değerler ve notlar")); r.bilgi.forEach(function (x) { out.appendChild(bulKart(x, "bl")); }); }
     }
-    form.addEventListener("input", function (e) { if (e.target !== ta) run(); }); form.addEventListener("change", run);
-    reset.addEventListener("click", function () { form.reset(); okuma.textContent = ""; run(); });
+    form.addEventListener("input", function (e) { if (e.target !== ta && e.target !== tai) run(); }); form.addEventListener("change", run);
+    reset.addEventListener("click", function () { form.reset(); okuma.textContent = ""; ilacOku.textContent = ""; run(); });
     run();
   }
 
   var TOOL = {
     id: "lab", g: "lab", t: "Laboratuvar değerlendirici",
     d: "Hemogram, biyokimya, elektrolit, KCFT, lipid ve glukozdan hesaplanan göstergeler; yaş, cinsiyet, hastalık ve ilaca göre dikkat edilecek noktalar, her biri kaynaklı.",
-    kw: "yapıştır kopyala laboratuvar tahlil hemogram cbc bft kcft elektrolit mentzer talasemi demir eksikliği anemi indeks düzeltilmiş sodyum kalsiyum anyon açığı egfr fib-4 apri hba1c homa ldl friedewald ferritin mcv rdw",
+    kw: "yapıştır kopyala laboratuvar tahlil hemogram cbc bft kcft elektrolit ilaç ilaçlar metformin ppi statin nsaii mentzer talasemi demir eksikliği anemi indeks düzeltilmiş sodyum kalsiyum anyon açığı egfr fib-4 apri hba1c homa ldl friedewald ferritin mcv rdw",
     custom: build,
-    src: [S.patra, S.kumar, S.ntaios, S.inker, S.kdigo, S.shah, S.mcpherson, S.spasovski, S.katz, S.hillier, S.payne, S.figge, S.ada, S.temd, S.pasricha],
+    src: [S.patra, S.kumar, S.ntaios, S.inker, S.kdigo, S.shah, S.mcpherson, S.spasovski, S.katz, S.hillier, S.payne, S.figge, S.ada, S.temd, S.pasricha, S.aroda, S.lam, S.hess, S.peters, S.antoniou, S.palmer, S.baker, S.newman, S.botros, S.rubio, S.picker],
     note: "Bu araç tanı koymaz. Eşiklerin ve formüllerin kaynakları her uyarının altında verilir; kaynağı doğrulanamayan eşikler kullanılmamıştır (ör. potasyum ve sodyum için üst sınır uyarıları, ferritin kesim noktası). WHO anemi eşiklerinin bağlantısı eklenmemiştir. Değerler tarayıcıda hesaplanır, kaydedilmez ya da gönderilmez."
   };
 
@@ -384,5 +471,5 @@
     var go = function () { if (window.KanuniEk) window.KanuniEk.register([["lab", "Laboratuvar"]], [TOOL]); };
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", go); else go();
   }
-  if (typeof module !== "undefined") module.exports = { metinOku: metinOku, degerlendir: degerlendir, egfr: egfr, fib4: fib4, apri: apri, indeksler: indeksler, kalsiyumDuzeltilmis: kalsiyumDuzeltilmis, sodyumDuzeltilmis: sodyumDuzeltilmis, anyonAcigi: anyonAcigi, anyonAcigiDuzeltilmis: anyonAcigiDuzeltilmis, ldlFriedewald: ldlFriedewald, homaIr: homaIr, ortGlukoz: ortGlukoz, TOOL: TOOL };
+  if (typeof module !== "undefined") module.exports = { ilacSiniflari: ilacSiniflari, SINIF: SINIF, metinOku: metinOku, degerlendir: degerlendir, egfr: egfr, fib4: fib4, apri: apri, indeksler: indeksler, kalsiyumDuzeltilmis: kalsiyumDuzeltilmis, sodyumDuzeltilmis: sodyumDuzeltilmis, anyonAcigi: anyonAcigi, anyonAcigiDuzeltilmis: anyonAcigiDuzeltilmis, ldlFriedewald: ldlFriedewald, homaIr: homaIr, ortGlukoz: ortGlukoz, TOOL: TOOL };
 })();

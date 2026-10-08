@@ -57,3 +57,21 @@ test("yapıştırılan metin okunur", () => {
   assert.equal(d.na, 128); assert.equal(d.kr, 1.5); assert.equal(d.hdl, 40); assert.equal(d.tk, 200); assert.equal(d.tg, 150);
   assert.equal(d.ure, 42.8);
 });
+
+test("ilaç sınıfları ve bağlama göre kaynaklı uyarılar", () => {
+  const L = require("../assets/arac-lab.js"), E = require("../assets/arac-etkilesim.js");
+  const liste = require("../data/etkilesim/ilaclar.json").ilaclar; E.indeksle(liste);
+  const bul = E.metinden(liste, "Glucophage 1000 mg, Coversyl 5 mg, Nexium, Lipitor, Jardiance, Bactrim, Voltaren");
+  const r = L.ilacSiniflari(bul.map(d => d.id));
+  for (const k of ["metformin", "raas", "ppi", "statin", "sglt2", "tmpsmx", "nsaii"]) assert.ok(r.siniflar[k], k);
+  for (const k of Object.keys(L.SINIF)) for (const id of L.SINIF[k]) assert.ok(liste.some(d => d.id === id), id);
+  const g = { yas: 70, cins: "e", kr: 1.8, alt: 30, ast: 25, na: 130, ilac: { raas: true, tmpsmx: true, nsaii: true, ssri: true, tiyazid: true, sglt2: true, statin: true }, durum: {} };
+  const o = L.degerlendir(g), hepsi = o.dikkat.concat(o.bilgi);
+  const baslik = (s) => hepsi.find(x => x.b.indexOf(s) >= 0);
+  assert.ok(baslik("TMP-SMX"), "tmp-smx"); assert.ok(baslik("NSAİİ"), "nsaii"); assert.ok(baslik("SGLT2"), "sglt2"); assert.ok(baslik("Statin"), "statin");
+  assert.ok(/SSRI/.test(baslik("Sodyum düşük").m));
+  hepsi.forEach(x => { if (/^(Metformin|Proton|TMP|ACE|NSA|SGLT2|Statin|AST\/ALT|Çölyak)/.test(x.b)) assert.ok(x.k.length, x.b); });
+  const g2 = { hb: 10, cins: "e", ilac: { metformin: true, ppi: true }, durum: { colyak: true } };
+  const o2 = L.degerlendir(g2).dikkat.map(x => x.b).join("|");
+  assert.ok(/Metformin/.test(o2) && /Proton/.test(o2));
+});

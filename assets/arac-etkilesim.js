@@ -269,6 +269,7 @@
   }
 
   if (typeof module !== "undefined") module.exports = { KAY: KAY, BILGI: BILGI, fold: fold, indeksle: indeksle, ara: ara, coz: coz, metinden: metinden, analiz: analiz, kuralNotlari: kuralNotlari, EN_COK: EN_COK };
+  if (typeof window !== "undefined") window.KanuniEtkilesim = { fold: fold, indeksle: indeksle, metinden: metinden };
   if (typeof window === "undefined" || typeof document === "undefined") return;
 
   /* ---------- arayüz ---------- */
