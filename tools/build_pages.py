@@ -6,7 +6,7 @@ import os, json, datetime
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 SITE = "https://kanuniah.tr"
-ORG = "Trabzon Kanuni Eğitim ve Araştırma Hastanesi Aile Hekimliği Anabilim Dalı"
+ORG = "Trabzon Kanuni Eğitim ve Araştırma Hastanesi Aile Hekimliği Kliniği"
 TODAY = json.load(open("data/meta.json", encoding="utf-8"))["checked"]
 
 NAV = [("home", "./", "Ana sayfa"), ("rehberler", "rehberler.html", "Rehberler"),
@@ -57,7 +57,7 @@ def head(title, desc, path, page):
   <div class="wrap">
     <a class="brand" href="./" aria-label="Ana sayfa">
       <img src="assets/emblem.svg" alt="" width="36" height="36">
-      <span><b>Trabzon Kanuni EAH</b><small>Aile Hekimliği Anabilim Dalı</small></span>
+      <span><b>Trabzon Kanuni EAH</b><small>Aile Hekimliği Kliniği</small></span>
     </a>
     <nav class="main" aria-label="Ana menü">
 {nav}
@@ -103,10 +103,10 @@ BAR_GUIDES = """  <div class="bar">
 PAGES = {}
 
 PAGES["index.html"] = head("Trabzon Kanuni EAH Aile Hekimliği",
-    "Trabzon Kanuni EAH Aile Hekimliği Anabilim Dalı'nın güncel rehber, mevzuat, makale ve araç kaynağı: aile hekimliği asistanları için.",
+    "Trabzon Kanuni EAH Aile Hekimliği Kliniği'nin güncel rehber, mevzuat, makale ve araç kaynağı: aile hekimliği asistanları için.",
     "", "home") + """<div class="wrap">
   <section class="hero">
-    <div class="eyebrow">Trabzon Kanuni EAH · Aile Hekimliği Anabilim Dalı</div>
+    <div class="eyebrow">Trabzon Kanuni EAH · Aile Hekimliği Kliniği</div>
     <h1>Klinikte ihtiyaç duyulan her şey, tek yerde.</h1>
     <p class="lede">Güncel rehberler, mevzuat, haftanın önemli makaleleri ve klinik hesaplayıcılar. Her pazartesi kontrol edilir; son kontrol <b id="checked"></b>.</p>
     <label class="search" for="q">%s<input id="q" type="search" placeholder="Rehber, makale ya da araç arayın: ör. hipertansiyon, ESKOM, CURB-65, Braden, aşı" autocomplete="off"></label>
@@ -200,14 +200,15 @@ PAGES["makaleler.html"] = head("Makaleler · Trabzon Kanuni EAH Aile Hekimliği"
 """ % ICON + FOOT
 
 PAGES["hakkinda.html"] = head("Hakkımızda · Trabzon Kanuni EAH Aile Hekimliği",
-    "Trabzon Kanuni EAH Aile Hekimliği Anabilim Dalı'nın bilgi portalı: amaç, içerik ilkeleri ve güncelleme yöntemi.",
+    "Trabzon Kanuni EAH Aile Hekimliği Kliniği'nin bilgi portalı: amaç, içerik ilkeleri ve güncelleme yöntemi.",
     "hakkinda.html", "hakkinda") + """<div class="wrap">
   <div class="page-head">
     <div class="eyebrow">Hakkımızda</div>
     <h1>Bu site kimin, ne için?</h1>
   </div>
   <div class="prose">
-    <p>Bu site, <b>%s</b> tarafından, anabilim dalının aile hekimliği asistanlarının ihtiyaç duyduğu güncel bilgiye tek yerden ve hızlıca ulaşabilmesi için hazırlanır. İlk olarak evde sağlık biriminin ihtiyaçlarıyla başladı; zamanla kliniğin tüm alanlarını kapsayacak şekilde genişliyor.</p>
+    <p>Bu site, <b>%s</b> tarafından, kliniğin aile hekimliği asistanlarının ihtiyaç duyduğu güncel bilgiye tek yerden ve hızlıca ulaşabilmesi için hazırlanır. İlk olarak evde sağlık biriminin ihtiyaçlarıyla başladı; zamanla kliniğin tüm alanlarını kapsayacak şekilde genişliyor.</p>
+    <p>Klinik, Sağlık Bakanlığı'na bağlı Kanuni Eğitim ve Araştırma Hastanesi bünyesindedir; asistanlık eğitimi Trabzon Üniversitesi ile iş birliği içinde verilir.</p>
 
     <h2>Neler var?</h2>
     <ul>
@@ -307,12 +308,12 @@ def egitim_yaz(ad, html):
         f.write(alt_klasor(html.replace("{extra}", "")))
 
 egitim_yaz("icerik.html", head("Eğitim · Trabzon Kanuni EAH Aile Hekimliği",
-    "Anabilim Dalı asistanlarına özel eğitim materyalleri ve oryantasyon rehberleri.",
+    "Klinik asistanlarına özel eğitim materyalleri ve oryantasyon rehberleri.",
     "egitim/", "egitim") + """<div class="wrap">
   <div class="page-head">
     <div class="eyebrow">Yalnızca asistanlara</div>
     <h1>Eğitim ve oryantasyon</h1>
-    <p class="lede">Anabilim Dalı asistanlarına yönelik oryantasyon rehberleri ve eğitim materyalleri burada toplanır. Bu bölüm arama motorlarında görünmez; hasta verisi içermez.</p>
+    <p class="lede">Klinik asistanlarına yönelik oryantasyon rehberleri ve eğitim materyalleri burada toplanır. Bu bölüm arama motorlarında görünmez; hasta verisi içermez.</p>
   </div>
   <p class="empty">Materyaller yakında eklenecek.</p>
   <p><a class="chip" id="cikis" href="?cikis=1">Çıkış yap</a></p>
