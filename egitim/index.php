@@ -30,7 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $hata = 'Kullanıcı adı veya şifre hatalı.';
 }
 
-if (!empty($_SESSION['ok'])) { readfile(__DIR__ . '/icerik.html'); exit; }
+if (!empty($_SESSION['ok'])) {
+    $k = $_GET['k'] ?? '';
+    $f = (preg_match('/^[a-z0-9-]+$/', $k) && is_file(__DIR__ . "/sayfa-$k.html")) ? "sayfa-$k.html" : 'icerik.html';
+    readfile(__DIR__ . '/' . $f); exit;
+}
 
 $h = file_get_contents(__DIR__ . '/giris.html');
 $kutu = $hata ? '<p class="giris-hata" role="alert">' . htmlspecialchars($hata) . '</p>' : '';

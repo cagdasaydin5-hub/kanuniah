@@ -311,7 +311,7 @@ def alt_klasor(html):
 def egitim_yaz(ad, html):
     os.makedirs("egitim", exist_ok=True)
     with open("egitim/" + ad, "w", encoding="utf-8", newline="\n") as f:
-        f.write(alt_klasor(html.replace("{extra}", "")).replace("../dl.php", "dl.php"))
+        f.write(alt_klasor(html.replace("{extra}", "")).replace("../dl.php", "dl.php").replace("../?", "?"))
 
 egitim_yaz("icerik.html", head("Eğitim · Trabzon Kanuni EAH Aile Hekimliği",
     "Klinik asistanlarına özel eğitim materyalleri ve oryantasyon rehberleri.",
@@ -319,14 +319,28 @@ egitim_yaz("icerik.html", head("Eğitim · Trabzon Kanuni EAH Aile Hekimliği",
   <div class="page-head">
     <div class="eyebrow">Yalnızca asistanlara</div>
     <h1>Eğitim ve oryantasyon</h1>
-    <p class="lede">Klinik asistanlarına yönelik oryantasyon rehberleri ve eğitim materyalleri burada toplanır. Bu bölüm arama motorlarında görünmez; hasta verisi içermez.</p>
+    <p class="lede">Klinik asistanlarına yönelik oryantasyon rehberleri ve eğitim materyalleri klasörler halinde toplanır. Bu bölüm arama motorlarında görünmez; hasta verisi içermez.</p>
   </div>
-  <h2>Sunum şablonları</h2>
-  <p>Tüm şablonlarda kapak aynıdır; yalnızca içerik çerçevesi farklıdır. Her dosya kapak, bir içerik çerçevesi ve bölüm ayırıcı slayttan oluşur. Beğendiğinizi indirip kullanın.</p>
-  <p><img src="dl.php?d=onizleme-kapak.png" alt="Ortak kapak" width="267" height="150"> <b>Ortak kapak</b></p>
   <div class="grid">
-""" + "".join('    <a class="tile" href="dl.php?d=Sunum-Sablonu-Cerceve-%02d.pptx" download><img src="dl.php?d=onizleme-%02d.png" alt="Çerçeve %d" width="267" height="150"><b>Çerçeve %d</b><span>PowerPoint (.pptx)</span></a>\n' % (i, i, i, i) for i in range(1, 12)) + """  </div>
+    <a class="tile" href="?k=sablonlar"><b>Sunum şablonları</b><span>Ortak kapaklı 11 çerçeve · PowerPoint</span></a>
+  </div>
   <p><a class="chip" id="cikis" href="?cikis=1">Çıkış yap</a></p>
+</div>
+""" + FOOT)
+
+egitim_yaz("sayfa-sablonlar.html", head("Sunum şablonları · Trabzon Kanuni EAH Aile Hekimliği",
+    "Asistan sunumları için PowerPoint şablonları.", "egitim/", "egitim") + """<div class="wrap">
+  <div class="page-head">
+    <div class="eyebrow"><a href="?">Eğitim</a> › Sunum şablonları</div>
+    <h1>Sunum şablonları</h1>
+    <p class="lede">Tüm şablonlarda kapak aynıdır; yalnızca içerik çerçevesi farklıdır. Her dosya kapak, bir içerik çerçevesi ve bölüm ayırıcı slayttan oluşur.</p>
+  </div>
+  <p><a class="chip" href="dl.php?d=Sunum-Sablonlari-Tumu.zip" download>Hepsini indir (.zip, 11 dosya)</a></p>
+  <h2>Ortak kapak</h2>
+  <p><img src="dl.php?d=onizleme-kapak.jpg" alt="Ortak kapak" width="480" height="270"></p>
+  <h2>İçerik çerçeveleri</h2>
+  <div class="grid">
+""" + "".join('    <a class="tile" href="dl.php?d=Sunum-Sablonu-Cerceve-%02d.pptx" download><img src="dl.php?d=onizleme-%02d.jpg" alt="Çerçeve %d" width="480" height="270" loading="lazy"><b>Çerçeve %d</b><span>İndir (.pptx)</span></a>\n' % (i, i, i, i) for i in range(1, 12)) + """  </div>
 </div>
 """ + FOOT)
 
