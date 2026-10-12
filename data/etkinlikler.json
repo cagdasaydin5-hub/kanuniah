@@ -291,7 +291,7 @@
     "influenza"
    ],
    "not": "Konuşmacı Prof. Dr. Tufan Tükek. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "asm30-kuru-goz-2026",
@@ -318,7 +318,7 @@
     "göz"
    ],
    "not": null,
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "asm30-gorh-2026",
@@ -345,7 +345,7 @@
     "gastroenteroloji"
    ],
    "not": null,
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "asm30-konstipasyon-2026",
@@ -372,7 +372,7 @@
     "gastroenteroloji"
    ],
    "not": null,
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "asm30-dispepsi-2026",
@@ -399,7 +399,7 @@
     "gastroenteroloji"
    ],
    "not": null,
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "tahud-tv-obezite-2026",
@@ -426,7 +426,7 @@
     "obezite"
    ],
    "not": "Konuşmacı Prof. Dr. Mehmet Sargın. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "tahud-tv-adolesan-asi-2026",
@@ -454,7 +454,7 @@
     "adolesan"
    ],
    "not": "Konuşmacı Prof. Dr. Zehra Aycan. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "asm30-agri-kesici-2026",
@@ -482,7 +482,7 @@
     "hukuk"
    ],
    "not": null,
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "asm30-ortopedi-2026",
@@ -510,7 +510,7 @@
     "sevk"
    ],
    "not": null,
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "imsa-2026",
@@ -562,7 +562,7 @@
    },
    "konu": [],
    "not": null,
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "tahud-29-ekim-2026",
@@ -591,7 +591,34 @@
     "bildiri hazırlama"
    ],
    "not": "Asistanlara yönelik. AHEKON ile aynı güne denk geliyor.",
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
+  },
+  {
+   "id": "asm30-magnezyum-2026",
+   "ad": "ASM'de 30 Dakika: Kas – İskelet Sağlığında Magnezyumun Yeri",
+   "tur": "webinar",
+   "duzey": 4,
+   "kapsam": "ulusal",
+   "baslangic": "2026-11-02",
+   "bitis": "2026-11-02",
+   "saat": "12.15–13.00",
+   "sehir": null,
+   "yer": "asmde30dakika.com.tr",
+   "bicim": "cevrimici",
+   "duzenleyen": "İSTAHED Akademi (İstanbul Aile Hekimleri Derneği)",
+   "ucret": null,
+   "url": "https://istahedakademi.com/event/kas-iskelet-sagliginda-magnezyumun-yeri/",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [
+    "kas-iskelet"
+   ],
+   "not": "Site üyeliği gerekir (yalnızca hekimlere açık).",
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "asm30-dispepsi-2-2026",
@@ -618,7 +645,7 @@
     "gastroenteroloji"
    ],
    "not": null,
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "asm30-antihistaminik-2026",
@@ -645,7 +672,35 @@
     "alerji"
    ],
    "not": null,
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
+  },
+  {
+   "id": "asm30-kuru-oksuruk-2026",
+   "ad": "ASM'de 30 Dakika: ASM'de Kuru Öksürük Hastası Yönetimi",
+   "tur": "webinar",
+   "duzey": 4,
+   "kapsam": "ulusal",
+   "baslangic": "2026-11-05",
+   "bitis": "2026-11-05",
+   "saat": "12.15–13.00",
+   "sehir": null,
+   "yer": "asmde30dakika.com.tr",
+   "bicim": "cevrimici",
+   "duzenleyen": "İSTAHED Akademi (İstanbul Aile Hekimleri Derneği)",
+   "ucret": null,
+   "url": "https://istahedakademi.com/event/asmde-kuru-oksuruk-hastasi-yonetimi/",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [
+    "solunum",
+    "öksürük"
+   ],
+   "not": "Site üyeliği gerekir (yalnızca hekimlere açık).",
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "ikon-2026",
@@ -670,7 +725,7 @@
    },
    "konu": [],
    "not": null,
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "tahud-tv-maternal-asi-2026",
@@ -698,7 +753,7 @@
     "gebelik"
    ],
    "not": "Konuşmacı Prof. Dr. Dilek Şahin. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "ah-arastirma-gunleri-2026",
@@ -714,7 +769,7 @@
    "bicim": "yuz-yuze",
    "duzenleyen": "Aile Hekimliği Akademisi",
    "ucret": "ucretli",
-   "url": "https://ailehekimligiakademisi.org/",
+   "url": "https://ailehekimligiakademisi.org/kayit_28",
    "kaynak": null,
    "tarihler": {
     "bildiri": "2026-10-26",
@@ -724,8 +779,8 @@
    "konu": [
     "araştırma"
    ],
-   "not": "Asistanlar için burs başvurusu var (son tarih açıklanmadı); 12 Ekim 2026 sonrası iptalde iade yok.",
-   "dogrulama": "2026-10-05"
+   "not": "Kayıt ücretleri KDV dahil: uzman 5.500 TL, asistan 3.000 TL, kurs 1.800 TL. Asistan bursu: kayıt ücreti ödenerek başvurulur, kazananlara iade edilir (burs son tarihi açıklanmadı). 12 Ekim 2026 sonrası iptalde iade yok.",
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "inhsc-2026",
@@ -752,7 +807,7 @@
     "sağlık hizmetleri"
    ],
    "not": "Bildiri ayrıntıları henüz yayımlanmadı.",
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "kedd-dob-2026",
@@ -780,8 +835,36 @@
     "obezite",
     "beslenme"
    ],
-   "not": null,
-   "dogrulama": "2026-10-05"
+   "not": "Sayfa başlığında 12–15 Kasım, metin ve programda 14–17 Kasım yazıyor; teyit edilmeli.",
+   "dogrulama": "2026-10-12"
+  },
+  {
+   "id": "tahud-tv-zona-yuk-2026",
+   "ad": "TAHUD TV: Gerçek Yaşam Verileri ile Herpes Zoster Yükü",
+   "tur": "webinar",
+   "duzey": 4,
+   "kapsam": "ulusal",
+   "baslangic": "2026-11-18",
+   "bitis": "2026-11-18",
+   "saat": "19.30–20.30",
+   "sehir": null,
+   "yer": "tahudtv.com.tr",
+   "bicim": "cevrimici",
+   "duzenleyen": "Türkiye Aile Hekimleri Uzmanlık Derneği (TAHUD)",
+   "ucret": "ucretsiz",
+   "url": "https://tahud.org.tr/tahud-tv/gercek-yasam-verileri-ile-herpes-zoster-yuku-18-kasim-2026-1930",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [
+    "aşı",
+    "zona"
+   ],
+   "not": "Konuşmacı Doç. Dr. Duygu Ayhan Başer, oturum başkanı Doç. Dr. İsmail Arslan. İzlemek için tahudtv.com.tr kaydı gerekir.",
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "asm30-zor-konstipasyon-2026",
@@ -808,7 +891,7 @@
     "gastroenteroloji"
    ],
    "not": null,
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "geriatri-kursu-17",
@@ -835,7 +918,7 @@
     "geriatri"
    ],
    "not": "Ücret 3.500 TL; tam katılıma sertifika.",
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "utek-2026",
@@ -854,7 +937,7 @@
    "url": "https://www.utekon.org/",
    "kaynak": null,
    "tarihler": {
-    "bildiri": "2026-10-04",
+    "bildiri": "2026-10-19",
     "erken_kayit": "2026-10-20",
     "burs": null
    },
@@ -863,7 +946,7 @@
     "uzmanlık eğitimi"
    ],
    "not": "Son kayıt 2 Kasım 2026.",
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "palyatif-7-2026",
@@ -883,7 +966,7 @@
    "kaynak": null,
    "tarihler": {
     "bildiri": "2026-09-30",
-    "erken_kayit": "2026-10-05",
+    "erken_kayit": "2026-10-13",
     "burs": null
    },
    "konu": [
@@ -891,8 +974,65 @@
     "ağrı",
     "yara bakımı"
    ],
-   "not": "EAPC iş birliğiyle; kurslar var.",
-   "dogrulama": "2026-10-05"
+   "not": "EAPC iş birliğiyle; kurslar var. Bildiri gönderimi kapandı. Erken kayıt tarihi kayıt sayfasına göre 13 Ekim (ana sayfada 5 Ekim yazıyor).",
+   "dogrulama": "2026-10-12"
+  },
+  {
+   "id": "tahud-tv-usye-2026",
+   "ad": "TAHUD TV: Çocuklarda ÜSYE Tedavisinde Semptomatik Yaklaşım",
+   "tur": "webinar",
+   "duzey": 4,
+   "kapsam": "ulusal",
+   "baslangic": "2026-11-24",
+   "bitis": "2026-11-24",
+   "saat": "12.15–13.15",
+   "sehir": null,
+   "yer": "tahudtv.com.tr",
+   "bicim": "cevrimici",
+   "duzenleyen": "Türkiye Aile Hekimleri Uzmanlık Derneği (TAHUD)",
+   "ucret": "ucretsiz",
+   "url": "https://tahud.org.tr/tahud-tv/cocuklarda-usye-tedavisinde-semptomatik-yaklasim-24-kasim-2026-1215",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [
+    "çocuk sağlığı",
+    "solunum yolu enfeksiyonu"
+   ],
+   "not": "Konuşmacı Doç. Dr. Tuğba Bedir Demirdağ. İzlemek için tahudtv.com.tr kaydı gerekir.",
+   "dogrulama": "2026-10-12"
+  },
+  {
+   "id": "tahud-tv-rsv-2026",
+   "ad": "TAHUD TV: RSV Sezonu Başladı! Şimdi Yenidoğanları ve Bebekleri RSV'ye Karşı Koruma Zamanı",
+   "tur": "webinar",
+   "duzey": 4,
+   "kapsam": "ulusal",
+   "baslangic": "2026-11-25",
+   "bitis": "2026-11-25",
+   "saat": "19.30–20.30",
+   "sehir": null,
+   "yer": "tahudtv.com.tr",
+   "bicim": "cevrimici",
+   "duzenleyen": "Türkiye Aile Hekimleri Uzmanlık Derneği (TAHUD)",
+   "ucret": "ucretsiz",
+   "url": "https://tahud.org.tr/tahud-tv/rsv-sezonu-basladi-simdi-yenidoganlari-ve-bebekleri-rsvye-karsi-koruma-zamani-25-kasim-2026",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [
+    "aşı",
+    "RSV",
+    "çocuk sağlığı"
+   ],
+   "not": "Konuşmacı Doç. Dr. Emel Okulu. İzlemek için tahudtv.com.tr kaydı gerekir.",
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "asi-kongresi-2026",
@@ -919,7 +1059,7 @@
     "aşı"
    ],
    "not": "Tüm branşlardan uzman ve asistanlara açık.",
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "tahud-tv-kalp-yetersizligi-2026",
@@ -946,7 +1086,7 @@
     "kalp yetersizliği"
    ],
    "not": "Konuşmacılar Prof. Dr. Ahmet Çelik, Prof. Dr. Simten Malha. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "uhsk-2026",
@@ -972,8 +1112,8 @@
    "konu": [
     "halk sağlığı"
    ],
-   "not": null,
-   "dogrulama": "2026-10-05"
+   "not": "Önemli tarihler sayfasında bildiri son günü 15 Ekim 2026 yazıyor, aynı sayfada gönderimin sona erdiği de belirtiliyor; teyit edilmeli.",
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "asi-kursu-8",
@@ -1000,7 +1140,7 @@
     "aşı"
    ],
    "not": "Ağırlıklı olarak çocukluk çağı aşılaması.",
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "ecim-2026",
@@ -1026,8 +1166,8 @@
    "konu": [
     "integratif tıp"
    ],
-   "not": null,
-   "dogrulama": "2026-10-05"
+   "not": "Kabul bildirimleri 15–25 Ekim; sunan yazar için kayıt son günü 1 Kasım 2026.",
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "daahk-2027",
@@ -1052,7 +1192,7 @@
    },
    "konu": [],
    "not": null,
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "izahed-2027",
@@ -1077,7 +1217,7 @@
    },
    "konu": [],
    "not": null,
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "tahud-ulusal-2027",
@@ -1102,7 +1242,7 @@
    },
    "konu": [],
    "not": "Önemli tarihler sitede görsel olarak yayımlanmış; metin olarak doğrulanınca eklenecek.",
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "egekon-2027",
@@ -1129,7 +1269,7 @@
     "acil tıp"
    ],
    "not": "Acil tıp özel oturumlarıyla. Kayıt 15.000 TL + KDV.",
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "dogu-karadeniz-5-2027",
@@ -1154,7 +1294,7 @@
    },
    "konu": [],
    "not": "Tema: Ömür boyu sağlık için bir reçete. Kayıt açık; 30 Ekim 2026'ya kadar önceki kongre fiyatları geçerli.",
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   },
   {
    "id": "karadeniz-6",
@@ -1180,7 +1320,7 @@
    },
    "konu": [],
    "not": "Tarihler henüz açıklanmadı (sitede 'güncellenmektedir').",
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-10-12"
   }
  ]
 }

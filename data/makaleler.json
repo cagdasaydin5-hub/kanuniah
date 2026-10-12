@@ -4,6 +4,276 @@
  },
  "issues": [
   {
+   "id": "2026-10-12",
+   "title": "Hafta 42",
+   "range": "1 – 12 Ekim 2026",
+   "date": "2026-10-12",
+   "items": [
+    {
+     "id": "acp-vazomotor-sr",
+     "pmid": "42832800",
+     "doi": "10.7326/ANNALS-26-00943",
+     "journal": "Ann Intern Med",
+     "date": "2026-10-06",
+     "title_en": "Pharmacologic Treatments for Female Menopausal Vasomotor Symptoms: A Systematic Review and Meta-analysis for the American College of Physicians",
+     "title": "Menopozal sıcak basmasında östrojen sıklığı da şiddeti de azaltan, yaşam kalitesini artıran ve maliyet açısından en değerli seçenek; SSRİ/SNRİ ve NK reseptör antagonistleri alternatif",
+     "design": "Sistematik derleme ve meta-analiz · 90 RKÇ (≥8 hafta)",
+     "tags": [
+      "kadın sağlığı",
+      "menopoz",
+      "hormon tedavisi"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 2,
+      "etki": 2
+     },
+     "effect": "Pratiği destekler",
+     "what": "ACP kılavuzu için yapılan derlemede plaseboya göre östrojen (progestojenle ya da progestojensiz), konjuge östrojen/bazedoksifen ve oksibutinin sıcak basmalarının hem sıklığını hem şiddetini azalttı. NK reseptör antagonistleri, SNRİ, SSRİ, gabapentin ve progestojenler sıklığı azalttı ama şiddeti azaltmadı. Östrojen etkisi doza bağlıydı, uygulama yolundan bağımsızdı. Östrojenler yüksek ekonomik değerli (yüksek kesinlik), fezolinetant düşük değerli bulundu.",
+     "practice": "Kontrendikasyonu olmayan kadında sıcak basması için ilk seçenek hormon tedavisi olmaya devam ediyor. Hormon kullanamayanlarda SSRİ/SNRİ ya da gabapentin sıklığı azaltır ve uyku/yaşam kalitesine katkı verir; hasta beklentisi buna göre konuşulmalı.",
+     "limits": "Çalışmaların çoğu kısa süreli; uzun dönem zararlar (meme kanseri, VTE) için gözlemsel veriler dahil edilmedi; doğrudan karşılaştırma az; kanıt kesinliği çoğunlukla düşük–orta.",
+     "rel": [
+      "nice",
+      "nice-cks"
+     ]
+    },
+    {
+     "id": "aap-cocuk-iye-sr",
+     "pmid": "42803594",
+     "doi": "10.1542/peds.2026-078568",
+     "journal": "Pediatrics",
+     "date": "2026-10-01",
+     "title_en": "A Systematic Review and Meta-Analysis of the Prevention and Management of Pediatric Urinary Tract Infection and Suspected Urinary Tract Infection: Technical Report",
+     "title": "Çocuklarda idrar yolu enfeksiyonunda ≤7 gün antibiyotik ve ağızdan tedavi yeterli görünüyor; sürekli profilaksi skarı azaltmıyor, direnci artırabiliyor",
+     "design": "5 sistematik derleme ve meta-analiz (AAP kılavuzu teknik raporu) · 60 çalışma",
+     "tags": [
+      "pediatri",
+      "idrar yolu enfeksiyonu",
+      "antibiyotik"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 2,
+      "etki": 2
+     },
+     "effect": "Pratiği değiştirebilir",
+     "what": "Güncellenen AAP kılavuzuna temel olan derlemede 7 gün ya da daha kısa antibiyotik süresi tekrarlayan İYE riskini artırmadan yan etkileri azaltabilir bulundu. Ağızdan tedavi, parenteral ya da parenteralden ağıza geçişli tedavi kadar etkili görünüyor. VUR ya da mesane-bağırsak disfonksiyonu olan çocuklarda sürekli antibiyotik profilaksisi yeni enfeksiyon ve renal skar oranını belirgin değiştirmezken dirençli İYE'yi artırabilir. Belirtilerin başlangıcından sonraki 72 saat içinde değerlendirme daha az renal skarla ilişkili.",
+     "practice": "Ateşli İYE'de durumu iyi olan çocukta ağızdan ve kısa süreli tedavi seçilebilir; ateşli çocukta idrar tetkikini geciktirmemek önemli. Rutin profilaksi kararında direnç riski göz önünde tutulmalı.",
+     "limits": "Kanıt kesinliği düşük–çok düşük; yalnızca İngilizce yayınlar; anatomik anomalisi bilinen çocuklar kısa süre analizlerine alınmadı.",
+     "rel": [
+      "bce-izlem-2018",
+      "nice-cks"
+     ]
+    },
+    {
+     "id": "ltc-sigara-tesvik",
+     "pmid": "42832220",
+     "doi": "10.1001/jama.2026.17192",
+     "journal": "JAMA",
+     "date": "2026-10-05",
+     "title_en": "Smoking Cessation Among Underserved Patients Referred for Lung Cancer Screening: A Randomized Clinical Trial",
+     "title": "Akciğer kanseri taramasına yönlendirilen dezavantajlı içicilerde ücretsiz ilaç tek başına bırakmayı artırmadı; bırakmaya bağlı para ödülü 6 aylık bırakmayı yaklaşık iki katına çıkardı",
+     "design": "Çok merkezli RKÇ, 4 kollu · n=3259",
+     "tags": [
+      "sigara bırakma",
+      "akciğer kanseri taraması",
+      "tütün"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Dikkat",
+     "what": "ABD'de 4 sağlık sisteminde siyahi, Hispanik, kırsal ya da düşük gelirli içiciler sor-öner-yönlendir (olağan bakım), buna ek ücretsiz ilaç, ilaç + biyokimyasal doğrulanmış bırakmaya bağlı 600 dolara kadar ödül ya da bunlara ek mobil sağlık aracı kollarına randomize edildi. Doğrulanmış 6 aylık sürekli bırakma oranları sırasıyla %4,3, %5,1, %8,8 ve %7,2 idi. Ödül eklenmesi olağan bakıma göre bırakmayı 4,6 puan artırdı; ücretsiz ilaç tek başına fark yaratmadı.",
+     "practice": "Tarama başvurusu sigara bırakma için fırsattır ama yalnızca yönlendirme ve ilaç teklifi yetersiz kalabiliyor; aktif izlem ve motivasyonu artıran destek gerekir. Türkiye'de para ödülü uygulaması yok; sonuç daha çok, ilacı vermenin tek başına yetmediğini hatırlatıyor.",
+     "limits": "ABD bağlamı ve ödül tutarları doğrudan aktarılamaz; mutlak bırakma oranları tüm kollarda düşük; ilaç kullanım oranı belirtilmedi.",
+     "rel": [
+      "tahud-tutun-algoritma-2026",
+      "who-tutun-birakma-2024",
+      "tutun-kanunu-4207"
+     ]
+    },
+    {
+     "id": "cover-dmard-asi",
+     "pmid": "42832241",
+     "doi": "10.1001/jamainternmed.2026.4894",
+     "journal": "JAMA Intern Med",
+     "date": "2026-10-05",
+     "title_en": "Temporary Cessation of DMARD Therapy and COVID-19 Supplemental Dose Vaccine Immunogenicity in Patients With Inflammatory Arthritis: The COVER Randomized Clinical Trial",
+     "title": "İnflamatuvar artritte aşı dozu sırasında biyolojik ya da JAK inhibitörünü 2 hafta kesmek antikor yanıtını artırmadı, alevlenmeyi iki kattan fazla artırdı",
+     "design": "Çok merkezli pragmatik RKÇ · n=840",
+     "tags": [
+      "aşı",
+      "romatoid artrit",
+      "immünsüpresyon",
+      "COVID-19"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 1,
+      "etki": 2
+     },
+     "effect": "Pratiği değiştirebilir",
+     "what": "RA, psoriatik artrit ya da aksiyel spondiloartriti olup anti-TNF, anti-IL-17, abatasept ya da JAK inhibitörü kullanan hastalar ek COVID-19 aşı dozundan sonra tedaviye devam etmeye ya da 2 hafta ara vermeye randomize edildi. 6. haftada spike IgG artışı iki kolda benzerdi (GMFR oranı 0,96; %95 GA 0,36–2,56). Ara verenlerde alevlenme riski arttı (OR 2,27; %95 GA 1,41–3,65), en belirgin JAK inhibitörü kullananlarda; alevlenmeler 6. haftada geriledi.",
+     "practice": "Bu ilaçları kullanan hastaya aşı öncesi ilacı kesmesi rutin olarak önerilmemeli; aşı ertelenmeden yapılabilir. Bulgu doğrudan COVID-19 ek dozuyla ilgili, diğer aşılara genellenmesi dikkat ister.",
+     "limits": "Açık etiket; birincil sonuç laboratuvar ölçütü (antikor); yalnızca mRNA aşısı ve belirli ilaç grupları; metotreksat değerlendirilmedi.",
+     "rel": [
+      "ekmud-eriskin-asi-2025",
+      "asi-takvimi"
+     ]
+    },
+    {
+     "id": "fit-pozitif-kolonoskopi-sr",
+     "pmid": "42832233",
+     "doi": "10.1001/jamainternmed.2026.4827",
+     "journal": "JAMA Intern Med",
+     "date": "2026-10-05",
+     "title_en": "Evaluation of Intervention Strategies to Improve Follow-Up Colonoscopy After Abnormal FIT/FOBT Result: A Systematic Review and Meta-Analysis",
+     "title": "Gaitada gizli kan pozitif çıkanlarda hasta yönlendirme, hatırlatma mesajı ve hekim uyarısı kolonoskopi tamamlama oranını artırıyor",
+     "design": "Sistematik derleme ve meta-analiz · 21 çalışma, n=19.613",
+     "tags": [
+      "kanser taraması",
+      "kolorektal kanser",
+      "gaitada gizli kan"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 0,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Pratiği destekler",
+     "what": "FIT/GGK sonucu pozitif olup kolonoskopiye gitmesi gereken 50–75 yaş hastalarda hasta yönlendirme (navigasyon) tamamlamayı artırdı (RR 1,24), hasta hatırlatmaları (RR 1,32), hekim hatırlatmaları (RR 1,36) ve gastroenteroloji konsültasyonuna otomatik sevk de (RR 1,68) etkiliydi. Kontrol gruplarında kolonoskopi tamamlama %47,8, müdahale gruplarında %69,1 idi.",
+     "practice": "Pozitif GGK sonucu taramanın sonu değil; sonucu bildirmek, randevuyu takip etmek ve hasta ile ekibe hatırlatma yapmak kolonoskopiye ulaşmayı belirgin artırıyor. Aile hekimliği biriminde pozitif sonuç listesi tutup izlemek basit ve etkili bir adımdır.",
+     "limits": "Heterojenlik yüksek; randomize olmayan çalışmalar da dahil; sonuç süreç ölçütü (kolonoskopi tamamlama), kanser mortalitesi değil; çoğunlukla ABD verisi.",
+     "rel": [
+      "kanser-tarama",
+      "periyodik-muayene"
+     ]
+    },
+    {
+     "id": "equal-acp",
+     "pmid": "42842242",
+     "doi": "10.1001/jama.2026.17619",
+     "journal": "JAMA",
+     "date": "2026-10-07",
+     "title_en": "Advance Care Planning for Black and White Older Adults With Serious Illness: The EQUAL ACP Randomized Trial",
+     "title": "Ciddi hastalığı olan yaşlılarda kolaylaştırıcı eşliğinde ya da kendi kendine yürütülen ileri bakım planlaması benzer oranda tamamlandı",
+     "design": "Çok merkezli küme RKÇ (10 birinci basamak/geriatri kliniği) · n=791",
+     "tags": [
+      "palyatif bakım",
+      "ileri bakım planlaması",
+      "yaşlı sağlığı"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 0,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Bilgi, dikkat",
+     "what": "ABD'nin güneyinde ciddi hastalığı olan 65 yaş üstü siyahi ve beyaz hastalar, eğitimli sağlık çalışanı olmayan kolaylaştırıcıların yürüttüğü yapılandırılmış görüşme (Respecting Choices) ya da kendi kendine doldurulan bir belge (Five Wishes) uygulanan kliniklere randomize edildi. 12 ayda ileri bakım planlaması tamamlama siyahilerde %71'e karşı %62, beyazlarda %68'e karşı %78 oldu; iki gruptaki farklar anlamlı değildi. Toplamda katılımcıların %69'u planlamayı tamamladı, büyük kısmı aileyle yapılan konuşma biçimindeydi.",
+     "practice": "Ciddi hastalığı olan yaşlılarda ileri bakım planlaması birinci basamakta yapılabilir ve çoğu hasta aile görüşmesiyle başlar. Yaklaşım seçimi hasta grubuna göre değişebilir; ESH ve palyatif bakım hastalarında bu konuşmayı başlatmak aile hekiminin işi.",
+     "limits": "ABD bağlamı ve ırk temelli analiz Türkiye'ye doğrudan aktarılamaz; sonuç belge/konuşma tamamlama (süreç), bakımın amaca uygunluğu değil.",
+     "rel": [
+      "esh-palyatif-yonetmelik",
+      "yasli-degerlendirme-ah"
+     ]
+    },
+    {
+     "id": "cochrane-ilac-tanitim",
+     "pmid": "42849912",
+     "doi": "10.1002/14651858.CD013423.pub3",
+     "journal": "Cochrane Database Syst Rev",
+     "date": "2026-10-09",
+     "title_en": "Pharmaceutical industry information and promotional strategies aimed at prescribers",
+     "title": "İlaç firmalarının tanıtım, hediye ve ödemeleri daha az uygun, daha çok ve daha pahalı reçeteyle ilişkili; kurumsal çıkar çatışması politikaları reçeteyi iyileştiriyor",
+     "design": "Cochrane sistematik derlemesi · 93 çalışma (çoğu gözlemsel, 1 RKÇ)",
+     "tags": [
+      "akılcı ilaç kullanımı",
+      "reçete",
+      "çıkar çatışması"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 0,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Dikkat",
+     "what": "İlaç firmalarının reklam ve eğitim etkinlikleriyle temas, reçetelerin uygunluğunun azalması ve sayısının artmasıyla ilişkiliydi. Hediye ve ödeme alan hekimlerde daha az uygun, daha çok ve muhtemelen daha pahalı reçete görüldü. Ücretsiz numunelerle ilgili kanıt çok belirsizdi. Firma temsilcisi ziyaretini ya da hediyeyi kısıtlayan kurumsal politikalar muhtemelen reçete uygunluğunu artırdı.",
+     "practice": "Firma temsilcisi bilgisi ve hediyeler reçete kararını etkileyebilir; ilaç bilgisinde bağımsız kaynakları (kılavuz, prospektüs, Cochrane) esas almak ve asistan eğitiminde bu konuyu ele almak yararlı.",
+     "limits": "Çalışmaların %88'i ABD'den; çoğu kesitsel ve karıştırıcı etkenler sınırlı kontrol edildi; meta-analiz yapılamadı; ilişki nedensellik göstermez.",
+     "rel": [
+      "ilaclarin-guvenliligi-yonetmeligi"
+     ]
+    },
+    {
+     "id": "h2go-cocuk-obezite",
+     "pmid": "42853568",
+     "doi": "10.1001/jamanetworkopen.2026.38188",
+     "journal": "JAMA Netw Open",
+     "date": "2026-10-01",
+     "title_en": "A Community-Based Behavioral Intervention and Body Mass Index in School-Aged Children: A Cluster Randomized Clinical Trial",
+     "title": "Şekerli içecek yerine su içmeyi hedefleyen 6 haftalık toplum temelli grup programı okul çağı çocuklarda 12 ayda BKİ z skorunu az da olsa düşürdü",
+     "design": "Küme RKÇ (11 merkez) · n=437",
+     "tags": [
+      "çocukluk çağı obezitesi",
+      "şekerli içecek",
+      "beslenme"
+     ],
+     "score": {
+      "kanit": 2,
+      "poem": 0,
+      "bb": 1,
+      "etki": 1
+     },
+     "effect": "Bilgi",
+     "what": "ABD'de 8–13 yaş çocuklar ve ebeveynleri için gençlik kulüplerinde personelin yürüttüğü 12 oturumluk program (şekerli içeceği azaltma, su tüketimini artırma) olağan programla karşılaştırıldı. Çocukların %17'si fazla kilolu, %37'si obezdi. 12. ayda BKİ z skoru değişiminde gruplar arası fark −0,19 (%95 GA −0,38 ile −0,01) bulundu; şekerli içecek ve su tüketiminde anlamlı fark görülmedi.",
+     "practice": "Şekerli içecek yerine su önerisi, çocukluk çağı obezitesinde aile hekiminin verebileceği basit ve tutarlı bir danışmanlık mesajı; ancak tek başına etkisi küçük, aile ve okul iş birliğiyle desteklenmeli.",
+     "limits": "Etki sınırda ve klinik önemi belirsiz; davranış sonuçlarında fark yok; ABD toplum programı bağlamı.",
+     "rel": [
+      "bce-izlem-2018",
+      "temd-obezite-2024"
+     ]
+    },
+    {
+     "id": "iatrojenik-menopoz-kv-sr",
+     "pmid": "42826016",
+     "doi": "10.1001/jamanetworkopen.2026.37545",
+     "journal": "JAMA Netw Open",
+     "date": "2026-10-01",
+     "title_en": "Age at Iatrogenic Menopause and Cardiovascular Morbidity and Mortality: A Systematic Review and Meta-Analysis",
+     "title": "Cerrahi ya da tedaviye bağlı erken menopoz KV olay ve inme riskini artırıyor; mortalite artışı 45 yaş öncesi menopozla sınırlı",
+     "design": "Sistematik derleme ve meta-analiz (gözlemsel çalışmalar ağırlıklı) · 36 çalışma, n≈2,6 milyon",
+     "tags": [
+      "kadın sağlığı",
+      "menopoz",
+      "kardiyovasküler risk"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 1,
+      "etki": 1
+     },
+     "effect": "Dikkat",
+     "what": "İyatrojenik menopoz (ooforektomi, kemoterapi vb.) doğal menopoza ya da yaş eşli kontrollere göre tüm nedenlere bağlı ölüm (HR 1,08), KV olay (HR 1,25), koroner kalp hastalığı (HR 1,48) ve inme (HR 1,22) riskinde artışla ilişkiliydi. KV ve tüm nedenli ölüm artışı yalnızca 45 yaş öncesi menopozda görüldü. Menopoz yaşındaki her 5 yıllık artış bileşik riskte azalmayla ilişkiliydi (HR 0,89).",
+     "practice": "45 yaşından önce cerrahi ya da tedaviye bağlı menopoza giren kadınlar KV risk değerlendirmesinde ek risk taşıyan grup olarak ele alınmalı; kan basıncı, lipid ve yaşam tarzı izlemi buna göre sıklaştırılabilir.",
+     "limits": "Gözlemsel veriler; karıştırıcı etkenler (altta yatan hastalık, kanser) dışlanamaz; hormon tedavisinin etkisi ayrıntılı değerlendirilemedi.",
+     "rel": [
+      "kvr-kilavuz-2025",
+      "esc-lipid-2025"
+     ]
+    }
+   ]
+  },
+  {
    "id": "2026-10-05",
    "title": "Hafta 41",
    "range": "25 Eylül – 5 Ekim 2026",

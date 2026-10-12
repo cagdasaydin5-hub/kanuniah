@@ -448,12 +448,20 @@
    "year": 2025,
    "pub": "2025-10-10",
    "summary": "Yaş ve risk grubuna göre erişkin aşı şemaları. ≥60 yaşa tek doz RSV aşısı; ≥50 yaş ve bağışıklığı baskılanmış 18–49 yaşa 2–6 ay arayla 2 doz rekombinant zona; risk gruplarında tek doz PCV20.",
-   "note": "",
+   "note": "EKMUD Erişkin Bağışıklama Rehberi 2026 taslak olarak ön yayına açıldı (9 Ekim 2026); görüşler 20 Ekim 2026'ya kadar alınıyor. Nihai sürüm çıkana kadar 2025 tabloları geçerli.",
    "url": "https://www.ekmud.org.tr/files/EKMUD_A%C5%9F%C4%B1_Tablo1&2_2025.pdf",
    "alt": [
     {
      "label": "Duyuru",
      "url": "https://ekmud.org.tr/index.php/haberler/374-eriskin-bagisiklama-rehberi-2025-onerileri-paylasimda"
+    },
+    {
+     "label": "2026 taslak (ön yayın)",
+     "url": "https://www.ekmud.org.tr/files/Ekmud_Eriskin_Bagisiklama_Rehberi_2026_TASLAK.pdf"
+    },
+    {
+     "label": "2026 ön yayın duyurusu",
+     "url": "https://www.ekmud.org.tr/index.php/haberler/1620-eriskin-bagisiklama-rehberi-2026-on-yayin-duyurusu"
     }
    ],
    "kw": "erişkin aşı pnömokok zona rsv influenza tetanoz",
@@ -622,6 +630,125 @@
    "aud": [
     "hekim"
    ]
+  },
+  {
+   "kind": "guide",
+   "status": "guncel",
+   "aud": [
+    "hekim"
+   ],
+   "alt": [],
+   "note": "Sigara bırakmada birinci basamak için güncel Türkçe başvuru kaynağı. PDF bağlantısı süreli olduğundan TAHUD duyuru sayfasından açılmalı.",
+   "id": "tahud-tutun-algoritma-2026",
+   "cat": "kronik",
+   "scope": "TR",
+   "title": "Tütünsüz Hayata Başlangıç: Tütün Bağımlılığı Tedavi Algoritması",
+   "org": "TAHUD · Sağlık Bakanlığı HSGM",
+   "year": 2026,
+   "pub": "2026-09-30",
+   "summary": "TAHUD ile Halk Sağlığı Genel Müdürlüğü iş birliğinde, aile hekimleri ve sigara bırakma polikliniği hekimleri için hazırlanan tedavi rehberi. Değerlendirme, motivasyonel görüşme, ilaç tedavisi seçenekleri, kronik hastalığı olanlar ve özel gruplarda yaklaşım ile bırakma sonrası izlemi adım adım ele alır. Elektronik sigara, nargile ve ısıtılmış tütün ürünlerine ayrı bölüm ayırır; hasta eğitim materyalleri içerir.",
+   "url": "https://tahud.org.tr/haber/tutunsuz-hayata-baslangic-tutun-bagimliligi-tedavi-algoritmasi",
+   "kw": "sigara bırakma tütün bağımlılığı nikotin vareniklin bupropion motivasyonel görüşme e-sigara nargile ısıtılmış tütün"
+  },
+  {
+   "kind": "guide",
+   "status": "guncel",
+   "aud": [
+    "hekim"
+   ],
+   "alt": [],
+   "note": "",
+   "id": "who-tutun-birakma-2024",
+   "cat": "kronik",
+   "scope": "INT",
+   "title": "DSÖ Erişkinlerde Tütün Bırakma Klinik Tedavi Kılavuzu",
+   "org": "DSÖ (WHO)",
+   "year": 2024,
+   "pub": "2024-07-02",
+   "summary": "DSÖ'nün erişkinlerde tütün bırakmaya yönelik ilk klinik tedavi kılavuzu. Davranışsal destek ve dijital müdahalelerin yanı sıra vareniklin, nikotin replasman tedavisi, bupropion ve sitizin gibi ilaç seçeneklerini değerlendirir.",
+   "url": "https://www.who.int/publications/i/item/9789240096431",
+   "kw": "who dsö sigara bırakma tütün vareniklin sitizin nrt bupropion"
+  },
+  {
+   "kind": "guide",
+   "status": "guncel",
+   "aud": [
+    "hekim"
+   ],
+   "alt": [],
+   "note": "Öneri ayrıntıları için TAHUD sayfasındaki PDF'e bakılmalı (bağlantı süreli).",
+   "id": "tahud-influenza-uzlasi-2026",
+   "cat": "bulasici",
+   "scope": "TR",
+   "title": "Birinci Basamakta Erişkin İnfluenzası: Tanı, Tedavi, Komplikasyonların Önlenmesi ve Bağışıklama Yaklaşımı – Multidisipliner Uzlaşı Raporu 2026",
+   "org": "TAHUD · EKMUD · TEMD · HFS-Eurasia · TİHUD",
+   "year": 2026,
+   "pub": "2026-09-22",
+   "summary": "Beş uzmanlık derneğinin aile hekimlerine yönelik ortak uzlaşı raporu. Erişkin influenzasında korunma, erken tanı, tedavi, komplikasyonların önlenmesi ve erişkin bağışıklamayı birinci basamak bakış açısıyla ele alır. İleri yaştakiler, gebeler ve kronik hastalığı olanlar gibi ağır seyir açısından riskli grupları vurgular.",
+   "url": "https://tahud.org.tr/haber/uzmanlik-derneklerinden-eriskin-influenzasina-multidisipliner-yaklasim",
+   "kw": "grip influenza aşı oseltamivir antiviral erişkin bağışıklama uzlaşı"
+  },
+  {
+   "kind": "guide",
+   "status": "guncel",
+   "aud": [
+    "hekim"
+   ],
+   "alt": [],
+   "note": "Aşı zamanlamaları kılavuz PDF'inde; Ulusal Aşı Takvimi ile birlikte okunmalı.",
+   "id": "maternal-bagisiklama-2026",
+   "cat": "koruyucu",
+   "scope": "TR",
+   "title": "Gebelik ve Lohusalıkta Maternal Bağışıklama Kılavuzu: İnfluenza, Tdab ve RSV Aşılaması",
+   "org": "TJOV · TAHUD · Çocuk Enfeksiyon Hastalıkları ve Bağışıklama Derneği",
+   "year": 2026,
+   "pub": "2026-09-10",
+   "summary": "Gebelik ve lohusalıkta influenza, Tdab ve RSV aşılamasını ele alan ortak kılavuz. İnfluenza ve RSV önerileri 2026–2027 dönemi için geçerlidir. Türkiye'de o dönemde gebelikte kullanılabilecek COVID-19 aşısı bulunmadığı için COVID-19 kapsam dışıdır.",
+   "url": "https://tahud.org.tr/haber/gebelik-ve-lohusalikta-maternal-bagisiklama-kilavuzu",
+   "kw": "gebelik aşı tdab boğmaca rsv influenza lohusa maternal bağışıklama"
+  },
+  {
+   "kind": "guide",
+   "status": "guncel",
+   "aud": [
+    "hekim"
+   ],
+   "alt": [
+    {
+     "label": "ACC özeti",
+     "url": "https://www.acc.org/latest-in-cardiology/articles/2026/04/27/19/07/accel-lite-28apr2026"
+    }
+   ],
+   "note": "Türkiye'de ESC/EAS 2025 güncellemesiyle birlikte karşılaştırmalı okunabilir.",
+   "id": "acc-aha-lipid-2026",
+   "cat": "kardiyo",
+   "scope": "INT",
+   "title": "2026 ACC/AHA Çok Dernekli Dislipidemi Yönetimi Kılavuzu",
+   "org": "ACC / AHA ve 9 dernek",
+   "year": 2026,
+   "pub": "2026-03-13",
+   "summary": "ABD'nin 2018 kolesterol kılavuzunun yerini alan çok dernekli dislipidemi kılavuzu (JACC). Doğru risk değerlendirmesiyle başlamayı ve ESC/EAS ile uyumu öne çıkarır. Lp(a)'yı kademeli bir risk belirteci olarak ele alır; koroner arter kalsiyum skoru ve hsCRP'yi risk tahmininin belirsiz kaldığı durumlarda seçici olarak önerir.",
+   "url": "https://doi.org/10.1016/j.jacc.2025.11.016",
+   "kw": "kolesterol ldl statin lp(a) kalsiyum skoru cac lipid dislipidemi acc aha"
+  },
+  {
+   "kind": "guide",
+   "status": "guncel",
+   "aud": [
+    "hekim"
+   ],
+   "alt": [],
+   "note": "Uzun dönem etkinlik/güvenlik, bırakma sonrası ve maliyet verileri sınırlı olduğu için öneriler koşullu.",
+   "id": "who-glp1-obezite-2025",
+   "cat": "kronik",
+   "scope": "INT",
+   "title": "DSÖ Erişkinlerde Obezite Tedavisinde GLP-1 Tedavilerinin Kullanımı Kılavuzu",
+   "org": "DSÖ (WHO)",
+   "year": 2025,
+   "pub": "2025-12-01",
+   "summary": "DSÖ'nün obezitede GLP-1 ilaçlarına ilişkin ilk küresel kılavuzu. Gebeler dışındaki erişkinlerde uzun süreli obezite tedavisinde GLP-1 tedavilerinin kullanılabileceğini koşullu olarak önerir. GLP-1 tedavisi alanlara diyet ve fiziksel aktiviteyi kapsayan yoğun davranışsal destek verilmesini de (düşük kesinlikte kanıtla) koşullu öneri olarak ekler.",
+   "url": "https://www.who.int/news/item/01-12-2025-who-issues-global-guideline-on-the-use-of-glp-1-medicines-in-treating-obesity",
+   "kw": "obezite glp-1 semaglutid tirzepatid kilo dsö who"
   },
   {
    "id": "sks-evde-saglik",
