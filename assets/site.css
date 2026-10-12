@@ -238,3 +238,5 @@ a.chip{text-decoration:none;display:inline-block}
 
 .callout{border-left:4px solid var(--brass);background:var(--card,rgba(127,127,127,.08));padding:10px 14px;margin:0 0 18px;border-radius:6px}
 .prose h3{font-size:16px;margin:16px 0 4px}
+.tile img{max-width:100%;height:auto;border-radius:6px;border:1px solid var(--line)}
+.prose img{max-width:100%;height:auto}
