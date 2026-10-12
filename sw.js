@@ -1,13 +1,14 @@
 /* Trabzon Kanuni EAH Aile Hekimliği – service worker.
    Otomatik üretildi: tools/build_pwa.py. Elle düzenlemeyin; sürüm, dosyaların içeriğinden hesaplanır. */
 "use strict";
-var VERSION = "ecf4aa65ab5b";
+var VERSION = "5af73ec2f0ac";
 var CACHE = "kanuniah-" + VERSION;
 var RUNTIME = "kanuniah-runtime";
 var PRECACHE = [
   "./",
   "404.html",
   "araclar.html",
+  "asi-kontrendikasyonlari.html",
   "haftanin-makaleleri.html",
   "hakkinda.html",
   "index.html",

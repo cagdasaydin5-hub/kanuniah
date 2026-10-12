@@ -147,7 +147,7 @@ PAGES["rehberler.html"] = head("Rehberler · Trabzon Kanuni EAH Aile Hekimliği"
   <div class="page-head">
     <div class="eyebrow">Klinik rehberler</div>
     <h1>Rehberler</h1>
-    <p class="lede">Her kayıt resmi kaynağa bağlanır. Yeni sürüm çıktığında kayıt güncellenir, eski sürüm arşive alınır.</p>
+    <p class="lede">Her kayıt resmi kaynağa bağlanır. Yeni sürüm çıktığında kayıt güncellenir, eski sürüm arşive alınır. Ayrıca: <a href="asi-kontrendikasyonlari.html">Aşı kontrendikasyonları ve önlemleri</a>.</p>
   </div>
 """ + BAR_GUIDES + "</div>\n" + FOOT
 
@@ -237,6 +237,12 @@ PAGES["hakkinda.html"] = head("Hakkımızda · Trabzon Kanuni EAH Aile Hekimliğ
   </div>
 </div>
 """ % ORG + FOOT
+
+import sys; sys.path.insert(0, os.path.join(ROOT, "tools"))
+import asi_kontr
+PAGES["asi-kontrendikasyonlari.html"] = head("Aşı kontrendikasyonları · Trabzon Kanuni EAH Aile Hekimliği",
+    "Aşıya göre kontrendikasyon ve önlemler, yanlış kontrendikasyonlar ve enfeksiyonda karar: CDC/ACIP özeti, Türkiye notlarıyla.",
+    "asi-kontrendikasyonlari.html", "rehberler") + asi_kontr.body() + FOOT
 
 PAGES["404.html"] = head("Sayfa bulunamadı · Trabzon Kanuni EAH Aile Hekimliği", "Aradığınız sayfa bulunamadı.", "404.html", "none") + """<div class="wrap">
   <div class="page-head">
@@ -335,7 +341,7 @@ egitim_yaz("giris.html", head("Giriş · Trabzon Kanuni EAH Aile Hekimliği",
 """ + FOOT)
 
 urls = "".join("  <url><loc>%s/%s</loc><lastmod>%s</lastmod></url>\n" % (SITE, p, TODAY)
-               for p in ["", "rehberler.html", "mevzuat.html", "makaleler.html", "haftanin-makaleleri.html", "araclar.html", "takvim.html", "hakkinda.html"])
+               for p in ["", "rehberler.html", "mevzuat.html", "makaleler.html", "haftanin-makaleleri.html", "araclar.html", "takvim.html", "hakkinda.html", "asi-kontrendikasyonlari.html"])
 with open("sitemap.xml", "w", encoding="utf-8", newline="\n") as f:
     f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n%s</urlset>\n' % urls)
 print("Sayfalar üretildi:", ", ".join(PAGES))

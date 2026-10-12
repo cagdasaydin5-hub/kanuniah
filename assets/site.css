@@ -235,3 +235,6 @@ form.giris input:focus{outline:2px solid var(--pine);outline-offset:1px}
 form.giris .btn{font:inherit;font-weight:700;padding:11px 14px;border:0;border-radius:8px;background:var(--pine);color:#fff;cursor:pointer}
 .giris-hata{margin:0;padding:9px 12px;border-radius:8px;background:#fbe9e7;color:#8a1c10;font-size:14.5px;font-weight:600}
 a.chip{text-decoration:none;display:inline-block}
+
+.callout{border-left:4px solid var(--brass);background:var(--card,rgba(127,127,127,.08));padding:10px 14px;margin:0 0 18px;border-radius:6px}
+.prose h3{font-size:16px;margin:16px 0 4px}
