@@ -333,16 +333,37 @@ egitim_yaz("sayfa-sablonlar.html", head("Sunum şablonları · Trabzon Kanuni EA
   <div class="page-head">
     <div class="eyebrow"><a href="?">Eğitim</a> › Sunum şablonları</div>
     <h1>Sunum şablonları</h1>
-    <p class="lede">Tüm şablonlarda kapak aynıdır; yalnızca içerik çerçevesi farklıdır. Her dosya kapak, bir içerik çerçevesi ve bölüm ayırıcı slayttan oluşur.</p>
+    <p class="lede">Tüm şablonlarda kapak aynıdır; yalnızca içerik çerçevesi farklıdır. Birine dokunun, büyük önizlemeyi görün ve indirin.</p>
   </div>
-  <p><a class="chip" href="dl.php?d=Sunum-Sablonlari-Tumu.zip" download>Hepsini indir (.zip, 11 dosya)</a></p>
-  <h2>Ortak kapak</h2>
-  <p><img src="dl.php?d=onizleme-kapak.jpg" alt="Ortak kapak" width="480" height="270"></p>
-  <h2>İçerik çerçeveleri</h2>
+  <p><a class="chip" href="dl.php?d=Sunum-Sablonlari-Tumu.zip" download>Hepsini indir (.zip)</a></p>
   <div class="grid">
-""" + "".join('    <a class="tile" href="dl.php?d=Sunum-Sablonu-Cerceve-%02d.pptx" download><img src="dl.php?d=onizleme-%02d.jpg" alt="Çerçeve %d" width="480" height="270" loading="lazy"><b>Çerçeve %d</b><span>İndir (.pptx)</span></a>\n' % (i, i, i, i) for i in range(1, 12)) + """  </div>
+    <a class="tile" href="?k=sablon-kapak"><img src="dl.php?d=onizleme-kapak.jpg" alt="" width="480" height="270" loading="lazy"><b>Ortak kapak</b></a>
+""" + "".join('    <a class="tile" href="?k=sablon-%02d"><img src="dl.php?d=onizleme-%02d.jpg" alt="" width="480" height="270" loading="lazy"><b>Çerçeve %d</b></a>\n' % (i, i, i) for i in range(1, 12)) + """  </div>
 </div>
 """ + FOOT)
+
+def sablon_sayfa(ad, baslik, resim, dosya, onceki, sonraki):
+    gez = '<a class="chip" href="?k=sablonlar">‹ Tüm şablonlar</a>'
+    if dosya: gez = '<a class="chip" href="dl.php?d=%s" download>Bu şablonu indir (.pptx)</a> ' % dosya + gez
+    ek = ""
+    if onceki: ek += '<a class="chip" href="?k=%s">‹ Önceki</a> ' % onceki
+    if sonraki: ek += '<a class="chip" href="?k=%s">Sonraki ›</a>' % sonraki
+    egitim_yaz("sayfa-%s.html" % ad, head(baslik + " · Sunum şablonları", "Sunum şablonu önizlemesi.", "egitim/", "egitim") + """<div class="wrap">
+  <div class="page-head">
+    <div class="eyebrow"><a href="?">Eğitim</a> › <a href="?k=sablonlar">Sunum şablonları</a></div>
+    <h1>%s</h1>
+  </div>
+  <p><img class="buyuk" src="dl.php?d=%s" alt="%s önizlemesi" width="960" height="540"></p>
+  <p>%s</p>
+  <p>%s</p>
+</div>
+""" % (baslik, resim, baslik, gez, ek) + FOOT)
+
+sirasi = ["sablon-kapak"] + ["sablon-%02d" % i for i in range(1, 12)]
+sablon_sayfa("sablon-kapak", "Ortak kapak", "onizleme-kapak.jpg", None, None, "sablon-01")
+for i in range(1, 12):
+    sablon_sayfa("sablon-%02d" % i, "Çerçeve %d" % i, "onizleme-%02d.jpg" % i, "Sunum-Sablonu-Cerceve-%02d.pptx" % i,
+                 sirasi[i - 1], sirasi[i + 1] if i < 11 else None)
 
 egitim_yaz("giris.html", head("Giriş · Trabzon Kanuni EAH Aile Hekimliği",
     "Asistan girişi.", "egitim/", "egitim-giris") + """<div class="wrap">
