@@ -1,12 +1,9 @@
 <?php
-session_set_cookie_params(['path' => '/egitim/', 'httponly' => true, 'secure' => !empty($_SERVER['HTTPS']), 'samesite' => 'Lax']);
-session_start();
-header('X-Robots-Tag: noindex, nofollow');
+require __DIR__ . '/ortak.php';
 header('Cache-Control: no-store');
 header('Content-Type: text/html; charset=utf-8');
 
-$cfg = __DIR__ . '/.htsifre.php';
-if (!is_file($cfg)) { header('Location: kurulum.php'); exit; }
+if (!is_file(ASISTAN_CFG)) { header('Location: kurulum.php'); exit; }
 
 if (isset($_GET['cikis'])) {
     $_SESSION = [];
@@ -17,12 +14,17 @@ if (isset($_GET['cikis'])) {
 
 $hata = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $c = require $cfg;
     $k = trim($_POST['k'] ?? '');
     $s = $_POST['s'] ?? '';
-    if (strcasecmp($c['kullanici'], $k) === 0 && password_verify($s, $c['hash'])) {
+    $rol = null;
+    foreach (['yonetici' => YONETICI_CFG, 'asistan' => ASISTAN_CFG] as $r => $dosya) {
+        $c = hesap_oku($dosya);
+        if ($c && strcasecmp($c['kullanici'], $k) === 0 && password_verify($s, $c['hash'])) { $rol = $r; break; }
+    }
+    if ($rol) {
         session_regenerate_id(true);
         $_SESSION['ok'] = 1;
+        $_SESSION['rol'] = $rol;
         header('Location: ./');
         exit;
     }
@@ -30,12 +32,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $hata = 'Kullanıcı adı veya şifre hatalı.';
 }
 
-if (!empty($_SESSION['ok'])) {
+if (rol()) {
     $k = $_GET['k'] ?? '';
     $f = (preg_match('/^[a-z0-9-]+$/', $k) && is_file(__DIR__ . "/sayfa-$k.html")) ? "sayfa-$k.html" : 'icerik.html';
-    readfile(__DIR__ . '/' . $f); exit;
+    $h = file_get_contents(__DIR__ . '/' . $f);
+    $yon = rol() === 'yonetici'
+        ? '<a class="tile" href="yonetim.php"><b>Dosya yönetimi</b><span>Yükle, klasör aç, yeniden adlandır, taşı, sil · yalnızca yönetici</span></a>'
+        : '';
+    echo str_replace('<!--YONETIM-->', $yon, $h);
+    exit;
 }
 
 $h = file_get_contents(__DIR__ . '/giris.html');
-$kutu = $hata ? '<p class="giris-hata" role="alert">' . htmlspecialchars($hata) . '</p>' : '';
+$kutu = $hata ? '<p class="giris-hata" role="alert">' . e($hata) . '</p>' : '';
 echo str_replace('<!--HATA-->', $kutu, $h);

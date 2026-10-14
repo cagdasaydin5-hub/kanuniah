@@ -1,6 +1,10 @@
 Options -Indexes
 DirectoryIndex index.php
 # Sayfa kaynakları yalnızca index.php üzerinden, giriş yapılınca verilir
-<FilesMatch "^(icerik|giris|sayfa-[a-z0-9-]+)\.html$">
+<FilesMatch "^(icerik|giris|cerceve|sayfa-[a-z0-9-]+)\.html$">
   Require all denied
 </FilesMatch>
+# ortak.php yalnızca diğer PHP dosyalarınca kullanılır
+<Files "ortak.php">
+  Require all denied
+</Files>
