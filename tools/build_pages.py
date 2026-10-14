@@ -311,7 +311,7 @@ def alt_klasor(html):
 def egitim_yaz(ad, html):
     os.makedirs("egitim", exist_ok=True)
     with open("egitim/" + ad, "w", encoding="utf-8", newline="\n") as f:
-        f.write(alt_klasor(html.replace("{extra}", "")).replace("../dl.php", "dl.php").replace("../?", "?"))
+        f.write(alt_klasor(html.replace("{extra}", "")).replace("../dl.php", "dl.php").replace("../dosyalar.php", "dosyalar.php").replace("../?", "?"))
 
 egitim_yaz("icerik.html", head("Eğitim · Trabzon Kanuni EAH Aile Hekimliği",
     "Klinik asistanlarına özel eğitim materyalleri ve oryantasyon rehberleri.",
