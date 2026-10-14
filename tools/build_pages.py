@@ -323,8 +323,17 @@ egitim_yaz("icerik.html", head("Eğitim · Trabzon Kanuni EAH Aile Hekimliği",
   </div>
   <div class="grid">
     <a class="tile" href="?k=sablonlar"><b>Sunum şablonları</b><span>Ortak kapaklı 11 çerçeve · PowerPoint</span></a>
+    <a class="tile" href="dosyalar.php"><b>Dosyalar</b><span>Hocaların paylaştığı sunum, belge ve materyaller · klasörler halinde</span></a>
+    <!--YONETIM-->
   </div>
   <p><a class="chip" id="cikis" href="?cikis=1">Çıkış yap</a></p>
+</div>
+""" + FOOT)
+
+# PHP sayfalarının (dosyalar.php, yonetim.php) ortak çerçevesi; %BASLIK% ve <!--ICERIK--> PHP'de doldurulur.
+egitim_yaz("cerceve.html", head("%BASLIK% · Eğitim · Trabzon Kanuni EAH Aile Hekimliği",
+    "Asistan eğitim dosyaları.", "egitim/", "egitim") + """<div class="wrap">
+<!--ICERIK-->
 </div>
 """ + FOOT)
 
