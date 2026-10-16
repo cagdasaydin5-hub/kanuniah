@@ -144,6 +144,16 @@ python -m http.server 8000
 ```
 Tarayıcıda `http://localhost:8000`.
 
+## Materyal kütüphanesi (`egitim/kutuphane.php`)
+
+Asistan seminerleri, makale ve olgu sunumları ile hoca sunumlarının konuya göre dizini. Giriş gerektirir; arama motorlarına kapalıdır.
+
+- Dosyalar depoda değil, sunucuda durur: `egitim/arsiv/Kütüphane/<Tür klasörü>/<dosya>` (Seminerler, Makale Sunumları, Olgu Sunumları, Hoca Sunumları, Rehberler). FTP ile yüklenir; `yonetim.php` da aynı klasörü yönetir.
+- Dizin sunucuda `egitim/arsiv/Kütüphane/.kutuphane.json` dosyasındadır (depoda değil) (başlık, tür, grup, konu, sunan, danışman, yıl, dosya yolu, slayt metninden arama anahtarları). Sayfa bunu `kutuphane.php?veri=1` ile alır; arama tarayıcıda yapılır (`assets/kutuphane.js`).
+- Dosya ve klasör adları `ortak.php` içindeki `ad_temizle` kuralına uyar: harf, rakam, boşluk ve `. _ - ( ) , ;`. Ad biçimi: `Konu - Başlık - Sunan (Yıl).pptx`; konu başta olduğu için aynı konu alfabetik sırada yan yana gelir.
+- Yeni sunum eklemek: dosyayı ilgili tür klasörüne yükle ve sunucudaki `.kutuphane.json`'a bir kayıt ekle (ya da üretim betiğini yeniden çalıştırıp dosyayı FTP ile değiştir). Depoya gönderme gerekmez.
+- Türler: Seminer, Makale Sunumu, Olgu Sunumu, Hoca Sunumu, Rehber. Konu haritası ve dizin üretim betikleri site sahibindedir (`kanuniah_arsiv/_tools`).
+
 ## Yayın
 
 `main` dalına her gönderimde `.github/workflows/deploy.yml` önce `tools/build_pwa.py` ile araç dizinini ve
