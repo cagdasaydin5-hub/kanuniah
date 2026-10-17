@@ -10,7 +10,7 @@ if (isset($_GET['d'])) {
     $rel = yol_temizle($_GET['d']);
     $p = $rel === null || $rel === '' ? null : tam_yol($rel);
     if (!$p || !is_file($p) || !izinli_dosya($p)) { http_response_code(404); exit('Dosya bulunamadı.'); }
-    $ad = basename($p);
+    $ad = son_ad($p);
     $mod = in_array(uzanti($ad), TARAYICIDA, true) && !isset($_GET['indir']) ? 'inline' : 'attachment';
     header('Content-Type: ' . (uzanti($ad) === 'txt' ? 'text/plain; charset=utf-8' : (mime_content_type($p) ?: 'application/octet-stream')));
     header("Content-Disposition: $mod; filename*=UTF-8''" . rawurlencode($ad));
@@ -41,7 +41,7 @@ $ust = rol() === 'yonetici' ? ' <a class="chip" href="yonetim.php' . ($rel === '
 sayfa('Dosyalar', '
   <div class="page-head">
     <div class="eyebrow"><a href="./">Eğitim</a> › ' . kirinti($rel, 'dosyalar.php') . '</div>
-    <h1>' . e($rel === '' ? 'Dosyalar' : basename($rel)) . '</h1>
+    <h1>' . e($rel === '' ? 'Dosyalar' : son_ad($rel)) . '</h1>
   </div>
   <div class="tablewrap"><table class="asi dosya"><thead><tr><th>Ad</th><th>Boyut</th><th>Tarih</th></tr></thead><tbody>' . $satir . '</tbody></table></div>
   <p><a class="chip" href="./">‹ Eğitim</a>' . $ust . '</p>');

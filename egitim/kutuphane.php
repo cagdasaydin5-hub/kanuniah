@@ -23,9 +23,9 @@ if (isset($_GET['veri'])) {
     }
     foreach ($TUR as $klasor => $tur) {
         foreach (glob("$kok/$klasor/*") ?: [] as $p) {
-            $ad = basename($p);
+            $ad = son_ad($p);
             if (!is_file($p) || $ad[0] === '.' || !izinli_dosya($p) || isset($var[$nfc("$klasor/$ad")])) continue;
-            $govde = pathinfo($ad, PATHINFO_FILENAME);
+            $govde = preg_replace('/\.[^.]*$/u', '', $ad);
             $yil = preg_match('/\((\d{4})\)(?: \(\d+\))?$/u', $govde, $m) ? $m[1] : date('Y', filemtime($p));
             $par = array_values(array_filter(array_map('trim', explode(' - ', preg_replace('/\s*\(\d{4}\)(?: \(\d+\))?$/u', '', $govde))), 'strlen'));
             $konu = count($par) >= 2 ? $par[0] : 'Yeni eklenenler';

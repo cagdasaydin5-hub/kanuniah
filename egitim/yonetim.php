@@ -12,9 +12,9 @@ function git($rel, $mesaj, $ek = '') {
 }
 // Yüklenen dosya adındaki izin dışı karakterleri tireye çevirir.
 function ad_uydur($ad) {
-    $ad = preg_replace('/[^\p{L}\p{N} ._\-(),;]+/u', '-', basename((string)$ad));
+    $ad = preg_replace('/[^\p{L}\p{N} ._\-(),;]+/u', '-', son_ad(str_replace('\\', '/', (string)$ad)));
     $ad = trim(preg_replace('/\s+/u', ' ', $ad), " .-");
-    if (mb_strlen($ad) > 120) { $u = uzanti($ad); $ad = mb_substr(pathinfo($ad, PATHINFO_FILENAME), 0, 110) . '.' . $u; }
+    if (mb_strlen($ad) > 120) { $u = uzanti($ad); $ad = mb_substr(preg_replace('/\.[^.]*$/u', '', $ad), 0, 110) . '.' . $u; }
     return ad_temizle($ad);
 }
 function bos_ad($klasor, $ad) {
@@ -70,13 +70,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $k = yol_temizle($_POST['k'] ?? '');
         if ($k === null || !is_dir(tam_yol($k))) git($rel, 'Hedef klasör bulunamadı.');
         if (is_dir($hp) && ($k === $hedef || strpos("$k/", "$hedef/") === 0)) git($rel, 'Klasör kendi içine taşınamaz.');
-        $kp = tam_yol($k); $ad = basename($hp);
+        $kp = tam_yol($k); $ad = son_ad($hp);
         if (dirname($hp) === $kp) git($rel, 'Öğe zaten bu klasörde.');
         git($rel, @rename($hp, "$kp/" . bos_ad($kp, $ad)) ? "Taşındı: $ad → " . ($k === '' ? 'Dosyalar' : $k) : 'Taşınamadı.');
     }
     if ($is === 'sil') {
         $ad = date('Ymd-His') . '.' . b64e($hedef);
-        git($rel, @rename($hp, COP . "/$ad") ? 'Çöpe taşındı: ' . basename($hedef) . ' (Çöp kutusundan geri alınabilir.)' : 'Silinemedi.');
+        git($rel, @rename($hp, COP . "/$ad") ? 'Çöpe taşındı: ' . son_ad($hedef) . ' (Çöp kutusundan geri alınabilir.)' : 'Silinemedi.');
     }
     if ($is === 'geri' || $is === 'kalici') {
         $c = basename($_POST['c'] ?? '');
@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $ust = $eski ? dirname($eski) : '.'; $ust = $ust === '.' ? '' : $ust;
         if ($eski === null || $eski === '' || !is_dir(tam_yol($ust))) $ust = '';
         $up = tam_yol($ust);
-        $ad = bos_ad($up, $eski ? basename($eski) : $c);
+        $ad = bos_ad($up, $eski ? son_ad($eski) : $c);
         git($ust, @rename($cp, "$up/$ad") ? "Geri alındı: $ad" : 'Geri alınamadı.');
     }
     if ($is === 'sifre') {
@@ -153,7 +153,7 @@ if ($satir === '') $satir = '<tr><td colspan="3">Bu klasör boş.</td></tr>';
 sayfa('Dosya yönetimi', '
   <div class="page-head">
     <div class="eyebrow"><a href="./">Eğitim</a> › Yönetim › ' . kirinti($rel, 'yonetim.php') . '</div>
-    <h1>' . e($rel === '' ? 'Dosya yönetimi' : basename($rel)) . '</h1>
+    <h1>' . e($rel === '' ? 'Dosya yönetimi' : son_ad($rel)) . '</h1>
     <p class="lede">Sunumları <b>Kütüphane</b> içindeki tür klasörüne (Seminerler, Makale Sunumları, Olgu Sunumları, Hoca Sunumları, Rehberler) yükleyin; <a href="kutuphane.php">Materyal kütüphanesi</a>nde kendiliğinden görünür. Dosya adı biçimi: <code>Konu - Başlık - Sunan (Yıl).pptx</code> — konu mevcut bir konuyla aynı yazılırsa o konunun altına girer. Hasta verisi yüklemeyin.</p>
   </div>' . $kutu . '
   <div class="yonetim-ust">

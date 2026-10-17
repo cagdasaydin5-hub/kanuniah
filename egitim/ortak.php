@@ -6,6 +6,9 @@
 if (basename($_SERVER['SCRIPT_FILENAME'] ?? '') === 'ortak.php') { http_response_code(403); exit; }
 
 date_default_timezone_set('Europe/Istanbul');
+// basename/pathinfo yerel ayara bağlıdır; "C" yerelinde Ç, İ, Ü gibi baş harfleri yutar. UTF-8 yereli seç.
+setlocale(LC_CTYPE, 'C.UTF-8', 'C.utf8', 'en_US.UTF-8', 'tr_TR.UTF-8');
+function son_ad($yol) { $yol = rtrim((string)$yol, '/'); $i = strrpos($yol, '/'); return $i === false ? $yol : substr($yol, $i + 1); }
 session_set_cookie_params(['path' => '/egitim/', 'httponly' => true, 'secure' => !empty($_SERVER['HTTPS']), 'samesite' => 'Lax']);
 session_start();
 header('X-Robots-Tag: noindex, nofollow');
@@ -54,7 +57,7 @@ function ad_temizle($ad) {
     if ($ad[0] === '.' || $ad === '..' || substr($ad, -1) === '.') return null;
     return $ad;
 }
-function uzanti($ad) { return strtolower(pathinfo($ad, PATHINFO_EXTENSION)); }
+function uzanti($ad) { $ad = son_ad($ad); $i = strrpos($ad, '.'); return $i === false ? '' : strtolower(substr($ad, $i + 1)); }
 function izinli_dosya($ad) { return in_array(uzanti($ad), IZINLI, true); }
 
 // "a/b/c" biçimindeki göreli yolu doğrular; geçersizse null. Boş dize = arşiv kökü.
