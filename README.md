@@ -151,7 +151,8 @@ Asistan seminerleri, makale ve olgu sunumları ile hoca sunumlarının konuya g�
 - Dosyalar depoda değil, sunucuda durur: `egitim/arsiv/Kütüphane/<Tür klasörü>/<dosya>` (Seminerler, Makale Sunumları, Olgu Sunumları, Hoca Sunumları, Rehberler). FTP ile yüklenir; `yonetim.php` da aynı klasörü yönetir.
 - Dizin sunucuda `egitim/arsiv/Kütüphane/.kutuphane.json` dosyasındadır (depoda değil) (başlık, tür, grup, konu, sunan, danışman, yıl, dosya yolu, slayt metninden arama anahtarları). Sayfa bunu `kutuphane.php?veri=1` ile alır; arama tarayıcıda yapılır (`assets/kutuphane.js`).
 - Dosya ve klasör adları `ortak.php` içindeki `ad_temizle` kuralına uyar: harf, rakam, boşluk ve `. _ - ( ) , ;`. Ad biçimi: `Konu - Başlık - Sunan (Yıl).pptx`; konu başta olduğu için aynı konu alfabetik sırada yan yana gelir.
-- Yeni sunum eklemek: dosyayı ilgili tür klasörüne yükle ve sunucudaki `.kutuphane.json`'a bir kayıt ekle (ya da üretim betiğini yeniden çalıştırıp dosyayı FTP ile değiştir). Depoya gönderme gerekmez.
+- Yeni sunum eklemek: `yonetim.php` ile dosyayı ilgili tür klasörüne yükle. `kutuphane.php?veri=1` dizinde olmayan dosyaları da adından okuyarak listeler (konu mevcut bir konuyla aynıysa o gruba girer, ad biçime uymuyorsa "Yeni eklenenler" altına düşer); dosyası silinen kayıtlar listeden çıkar. Danışman ve slayt metni araması için `.kutuphane.json`'a kayıt eklemek isteğe bağlıdır. Depoya gönderme gerekmez.
+- Eğitim sayfasında ayrı bir "Dosyalar" kutusu yoktur; `dosyalar.php` yalnızca dosya sunar (ve klasör gezintisi için kalır).
 - Türler: Seminer, Makale Sunumu, Olgu Sunumu, Hoca Sunumu, Rehber. Konu haritası ve dizin üretim betikleri site sahibindedir (`kanuniah_arsiv/_tools`).
 
 ## Yayın

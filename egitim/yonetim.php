@@ -154,7 +154,7 @@ sayfa('Dosya yönetimi', '
   <div class="page-head">
     <div class="eyebrow"><a href="./">Eğitim</a> › Yönetim › ' . kirinti($rel, 'yonetim.php') . '</div>
     <h1>' . e($rel === '' ? 'Dosya yönetimi' : basename($rel)) . '</h1>
-    <p class="lede">Buraya yüklenenler asistanlara <a href="dosyalar.php' . ($rel === '' ? '' : '?y=' . rawurlencode($rel)) . '">Dosyalar</a> bölümünde aynı klasör düzeniyle görünür. Hasta verisi yüklemeyin.</p>
+    <p class="lede">Sunumları <b>Kütüphane</b> içindeki tür klasörüne (Seminerler, Makale Sunumları, Olgu Sunumları, Hoca Sunumları, Rehberler) yükleyin; <a href="kutuphane.php">Materyal kütüphanesi</a>nde kendiliğinden görünür. Dosya adı biçimi: <code>Konu - Başlık - Sunan (Yıl).pptx</code> — konu mevcut bir konuyla aynı yazılırsa o konunun altına girer. Hasta verisi yüklemeyin.</p>
   </div>' . $kutu . '
   <div class="yonetim-ust">
     <form method="post" enctype="multipart/form-data">' . $gizli . '<b>Dosya yükle</b><input type="file" name="f[]" multiple required><button class="chip" name="is" value="yukle">Yükle</button>

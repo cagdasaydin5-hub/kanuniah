@@ -271,3 +271,13 @@ details.konu>summary .c,.kitap-bas .c{font-family:var(--mono);font-size:12.5px;c
 .kitap-ad:hover{text-decoration:underline}
 .kitap .meta{margin-top:4px}
 .kitap .meta .chip{padding:2px 10px;font-size:13px;margin-left:auto}
+.kutuphane .atla{margin:4px 0 6px}
+.kutuphane .atla .chip{text-decoration:none}
+.kutuphane .grup h2{scroll-margin-top:80px}
+details.konu>summary b::before{content:"▾ ";font-family:var(--sans);font-size:14px;color:var(--muted)}
+details.konu:not([open])>summary b::before{content:"▸ "}
+/* eğitim bölümü: klinik başlığı ve sağ üstte çıkış */
+.klinik-bas{display:flex;gap:18px;align-items:center}
+.klinik-bas img{flex:none}
+@media (max-width:560px){.klinik-bas img{width:48px;height:48px}}
+nav.main a.cikis{color:var(--muted);font-size:14px}

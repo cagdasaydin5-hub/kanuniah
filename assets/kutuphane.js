@@ -34,7 +34,7 @@
 
   var veri = [], q = document.getElementById("q"), out = document.getElementById("kutuphane"),
       chips = document.getElementById("tur"), count = document.getElementById("count"),
-      tur = "", acikKonu = null;
+      tur = "", acik = true, hepsi = document.getElementById("hepsi");
 
   fetch("kutuphane.php?veri=1", { cache: "no-store" }).then(function (r) {
     if (!r.ok) throw new Error("dizin");
@@ -119,35 +119,36 @@
     var temel = tur ? veri.filter(function (x) { return x.type === tur; }) : veri;
     out.innerHTML = "";
     if (!t.length) {
-      // Konu dizini: grup başlıkları ve konu düğmeleri
-      count.textContent = temel.length + " materyal · " + grupla(temel).length + " konu";
+      // Konu dizini: tüm gruplar ve konular açık; isteyen aşağı kaydırır ya da üstteki bağlantılarla atlar
+      var liste = grupla(temel);
+      count.textContent = temel.length + " materyal · " + liste.length + " konu";
       var gruplar = {};
-      grupla(temel).forEach(function (k) { (gruplar[k.group] = gruplar[k.group] || []).push(k); });
-      Object.keys(gruplar).sort(function (a, b) { return a.localeCompare(b, "tr"); }).forEach(function (gad) {
+      liste.forEach(function (k) { (gruplar[k.group] = gruplar[k.group] || []).push(k); });
+      var adlar = Object.keys(gruplar).sort(function (a, b) { return a.localeCompare(b, "tr"); });
+      var atla = el("nav", "chips atla"); atla.setAttribute("aria-label", "Gruba atla");
+      adlar.forEach(function (gad) {
+        var a = el("a", "chip", gad); a.href = "#g-" + fold(gad).replace(/[^a-z0-9]+/g, "-");
+        a.appendChild(el("span", "c", String(gruplar[gad].reduce(function (n, k) { return n + k.items.length; }, 0))));
+        atla.appendChild(a);
+      });
+      out.appendChild(atla);
+      adlar.forEach(function (gad) {
         var sec = el("section", "grup");
-        sec.appendChild(el("h2", null, gad));
-        var ch = el("div", "chips");
-        gruplar[gad].forEach(function (k) {
-          var b = el("button", "chip", k.topic); b.type = "button";
-          b.appendChild(el("span", "c", String(k.items.length)));
-          b.setAttribute("aria-pressed", String(acikKonu === k.topic));
-          b.onclick = function () { acikKonu = acikKonu === k.topic ? null : k.topic; ciz(); };
-          ch.appendChild(b);
-        });
-        sec.appendChild(ch);
-        if (acikKonu) gruplar[gad].forEach(function (k) { if (k.topic === acikKonu) sec.appendChild(konuBlok(k, true)); });
+        var h = el("h2", null, gad); h.id = "g-" + fold(gad).replace(/[^a-z0-9]+/g, "-");
+        sec.appendChild(h);
+        gruplar[gad].forEach(function (k) { sec.appendChild(konuBlok(k, acik)); });
         out.appendChild(sec);
       });
+      dugme();
       return;
     }
-    acikKonu = null;
     var basliktan = temel.filter(function (x) { return uyar(x, t); });
     var icerikten = temel.filter(function (x) { return !uyar(x, t) && metinde(x, t); });
     count.textContent = (basliktan.length + icerikten.length) + " sonuç";
     if (!basliktan.length && !icerikten.length) { out.appendChild(el("p", "empty", "Bu konuda materyal bulunamadı. Daha kısa ya da farklı bir kelime deneyin.")); return; }
     if (basliktan.length) {
       var h = el("h2", null, "Konu ve başlıkta eşleşenler"); out.appendChild(h);
-      grupla(basliktan).forEach(function (k) { out.appendChild(konuBlok(k, true)); });
+      grupla(basliktan).forEach(function (k) { out.appendChild(konuBlok(k, acik)); });
     }
     if (icerikten.length) {
       var h2 = el("h2", null, "Slayt içeriğinde geçenler"); out.appendChild(h2);
@@ -159,7 +160,16 @@
       });
       out.appendChild(d);
     }
+    dugme();
   }
+
+  // Tümünü aç / kapat
+  function dugme() { if (hepsi) hepsi.textContent = acik ? "Tümünü kapat" : "Tümünü aç"; }
+  if (hepsi) hepsi.onclick = function () {
+    acik = !acik;
+    Array.prototype.forEach.call(out.querySelectorAll("details.konu"), function (d) { d.open = acik; });
+    dugme();
+  };
 
   var zam = null;
   q.addEventListener("input", function () { clearTimeout(zam); zam = setTimeout(ciz, 120); });
