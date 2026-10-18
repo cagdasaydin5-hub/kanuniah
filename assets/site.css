@@ -344,3 +344,41 @@ table.cl tr.gecmis td.cl-t,table.cl tr.gecmis td:last-child{opacity:.55}
 @media (max-width:560px){table.cl td.cl-t{white-space:normal}}
 table.cl tr.ben td.cl-b{background:none}
 small.cl-degisim{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+
+/* telefon menüsü (site.js ekler) */
+.menu-btn{display:none}
+@media (max-width:640px){
+  .mobil-menu .top .wrap{flex-wrap:nowrap;gap:10px;min-height:56px}
+  .mobil-menu .menu-btn{display:inline-flex;flex-direction:column;justify-content:center;gap:4px;width:40px;height:40px;padding:0 9px;margin-left:-6px;border:0;border-radius:8px;background:transparent;cursor:pointer;flex:none}
+  .mobil-menu .menu-btn span{display:block;height:2px;border-radius:2px;background:var(--ink)}
+  .mobil-menu .menu-btn:hover{background:var(--sunk)}
+  .mobil-menu .brand{min-width:0}
+  .mobil-menu .brand b{font-size:16.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mobil-menu .top .wrap > a.login{margin-left:auto;flex:none;text-decoration:none;color:var(--ink);font-weight:600;font-size:14.5px;padding:6px 11px;border:1px solid var(--line);border-radius:8px}
+  .mobil-menu .top .wrap > a.login[aria-current="page"]{background:var(--pine-soft);color:var(--pine)}
+  .mobil-menu nav.main{position:fixed;top:0;left:0;bottom:0;width:min(80vw,290px);margin:0;flex-direction:column;flex-wrap:nowrap;gap:2px;padding:18px 12px;background:var(--surface);border-right:1px solid var(--line);overflow-y:auto;z-index:41;transform:translateX(-105%);visibility:hidden;transition:transform .2s ease,visibility 0s .2s}
+  .mobil-menu.menu-acik nav.main{transform:none;visibility:visible;transition:transform .2s ease}
+  .mobil-menu nav.main a{font-size:16px;padding:11px 12px;white-space:normal}
+  .menu-perde{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:40}
+  .menu-acik body{overflow:hidden}
+  .chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-18px;padding:2px 18px 4px;scroll-padding-inline:18px}
+  .chips::-webkit-scrollbar{display:none}
+  .chips > *{flex:none}
+}
+/* telefonda daha sıkı yazı */
+@media (max-width:640px){
+  body{font-size:15px;line-height:1.5}
+  .hero{padding-block:20px 14px}
+  .page-head{padding-block:16px 8px}
+  .page-head h1{font-size:24px;margin:.15em 0 .2em}
+  h1{font-size:26px}
+  .eyebrow{font-size:11px}
+  .lede{font-size:13.5px;line-height:1.45}
+  h3{font-size:16.5px;margin:3px 0 4px}
+  .sum{font-size:14px}
+  li.g{padding:12px 0}
+  .tile{padding:14px}
+  .tile b{font-size:17px}
+  .tile span{font-size:13.5px}
+  input:not([type=checkbox]):not([type=radio]),select,textarea{font-size:16px}
+}

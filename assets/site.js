@@ -381,6 +381,39 @@
     });
   })();
 
+  /* telefon menüsü: dar ekranda bölümler soldan açılan çekmeceye girer, Giriş üstte kalır */
+  (function () {
+    var nav = document.querySelector("nav.main"), bar = document.querySelector(".top .wrap");
+    if (!nav || !bar) return;
+    var mq = window.matchMedia("(max-width:640px)");
+    var btn = document.createElement("button");
+    btn.type = "button"; btn.className = "menu-btn"; btn.setAttribute("aria-label", "Menüyü aç");
+    btn.setAttribute("aria-expanded", "false"); nav.id = nav.id || "ana-menu"; btn.setAttribute("aria-controls", nav.id);
+    btn.innerHTML = '<span></span><span></span><span></span>';
+    var perde = document.createElement("div"); perde.className = "menu-perde"; perde.hidden = true;
+    var giris = nav.querySelector("a.login"), yer = document.createComment("giris");
+    bar.insertBefore(btn, bar.firstChild); (document.querySelector("header.top") || document.body).appendChild(perde);
+    function ac(v) {
+      document.documentElement.classList.toggle("menu-acik", v);
+      btn.setAttribute("aria-expanded", v ? "true" : "false");
+      btn.setAttribute("aria-label", v ? "Menüyü kapat" : "Menüyü aç");
+      perde.hidden = !v;
+      if (v) { var a = nav.querySelector("a"); if (a) a.focus(); }
+    }
+    function uygula() {
+      document.documentElement.classList.toggle("mobil-menu", mq.matches);
+      if (!giris) return;
+      if (mq.matches && giris.parentNode === nav) { nav.insertBefore(yer, giris); bar.appendChild(giris); }
+      else if (!mq.matches && yer.parentNode) { nav.insertBefore(giris, yer); nav.removeChild(yer); }
+      if (!mq.matches) ac(false);
+    }
+    btn.addEventListener("click", function () { ac(btn.getAttribute("aria-expanded") !== "true"); });
+    perde.addEventListener("click", function () { ac(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && document.documentElement.classList.contains("menu-acik")) { ac(false); btn.focus(); } });
+    (mq.addEventListener ? mq.addEventListener("change", uygula) : mq.addListener(uygula));
+    uygula();
+  })();
+
   if (pages[page]) pages[page]();
 
   /* çevrimdışı çalışma ve telefona kurulum (PWA) */
