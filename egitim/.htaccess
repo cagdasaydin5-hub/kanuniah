@@ -4,7 +4,7 @@ DirectoryIndex index.php
 <FilesMatch "^(icerik|giris|cerceve|sayfa-[a-z0-9-]+)\.html$">
   Require all denied
 </FilesMatch>
-# ortak.php ve akademik-oku.php yalnızca diğer PHP dosyalarınca kullanılır
-<FilesMatch "^(ortak|akademik-oku)\.php$">
+# ortak.php ve *-oku.php yalnızca diğer PHP dosyalarınca kullanılır
+<FilesMatch "^(ortak|akademik-oku|calisma-oku)\.php$">
   Require all denied
 </FilesMatch>

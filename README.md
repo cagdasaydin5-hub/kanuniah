@@ -202,3 +202,9 @@ yürürlükteki (üstü çizili olmayan) metinden hazırlanmıştır.
 - Veri depoda değil, sunucuda durur: `egitim/arsiv/.akademik.json` (temizlenmiş) ve `egitim/arsiv/.akademik.xlsx` (özgün Excel, "Excel'i indir" bağlantısı).
 - Güncellemek: yönetici hesabıyla sayfanın altındaki "Programı güncelle" kutusundan yeni .xlsx yüklenir; eskisinin yerine geçer. Okuma ve temizleme `egitim/akademik-oku.php` içindedir (ad yazımı Ad SOYAD, yinelenen hücreler, bilinen yazım hataları `AK_DUZELT`, aynı kişinin farklı yazılışları `AK_AYNI_KISI`). Ayrıştırılamayan hücreler yükleme sonrası uyarı olarak listelenir.
 - Sunucuda PHP `zip` eklentisi (ZipArchive) gerekir.
+
+## Çalışma listesi (`egitim/calisma.php`)
+
+- Asistanların gün gün çalıştığı birimler; yalnızca giriş yapanlara açık. Gün seçici, kişi seçimi (akademik programla ortak, tarayıcıda hatırlanır), kişinin dönemleri ve birimlere göre dönemler (`assets/calisma.js`).
+- Veri sunucuda: `egitim/arsiv/.calisma.json` ve son yüklenen `egitim/arsiv/.calisma.xlsx`. Yönetici aylık Excel'i sayfanın altından yükler; dosyadaki günler eskilerinin yerine geçer, diğer aylar korunur. Okuma `egitim/calisma-oku.php` içindedir (üst satır birimler, A sütunu tarih, hücrede adlar "-" ile ayrılır, tarihsiz yazı satırları not olur; aynı adlı birimler sırayla numaralanır).
+- Adlar gösterilirken akademik programdaki yazımla eşleştirilir (büyük/küçük harf, Türkçe karakter ve eksik soyad farkları); eşleşmeyenler "Ad SOYAD" biçimine getirilir.

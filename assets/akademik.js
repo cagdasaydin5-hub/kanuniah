@@ -169,7 +169,6 @@
 
   function ciz() {
     var kisi = sel.value, terim = fold(q.value.trim()).split(/\s+/).filter(Boolean);
-    depo("ak-kisi", kisi);
     siraCiz();
     gorevCiz(kisi);
     var secili = H.filter(function (h) {
@@ -205,6 +204,6 @@
   }
 
   q.addEventListener("input", ciz);
-  sel.addEventListener("change", ciz);
+  sel.addEventListener("change", function () { depo("ak-kisi", sel.value); ciz(); });
   ciz();
 })();

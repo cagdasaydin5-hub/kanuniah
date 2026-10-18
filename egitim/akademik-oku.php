@@ -20,6 +20,9 @@ const AK_DUZELT = [
     'gut' => 'Gut',
     'tıbbi kayıtların tutulması evde sağlık hizmetleri örneği' => 'Tıbbi Kayıtların Tutulması: Evde Sağlık Hizmetleri Örneği',
     'asistan sınavı' => 'Asistan sınavı',
+    'ara' => 'Akut romatizmal ateş',
+    'yaşam ölçekler' => 'Sağlıklı Yaş Alma Merkezinde (YAŞAM) kullanılan ölçekler',
+    'yaşam ölçekleri' => 'Sağlıklı Yaş Alma Merkezinde (YAŞAM) kullanılan ölçekler',
 ];
 // Aynı kişinin farklı yazılışları (anahtar: küçük harf). Kısaltmalar (M. Emin, Burcu A.) ayrıca kendiliğinden birleşir.
 const AK_AYNI_KISI = [

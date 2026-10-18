@@ -73,7 +73,7 @@ sayfa('Akademik program', '
   </div>
   <div id="ak-gorev"></div>
   <div id="ak-tablo" class="ak-tablo"><p class="empty">' . ($veri === 'null' ? 'Program henüz yüklenmedi.' : 'Yükleniyor…') . '</p></div>
-  <p class="ak-alt"><a class="chip" href="./">‹ Eğitim</a>' . (is_file(AK_XLSX) ? ' <a class="chip" href="akademik.php?indir=1">Excel\'i indir</a>' : '') . ($gun ? ' <span class="muted">Son güncelleme: ' . e(tarih($gun)) . '</span>' : '') . '</p>
+  <p class="ak-alt"><a class="chip" href="./">‹ Eğitim</a> <a class="chip" href="calisma.php">Çalışma listesi</a>' . (is_file(AK_XLSX) ? ' <a class="chip" href="akademik.php?indir=1">Excel\'i indir</a>' : '') . ($gun ? ' <span class="muted">Son güncelleme: ' . e(tarih($gun)) . '</span>' : '') . '</p>
   ' . $yon . '
   <script type="application/json" id="ak-veri">' . str_replace('</', '<\/', $veri) . '</script>
   <script src="../assets/akademik.js" defer></script>');
