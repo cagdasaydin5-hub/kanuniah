@@ -336,3 +336,10 @@ table.cl tr.ben td{background:var(--brass-soft)}
 #cl-birim{margin-top:18px}
 #cl-birim .kitap .ak-konu{margin-bottom:4px}
 @media (max-width:560px){table.cl td.cl-b{white-space:normal}}
+table.cl td.cl-b{vertical-align:top}
+table.cl td.cl-t{white-space:nowrap;color:var(--muted);font-size:14px}
+table.cl tr.ilk td{border-top:2px solid var(--line)}
+table.cl tr.gecmis td.cl-t,table.cl tr.gecmis td:last-child{opacity:.55}
+#cl-gunluk p.muted{color:var(--muted);font-size:14px}
+@media (max-width:560px){table.cl td.cl-t{white-space:normal}}
+table.cl tr.ben td.cl-b{background:none}

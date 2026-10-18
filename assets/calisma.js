@@ -59,15 +59,16 @@
   var kayitli = depo("ak-kisi");
   if (kayitli && sayac[kayitli]) sel.value = kayitli;
 
+  var tum = el("option", null, "Tüm program"); tum.value = ""; gunSel.appendChild(tum);
   TAR.forEach(function (t) { var o = el("option", null, tarih(t)); o.value = t; gunSel.appendChild(o); });
   function varsayilan() {
     for (var i = 0; i < TAR.length; i++) if (TAR[i] >= BUGUN) return TAR[i];
     return TAR[TAR.length - 1];
   }
-  gunSel.value = varsayilan();
+  gunSel.value = "";
 
   function kisiCiz() {
-    var kutu = document.getElementById("cl-kisi"), kisi = sel.value, t = gunSel.value;
+    var kutu = document.getElementById("cl-kisi"), kisi = sel.value, t = gunSel.value || varsayilan();
     kutu.textContent = "";
     if (!kisi) return;
     var k = el("section", "ak-kart");
@@ -94,65 +95,68 @@
     kutu.appendChild(k);
   }
 
+  function adlar(td, liste, kisi) {
+    liste.forEach(function (a, i) {
+      if (i) td.appendChild(document.createTextNode(", "));
+      td.appendChild(el("span", "ak-ad" + (a === kisi ? " ben" : ""), a));
+    });
+  }
+  function tablo(basliklar) {
+    var tb = el("table", "asi cl"), th = el("thead"), tr = el("tr");
+    basliklar.forEach(function (x) { tr.appendChild(el("th", null, x)); });
+    th.appendChild(tr); tb.appendChild(th);
+    return tb;
+  }
+
+  // Tüm program: her birim için, aynı kişilerin çalıştığı ardışık günler tek satır
+  function programCiz() {
+    var out = document.getElementById("cl-gunluk"), kisi = sel.value;
+    out.textContent = "";
+    out.appendChild(el("h2", "cl-baslik", "Tüm program · " + aralik(TAR[0], TAR[TAR.length - 1])));
+    var tb = tablo(["Birim", "Tarih", "Asistan"]), body = el("tbody");
+    birimler.forEach(function (b) {
+      var donem = [], son = null;
+      DOLU.forEach(function (g) {
+        var x = d.gunler[g][b] || [], key = x.join("|");
+        if (son && son.key === key) son.bitis = g; else { son = { key: key, ad: x, bas: g, bitis: g }; donem.push(son); }
+      });
+      donem = donem.filter(function (p) { return p.ad.length; });
+      donem.forEach(function (p, i) {
+        var r = el("tr", (kisi && p.ad.indexOf(kisi) > -1 ? "ben" : "") + (p.bitis < BUGUN ? " gecmis" : "") + (i === 0 ? " ilk" : ""));
+        if (i === 0) { var tdb = el("td", "cl-b", b); tdb.rowSpan = donem.length; r.appendChild(tdb); }
+        r.appendChild(el("td", "cl-t", aralik(p.bas, p.bitis)));
+        var td = el("td"); adlar(td, p.ad, kisi); r.appendChild(td);
+        body.appendChild(r);
+      });
+    });
+    tb.appendChild(body);
+    var wrap = el("div", "tablewrap"); wrap.appendChild(tb); out.appendChild(wrap);
+    var bos = TAR.filter(function (t) { return !Object.keys(d.gunler[t]).length; });
+    if (bos.length) out.appendChild(el("p", "muted", "Atama yapılmamış gün: " + bos.map(function (t) { return tarih(t); }).join(", ") + "."));
+  }
+
   function gunCiz() {
     var out = document.getElementById("cl-gunluk"), t = gunSel.value, kisi = sel.value, g = d.gunler[t];
     out.textContent = "";
-    var h = el("h2", "cl-baslik", tarih(t));
-    out.appendChild(h);
+    out.appendChild(el("h2", "cl-baslik", tarih(t)));
     if (!Object.keys(g).length) { out.appendChild(el("p", "empty", "Bu gün için atama yok.")); return; }
-    var wrap = el("div", "tablewrap"), tb = el("table", "asi cl");
-    var th = el("thead"), tr = el("tr");
-    tr.appendChild(el("th", null, "Birim")); tr.appendChild(el("th", null, "Asistan"));
-    th.appendChild(tr); tb.appendChild(th);
-    var body = el("tbody");
+    var tb = tablo(["Birim", "Asistan"]), body = el("tbody");
     birimler.forEach(function (b) {
       if (!g[b]) return;
       var r = el("tr", kisi && g[b].indexOf(kisi) > -1 ? "ben" : "");
       r.appendChild(el("td", "cl-b", b));
-      var td = el("td");
-      g[b].forEach(function (a, i) {
-        if (i) td.appendChild(document.createTextNode(", "));
-        td.appendChild(el("span", "ak-ad" + (a === kisi ? " ben" : ""), a));
-      });
-      r.appendChild(td);
+      var td = el("td"); adlar(td, g[b], kisi); r.appendChild(td);
       body.appendChild(r);
     });
-    tb.appendChild(body); wrap.appendChild(tb); out.appendChild(wrap);
-  }
-
-  function birimCiz() {
-    var kutu = document.getElementById("cl-birim");
-    kutu.textContent = "";
-    var det = el("details", "konu");
-    det.appendChild(el("summary")).appendChild(el("b", null, "Birimlere göre dönemler"));
-    birimler.forEach(function (b) {
-      var donem = [], son = null;
-      DOLU.forEach(function (g) {
-        var x = (d.gunler[g][b] || []).join(", ");
-        if (son && son.ad === x) son.bitis = g; else { son = { ad: x, bas: g, bitis: g }; donem.push(son); }
-      });
-      donem = donem.filter(function (p) { return p.ad; });
-      if (!donem.length) return;
-      var s = el("div", "kitap");
-      s.appendChild(el("div", "ak-konu", b));
-      var ul = el("ul", "ak-liste cl-donem");
-      donem.forEach(function (p) {
-        var li = el("li", p.bitis < BUGUN ? "gecmis" : "");
-        li.appendChild(el("span", "ak-tarih", aralik(p.bas, p.bitis)));
-        li.appendChild(el("span", null, p.ad));
-        ul.appendChild(li);
-      });
-      s.appendChild(ul);
-      det.appendChild(s);
-    });
-    kutu.appendChild(det);
+    tb.appendChild(body);
+    var wrap = el("div", "tablewrap"); wrap.appendChild(tb); out.appendChild(wrap);
   }
 
   function notCiz() {
     var kutu = document.getElementById("cl-not"), t = gunSel.value;
     kutu.textContent = "";
     (d.notlar || []).forEach(function (n) {
-      if (n.bas <= t && t <= n.son) {
+      if (!t || (n.bas <= t && t <= n.son)) {
         var p = el("p", "callout");
         p.appendChild(el("b", null, "Listedeki not: "));
         p.appendChild(document.createTextNode(n.metin));
@@ -161,8 +165,9 @@
     });
   }
 
-  function ciz() { kisiCiz(); gunCiz(); notCiz(); }
+  function ciz() { kisiCiz(); if (gunSel.value) gunCiz(); else programCiz(); notCiz(); }
   function kaydir(n) {
+    if (!gunSel.value) { gunSel.value = varsayilan(); ciz(); return; }
     var i = TAR.indexOf(gunSel.value) + n;
     if (i >= 0 && i < TAR.length) { gunSel.value = TAR[i]; ciz(); }
   }
@@ -171,6 +176,5 @@
   document.getElementById("cl-onceki").addEventListener("click", function () { kaydir(-1); });
   document.getElementById("cl-sonraki").addEventListener("click", function () { kaydir(1); });
   document.getElementById("cl-bugun").addEventListener("click", function () { gunSel.value = varsayilan(); ciz(); });
-  birimCiz();
   ciz();
 })();

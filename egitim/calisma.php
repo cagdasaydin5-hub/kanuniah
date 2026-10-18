@@ -77,7 +77,7 @@ sayfa('Çalışma listesi', '
   <div class="page-head">
     <div class="eyebrow"><a href="./">Eğitim</a> › Çalışma listesi</div>
     <h1>Çalışma listesi</h1>
-    <p class="lede">Asistanların gün gün çalıştığı birimler. Adınızı seçin, nerede olduğunuzu görün. Listede adı geçmeyen asistanlar rotasyondadır.</p>
+    <p class="lede">Asistanların çalıştığı birimler ve tarihleri. Adınızı seçin ya da bir gün seçip o günü görün. Listede adı geçmeyen asistanlar rotasyondadır.</p>
   </div>' . $kutu . '
   <div class="bar">
     <div class="ak-filtre">
@@ -87,7 +87,6 @@ sayfa('Çalışma listesi', '
   </div>
   <div id="cl-kisi"></div>
   <div id="cl-gunluk" class="ak-tablo"><p class="empty">' . ($veri === 'null' ? 'Liste henüz yüklenmedi.' : 'Yükleniyor…') . '</p></div>
-  <div id="cl-birim"></div>
   <div id="cl-not"></div>
   <p class="ak-alt"><a class="chip" href="./">‹ Eğitim</a> <a class="chip" href="akademik.php">Akademik program</a>' . (is_file(CL_XLSX) ? ' <a class="chip" href="calisma.php?indir=1">Excel\'i indir</a>' : '') . ($gun ? ' <span class="muted">Son güncelleme: ' . e(tarih($gun)) . '</span>' : '') . '</p>
   ' . $yon . '
