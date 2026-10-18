@@ -343,3 +343,4 @@ table.cl tr.gecmis td.cl-t,table.cl tr.gecmis td:last-child{opacity:.55}
 #cl-gunluk p.muted{color:var(--muted);font-size:14px}
 @media (max-width:560px){table.cl td.cl-t{white-space:normal}}
 table.cl tr.ben td.cl-b{background:none}
+small.cl-degisim{display:block;color:var(--muted);font-size:13px;margin-top:2px}

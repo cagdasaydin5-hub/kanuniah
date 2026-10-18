@@ -30,12 +30,16 @@ function calisma_oku($dosya) {
         if ($dolu >= 3) { $bas = $i; break; }
     }
     if ($bas === null) throw new RuntimeException('Birim adlarının olduğu başlık satırı bulunamadı.');
-    // Aynı adlı sütunlar (ör. birden çok "Evde Sağlık Ekip Sorumlu") tek birimde toplanır; ekip numarası verilmez.
-    $birim = [];
+    // Aynı adlı sütunlar (ör. birden çok "Evde Sağlık Ekip Sorumlu") Excel'deki gibi ayrı tutulur ki kimin kimin yerine
+    // geldiği izlenebilsin. İç anahtar "Ad#sıra" olur; sayfada yalnızca ad görünür (ekip numarası verilmez).
+    $birim = []; $say = [];
     foreach ($rows[$bas] as $j => $h) {
         if ($j === 0 || ak_bosluk($h['v']) === '') continue;
-        $birim[$j] = birim_ad($h['v']);
+        $ad = birim_ad($h['v']);
+        $say[$ad] = ($say[$ad] ?? 0) + 1;
+        $birim[$j] = $ad . '#' . $say[$ad];
     }
+    foreach ($birim as $j => $k) { $ad = preg_replace('/#\d+$/', '', $k); if ($say[$ad] === 1) $birim[$j] = $ad; }
 
     $gunler = []; $not = [];
     foreach (array_slice($rows, $bas + 1) as $r) {
@@ -70,6 +74,8 @@ function calisma_birlestir($eski, $yeni) {
     ksort($gun);
     $birim = $yeni['birimler'];
     foreach ($eski['birimler'] as $b) if (!in_array($b, $birim, true)) $birim[] = $b;
+    // Hiçbir günde kullanılmayan (eski biçimden kalan) birim anahtarlarını at
+    $birim = array_values(array_filter($birim, function ($b) use ($gun) { foreach ($gun as $g) if (isset($g[$b])) return true; return false; }));
     $notlar = array_values(array_filter($eski['notlar'] ?? [], function ($n) use ($yeni) {
         return $n['son'] < array_key_first($yeni['gunler']) || $n['bas'] > array_key_last($yeni['gunler']);
     }));

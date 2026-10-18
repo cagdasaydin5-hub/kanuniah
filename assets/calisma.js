@@ -37,9 +37,11 @@
   var DOLU = TAR.filter(function (t) { return Object.keys(d.gunler[t]).length > 0; });
   var birimler = d.birimler.slice();
 
+  // Aynı adlı sütunlar "Ad#2" gibi ayrı anahtarlarla gelir; sayfada yalnızca ad gösterilir
+  function etiket(b) { return b.replace(/#\d+$/, ""); }
   function kisiBirim(t, kisi) {
     var g = d.gunler[t], b = [];
-    birimler.forEach(function (x) { if (g[x] && g[x].indexOf(kisi) > -1) b.push(x); });
+    birimler.forEach(function (x) { if (g[x] && g[x].indexOf(kisi) > -1 && b.indexOf(etiket(x)) < 0) b.push(etiket(x)); });
     return b;
   }
 
@@ -123,9 +125,19 @@
       donem = donem.filter(function (p) { return p.ad.length; });
       donem.forEach(function (p, i) {
         var r = el("tr", (kisi && p.ad.indexOf(kisi) > -1 ? "ben" : "") + (p.bitis < BUGUN ? " gecmis" : "") + (i === 0 ? " ilk" : ""));
-        if (i === 0) { var tdb = el("td", "cl-b", b); tdb.rowSpan = donem.length; r.appendChild(tdb); }
+        if (i === 0) { var tdb = el("td", "cl-b", etiket(b)); tdb.rowSpan = donem.length; r.appendChild(tdb); }
         r.appendChild(el("td", "cl-t", aralik(p.bas, p.bitis)));
-        var td = el("td"); adlar(td, p.ad, kisi); r.appendChild(td);
+        var td = el("td"); adlar(td, p.ad, kisi);
+        if (i > 0) {
+          // Önceki döneme göre kim gitti, kim geldi
+          var once = donem[i - 1].ad;
+          var gelen = p.ad.filter(function (a) { return once.indexOf(a) < 0; });
+          var giden = once.filter(function (a) { return p.ad.indexOf(a) < 0; });
+          var not = gelen.length && giden.length ? giden.join(", ") + " → " + gelen.join(", ")
+                  : gelen.length ? "Katılan: " + gelen.join(", ") : giden.length ? "Ayrılan: " + giden.join(", ") : "";
+          if (not) td.appendChild(el("small", "cl-degisim", not));
+        }
+        r.appendChild(td);
         body.appendChild(r);
       });
     });
@@ -144,7 +156,7 @@
     birimler.forEach(function (b) {
       if (!g[b]) return;
       var r = el("tr", kisi && g[b].indexOf(kisi) > -1 ? "ben" : "");
-      r.appendChild(el("td", "cl-b", b));
+      r.appendChild(el("td", "cl-b", etiket(b)));
       var td = el("td"); adlar(td, g[b], kisi); r.appendChild(td);
       body.appendChild(r);
     });
