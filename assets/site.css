@@ -281,3 +281,44 @@ details.konu:not([open])>summary b::before{content:"▸ "}
 .klinik-bas img{flex:none}
 @media (max-width:560px){.klinik-bas img{width:48px;height:48px}}
 nav.main a.cikis{color:var(--muted);font-size:14px}
+
+/* ---------- akademik program (egitim/akademik.php) ---------- */
+.ak-filtre{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+.ak-kisi{display:flex;align-items:center;gap:6px;font-weight:600;font-size:14.5px}
+.ak-kisi select{font:inherit;font-size:14.5px;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);max-width:62vw}
+.ak-liste{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.ak-sem li{display:flex;flex-direction:column}
+.ak-konu{font-weight:600}
+.ak-sem .ak-ad{color:var(--muted);font-size:13.5px}
+.ak-ad.ben,.ak-liste li.ben .ak-ad{background:var(--brass-soft);color:var(--ink);border-radius:4px;padding:0 4px;font-weight:700;width:fit-content}
+table.ak{min-width:860px}
+table.ak td{vertical-align:top}
+table.ak td.ak-t b{display:block;white-space:nowrap}
+table.ak td.ak-t small{color:var(--muted);font-family:var(--mono);font-size:12px}
+table.ak tr.gecmis td{opacity:.6}
+table.ak tr.siradaki td{background:var(--pine-soft)}
+.ak-kart{background:var(--surface);border:1px solid var(--pine);border-radius:var(--radius);padding:14px 16px;margin:6px 0 16px}
+.ak-kart-bas{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;margin-bottom:8px}
+.ak-kart-bas b{font-family:var(--serif);font-size:20px}
+.ak-kart-alt{margin:10px 0 0;font-size:14.5px;white-space:pre-wrap}
+.ak-et{display:inline-block;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-right:6px;font-weight:700}
+.ak-gorevler{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;margin:14px 0}
+.ak-gorevler h2{font-family:var(--serif);font-size:18px;margin:0 0 8px}
+.ak-gorevler li{display:flex;flex-wrap:wrap;gap:2px 10px;align-items:baseline;padding:4px 0;border-top:1px solid var(--line)}
+.ak-gorevler li.gecmis{opacity:.55}
+.ak-tarih{font-weight:600;min-width:170px}
+.ak-tablo{margin-top:14px}
+.ak-alt{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ak-alt .muted{color:var(--muted);font-size:13.5px}
+.callout ul{margin:6px 0;padding-left:20px}
+@media (max-width:760px){
+  table.ak{min-width:0}
+  table.ak thead{display:none}
+  table.ak,table.ak tbody,table.ak tr,table.ak td{display:block;width:100%}
+  table.ak tr{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);margin:0 0 12px;padding:6px 12px}
+  table.ak td{border:0;padding:5px 0}
+  table.ak td.bos{display:none}
+  table.ak td:not(.ak-t)::before{content:attr(data-k);display:block;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  table.ak td.ak-t{display:flex;gap:8px;align-items:baseline;border-bottom:1px solid var(--line)}
+  table.ak tr.siradaki{border-color:var(--pine)}
+}

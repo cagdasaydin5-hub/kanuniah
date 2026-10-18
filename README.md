@@ -195,3 +195,10 @@ sonra veri dosyası güncellenir.
 Bulut ortamının erişemediği resmi metinlerin kopyaları (SUT güncel metni, SGK/TİTCK listeleri, Kim 2010 Tablo 1,
 Mearns 2014). Sunucuya yüklenmez. SUT 4.2.8.A kartı `tools/kaynak/sut/sut-guncel-2026-08-29.docx` içindeki
 yürürlükteki (üstü çizili olmayan) metinden hazırlanmıştır.
+
+## Akademik program (`egitim/akademik.php`)
+
+- Kliniğin haftalık seminer, makale ve olgu sunumu takvimi; yalnızca giriş yapanlara açık. Arama, dönem (gelecek/geçmiş/tümü) ve kişi süzgeci tarayıcıda yapılır (`assets/akademik.js`); seçilen kişi tarayıcıda hatırlanır.
+- Veri depoda değil, sunucuda durur: `egitim/arsiv/.akademik.json` (temizlenmiş) ve `egitim/arsiv/.akademik.xlsx` (özgün Excel, "Excel'i indir" bağlantısı).
+- Güncellemek: yönetici hesabıyla sayfanın altındaki "Programı güncelle" kutusundan yeni .xlsx yüklenir; eskisinin yerine geçer. Okuma ve temizleme `egitim/akademik-oku.php` içindedir (ad yazımı Ad SOYAD, yinelenen hücreler, bilinen yazım hataları `AK_DUZELT`, aynı kişinin farklı yazılışları `AK_AYNI_KISI`). Ayrıştırılamayan hücreler yükleme sonrası uyarı olarak listelenir.
+- Sunucuda PHP `zip` eklentisi (ZipArchive) gerekir.
