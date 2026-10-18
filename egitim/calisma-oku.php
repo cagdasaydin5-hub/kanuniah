@@ -30,16 +30,12 @@ function calisma_oku($dosya) {
         if ($dolu >= 3) { $bas = $i; break; }
     }
     if ($bas === null) throw new RuntimeException('Birim adlarının olduğu başlık satırı bulunamadı.');
-    $birim = []; $say = [];
+    // Aynı adlı sütunlar (ör. birden çok "Evde Sağlık Ekip Sorumlu") tek birimde toplanır; ekip numarası verilmez.
+    $birim = [];
     foreach ($rows[$bas] as $j => $h) {
         if ($j === 0 || ak_bosluk($h['v']) === '') continue;
-        $ad = birim_ad($h['v']);
-        $say[$ad] = ($say[$ad] ?? 0) + 1;
-        $birim[$j] = $ad;
+        $birim[$j] = birim_ad($h['v']);
     }
-    // Aynı adlı birimleri sırayla numarala (Evde Sağlık Ekip Sorumlusu 1, 2, …)
-    $sira = [];
-    foreach ($birim as $j => $ad) if ($say[$ad] > 1) { $sira[$ad] = ($sira[$ad] ?? 0) + 1; $birim[$j] = $ad . ' ' . $sira[$ad]; }
 
     $gunler = []; $not = [];
     foreach (array_slice($rows, $bas + 1) as $r) {
@@ -51,7 +47,7 @@ function calisma_oku($dosya) {
         $g = [];
         foreach ($birim as $j => $ad) {
             if (!isset($r[$j])) continue;
-            $adlar = [];
+            $adlar = $g[$ad] ?? [];
             foreach (preg_split('/\s*[-–+,;\/]\s*|\R/u', $r[$j]['v']) as $p) {
                 $p = ak_bosluk($p);
                 if ($p !== '' && !in_array($p, $adlar, true)) $adlar[] = $p;
@@ -63,7 +59,7 @@ function calisma_oku($dosya) {
     if (!$gunler) throw new RuntimeException('Tarihli satır bulunamadı.');
     ksort($gunler);
     $tar = array_keys($gunler);
-    return ['birimler' => array_values($birim), 'gunler' => $gunler,
+    return ['birimler' => array_values(array_unique($birim)), 'gunler' => $gunler,
             'notlar' => $not ? [['bas' => $tar[0], 'son' => end($tar), 'metin' => implode(' ', $not)]] : []];
 }
 

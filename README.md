@@ -206,5 +206,5 @@ yürürlükteki (üstü çizili olmayan) metinden hazırlanmıştır.
 ## Çalışma listesi (`egitim/calisma.php`)
 
 - Asistanların gün gün çalıştığı birimler; yalnızca giriş yapanlara açık. Gün seçici, kişi seçimi (akademik programla ortak, tarayıcıda hatırlanır), kişinin dönemleri ve birimlere göre dönemler (`assets/calisma.js`).
-- Veri sunucuda: `egitim/arsiv/.calisma.json` ve son yüklenen `egitim/arsiv/.calisma.xlsx`. Yönetici aylık Excel'i sayfanın altından yükler; dosyadaki günler eskilerinin yerine geçer, diğer aylar korunur. Okuma `egitim/calisma-oku.php` içindedir (üst satır birimler, A sütunu tarih, hücrede adlar "-" ile ayrılır, tarihsiz yazı satırları not olur; aynı adlı birimler sırayla numaralanır).
+- Veri sunucuda: `egitim/arsiv/.calisma.json` ve son yüklenen `egitim/arsiv/.calisma.xlsx`. Yönetici aylık Excel'i sayfanın altından yükler; dosyadaki günler eskilerinin yerine geçer, diğer aylar korunur. Okuma `egitim/calisma-oku.php` içindedir (üst satır birimler, A sütunu tarih, hücrede adlar "-" ile ayrılır, tarihsiz yazı satırları not olur; aynı adlı sütunlar tek birimde toplanır, ekip numarası verilmez).
 - Adlar gösterilirken akademik programdaki yazımla eşleştirilir (büyük/küçük harf, Türkçe karakter ve eksik soyad farkları); eşleşmeyenler "Ad SOYAD" biçimine getirilir.
