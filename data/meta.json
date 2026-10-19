@@ -1,6 +1,16 @@
 {
- "checked": "2026-10-12",
+ "checked": "2026-10-19",
  "log": [
+  {
+   "date": "2026-10-19",
+   "items": [
+    {
+     "ad": "Eklenen makale",
+     "n": 8,
+     "href": "haftanin-makaleleri.html"
+    }
+   ]
+  },
   {
    "date": "2026-10-12",
    "items": [

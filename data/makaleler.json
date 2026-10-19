@@ -4,6 +4,230 @@
  },
  "issues": [
   {
+   "id": "2026-10-19",
+   "title": "Hafta 43",
+   "range": "13 – 19 Ekim 2026",
+   "date": "2026-10-19",
+   "items": [
+    {
+     "id": "cochrane-cannabis-insomni",
+     "pmid": "42863850",
+     "doi": "10.1002/14651858.CD016216.pub2",
+     "journal": "Cochrane Database Syst Rev",
+     "date": "2026-10-13",
+     "title_en": "Medical cannabis for insomnia",
+     "title": "Tıbbi kendir, uykusuzlukta uyku kalitesi veya toplam uyku süresi üzerinde anlamlı bir yarar sağlamıyor; yan etkileri artırabilir",
+     "design": "Cochrane sistematik derleme ve meta-analiz · 9 RKÇ, n=537",
+     "tags": [
+      "uyku",
+      "insomni",
+      "tıbbi kendir"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Kullanımı sorgulatır",
+     "what": "Primer ya da kronik insomni hastalarında tıbbi kendir ile plasebo karşılaştırmasında uyku kalitesi (SMD −0,49; çok düşük kesinlik), toplam uyku süresi (MD 7,68 dakika; çok düşük kesinlik) ve gündüz işlevinde anlamlı fark görülmedi. Tıbbi kendir alan hastalarda yan etkiler belirgin arttı (OR 11,25).",
+     "practice": "Uykusuzluk için tıbbi kendir kullanan ya da soran hastaya klinik faydanın kanıtlanmadığı, yan etki riskinin ise arttığı söylenebilir. Klinisyen bu soruyla sıklıkla karşılaşabilir.",
+     "limits": "Dahil edilen çalışmalar küçük ve kısa süreli; kanıt kesinliği çok düşük. Kronik kullanım ve farklı kannabinoid formülasyonları değerlendirilmemiş.",
+     "rel": []
+    },
+    {
+     "id": "anthem-uc-icotrokinra",
+     "pmid": "42874103",
+     "doi": "10.1056/NEJMoa2604435",
+     "journal": "N Engl J Med",
+     "date": "2026-10-15",
+     "title_en": "Oral Icotrokinra for Moderately to Severely Active Ulcerative Colitis",
+     "title": "Oral ikotrokinra, ülseratif kolitte her üç dozda da plaseboya üstün klinik yanıt sağladı (ANTHEM-UC)",
+     "design": "Faz 2b çift kör RKÇ · n=252",
+     "tags": [
+      "kronik hastalık",
+      "inflamatuvar bağırsak hastalığı",
+      "biyolojik tedavi"
+     ],
+     "score": {
+      "kanit": 2,
+      "poem": 1,
+      "bb": 2,
+      "etki": 2
+     },
+     "effect": "Yeni seçenek, dikkat",
+     "what": "ANTHEM-UC çalışmasında oral ikotrokinra (IL-23 reseptör antagonisti), orta-ağır ülseratif kolitte 400 mg, 200 mg ve 100 mg dozlarında 12. haftada klinik yanıtı plaseboya göre belirgin artırdı (%63, %58, %55'e karşı %27). 400 mg'da klinik remisyon %30'a karşı %11.",
+     "practice": "Ülseratif kolitte IL-23 yolunu ağızdan hedefleyen bir tedavi seçeneği yaklaşıyor olabilir; faz 3 sonuçları bekleniyor. Enjeksiyonla uygulanan biyolojik ilaçlara ağızdan bir alternatif hasta için kolaylık sağlayabilir.",
+     "limits": "Faz 2b; küçük örneklem; yalnızca 12 haftalık veri. Faz 3 verisi olmadan klinik uygulamaya geçilemez.",
+     "rel": []
+    },
+    {
+     "id": "impala-hiv-lalong",
+     "pmid": "42874104",
+     "doi": "10.1056/NEJMoa2518753",
+     "journal": "N Engl J Med",
+     "date": "2026-10-15",
+     "title_en": "Long-Acting Injectable Cabotegravir and Rilpivirine versus Oral Antiretrovirals in Persons with Adherence Challenges Living with HIV",
+     "title": "Adherans güçlüğü yaşayan HIV hastalarında 8 haftada bir enjekte edilen kabotegravir+rilpivirin, günlük ağızdan tedaviden geri kalmadı (IMPALA)",
+     "design": "Faz 3b açık etiket RKÇ · n=537, Afrika (Kenya, Güney Afrika, Uganda)",
+     "tags": [
+      "HIV",
+      "adherans",
+      "uzun etkili tedavi"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 1,
+      "etki": 1
+     },
+     "effect": "Bilgi amaçlı",
+     "what": "IMPALA çalışmasında viral baskılanması olan ama adherans sorunu yaşayan hastalarda 8 haftada bir IM kabotegravir+rilpivirin, 48. haftada viral yük <50 kopya/mL oranı bakımından günlük ağızdan dolutegravir temelli tedaviden geri kalmadı (non-inferiorite) (%91,0'a karşı %89,2). Onaylanmış virolojik başarısızlık enjektabl kolda %1,9, oral kolda %0 idi.",
+     "practice": "Adherans desteği yetersiz kalan hastalarda uzun etkili enjektabl tedavi klinik bir seçenek olabilir. Türkiye'de HIV yönetimi uzman hekimin sorumluluğunda; ancak aile hekimi hasta eğitimi ve adherans izleminde rol alabilir.",
+     "limits": "Açık etiket; Afrika popülasyonu; virolojik başarısızlık enjektabl kolda daha yüksek (anlamlı değil, ancak güç yetersiz olabilir). Türkiye'ye genellenebilirliği sınırlı.",
+     "rel": []
+    },
+    {
+     "id": "start-orak-arginin",
+     "pmid": "42616542",
+     "doi": "10.1001/jama.2026.13310",
+     "journal": "JAMA",
+     "date": "2026-10-13",
+     "title_en": "Intravenous Arginine Therapy in Children and Adolescents Hospitalized for Acute Sickle Cell Pain: The STArT Randomized Clinical Trial",
+     "title": "Orak hücre krizinde IV arginin tedavisi kriz süresini kısaltmadı; çalışma futilite nedeniyle durduruldu (STArT)",
+     "design": "Faz 3 çift kör RKÇ, 10 ABD çocuk hastanesi · n=271, 3–21 yaş",
+     "tags": [
+      "pediatri",
+      "orak hücre hastalığı",
+      "ağrı"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 1,
+      "etki": 1
+     },
+     "effect": "Kullanımı sorgulatır",
+     "what": "STArT çalışmasında IV arginin (200 mg/kg yükleme + 100 mg/kg/8 s) ile plasebo karşılaştırıldı; kriz çözüm süresi benzerdi (medyan 60,8'e karşı 65,8 saat, düzeltilmiş fark 7,2 saat; %95 GA −21,6–35,9). Opioid kullanımı, ağrı skoru ve hasta bildirimli sonuçlarda fark yoktu. Futilite nedeniyle erken durduruldu.",
+     "practice": "Orak hücre ağrı krizinde arginin eklenmesi yararlı değil; önceki faz 2 bulguları bu büyük çalışmada doğrulanamadı.",
+     "limits": "Yalnızca çocuklar (3–21 yaş); ABD çocuk hastanesi popülasyonu; futilite nedeniyle erken durdurulma istatistiksel güveni azaltır.",
+     "rel": []
+    },
+    {
+     "id": "bmj-llm-calisma-raporlama",
+     "pmid": "42869550",
+     "doi": "10.1136/bmj-2026-100855",
+     "journal": "BMJ",
+     "date": "2026-10-13",
+     "title_en": "Reporting quality of clinical trials evaluating large language model interventions in health care: systematic review and meta-research study",
+     "title": "Büyük dil modeli klinik denemelerinde raporlama kalitesi düşük; metodolojik eksikler klinik uygulamaya geçişi riske atıyor",
+     "design": "Sistematik derleme ve meta-araştırma · 68 deneme raporu, 15 protokol, 378 kayıt",
+     "tags": [
+      "yapay zeka",
+      "büyük dil modeli",
+      "araştırma metodolojisi"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 0,
+      "bb": 1,
+      "etki": 1
+     },
+     "effect": "Bilgi + dikkat",
+     "what": "Sağlıkta büyük dil modeli (LLM) müdahaleleri değerlendiren klinik denemelerde CONSORT 2025'e ortalama uyum %44, CONSORT-AI'ya %59, TRIPOD-LLM'e %40 bulundu. Model sürümü, giriş öncesi işleme ve zarar raporlaması en sık eksik bildirilen alanlar.",
+     "practice": "LLM araçlarına dayalı klinik karar desteği kullanılmadan önce metodolojik kalite sorgulanmalı; bu derleme yapay zeka destekli tıp araçlarına eleştirel bakmanın gerekçesini destekliyor.",
+     "limits": "Yapay zeka alanı hızlı değişiyor; derlenmiş çalışmaların çoğu erken dönem. Raporlama kalitesi klinik etkinlikten farklı bir ölçüt.",
+     "rel": []
+    },
+    {
+     "id": "zips2-orak-cinko",
+     "pmid": "42616536",
+     "doi": "10.1001/jama.2026.14190",
+     "journal": "JAMA",
+     "date": "2026-10-13",
+     "title_en": "Effect of Zinc Supplementation on Infection Rates in Children With Sickle Cell Anemia in Uganda: The ZIPS-2 Randomized Clinical Trial",
+     "title": "Orak hücre anemili küçük çocuklarda günlük 20 mg çinko, 6 ayda enfeksiyon oranını %38 azalttı (ZIPS-2)",
+     "design": "Çift kör RKÇ · n=100, 1–4,99 yaş, Uganda",
+     "tags": [
+      "pediatri",
+      "orak hücre hastalığı",
+      "çinko",
+      "enfeksiyon"
+     ],
+     "score": {
+      "kanit": 2,
+      "poem": 1,
+      "bb": 1,
+      "etki": 1
+     },
+     "effect": "Bilgi amaçlı",
+     "what": "ZIPS-2 çalışmasında Uganda'da orak hücre anemili 1–5 yaş çocuklarda günlük çinko sülfat 20 mg, 6 aylık takipte tüm nedenlere bağlı enfeksiyon oranını azalttı (hız oranı 0,62; %95 GA 0,45–0,86). Çinko grubunda 80, plasebo grubunda 124 enfeksiyon. Tüm katılımcılara hidroksüre verildi.",
+     "practice": "Küçük, tek merkezli, Afrika'ya özgü. Tüm çocuklarda hidroksüre kullanıldığından pratik sonuç sınırlı. Çinko desteği düşük gelirli ortamlarda düşünülebilir; Türkiye bağlamı farklı.",
+     "limits": "Tek merkez, küçük örneklem (n=100); yalnızca Uganda popülasyonu; tüm hastalara hidroksüre verilmesi genel popülasyona genellenebilirliği kısıtlar.",
+     "rel": []
+    },
+    {
+     "id": "esteps-dusme",
+     "pmid": "42886484",
+     "doi": "10.1001/jamanetworkopen.2026.39240",
+     "journal": "JAMA Netw Open",
+     "date": "2026-10-01",
+     "title_en": "Clinical Decision Support for Fall Prevention in Primary Care: The eSTEPS Cluster Randomized Clinical Trial",
+     "title": "Birinci basamakta düşme riski taraması pozitif yaşlılarda elektronik kayda gömülü egzersiz önerisi düşmeleri az da olsa azalttı (eSTEPS)",
+     "design": "Eşleştirilmiş küme RKÇ, 22 birinci basamak kliniği · n=11.945",
+     "tags": [
+      "yaşlı sağlığı",
+      "düşme",
+      "egzersiz",
+      "klinik karar desteği"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Mevcut yaklaşımı destekler",
+     "what": "ABD'de 65 yaş ve üstü, 3 soruluk düşme riski taraması pozitif hastalarda elektronik sağlık kaydına gömülü karar desteği (kişiye uygun egzersiz reçetesi, isteğe bağlı fizyoterapi sevki, hasta materyalleri) olağan bakımla karşılaştırıldı. 100 hasta-yılında en az bir düşme hızı 19,3'e karşı 21,2 (hız oranı 0,91; %95 GA 0,88–0,95), düşmeye bağlı yaralanma 15,7'ye karşı 16,7 (hız oranı 0,94) oldu; mortalitede fark yoktu. Müdahale kolundaki hastaların yalnızca %22,1'ine egzersiz reçetesi yazıldı.",
+     "practice": "Yaşlı hastada düşme riskini kısa bir taramayla sorgulayıp yapılandırılmış egzersiz önermek muayene akışına eklenebilir; reçete oranı düşükken bile etki görülmesi basit bir hatırlatıcının işe yaradığını düşündürüyor.",
+     "limits": "Düşmeler ICD-10 kodlarından saptandı (eksik kayıt olası); etki küçük; tek sağlık sistemi, ABD bağlamı.",
+     "rel": [
+      "yasli-degerlendirme-ah",
+      "yasli-tani-tedavi"
+     ]
+    },
+    {
+     "id": "asiri-aglayan-bebek-sr",
+     "pmid": "42875030",
+     "doi": "10.1542/peds.2025-075063",
+     "journal": "Pediatrics",
+     "date": "2026-10-15",
+     "title_en": "Interventions to Support Parents Whose Babies Cry Excessively: Systematic Review",
+     "title": "Aşırı ağlayan bebeklerin ebeveynlerinde eğitim temelli destek stres ve kaygıyı azaltıyor; probiyotik ebeveyn yaşam kalitesini artırabilir",
+     "design": "Sistematik derleme ve meta-analiz",
+     "tags": [
+      "pediatri",
+      "bebek ağlaması",
+      "ebeveyn desteği",
+      "probiyotik"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Danışmanlığı destekler",
+     "what": "Bir yaşından küçük aşırı ağlayan bebeklerin ebeveynlerine yönelik müdahaleleri karşılaştıran çalışmaların derlemesinde, eğitim temelli müdahaleler ebeveyn stresini ya da kaygısını anlamlı azalttı. Bebeğe probiyotik verilen çalışmalarda ebeveynin yaşam kalitesi iyileşti, depresyonda fark görülmedi. Güvenlik verisi bulunamadı, ekonomik kanıt sınırlıydı.",
+     "practice": "Aşırı ağlayan bebek başvurusunda yalnızca bebeğe değil ebeveyne de odaklanmak gerekir: ağlamanın doğası ve baş etme yolları üzerine yapılandırılmış bilgilendirme ebeveyn stresini azaltabilir.",
+     "limits": "Birleştirilebilen çalışma az; yanlılık riski belirsiz–yüksek; müdahaleler ve sonuç ölçütleri heterojen.",
+     "rel": [
+      "bce-izlem-2018"
+     ]
+    }
+   ]
+  },
+  {
    "id": "2026-10-12",
    "title": "Hafta 42",
    "range": "1 – 12 Ekim 2026",
