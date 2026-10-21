@@ -1,12 +1,8 @@
 <?php
 // Sunum ekle: asistanlar kendi seminer, makale ve olgu sunumlarını Materyal kütüphanesine ekler (giriş gerekli).
-//   sunum-ekle.php            → form (akademik program, kütüphane konuları ve sunan adları sayfaya gömülü)
-//   sunum-ekle.php?kunye=…    → PMID / DOI / makale adı ile künye (JSON; PubMed, PubMed'de yoksa DOI için Crossref)
-//   POST                      → kontroller geçerse dosya tür klasörüne "Konu - Başlık - Sunan (Yıl).uzantı" adıyla yazılır,
-//                               .kutuphane.json'a kayıt eklenir ve kütüphanede hemen görünür.
-// Kontroller: zorunlu alanlar, dosya türü (içerikten), çift kayıt (aynı dosya ya da aynı sunan + başlık),
-// slayt metni ve konuşmacı notlarında hasta verisi (TC kimlik no, cep telefonu, dolu "Hasta adı / Protokol no" alanları),
-// akademik programla eşleşme (eşleşmezse kayıt işaretlenir, engellenmez), makale künyesi (PubMed).
+//   sunum-ekle.php  → form (kütüphane konuları ve sunan adları sayfaya gömülü)
+//   POST            → dosya tür klasörüne "Konu - Başlık - Sunan (Yıl).uzantı" adıyla yazılır, .kutuphane.json'a kayıt eklenir.
+// Tek kontrol: aynı sunum ikinci kez eklenmez (aynı dosya ya da aynı sunan + başlık).
 require __DIR__ . '/ortak.php';
 require __DIR__ . '/sunum-oku.php';
 giris_sart();
@@ -20,17 +16,8 @@ $KLASOR = ['Seminer' => 'Seminerler', 'Makale Sunumu' => 'Makale Sunumları', 'O
            'Hoca Sunumu' => 'Hoca Sunumları', 'Rehber' => 'Rehberler'];
 $TURLER = rol() === 'yonetici' ? array_keys($KLASOR) : ['Seminer', 'Makale Sunumu', 'Olgu Sunumu'];
 
-if (isset($_GET['kunye'])) {
-    header('Content-Type: application/json; charset=utf-8');
-    header('Cache-Control: private, no-store');
-    $k = makale_kunye(mb_substr((string)$_GET['kunye'], 0, 300));
-    echo json_encode($k === false ? ['hata' => 'PubMed\'e şu an ulaşılamıyor; makale bilgilerini elle yazın.']
-        : ($k === null ? ['hata' => 'Makale bulunamadı. PMID ya da DOI\'yi kontrol edin.'] : $k), JSON_UNESCAPED_UNICODE);
-    exit;
-}
-
 $dizin = is_file(KUTUP_JSON) ? (json_decode(file_get_contents(KUTUP_JSON), true) ?: []) : [];
-$program = is_file(SE_AK_JSON) ? (json_decode(file_get_contents(SE_AK_JSON), true) ?: []) : [];
+$program = is_file(SE_AK_JSON) ? (json_decode(file_get_contents(SE_AK_JSON), true) ?: []) : []; // yalnızca ad önerileri için
 
 // Akademik programdaki sunumlar: [tür, ad, konu, tarih, danışman]
 function program_sunumlari($program) {
@@ -52,7 +39,7 @@ foreach ($dizin as $x) {
 foreach ($sunumlar as $s) { $kisiler[ad_duzgun($s[1])] = 1; if ($s[4] !== '') $danismanlar[$s[4]] = 1; }
 $gruplar = array_values(array_unique(array_values($konular)));
 
-$hata = []; $uyari = []; $v = $_POST;
+$hata = []; $v = $_POST;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($_POST) && (int)($_SERVER['CONTENT_LENGTH'] ?? 0) > 0) {
@@ -77,22 +64,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (mb_strlen($baslik) < 3) $hata[] = 'Sunum başlığını yazın.';
         if (!$tarih) $hata[] = 'Sunum tarihini girin.';
         elseif ($tarih > date('Y-m-d', strtotime('+14 days'))) $hata[] = 'Sunum tarihi bugünden en çok iki hafta ileri olabilir.';
-        if (empty($v['onay'])) $hata[] = 'Sunumda hasta kimlik bilgisi olmadığını onaylayın.';
 
-        // Makale künyesi
         $makale = null;
         if ($tur === 'Makale Sunumu') {
             $kimlik = trim($v['m_kimlik'] ?? '');
-            $k = $kimlik !== '' ? makale_kunye($kimlik) : null;
-            if (is_array($k)) {
-                $makale = $k; $makale['dogrulandi'] = true;
-            } else {
-                if ($kimlik !== '' && $k === null) $hata[] = 'Girilen PMID/DOI ile makale bulunamadı; kontrol edin ya da alanı boş bırakıp makale bilgilerini elle yazın.';
-                $makale = ['title' => trim($v['m_ad'] ?? ''), 'journal' => trim($v['m_dergi'] ?? ''), 'year' => trim($v['m_yil'] ?? ''),
-                           'authors' => '', 'pmid' => '', 'doi' => '', 'kaynak' => '', 'dogrulandi' => false];
-                if (mb_strlen($makale['title']) < 10) $hata[] = 'Sunulan makalenin adını yazın (ya da PMID/DOI girip "Getir"e basın).';
-                elseif ($k === false) $uyari[] = 'PubMed\'e ulaşılamadı; makale bilgileri yazdığınız gibi kaydedildi.';
-            }
+            $makale = ['title' => trim($v['m_ad'] ?? ''), 'journal' => trim($v['m_dergi'] ?? ''), 'year' => trim($v['m_yil'] ?? ''),
+                       'pmid' => preg_match('/^\d{5,9}$/', $kimlik) ? $kimlik : '',
+                       'doi' => preg_match('#(10\.\d{4,9}/\S+)#', $kimlik, $m) ? $m[1] : ''];
+            if (mb_strlen($makale['title']) < 10) $hata[] = 'Sunulan makalenin adını yazın.';
         }
 
         // Dosya
@@ -108,18 +87,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         if ($okunan) {
-            // Hasta verisi
-            $bulgu = hasta_verisi_tara($okunan['slaytlar']);
-            if ($bulgu && !(rol() === 'yonetici' && !empty($v['yoksay']))) {
-                $yer = $okunan['tur'] === 'pdf' ? 'dosyada' : 'slayt';
-                $hata[] = 'Sunumda hasta verisi olabilecek bilgi bulundu; çıkarıp tekrar yükleyin: '
-                    . implode('; ', array_map(function ($b) use ($yer, $okunan) {
-                        return ($okunan['tur'] === 'pdf' ? '' : "$b[slayt]. $yer: ") . "$b[ne] ($b[ornek])"; }, array_slice($bulgu, 0, 8)))
-                    . (count($bulgu) > 8 ? ' ve ' . (count($bulgu) - 8) . ' yer daha' : '') . '.';
-            }
-            if ($okunan['tur'] === 'pdf' && mb_strlen(trim($okunan['slaytlar'][1])) < 50) {
-                $uyari[] = 'PDF\'in metni okunamadı; hasta verisi taraması yapılamadı ve slayt içi aramada çıkmayacak. Mümkünse .pptx yükleyin.';
-            }
             // Çift kayıt: aynı içerik (önce boyut, eşitse özet karşılaştırılır) ya da aynı sunan + başlık
             $sha = sha1_file($f['tmp_name']); $boy = filesize($f['tmp_name']);
             foreach ($dizin as $x) {
@@ -134,17 +101,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         if (!$hata) {
-            // Akademik programla eşleşme (engellemez; kayıtta işaretlenir)
-            $eslesen = null;
-            foreach ($sunumlar as $s) {
-                if ($s[0] !== $tur || katla($s[1]) !== katla($sunan)) continue;
-                if (!$eslesen || abs(strtotime($s[3]) - strtotime($tarih)) < abs(strtotime($eslesen[3]) - strtotime($tarih))) $eslesen = $s;
-            }
-            if (in_array($tur, ['Seminer', 'Makale Sunumu', 'Olgu Sunumu'], true) && $program) {
-                if (!$eslesen) $uyari[] = "Akademik programda $sunan adına " . mb_strtolower($tur) . ' bulunamadı; kayıt "programda yok" olarak işaretlendi.';
-                elseif ($eslesen[3] !== $tarih) $uyari[] = 'Programda bu sunum ' . tarih(strtotime($eslesen[3])) . ' tarihinde görünüyor; siz ' . tarih(strtotime($tarih)) . ' yazdınız.';
-            }
-
             $yil = substr($tarih, 0, 4);
             $govde = ad_parca($konu) . ' - ' . ad_parca($baslik) . ' - ' . ad_parca($sunan) . " ($yil)";
             if (mb_strlen($govde) > 112) $govde = ad_parca($konu) . ' - ' . mb_substr(ad_parca($baslik), 0, max(10, 112 - mb_strlen(ad_parca($konu) . ad_parca($sunan)) - 13)) . ' - ' . ad_parca($sunan) . " ($yil)";
@@ -162,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'presenter' => $sunan, 'advisor' => $danisman, 'year' => $yil, 'date' => $tarih,
                 'slides' => $okunan['sayfa'], 'path' => $KLASOR[$tur] . "/$ad", 'orig' => son_ad($f['name']),
                 'size' => $boy, 'keywords' => anahtar_kelimeler($okunan['slaytlar']), 'sha1' => $sha,
-                'added' => date('c'), 'by' => rol(), 'program' => (bool)$eslesen,
+                'added' => date('c'), 'by' => rol(),
             ];
             if ($makale) $kayit['article'] = $makale;
             $dizin[] = $kayit;
@@ -176,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             flock($kilit, LOCK_UN); fclose($kilit);
 
             if ($yaz) {
-                $_SESSION['se_tamam'] = ['ad' => $ad, 'path' => $kayit['path'], 'konu' => $konu, 'baslik' => $baslik, 'uyari' => $uyari];
+                $_SESSION['se_tamam'] = ['ad' => $ad, 'path' => $kayit['path'], 'konu' => $konu, 'baslik' => $baslik];
                 header('Location: sunum-ekle.php?tamam=1');
                 exit;
             }
@@ -191,13 +147,12 @@ if (isset($_GET['tamam']) && ($s = $_SESSION['se_tamam'] ?? null)) {
     unset($_SESSION['se_tamam']);
     $kutu = '<div class="callout" role="status"><p><b>Sunumunuz kütüphaneye eklendi.</b> '
         . '<a href="dosyalar.php?d=' . rawurlencode('Kütüphane/' . $s['path']) . '" target="_blank" rel="noopener">' . e($s['ad']) . '</a></p>'
-        . ($s['uyari'] ? '<ul>' . implode('', array_map(function ($u) { return '<li>' . e($u) . '</li>'; }, $s['uyari'])) . '</ul>' : '')
         . '<p><a class="chip" href="kutuphane.php">Kütüphanede gör</a> <a class="chip" href="sunum-ekle.php">Bir sunum daha ekle</a></p></div>';
     $v = [];
-} elseif ($hata || $uyari) {
-    $kutu = '<div class="callout" role="alert"><p><b>' . ($hata ? 'Sunum eklenmedi.' : '') . '</b></p><ul>'
-        . implode('', array_map(function ($u) { return '<li>' . e($u) . '</li>'; }, array_merge($hata, $uyari))) . '</ul>'
-        . ($hata ? '<p><small>Düzeltip dosyayı yeniden seçin (güvenlik nedeniyle dosya seçimi korunmaz).</small></p>' : '') . '</div>';
+} elseif ($hata) {
+    $kutu = '<div class="callout" role="alert"><p><b>Sunum eklenmedi.</b></p><ul>'
+        . implode('', array_map(function ($u) { return '<li>' . e($u) . '</li>'; }, $hata)) . '</ul>'
+        . '<p><small>Dosyayı yeniden seçin.</small></p></div>';
 }
 
 $sec = function ($ad, $deger) use ($v) { return (($v[$ad] ?? '') === $deger) ? ' selected' : ''; };
@@ -205,14 +160,14 @@ $val = function ($ad) use ($v) { return e($v[$ad] ?? ''); };
 $turSec = ''; foreach ($TURLER as $x) $turSec .= '<option' . $sec('tur', $x) . '>' . e($x) . '</option>';
 $grupSec = '<option value="">Grup seçin</option>'; foreach ($gruplar as $g) $grupSec .= '<option' . $sec('grup', $g) . '>' . e($g) . '</option>';
 $liste = function ($id, $a) { ksort($a); return '<datalist id="' . $id . '">' . implode('', array_map(function ($x) { return '<option value="' . e($x) . '">'; }, array_keys($a))) . '</datalist>'; };
-$veri = json_encode(['program' => $sunumlar, 'konular' => $konular,
+$veri = json_encode(['konular' => $konular,
     'kayitlar' => array_map(function ($x) { return [$x['presenter'] ?? '', $x['title'], $x['topic']]; }, $dizin)], JSON_UNESCAPED_UNICODE);
 
 sayfa('Sunum ekle', '
   <div class="page-head">
     <div class="eyebrow"><a href="./">Eğitim</a> › <a href="kutuphane.php">Materyal kütüphanesi</a> › Sunum ekle</div>
     <h1>Sunum ekle</h1>
-    <p class="lede">Sunduğunuz seminer, makale ya da olgu sunumunu kütüphaneye ekleyin. Site dosyayı kontrol eder; sorun yoksa sunum hemen kütüphanede görünür ve konusuna göre diğer sunumlarla birlikte listelenir.</p>
+    <p class="lede">Sunduğunuz seminer, makale ya da olgu sunumunu kütüphaneye ekleyin. Sunum hemen kütüphanede, konusunun altında görünür.</p>
   </div>' . $kutu . '
   <form method="post" enctype="multipart/form-data" class="sunum-form" id="sf">
     <input type="hidden" name="t" value="' . $t . '">
@@ -220,7 +175,6 @@ sayfa('Sunum ekle', '
       <label class="fld">Sunum türü <select name="tur" id="sf-tur" required>' . $turSec . '</select></label>
       <label class="fld">Sunan (ad soyad) <input type="text" name="sunan" id="sf-sunan" list="sf-kisiler" value="' . $val('sunan') . '" autocomplete="off" required></label>
     </div>
-    <div id="sf-program" class="hint" aria-live="polite"></div>
     <div class="fields">
       <label class="fld">Sunum tarihi <input type="date" name="tarih" id="sf-tarih" value="' . ($val('tarih') ?: date('Y-m-d')) . '" required></label>
       <label class="fld" id="sf-dan-k">Danışman <input type="text" name="danisman" id="sf-danisman" list="sf-danismanlar" value="' . $val('danisman') . '" autocomplete="off" placeholder="ör. Doç. Dr. Ad Soyad"></label>
@@ -229,7 +183,6 @@ sayfa('Sunum ekle', '
       <label class="fld">Konu <input type="text" name="konu" id="sf-konu" list="sf-konular" value="' . $val('konu') . '" autocomplete="off" placeholder="Listeden seçin ya da yazın: ör. Hipertansiyon" required></label>
       <label class="fld" id="sf-grup-k" hidden>Grup (yeni konu) <select name="grup" id="sf-grup">' . $grupSec . '</select></label>
     </div>
-    <p class="hint" id="sf-konu-not"></p>
     <div class="fields col">
       <label class="fld">Sunum başlığı <input type="text" name="baslik" id="sf-baslik" value="' . $val('baslik') . '" maxlength="150" required></label>
     </div>
@@ -237,9 +190,8 @@ sayfa('Sunum ekle', '
     <fieldset id="sf-makale" class="sunum-makale" hidden>
       <legend>Sunulan makale</legend>
       <div class="fields">
-        <label class="fld">PMID ya da DOI <span class="inp"><input type="text" name="m_kimlik" id="sf-kimlik" value="' . $val('m_kimlik') . '" placeholder="ör. 38012345 ya da 10.1186/…" autocomplete="off"><button type="button" class="chip" id="sf-getir">Getir</button></span></label>
+        <label class="fld">PMID ya da DOI (varsa) <input type="text" name="m_kimlik" value="' . $val('m_kimlik') . '" autocomplete="off"></label>
       </div>
-      <p class="hint" id="sf-kunye" aria-live="polite">Numarayı yazıp "Getir"e basın; makale adı, dergi ve yıl PubMed\'den doldurulur. Numara yoksa makale adını yazıp "Getir"e basabilirsiniz.</p>
       <div class="fields col"><label class="fld">Makale adı <input type="text" name="m_ad" id="sf-mad" value="' . $val('m_ad') . '"></label></div>
       <div class="fields">
         <label class="fld">Dergi <input type="text" name="m_dergi" id="sf-dergi" value="' . $val('m_dergi') . '"></label>
@@ -248,11 +200,9 @@ sayfa('Sunum ekle', '
     </fieldset>
     <div class="fields col">
       <label class="fld">Sunum dosyası <input type="file" name="f" accept=".pptx,.ppsx,.pdf" required>
-        <small class="hint">PowerPoint (.pptx) tercih edin; PDF de olur. En çok ' . e(ini_get('upload_max_filesize')) . '.</small></label>
-      <label class="fld chk"><input type="checkbox" name="onay" value="1" required><span>Sunumda (notlar ve görseller dahil) hastayı tanıtan bilgi yok: ad soyad, TC kimlik no, protokol/dosya no, telefon, yüzü görünen fotoğraf, görüntüleme üzerindeki ad. <small class="hint">Site slayt metnini ve notları tarar; görsellerin içini okuyamaz.</small></span></label>'
-      . (rol() === 'yonetici' ? '<label class="fld chk"><input type="checkbox" name="yoksay" value="1"><span>Hasta verisi uyarısını yok say (yalnızca yönetici; yanlış alarm için)</span></label>' : '') . '
+        <small class="hint">PowerPoint ya da PDF · en çok ' . e(ini_get('upload_max_filesize')) . '</small></label>
     </div>
-    <p><button class="chip" type="submit"><b>Kontrol et ve ekle</b></button></p>
+    <p><button class="chip" type="submit"><b>Ekle</b></button></p>
   </form>
   ' . $liste('sf-kisiler', $kisiler) . $liste('sf-danismanlar', $danismanlar) . $liste('sf-konular', $konular) . '
   <p><a class="chip" href="kutuphane.php">‹ Materyal kütüphanesi</a></p>
