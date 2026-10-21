@@ -390,3 +390,6 @@ small.cl-degisim{display:block;color:var(--muted);font-size:13px;margin-top:2px}
 .sunum-form .inp input{flex:1}
 .fld input[type=file]{font:inherit;font-weight:400;font-size:15px;max-width:100%}
 .kitap .kunye{font-size:13.5px}
+.fld[hidden]{display:none}
+.fld input[type=date]{-webkit-appearance:none;appearance:none;display:block;box-sizing:border-box;max-width:100%;min-height:44px;text-align:left}
+.fld input[type=date]::-webkit-date-and-time-value{text-align:left}
