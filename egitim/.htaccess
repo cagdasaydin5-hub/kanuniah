@@ -5,6 +5,6 @@ DirectoryIndex index.php
   Require all denied
 </FilesMatch>
 # ortak.php ve *-oku.php yalnızca diğer PHP dosyalarınca kullanılır
-<FilesMatch "^(ortak|akademik-oku|calisma-oku)\.php$">
+<FilesMatch "^(ortak|akademik-oku|calisma-oku|sunum-oku)\.php$">
   Require all denied
 </FilesMatch>

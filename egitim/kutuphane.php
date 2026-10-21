@@ -55,5 +55,5 @@ sayfa('Materyal kütüphanesi', '
     <div class="opts"><span class="count" id="count"></span> <button class="chip" id="hepsi" type="button">Tümünü kapat</button></div>
   </div>
   <div id="kutuphane" class="kutuphane"><p class="empty">Dizin yükleniyor…</p></div>
-  <p><a class="chip" href="./">‹ Eğitim</a>' . (rol() === 'yonetici' ? ' <a class="chip" href="yonetim.php?y=K%C3%BCt%C3%BCphane">Sunum ekle / düzenle</a>' : '') . '</p>
+  <p><a class="chip" href="./">‹ Eğitim</a> <a class="chip" href="sunum-ekle.php">Sunumunu ekle</a>' . (rol() === 'yonetici' ? ' <a class="chip" href="yonetim.php?y=K%C3%BCt%C3%BCphane">Dosyaları düzenle</a>' : '') . '</p>
   <script src="../assets/kutuphane.js" defer></script>');

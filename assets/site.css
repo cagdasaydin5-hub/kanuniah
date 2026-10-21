@@ -382,3 +382,11 @@ small.cl-degisim{display:block;color:var(--muted);font-size:13px;margin-top:2px}
   .tile span{font-size:13.5px}
   input:not([type=checkbox]):not([type=radio]),select,textarea{font-size:16px}
 }
+.sunum-form{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:4px 16px 12px;margin:0 0 18px}
+.sunum-form .hint:empty{display:none}
+.sunum-form #sf-program .chip{margin:4px 6px 0 0}
+.sunum-makale{border:1px solid var(--line);border-radius:8px;margin:14px 0 0;padding:4px 12px 12px}
+.sunum-makale legend{font-weight:700;padding:0 6px}
+.sunum-form .inp input{flex:1}
+.fld input[type=file]{font:inherit;font-weight:400;font-size:15px;max-width:100%}
+.kitap .kunye{font-size:13.5px}

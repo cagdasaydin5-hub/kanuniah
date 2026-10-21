@@ -41,7 +41,7 @@
     return r.json();
   }).then(function (d) {
     veri = d.map(function (x) {
-      x.hay = fold([x.title, x.topic, x.group, x.presenter, x.advisor, x.year, TURK[x.type]].join(" "));
+      x.hay = fold([x.title, x.topic, x.group, x.presenter, x.advisor, x.year, TURK[x.type], x.article ? x.article.title + " " + x.article.journal : ""].join(" "));
       x.metin = fold(x.keywords || "");
       return x;
     });
@@ -81,6 +81,16 @@
     var t = el("a", "kitap-ad", x.title); t.href = href(x.path, false); t.target = "_blank"; t.rel = "noopener";
     b.appendChild(t);
     a.appendChild(b);
+    if (x.article && x.article.title) {
+      var k = el("div", "meta kunye");
+      k.appendChild(el("span", null, "Makale: " + x.article.title + (x.article.journal ? " · " + x.article.journal : "") + (x.article.year ? " " + x.article.year : "")));
+      if (x.article.pmid || x.article.doi) {
+        var l = el("a", null, x.article.pmid ? "PubMed" : "DOI");
+        l.href = x.article.pmid ? "https://pubmed.ncbi.nlm.nih.gov/" + x.article.pmid + "/" : "https://doi.org/" + x.article.doi;
+        l.target = "_blank"; l.rel = "noopener"; k.appendChild(l);
+      }
+      a.appendChild(k);
+    }
     var m = el("div", "meta");
     if (x.presenter) m.appendChild(el("span", null, x.presenter));
     if (x.advisor) m.appendChild(el("span", null, "Danışman: " + x.advisor));
