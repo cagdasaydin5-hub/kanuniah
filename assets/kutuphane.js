@@ -159,13 +159,10 @@
     s.appendChild(el("b", null, c.ad));
     s.appendChild(el("span", "c", c.n + " sunum"));
     d.appendChild(s);
-    c.konular.forEach(function (t) {
-      var k = el("div", "konu-grup");
-      var h = el("h3", "konu-ad", t.ad);
-      k.appendChild(h);
-      t.items.forEach(function (x) { k.appendChild(satir(x)); });
-      d.appendChild(k);
-    });
+    // Konu ara başlığı yok: sunumlar konu sırasıyla doğrudan kategorinin altında
+    var k = el("div", "konu-grup");
+    c.konular.forEach(function (t) { t.items.forEach(function (x) { k.appendChild(satir(x)); }); });
+    d.appendChild(k);
     return d;
   }
 
