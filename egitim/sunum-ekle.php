@@ -33,10 +33,36 @@ $sunumlar = program_sunumlari($program);
 $konular = []; $kisiler = []; $danismanlar = [];
 foreach ($dizin as $x) {
     $konular[$x['topic']] = kayit_kategori($x);
-    if (!empty($x['presenter'])) $kisiler[ad_duzgun($x['presenter'])] = 1;
-    if (!empty($x['advisor'])) $danismanlar[$x['advisor']] = 1;
+    if (!empty($x['presenter'])) $kisiler[] = $x['presenter'];
+    if (!empty($x['advisor'])) $danismanlar[] = $x['advisor'];
 }
-foreach ($sunumlar as $s) { $kisiler[ad_duzgun($s[1])] = 1; if ($s[4] !== '') $danismanlar[$s[4]] = 1; }
+foreach ($sunumlar as $s) { $kisiler[] = $s[1]; if ($s[4] !== '') $danismanlar[] = $s[4]; }
+// Öneri listesi: unvan atılır, "Ad Soyad" biçimine getirilir; ad olmayanlar (kurum adı vb.), tek kelimeler
+// ve kısaltmalı yazımlar (Burcu A Yurtsever) tam hâli varsa listeden çıkar; büyük/küçük harf farkı tek kayıt olur.
+function ad_listesi($ham) {
+    $tam = [];
+    foreach ($ham as $a) {
+        $a = trim(preg_replace('/^(Prof\.?|Do[çc]\.?|Dr\.?|Öğr\.?|Üyesi|Uzm\.?|Başasistan|\s)+/u', '', (string)$a));
+        $a = ad_duzgun(str_replace('.', ' ', $a));
+        $w = preg_split('/\s+/u', $a);
+        if (count($w) < 2 || count($w) > 4 || preg_match('/[^\p{L}\s\'’]/u', $a)) continue;
+        if (preg_match('/\b(hastane|eğitim|araştırma|kliniği|üniversite|aile hekim)/iu', $a)) continue;
+        $tam[katla($a)] = $a;
+    }
+    foreach ($tam as $k => $a) {
+        $w = explode(' ', $k);
+        if (!array_filter($w, function ($x) { return strlen($x) === 1; })) continue;
+        foreach ($tam as $k2 => $b) {
+            $w2 = explode(' ', $k2);
+            if ($k2 === $k || count($w2) !== count($w)) continue;
+            $uy = true;
+            foreach ($w as $i => $x) if (!($x === $w2[$i] || (strlen($x) === 1 && $x === $w2[$i][0] && strlen($w2[$i]) > 1))) { $uy = false; break; }
+            if ($uy) { unset($tam[$k]); break; }
+        }
+    }
+    return array_fill_keys(array_values($tam), 1);
+}
+$kisiler = ad_listesi($kisiler); $danismanlar = ad_listesi($danismanlar);
 
 $hata = []; $v = $_POST;
 
