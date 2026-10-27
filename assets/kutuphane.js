@@ -34,7 +34,7 @@
 
   var veri = [], q = document.getElementById("q"), out = document.getElementById("kutuphane"),
       chips = document.getElementById("tur"), count = document.getElementById("count"),
-      tur = "", acik = false, hepsi = document.getElementById("hepsi");
+      tur = "", acik = true, hepsi = document.getElementById("hepsi");
 
   fetch("kutuphane.php?veri=1", { cache: "no-store" }).then(function (r) {
     if (!r.ok) throw new Error("dizin");
