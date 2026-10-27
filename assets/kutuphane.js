@@ -42,6 +42,7 @@
   }).then(function (d) {
     veri = d.map(function (x) {
       x.cat = x.cat || "Diğer";
+      x.ad = duzenle(x.title); x.konu = duzenle(x.topic);
       x.hay = fold([x.title, x.topic, x.cat, x.group, x.presenter, x.advisor, x.year, TURK[x.type], x.article ? x.article.title + " " + x.article.journal : ""].join(" "));
       x.metin = fold(x.keywords || "");
       return x;
@@ -74,14 +75,50 @@
     return t.every(function (alts) { return icinde(x.hay, alts) || icinde(x.metin, alts.filter(function (w) { return w.length >= 4; })); });
   }
 
-  function satir(x) {
+  // Başlık düzeni: "aile hekimliğinin TARİHÇESİ" → "Aile Hekimliğinin Tarihçesi"; kısaltmalar (KOAH, HPV) korunur.
+  var KUCUK = { "ve": 1, "ile": 1, "veya": 1, "ya": 1, "da": 1, "de": 1, "ki": 1, "mi": 1, "için": 1, "gibi": 1,
+    "and": 1, "of": 1, "the": 1, "in": 1, "on": 1, "for": 1, "to": 1, "a": 1, "an": 1, "with": 1, "vs": 1, "or": 1, "at": 1, "by": 1 };
+  var KISA = ("KOAH HPV DM HT ASM WONCA EKG KBY KKY KY MI AF BPH DEHB HIV TSH İYE ÜSYE ASYE GERD IBS KVKK TUS ABD DSÖ WHO NICE " +
+    "ADA ESC ESH COVID SARS PCOS PKOS OSAS KPR PSM EAH KKKA RSV BCG KKK OPV BT USG MR MRG PET NSAİİ NSAID PPI ACE ARB SGLT2 " +
+    "GLP-1 DPP-4 HBA1C LDL HDL B12 CRP INR OAK NOAK YOAK ALS MS SLE RA FMF TB TBC ÇKS DVT PE KAH SVO TİA AKS ABY KBH ICPC SOAP " +
+    "BMJ JAMA NEJM AAFP USPSTF GINA GOLD KDIGO EULAR ACR AHA ACC TEMD TKD THD TAHUD AHEF EBM KDS RCT HbA1c").split(" ");
+  var KISA_K = {}; KISA.forEach(function (k) { KISA_K[k.toLocaleUpperCase("tr")] = k; });
+  function buyuk(w) { return w.charAt(0).toLocaleUpperCase("tr") + w.slice(1); }
+  function duzenle(s) {
+    s = String(s || "").replace(/\s+/g, " ").trim();
+    var harf = s.replace(/[^A-Za-zÇĞİÖŞÜçğıöşüÂâÎîÛû]/g, ""), bh = harf.replace(/[^A-ZÇĞİÖŞÜÂÎÛ]/g, "").length;
+    var hepsiBuyuk = harf.length && bh / harf.length > 0.6;
+    var n = 0;
+    return s.split(" ").map(function (tok) {
+      return tok.split(/([-\/(),:;"“”]+)/).map(function (w) {
+        if (!/[A-Za-zÇĞİÖŞÜçğıöşü]/.test(w)) return w;
+        var ilk = n++ === 0, ust = w.toLocaleUpperCase("tr"), kok = ust.replace(/['’].*$/, "");
+        if (KISA_K[kok]) return KISA_K[kok] + w.slice(kok.length).toLocaleLowerCase("tr");
+        // Karışık yazılmış metinde zaten büyük harfli kısa kelime ya da içinde rakam/iç büyük harf olan kelime kısaltmadır
+        if (!hepsiBuyuk && (/^[A-ZÇĞİÖŞÜ0-9]{2,5}$/.test(w.replace(/['’].*$/, "")) || /[a-zçğıöşü][A-ZÇĞİÖŞÜ]/.test(w))) return w;
+        var k = w.toLocaleLowerCase("tr");
+        if (!ilk && KUCUK[k]) return k;
+        return buyuk(k);
+      }).join("");
+    }).join(" ");
+  }
+
+  // Bir sunum: başlık (bağlantı) + tek satır bilgi
+  function satir(x, konuGoster) {
     var a = el("article", "kitap");
-    var b = el("div", "kitap-bas");
-    var tag = el("span", "tag " + (TAG[x.type] || "arch"), TURK[x.type] || x.type);
-    b.appendChild(tag);
-    var t = el("a", "kitap-ad", x.title); t.href = href(x.path, false); t.target = "_blank"; t.rel = "noopener";
-    b.appendChild(t);
-    a.appendChild(b);
+    var t = el("a", "kitap-ad", x.ad); t.href = href(x.path, false); t.target = "_blank"; t.rel = "noopener";
+    a.appendChild(t);
+    var m = el("div", "meta");
+    m.appendChild(el("span", "tag " + (TAG[x.type] || "arch"), TURK[x.type] || x.type));
+    var bilgi = [];
+    if (konuGoster) bilgi.push(x.konu);
+    if (x.presenter) bilgi.push(x.presenter);
+    if (x.advisor) bilgi.push("Danışman: " + x.advisor);
+    bilgi.push(x.year);
+    m.appendChild(el("span", "kitap-bilgi", bilgi.join(" · ")));
+    var i = el("a", "kitap-indir", "İndir"); i.href = href(x.path, true);
+    m.appendChild(i);
+    a.appendChild(m);
     if (x.article && x.article.title) {
       var k = el("div", "meta kunye");
       k.appendChild(el("span", null, "Makale: " + x.article.title + (x.article.journal ? " · " + x.article.journal : "") + (x.article.year ? " " + x.article.year : "")));
@@ -92,27 +129,7 @@
       }
       a.appendChild(k);
     }
-    var m = el("div", "meta");
-    if (x.presenter) m.appendChild(el("span", null, x.presenter));
-    if (x.advisor) m.appendChild(el("span", null, "Danışman: " + x.advisor));
-    m.appendChild(el("span", null, x.year));
-    if (x.slides) m.appendChild(el("span", null, x.slides + " slayt"));
-    m.appendChild(el("span", null, mb(x.size) + " · " + x.path.split(".").pop().toUpperCase()));
-    var i = el("a", "chip", "İndir"); i.href = href(x.path, true);
-    m.appendChild(i);
-    a.appendChild(m);
     return a;
-  }
-
-  function grupla(liste) {
-    var g = {}; var sira = [];
-    liste.forEach(function (x) {
-      var k = x.cat + "›" + x.topic;
-      if (!g[k]) { g[k] = { group: x.cat, topic: x.topic, items: [] }; sira.push(k); }
-      g[k].items.push(x);
-    });
-    sira.sort(function (a, b) { return katSira(g[a].group) - katSira(g[b].group) || g[a].topic.localeCompare(g[b].topic, "tr"); });
-    return sira.map(function (k) { return g[k]; });
   }
 
   // Ana kategoriler sabit sırada; "Diğer" en sonda
@@ -121,13 +138,34 @@
     "Cerrahi ve Acil", "Deri, KBB ve Göz", "Diğer"];
   function katSira(c) { var i = KAT.indexOf(c); return i === -1 ? KAT.length : i; }
 
-  function konuBlok(k, acik) {
-    var d = el("details", "konu"); d.open = !!acik;
-    var s = el("summary"); s.appendChild(el("b", null, k.topic));
-    s.appendChild(el("span", "c", k.items.length + " materyal"));
+  // Kategori → konu → sunumlar
+  function agac(liste) {
+    var k = {};
+    liste.forEach(function (x) {
+      var c = k[x.cat] = k[x.cat] || {};
+      (c[x.konu] = c[x.konu] || []).push(x);
+    });
+    return Object.keys(k).sort(function (a, b) { return katSira(a) - katSira(b); }).map(function (c) {
+      var konular = Object.keys(k[c]).sort(function (a, b) { return a.localeCompare(b, "tr"); }).map(function (t) {
+        return { ad: t, items: k[c][t].sort(function (a, b) { return TUR.indexOf(a.type) - TUR.indexOf(b.type) || String(b.year).localeCompare(String(a.year)); }) };
+      });
+      return { ad: c, konular: konular, n: konular.reduce(function (s, t) { return s + t.items.length; }, 0) };
+    });
+  }
+
+  function katBlok(c, acik) {
+    var d = el("details", "kat"); d.open = !!acik;
+    var s = el("summary");
+    s.appendChild(el("b", null, c.ad));
+    s.appendChild(el("span", "c", c.n + " sunum"));
     d.appendChild(s);
-    k.items.sort(function (a, b) { return TUR.indexOf(a.type) - TUR.indexOf(b.type) || b.year.localeCompare(a.year); })
-      .forEach(function (x) { d.appendChild(satir(x)); });
+    c.konular.forEach(function (t) {
+      var k = el("div", "konu-grup");
+      var h = el("h3", "konu-ad", t.ad);
+      k.appendChild(h);
+      t.items.forEach(function (x) { k.appendChild(satir(x)); });
+      d.appendChild(k);
+    });
     return d;
   }
 
@@ -136,26 +174,9 @@
     var temel = tur ? veri.filter(function (x) { return x.type === tur; }) : veri;
     out.innerHTML = "";
     if (!t.length) {
-      // Konu dizini: tüm gruplar ve konular açık; isteyen aşağı kaydırır ya da üstteki bağlantılarla atlar
-      var liste = grupla(temel);
-      count.textContent = temel.length + " materyal · " + liste.length + " konu";
-      var gruplar = {};
-      liste.forEach(function (k) { (gruplar[k.group] = gruplar[k.group] || []).push(k); });
-      var adlar = Object.keys(gruplar).sort(function (a, b) { return katSira(a) - katSira(b); });
-      var atla = el("nav", "chips atla"); atla.setAttribute("aria-label", "Kategoriye atla");
-      adlar.forEach(function (gad) {
-        var a = el("a", "chip", gad); a.href = "#g-" + fold(gad).replace(/[^a-z0-9]+/g, "-");
-        a.appendChild(el("span", "c", String(gruplar[gad].reduce(function (n, k) { return n + k.items.length; }, 0))));
-        atla.appendChild(a);
-      });
-      out.appendChild(atla);
-      adlar.forEach(function (gad) {
-        var sec = el("section", "grup");
-        var h = el("h2", null, gad); h.id = "g-" + fold(gad).replace(/[^a-z0-9]+/g, "-");
-        sec.appendChild(h);
-        gruplar[gad].forEach(function (k) { sec.appendChild(konuBlok(k, acik)); });
-        out.appendChild(sec);
-      });
+      var a = agac(temel);
+      count.textContent = temel.length + " sunum";
+      a.forEach(function (c) { out.appendChild(katBlok(c, acik)); });
       dugme();
       return;
     }
@@ -164,17 +185,17 @@
     count.textContent = (basliktan.length + icerikten.length) + " sonuç";
     if (!basliktan.length && !icerikten.length) { out.appendChild(el("p", "empty", "Bu konuda materyal bulunamadı. Daha kısa ya da farklı bir kelime deneyin.")); return; }
     if (basliktan.length) {
-      var h = el("h2", null, "Konu ve başlıkta eşleşenler"); out.appendChild(h);
-      grupla(basliktan).forEach(function (k) { out.appendChild(konuBlok(k, acik)); });
+      out.appendChild(el("h2", null, "Konu ve başlıkta eşleşenler"));
+      agac(basliktan).forEach(function (c) { out.appendChild(katBlok(c, true)); });
     }
     if (icerikten.length) {
-      var h2 = el("h2", null, "Slayt içeriğinde geçenler"); out.appendChild(h2);
-      var d = el("details", "konu"); d.open = !basliktan.length;
-      var s = el("summary"); s.appendChild(el("b", null, "Başlığında değil ama içinde bu kelime geçen sunumlar"));
-      s.appendChild(el("span", "c", icerikten.length + " materyal")); d.appendChild(s);
-      icerikten.sort(function (a, b) { return a.topic.localeCompare(b.topic, "tr"); }).forEach(function (x) {
-        var r = satir(x); r.firstChild.appendChild(el("span", "c", " · " + x.topic)); d.appendChild(r);
-      });
+      out.appendChild(el("h2", null, "Slayt içeriğinde geçenler"));
+      var d = el("details", "kat"); d.open = !basliktan.length;
+      var s = el("summary"); s.appendChild(el("b", null, "Başlığında değil, slaytlarında geçenler"));
+      s.appendChild(el("span", "c", icerikten.length + " sunum")); d.appendChild(s);
+      var k = el("div", "konu-grup");
+      icerikten.sort(function (a, b) { return a.konu.localeCompare(b.konu, "tr"); }).forEach(function (x) { k.appendChild(satir(x, true)); });
+      d.appendChild(k);
       out.appendChild(d);
     }
     dugme();
@@ -184,7 +205,7 @@
   function dugme() { if (hepsi) hepsi.textContent = acik ? "Tümünü kapat" : "Tümünü aç"; }
   if (hepsi) hepsi.onclick = function () {
     acik = !acik;
-    Array.prototype.forEach.call(out.querySelectorAll("details.konu"), function (d) { d.open = acik; });
+    Array.prototype.forEach.call(out.querySelectorAll("details.kat"), function (d) { d.open = acik; });
     dugme();
   };
 
