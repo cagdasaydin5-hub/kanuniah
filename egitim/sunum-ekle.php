@@ -1,7 +1,7 @@
 <?php
 // Sunum ekle: asistanlar kendi seminer, makale ve olgu sunumlarını Materyal kütüphanesine ekler (giriş gerekli).
-//   sunum-ekle.php  → form (kütüphane konuları ve sunan adları sayfaya gömülü)
-//   POST            → dosya tür klasörüne "Konu - Başlık - Sunan (Yıl).uzantı" adıyla yazılır, .kutuphane.json'a kayıt eklenir.
+//   sunum-ekle.php  → form (sunan ve danışman önerileri sayfaya gömülü)
+//   POST            → dosya tür klasörüne "Başlık - Sunan (Yıl).uzantı" adıyla yazılır, .kutuphane.json'a kayıt eklenir.
 // Tek kontrol: aynı sunum ikinci kez eklenmez (aynı dosya ya da aynı sunan + başlık).
 require __DIR__ . '/ortak.php';
 require __DIR__ . '/sunum-oku.php';
@@ -39,15 +39,15 @@ foreach ($dizin as $x) {
 foreach ($sunumlar as $s) { $kisiler[] = $s[1]; if ($s[4] !== '') $danismanlar[] = $s[4]; }
 // Öneri listesi: unvan atılır, "Ad Soyad" biçimine getirilir; ad olmayanlar (kurum adı vb.), tek kelimeler
 // ve kısaltmalı yazımlar (Burcu A Yurtsever) tam hâli varsa listeden çıkar; büyük/küçük harf farkı tek kayıt olur.
-function ad_listesi($ham) {
-    $tam = [];
+function ad_listesi($ham, $unvanli = false) {
+    $tam = []; $unv = [];
     foreach ($ham as $a) {
-        $a = trim(preg_replace('/^(Prof\.?|Do[çc]\.?|Dr\.?|Öğr\.?|Üyesi|Uzm\.?|Başasistan|\s)+/u', '', (string)$a));
+        [$u, $a] = unvan_ayir($a);
         $a = ad_duzgun(str_replace('.', ' ', $a));
         $w = preg_split('/\s+/u', $a);
         if (count($w) < 2 || count($w) > 4 || preg_match('/[^\p{L}\s\'’]/u', $a)) continue;
         if (preg_match('/\b(hastane|eğitim|araştırma|kliniği|üniversite|aile hekim)/iu', $a)) continue;
-        $tam[katla($a)] = $a;
+        $tam[katla($a)] = $a; if ($u) $unv[katla($a)] = $u;
     }
     foreach ($tam as $k => $a) {
         $w = explode(' ', $k);
@@ -60,9 +60,12 @@ function ad_listesi($ham) {
             if ($uy) { unset($tam[$k]); break; }
         }
     }
+    if ($unvanli) foreach ($tam as $k => $a) $tam[$k] = danisman_duzgun(($unv[$k] ?? '') . ' ' . $a);
     return array_fill_keys(array_values($tam), 1);
 }
-$kisiler = ad_listesi($kisiler); $danismanlar = ad_listesi($danismanlar);
+$kisiler = ad_listesi($kisiler);
+// Danışman önerileri: yalnızca kliniğin hocaları, unvanlarıyla (ortak.php → HOCALAR)
+$danismanlar = []; foreach (HOCALAR as $h => $u) $danismanlar["$u $h"] = 1;
 
 $hata = []; $v = $_POST;
 
@@ -73,18 +76,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         csrf_dogrula();
         $tur = in_array($v['tur'] ?? '', $TURLER, true) ? $v['tur'] : null;
         $sunan = ad_duzgun($v['sunan'] ?? '');
-        $danisman = trim(preg_replace('/\s+/u', ' ', $v['danisman'] ?? ''));
-        $konu = trim(preg_replace('/\s+/u', ' ', $v['konu'] ?? ''));
+        $danisman = danisman_duzgun($v['danisman'] ?? '');
         $baslik = trim(preg_replace('/\s+/u', ' ', $v['baslik'] ?? ''));
         $tarih = preg_match('/^\d{4}-\d{2}-\d{2}$/', $v['tarih'] ?? '') ? $v['tarih'] : '';
         $kat = in_array($v['kategori'] ?? '', KATEGORILER, true) ? $v['kategori'] : '';
-        // Var olan konunun yazımını aynen kullan (büyük/küçük harf, Türkçe karakter farkı ayrı konu açmasın)
-        foreach ($konular as $k => $g) if (katla($k) === katla($konu)) { $konu = $k; break; }
 
         if (!$tur) $hata[] = 'Sunum türünü seçin.';
         if (!preg_match('/^\p{L}[\p{L}\'’.]*(?: \p{L}[\p{L}\'’.]*){1,3}$/u', $sunan)) $hata[] = 'Sunan kişinin adını ve soyadını yazın (ör. Ayşe Yılmaz).';
         if ($tur !== 'Hoca Sunumu' && $tur !== 'Rehber' && $danisman === '') $hata[] = 'Danışman hocanın adını yazın.';
-        if (mb_strlen($konu) < 3) $hata[] = 'Konuyu yazın ya da listeden seçin.';
         if ($kat === '') $hata[] = 'Kategoriyi seçin.';
         if (mb_strlen($baslik) < 3) $hata[] = 'Sunum başlığını yazın.';
         if (!$tarih) $hata[] = 'Sunum tarihini girin.';
@@ -127,8 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (!$hata) {
             $yil = substr($tarih, 0, 4);
-            $govde = ad_parca($konu) . ' - ' . ad_parca($baslik) . ' - ' . ad_parca($sunan) . " ($yil)";
-            if (mb_strlen($govde) > 112) $govde = ad_parca($konu) . ' - ' . mb_substr(ad_parca($baslik), 0, max(10, 112 - mb_strlen(ad_parca($konu) . ad_parca($sunan)) - 13)) . ' - ' . ad_parca($sunan) . " ($yil)";
+            $govde = mb_substr(ad_parca($baslik), 0, 90) . ' - ' . ad_parca($sunan) . " ($yil)";
             $klasor = KUTUP . '/' . $KLASOR[$tur];
             if (!is_dir($klasor)) @mkdir($klasor, 0755, true);
             $ad = "$govde.$uz";
@@ -139,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $dizin = is_file(KUTUP_JSON) ? (json_decode(file_get_contents(KUTUP_JSON), true) ?: []) : [];
             $id = 0; foreach ($dizin as $x) $id = max($id, (int)$x['id']);
             $kayit = [
-                'id' => $id + 1, 'type' => $tur, 'topic' => $konu, 'group' => $kat, 'kategori' => $kat, 'title' => $baslik,
+                'id' => $id + 1, 'type' => $tur, 'topic' => $baslik, 'group' => $kat, 'kategori' => $kat, 'title' => $baslik,
                 'presenter' => $sunan, 'advisor' => $danisman, 'year' => $yil, 'date' => $tarih,
                 'slides' => $okunan['sayfa'], 'path' => $KLASOR[$tur] . "/$ad", 'orig' => son_ad($f['name']),
                 'size' => $boy, 'keywords' => anahtar_kelimeler($okunan['slaytlar']), 'sha1' => $sha,
@@ -157,7 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             flock($kilit, LOCK_UN); fclose($kilit);
 
             if ($yaz) {
-                $_SESSION['se_tamam'] = ['ad' => $ad, 'path' => $kayit['path'], 'konu' => $konu, 'baslik' => $baslik];
+                $_SESSION['se_tamam'] = ['ad' => $ad, 'path' => $kayit['path'], 'baslik' => $baslik];
                 header('Location: sunum-ekle.php?tamam=1');
                 exit;
             }
@@ -185,14 +183,14 @@ $val = function ($ad) use ($v) { return e($v[$ad] ?? ''); };
 $turSec = ''; foreach ($TURLER as $x) $turSec .= '<option' . $sec('tur', $x) . '>' . e($x) . '</option>';
 $katSec = '<option value="">Kategori seçin</option>'; foreach (KATEGORILER as $g) $katSec .= '<option' . $sec('kategori', $g) . '>' . e($g) . '</option>';
 $liste = function ($id, $a) { ksort($a); return '<datalist id="' . $id . '">' . implode('', array_map(function ($x) { return '<option value="' . e($x) . '">'; }, array_keys($a))) . '</datalist>'; };
-$veri = json_encode(['konular' => $konular,
+$veri = json_encode([
     'kayitlar' => array_map(function ($x) { return [$x['presenter'] ?? '', $x['title'], $x['topic']]; }, $dizin)], JSON_UNESCAPED_UNICODE);
 
 sayfa('Sunum ekle', '
   <div class="page-head">
     <div class="eyebrow"><a href="./">Eğitim</a> › <a href="kutuphane.php">Materyal kütüphanesi</a> › Sunum ekle</div>
     <h1>Sunum ekle</h1>
-    <p class="lede">Sunduğunuz seminer, makale ya da olgu sunumunu kütüphaneye ekleyin. Sunum hemen kütüphanede, kategorisi ve konusunun altında görünür.</p>
+    <p class="lede">Sunduğunuz seminer, makale ya da olgu sunumunu kütüphaneye ekleyin. Sunum hemen kütüphanede, kategorisinin altında görünür.</p>
   </div>' . $kutu . '
   <form method="post" enctype="multipart/form-data" class="sunum-form" id="sf">
     <input type="hidden" name="t" value="' . $t . '">
@@ -206,7 +204,6 @@ sayfa('Sunum ekle', '
     </div>
     <div class="fields">
       <label class="fld">Kategori <select name="kategori" id="sf-kat" required>' . $katSec . '</select></label>
-      <label class="fld">Konu <input type="text" name="konu" id="sf-konu" list="sf-konular" value="' . $val('konu') . '" autocomplete="off" placeholder="ör. Hipertansiyon" required></label>
     </div>
     <div class="fields col">
       <label class="fld">Sunum başlığı <input type="text" name="baslik" id="sf-baslik" value="' . $val('baslik') . '" maxlength="150" required></label>
@@ -229,7 +226,7 @@ sayfa('Sunum ekle', '
     </div>
     <p><button class="chip" type="submit"><b>Ekle</b></button></p>
   </form>
-  ' . $liste('sf-kisiler', $kisiler) . $liste('sf-danismanlar', $danismanlar) . $liste('sf-konular', $konular) . '
+  ' . $liste('sf-kisiler', $kisiler) . $liste('sf-danismanlar', $danismanlar) . '
   <p><a class="chip" href="kutuphane.php">‹ Materyal kütüphanesi</a></p>
   <script type="application/json" id="sf-veri">' . str_replace('</', '<\/', $veri) . '</script>
   <script src="../assets/sunum-ekle.js" defer></script>');

@@ -37,7 +37,7 @@ if (isset($_GET['veri'])) {
             ];
         }
     }
-    foreach ($cikti as &$x) $x['cat'] = kayit_kategori($x);
+    foreach ($cikti as &$x) { $x['cat'] = kayit_kategori($x); if (!empty($x['advisor'])) $x['advisor'] = danisman_duzgun($x['advisor']); }
     unset($x);
     header('Content-Type: application/json; charset=utf-8');
     header('Cache-Control: private, no-store');

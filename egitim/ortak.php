@@ -168,3 +168,64 @@ function kayit_kategori($x) {
     if (!empty($x['group']) && in_array($x['group'], KATEGORILER, true)) return $x['group'];
     return kategori_bul($x['topic'] ?? '', $x['group'] ?? '', $x['title'] ?? '');
 }
+
+// Danışman unvanları tek biçimde: "doc.dr." → "Doç. Dr.", "Dr Öğr Üyesi" → "Dr. Öğr. Üyesi".
+function unvan_ayir($s) {
+    $s = trim(preg_replace('/\s+/u', ' ', (string)$s));
+    if (!preg_match('/^((?:prof|do[çc]|dr|[öo][ğg]r|[üu]yesi|uzm|ba[şs]asistan|op)\.?\s*)+/iu', $s, $m)) return ['', $s];
+    $k = str_replace(' ', '', kat_katla($m[0]));
+    $harita = ['profdr' => 'Prof. Dr.', 'docdr' => 'Doç. Dr.', 'drogruyesi' => 'Dr. Öğr. Üyesi', 'drogretimuyesi' => 'Dr. Öğr. Üyesi',
+               'uzmdr' => 'Uzm. Dr.', 'opdr' => 'Op. Dr.', 'dr' => 'Dr.', 'prof' => 'Prof. Dr.', 'doc' => 'Doç. Dr.', 'uzm' => 'Uzm. Dr.',
+               'basasistanuzmdr' => 'Başasistan Uzm. Dr.'];
+    return [$harita[$k] ?? '', trim(substr($s, strlen($m[0])))];
+}
+function ad_bas($s) {
+    return implode(' ', array_map(function ($w) {
+        $a = mb_strtolower(str_replace(['İ', 'I'], ['i', 'ı'], $w), 'UTF-8');
+        $i = mb_substr($a, 0, 1);
+        return mb_strtoupper(str_replace(['i', 'ı'], ['İ', 'I'], $i), 'UTF-8') . mb_substr($a, 1);
+    }, preg_split('/\s+/u', trim(str_replace('.', ' ', (string)$s)), -1, PREG_SPLIT_NO_EMPTY)));
+}
+// Bilinen unvanlar: akademik programdaki unvanlar + kütüphanede unvanlı yazılmış danışmanlar (ad anahtarı → unvan)
+function unvan_haritasi() {
+    static $h = null;
+    if ($h !== null) return $h;
+    $h = [];
+    $ak = is_file(ARSIV . '/.akademik.json') ? (json_decode(file_get_contents(ARSIV . '/.akademik.json'), true) ?: []) : [];
+    foreach ($ak['unvan'] ?? [] as $ad => $u) { [$uu] = unvan_ayir($u . ' x'); if ($uu) $h[trim(kat_katla($ad))] = $uu; }
+    $j = ARSIV . '/Kütüphane/.kutuphane.json';
+    foreach ((is_file($j) ? (json_decode(file_get_contents($j), true) ?: []) : []) as $x) {
+        [$u, $ad] = unvan_ayir($x['advisor'] ?? '');
+        if ($u && $ad !== '' && !isset($h[trim(kat_katla($ad))])) $h[trim(kat_katla($ad))] = $u;
+    }
+    return $h;
+}
+// Kliniğin hocaları ve unvanları. Kaynak: Trabzon Üni. Tıp Fakültesi Aile Hekimliği ABD akademik kadro sayfası
+// (tipfakultesi.trabzon.edu.tr/S/8691, 27 Ekim 2026 Salı); Ceyhun Yurtsever'in unvanı Çağdaş'tan. Unvan değişince burası güncellenir.
+const HOCALAR = [
+    'Yılmaz Sezgin' => 'Doç. Dr.', 'Ersan Gürsoy' => 'Doç. Dr.',
+    'Volkan Atasoy' => 'Dr. Öğr. Üyesi', 'Mehmet Vatansever' => 'Dr. Öğr. Üyesi',
+    'Burcu Aykanat Yurtsever' => 'Dr. Öğr. Üyesi', 'Muhammed Emin Göktepe' => 'Dr. Öğr. Üyesi',
+    'Ceyhun Yurtsever' => 'Başasistan Uzm. Dr.',
+];
+// Yazılan ad bir hocaya uyuyorsa (ilk ad ya da baş harfi + soyadı aynı) hocanın tam adı döner.
+function hoca_bul($ad) {
+    $w = explode(' ', trim(kat_katla($ad)));
+    if (count($w) < 2) return null;
+    foreach (array_keys(HOCALAR) as $h) {
+        $hw = explode(' ', trim(kat_katla($h)));
+        if (end($w) !== end($hw)) continue;
+        if ($w[0] === $hw[0] || (strlen($w[0]) === 1 && $w[0] === $hw[0][0])) return $h;
+    }
+    return null;
+}
+// "doç.dr. ceyhun YURTSEVER" → "Başasistan Uzm. Dr. Ceyhun Yurtsever": hoca listesindeyse oradaki unvan ve tam ad,
+// değilse yazılan unvan düzeltilir (yazılmamışsa biliniyorsa eklenir).
+function danisman_duzgun($s) {
+    [$u, $ad] = unvan_ayir($s);
+    $ad = ad_bas($ad);
+    if ($ad === '') return '';
+    if ($h = hoca_bul($ad)) return HOCALAR[$h] . ' ' . $h;
+    if ($u === '') $u = unvan_haritasi()[trim(kat_katla($ad))] ?? '';
+    return trim("$u $ad");
+}
