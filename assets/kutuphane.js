@@ -94,8 +94,8 @@
         if (!/[A-Za-zÇĞİÖŞÜçğıöşü]/.test(w)) return w;
         var ilk = n++ === 0, ust = w.toLocaleUpperCase("tr"), kok = ust.replace(/['’].*$/, "");
         if (KISA_K[kok]) return KISA_K[kok] + w.slice(kok.length).toLocaleLowerCase("tr");
-        // Karışık yazılmış metinde zaten büyük harfli kısa kelime ya da içinde rakam/iç büyük harf olan kelime kısaltmadır
-        if (!hepsiBuyuk && (/^[A-ZÇĞİÖŞÜ0-9]{2,5}$/.test(w.replace(/['’].*$/, "")) || /[a-zçğıöşü][A-ZÇĞİÖŞÜ]/.test(w))) return w;
+        // Karışık yazılmış metinde zaten tümü büyük harfli kelime (SPRINT, KOAH) ya da içinde rakam/iç büyük harf olan kelime kısaltmadır
+        if (!hepsiBuyuk && (/^[A-ZÇĞİÖŞÜ0-9]{2,}$/.test(w.replace(/['’].*$/, "")) || /[a-zçğıöşü][A-ZÇĞİÖŞÜ]/.test(w))) return w;
         var k = w.toLocaleLowerCase("tr");
         if (!ilk && KUCUK[k]) return k;
         return buyuk(k);
