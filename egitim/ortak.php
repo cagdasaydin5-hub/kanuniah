@@ -131,3 +131,40 @@ function hesap_yaz($dosya, $kullanici, $sifre) {
     if ($ok) { @chmod($dosya, 0600); if (function_exists('opcache_invalidate')) @opcache_invalidate($dosya, true); }
     return $ok;
 }
+
+// Materyal kütüphanesi ana kategorileri. Kayıtta "kategori" varsa o kullanılır; yoksa konu, eski grup ve başlıktan
+// anahtar kelimeyle bulunur (sıra önemli: ilk eşleşen kazanır). Eşleşmeyen "Diğer"e düşer.
+const KATEGORILER = ['Aile Hekimliği ve Birinci Basamak', 'Koruyucu Hekimlik', 'İç Hastalıkları', 'Pediatri',
+    'Kadın Hastalıkları ve Doğum', 'Geriatri, Evde Sağlık ve Palyatif Bakım', 'Psikiyatri', 'Nöroloji',
+    'Cerrahi ve Acil', 'Deri, KBB ve Göz', 'Diğer'];
+function kat_katla($s) {
+    $s = mb_strtolower(str_replace(['I', 'İ'], ['ı', 'i'], (string)$s), 'UTF-8');
+    $s = strtr($s, ['ı' => 'i', 'ş' => 's', 'ğ' => 'g', 'ü' => 'u', 'ö' => 'o', 'ç' => 'c', 'â' => 'a', 'î' => 'i', 'û' => 'u', "\u{307}" => '']);
+    return ' ' . trim(preg_replace('/[^a-z0-9]+/', ' ', $s)) . ' ';
+}
+function kategori_bul($konu, $grup = '', $baslik = '') {
+    static $K = [
+        'Aile Hekimliği ve Birinci Basamak' => '\b(aile hekim|birinci basamak|wonca|konsultasyon|hekim hasta|iletisim|hasta merkezli|kisi merkezli|biyopsikososyal|etik\b|tibbi hata|kanita dayali|arastirma|istatistik|literatur|makale okuma|surekli bakim|kapsamli bakim|kronik bakim modeli|sevk\b|ekip calismasi|tibbi kayit|soap|icpc|zor hasta|kotu haber)',
+        'Koruyucu Hekimlik' => '\b(koruyucu|periyodik|tarama|taramalar|check ?up|izlem|izlemi|izlemleri|asi\b|asilar|asilama|bagisiklama|sigara|tutun|nikotin|obezite|kilo yonetimi|beslenme|diyet|egzersiz|fiziksel aktivite|saglikli yasam|saglik gelistirme|saglik egitimi|risk faktor|kanser tarama|mamografi|smear|kolonoskopi tarama)',
+        'Geriatri, Evde Sağlık ve Palyatif Bakım' => '\b(geriatri|yasli|ileri yas|kirilganlik|frailty|polifarmasi|dusme|demans|alzheimer|evde saglik|palyatif|terminal|son donem|basi yara|dekubit|yara bakim|enteral|tup beslenme|bakim veren|agri yonetimi|kanser agri|olum\b|olume)',
+        'Pediatri' => '\b(pediatri|cocuk|cocukluk|bebek|yenidogan|neonatal|adolesan|ergen|okul cagi|anne sutu|emzirme|buyume|gelisim|ates nobeti|febril|bronsiolit|krup|otitis media cocuk|infantil|konjenital|kawasaki|rasitizm)',
+        'Kadın Hastalıkları ve Doğum' => '\b(gebe|gebelik|dogum|lohusa|postpartum|prenatal|antenatal|preeklampsi|kontrasepsiyon|aile planlamasi|menopoz|menstr|adet\b|amenore|dismenore|polikistik|pkos|vajinit|vajinal|serviks|meme\b|memede|infertil|kadin hastaliklari|jinekoloji|obstetri|ektopik|abortus| ziv |hpv)',
+        'Psikiyatri' => '\b(psikiyatri|depresyon|anksiyete|kaygi|panik|bipolar|sizofreni|psikoz|intihar|madde kullan|madde bagim|alkol|bagimlilik|uyku bozuk|insomni|yeme bozuk|dehb|otizm|ruh sagligi|stres\b|tukenmislik|somatizasyon|somatik|obsesif|travma sonrasi|ptsd|antidepresan)',
+        'Nöroloji' => '\b(noroloji|basagri|bas agrisi|migren|epilepsi|nobet|inme|serebrovaskuler|parkinson|vertigo|bas donmesi|noropati|multipl skleroz|senkop|periferik sinir|bell\b|tremor)',
+        'Cerrahi ve Acil' => '\b(acil|cerrahi|travma|kirik|ortopedi|bel agrisi|boyun agrisi|diz\b|dizde|omuz|kas iskelet|spor yaralan|uroloji|prostat|bph|tas hastaligi|bobrek tasi|hemoroid|fitik|akut karin|apandisit|yanik|zehirlen|resusitasyon|kpr|anafilaksi|sok\b|yara\b|yaralar|sutur|ilk yardim|isirik|cilt kesi|preoperatif|perioperatif|hayvan isirigi)',
+        'Deri, KBB ve Göz' => '\b(dermatoloji|deri\b|derisi|cilt|akne|ekzema|egzama|dermatit|psoriazis|sedef|urtiker|kasinti|nevus|mantar|uyuz|kbb|kulak|otit|sinuzit|tonsil|farenjit|burun|epistaksis|isitme|tinnitus|goz\b|gozde|gozun|kirmizi goz|konjonktivit|glokom|katarakt|retinopati|gorme)',
+        'İç Hastalıkları' => '\b(dahiliye|ic hastaliklari|hipertansiyon|tansiyon|kan basinci|kardiyo|kalp|koroner|angina|miyokard|aritmi|atriyal|atrial|lipid|dislipidemi|kolesterol|ateroskleroz|diyabet|diabet|insulin|tiroid|hipotiroidi|hipertiroidi|endokrin|adrenal|hipofiz|osteoporoz|vitamin|astim|koah|pnomoni|solunum|oksuruk|tuberkuloz|verem|uyku apne|gastro|reflu|dispepsi|ulser|helikobakter|hepatit|karaciger|siroz|ibs\b|irritabl|inflamatuvar barsak|konstipasyon|diyare|ishal|bobrek|renal|nefro|kby\b|idrar yolu|iye\b|proteinuri|elektrolit|hiponatremi|anemi|demir eksikligi|hematoloji|koagul|antikoagul|varfarin|tromboz|emboli|romatoloji|artrit|gut\b|lupus|fibromiyalji|enfeksiyon|antibiyotik|ates\b|atesli|sepsis|hiv|brusella|kirim kongo|zoonoz|onkoloji|kanser|lenfoma|ilac etkilesim|akilci ilac|laboratuvar|tahlil|hemogram|ekg)',
+    ];
+    foreach ([$konu, $grup, $baslik] as $s) {
+        $s = kat_katla($s);
+        if (trim($s) === '') continue;
+        foreach ($K as $kat => $re) if (preg_match('/' . $re . '/', $s)) return $kat;
+    }
+    return 'Diğer';
+}
+// Kaydın kategorisi: elle verilmişse o, yoksa tahmin.
+function kayit_kategori($x) {
+    if (!empty($x['kategori']) && in_array($x['kategori'], KATEGORILER, true)) return $x['kategori'];
+    if (!empty($x['group']) && in_array($x['group'], KATEGORILER, true)) return $x['group'];
+    return kategori_bul($x['topic'] ?? '', $x['group'] ?? '', $x['title'] ?? '');
+}

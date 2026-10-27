@@ -37,6 +37,8 @@ if (isset($_GET['veri'])) {
             ];
         }
     }
+    foreach ($cikti as &$x) $x['cat'] = kayit_kategori($x);
+    unset($x);
     header('Content-Type: application/json; charset=utf-8');
     header('Cache-Control: private, no-store');
     echo json_encode($cikti, JSON_UNESCAPED_UNICODE);
@@ -47,7 +49,7 @@ sayfa('Materyal kütüphanesi', '
   <div class="page-head">
     <div class="eyebrow"><a href="./">Eğitim</a> › Materyal kütüphanesi</div>
     <h1>Materyal kütüphanesi</h1>
-    <p class="lede">Kliniğimizde bugüne kadar sunulmuş seminerler, makale ve olgu sunumları, hoca sunumları; konuya göre. Bir konu yazın, o konuda yapılmış her şeyi görün.</p>
+    <p class="lede">Kliniğimizde bugüne kadar sunulmuş seminerler, makale ve olgu sunumları, hoca sunumları; ana kategoriye ve konuya göre. Bir konu yazın, o konuda yapılmış her şeyi görün.</p>
   </div>
   <div class="bar">
     <label class="search" for="q"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="q" type="search" placeholder="Konu, başlık, sunan kişi ya da slayt içinden bir kelime: ör. hipertansiyon, aşı, Vatansever" autocomplete="off" autofocus></label>

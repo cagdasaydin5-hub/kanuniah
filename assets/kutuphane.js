@@ -34,14 +34,15 @@
 
   var veri = [], q = document.getElementById("q"), out = document.getElementById("kutuphane"),
       chips = document.getElementById("tur"), count = document.getElementById("count"),
-      tur = "", acik = true, hepsi = document.getElementById("hepsi");
+      tur = "", acik = false, hepsi = document.getElementById("hepsi");
 
   fetch("kutuphane.php?veri=1", { cache: "no-store" }).then(function (r) {
     if (!r.ok) throw new Error("dizin");
     return r.json();
   }).then(function (d) {
     veri = d.map(function (x) {
-      x.hay = fold([x.title, x.topic, x.group, x.presenter, x.advisor, x.year, TURK[x.type], x.article ? x.article.title + " " + x.article.journal : ""].join(" "));
+      x.cat = x.cat || "Diğer";
+      x.hay = fold([x.title, x.topic, x.cat, x.group, x.presenter, x.advisor, x.year, TURK[x.type], x.article ? x.article.title + " " + x.article.journal : ""].join(" "));
       x.metin = fold(x.keywords || "");
       return x;
     });
@@ -106,18 +107,24 @@
   function grupla(liste) {
     var g = {}; var sira = [];
     liste.forEach(function (x) {
-      var k = x.group + "›" + x.topic;
-      if (!g[k]) { g[k] = { group: x.group, topic: x.topic, items: [] }; sira.push(k); }
+      var k = x.cat + "›" + x.topic;
+      if (!g[k]) { g[k] = { group: x.cat, topic: x.topic, items: [] }; sira.push(k); }
       g[k].items.push(x);
     });
-    sira.sort(function (a, b) { return g[a].group.localeCompare(g[b].group, "tr") || g[a].topic.localeCompare(g[b].topic, "tr"); });
+    sira.sort(function (a, b) { return katSira(g[a].group) - katSira(g[b].group) || g[a].topic.localeCompare(g[b].topic, "tr"); });
     return sira.map(function (k) { return g[k]; });
   }
+
+  // Ana kategoriler sabit sırada; "Diğer" en sonda
+  var KAT = ["Aile Hekimliği ve Birinci Basamak", "Koruyucu Hekimlik", "İç Hastalıkları", "Pediatri",
+    "Kadın Hastalıkları ve Doğum", "Geriatri, Evde Sağlık ve Palyatif Bakım", "Psikiyatri", "Nöroloji",
+    "Cerrahi ve Acil", "Deri, KBB ve Göz", "Diğer"];
+  function katSira(c) { var i = KAT.indexOf(c); return i === -1 ? KAT.length : i; }
 
   function konuBlok(k, acik) {
     var d = el("details", "konu"); d.open = !!acik;
     var s = el("summary"); s.appendChild(el("b", null, k.topic));
-    s.appendChild(el("span", "c", k.items.length + " materyal · " + k.group));
+    s.appendChild(el("span", "c", k.items.length + " materyal"));
     d.appendChild(s);
     k.items.sort(function (a, b) { return TUR.indexOf(a.type) - TUR.indexOf(b.type) || b.year.localeCompare(a.year); })
       .forEach(function (x) { d.appendChild(satir(x)); });
@@ -134,8 +141,8 @@
       count.textContent = temel.length + " materyal · " + liste.length + " konu";
       var gruplar = {};
       liste.forEach(function (k) { (gruplar[k.group] = gruplar[k.group] || []).push(k); });
-      var adlar = Object.keys(gruplar).sort(function (a, b) { return a.localeCompare(b, "tr"); });
-      var atla = el("nav", "chips atla"); atla.setAttribute("aria-label", "Gruba atla");
+      var adlar = Object.keys(gruplar).sort(function (a, b) { return katSira(a) - katSira(b); });
+      var atla = el("nav", "chips atla"); atla.setAttribute("aria-label", "Kategoriye atla");
       adlar.forEach(function (gad) {
         var a = el("a", "chip", gad); a.href = "#g-" + fold(gad).replace(/[^a-z0-9]+/g, "-");
         a.appendChild(el("span", "c", String(gruplar[gad].reduce(function (n, k) { return n + k.items.length; }, 0))));

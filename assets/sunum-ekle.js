@@ -1,10 +1,10 @@
-/* Sunum ekle formu: konu/grup, makale alanları, aynı sunum uyarısı. */
+/* Sunum ekle formu: kategori/konu, makale alanları, aynı sunum uyarısı. */
 (function () {
   "use strict";
   var V = JSON.parse(document.getElementById("sf-veri").textContent || "{}");
   var $ = function (id) { return document.getElementById(id); };
   var tur = $("sf-tur"), sunan = $("sf-sunan"), dan = $("sf-danisman"),
-      konu = $("sf-konu"), grupK = $("sf-grup-k"), grup = $("sf-grup"), baslik = $("sf-baslik");
+      konu = $("sf-konu"), kat = $("sf-kat"), baslik = $("sf-baslik");
 
   function fold(s) {
     return String(s || "").toLocaleLowerCase("tr").replace(/ı/g, "i").replace(/ş/g, "s").replace(/ğ/g, "g")
@@ -13,10 +13,10 @@
   }
   var konuBul = {}; Object.keys(V.konular || {}).forEach(function (k) { konuBul[fold(k)] = k; });
 
-  // Kütüphanede olmayan konu yazılırsa grup sorulur
+  // Kütüphanede var olan bir konu yazılırsa kategorisi kendiliğinden seçilir (değiştirilebilir)
   function konuDegisti() {
-    var yeni = konu.value.trim().length >= 3 && !konuBul[fold(konu.value)];
-    grupK.hidden = !yeni; grup.required = yeni;
+    var k = konuBul[fold(konu.value)];
+    if (k && V.konular[k]) kat.value = V.konular[k];
   }
 
   function cift() {

@@ -32,12 +32,11 @@ function program_sunumlari($program) {
 $sunumlar = program_sunumlari($program);
 $konular = []; $kisiler = []; $danismanlar = [];
 foreach ($dizin as $x) {
-    $konular[$x['topic']] = $x['group'];
+    $konular[$x['topic']] = kayit_kategori($x);
     if (!empty($x['presenter'])) $kisiler[ad_duzgun($x['presenter'])] = 1;
     if (!empty($x['advisor'])) $danismanlar[$x['advisor']] = 1;
 }
 foreach ($sunumlar as $s) { $kisiler[ad_duzgun($s[1])] = 1; if ($s[4] !== '') $danismanlar[$s[4]] = 1; }
-$gruplar = array_values(array_unique(array_values($konular)));
 
 $hata = []; $v = $_POST;
 
@@ -52,15 +51,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $konu = trim(preg_replace('/\s+/u', ' ', $v['konu'] ?? ''));
         $baslik = trim(preg_replace('/\s+/u', ' ', $v['baslik'] ?? ''));
         $tarih = preg_match('/^\d{4}-\d{2}-\d{2}$/', $v['tarih'] ?? '') ? $v['tarih'] : '';
-        $grup = $konular[$konu] ?? (in_array($v['grup'] ?? '', $gruplar, true) ? $v['grup'] : '');
+        $kat = in_array($v['kategori'] ?? '', KATEGORILER, true) ? $v['kategori'] : '';
         // Var olan konunun yazımını aynen kullan (büyük/küçük harf, Türkçe karakter farkı ayrı konu açmasın)
-        foreach ($konular as $k => $g) if (katla($k) === katla($konu)) { $konu = $k; $grup = $g; break; }
+        foreach ($konular as $k => $g) if (katla($k) === katla($konu)) { $konu = $k; break; }
 
         if (!$tur) $hata[] = 'Sunum türünü seçin.';
         if (!preg_match('/^\p{L}[\p{L}\'’.]*(?: \p{L}[\p{L}\'’.]*){1,3}$/u', $sunan)) $hata[] = 'Sunan kişinin adını ve soyadını yazın (ör. Ayşe Yılmaz).';
         if ($tur !== 'Hoca Sunumu' && $tur !== 'Rehber' && $danisman === '') $hata[] = 'Danışman hocanın adını yazın.';
         if (mb_strlen($konu) < 3) $hata[] = 'Konuyu yazın ya da listeden seçin.';
-        if ($konu !== '' && $grup === '') $hata[] = 'Yeni bir konu yazdınız; hangi gruba girdiğini seçin.';
+        if ($kat === '') $hata[] = 'Kategoriyi seçin.';
         if (mb_strlen($baslik) < 3) $hata[] = 'Sunum başlığını yazın.';
         if (!$tarih) $hata[] = 'Sunum tarihini girin.';
         elseif ($tarih > date('Y-m-d', strtotime('+14 days'))) $hata[] = 'Sunum tarihi bugünden en çok iki hafta ileri olabilir.';
@@ -114,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $dizin = is_file(KUTUP_JSON) ? (json_decode(file_get_contents(KUTUP_JSON), true) ?: []) : [];
             $id = 0; foreach ($dizin as $x) $id = max($id, (int)$x['id']);
             $kayit = [
-                'id' => $id + 1, 'type' => $tur, 'topic' => $konu, 'group' => $grup, 'title' => $baslik,
+                'id' => $id + 1, 'type' => $tur, 'topic' => $konu, 'group' => $kat, 'kategori' => $kat, 'title' => $baslik,
                 'presenter' => $sunan, 'advisor' => $danisman, 'year' => $yil, 'date' => $tarih,
                 'slides' => $okunan['sayfa'], 'path' => $KLASOR[$tur] . "/$ad", 'orig' => son_ad($f['name']),
                 'size' => $boy, 'keywords' => anahtar_kelimeler($okunan['slaytlar']), 'sha1' => $sha,
@@ -158,7 +157,7 @@ if (isset($_GET['tamam']) && ($s = $_SESSION['se_tamam'] ?? null)) {
 $sec = function ($ad, $deger) use ($v) { return (($v[$ad] ?? '') === $deger) ? ' selected' : ''; };
 $val = function ($ad) use ($v) { return e($v[$ad] ?? ''); };
 $turSec = ''; foreach ($TURLER as $x) $turSec .= '<option' . $sec('tur', $x) . '>' . e($x) . '</option>';
-$grupSec = '<option value="">Grup seçin</option>'; foreach ($gruplar as $g) $grupSec .= '<option' . $sec('grup', $g) . '>' . e($g) . '</option>';
+$katSec = '<option value="">Kategori seçin</option>'; foreach (KATEGORILER as $g) $katSec .= '<option' . $sec('kategori', $g) . '>' . e($g) . '</option>';
 $liste = function ($id, $a) { ksort($a); return '<datalist id="' . $id . '">' . implode('', array_map(function ($x) { return '<option value="' . e($x) . '">'; }, array_keys($a))) . '</datalist>'; };
 $veri = json_encode(['konular' => $konular,
     'kayitlar' => array_map(function ($x) { return [$x['presenter'] ?? '', $x['title'], $x['topic']]; }, $dizin)], JSON_UNESCAPED_UNICODE);
@@ -167,7 +166,7 @@ sayfa('Sunum ekle', '
   <div class="page-head">
     <div class="eyebrow"><a href="./">Eğitim</a> › <a href="kutuphane.php">Materyal kütüphanesi</a> › Sunum ekle</div>
     <h1>Sunum ekle</h1>
-    <p class="lede">Sunduğunuz seminer, makale ya da olgu sunumunu kütüphaneye ekleyin. Sunum hemen kütüphanede, konusunun altında görünür.</p>
+    <p class="lede">Sunduğunuz seminer, makale ya da olgu sunumunu kütüphaneye ekleyin. Sunum hemen kütüphanede, kategorisi ve konusunun altında görünür.</p>
   </div>' . $kutu . '
   <form method="post" enctype="multipart/form-data" class="sunum-form" id="sf">
     <input type="hidden" name="t" value="' . $t . '">
@@ -180,8 +179,8 @@ sayfa('Sunum ekle', '
       <label class="fld" id="sf-dan-k">Danışman <input type="text" name="danisman" id="sf-danisman" list="sf-danismanlar" value="' . $val('danisman') . '" autocomplete="off" placeholder="ör. Doç. Dr. Ad Soyad"></label>
     </div>
     <div class="fields">
-      <label class="fld">Konu <input type="text" name="konu" id="sf-konu" list="sf-konular" value="' . $val('konu') . '" autocomplete="off" placeholder="Listeden seçin ya da yazın: ör. Hipertansiyon" required></label>
-      <label class="fld" id="sf-grup-k" hidden>Grup (yeni konu) <select name="grup" id="sf-grup">' . $grupSec . '</select></label>
+      <label class="fld">Kategori <select name="kategori" id="sf-kat" required>' . $katSec . '</select></label>
+      <label class="fld">Konu <input type="text" name="konu" id="sf-konu" list="sf-konular" value="' . $val('konu') . '" autocomplete="off" placeholder="ör. Hipertansiyon" required></label>
     </div>
     <div class="fields col">
       <label class="fld">Sunum başlığı <input type="text" name="baslik" id="sf-baslik" value="' . $val('baslik') . '" maxlength="150" required></label>
