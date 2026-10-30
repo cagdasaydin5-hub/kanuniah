@@ -77,10 +77,11 @@ sayfa('Çalışma listesi', '
   <div class="page-head">
     <div class="eyebrow"><a href="./">Eğitim</a> › Çalışma listesi</div>
     <h1>Çalışma listesi</h1>
-    <p class="lede">Asistanların çalıştığı birimler ve tarihleri. Adınızı seçin ya da bir gün seçip o günü görün. Listede adı geçmeyen asistanlar rotasyondadır.</p>
+    <p class="lede">Asistanların çalıştığı birimler ve tarihleri. Bu ayın listesi görünür; geçmiş aylar Ay seçiminde arşivdedir. Adınızı seçin ya da bir gün seçip o günü görün. Listede adı geçmeyen asistanlar rotasyondadır.</p>
   </div>' . $kutu . '
   <div class="bar">
     <div class="ak-filtre">
+      <label class="ak-kisi">Ay <select id="cl-ay"></select></label>
       <div class="chips"><button class="chip" type="button" id="cl-onceki" aria-label="Önceki gün">‹</button><select id="cl-gun" class="cl-gun" aria-label="Gün"></select><button class="chip" type="button" id="cl-sonraki" aria-label="Sonraki gün">›</button><button class="chip" type="button" id="cl-bugun">Bugün</button></div>
       <label class="ak-kisi">Kişi <select id="ak-kisi"><option value="">Herkes</option></select></label>
     </div>

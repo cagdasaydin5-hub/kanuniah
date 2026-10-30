@@ -33,9 +33,17 @@
   }
 
   var BUGUN = bugun();
-  var TAR = Object.keys(d.gunler).sort();
-  var DOLU = TAR.filter(function (t) { return Object.keys(d.gunler[t]).length > 0; });
-  var birimler = d.birimler.slice();
+  var TUM = Object.keys(d.gunler).sort();
+  // Aylar: varsayılan bu ay (yoksa sıradaki, o da yoksa son ay); geçmiş aylar arşivde seçilir
+  var AYLAR = [];
+  TUM.forEach(function (t) { var a = t.slice(0, 7); if (AYLAR.indexOf(a) < 0) AYLAR.push(a); });
+  var BUAY = BUGUN.slice(0, 7);
+  function ayAd(a) { return AY[+a.slice(5, 7) - 1] + " " + a.slice(0, 4); }
+  function ayVarsayilan() {
+    for (var i = 0; i < AYLAR.length; i++) if (AYLAR[i] >= BUAY) return AYLAR[i];
+    return AYLAR[AYLAR.length - 1];
+  }
+  var TAR = [], DOLU = [], birimler = [], sayac = {};
 
   // Aynı adlı sütunlar "Ad#2" gibi ayrı anahtarlarla gelir; sayfada yalnızca ad gösterilir
   function etiket(b) { return b.replace(/#\d+$/, ""); }
@@ -45,29 +53,43 @@
     return b;
   }
 
-  // Kişi listesi (gün sayısıyla)
-  var sayac = {};
-  TAR.forEach(function (t) {
-    var gor = {};
-    Object.keys(d.gunler[t]).forEach(function (b) { d.gunler[t][b].forEach(function (a) { if (!gor[a]) { gor[a] = 1; sayac[a] = (sayac[a] || 0) + 1; } }); });
-  });
-  var sel = document.getElementById("ak-kisi"), gunSel = document.getElementById("cl-gun");
+  var sel = document.getElementById("ak-kisi"), gunSel = document.getElementById("cl-gun"), aySel = document.getElementById("cl-ay");
   var coll = (window.Intl && Intl.Collator) ? new Intl.Collator("tr").compare : function (a, b) { return a < b ? -1 : 1; };
-  Object.keys(sayac).sort(coll).forEach(function (k) {
-    var o = el("option", null, k);
-    o.value = k;
-    sel.appendChild(o);
+  var simdiki = ayVarsayilan(), arsiv = null;
+  AYLAR.forEach(function (a) {
+    var o = el("option", null, ayAd(a)); o.value = a;
+    if (a < simdiki) { if (!arsiv) { arsiv = el("optgroup"); arsiv.label = "Arşiv"; } arsiv.appendChild(o); }
+    else aySel.appendChild(o);
   });
-  var kayitli = depo("ak-kisi");
-  if (kayitli && sayac[kayitli]) sel.value = kayitli;
+  if (arsiv) aySel.appendChild(arsiv);
+  aySel.value = simdiki;
 
-  var tum = el("option", null, "Tüm program"); tum.value = ""; gunSel.appendChild(tum);
-  TAR.forEach(function (t) { var o = el("option", null, tarih(t)); o.value = t; gunSel.appendChild(o); });
+  // Seçilen ayın günleri, birimleri ve kişileri
+  function ayKur() {
+    var ay = aySel.value;
+    TAR = TUM.filter(function (t) { return t.slice(0, 7) === ay; });
+    DOLU = TAR.filter(function (t) { return Object.keys(d.gunler[t]).length > 0; });
+    birimler = d.birimler.filter(function (b) { return DOLU.some(function (t) { return d.gunler[t][b]; }); });
+    sayac = {};
+    TAR.forEach(function (t) {
+      var gor = {};
+      Object.keys(d.gunler[t]).forEach(function (b) { d.gunler[t][b].forEach(function (a) { if (!gor[a]) { gor[a] = 1; sayac[a] = (sayac[a] || 0) + 1; } }); });
+    });
+    var secili = sel.value || depo("ak-kisi");
+    sel.textContent = "";
+    var h = el("option", null, "Herkes"); h.value = ""; sel.appendChild(h);
+    Object.keys(sayac).sort(coll).forEach(function (k) { var o = el("option", null, k); o.value = k; sel.appendChild(o); });
+    sel.value = secili && sayac[secili] ? secili : "";
+    gunSel.textContent = "";
+    var tum = el("option", null, "Tüm ay"); tum.value = ""; gunSel.appendChild(tum);
+    TAR.forEach(function (t) { var o = el("option", null, tarih(t)); o.value = t; gunSel.appendChild(o); });
+    gunSel.value = "";
+  }
   function varsayilan() {
     for (var i = 0; i < TAR.length; i++) if (TAR[i] >= BUGUN) return TAR[i];
     return TAR[TAR.length - 1];
   }
-  gunSel.value = "";
+  ayKur();
 
   function kisiCiz() {
     var kutu = document.getElementById("cl-kisi"), kisi = sel.value, t = gunSel.value || varsayilan();
@@ -114,7 +136,7 @@
   function programCiz() {
     var out = document.getElementById("cl-gunluk"), kisi = sel.value;
     out.textContent = "";
-    out.appendChild(el("h2", "cl-baslik", "Tüm program · " + aralik(TAR[0], TAR[TAR.length - 1])));
+    out.appendChild(el("h2", "cl-baslik", ayAd(aySel.value) + " · " + aralik(TAR[0], TAR[TAR.length - 1])));
     var tb = tablo(["Birim", "Tarih", "Asistan"]), body = el("tbody");
     birimler.forEach(function (b) {
       var donem = [], son = null;
@@ -184,9 +206,13 @@
     if (i >= 0 && i < TAR.length) { gunSel.value = TAR[i]; ciz(); }
   }
   sel.addEventListener("change", function () { depo("ak-kisi", sel.value); ciz(); });
+  aySel.addEventListener("change", function () { ayKur(); ciz(); });
   gunSel.addEventListener("change", ciz);
   document.getElementById("cl-onceki").addEventListener("click", function () { kaydir(-1); });
   document.getElementById("cl-sonraki").addEventListener("click", function () { kaydir(1); });
-  document.getElementById("cl-bugun").addEventListener("click", function () { gunSel.value = varsayilan(); ciz(); });
+  document.getElementById("cl-bugun").addEventListener("click", function () {
+    if (aySel.value !== simdiki) { aySel.value = simdiki; ayKur(); }
+    gunSel.value = varsayilan(); ciz();
+  });
   ciz();
 })();
