@@ -1,6 +1,46 @@
 {
- "checked": "2026-10-19",
+ "checked": "2026-10-25",
  "log": [
+  {
+   "date": "2026-10-30",
+   "items": [
+    {
+     "ad": "Eklenen makale",
+     "n": 6,
+     "href": "haftanin-makaleleri.html"
+    }
+   ]
+  },
+  {
+   "date": "2026-10-25",
+   "items": [
+    {
+     "ad": "Eklenen makale",
+     "n": 8,
+     "href": "haftanin-makaleleri.html"
+    },
+    {
+     "ad": "Eklenen etkinlik",
+     "n": 4,
+     "href": "takvim.html"
+    },
+    {
+     "ad": "Güncellenen etkinlik",
+     "n": 11,
+     "href": "takvim.html"
+    },
+    {
+     "ad": "Eklenen rehber",
+     "n": 2,
+     "href": "rehberler.html"
+    },
+    {
+     "ad": "Arşivlenen rehber",
+     "n": 2,
+     "href": "rehberler.html"
+    }
+   ]
+  },
   {
    "date": "2026-10-19",
    "items": [

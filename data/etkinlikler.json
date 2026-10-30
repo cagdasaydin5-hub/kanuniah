@@ -513,6 +513,34 @@
    "dogrulama": "2026-10-12"
   },
   {
+   "id": "asm30-mamografi-2026",
+   "ad": "ASM'de 30 Dakika: Bir Mamografi, Bir Hayat: Aile Hekimliğinde Erken Tanının Gücü",
+   "tur": "webinar",
+   "duzey": 4,
+   "kapsam": "ulusal",
+   "baslangic": "2026-10-26",
+   "bitis": "2026-10-26",
+   "saat": "12.15–13.00",
+   "sehir": null,
+   "yer": null,
+   "bicim": "cevrimici",
+   "duzenleyen": "İSTAHED Akademi (İstanbul Aile Hekimleri Derneği)",
+   "ucret": null,
+   "url": "https://istahedakademi.com/event/bir-mamografi-bir-hayat-aile-hekimliginde-erken-taninin-gucu/",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [
+    "kanser taraması",
+    "meme kanseri"
+   ],
+   "not": "İzlemek için İSTAHED Akademi üyeliği gerekir (yalnızca hekimlere açık); kayıt üyelere sunulur.",
+   "dogrulama": "2026-10-25"
+  },
+  {
    "id": "imsa-2026",
    "ad": "1. Uluslararası Bağımlılığa Multidisipliner Yaklaşımlar Sempozyumu (IMSA 2026)",
    "tur": "sempozyum",
@@ -538,6 +566,34 @@
    ],
    "not": "Tarih kurum dışı duyurudan alındı.",
    "dogrulama": "2026-10-05"
+  },
+  {
+   "id": "asm30-atopik-dermatit-2026",
+   "ad": "ASM'de 30 Dakika: Atopik Dermatitte Güncel Tedavi Yaklaşımları",
+   "tur": "webinar",
+   "duzey": 4,
+   "kapsam": "ulusal",
+   "baslangic": "2026-10-27",
+   "bitis": "2026-10-27",
+   "saat": "12.15–13.00",
+   "sehir": null,
+   "yer": null,
+   "bicim": "cevrimici",
+   "duzenleyen": "İSTAHED Akademi (İstanbul Aile Hekimleri Derneği)",
+   "ucret": null,
+   "url": "https://istahedakademi.com/event/atopik-dermatitte-guncel-tedavi-yaklasimlari/",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [
+    "dermatoloji",
+    "atopik dermatit"
+   ],
+   "not": "İzlemek için İSTAHED Akademi üyeliği gerekir (yalnızca hekimlere açık); kayıt üyelere sunulur.",
+   "dogrulama": "2026-10-25"
   },
   {
    "id": "ahekon-2026",
@@ -591,7 +647,7 @@
     "bildiri hazırlama"
    ],
    "not": "Asistanlara yönelik. AHEKON ile aynı güne denk geliyor.",
-   "dogrulama": "2026-10-12"
+   "dogrulama": "2026-10-25"
   },
   {
    "id": "asm30-magnezyum-2026",
@@ -618,7 +674,7 @@
     "kas-iskelet"
    ],
    "not": "Site üyeliği gerekir (yalnızca hekimlere açık).",
-   "dogrulama": "2026-10-12"
+   "dogrulama": "2026-10-25"
   },
   {
    "id": "asm30-dispepsi-2-2026",
@@ -645,7 +701,7 @@
     "gastroenteroloji"
    ],
    "not": null,
-   "dogrulama": "2026-10-12"
+   "dogrulama": "2026-10-25"
   },
   {
    "id": "asm30-antihistaminik-2026",
@@ -672,7 +728,7 @@
     "alerji"
    ],
    "not": null,
-   "dogrulama": "2026-10-12"
+   "dogrulama": "2026-10-25"
   },
   {
    "id": "asm30-kuru-oksuruk-2026",
@@ -700,7 +756,7 @@
     "öksürük"
    ],
    "not": "Site üyeliği gerekir (yalnızca hekimlere açık).",
-   "dogrulama": "2026-10-12"
+   "dogrulama": "2026-10-25"
   },
   {
    "id": "ikon-2026",
@@ -753,7 +809,7 @@
     "gebelik"
    ],
    "not": "Konuşmacı Prof. Dr. Dilek Şahin. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-10-12"
+   "dogrulama": "2026-10-25"
   },
   {
    "id": "ah-arastirma-gunleri-2026",
@@ -780,7 +836,7 @@
     "araştırma"
    ],
    "not": "Kayıt ücretleri KDV dahil: uzman 5.500 TL, asistan 3.000 TL, kurs 1.800 TL. Asistan bursu: kayıt ücreti ödenerek başvurulur, kazananlara iade edilir (burs son tarihi açıklanmadı). 12 Ekim 2026 sonrası iptalde iade yok.",
-   "dogrulama": "2026-10-12"
+   "dogrulama": "2026-10-25"
   },
   {
    "id": "inhsc-2026",
@@ -839,6 +895,33 @@
    "dogrulama": "2026-10-12"
   },
   {
+   "id": "tahud-tv-diyabet-gunu-2026",
+   "ad": "TAHUD TV: Dünya Diyabet Günü Özel Webinarı: Tip 2 Diyabet Yönetiminde Güncellemeler",
+   "tur": "webinar",
+   "duzey": 4,
+   "kapsam": "ulusal",
+   "baslangic": "2026-11-17",
+   "bitis": "2026-11-17",
+   "saat": "19.30–20.30",
+   "sehir": null,
+   "yer": "tahudtv.com.tr",
+   "bicim": "cevrimici",
+   "duzenleyen": "Türkiye Aile Hekimleri Uzmanlık Derneği (TAHUD)",
+   "ucret": "ucretsiz",
+   "url": "https://tahud.org.tr/tahud-tv/dunya-diyabet-gunu-ozel-webinari-tip-2-diyabet-yonetiminde-guncellemeler-17-kasim-2026-1930",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [
+    "diyabet"
+   ],
+   "not": "Konuşmacı Prof. Dr. Mine Adaş, oturum başkanı Doç. Dr. Gökçe İşcan. İzlemek için tahudtv.com.tr kaydı gerekir.",
+   "dogrulama": "2026-10-25"
+  },
+  {
    "id": "tahud-tv-zona-yuk-2026",
    "ad": "TAHUD TV: Gerçek Yaşam Verileri ile Herpes Zoster Yükü",
    "tur": "webinar",
@@ -864,7 +947,7 @@
     "zona"
    ],
    "not": "Konuşmacı Doç. Dr. Duygu Ayhan Başer, oturum başkanı Doç. Dr. İsmail Arslan. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-10-12"
+   "dogrulama": "2026-10-25"
   },
   {
    "id": "asm30-zor-konstipasyon-2026",
@@ -1003,7 +1086,7 @@
     "solunum yolu enfeksiyonu"
    ],
    "not": "Konuşmacı Doç. Dr. Tuğba Bedir Demirdağ. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-10-12"
+   "dogrulama": "2026-10-25"
   },
   {
    "id": "tahud-tv-rsv-2026",
@@ -1032,7 +1115,7 @@
     "çocuk sağlığı"
    ],
    "not": "Konuşmacı Doç. Dr. Emel Okulu. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-10-12"
+   "dogrulama": "2026-10-25"
   },
   {
    "id": "asi-kongresi-2026",
@@ -1170,6 +1253,34 @@
    "dogrulama": "2026-10-12"
   },
   {
+   "id": "tahud-tv-migren-2026",
+   "ad": "TAHUD TV: Migrende Atak Tedavisi",
+   "tur": "webinar",
+   "duzey": 4,
+   "kapsam": "ulusal",
+   "baslangic": "2026-12-23",
+   "bitis": "2026-12-23",
+   "saat": "19.30–20.30",
+   "sehir": null,
+   "yer": "tahudtv.com.tr",
+   "bicim": "cevrimici",
+   "duzenleyen": "Türkiye Aile Hekimleri Uzmanlık Derneği (TAHUD)",
+   "ucret": "ucretsiz",
+   "url": "https://tahud.org.tr/tahud-tv/migrende-atak-tedavisi-23-aralik-2026-1930",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [
+    "nöroloji",
+    "migren"
+   ],
+   "not": "Konuşmacı Uzm. Dr. Gökçen Hatipoğlu. İzlemek için tahudtv.com.tr kaydı gerekir.",
+   "dogrulama": "2026-10-25"
+  },
+  {
    "id": "daahk-2027",
    "ad": "26. Uluslararası Doğu Akdeniz Aile Hekimliği Kongresi (DAAHK 2027)",
    "tur": "kongre",
@@ -1294,7 +1405,7 @@
    },
    "konu": [],
    "not": "Tema: Ömür boyu sağlık için bir reçete. Kayıt açık; 30 Ekim 2026'ya kadar önceki kongre fiyatları geçerli.",
-   "dogrulama": "2026-10-12"
+   "dogrulama": "2026-10-25"
   },
   {
    "id": "karadeniz-6",

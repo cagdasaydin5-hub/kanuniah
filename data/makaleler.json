@@ -4,6 +4,422 @@
  },
  "issues": [
   {
+   "id": "2026-10-30",
+   "title": "Hafta 44",
+   "range": "26 – 30 Ekim 2026",
+   "date": "2026-10-30",
+   "items": [
+    {
+     "id": "inject-asil-tendinopati",
+     "pmid": "42951276",
+     "doi": "10.1136/bmj-2026-100807",
+     "journal": "BMJ",
+     "date": "2026-10-28",
+     "title_en": "Efficacy and cost effectiveness of high volume injections with and without corticosteroid compared with sham for midportion Achilles tendinopathy (Inject trial): randomised controlled trial",
+     "title": "Aşil tendinopatisinde yüksek hacimli enjeksiyon (steroidli ya da steroidsiz) 12 ayda sahte enjeksiyondan üstün değil; steroid uzun dönemde daha kötü",
+     "design": "Tek merkezli, çift kör, üç kollu RKÇ · n=192",
+     "tags": [
+      "kas-iskelet",
+      "aşil tendinopatisi",
+      "enjeksiyon",
+      "kortikosteroid"
+     ],
+     "score": {
+      "kanit": 2,
+      "poem": 1,
+      "bb": 2,
+      "etki": 2
+     },
+     "effect": "Kullanımı sorgulatır",
+     "what": "Orta bölüm aşil tendinopatisinde, tüm gruplara aynı egzersiz programı verilirken yüksek hacimli enjeksiyon 12. ayda ağrı ve işlev (VISA-A) bakımından sahte enjeksiyondan farklı değildi (steroidli −3,5; steroidsiz 4,0 puan). Steroidli enjeksiyon 6. haftada kısa süreli yarar sağladı, ancak 26. haftada steroidsiz enjeksiyona göre daha kötü sonuç verdi (−8,6 puan).",
+     "practice": "Aşil tendinopatisinde temel tedavi egzersiz programı ve aktivite düzenlemesidir. Kısa süreli rahatlama için steroidli enjeksiyon istenirse, uzun dönemde sonucu kötüleştirebileceği hastayla konuşulmalıdır.",
+     "limits": "Tek merkez (Avustralya), görece küçük örneklem; maliyet analizi ülke koşullarına özgü.",
+     "rel": []
+    },
+    {
+     "id": "fiix-ivf-iui-aciklanamayan-infertilite",
+     "pmid": "42950222",
+     "doi": "10.1056/NEJMoa2602728",
+     "journal": "N Engl J Med",
+     "date": "2026-10-27",
+     "title_en": "In Vitro Fertilization or Intrauterine Insemination in Unexplained Infertility",
+     "title": "Açıklanamayan infertilitede ilk basamak IVF, dört siklus IUI'ye göre ilk 7 ayda daha fazla canlı doğum sağladı; 20 ayda fark kalmadı",
+     "design": "Çok merkezli RKÇ · 737 çift",
+     "tags": [
+      "infertilite",
+      "kadın sağlığı",
+      "üreme sağlığı"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 1,
+      "etki": 1
+     },
+     "effect": "Danışmanlığı destekler",
+     "what": "Açıklanamayan infertilitesi olan çiftlerde 7 ay içindeki kümülatif canlı doğum oranı, ovulasyon indüksiyonlu dört siklus IUI ile %31, tek tam IVF siklusu ile %55 oldu (fark −24 puan); IUI eşdeğer bulunmadı. Gerekirse ek IVF siklusları da dahil edildiğinde 20 ayda oranlar benzerdi (%70'e karşı %71). Ciddi yan etkiler IVF grubunda daha sıktı (14'e karşı 6 çift).",
+     "practice": "Açıklanamayan infertilite nedeniyle yönlendirilen çiftlere, IVF'nin gebeliğe daha hızlı ulaştırabileceği ancak uzun dönemde toplam başarının benzer olduğu anlatılabilir; seçim zaman, maliyet ve risk tercihine göre yapılır.",
+     "limits": "Pandemi kapanımları sırasında tedavideki çiftler birincil analizden çıkarıldı. Yeni Zelanda/Avustralya sağlık sistemi; maliyet ve erişim koşulları Türkiye'den farklı.",
+     "rel": []
+    },
+    {
+     "id": "cochrane-ergonomi-kol-boyun-omuz",
+     "pmid": "42946017",
+     "doi": "10.1002/14651858.CD014644.pub2",
+     "journal": "Cochrane Database Syst Rev",
+     "date": "2026-10-28",
+     "title_en": "Ergonomic interventions for treating work-related complaints of the arm, neck or shoulder in adults",
+     "title": "İşe bağlı kol, boyun ve omuz yakınmalarında ergonomik müdahaleler ağrı, işlev ve iş göremezlikte belirgin fark yaratmıyor",
+     "design": "Cochrane sistematik derleme ve meta-analiz · 20 çalışma, n=2478",
+     "tags": [
+      "kas-iskelet",
+      "iş sağlığı",
+      "boyun ağrısı",
+      "omuz ağrısı"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Mevcut yaklaşımı destekler",
+     "what": "Ofis mobilyası düzenlemesi ve ergonomi eğitimi gibi müdahaleler, tedavi yokluğu, olağan bakım ya da plaseboya göre kısa dönemde ağrıda (SMD −0,23; düşük kesinlik), işlevde, iş göremezlikte ve iyileşmede belirgin fark yaratmadı. Egzersiz gibi aktif tedavilerle karşılaştırmada kanıt çok belirsizdi.",
+     "practice": "İşe bağlı üst ekstremite yakınmalarında yalnızca ergonomik düzenleme önermek yeterli olmayabilir; egzersiz ve aktif kalma önerileriyle birlikte ele alınmalıdır.",
+     "limits": "Çalışmalar heterojen ve küçük; kanıt kesinliği çoğunlukla düşük. Uzun dönem sonuç verisi sınırlı.",
+     "rel": []
+    },
+    {
+     "id": "anaokulu-fiziksel-aktivite-politikasi",
+     "pmid": "42944688",
+     "doi": "10.1001/jamanetworkopen.2026.40617",
+     "journal": "JAMA Netw Open",
+     "date": "2026-10-01",
+     "title_en": "Preschool Physical Activity Policy and Children's Physical Activity: A Pragmatic Cluster Randomized Clinical Trial",
+     "title": "Anaokulu düzeyinde ortak hazırlanan fiziksel aktivite politikası 6 ayda çocukların aktivitesini artırmadı",
+     "design": "Pragmatik küme randomize çalışma · 124 anaokulu, n=3751 çocuk",
+     "tags": [
+      "çocuk sağlığı",
+      "fiziksel aktivite",
+      "obezite önleme"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 0,
+      "bb": 1,
+      "etki": 0
+     },
+     "effect": "Bilgi amaçlı",
+     "what": "Stockholm'deki anaokullarında 3–5 yaş çocuklarda politika uygulanan ve uygulanmayan okullarda orta-şiddetli aktivite benzer şekilde arttı (günde 27'den 33 dakikaya; fark 0,3 dakika). Toplam aktivite ve adım sayısında da fark yoktu.",
+     "practice": "Kurumsal politika belgesi tek başına çocukların hareketini artırmayabilir. Çocuk izlemlerinde aileye yönelik somut fiziksel aktivite önerileri önemini koruyor.",
+     "limits": "İsveç'te, pandemi döneminde yapıldı; izlem 6 ay. Sonuç ivmeölçerle ölçülen aktivite; kilo ya da sağlık sonucu değil.",
+     "rel": [
+      "bce-izlem-2018"
+     ]
+    },
+    {
+     "id": "ciddi-ruhsal-hastalik-saglik-kontrolu",
+     "pmid": "42933979",
+     "doi": "10.3399/BJGP.2026.0166",
+     "journal": "Br J Gen Pract",
+     "date": "2026-10-26",
+     "title_en": "Uptake of Annual Health Checks in Primary Care for People with Severe Mental Illness: A Systematic Review and Qualitative Synthesis",
+     "title": "Ağır ruhsal hastalığı olanlarda yıllık fiziksel sağlık kontrolüne katılımı artırmak için bireysel, ilişkisel ve sistem düzeyinde engeller birlikte ele alınmalı",
+     "design": "Nitel çalışmaların sistematik derlemesi · 8 çalışma, n=375",
+     "tags": [
+      "ruh sağlığı",
+      "şizofreni",
+      "bipolar bozukluk",
+      "koruyucu sağlık",
+      "birinci basamak"
+     ],
+     "score": {
+      "kanit": 1,
+      "poem": 0,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Danışmanlığı destekler",
+     "what": "Şizofreni ve bipolar bozukluğu olan kişiler, bakım verenler ve birinci basamak çalışanlarıyla yapılan nitel çalışmalarda beş tema öne çıktı: kontrolün amacının anlaşılması, bireysel ve hizmet kaynaklı engeller, görüşmenin niteliği, sonrasında davranış değişikliğinin zorluğu ve hizmet tasarımıyla ilgili kolaylaştırıcılar.",
+     "practice": "Ağır ruhsal hastalığı olan kayıtlı kişilerde kardiyometabolik risk yüksektir. Periyodik kontrolün amacını açıkça anlatmak, randevuyu esnek planlamak ve sürekliliği sağlamak katılımı artırabilir.",
+     "limits": "Nitel kanıt; az sayıda çalışma, çoğu yüksek gelirli ülkelerden. Etkililik ölçülmedi.",
+     "rel": [
+      "periyodik-muayene"
+     ]
+    },
+    {
+     "id": "cocuk-evde-hastane-derleme",
+     "pmid": "42933482",
+     "doi": "10.1542/peds.2026-076775",
+     "journal": "Pediatrics",
+     "date": "2026-10-27",
+     "title_en": "Pediatric Hospital at Home: A Scoping Review",
+     "title": "Çocuklarda evde hastane modeli güvenli ve aile odaklı görünüyor, ancak kanıt sınırlı ve heterojen",
+     "design": "Kapsam derlemesi · 34 çalışma (çoğu gözlemsel)",
+     "tags": [
+      "evde sağlık",
+      "çocuk sağlığı",
+      "hizmet modeli"
+     ],
+     "score": {
+      "kanit": 1,
+      "poem": 0,
+      "bb": 1,
+      "etki": 0
+     },
+     "effect": "Bilgi amaçlı",
+     "what": "Çocukların hastane düzeyinde bakımını evde alan programlarda yükseltme ve yeniden yatış oranları düşük, ciddi yan etkiler seyrek, bakım veren memnuniyeti yüksekti; maliyetler hastane yatışıyla benzer ya da daha düşüktü. Programların kabul ölçütleri, personel yapısı ve izlem yöntemleri büyük farklılık gösteriyordu.",
+     "practice": "Evde sağlık hizmetlerinin çocuk hastalara genişletilmesi tartışılırken uluslararası deneyim umut verici; ancak hangi hastanın uygun olduğunu gösteren güçlü karşılaştırmalı kanıt henüz yok.",
+     "limits": "Kapsam derlemesi; çalışmaların çoğu gözlemsel ve tanımlar farklı. Klinik etkililik doğrudan karşılaştırılmadı.",
+     "rel": [
+      "esh-palyatif-yonetmelik"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "2026-10-25",
+   "title": "Hafta 43",
+   "range": "20 – 25 Ekim 2026",
+   "date": "2026-10-25",
+   "items": [
+    {
+     "id": "sglt2-hemoglobin-ma",
+     "pmid": "42925557",
+     "doi": "10.1001/jama.2026.19921",
+     "journal": "JAMA",
+     "date": "2026-10-24",
+     "title_en": "Sodium-Glucose Cotransporter 2 Inhibitor Use and Levels of Hemoglobin, Markers of Iron Metabolism, and Erythropoiesis: A Systematic Review and Meta-Analysis of Randomized Clinical Trials",
+     "title": "SGLT2 inhibitörleri hemoglobini ortalama 0,6 g/dL, hematokriti yaklaşık 2,4 puan yükseltiyor",
+     "design": "Sistematik derleme ve meta-analiz · 85 RKÇ, n=70 543",
+     "tags": [
+      "SGLT2 inhibitörü",
+      "diyabet",
+      "KBH",
+      "kalp yetersizliği",
+      "anemi"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 0,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Dikkat",
+     "what": "Kardiyovasküler hastalık, diyabet, kalp yetersizliği ya da KBH'si olan hastalarda yapılan çift kör RKÇ'lerde SGLT2 inhibitörü alanlarda hemoglobin kontrole göre 0,60 g/dL (%95 GA 0,55–0,66), hematokrit 2,36 puan arttı. Eritropoietin hafifçe yükseldi, transferrin satürasyonu hafifçe azaldı (fark −0,84 puan).",
+     "practice": "SGLT2 inhibitörü başlanan hastada izlemde görülen hafif hemoglobin/hematokrit artışı beklenen bir ilaç etkisidir; tek başına polisitemi araştırmasını gerektirmeyebilir. Öte yandan bu artış eşlik eden demir eksikliğini ya da anemiyi maskeleyebilir; demir parametrelerini birlikte değerlendirmek gerekir.",
+     "limits": "Ortanca izlem 24 hafta; değişikliklerin klinik anlamı belirsiz. Demir göstergeleri az sayıda çalışmada raporlandı.",
+     "rel": [
+      "kdigo-ckd-2024",
+      "temd-dm-2026",
+      "ada-soc-2026",
+      "esc-hf-2026"
+     ]
+    },
+    {
+     "id": "mira2-ablasyon-lng-riu",
+     "pmid": "42906565",
+     "doi": "10.1016/S0140-6736(26)01536-9",
+     "journal": "Lancet",
+     "date": "2026-10-21",
+     "title_en": "Endometrial ablation plus levonorgestrel-releasing intrauterine system versus endometrial ablation alone in women with heavy menstrual bleeding in The Netherlands (MIRA2): a multicentre, open-label, randomised, controlled, superiority trial",
+     "title": "Ağır menstrüel kanamada endometrial ablasyona hemen LNG-RİA eklemek 2 yıllık histerektomi gereksinimini yarıdan fazla azalttı (MIRA2)",
+     "design": "Çok merkezli açık etiketli RKÇ · 34 hastane, n=715",
+     "tags": [
+      "kadın sağlığı",
+      "ağır menstrüel kanama",
+      "LNG-RİA"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 1,
+      "etki": 1
+     },
+     "effect": "Sevk kararını destekler",
+     "what": "60 yaş altı, ağır menstrüel kanama nedeniyle endometrial ablasyon yapılan kadınlarda işlemden hemen sonra 52 mg LNG-RİA takılması 2 yıl içinde histerektomiyi %10'dan %4'e indirdi (RR 0,43; %95 GA 0,24–0,77). Ciddi yan etki oranı iki grupta benzerdi (%8).",
+     "practice": "Ağır menstrüel kanama nedeniyle jinekolojiye yönlendirilen ve ablasyon planlanan hastaya, ablasyonla birlikte RİA takılmasının ileride ameliyat gereksinimini azaltabileceği anlatılabilir.",
+     "limits": "Açık etiket; körleme yok. Hollanda'daki hastanelerde yapıldı. İzlem 2 yıl; daha uzun süreli sonuçlar bilinmiyor.",
+     "rel": []
+    },
+    {
+     "id": "dehb-mortalite-ma",
+     "pmid": "42895743",
+     "doi": "10.1001/jamanetworkopen.2026.39448",
+     "journal": "JAMA Netw Open",
+     "date": "2026-10-01",
+     "title_en": "Mortality Among People With Attention-Deficit/Hyperactivity Disorder: A Systematic Review and Meta-Analysis",
+     "title": "DEHB tüm nedenlere bağlı ölüm riskini yaklaşık 1,7 kat artırıyor; DEHB ilacı kullananlarda risk daha düşük",
+     "design": "Sistematik derleme ve meta-analiz · 19 gözlemsel çalışma, n≈15,9 milyon",
+     "tags": [
+      "DEHB",
+      "ruh sağlığı",
+      "mortalite",
+      "ergen"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 1,
+      "etki": 1
+     },
+     "effect": "Bilgi + dikkat",
+     "what": "DEHB'li bireylerde tüm nedenlere bağlı ölüm riski arttı (HR 1,71; %95 GA 1,31–2,24). İntihar (HR 1,89), yaralanma (HR 1,55) ve doğal nedenlere bağlı ölüm (HR 1,27) de daha yüksekti. DEHB ilacı kullananlarda tüm nedenlere bağlı ölüm daha düşüktü (HR 0,75).",
+     "practice": "DEHB tanılı ya da şüpheli çocuk, ergen ve erişkinlerde tanı ve tedaviye yönlendirmeyi geciktirmemek gerekir. İzlemde kaza/yaralanma riski ve intihar düşüncesi sorgulanmalıdır.",
+     "limits": "Gözlemsel çalışmalar; karıştırıcı etkenler tam dışlanamaz. Çalışmalar arası heterojenlik yüksek. İlaçla ilişkili düşüş nedensellik göstermez.",
+     "rel": [
+      "ergen-cep"
+     ]
+    },
+    {
+     "id": "qbsafe-diyabet-gorusme-kartlari",
+     "pmid": "42895748",
+     "doi": "10.1001/jamanetworkopen.2026.39032",
+     "journal": "JAMA Netw Open",
+     "date": "2026-10-01",
+     "title_en": "A Conversation Tool to Enhance Care for People With Type 2 Diabetes: The QBSafe Cluster Randomized Clinical Trial",
+     "title": "Tip 2 diyabette muayene öncesi gündem belirleme kartları hekim memnuniyetini artırdı, ancak HbA1c ve hastalık yükünü değiştirmedi (QBSafe)",
+     "design": "Tek merkezli küme randomize çalışma · 11 hekim, 143 hasta",
+     "tags": [
+      "diyabet",
+      "hasta merkezli bakım",
+      "birinci basamak"
+     ],
+     "score": {
+      "kanit": 2,
+      "poem": 1,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Mevcut yaklaşımı destekler",
+     "what": "HbA1c'si %8'in üzerinde tip 2 diyabetlilerde hastanın muayene öncesi 14 karttan en fazla 3'ünü seçtiği gündem belirleme kiti, 6. ayda hastalığın yaşama müdahalesini (düzeltilmiş fark −3,9; %95 GA −10,4 ile 2,6) ve HbA1c'yi (−%0,2; %95 GA −0,9 ile 0,5) anlamlı değiştirmedi. Hekim memnuniyeti arttı, hasta memnuniyeti değişmedi.",
+     "practice": "Görüşmede hastanın önceliklerini sormak hekim için görüşmeyi kolaylaştırabilir; ancak glisemik kontrolü iyileştirmek için tek başına yeterli değildir. Tedavi yükünü azaltacak somut plan değişiklikleri gerekir.",
+     "limits": "Tek merkez, az sayıda hekim ve hasta; çalışma gücü düşük olabilir. İzlem 6 ay.",
+     "rel": [
+      "temd-dm-2026",
+      "ada-soc-2026"
+     ]
+    },
+    {
+     "id": "gaita-fit-postayla-tarama",
+     "pmid": "42905707",
+     "doi": "10.1001/jamanetworkopen.2026.39013",
+     "journal": "JAMA Netw Open",
+     "date": "2026-10-01",
+     "title_en": "Fecal Immunochemical Test Outreach for Colorectal Cancer Screening in Community Health Centers: A Randomized Clinical Trial",
+     "title": "Postayla gönderilen gaitada gizli kan (FIT) kitleri kolorektal tarama oranını 2. yılda artırdı, 3. yılda fark kayboldu",
+     "design": "Küme randomize çalışma · 16 klinik, n≈20 250",
+     "tags": [
+      "kolorektal kanser",
+      "tarama",
+      "FIT"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 0,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Dikkat",
+     "what": "50–75 yaşında taraması güncel olmayan kişilere yıllık postayla FIT kiti, bilgilendirme ve telefon hatırlatması gönderilen kliniklerde 2. yılda tarama oranı %37,8'e karşı %27,0 idi (fark 10,8 puan). 3. yılda fark anlamlı değildi (%39,4'e karşı %36,5).",
+     "practice": "Kayıtlı nüfusa düzenli çağrı ve hatırlatma, kolorektal tarama oranını artırabilir; ancak etkinin sürmesi için uygulamanın aksamadan devam etmesi gerekir.",
+     "limits": "ABD toplum sağlığı merkezleri; kaynak kısıtı nedeniyle 3. yılda protokol değişti. Sonuç tarama oranı; kanser ya da mortalite değil.",
+     "rel": [
+      "kanser-tarama",
+      "uspstf"
+     ]
+    },
+    {
+     "id": "video-kd-ileri-bakim-planlamasi",
+     "pmid": "42911803",
+     "doi": "10.1001/jamainternmed.2026.5989",
+     "journal": "JAMA Intern Med",
+     "date": "2026-10-22",
+     "title_en": "Video Decision Support and Advance Care Planning in Older Adults With Advanced Kidney Disease: The VIDEO-KD Randomized Clinical Trial",
+     "title": "İleri KBH'li yaşlılarda video karar desteği, ileri bakım planlaması kayıtlarını artırdı ve kararsız hasta oranını azalttı (VIDEO-KD)",
+     "design": "Çok merkezli RKÇ · 12 klinik, n=453",
+     "tags": [
+      "palyatif bakım",
+      "ileri bakım planlaması",
+      "KBH",
+      "yaşlı sağlığı"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 0,
+      "bb": 1,
+      "etki": 1
+     },
+     "effect": "Danışmanlığı destekler",
+     "what": "65 yaş üstü ileri KBH'li hastalarda hemodiyaliz, periton diyalizi ve konservatif tedaviyi anlatan video ile hastanın kendi tercihlerini kaydettiği video beyan, 12 ayda ileri bakım planlaması kaydını artırdı (%56,6'ya karşı %40,0; fark 16,6 puan). Videodan sonra kararsız hasta oranı daha düşüktü (%13,2'ye karşı %41,3) ve konservatif tedaviyi tercih eden daha fazlaydı (%50,7'ye karşı %31,8).",
+     "practice": "Diyaliz kararı yaklaşan yaşlı hastada seçenekleri (konservatif böbrek bakımı dahil) yapılandırılmış bir araçla anlatmak, hastanın tercihini netleştirmeye ve kayda geçirmeye yardımcı olabilir. Evde sağlık ve palyatif bakım izlemindeki hastalar için de uygulanabilir.",
+     "limits": "ABD'de, çoğunluğu beyaz hastalar. Birincil sonuç süreç ölçütü (kayıt); yaşam kalitesi ya da bakımın hedeflerle uyumu değerlendirilmedi.",
+     "rel": [
+      "kdigo-ckd-2024",
+      "esh-palyatif-yonetmelik"
+     ]
+    },
+    {
+     "id": "ergen-obezite-duygu-duzenleme",
+     "pmid": "42911592",
+     "doi": "10.1001/jamanetworkopen.2026.39867",
+     "journal": "JAMA Netw Open",
+     "date": "2026-10-01",
+     "title_en": "Emotion-Focused Behavioral Weight Loss Treatment for Adolescents: A Randomized Clinical Trial",
+     "title": "Ergen obezitesinde aile temelli davranışsal tedaviye duygu düzenleme becerileri eklemek kilo kaybını artırmadı, ancak 1 yıllık geri alımı azalttı",
+     "design": "İki merkezli RKÇ · 166 ergen-ebeveyn çifti",
+     "tags": [
+      "obezite",
+      "ergen",
+      "davranışsal tedavi"
+     ],
+     "score": {
+      "kanit": 2,
+      "poem": 0,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Bilgi + dikkat",
+     "what": "13–16 yaş, VKİ ≥85. persentil ergenlerde 6 aylık aile temelli tedaviye duygu düzenleme eklemek tedavi sonunda VKİ z skorunu değiştirmedi (fark 0,03). 12 ay sonra bu grupta kilo geri alımı daha azdı (VKİ z fark −0,09) ve duygusal yeme puanı daha düşüktü; klinik anlamlı kilo kaybı %22'ye karşı %4 idi.",
+     "practice": "Obez ergenle görüşmede duygusal yemeyi sorgulamak ve aileyi tedaviye katmak yararlı olabilir; duygusal yeme belirginse psikolojik destekli programlara yönlendirme düşünülebilir.",
+     "limits": "Görüşmelerin çoğu pandemi nedeniyle çevrim içi yapıldı; iki merkez, ABD. Kilo farkları küçük.",
+     "rel": [
+      "temd-obezite-2024",
+      "ergen-cep"
+     ]
+    },
+    {
+     "id": "retatrutid-uyku-apnesi",
+     "pmid": "42904878",
+     "doi": "10.1056/NEJMoa2611477",
+     "journal": "N Engl J Med",
+     "date": "2026-10-21",
+     "title_en": "Retatrutide Once Weekly for Treatment of Obstructive Sleep Apnea",
+     "title": "Obezite ve orta-ağır uyku apnesinde haftalık retatrutid apne-hipopne indeksini plaseboya göre belirgin azalttı (TRIUMPH-OSA)",
+     "design": "İki faz 3 çift kör plasebo kontrollü RKÇ · n=691",
+     "tags": [
+      "obezite",
+      "uyku apnesi",
+      "inkretin tedavisi"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 0,
+      "bb": 1,
+      "etki": 0
+     },
+     "effect": "Bilgi amaçlı",
+     "what": "VKİ ≥27 ve orta-ağır OSA'lı erişkinlerde 80. haftada retatrutid (9–12 mg) apne-hipopne indeksini diyabeti olmayanlarda plaseboya göre saatte yaklaşık 22–24, tip 2 diyabetlilerde 14–15 olay daha fazla azalttı. Vücut ağırlığı %12–22 azaldı (plasebo %5–6). En sık yan etkiler gastrointestinaldi.",
+     "practice": "Retatrutid henüz onaylı değil ve Türkiye'de bulunmuyor. Bulgular, obez hastada kilo kaybının uyku apnesini belirgin düzelttiğini bir kez daha gösteriyor; OSA'lı obez hastada kilo vermeyi hedefleyen tedavi planı önemlidir.",
+     "limits": "Üretici finansmanı; birincil sonuç ara sonuç (AHİ). Uzun dönem güvenlilik ve kardiyovasküler sonuçlar bilinmiyor.",
+     "rel": [
+      "who-glp1-obezite-2025",
+      "temd-obezite-2024"
+     ]
+    }
+   ]
+  },
+  {
    "id": "2026-10-19",
    "title": "Hafta 43",
    "range": "13 – 19 Ekim 2026",
@@ -794,7 +1210,7 @@
      "practice": "Gebelere bebekte alerjiyi önlemek için bu besinleri artırmalarını önermenin bir faydası yok. Kısıtlamaya da gerek yok; normal beslenme sürdürülmeli.",
      "limits": "Avustralya popülasyonu; sonuç bir yaşla sınırlı.",
      "rel": [
-      "dob-rehberi-2018"
+      "dob-rehberi-2026"
      ]
     },
     {
@@ -905,7 +1321,7 @@
      "practice": "Gebelikte bırakanların yaklaşık yarısı doğum sonrası ilk yılda yeniden başlıyor. Lohusa izlemlerinde sigara sorgusu ve bire bir destek sürdürülmeli.",
      "limits": "Kör değil; fayda gösteren analiz sonradan (post hoc) yapıldı.",
      "rel": [
-      "dsb-rehberi"
+      "dsb-rehberi-2026"
      ]
     },
     {

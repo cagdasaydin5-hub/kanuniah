@@ -489,11 +489,30 @@
    ]
   },
   {
-   "id": "dob-rehberi-2018",
+   "id": "dob-rehberi-2026",
+   "title": "Doğum Öncesi Bakım Yönetim Rehberi (2026)",
    "cat": "anne-cocuk",
    "kind": "guide",
    "scope": "TR",
    "status": "guncel",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "year": 2026,
+   "pub": null,
+   "alt": [],
+   "aud": [
+    "hekim"
+   ],
+   "summary": "En az dört nitelikli gebe izlemi öngörülüyor: ilk 14 hafta, 18–24, 28–32 ve 36–38. haftalar. İlk izlemde preeklampsi risk tablosu yer alıyor; en az 1 majör ya da 2 minör risk faktörü varsa ve kontrendikasyon yoksa 12. haftadan itibaren 80–150 mg/gün aspirin öneriliyor. Gebelikte VTE risk puanlaması, TSH değerlendirmesi ve gestasyonel diyabet erken tarama kriterleri tablolarla veriliyor. Eklerde HPV temelli serviks taraması, viral hepatit yönetimi, ağız-diş sağlığı, demir ve D vitamini desteği akışları ile tetanoz-difteri aşı şeması var.",
+   "note": "1. baskı, Sağlık Bakanlığı Yayın No 1402. 2018 rehberinin yerini alır.",
+   "url": "https://dosyaism.saglik.gov.tr/Eklenti/283086/0/dogum-oncesi-bakim-yonetim-rehberi-2026pdf.pdf",
+   "kw": "gebe gebelik izlem doğum öncesi antenatal aspirin preeklampsi vte gdm hpv hepatit tetanoz"
+  },
+  {
+   "id": "dob-rehberi-2018",
+   "cat": "anne-cocuk",
+   "kind": "guide",
+   "scope": "TR",
+   "status": "arsiv",
    "title": "Doğum Öncesi Bakım Yönetim Rehberi",
    "org": "Halk Sağlığı Genel Müdürlüğü",
    "year": 2018,
@@ -513,11 +532,30 @@
    ]
   },
   {
-   "id": "dsb-rehberi",
+   "id": "dsb-rehberi-2026",
+   "title": "Doğum Sonu Bakım Yönetim Rehberi (2026)",
    "cat": "anne-cocuk",
    "kind": "guide",
    "scope": "TR",
    "status": "guncel",
+   "org": "Halk Sağlığı Genel Müdürlüğü",
+   "year": 2026,
+   "pub": null,
+   "alt": [],
+   "aud": [
+    "hekim"
+   ],
+   "summary": "Toplam altı lohusa izlemi var: hastanede 0–1., 1–6. ve 6–24. saatlerde; sonra 2–5., 13–17. ve 30–42. günlerde. Normal doğumdan sonra en az 24 saat, sezaryenden sonra en az 48 saat hastanede kalış öngörülüyor. Eklerdeki Edinburgh Doğum Sonrası Depresyon Ölçeği'nde Türkiye kesme puanı 12; 12 ve üzerinde sevk öneriliyor. Eklerde ayrıca sevk kriterleri, VTE risk puanlaması, postpartum kanama yönetim algoritması (şok indeksi tablosu dahil), demir ve D vitamini akışları, emzirme öyküsü ve gözlem formları var.",
+   "note": "1. baskı, Sağlık Bakanlığı Yayın No 1407. 2018 rehberinin yerini alır.",
+   "url": "https://dosyaism.saglik.gov.tr/Eklenti/283087/0/dogum-sonu-bakim-yonetim-rehberi-2026pdf.pdf",
+   "kw": "lohusa doğum sonu postpartum izlem edinburgh depresyon kanama vte emzirme"
+  },
+  {
+   "id": "dsb-rehberi-2018",
+   "cat": "anne-cocuk",
+   "kind": "guide",
+   "scope": "TR",
+   "status": "arsiv",
    "title": "Doğum Sonu Bakım Yönetim Rehberi",
    "org": "Halk Sağlığı Genel Müdürlüğü",
    "year": 2018,
