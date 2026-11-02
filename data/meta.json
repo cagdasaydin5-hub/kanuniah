@@ -1,6 +1,16 @@
 {
- "checked": "2026-10-25",
+ "checked": "2026-11-01",
  "log": [
+  {
+   "date": "2026-11-01",
+   "items": [
+    {
+     "ad": "Eklenen etkinlik",
+     "n": 5,
+     "href": "takvim.html"
+    }
+   ]
+  },
   {
    "date": "2026-10-30",
    "items": [

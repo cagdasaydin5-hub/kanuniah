@@ -53,7 +53,7 @@
     "yaşlı sağlığı"
    ],
    "not": "Tema: Sağlıklı yaş alma.",
-   "dogrulama": "2026-10-05"
+   "dogrulama": "2026-11-01"
   },
   {
    "id": "guney-2026",
@@ -674,7 +674,7 @@
     "kas-iskelet"
    ],
    "not": "Site üyeliği gerekir (yalnızca hekimlere açık).",
-   "dogrulama": "2026-10-25"
+   "dogrulama": "2026-11-01"
   },
   {
    "id": "asm30-dispepsi-2-2026",
@@ -701,7 +701,7 @@
     "gastroenteroloji"
    ],
    "not": null,
-   "dogrulama": "2026-10-25"
+   "dogrulama": "2026-11-01"
   },
   {
    "id": "asm30-antihistaminik-2026",
@@ -728,7 +728,7 @@
     "alerji"
    ],
    "not": null,
-   "dogrulama": "2026-10-25"
+   "dogrulama": "2026-11-01"
   },
   {
    "id": "asm30-kuru-oksuruk-2026",
@@ -781,7 +781,7 @@
    },
    "konu": [],
    "not": null,
-   "dogrulama": "2026-10-12"
+   "dogrulama": "2026-11-01"
   },
   {
    "id": "tahud-tv-maternal-asi-2026",
@@ -809,7 +809,7 @@
     "gebelik"
    ],
    "not": "Konuşmacı Prof. Dr. Dilek Şahin. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-10-25"
+   "dogrulama": "2026-11-01"
   },
   {
    "id": "ah-arastirma-gunleri-2026",
@@ -895,6 +895,33 @@
    "dogrulama": "2026-10-12"
   },
   {
+   "id": "asm30-sglt2-2026",
+   "ad": "ASM'de 30 Dakika: SGLT2 İnhibitörleri ile Tip 2 Diyabet Tedavisinde Erken Koruma",
+   "tur": "webinar",
+   "duzey": 4,
+   "kapsam": "ulusal",
+   "baslangic": "2026-11-16",
+   "bitis": "2026-11-16",
+   "saat": "12.15–13.00",
+   "sehir": null,
+   "yer": null,
+   "bicim": "cevrimici",
+   "duzenleyen": "İSTAHED Akademi (İstanbul Aile Hekimleri Derneği)",
+   "ucret": null,
+   "url": "https://istahedakademi.com/event/sglt2-inhibitorleri-ile-tip-2-diyabet-tedavisinde-erken-koruma/",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [
+    "diyabet"
+   ],
+   "not": "Canlı izleme ve kayda erişim için site üyeliği gerekir.",
+   "dogrulama": "2026-11-01"
+  },
+  {
    "id": "tahud-tv-diyabet-gunu-2026",
    "ad": "TAHUD TV: Dünya Diyabet Günü Özel Webinarı: Tip 2 Diyabet Yönetiminde Güncellemeler",
    "tur": "webinar",
@@ -919,7 +946,7 @@
     "diyabet"
    ],
    "not": "Konuşmacı Prof. Dr. Mine Adaş, oturum başkanı Doç. Dr. Gökçe İşcan. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-10-25"
+   "dogrulama": "2026-11-01"
   },
   {
    "id": "tahud-tv-zona-yuk-2026",
@@ -947,7 +974,7 @@
     "zona"
    ],
    "not": "Konuşmacı Doç. Dr. Duygu Ayhan Başer, oturum başkanı Doç. Dr. İsmail Arslan. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-10-25"
+   "dogrulama": "2026-11-01"
   },
   {
    "id": "asm30-zor-konstipasyon-2026",
@@ -974,7 +1001,7 @@
     "gastroenteroloji"
    ],
    "not": null,
-   "dogrulama": "2026-10-12"
+   "dogrulama": "2026-11-01"
   },
   {
    "id": "geriatri-kursu-17",
@@ -1061,6 +1088,33 @@
    "dogrulama": "2026-10-12"
   },
   {
+   "id": "asm30-vajinit-2026",
+   "ad": "ASM'de 30 Dakika: ASM'de Vajinit: Tanıdan Tedaviye Bütüncül Yaklaşım",
+   "tur": "webinar",
+   "duzey": 4,
+   "kapsam": "ulusal",
+   "baslangic": "2026-11-23",
+   "bitis": "2026-11-23",
+   "saat": "12.15–13.00",
+   "sehir": null,
+   "yer": null,
+   "bicim": "cevrimici",
+   "duzenleyen": "İSTAHED Akademi (İstanbul Aile Hekimleri Derneği)",
+   "ucret": null,
+   "url": "https://istahedakademi.com/event/asmde-vajinit-tanidan-tedaviye-butuncul-yaklasim/",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [
+    "kadın sağlığı"
+   ],
+   "not": "Canlı izleme ve kayda erişim için site üyeliği gerekir.",
+   "dogrulama": "2026-11-01"
+  },
+  {
    "id": "tahud-tv-usye-2026",
    "ad": "TAHUD TV: Çocuklarda ÜSYE Tedavisinde Semptomatik Yaklaşım",
    "tur": "webinar",
@@ -1086,7 +1140,7 @@
     "solunum yolu enfeksiyonu"
    ],
    "not": "Konuşmacı Doç. Dr. Tuğba Bedir Demirdağ. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-10-25"
+   "dogrulama": "2026-11-01"
   },
   {
    "id": "tahud-tv-rsv-2026",
@@ -1115,7 +1169,35 @@
     "çocuk sağlığı"
    ],
    "not": "Konuşmacı Doç. Dr. Emel Okulu. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-10-25"
+   "dogrulama": "2026-11-01"
+  },
+  {
+   "id": "asm30-soguk-alginligi-2026",
+   "ad": "ASM'de 30 Dakika: Soğuk Algınlığında Üçlü Bakış: Semptomlar, Kombinasyonlar ve Formlar",
+   "tur": "webinar",
+   "duzey": 4,
+   "kapsam": "ulusal",
+   "baslangic": "2026-11-26",
+   "bitis": "2026-11-26",
+   "saat": "12.15–13.00",
+   "sehir": null,
+   "yer": null,
+   "bicim": "cevrimici",
+   "duzenleyen": "İSTAHED Akademi (İstanbul Aile Hekimleri Derneği)",
+   "ucret": null,
+   "url": "https://istahedakademi.com/event/soguk-alginliginda-uclu-bakis-semptomlar-kombinasyonlar-ve-formlar/",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [
+    "enfeksiyon",
+    "solunum"
+   ],
+   "not": "Canlı izleme ve kayda erişim için site üyeliği gerekir.",
+   "dogrulama": "2026-11-01"
   },
   {
    "id": "asi-kongresi-2026",
@@ -1143,6 +1225,34 @@
    ],
    "not": "Tüm branşlardan uzman ve asistanlara açık.",
    "dogrulama": "2026-10-12"
+  },
+  {
+   "id": "asm30-osteoporoz-2026",
+   "ad": "ASM'de 30 Dakika: Osteoporoz Yönetiminde Aile Hekimliğinin Yeri ve Yaklaşımı",
+   "tur": "webinar",
+   "duzey": 4,
+   "kapsam": "ulusal",
+   "baslangic": "2026-11-30",
+   "bitis": "2026-11-30",
+   "saat": "12.15–13.00",
+   "sehir": null,
+   "yer": null,
+   "bicim": "cevrimici",
+   "duzenleyen": "İSTAHED Akademi (İstanbul Aile Hekimleri Derneği)",
+   "ucret": null,
+   "url": "https://istahedakademi.com/event/osteoporoz-yonetiminde-aile-hekimliginin-yeri-ve-yaklasimi/",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [
+    "osteoporoz",
+    "yaşlı sağlığı"
+   ],
+   "not": "Konuşmacı Prof. Dr. Dilşad Sindel, moderatör Dr. Bilge Mehmetzade. Canlı izleme ve kayda erişim için site üyeliği gerekir.",
+   "dogrulama": "2026-11-01"
   },
   {
    "id": "tahud-tv-kalp-yetersizligi-2026",
@@ -1253,6 +1363,33 @@
    "dogrulama": "2026-10-12"
   },
   {
+   "id": "tahud-tv-hemoroid-2026",
+   "ad": "TAHUD TV: Birinci Basamakta Hemoroidal Hastalıklara Yaklaşım",
+   "tur": "webinar",
+   "duzey": 4,
+   "kapsam": "ulusal",
+   "baslangic": "2026-12-09",
+   "bitis": "2026-12-09",
+   "saat": "19.30–20.30",
+   "sehir": null,
+   "yer": "tahudtv.com.tr",
+   "bicim": "cevrimici",
+   "duzenleyen": "Türkiye Aile Hekimleri Uzmanlık Derneği (TAHUD)",
+   "ucret": "ucretsiz",
+   "url": "https://tahud.org.tr/tahud-tv/birinci-basamakta-hemoroidal-hastaliklara-yaklasim-9-aralik-2026-1930",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [
+    "gastroenteroloji"
+   ],
+   "not": "Konuşmacı Uzm. Dr. Ender Ergüder, oturum başkanı Prof. Dr. Güzin Zeren Öztürk. İzlemek için tahudtv.com.tr kaydı gerekir.",
+   "dogrulama": "2026-11-01"
+  },
+  {
    "id": "tahud-tv-migren-2026",
    "ad": "TAHUD TV: Migrende Atak Tedavisi",
    "tur": "webinar",
@@ -1278,7 +1415,7 @@
     "migren"
    ],
    "not": "Konuşmacı Uzm. Dr. Gökçen Hatipoğlu. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-10-25"
+   "dogrulama": "2026-11-01"
   },
   {
    "id": "daahk-2027",
@@ -1431,7 +1568,7 @@
    },
    "konu": [],
    "not": "Tarihler henüz açıklanmadı (sitede 'güncellenmektedir').",
-   "dogrulama": "2026-10-12"
+   "dogrulama": "2026-11-01"
   }
  ]
 }
