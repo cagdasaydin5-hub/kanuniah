@@ -2,6 +2,7 @@
 // Eğitim bölümü ortak işlevleri: oturum, roller, güvenli yol, sayfa çerçevesi.
 // Hesaplar yalnızca sunucuda durur (depoda yok):
 //   .htsifre.php    → asistan hesabı (görüntüle/indir)
+//   .htasistanlar.php → yöneticinin panelden eklediği ek asistan hesapları (kullanıcı adı → şifre özeti)
 //   .htyonetici.php → yönetici hesabı (hocalar + site sahibi: yükle, klasör, adlandır, taşı, sil)
 if (basename($_SERVER['SCRIPT_FILENAME'] ?? '') === 'ortak.php') { http_response_code(403); exit; }
 
@@ -16,6 +17,7 @@ header('X-Content-Type-Options: nosniff');
 
 const ASISTAN_CFG = __DIR__ . '/.htsifre.php';
 const YONETICI_CFG = __DIR__ . '/.htyonetici.php';
+const EK_ASISTAN_CFG = __DIR__ . '/.htasistanlar.php';
 const ARSIV = __DIR__ . '/arsiv';
 const COP = ARSIV . '/.cop';
 const IZINLI = ['pdf','doc','docx','ppt','pptx','pps','ppsx','xls','xlsx','odt','odp','ods','rtf','txt','csv',
@@ -125,6 +127,13 @@ function sayfa($baslik, $icerik) {
 }
 
 function hesap_oku($dosya) { return is_file($dosya) ? (require $dosya) : null; }
+function ek_hesaplar() { $d = is_file(EK_ASISTAN_CFG) ? (require EK_ASISTAN_CFG) : []; return is_array($d) ? $d : []; }
+function ek_hesaplar_yaz($d) {
+    ksort($d);
+    $ok = file_put_contents(EK_ASISTAN_CFG, "<?php\nreturn " . var_export($d, true) . ";\n", LOCK_EX) !== false;
+    if ($ok) { @chmod(EK_ASISTAN_CFG, 0600); if (function_exists('opcache_invalidate')) @opcache_invalidate(EK_ASISTAN_CFG, true); }
+    return $ok;
+}
 function hesap_yaz($dosya, $kullanici, $sifre) {
     $d = ['kullanici' => $kullanici, 'hash' => password_hash($sifre, PASSWORD_DEFAULT)];
     $ok = file_put_contents($dosya, "<?php\nreturn " . var_export($d, true) . ";\n", LOCK_EX) !== false;

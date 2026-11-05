@@ -99,6 +99,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $h = hesap_oku($hangi);
         git($rel, hesap_yaz($hangi, $h['kullanici'], $yeni) ? 'Şifre değişti (' . ($hangi === YONETICI_CFG ? 'yönetici' : 'asistan') . ' hesabı).' : 'Şifre kaydedilemedi.');
     }
+    if ($is === 'hesap_ekle') {
+        $k = trim($_POST['k'] ?? ''); $s = $_POST['s'] ?? '';
+        if (!preg_match('/^[\p{L}\p{N}._-]{2,40}$/u', $k) || strlen($s) < 4) git($rel, 'Kullanıcı adı en az 2 karakter (boşluksuz), şifre en az 4 karakter olmalı.', '#hesaplar');
+        $d = ek_hesaplar();
+        foreach ([YONETICI_CFG, ASISTAN_CFG] as $f) { $h = hesap_oku($f); if ($h && strcasecmp($h['kullanici'], $k) === 0) git($rel, 'Bu kullanıcı adı başka bir hesapta kullanılıyor.', '#hesaplar'); }
+        foreach (array_keys($d) as $ad) if (strcasecmp($ad, $k) === 0 && $ad !== $k) unset($d[$ad]);
+        $var = isset($d[$k]);
+        $d[$k] = password_hash($s, PASSWORD_DEFAULT);
+        git($rel, ek_hesaplar_yaz($d) ? ($var ? "Şifre güncellendi: $k" : "Hesap eklendi: $k") : 'Hesap kaydedilemedi.', '#hesaplar');
+    }
+    if ($is === 'hesap_sil') {
+        $d = ek_hesaplar(); $k = $_POST['k'] ?? '';
+        if (!isset($d[$k])) git($rel, 'Hesap bulunamadı.', '#hesaplar');
+        unset($d[$k]);
+        git($rel, ek_hesaplar_yaz($d) ? "Hesap silindi: $k" : 'Hesap silinemedi.', '#hesaplar');
+    }
     git($rel, 'Bilinmeyen işlem.');
 }
 
@@ -170,4 +186,14 @@ sayfa('Dosya yönetimi', '
       <label>Yeni şifre (en az 8 karakter) <input type="password" name="s" autocomplete="new-password" required></label>
       <label>Yeni şifre (tekrar) <input type="password" name="s2" autocomplete="new-password" required></label>
       <button class="chip">Kaydet</button></form>
+  </details>
+  <details class="islem" id="hesaplar"><summary>Asistan hesapları</summary>
+    ' . (($ek = ek_hesaplar()) ? '<ul class="hesaplar">' . implode('', array_map(function ($ad) use ($gizli) {
+        return '<li><b>' . e($ad) . '</b> <form method="post" style="display:inline">' . $gizli . '<input type="hidden" name="is" value="hesap_sil"><input type="hidden" name="k" value="' . e($ad) . '"><button class="chip">Sil</button></form></li>';
+    }, array_keys($ek))) . '</ul>' : '<p class="muted">Eklenmiş hesap yok.</p>') . '
+    <form method="post" class="sifre">' . $gizli . '<input type="hidden" name="is" value="hesap_ekle">
+      <label>Kullanıcı adı <input name="k" autocomplete="off" required></label>
+      <label>Şifre <input type="text" name="s" autocomplete="off" required></label>
+      <button class="chip">Ekle</button></form>
+    <small>Eklenen hesaplar asistan hesabıyla aynı yetkidedir: görüntüleme ve indirme. Var olan bir kullanıcı adını yeniden eklemek şifresini değiştirir.</small>
   </details>');

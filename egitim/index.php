@@ -21,6 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $c = hesap_oku($dosya);
         if ($c && strcasecmp($c['kullanici'], $k) === 0 && password_verify($s, $c['hash'])) { $rol = $r; break; }
     }
+    if (!$rol) foreach (ek_hesaplar() as $ad => $hash) {
+        if (strcasecmp($ad, $k) === 0 && password_verify($s, $hash)) { $rol = 'asistan'; break; }
+    }
     if ($rol) {
         session_regenerate_id(true);
         $_SESSION['ok'] = 1;
