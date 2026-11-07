@@ -112,7 +112,7 @@
     var ul = el("ul", "ak-liste ak-sem");
     h.seminer.forEach(function (s) {
       var li = el("li"), konu = el("span", "ak-konu", s.konu);
-      li.appendChild(s.ad ? sunumLink("seminer", s.ad, h.tarih, konu) : konu);
+      li.appendChild(s.ad ? sunumLink("seminer", s.ad, h.tarih, konu, s.konu) : konu);
       if (s.ad) li.appendChild(adEl(s.ad, kisi));
       if (kisi && s.ad === kisi) li.className = "ben";
       ul.appendChild(li);
@@ -184,21 +184,23 @@
     }).join(" ");
   }
   // Programdaki bir sunumun kütüphane kaydı: aynı kişi + tür, ±14 gün (tarihsiz kayıtta aynı yıl)
-  function kayitBul(tur, ad, tarih) {
-    var key = adKey(ad), bul = null;
-    KUT.some(function (x) {
+  function kelimeler(s) { return fold(s).replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(function (w) { return w.length > 2; }); }
+  function kayitBul(tur, ad, tarih, konu) {
+    var key = adKey(ad), aday = KUT.filter(function (x) {
       // Seminer hoca tarafından verildiyse kütüphanede "Hoca Sunumu" olarak durur
       var turUyar = x[1] === TUR[tur] || (tur === "seminer" && x[1] === "Hoca Sunumu");
       if (!turUyar || adKey(x[0]) !== key || !x[2]) return false;
-      var ok = x[2].length === 4 ? x[2] === tarih.slice(0, 4) : gunFark(x[2], tarih) <= 14;
-      if (ok) bul = x;
-      return ok;
+      return x[2].length === 4 ? x[2] === tarih.slice(0, 4) : gunFark(x[2], tarih) <= 14;
     });
-    return bul;
+    if (aday.length < 2 || !konu) return aday[0] || null;
+    // Birden çok kayıt varsa başlığı programdaki konuya en çok benzeyeni seç
+    var k = kelimeler(konu);
+    function puan(x) { var b = kelimeler(x[4]); return k.filter(function (w) { return b.indexOf(w) > -1; }).length; }
+    return aday.sort(function (a, b) { return puan(b) - puan(a); })[0];
   }
   // Eklenmiş sunuma bağlantı: PDF tarayıcıda açılır, PowerPoint dosyası iner
-  function sunumLink(tur, ad, tarih, icerik) {
-    var x = kayitBul(tur, ad, tarih);
+  function sunumLink(tur, ad, tarih, icerik, konu) {
+    var x = kayitBul(tur, ad, tarih, konu);
     if (!x || !x[3]) return icerik;
     var a = el("a", "ak-link");
     a.href = "dosyalar.php?d=" + encodeURIComponent("Kütüphane/" + x[3]);
