@@ -56,7 +56,7 @@ foreach ((is_file($kj) ? (json_decode(file_get_contents($kj), true) ?: []) : [])
     // Tarihsiz kayıtlar (elle eklenen eski dosyalar) yalnızca yılıyla gelir; aynı yılda aynı kişi + tür eşleşirse eklenmiş sayılır.
     $t = ($x['date'] ?? '') ?: substr((string)($x['added'] ?? ''), 0, 10);
     if ($t === '' && preg_match('/^\d{4}$/', (string)($x['year'] ?? ''))) $t = $x['year'];
-    if ($t >= substr($ilk, 0, strlen($t))) $kut[] = [$x['presenter'] ?? '', $x['type'], $t];
+    if ($t >= substr($ilk, 0, strlen($t))) $kut[] = [$x['presenter'] ?? '', $x['type'], $t, $x['path'] ?? ''];
 }
 $gun = is_file(AK_JSON) ? (json_decode($veri, true)['guncelleme'] ?? 0) : 0;
 $yon = '';

@@ -99,16 +99,20 @@
     var s = el("span", "ak-ad" + (kisi && ad === kisi ? " ben" : ""), tamAd(ad));
     return s;
   }
-  function liste(adlar, kisi) {
+  function liste(adlar, kisi, h, tur) {
     var ul = el("ul", "ak-liste");
-    adlar.forEach(function (a) { var li = el("li"); li.appendChild(adEl(a, kisi)); ul.appendChild(li); });
+    adlar.forEach(function (a) {
+      var li = el("li");
+      li.appendChild(h ? sunumLink(tur, a, h.tarih, adEl(a, kisi)) : adEl(a, kisi));
+      ul.appendChild(li);
+    });
     return ul;
   }
   function seminerler(h, kisi) {
     var ul = el("ul", "ak-liste ak-sem");
     h.seminer.forEach(function (s) {
-      var li = el("li");
-      li.appendChild(el("span", "ak-konu", s.konu));
+      var li = el("li"), konu = el("span", "ak-konu", s.konu);
+      li.appendChild(s.ad ? sunumLink("seminer", s.ad, h.tarih, konu) : konu);
       if (s.ad) li.appendChild(adEl(s.ad, kisi));
       if (kisi && s.ad === kisi) li.className = "ben";
       ul.appendChild(li);
@@ -179,6 +183,30 @@
       return w.charAt(0).toLocaleUpperCase("tr") + w.slice(1).toLocaleLowerCase("tr");
     }).join(" ");
   }
+  // Programdaki bir sunumun kütüphane kaydı: aynı kişi + tür, ±14 gün (tarihsiz kayıtta aynı yıl)
+  function kayitBul(tur, ad, tarih) {
+    var key = adKey(ad), bul = null;
+    KUT.some(function (x) {
+      // Seminer hoca tarafından verildiyse kütüphanede "Hoca Sunumu" olarak durur
+      var turUyar = x[1] === TUR[tur] || (tur === "seminer" && x[1] === "Hoca Sunumu");
+      if (!turUyar || adKey(x[0]) !== key || !x[2]) return false;
+      var ok = x[2].length === 4 ? x[2] === tarih.slice(0, 4) : gunFark(x[2], tarih) <= 14;
+      if (ok) bul = x;
+      return ok;
+    });
+    return bul;
+  }
+  // Eklenmiş sunuma bağlantı: PDF tarayıcıda açılır, PowerPoint dosyası iner
+  function sunumLink(tur, ad, tarih, icerik) {
+    var x = kayitBul(tur, ad, tarih);
+    if (!x || !x[3]) return icerik;
+    var a = el("a", "ak-link");
+    a.href = "dosyalar.php?d=" + encodeURIComponent("Kütüphane/" + x[3]);
+    a.target = "_blank"; a.rel = "noopener";
+    a.title = /\.pdf$/i.test(x[3]) ? "Sunumu aç" : "Sunumu indir";
+    a.appendChild(icerik);
+    return a;
+  }
   var EKSIK = [];
   H.forEach(function (h) {
     if (h.tarih >= BUGUN) return;
@@ -188,13 +216,7 @@
     h.olgu.forEach(function (a) { bek.push(["olgu", a, ""]); });
     bek.forEach(function (b) {
       var key = adKey(b[1]);
-      var var_ = KUT.some(function (x) {
-        // Seminer hoca tarafından verildiyse kütüphanede "Hoca Sunumu" olarak durur
-        var turUyar = x[1] === TUR[b[0]] || (b[0] === "seminer" && x[1] === "Hoca Sunumu");
-        if (!turUyar || adKey(x[0]) !== key || !x[2]) return false;
-        return x[2].length === 4 ? x[2] === h.tarih.slice(0, 4) : gunFark(x[2], h.tarih) <= 14;
-      });
-      if (!var_) EKSIK.push({ tarih: h.tarih, tur: b[0], ad: b[1], konu: b[2], danisman: h.danisman || "" });
+      if (!kayitBul(b[0], b[1], h.tarih)) EKSIK.push({ tarih: h.tarih, tur: b[0], ad: b[1], konu: b[2], danisman: h.danisman || "" });
     });
   });
 
@@ -253,8 +275,8 @@
       td.appendChild(el("small", null, h.tarih.slice(0, 4)));
       tr.appendChild(td);
       hucre(tr, "Seminerler", h.seminer.length ? seminerler(h, kisi) : "");
-      hucre(tr, "Makale", h.makale.length ? liste(h.makale, kisi) : "", h.makale.length ? "" : "bos");
-      hucre(tr, "Olgu", h.olgu.length ? liste(h.olgu, kisi) : "", h.olgu.length ? "" : "bos");
+      hucre(tr, "Makale", h.makale.length ? liste(h.makale, kisi, h, "makale") : "", h.makale.length ? "" : "bos");
+      hucre(tr, "Olgu", h.olgu.length ? liste(h.olgu, kisi, h, "olgu") : "", h.olgu.length ? "" : "bos");
       hucre(tr, "Danışman", h.danisman ? adEl(h.danisman, kisi) : "", h.danisman ? "" : "bos");
       tb.appendChild(tr);
     });

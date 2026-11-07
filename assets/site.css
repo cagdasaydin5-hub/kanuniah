@@ -307,6 +307,9 @@ table.ak tr.siradaki td{background:var(--pine-soft)}
 .ak-gorevler h2{font-family:var(--serif);font-size:18px;margin:0 0 8px}
 .ak-gorevler li{display:flex;flex-wrap:wrap;gap:2px 10px;align-items:baseline;padding:4px 0;border-top:1px solid var(--line)}
 .ak-gorevler li.gecmis{opacity:.55}
+.ak-link{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.ak-link:hover{text-decoration-color:currentColor}
+.ak-link::after{content:" ↗";font-size:.8em;color:var(--muted)}
 .ak-eksik summary{cursor:pointer;font-family:var(--serif);font-size:18px;font-weight:600}
 .ak-eksik[open] summary{margin-bottom:8px}
 .ak-eksik .chip{margin-left:auto;padding:2px 10px;font-size:13px}
