@@ -198,16 +198,23 @@
     function puan(x) { var b = kelimeler(x[4]); return k.filter(function (w) { return b.indexOf(w) > -1; }).length; }
     return aday.sort(function (a, b) { return puan(b) - puan(a); })[0];
   }
-  // Eklenmiş sunuma bağlantı: PDF tarayıcıda açılır, PowerPoint dosyası iner
+  // Eklenmiş sunumun yanına belirgin bir düğme: PDF tarayıcıda açılır, PowerPoint dosyası iner
   function sunumLink(tur, ad, tarih, icerik, konu) {
     var x = kayitBul(tur, ad, tarih, konu);
     if (!x || !x[3]) return icerik;
-    var a = el("a", "ak-link");
-    a.href = "dosyalar.php?d=" + encodeURIComponent("Kütüphane/" + x[3]);
-    a.target = "_blank"; a.rel = "noopener";
-    a.title = /\.pdf$/i.test(x[3]) ? "Sunumu aç" : "Sunumu indir";
-    a.appendChild(icerik);
-    return a;
+    var pdf = /\.pdf$/i.test(x[3]);
+    var href = "dosyalar.php?d=" + encodeURIComponent("Kütüphane/" + x[3]) + (pdf ? "" : "&indir=1");
+    var baslik = (pdf ? "Sunumu aç: " : "Sunumu indir: ") + x[3].split("/").pop();
+    function bag(cls, ic) {
+      var a = el("a", cls); a.href = href; a.title = baslik;
+      if (pdf) { a.target = "_blank"; a.rel = "noopener"; }
+      if (typeof ic === "string") a.textContent = ic; else a.appendChild(ic);
+      return a;
+    }
+    var kap = el("span", "ak-var");
+    kap.appendChild(bag("ak-sunum", icerik));
+    kap.appendChild(bag("ak-indir", pdf ? "Aç" : "İndir"));
+    return kap;
   }
   var EKSIK = [];
   H.forEach(function (h) {
