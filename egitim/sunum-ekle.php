@@ -30,6 +30,9 @@ function program_sunumlari($program) {
     return $out;
 }
 $sunumlar = program_sunumlari($program);
+// Bir sonraki ders: bugünden sonraki ilk toplantı. Formda her zaman seçilebilir (önden ekleme).
+$sinir = date('Y-m-d');
+foreach ($program['haftalar'] ?? [] as $h) if (($h['tarih'] ?? '') > $sinir) { $sinir = $h['tarih']; break; }
 $konular = []; $kisiler = []; $danismanlar = [];
 foreach ($dizin as $x) {
     $konular[$x['topic']] = kayit_kategori($x);
@@ -97,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($kat === '') $hata[] = 'Kategoriyi seçin.';
         if (mb_strlen($baslik) < 3) $hata[] = 'Sunum başlığını yazın.';
         if (!$tarih) $hata[] = 'Sunum tarihini girin.';
-        elseif ($tarih > date('Y-m-d', strtotime('+14 days'))) $hata[] = 'Sunum tarihi bugünden en çok iki hafta ileri olabilir.';
+        elseif ($tarih > max(date('Y-m-d', strtotime('+14 days')), $sinir)) $hata[] = 'Sunum tarihi en geç bir sonraki dersin tarihi olabilir.';
 
         $makale = null;
         if ($tur === 'Makale Sunumu') {
@@ -201,7 +204,7 @@ foreach ($dizin as $x) {
     $t = ($x['date'] ?? '') ?: substr((string)($x['added'] ?? ''), 0, 10);
     if ($t && !empty($x['presenter'])) $var[] = [$adKey($x['presenter']), $x['type'] ?? '', strtotime($t)];
 }
-$dersler = []; $sinir = date('Y-m-d', strtotime('+6 days'));
+$dersler = [];
 foreach ($program['haftalar'] ?? [] as $h) {
     if (($h['tarih'] ?? '') > $sinir) continue;
     $dan = !empty($h['danisman']) ? danisman_duzgun($h['danisman']) : '';
