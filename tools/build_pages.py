@@ -354,7 +354,7 @@ egitim_yaz("sayfa-sablonlar.html", head("Sunum şablonları · Trabzon Kanuni EA
 def sablon_sayfa(ad, baslik, resim, dosya, onceki, sonraki):
     gez = '<a class="chip" href="?k=sablonlar">‹ Tüm şablonlar</a>'
     if dosya == "kapak":
-        gez = ('<a class="chip" href="dl.php?d=Ortak-Kapak.png" download>Kapak görselini indir (.png)</a> '
+        gez = ('<a class="chip" href="dl.php?d=Ortak-Kapak.pptx" download>Kapağı indir (.pptx)</a> '
                '<a class="chip" href="dl.php?d=Sunum-Sablonlari-Tumu.zip" download>Tüm şablonları indir (.zip)</a> ') + gez
     elif dosya: gez = '<a class="chip" href="dl.php?d=%s" download>Bu şablonu indir (.pptx)</a> ' % dosya + gez
     ek = ""
