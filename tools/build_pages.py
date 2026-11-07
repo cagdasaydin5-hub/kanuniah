@@ -353,7 +353,10 @@ egitim_yaz("sayfa-sablonlar.html", head("Sunum şablonları · Trabzon Kanuni EA
 
 def sablon_sayfa(ad, baslik, resim, dosya, onceki, sonraki):
     gez = '<a class="chip" href="?k=sablonlar">‹ Tüm şablonlar</a>'
-    if dosya: gez = '<a class="chip" href="dl.php?d=%s" download>Bu şablonu indir (.pptx)</a> ' % dosya + gez
+    if dosya == "kapak":
+        gez = ('<a class="chip" href="dl.php?d=Ortak-Kapak.png" download>Kapak görselini indir (.png)</a> '
+               '<a class="chip" href="dl.php?d=Sunum-Sablonlari-Tumu.zip" download>Tüm şablonları indir (.zip)</a> ') + gez
+    elif dosya: gez = '<a class="chip" href="dl.php?d=%s" download>Bu şablonu indir (.pptx)</a> ' % dosya + gez
     ek = ""
     if onceki: ek += '<a class="chip" href="?k=%s">‹ Önceki</a> ' % onceki
     if sonraki: ek += '<a class="chip" href="?k=%s">Sonraki ›</a>' % sonraki
@@ -369,7 +372,7 @@ def sablon_sayfa(ad, baslik, resim, dosya, onceki, sonraki):
 """ % (baslik, resim, baslik, gez, ek) + FOOT)
 
 sirasi = ["sablon-kapak"] + ["sablon-%02d" % i for i in range(1, 12)]
-sablon_sayfa("sablon-kapak", "Ortak kapak", "onizleme-kapak.jpg", None, None, "sablon-01")
+sablon_sayfa("sablon-kapak", "Ortak kapak", "onizleme-kapak.jpg", "kapak", None, "sablon-01")
 for i in range(1, 12):
     sablon_sayfa("sablon-%02d" % i, "Çerçeve %d" % i, "onizleme-%02d.jpg" % i, "Sunum-Sablonu-Cerceve-%02d.pptx" % i,
                  sirasi[i - 1], sirasi[i + 1] if i < 11 else None)

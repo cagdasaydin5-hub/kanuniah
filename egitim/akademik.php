@@ -46,6 +46,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && rol() === 'yonetici' && ($_POST['is
 }
 
 $veri = is_file(AK_JSON) ? file_get_contents(AK_JSON) : 'null';
+// "Eklenmeyen sunumlar" için kütüphanedeki asistan sunumlarının kısa listesi (sunan, tür, tarih).
+$kj = ARSIV . '/Kütüphane/.kutuphane.json';
+$kut = [];
+$ilk = ($veri !== 'null') ? (json_decode($veri, true)['haftalar'][0]['tarih'] ?? '') : '';
+$ilk = $ilk ? date('Y-m-d', strtotime("$ilk -30 days")) : date('Y-m-d', strtotime('-1 year'));
+foreach ((is_file($kj) ? (json_decode(file_get_contents($kj), true) ?: []) : []) as $x) {
+    if (!in_array($x['type'] ?? '', ['Seminer', 'Makale Sunumu', 'Olgu Sunumu'], true)) continue;
+    $t = $x['date'] ?: substr((string)($x['added'] ?? ''), 0, 10);
+    if ($t >= $ilk) $kut[] = [$x['presenter'] ?? '', $x['type'], $t];
+}
 $gun = is_file(AK_JSON) ? (json_decode($veri, true)['guncelleme'] ?? 0) : 0;
 $yon = '';
 if (rol() === 'yonetici') {
@@ -63,6 +73,7 @@ sayfa('Akademik program', '
     <p class="lede" id="ak-ust"></p>
   </div>' . $kutu . '
   <div id="ak-sira"></div>
+  <div id="ak-eksik"></div>
   <div class="bar">
     <label class="search" for="q"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="q" type="search" placeholder="Konu ya da kişi: ör. diyabet, tiroid, Vatansever" autocomplete="off"></label>
     <div class="ak-filtre">
@@ -76,4 +87,5 @@ sayfa('Akademik program', '
   <p class="ak-alt"><a class="chip" href="./">‹ Eğitim</a> <a class="chip" href="calisma.php">Çalışma listesi</a>' . (is_file(AK_XLSX) ? ' <a class="chip" href="akademik.php?indir=1">Excel\'i indir</a>' : '') . ($gun ? ' <span class="muted">Son güncelleme: ' . e(tarih($gun)) . '</span>' : '') . '</p>
   ' . $yon . '
   <script type="application/json" id="ak-veri">' . str_replace('</', '<\/', $veri) . '</script>
+  <script type="application/json" id="ak-kutuphane">' . str_replace('</', '<\/', json_encode($kut, JSON_UNESCAPED_UNICODE)) . '</script>
   <script src="../assets/akademik.js" defer></script>');

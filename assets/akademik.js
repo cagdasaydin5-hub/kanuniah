@@ -167,9 +167,62 @@
     gorev.appendChild(k);
   }
 
+  // Eklenmeyen sunumlar: geçmiş haftalardaki seminer/makale/olgu, kütüphanede aynı kişi + tür + ±14 gün içinde kayıt yoksa listelenir.
+  var KUT = [];
+  try { KUT = JSON.parse(document.getElementById("ak-kutuphane").textContent) || []; } catch (e) { KUT = []; }
+  var eksikKutu = document.getElementById("ak-eksik");
+  var TUR = { seminer: "Seminer", makale: "Makale Sunumu", olgu: "Olgu Sunumu" };
+  function adKey(ad) { var w = fold(ad).replace(/[^a-z ]/g, " ").split(/\s+/).filter(Boolean); return w.length ? w[0].charAt(0) + "|" + w[w.length - 1] : ""; }
+  function gunFark(a, b) { return Math.abs(parca(a) - parca(b)) / 864e5; }
+  function duzAd(ad) {
+    return String(ad).split(/\s+/).map(function (w) {
+      return w.charAt(0).toLocaleUpperCase("tr") + w.slice(1).toLocaleLowerCase("tr");
+    }).join(" ");
+  }
+  var EKSIK = [];
+  H.forEach(function (h) {
+    if (h.tarih >= BUGUN) return;
+    var bek = [];
+    h.seminer.forEach(function (s) { if (s.ad) bek.push(["seminer", s.ad, s.konu]); });
+    h.makale.forEach(function (a) { bek.push(["makale", a, ""]); });
+    h.olgu.forEach(function (a) { bek.push(["olgu", a, ""]); });
+    bek.forEach(function (b) {
+      var key = adKey(b[1]);
+      var var_ = KUT.some(function (x) { return x[1] === TUR[b[0]] && adKey(x[0]) === key && x[2] && gunFark(x[2], h.tarih) <= 14; });
+      if (!var_) EKSIK.push({ tarih: h.tarih, tur: b[0], ad: b[1], konu: b[2], danisman: h.danisman || "" });
+    });
+  });
+
+  function eksikCiz(kisi) {
+    eksikKutu.textContent = "";
+    var l = EKSIK.filter(function (x) { return !kisi || x.ad === kisi; }).reverse();
+    if (!l.length) return;
+    var k = el("details", "ak-gorevler ak-eksik");
+    if (kisi) k.open = true;
+    k.appendChild(el("summary", null, "Kütüphaneye eklenmeyen sunumlar · " + l.length));
+    var ul = el("ul", "ak-liste");
+    l.forEach(function (x) {
+      var li = el("li");
+      li.appendChild(el("span", "ak-tarih", tarih(x.tarih)));
+      li.appendChild(el("span", "ak-et", ROL[x.tur]));
+      li.appendChild(el("span", "ak-konu", duzAd(x.ad) + (x.konu ? " · " + x.konu : "")));
+      var p = new URLSearchParams({ tur: TUR[x.tur], sunan: duzAd(x.ad), tarih: x.tarih });
+      if (x.konu) p.set("baslik", x.konu);
+      if (x.danisman) p.set("danisman", tamAd(x.danisman));
+      var a = el("a", "chip", "Ekle");
+      a.href = "sunum-ekle.php?" + p.toString();
+      li.appendChild(document.createTextNode(" "));
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+    k.appendChild(ul);
+    eksikKutu.appendChild(k);
+  }
+
   function ciz() {
     var kisi = sel.value, terim = fold(q.value.trim()).split(/\s+/).filter(Boolean);
     siraCiz();
+    eksikCiz(kisi);
     gorevCiz(kisi);
     var secili = H.filter(function (h) {
       if (donem === "gelecek" && h.tarih < BUGUN) return false;

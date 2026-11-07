@@ -68,6 +68,8 @@ $kisiler = ad_listesi($kisiler);
 $danismanlar = []; foreach (HOCALAR as $h => $u) $danismanlar["$u $h"] = 1;
 
 $hata = []; $v = $_POST;
+// Akademik programdaki "Eklenmeyen sunumlar" bağlantısından gelen ön doldurma (yalnızca form alanları).
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') $v = array_intersect_key(array_filter($_GET, 'is_string'), array_flip(['tur', 'sunan', 'tarih', 'baslik', 'danisman']));
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($_POST) && (int)($_SERVER['CONTENT_LENGTH'] ?? 0) > 0) {
