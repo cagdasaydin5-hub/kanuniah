@@ -188,7 +188,12 @@
     h.olgu.forEach(function (a) { bek.push(["olgu", a, ""]); });
     bek.forEach(function (b) {
       var key = adKey(b[1]);
-      var var_ = KUT.some(function (x) { return x[1] === TUR[b[0]] && adKey(x[0]) === key && x[2] && gunFark(x[2], h.tarih) <= 14; });
+      var var_ = KUT.some(function (x) {
+        // Seminer hoca tarafından verildiyse kütüphanede "Hoca Sunumu" olarak durur
+        var turUyar = x[1] === TUR[b[0]] || (b[0] === "seminer" && x[1] === "Hoca Sunumu");
+        if (!turUyar || adKey(x[0]) !== key || !x[2]) return false;
+        return x[2].length === 4 ? x[2] === h.tarih.slice(0, 4) : gunFark(x[2], h.tarih) <= 14;
+      });
       if (!var_) EKSIK.push({ tarih: h.tarih, tur: b[0], ad: b[1], konu: b[2], danisman: h.danisman || "" });
     });
   });

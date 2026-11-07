@@ -52,9 +52,11 @@ $kut = [];
 $ilk = ($veri !== 'null') ? (json_decode($veri, true)['haftalar'][0]['tarih'] ?? '') : '';
 $ilk = $ilk ? date('Y-m-d', strtotime("$ilk -30 days")) : date('Y-m-d', strtotime('-1 year'));
 foreach ((is_file($kj) ? (json_decode(file_get_contents($kj), true) ?: []) : []) as $x) {
-    if (!in_array($x['type'] ?? '', ['Seminer', 'Makale Sunumu', 'Olgu Sunumu'], true)) continue;
-    $t = $x['date'] ?: substr((string)($x['added'] ?? ''), 0, 10);
-    if ($t >= $ilk) $kut[] = [$x['presenter'] ?? '', $x['type'], $t];
+    if (!in_array($x['type'] ?? '', ['Seminer', 'Makale Sunumu', 'Olgu Sunumu', 'Hoca Sunumu'], true)) continue;
+    // Tarihsiz kayıtlar (elle eklenen eski dosyalar) yalnızca yılıyla gelir; aynı yılda aynı kişi + tür eşleşirse eklenmiş sayılır.
+    $t = ($x['date'] ?? '') ?: substr((string)($x['added'] ?? ''), 0, 10);
+    if ($t === '' && preg_match('/^\d{4}$/', (string)($x['year'] ?? ''))) $t = $x['year'];
+    if ($t >= substr($ilk, 0, strlen($t))) $kut[] = [$x['presenter'] ?? '', $x['type'], $t];
 }
 $gun = is_file(AK_JSON) ? (json_decode($veri, true)['guncelleme'] ?? 0) : 0;
 $yon = '';
