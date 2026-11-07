@@ -211,10 +211,7 @@
       if (typeof ic === "string") a.textContent = ic; else a.appendChild(ic);
       return a;
     }
-    var kap = el("span", "ak-var");
-    kap.appendChild(bag("ak-sunum", icerik));
-    kap.appendChild(bag("ak-indir", pdf ? "Aç" : "İndir"));
-    return kap;
+    return bag("ak-sunum", icerik);
   }
   var EKSIK = [];
   H.forEach(function (h) {
