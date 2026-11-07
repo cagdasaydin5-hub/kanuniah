@@ -82,6 +82,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $baslik = trim(preg_replace('/\s+/u', ' ', $v['baslik'] ?? ''));
         $tarih = preg_match('/^\d{4}-\d{2}-\d{2}$/', $v['tarih'] ?? '') ? $v['tarih'] : '';
         $kat = in_array($v['kategori'] ?? '', KATEGORILER, true) ? $v['kategori'] : '';
+        // Programdan seçilen derste başlık boşsa (makale/olgu): makale adı, yoksa dosya adı; kategori boşsa başlıktan tahmin.
+        $programdan = (bool)preg_match('/^p\d+$/', (string)($v['ders'] ?? ''));
+        if ($baslik === '' && $programdan) {
+            $baslik = trim($v['m_ad'] ?? '') ?: trim(preg_replace(['/\.[^.]*$/u', '/[_\s]+/u'], ['', ' '], son_ad($_FILES['f']['name'] ?? '')));
+            if (mb_strlen($baslik) < 3) $baslik = $tur ?: 'Sunum';
+            $baslik = mb_substr($baslik, 0, 150);
+        }
+        if ($kat === '' && $programdan && $baslik !== '') $kat = kategori_bul($baslik, '', $baslik);
 
         if (!$tur) $hata[] = 'Sunum türünü seçin.';
         if (!preg_match('/^\p{L}[\p{L}\'’.]*(?: \p{L}[\p{L}\'’.]*){1,3}$/u', $sunan)) $hata[] = 'Sunan kişinin adını ve soyadını yazın (ör. Ayşe Yılmaz).';
@@ -97,7 +105,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $makale = ['title' => trim($v['m_ad'] ?? ''), 'journal' => trim($v['m_dergi'] ?? ''), 'year' => trim($v['m_yil'] ?? ''),
                        'pmid' => preg_match('/^\d{5,9}$/', $kimlik) ? $kimlik : '',
                        'doi' => preg_match('#(10\.\d{4,9}/\S+)#', $kimlik, $m) ? $m[1] : ''];
-            if (mb_strlen($makale['title']) < 10) $hata[] = 'Sunulan makalenin adını yazın.';
+            if (!$programdan && mb_strlen($makale['title']) < 10) $hata[] = 'Sunulan makalenin adını yazın.';
+            if (!array_filter($makale)) $makale = null;
         }
 
         // Dosya
@@ -222,9 +231,9 @@ sayfa('Sunum ekle', '
     <input type="hidden" name="t" value="' . $t . '">
     <div class="fields sf-ders" id="sf-ders-k" hidden>
       <label class="fld">Ders tarihi <select id="sf-hafta"></select></label>
-      <label class="fld">Ders <select id="sf-ders"></select></label>
+      <label class="fld">Sunum <select name="ders" id="sf-ders"></select></label>
     </div>
-    <p class="hint" id="sf-ders-not" hidden>Ders seçince tür, sunan, tarih, danışman ve başlık programdan dolar; gerekirse düzeltebilirsiniz.</p>
+    <p class="hint" id="sf-ozet" aria-live="polite" hidden></p>
     <div class="fields">
       <label class="fld">Sunum türü <select name="tur" id="sf-tur" required>' . $turSec . '</select></label>
       <label class="fld">Sunan (ad soyad) <input type="text" name="sunan" id="sf-sunan" list="sf-kisiler" value="' . $val('sunan') . '" autocomplete="off" required></label>
@@ -255,7 +264,7 @@ sayfa('Sunum ekle', '
       <label class="fld">Sunum dosyası <input type="file" name="f" accept=".pptx,.ppsx,.pdf" required>
         <small class="hint">PowerPoint ya da PDF · en çok ' . e(ini_get('upload_max_filesize')) . '</small></label>
     </div>
-    <p><button class="chip" type="submit"><b>Ekle</b></button></p>
+    <p><button class="chip" type="submit"><b>Kaydet</b></button></p>
   </form>
   ' . $liste('sf-kisiler', $kisiler) . $liste('sf-danismanlar', $danismanlar) . '
   <p><a class="chip" href="kutuphane.php">‹ Materyal kütüphanesi</a></p>

@@ -28,8 +28,11 @@
   sunan.addEventListener("input", cift);
   baslik.addEventListener("input", cift);
 
-  // Ders seçimi: akademik programdan tarih + ders; seçilen ders formu doldurur.
-  var D = V.dersler || [], hafta = $("sf-hafta"), ders = $("sf-ders"), kat = $("sf-kat"), tarihEl = $("sf-tarih");
+
+  // Ders seçimi: tarih → sunum → dosya → Kaydet. Seçilen sunum tür, sunan, tarih, danışman, başlık ve kategoriyi
+  // programdan doldurur; bu alanlar gizli kalır. "Programda yok" seçilirse form elle doldurulur.
+  var D = V.dersler || [], hafta = $("sf-hafta"), ders = $("sf-ders"), kat = $("sf-kat"), tarihEl = $("sf-tarih"),
+      mad = $("sf-mad"), ozet = $("sf-ozet");
   var AY = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
   var GUN = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];
   var KISA = { "Seminer": "Seminer", "Makale Sunumu": "Makale", "Olgu Sunumu": "Olgu" };
@@ -39,37 +42,51 @@
   }
   function opt(sel, value, text) { var o = document.createElement("option"); o.value = value; o.textContent = text; sel.appendChild(o); return o; }
   function secenekVar(sel, v) { return Array.prototype.some.call(sel.options, function (o) { return o.value === v; }); }
+  function fld(el) { return el.closest(".fld") || el; }
+  function secili() {
+    var h = D[+hafta.value], m = /^p(\d+)$/.exec(ders.value);
+    return h && m ? h[1][+m[1]] : null;
+  }
+
+  // program = true: yalnızca tarih, sunum ve dosya görünür
+  function mod() {
+    var elle = ders.value === "elle", x = secili(), program = !elle;
+    [tur, sunan, tarihEl, dan, kat, baslik].forEach(function (e) { fld(e).hidden = program; });
+    $("sf-makale").hidden = program || tur.value !== "Makale Sunumu";
+    kat.required = baslik.required = sunan.required = elle;
+    mad.required = elle && tur.value === "Makale Sunumu";
+    dan.required = elle && tur.value !== "Hoca Sunumu" && tur.value !== "Rehber";
+    ozet.hidden = !x;
+    ozet.textContent = x ? (x[0] + " · " + x[1] + (x[2] ? " · " + x[2] : "") + (x[3] ? " · Danışman: " + x[3] : "")
+      + (x[5] ? " — Bu sunum kütüphanede zaten görünüyor." : "")) : "";
+  }
   function dersleriCiz() {
     ders.textContent = "";
-    opt(ders, "", "Dersi seçin");
+    opt(ders, "", "Sunumu seçin");
     var h = D[+hafta.value];
     if (h) h[1].forEach(function (x, i) {
-      opt(ders, String(i), KISA[x[0]] + " · " + x[1] + (x[2] ? " · " + x[2] : "") + (x[5] ? " (eklendi)" : ""));
+      opt(ders, "p" + i, KISA[x[0]] + " · " + x[1] + (x[2] ? " · " + x[2] : "") + (x[5] ? " ✓" : ""));
     });
     opt(ders, "elle", "Programda yok, elle dolduracağım");
+    mod();
   }
   function dersSecildi() {
-    var h = D[+hafta.value], x = h && ders.value !== "" && ders.value !== "elle" ? h[1][+ders.value] : null;
-    if (!x) return;
-    if (secenekVar(tur, x[0])) tur.value = x[0];
-    sunan.value = x[1];
-    tarihEl.value = h[0];
-    dan.value = x[3];
-    if (x[2]) baslik.value = x[2];
-    if (x[4] && secenekVar(kat, x[4])) kat.value = x[4];
-    turDegisti(); cift();
-    var hedef = x[0] === "Makale Sunumu" ? $("sf-mad") : (!baslik.value ? baslik : (!kat.value ? kat : null));
-    if (hedef) hedef.focus();
+    var h = D[+hafta.value], x = secili();
+    if (x) {
+      if (secenekVar(tur, x[0])) tur.value = x[0];
+      sunan.value = x[1];
+      tarihEl.value = h[0];
+      dan.value = x[3];
+      baslik.value = x[2] || "";
+      kat.value = x[4] && secenekVar(kat, x[4]) ? x[4] : "";
+      turDegisti(); cift();
+    }
+    mod();
   }
-  // Makale sunumunda sunum başlığı boşsa makale adını başlığa da yaz
-  $("sf-mad").addEventListener("input", function () {
-    if (tur.value !== "Makale Sunumu" || (baslik.value && !baslik.dataset.oto)) return;
-    baslik.value = $("sf-mad").value; baslik.dataset.oto = "1"; cift();
-  });
-  baslik.addEventListener("input", function () { delete baslik.dataset.oto; });
+
   if (D.length) {
     D.forEach(function (h, i) { opt(hafta, String(i), gunAdi(h[0])); });
-    // Bağlantıyla gelen ön doldurma (sunan + tarih) varsa o dersi seç
+    // Bağlantıyla ya da hatalı gönderimden gelen değerler (sunan + tarih + tür) varsa o sunumu seç
     var on = fold(sunan.value), onT = tarihEl.value, bul = -1, bulD = -1;
     if (on) D.forEach(function (h, i) {
       if (h[0] !== onT) return;
@@ -77,10 +94,15 @@
     });
     hafta.value = String(bul > -1 ? bul : 0);
     dersleriCiz();
-    if (bulD > -1) ders.value = String(bulD);
+    if (bulD > -1) ders.value = "p" + bulD;
+    else if (on) ders.value = "elle";
+    ders.required = true;
     hafta.addEventListener("change", dersleriCiz);
     ders.addEventListener("change", dersSecildi);
-    $("sf-ders-k").hidden = false; $("sf-ders-not").hidden = false;
+    tur.addEventListener("change", mod);
+    $("sf-ders-k").hidden = false;
+    mod();
   }
   turDegisti(); cift();
+  if (D.length) mod();
 })();
