@@ -250,14 +250,7 @@ sayfa('Sunum ekle', '
     <p class="hint" id="sf-cift" aria-live="polite"></p>
     <fieldset id="sf-makale" class="sunum-makale" hidden>
       <legend>Sunulan makale</legend>
-      <div class="fields">
-        <label class="fld">PMID ya da DOI (varsa) <input type="text" name="m_kimlik" value="' . $val('m_kimlik') . '" autocomplete="off"></label>
-      </div>
       <div class="fields col"><label class="fld">Makale adı <input type="text" name="m_ad" id="sf-mad" value="' . $val('m_ad') . '"></label></div>
-      <div class="fields">
-        <label class="fld">Dergi <input type="text" name="m_dergi" id="sf-dergi" value="' . $val('m_dergi') . '"></label>
-        <label class="fld">Yıl <input type="text" name="m_yil" id="sf-myil" value="' . $val('m_yil') . '" inputmode="numeric" maxlength="4"></label>
-      </div>
     </fieldset>
     <div class="fields col">
       <label class="fld">Sunum dosyası <input type="file" name="f" accept=".pptx,.ppsx,.pdf" required>
