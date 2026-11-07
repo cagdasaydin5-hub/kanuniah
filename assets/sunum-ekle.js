@@ -52,9 +52,12 @@
   function mod() {
     var elle = ders.value === "elle", x = secili(), program = !elle;
     [tur, sunan, tarihEl, dan, kat, baslik].forEach(function (e) { fld(e).hidden = program; });
-    $("sf-makale").hidden = program || tur.value !== "Makale Sunumu";
+    // Makale sunumunda programdan seçilse de yalnızca "Makale adı" sorulur (başlık da bundan olur)
+    var mak = tur.value === "Makale Sunumu" && (elle || !!x);
+    $("sf-makale").hidden = !mak;
+    Array.prototype.forEach.call($("sf-makale").querySelectorAll(".fields"), function (f) { f.hidden = program && !f.contains(mad); });
     kat.required = baslik.required = sunan.required = elle;
-    mad.required = elle && tur.value === "Makale Sunumu";
+    mad.required = mak;
     dan.required = elle && tur.value !== "Hoca Sunumu" && tur.value !== "Rehber";
     ozet.hidden = !x;
     ozet.textContent = x ? (x[0] + " · " + x[1] + (x[2] ? " · " + x[2] : "") + (x[3] ? " · Danışman: " + x[3] : "")

@@ -105,8 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $makale = ['title' => trim($v['m_ad'] ?? ''), 'journal' => trim($v['m_dergi'] ?? ''), 'year' => trim($v['m_yil'] ?? ''),
                        'pmid' => preg_match('/^\d{5,9}$/', $kimlik) ? $kimlik : '',
                        'doi' => preg_match('#(10\.\d{4,9}/\S+)#', $kimlik, $m) ? $m[1] : ''];
-            if (!$programdan && mb_strlen($makale['title']) < 10) $hata[] = 'Sunulan makalenin adını yazın.';
-            if (!array_filter($makale)) $makale = null;
+            if (mb_strlen($makale['title']) < 10) $hata[] = 'Sunulan makalenin adını yazın.';
         }
 
         // Dosya
