@@ -185,7 +185,31 @@ $val = function ($ad) use ($v) { return e($v[$ad] ?? ''); };
 $turSec = ''; foreach ($TURLER as $x) $turSec .= '<option' . $sec('tur', $x) . '>' . e($x) . '</option>';
 $katSec = '<option value="">Kategori seçin</option>'; foreach (KATEGORILER as $g) $katSec .= '<option' . $sec('kategori', $g) . '>' . e($g) . '</option>';
 $liste = function ($id, $a) { ksort($a); return '<datalist id="' . $id . '">' . implode('', array_map(function ($x) { return '<option value="' . e($x) . '">'; }, array_keys($a))) . '</datalist>'; };
+// Ders seçimi: akademik programın geçmiş ve bu haftaki toplantıları; seçilen ders tür, sunan, tarih, danışman,
+// başlık ve kategoriyi doldurur. Kütüphanede aynı kişi + tür + ±14 gün içinde kaydı olan ders "eklendi" işaretlenir.
+$adKey = function ($ad) { $w = preg_split('/\s+/u', katla(str_replace('.', ' ', unvan_ayir($ad)[1]))); return $w ? mb_substr($w[0], 0, 1) . '|' . end($w) : ''; };
+$var = [];
+foreach ($dizin as $x) {
+    $t = ($x['date'] ?? '') ?: substr((string)($x['added'] ?? ''), 0, 10);
+    if ($t && !empty($x['presenter'])) $var[] = [$adKey($x['presenter']), $x['type'] ?? '', strtotime($t)];
+}
+$dersler = []; $sinir = date('Y-m-d', strtotime('+6 days'));
+foreach ($program['haftalar'] ?? [] as $h) {
+    if (($h['tarih'] ?? '') > $sinir) continue;
+    $dan = !empty($h['danisman']) ? danisman_duzgun($h['danisman']) : '';
+    $l = [];
+    $ekle = function ($tur, $ad, $konu) use (&$l, $h, $dan, $adKey, $var) {
+        $k = $adKey($ad); $ts = strtotime($h['tarih']);
+        $eklendi = (bool)array_filter($var, function ($v) use ($k, $tur, $ts) { return $v[0] === $k && $v[1] === $tur && abs($v[2] - $ts) <= 14 * 86400; });
+        $l[] = [$tur, ad_duzgun(unvan_ayir($ad)[1]), $konu, $dan, ($konu !== '' && ($kb = kategori_bul($konu, '', $konu)) !== 'Diğer') ? $kb : '', $eklendi];
+    };
+    foreach ($h['seminer'] ?? [] as $s) if ($s['ad'] !== '') $ekle('Seminer', $s['ad'], $s['konu']);
+    foreach ($h['makale'] ?? [] as $a) $ekle('Makale Sunumu', $a, '');
+    foreach ($h['olgu'] ?? [] as $a) $ekle('Olgu Sunumu', $a, '');
+    if ($l) $dersler[] = [$h['tarih'], $l];
+}
 $veri = json_encode([
+    'dersler' => array_reverse($dersler),
     'kayitlar' => array_map(function ($x) { return [$x['presenter'] ?? '', $x['title'], $x['topic']]; }, $dizin)], JSON_UNESCAPED_UNICODE);
 
 sayfa('Sunum ekle', '
@@ -196,6 +220,11 @@ sayfa('Sunum ekle', '
   </div>' . $kutu . '
   <form method="post" enctype="multipart/form-data" class="sunum-form" id="sf">
     <input type="hidden" name="t" value="' . $t . '">
+    <div class="fields sf-ders" id="sf-ders-k" hidden>
+      <label class="fld">Ders tarihi <select id="sf-hafta"></select></label>
+      <label class="fld">Ders <select id="sf-ders"></select></label>
+    </div>
+    <p class="hint" id="sf-ders-not" hidden>Ders seçince tür, sunan, tarih, danışman ve başlık programdan dolar; gerekirse düzeltebilirsiniz.</p>
     <div class="fields">
       <label class="fld">Sunum türü <select name="tur" id="sf-tur" required>' . $turSec . '</select></label>
       <label class="fld">Sunan (ad soyad) <input type="text" name="sunan" id="sf-sunan" list="sf-kisiler" value="' . $val('sunan') . '" autocomplete="off" required></label>
