@@ -74,6 +74,16 @@ sayfa('Akademik program', '
     <h1 id="ak-baslik">Akademik program</h1>
     <p class="lede" id="ak-ust"></p>
   </div>' . $kutu . '
+  <details class="kat kural" id="kurallar">
+    <summary><b>Sunum kuralları</b><span class="c">Süre, hazırlık, biçim</span></summary>
+    <div class="kural-ic">
+      <p><span class="ak-et">Süre</span> Olgu 5 dk · Makale 10 dk · Seminer 25 dk</p>
+      <p><span class="ak-et">Hazırlık</span> Sunum tarihinden en az 2 hafta önce danışman hocayla iletişime geçilir. Sunum en az 1 hafta önce, derste sunulabilecek şekilde tam hazır olur.</p>
+      <p><span class="ak-et">Biçim</span> Başlık, punto ve düzen sunum boyunca tutarlı olur. Yazı tipi Times New Roman, satır aralığı 1,5. Kapak başlığı 36, başlıklar 24, metin 22–24, tablo içi 11–12 punto.</p>
+      <p><a href="./?k=sablonlar">Sunum şablonları</a> bu biçimde hazırdır. Hocaların sene başı sunumları ve <a href="kutuphane.php">materyal kütüphanesi</a> örnek olarak kullanılabilir.</p>
+    </div>
+  </details>
+  <script>try{if(location.hash==="#kurallar")document.getElementById("kurallar").open=true}catch(e){}</script>
   <div id="ak-sira"></div>
   <div id="ak-eksik"></div>
   <div class="bar">

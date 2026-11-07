@@ -344,7 +344,7 @@ egitim_yaz("sayfa-sablonlar.html", head("Sunum şablonları · Trabzon Kanuni EA
     <h1>Sunum şablonları</h1>
     <p class="lede">Tüm şablonlarda kapak aynıdır; yalnızca içerik çerçevesi farklıdır. Birine dokunun, büyük önizlemeyi görün ve indirin.</p>
   </div>
-  <p><a class="chip" href="dl.php?d=Sunum-Sablonlari-Tumu.zip" download>Hepsini indir (.zip)</a></p>
+  <p><a class="chip" href="dl.php?d=Sunum-Sablonlari-Tumu.zip" download>Hepsini indir (.zip)</a> <a class="chip" href="akademik.php#kurallar">Sunum kuralları</a></p>
   <div class="grid">
     <a class="tile" href="?k=sablon-kapak"><img src="dl.php?d=onizleme-kapak.jpg" alt="" width="480" height="270" loading="lazy"><b>Ortak kapak</b></a>
 """ + "".join('    <a class="tile" href="?k=sablon-%02d"><img src="dl.php?d=onizleme-%02d.jpg" alt="" width="480" height="270" loading="lazy"><b>Çerçeve %d</b></a>\n' % (i, i, i) for i in range(1, 12)) + """  </div>

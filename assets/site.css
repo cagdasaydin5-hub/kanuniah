@@ -317,6 +317,9 @@ table.ak tr.siradaki td{background:var(--pine-soft)}
 .ak-tarih{font-weight:600;min-width:170px}
 .ak-tablo{margin-top:14px}
 .ak-alt{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.kural{margin:0 0 14px}
+.kural-ic{padding:0 0 10px;font-size:15px}
+.kural-ic p{margin:6px 0}
 .ak-alt .muted{color:var(--muted);font-size:13.5px}
 .callout ul{margin:6px 0;padding-left:20px}
 @media (max-width:760px){
