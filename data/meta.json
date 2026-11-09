@@ -1,6 +1,26 @@
 {
- "checked": "2026-11-01",
+ "checked": "2026-11-08",
  "log": [
+  {
+   "date": "2026-11-08",
+   "items": [
+    {
+     "ad": "Eklenen makale",
+     "n": 7,
+     "href": "haftanin-makaleleri.html"
+    },
+    {
+     "ad": "Eklenen mevzuat",
+     "n": 1,
+     "href": "mevzuat.html"
+    },
+    {
+     "ad": "Eklenen etkinlik",
+     "n": 2,
+     "href": "takvim.html"
+    }
+   ]
+  },
   {
    "date": "2026-11-01",
    "items": [

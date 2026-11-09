@@ -1805,6 +1805,26 @@
     "hekim"
    ],
    "sira": 20
+  },
+  {
+   "id": "e-riza-yonetmeligi-2026",
+   "cat": "mv-hekimlik",
+   "kind": "law",
+   "scope": "TR",
+   "status": "guncel",
+   "title": "Bilgilendirilmiş Rızanın Elektronik Ortamda Alınması Hakkında Yönetmelik",
+   "org": "Sağlık Bakanlığı",
+   "year": 2026,
+   "pub": "2026-10-27",
+   "summary": "Birinci, ikinci ve üçüncü basamak sağlık tesislerinde tıbbi müdahale öncesi bilgilendirilmiş rızanın kâğıt yerine elektronik ortamda alınabilmesinin usulünü düzenler. Hasta, kendisine iletilen onam formunu e-Nabız ya da doğrulanmış cep telefonuna gelen tek kullanımlık şifreyle onaylayabilir; onaylanan form merkezi sağlık veri sistemine kaydedilir. Küçükler ve kısıtlılarda rıza yasal temsilciden alınır. Rızanın içeriği ve kapsamına ilişkin temel kurallar Hasta Hakları Yönetmeliği'nde kalmaya devam eder.",
+   "note": "RG 27.10.2026 (Salı). Yayımı tarihinde yürürlüğe girdi. Uygulama ayrıntıları için yönetmelik metnine bakın.",
+   "url": "https://www.resmigazete.gov.tr/eskiler/2026/10/20261027-4.htm",
+   "alt": [],
+   "kw": "bilgilendirilmiş rıza aydınlatılmış onam elektronik e-nabız sms şifre tıbbi müdahale onayı",
+   "aud": [
+    "hekim"
+   ],
+   "sira": 10
   }
  ]
 }

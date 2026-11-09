@@ -1569,6 +1569,64 @@
    "konu": [],
    "not": "Tarihler henüz açıklanmadı (sitede 'güncellenmektedir').",
    "dogrulama": "2026-11-01"
+  },
+  {
+   "id": "tekirdag-ah-kongresi-2026",
+   "ad": "Tekirdağ Aile Hekimliği Kongresi",
+   "tur": "kongre",
+   "duzey": 2,
+   "kapsam": "bolgesel",
+   "baslangic": "2026-11-21",
+   "bitis": "2026-11-21",
+   "saat": null,
+   "sehir": "Tekirdağ",
+   "yer": null,
+   "bicim": "yuz-yuze",
+   "duzenleyen": null,
+   "ucret": "ucretsiz",
+   "url": "https://tahud.org.tr/haber/tekirdag-aile-hekimligi-kongresi-21-kasim-2026-katilim-ucretsizdir",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [],
+   "not": "TAHUD duyurusu; yer, saat, düzenleyen ve program duyuruda belirtilmemiş. Katılım ücretsiz.",
+   "dogrulama": "2026-11-08"
+  },
+  {
+   "id": "anadolu-ah-kongresi-1-2026",
+   "ad": "1. Multidisipliner Anadolu Aile Hekimliği Kongresi",
+   "tur": "kongre",
+   "duzey": 2,
+   "kapsam": "ulusal",
+   "baslangic": "2026-12-04",
+   "bitis": "2026-12-06",
+   "saat": "09:00",
+   "sehir": "Ankara",
+   "yer": "SBÜ Gülhane Külliyesi, Prof. Dr. Cevdet Erdöl Konferans Salonu",
+   "bicim": "yuz-yuze",
+   "duzenleyen": "TAHUD; SBÜ, SADEFE ve Türkiye Darüşşifa Vakfı desteğiyle",
+   "ucret": "ucretli",
+   "url": "https://sadefekongre.org.tr/1-multidisipliner-anadolu-aile-hekimligi-kongresi",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": "2026-11-20",
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [
+    "kardiyovasküler korunma",
+    "çocuk enfeksiyonları ve izlem",
+    "laboratuvar ve akılcı test",
+    "KOAH ve sigara bırakma",
+    "gebelik ve aşılama",
+    "sağlık raporları, yara bakımı ve evde sağlık",
+    "ruh sağlığı"
+   ],
+   "not": "Bildiriler sözlü ve yüz yüze sunulur; bildiri son günü 20 Kasım 2026 Cuma saat 17:00, kabul bildirimi 25 Kasım 2026 Çarşamba. Kayıt ücreti asistan 6.408 TL, uzman 8.640 TL (KDV dahil).",
+   "dogrulama": "2026-11-08"
   }
  ]
 }

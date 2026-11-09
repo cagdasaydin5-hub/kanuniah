@@ -4,6 +4,220 @@
  },
  "issues": [
   {
+   "id": "2026-11-08",
+   "title": "Hafta 45",
+   "range": "31 Ekim – 8 Kasım 2026",
+   "date": "2026-11-08",
+   "items": [
+    {
+     "id": "ischemia-extend-11yil",
+     "pmid": "42998244",
+     "doi": "10.1001/jama.2026.20375",
+     "journal": "JAMA",
+     "date": "2026-11-07",
+     "title_en": "Long-Term Survival After Initial Invasive or Conservative Management of Stable Coronary Disease in ISCHEMIA-EXTEND",
+     "title": "Orta-ağır iskemili stabil koroner hastalıkta rutin invaziv strateji 11 yılda sağkalımı konservatif (ilaç öncelikli) yaklaşımdan farklı kılmıyor",
+     "design": "RKÇ'nin uzun dönem izlemi (ISCHEMIA-EXTEND), 37 ülke, 320 merkez · n=5179 · medyan izlem 9 yıl",
+     "tags": [
+      "kardiyovasküler",
+      "kronik koroner sendrom",
+      "revaskülarizasyon",
+      "ortak karar verme"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 1,
+      "etki": 1
+     },
+     "effect": "Mevcut yaklaşımı destekler",
+     "what": "Stabil koroner hastalığı ve orta-ağır iskemisi olan hastalarda 11 yıllık tüm nedenli ölüm invaziv grupta %25,8, konservatif grupta %26,9 idi (düzeltilmiş HR 0,97; %95 GA 0,86–1,09). Kardiyovasküler ölüm (HR 0,88; %95 GA 0,75–1,02) ve kardiyovasküler olmayan ölüm de anlamlı farklı değildi; ortalama sağkalım farkı yalnızca 14 gün çıktı.",
+     "practice": "Stabil anjinası olan hastada optimal ilaç tedavisi ve risk faktörü kontrolü temel yaklaşımdır; rutin anjiyografi/revaskülarizasyonun yaşamı uzattığı gösterilmedi. Sevk kararı, ilaca rağmen süren semptomlar ve hastanın tercihine göre ortak karar verilerek alınabilir.",
+     "limits": "Sol ana koroner darlığı, düşük EF ve yakın tarihli AKS olanlar çalışma dışıydı; konservatif kolda da zamanla revaskülarizasyon yapıldı (niyet-tedavi analizi).",
+     "rel": [
+      "esc-ccs-2024"
+     ]
+    },
+    {
+     "id": "prepare-kidney-care",
+     "pmid": "42982076",
+     "doi": "10.1016/S0140-6736(26)01818-0",
+     "journal": "Lancet",
+     "date": "2026-11-04",
+     "title_en": "Preparing for responsive management versus renal dialysis in older people living with kidney failure and frailty or multimorbidity in the UK (Prepare for Kidney Care): a two-arm, superiority, parallel-group, open-label, pragmatic, phase 3, individually randomised controlled trial",
+     "title": "Kırılgan ya da çoklu hastalığı olan yaşlılarda böbrek yetmezliğinde diyalizsiz konservatif yönetime hazırlık, diyalize hazırlığa göre yaşam kalitesine göre ayarlı yaşam yılında farklı değil",
+     "design": "Çok merkezli (31 merkez, Birleşik Krallık), açık etiketli, pragmatik faz 3 RKÇ · n=445 · ortalama izlem 4,5 yıl",
+     "tags": [
+      "yaşlı sağlığı",
+      "kronik böbrek hastalığı",
+      "palyatif bakım",
+      "diyaliz",
+      "ortak karar verme"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 1,
+      "etki": 1
+     },
+     "effect": "Mevcut yaklaşımı destekler",
+     "what": "İleri böbrek yetmezliği olan kırılgan/çoklu hastalıklı yaşlılarda, diyaliz ve nakil kullanılmayan protokollü konservatif yönetime hazırlık ile diyalize hazırlık karşılaştırıldı. Kalite ayarlı yaşam yılı 1,354'e karşı 1,472 idi (düzeltilmiş fark −0,147; %95 GA −0,350 ile 0,056; p=0,16). Hastaneye yatış oranları benzerdi; diyaliz erişim komplikasyonları konservatif kolda daha azdı (IRR 0,41; %95 GA 0,19–0,88).",
+     "practice": "Kırılgan ya da çok sayıda kronik hastalığı olan yaşlı bir KBH hastasında diyaliz tek seçenek olarak sunulmamalı; konservatif böbrek bakımı da hasta ve ailesiyle konuşulacak eşdeğer bir seçenek olarak değerlendirilebilir. Aile hekimi bu görüşmede hastanın değerlerini ve bakım hedeflerini ortaya koymada rol alabilir.",
+     "limits": "Açık etiketli; çalışma eşitliği değil üstünlüğü test etmek üzere tasarlandı; zarar sonuçları önceden tanımlanmamıştı; sonuçlar Birleşik Krallık sağlık sistemine özgü olabilir.",
+     "rel": [
+      "kdigo-ckd-2024",
+      "esh-palyatif-yonetmelik"
+     ]
+    },
+    {
+     "id": "donuk-omuz-nma",
+     "pmid": "42982479",
+     "doi": "10.1136/bmj-2026-101057",
+     "journal": "BMJ",
+     "date": "2026-11-04",
+     "title_en": "Interventions for adhesive capsulitis: systematic review and network meta-analysis of randomised controlled trials",
+     "title": "Donuk omuzda kısa dönemde ağrıyı en çok ekstrakorporeal şok dalga tedavisi, fleksiyonu anestezi altında manipülasyon artırıyor; diğer tedavilerin etkisi belirsiz",
+     "design": "RKÇ'lerin sistematik derlemesi ve ağ meta-analizi · 189 RKÇ, n=12 988, 59 girişim",
+     "tags": [
+      "kas-iskelet",
+      "adeziv kapsülit",
+      "donuk omuz",
+      "fizik tedavi",
+      "enjeksiyon"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Dikkat gerektirir",
+     "what": "Kısa dönemde ağrıyı olağan bakıma göre en fazla ekstrakorporeal şok dalga tedavisi azalttı (0–10 ölçekte ortalama fark −1,97; %95 GA −2,97 ile −0,97; orta kesinlik). Fleksiyonu en çok anestezi altında manipülasyon (steroidle 33°, tek başına 26°; orta kesinlik) artırdı. Diğer girişimlerin ve orta dönem etkilerin kanıtı düşük ya da çok düşük kesinlikteydi; güvenlik verileri yetersiz raporlanmıştı.",
+     "practice": "Donuk omuzda tedaviler çoğunlukla kısa süreli yarar sağlıyor; hastaya hastalığın genellikle zamanla gerilediği ve tedavilerin etkisinin sınırlı olduğu anlatılmalı. Ağrı ve hareket kısıtlılığı sürüyorsa fizik tedavi ya da ortopedi sevkinde seçenekler bu kanıtla değerlendirilebilir.",
+     "limits": "Çalışmaların yaklaşık %71'i yüksek yanlılık riskliydi; bazı karşılaştırmalarda ağ tutarsızlığı vardı; kanıt büyük ölçüde kısa dönemli.",
+     "rel": []
+    },
+    {
+     "id": "relax-perinatal-anksiyete",
+     "pmid": "42981096",
+     "doi": "10.1001/jamanetworkopen.2026.40518",
+     "journal": "JAMA Netw Open",
+     "date": "2026-11-04",
+     "title_en": "RELAX Perinatal Digital Intervention to Prevent Increasing Anxiety: A Randomized Clinical Trial",
+     "title": "Gebelikte tekrarlayıcı olumsuz düşüncesi yüksek kadınlarda 4 haftalık çevrimiçi bilişsel program kaygıyı azaltıyor; etki doğum sonrasına kadar kısmen sürüyor",
+     "design": "Çok merkezli, paralel gruplu faz 2b RKÇ (Birleşik Krallık) · n=268",
+     "tags": [
+      "kadın sağlığı",
+      "gebelik",
+      "perinatal ruh sağlığı",
+      "anksiyete",
+      "dijital girişim"
+     ],
+     "score": {
+      "kanit": 2,
+      "poem": 1,
+      "bb": 1,
+      "etki": 1
+     },
+     "effect": "Dikkat gerektirir",
+     "what": "16–28. gebelik haftasında, tekrarlayıcı olumsuz düşünce puanı yüksek ve belirgin kaygı bozukluğu olmayan kadınlarda 12 oturumluk çevrimiçi yorumlama yanlılığı düzeltme programı, 8. haftada GAD-7 puanını olağan bakıma göre azalttı (düzeltilmiş fark −1,46; %95 GA −2,36 ile −0,57). Perinatal kaygı ve depresyon puanları da düştü; doğum sonrası dönemde GAD-7 (−0,99) ve EPDS (−1,28) farkı sürdü, işlevsellikte fark yoktu.",
+     "practice": "Gebe izleminde sürekli endişe ve olumsuz düşünce döngüsü tarif eden kadınları erken fark etmek, kaygı bozukluğu gelişmeden önleyici destek için fırsat yaratır. Bu program Türkçe olarak yok; ancak kısa yapılandırılmış psikolojik destek ve izlem planlanabilir.",
+     "limits": "Faz 2b; çoklu karşılaştırma düzeltmesi yapılmadı; katılımcıların çoğu yüksek eğitimliydi; etkiler zamanla zayıfladı.",
+     "rel": [
+      "dob-rehberi-2026",
+      "dsb-rehberi-2026"
+     ]
+    },
+    {
+     "id": "yz-sohbet-botu-maternal",
+     "pmid": "42981095",
+     "doi": "10.1001/jamanetworkopen.2026.41062",
+     "journal": "JAMA Netw Open",
+     "date": "2026-11-04",
+     "title_en": "Generative Artificial Intelligence and Maternal Health Outcomes in Pregnant and Postpartum Individuals: A Randomized Clinical Trial",
+     "title": "Gebe ve lohusalara sunulan üretken yapay zekâ sohbet botu 12 ayda kaygı ve depresyonu azaltmıyor",
+     "design": "İki kollu RKÇ, aktif kontrol (ABD, çevrimiçi) · n=400",
+     "tags": [
+      "kadın sağlığı",
+      "gebelik",
+      "lohusalık",
+      "yapay zekâ",
+      "perinatal ruh sağlığı"
+     ],
+     "score": {
+      "kanit": 2,
+      "poem": 1,
+      "bb": 1,
+      "etki": 0
+     },
+     "effect": "Bilgi amaçlı",
+     "what": "Gebe ya da 6 aydan küçük bebeği olan kadınlarda üretken yapay zekâ tabanlı annelik sağlığı sohbet botuna erişim, aylık çocuk kitabı gönderilen kontrol grubuna göre 12. ayda kaygı (GAD-7 farkı 0,10; %95 GA −0,77 ile 0,96) ve depresyon (PHQ-9 farkı −0,23; %95 GA −1,05 ile 0,59) puanlarını değiştirmedi. Acil başvuru, doğum sonu kontrol ve kontrasepsiyon kullanımı da farklı değildi.",
+     "practice": "Yapay zekâ sohbet botları gebe ve lohusaların bilgi ihtiyacını karşılayabilir, ancak tek başına perinatal ruh sağlığını iyileştirdiği gösterilmedi. Gebe ve lohusa izlemlerinde depresyon ve kaygı taraması ile yüz yüze destek önemini koruyor.",
+     "limits": "Başlangıç belirti düzeyleri düşüktü; tüm sonuçlar öz bildirime dayalı; kör yapılamadı; yalnızca İngilizce konuşanlar alındı.",
+     "rel": [
+      "dob-rehberi-2026",
+      "dsb-rehberi-2026"
+     ]
+    },
+    {
+     "id": "mobil-market-diyet",
+     "pmid": "42975406",
+     "doi": "10.1001/jamanetworkopen.2026.46816",
+     "journal": "JAMA Netw Open",
+     "date": "2026-11-03",
+     "title_en": "Full-Service Mobile Food Markets and Dietary Quality in Low-Income Housing Communities: A Randomized Clinical Trial",
+     "title": "Düşük gelirli konut bölgelerine haftalık gezici market getirmek diyet kalitesini artırmıyor; yalnızca günlük sodyum alımı azalıyor",
+     "design": "Küme randomize klinik çalışma, 12 konut alanı (ABD) · n=242",
+     "tags": [
+      "koruyucu sağlık",
+      "beslenme",
+      "obezite",
+      "sosyal belirleyiciler"
+     ],
+     "score": {
+      "kanit": 2,
+      "poem": 0,
+      "bb": 1,
+      "etki": 0
+     },
+     "effect": "Bilgi amaçlı",
+     "what": "Düşük gelirli konut sitelerine haftalık gelen tam hizmetli gezici market, bekleme listesi kontrolüne göre diyet kalitesi puanını (HEI-2020) anlamlı değiştirmedi (fark 1,25; %95 GA −1,60 ile 4,10). Günlük sodyum alımı 397 mg daha düşüktü; meyve-sebze tüketimi, enerji alımı ve gıda güvencesi farklı değildi. Müdahale grubunun yalnızca %43'ü 5–6. aylarda marketten alışveriş yaptı.",
+     "practice": "Sağlıklı gıdaya fiziksel erişimi kolaylaştırmak tek başına beslenme alışkanlığını değiştirmeye yetmeyebilir. Obezite ve kronik hastalık danışmanlığında erişimin yanında bireysel beslenme danışmanlığı ve davranış değişikliği desteği gerekir.",
+     "limits": "Yalnızca 12 küme; gruplar arasında başlangıçta farklılıklar vardı; düşük kullanım etkiyi seyreltmiş olabilir; ABD'ye özgü ortam.",
+     "rel": [
+      "temd-obezite-2024"
+     ]
+    },
+    {
+     "id": "altsye-pcr-bakteri",
+     "pmid": "42971712",
+     "doi": "10.3399/BJGP.2026.0056",
+     "journal": "Br J Gen Pract",
+     "date": "2026-11-02",
+     "title_en": "Molecular bacterial detection in nasopharyngeal swabs does not predict the clinical course of lower respiratory tract infections in primary care: an ancillary study of a randomized controlled trial",
+     "title": "Birinci basamakta alt solunum yolu enfeksiyonunda nazofarenks sürüntüsünde moleküler yöntemle bakteri saptanması iyileşme süresini öngörmüyor",
+     "design": "RKÇ'nin ikincil (yardımcı) analizi, 60 aile hekimliği muayenehanesi (İsviçre) · n=345",
+     "tags": [
+      "enfeksiyon",
+      "alt solunum yolu enfeksiyonu",
+      "antibiyotik",
+      "PCR testi"
+     ],
+     "score": {
+      "kanit": 1,
+      "poem": 1,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Dikkat gerektirir",
+     "what": "Hastaların %41'inde PCR ile bakteri saptandı. Medyan iyileşme süresi bakteri saptanan ve saptanmayanlarda aynıydı (7 gün); düzeltilmiş HR 1,13 (%95 GA 0,84–1,50). Antibiyotik reçetelenmesi bu ilişkiyi değiştirmedi. Öksürük, balgam ve nefes darlığı süreleri de farklı değildi; herhangi bir şiddetteki öksürük medyan 16 gün sürdü.",
+     "practice": "Alt solunum yolu enfeksiyonunda nazofarenksten çoklu PCR paneli antibiyotik kararına ya da hastalığın seyrini öngörmeye yardım etmiyor. Antibiyotik kararı klinik değerlendirmeye dayanmalı. Hastaya öksürüğün 2–3 hafta sürebileceği anlatılmalı.",
+     "limits": "Geriye dönük ikincil analiz; ana çalışmadaki hastaların bir kısmı dışarıda kaldı; sürüntü bakterisi alt solunum yolu etkenini tam yansıtmayabilir.",
+     "rel": []
+    }
+   ]
+  },
+  {
    "id": "2026-10-30",
    "title": "Hafta 44",
    "range": "26 – 30 Ekim 2026",
