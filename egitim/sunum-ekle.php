@@ -201,8 +201,8 @@ $liste = function ($id, $a) { ksort($a); return '<datalist id="' . $id . '">' . 
 $adKey = function ($ad) { $w = preg_split('/\s+/u', katla(str_replace('.', ' ', unvan_ayir($ad)[1]))); return $w ? mb_substr($w[0], 0, 1) . '|' . end($w) : ''; };
 $var = [];
 foreach ($dizin as $x) {
-    $t = ($x['date'] ?? '') ?: substr((string)($x['added'] ?? ''), 0, 10);
-    if ($t && !empty($x['presenter'])) $var[] = [$adKey($x['presenter']), $x['type'] ?? '', strtotime($t)];
+    $kt = ($x['date'] ?? '') ?: substr((string)($x['added'] ?? ''), 0, 10);
+    if ($kt && !empty($x['presenter'])) $var[] = [$adKey($x['presenter']), $x['type'] ?? '', strtotime($kt)];
 }
 $dersler = [];
 foreach ($program['haftalar'] ?? [] as $h) {
