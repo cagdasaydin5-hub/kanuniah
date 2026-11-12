@@ -21,7 +21,8 @@
     var t = tur.value, hoca = t === "Hoca Sunumu" || t === "Rehber";
     $("sf-makale").hidden = t !== "Makale Sunumu";
     $("sf-mad").required = t === "Makale Sunumu";
-    $("sf-dan-k").hidden = hoca; dan.required = !hoca;
+    // ASM dersinde danışman isteğe bağlı
+    $("sf-dan-k").hidden = hoca; dan.required = !hoca && t !== "ASM Sunumu";
   }
 
   tur.addEventListener("change", turDegisti);
@@ -58,7 +59,7 @@
     Array.prototype.forEach.call($("sf-makale").querySelectorAll(".fields"), function (f) { f.hidden = program && !f.contains(mad); });
     kat.required = baslik.required = sunan.required = elle;
     mad.required = mak;
-    dan.required = elle && tur.value !== "Hoca Sunumu" && tur.value !== "Rehber";
+    dan.required = elle && ["Hoca Sunumu", "Rehber", "ASM Sunumu"].indexOf(tur.value) === -1;
     ozet.hidden = !x;
     ozet.textContent = x ? (x[0] + " · " + x[1] + (x[2] ? " · " + x[2] : "") + (x[3] ? " · Danışman: " + x[3] : "")
       + (x[5] ? " — Bu sunum kütüphanede zaten görünüyor." : "")) : "";
@@ -70,7 +71,7 @@
     if (h) h[1].forEach(function (x, i) {
       opt(ders, "p" + i, KISA[x[0]] + " · " + x[1] + (x[2] ? " · " + x[2] : "") + (x[5] ? " ✓" : ""));
     });
-    opt(ders, "elle", "Programda yok, elle dolduracağım");
+    opt(ders, "elle", "Programda yok (ASM dersi vb.), elle dolduracağım");
     mod();
   }
   function dersSecildi() {

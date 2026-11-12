@@ -1,5 +1,5 @@
 <?php
-// Materyal kütüphanesi: asistan seminerleri, makale ve olgu sunumları, hoca sunumları; konuya göre.
+// Materyal kütüphanesi: asistan seminerleri, makale ve olgu sunumları, eğitim ASM dersleri, hoca sunumları; konuya göre.
 //   kutuphane.php          → arama sayfası (giriş gerekli)
 //   kutuphane.php?veri=1   → dizin (JSON; giriş gerekli)
 // Dosyalar egitim/arsiv/Kütüphane/<Tür>/ altında durur ve dosyalar.php?d=… ile verilir.
@@ -14,7 +14,7 @@ if (isset($_GET['veri'])) {
     $j = "$kok/.kutuphane.json";
     $dizin = is_file($j) ? (json_decode(file_get_contents($j), true) ?: []) : [];
     $nfc = function ($s) { return class_exists('Normalizer') ? Normalizer::normalize($s, Normalizer::FORM_C) : $s; };
-    $TUR = ['Seminerler' => 'Seminer', 'Makale Sunumları' => 'Makale Sunumu', 'Olgu Sunumları' => 'Olgu Sunumu', 'Hoca Sunumları' => 'Hoca Sunumu', 'Rehberler' => 'Rehber'];
+    $TUR = ['Seminerler' => 'Seminer', 'Makale Sunumları' => 'Makale Sunumu', 'Olgu Sunumları' => 'Olgu Sunumu', 'ASM Sunumları' => 'ASM Sunumu', 'Hoca Sunumları' => 'Hoca Sunumu', 'Rehberler' => 'Rehber'];
     $var = []; $grup = []; $cikti = []; $id = 0;
     foreach ($dizin as $x) {
         if (!is_file("$kok/{$x['path']}")) continue;
@@ -49,7 +49,7 @@ sayfa('Materyal kütüphanesi', '
   <div class="page-head">
     <div class="eyebrow"><a href="./">Eğitim</a> › Materyal kütüphanesi</div>
     <h1>Materyal kütüphanesi</h1>
-    <p class="lede">Kliniğimizde bugüne kadar sunulmuş seminerler, makale ve olgu sunumları, hoca sunumları; ana kategoriye ve konuya göre. Bir konu yazın, o konuda yapılmış her şeyi görün.</p>
+    <p class="lede">Kliniğimizde bugüne kadar sunulmuş seminerler, makale ve olgu sunumları, eğitim ASM dersleri, hoca sunumları; ana kategoriye ve konuya göre. Bir konu yazın, o konuda yapılmış her şeyi görün.</p>
   </div>
   <div class="bar">
     <label class="search" for="q"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="q" type="search" placeholder="Konu, başlık, sunan kişi ya da slayt içinden bir kelime: ör. hipertansiyon, aşı, Vatansever" autocomplete="off" autofocus></label>

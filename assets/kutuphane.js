@@ -10,7 +10,7 @@
     iye: "idrar yolu", usye: "ust solunum", asye: "alt solunum", kby: "bobrek",
     gebe: "gebelik", hamile: "gebelik", cocuk: "pediatri", bebek: "cocuk",
     yasli: "geriatri", psm: "periyodik saglik", vaka: "olgu", olgu: "olgu",
-    makale: "makale", seminer: "seminer", hoca: "hoca"
+    makale: "makale", seminer: "seminer", hoca: "hoca", asm: "asm"
   };
 
   function fold(s) {
@@ -28,9 +28,9 @@
   function mb(b) { return b < 1048576 ? Math.round(b / 1024) + " KB" : (b / 1048576).toFixed(1).replace(".", ",") + " MB"; }
   function href(p, indir) { return "dosyalar.php?d=" + encodeURIComponent(KOK + p) + (indir ? "&indir=1" : ""); }
 
-  var TUR = ["Seminer", "Makale Sunumu", "Olgu Sunumu", "Hoca Sunumu", "Rehber"];
-  var TURK = { "Seminer": "Seminer", "Makale Sunumu": "Makale", "Olgu Sunumu": "Olgu", "Hoca Sunumu": "Hoca sunumu", "Rehber": "Rehber" };
-  var TAG = { "Seminer": "int", "Makale Sunumu": "new", "Olgu Sunumu": "law", "Hoca Sunumu": "staff", "Rehber": "arch" };
+  var TUR = ["Seminer", "Makale Sunumu", "Olgu Sunumu", "ASM Sunumu", "Hoca Sunumu", "Rehber"];
+  var TURK = { "Seminer": "Seminer", "Makale Sunumu": "Makale", "Olgu Sunumu": "Olgu", "ASM Sunumu": "ASM sunumu", "Hoca Sunumu": "Hoca sunumu", "Rehber": "Rehber" };
+  var TAG = { "Seminer": "int", "Makale Sunumu": "new", "Olgu Sunumu": "law", "ASM Sunumu": "arch", "Hoca Sunumu": "staff", "Rehber": "arch" };
 
   var veri = [], q = document.getElementById("q"), out = document.getElementById("kutuphane"),
       chips = document.getElementById("tur"), count = document.getElementById("count"),

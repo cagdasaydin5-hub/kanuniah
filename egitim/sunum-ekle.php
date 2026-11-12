@@ -13,8 +13,8 @@ const KUTUP_JSON = KUTUP . '/.kutuphane.json';
 const SE_AK_JSON = ARSIV . '/.akademik.json';
 const SE_UZ = ['pptx', 'ppsx', 'pdf'];
 $KLASOR = ['Seminer' => 'Seminerler', 'Makale Sunumu' => 'Makale Sunumları', 'Olgu Sunumu' => 'Olgu Sunumları',
-           'Hoca Sunumu' => 'Hoca Sunumları', 'Rehber' => 'Rehberler'];
-$TURLER = rol() === 'yonetici' ? array_keys($KLASOR) : ['Seminer', 'Makale Sunumu', 'Olgu Sunumu'];
+           'ASM Sunumu' => 'ASM Sunumları', 'Hoca Sunumu' => 'Hoca Sunumları', 'Rehber' => 'Rehberler'];
+$TURLER = rol() === 'yonetici' ? array_keys($KLASOR) : ['Seminer', 'Makale Sunumu', 'Olgu Sunumu', 'ASM Sunumu'];
 
 $dizin = is_file(KUTUP_JSON) ? (json_decode(file_get_contents(KUTUP_JSON), true) ?: []) : [];
 $program = is_file(SE_AK_JSON) ? (json_decode(file_get_contents(SE_AK_JSON), true) ?: []) : []; // yalnızca ad önerileri için
@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (!$tur) $hata[] = 'Sunum türünü seçin.';
         if (!preg_match('/^\p{L}[\p{L}\'’.]*(?: \p{L}[\p{L}\'’.]*){1,3}$/u', $sunan)) $hata[] = 'Sunan kişinin adını ve soyadını yazın (ör. Ayşe Yılmaz).';
-        if ($tur !== 'Hoca Sunumu' && $tur !== 'Rehber' && $danisman === '') $hata[] = 'Danışman hocanın adını yazın.';
+        if (!in_array($tur, ['Hoca Sunumu', 'Rehber', 'ASM Sunumu'], true) && $danisman === '') $hata[] = 'Danışman hocanın adını yazın.';
         if ($kat === '') $hata[] = 'Kategoriyi seçin.';
         if (mb_strlen($baslik) < 3) $hata[] = 'Sunum başlığını yazın.';
         if (!$tarih) $hata[] = 'Sunum tarihini girin.';
