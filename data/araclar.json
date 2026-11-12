@@ -247,8 +247,8 @@
    "id": "recete-rapor",
    "g": "recete",
    "t": "Reçete ve rapor (SUT)",
-   "d": "Etken maddeye göre reçete türü, SGK ödemesi, rapor ve yazabilecek hekim; tıbbi malzeme raporları.",
-   "kw": "reçete rapor sut sgk titck ödeme ek-4/a kırmızı yeşil mor turuncu uzman aile hekimi ilaç malzeme"
+   "d": "Etken madde ya da ilaç adıyla (preparat) reçete türü, SGK ödemesi, rapor ve yazabilecek hekim; tıbbi malzeme raporları.",
+   "kw": "reçete rapor sut sgk titck ödeme ek-4/a kırmızı yeşil mor turuncu uzman aile hekimi ilaç malzeme preparat ilaç adı marka etken madde"
   }
  ]
 }
