@@ -262,6 +262,12 @@ form.sifre label{display:grid;gap:4px;font-weight:600;font-size:14.5px}
 .kutuphane .grup{margin-bottom:6px}
 .kutuphane .chips .chip{font-weight:500}
 /* Seviye 1: kategori kutusu (açılır) · Seviye 2: konu ara başlığı · Seviye 3: sunum satırı */
+.suzgec{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:14px;color:var(--muted)}
+.suzgec label{display:inline-flex;gap:6px;align-items:center}
+.suzgec select{font:inherit;font-size:14px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:5px 8px;max-width:58vw}
+.suzgec select:focus{border-color:var(--pine);outline:none;box-shadow:0 0 0 3px var(--pine-soft)}
+.suzgec select.etkin{border-color:var(--pine);color:var(--pine);font-weight:600}
+.liste-duz{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);padding:0 14px;margin:8px 0}
 details.kat{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);margin:8px 0;padding:0 14px}
 details.kat>summary{cursor:pointer;padding:10px 0;display:flex;gap:10px;align-items:baseline;justify-content:space-between;list-style:none}
 details.kat>summary::-webkit-details-marker{display:none}

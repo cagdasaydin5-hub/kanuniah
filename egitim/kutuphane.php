@@ -54,6 +54,7 @@ sayfa('Materyal kütüphanesi', '
   <div class="bar">
     <label class="search" for="q"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="q" type="search" placeholder="Konu, başlık, sunan kişi ya da slayt içinden bir kelime: ör. hipertansiyon, aşı, Vatansever" autocomplete="off" autofocus></label>
     <div class="chips" id="tur" aria-label="Tür"></div>
+    <div class="suzgec" id="suzgec" aria-label="Süzgeç ve sıralama"></div>
     <div class="opts"><span class="count" id="count"></span> <button class="chip" id="hepsi" type="button">Tümünü kapat</button></div>
   </div>
   <div id="kutuphane" class="kutuphane"><p class="empty">Dizin yükleniyor…</p></div>

@@ -34,7 +34,9 @@
 
   var veri = [], q = document.getElementById("q"), out = document.getElementById("kutuphane"),
       chips = document.getElementById("tur"), count = document.getElementById("count"),
-      tur = "", acik = true, hepsi = document.getElementById("hepsi");
+      tur = "", acik = true, hepsi = document.getElementById("hepsi"),
+      suzgec = document.getElementById("suzgec"),
+      sec = { kat: "", yil: "", dan: "", sun: "", sira: "kat" };
 
   fetch("kutuphane.php?veri=1", { cache: "no-store" }).then(function (r) {
     if (!r.ok) throw new Error("dizin");
@@ -47,7 +49,7 @@
       x.metin = fold(x.keywords || "");
       return x;
     });
-    turChips(); ciz();
+    turChips(); suzgecKur(); ciz();
   }).catch(function () { out.innerHTML = ""; out.appendChild(el("p", "empty", "Dizin yüklenemedi. Sayfayı yenileyin ya da site yöneticisine haber verin.")); });
 
   function turChips() {
@@ -111,7 +113,7 @@
     var m = el("div", "meta");
     m.appendChild(el("span", "tag " + (TAG[x.type] || "arch"), TURK[x.type] || x.type));
     var bilgi = [];
-    if (konuGoster) bilgi.push(x.konu);
+    if (konuGoster) bilgi.push(sec.sira !== "kat" ? x.cat : x.konu);
     if (x.presenter) bilgi.push(x.presenter);
     if (x.advisor) bilgi.push("Danışman: " + x.advisor);
     bilgi.push(x.year);
@@ -166,10 +168,82 @@
     return d;
   }
 
+  // Süzgeç (kategori, yıl, danışman, sunan) ve sıralama
+  var SIRA = [["kat", "Kategoriye göre"], ["yeni", "En yeni önce"], ["eski", "En eski önce"], ["ad", "Başlık (A–Z)"], ["sunan", "Sunan (A–Z)"]];
+  function sayim(alan) {
+    var n = {};
+    veri.forEach(function (x) { var v = alan(x); if (v) n[v] = (n[v] || 0) + 1; });
+    return n;
+  }
+  function secim(ad, etiket, bos, secenekler) {
+    var l = el("label"); l.appendChild(document.createTextNode(etiket));
+    var s = el("select"); s.setAttribute("aria-label", etiket);
+    if (bos) s.appendChild(new Option(bos, ""));
+    secenekler.forEach(function (o) { s.appendChild(new Option(o[1], o[0])); });
+    s.value = sec[ad];
+    s.onchange = function () { sec[ad] = s.value; suzgecKur(); ciz(); };
+    if (ad !== "sira" ? sec[ad] : sec[ad] !== "kat") s.className = "etkin";
+    l.appendChild(s);
+    return l;
+  }
+  function suzgecKur() {
+    if (!suzgec) return;
+    suzgec.innerHTML = "";
+    var kn = sayim(function (x) { return x.cat; }),
+        yn = sayim(function (x) { return String(x.year || ""); }),
+        dn = sayim(function (x) { return x.advisor; }),
+        sn = sayim(function (x) { return x.presenter; });
+    var tr = function (a, b) { return a.localeCompare(b, "tr"); };
+    suzgec.appendChild(secim("kat", "Kategori", "Tümü", Object.keys(kn).sort(function (a, b) { return katSira(a) - katSira(b); })
+      .map(function (k) { return [k, k + " (" + kn[k] + ")"]; })));
+    suzgec.appendChild(secim("yil", "Yıl", "Tümü", Object.keys(yn).sort().reverse().map(function (k) { return [k, k + " (" + yn[k] + ")"]; })));
+    suzgec.appendChild(secim("dan", "Danışman", "Tümü", Object.keys(dn).sort(tr).map(function (k) { return [k, k + " (" + dn[k] + ")"]; })));
+    suzgec.appendChild(secim("sun", "Sunan", "Tümü", Object.keys(sn).sort(tr).map(function (k) { return [k, k + " (" + sn[k] + ")"]; })));
+    suzgec.appendChild(secim("sira", "Sırala", null, SIRA));
+    if (sec.kat || sec.yil || sec.dan || sec.sun || sec.sira !== "kat") {
+      var b = el("button", "chip", "Temizle"); b.type = "button";
+      b.onclick = function () { sec = { kat: "", yil: "", dan: "", sun: "", sira: "kat" }; suzgecKur(); ciz(); };
+      suzgec.appendChild(b);
+    }
+  }
+  function suz(x) {
+    return (!tur || x.type === tur) && (!sec.kat || x.cat === sec.kat) && (!sec.yil || String(x.year) === sec.yil) &&
+      (!sec.dan || x.advisor === sec.dan) && (!sec.sun || x.presenter === sec.sun);
+  }
+  // Tarih anahtarı: yıl + (varsa) YYYY-AA-GG biçimli sunum tarihi
+  function zaman(x) { var d = /^\d{4}-\d{2}-\d{2}/.test(x.date || "") ? x.date.slice(0, 10) : ""; return String(x.year || "0000") + (d || "0000-00-00"); }
+  function sirala(liste) {
+    var tr = function (a, b) { return String(a || "").localeCompare(String(b || ""), "tr"); };
+    var f = {
+      yeni: function (a, b) { return zaman(b).localeCompare(zaman(a)) || tr(a.ad, b.ad); },
+      eski: function (a, b) { return zaman(a).localeCompare(zaman(b)) || tr(a.ad, b.ad); },
+      ad: function (a, b) { return tr(a.ad, b.ad); },
+      sunan: function (a, b) { return (a.presenter ? 0 : 1) - (b.presenter ? 0 : 1) || tr(a.presenter, b.presenter) || tr(a.ad, b.ad); }
+    }[sec.sira];
+    return liste.slice().sort(f);
+  }
+  // Kategori dışı sıralamada düz liste; satırda kategori de yazılır
+  function duzListe(liste) {
+    var k = el("div", "liste-duz konu-grup");
+    sirala(liste).forEach(function (x) { k.appendChild(satir(x, true)); });
+    return k;
+  }
+
   function ciz() {
     var t = terimler();
-    var temel = tur ? veri.filter(function (x) { return x.type === tur; }) : veri;
+    var temel = veri.filter(suz);
     out.innerHTML = "";
+    if (!temel.length) {
+      count.textContent = "0 sunum";
+      out.appendChild(el("p", "empty", "Seçilen süzgeçlere uyan sunum yok. Süzgeçleri gevşetin ya da Temizle'ye basın."));
+      return;
+    }
+    if (!t.length && sec.sira !== "kat") {
+      count.textContent = temel.length + " sunum";
+      out.appendChild(duzListe(temel));
+      dugme();
+      return;
+    }
     if (!t.length) {
       var a = agac(temel);
       count.textContent = temel.length + " sunum";
@@ -183,7 +257,8 @@
     if (!basliktan.length && !icerikten.length) { out.appendChild(el("p", "empty", "Bu konuda materyal bulunamadı. Daha kısa ya da farklı bir kelime deneyin.")); return; }
     if (basliktan.length) {
       out.appendChild(el("h2", null, "Konu ve başlıkta eşleşenler"));
-      agac(basliktan).forEach(function (c) { out.appendChild(katBlok(c, true)); });
+      if (sec.sira !== "kat") out.appendChild(duzListe(basliktan));
+      else agac(basliktan).forEach(function (c) { out.appendChild(katBlok(c, true)); });
     }
     if (icerikten.length) {
       out.appendChild(el("h2", null, "Slayt içeriğinde geçenler"));
@@ -191,7 +266,7 @@
       var s = el("summary"); s.appendChild(el("b", null, "Başlığında değil, slaytlarında geçenler"));
       s.appendChild(el("span", "c", icerikten.length + " sunum")); d.appendChild(s);
       var k = el("div", "konu-grup");
-      icerikten.sort(function (a, b) { return a.konu.localeCompare(b.konu, "tr"); }).forEach(function (x) { k.appendChild(satir(x, true)); });
+      (sec.sira !== "kat" ? sirala(icerikten) : icerikten.sort(function (a, b) { return a.konu.localeCompare(b.konu, "tr"); })).forEach(function (x) { k.appendChild(satir(x, true)); });
       d.appendChild(k);
       out.appendChild(d);
     }
