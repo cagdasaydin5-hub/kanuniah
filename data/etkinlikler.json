@@ -326,9 +326,9 @@
    "tur": "webinar",
    "duzey": 4,
    "kapsam": "ulusal",
-   "baslangic": "2026-10-14",
-   "bitis": "2026-10-14",
-   "saat": "12.15",
+   "baslangic": "2026-12-08",
+   "bitis": "2026-12-08",
+   "saat": "12.15–13.00",
    "sehir": null,
    "yer": "asmde30dakika.com.tr",
    "bicim": "cevrimici",
@@ -344,8 +344,8 @@
    "konu": [
     "gastroenteroloji"
    ],
-   "not": null,
-   "dogrulama": "2026-10-12"
+   "not": "İlk duyuruda 14 Ekim 2026 idi; resmi sayfada tarih 8 Aralık 2026 olarak güncellendi. Canlı izleme için site üyeliği gerekir.",
+   "dogrulama": "2026-11-15"
   },
   {
    "id": "asm30-konstipasyon-2026",
@@ -900,8 +900,8 @@
    "tur": "webinar",
    "duzey": 4,
    "kapsam": "ulusal",
-   "baslangic": "2026-11-16",
-   "bitis": "2026-11-16",
+   "baslangic": "2026-12-10",
+   "bitis": "2026-12-10",
    "saat": "12.15–13.00",
    "sehir": null,
    "yer": null,
@@ -918,8 +918,8 @@
    "konu": [
     "diyabet"
    ],
-   "not": "Canlı izleme ve kayda erişim için site üyeliği gerekir.",
-   "dogrulama": "2026-11-01"
+   "not": "Canlı izleme ve kayda erişim için site üyeliği gerekir. Daha önce 16 Kasım olarak duyurulmuştu; resmi sayfada tarih 10 Aralık 2026 olarak güncellendi.",
+   "dogrulama": "2026-11-15"
   },
   {
    "id": "tahud-tv-diyabet-gunu-2026",
@@ -946,7 +946,7 @@
     "diyabet"
    ],
    "not": "Konuşmacı Prof. Dr. Mine Adaş, oturum başkanı Doç. Dr. Gökçe İşcan. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-11-01"
+   "dogrulama": "2026-11-15"
   },
   {
    "id": "tahud-tv-zona-yuk-2026",
@@ -974,7 +974,7 @@
     "zona"
    ],
    "not": "Konuşmacı Doç. Dr. Duygu Ayhan Başer, oturum başkanı Doç. Dr. İsmail Arslan. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-11-01"
+   "dogrulama": "2026-11-15"
   },
   {
    "id": "asm30-zor-konstipasyon-2026",
@@ -1001,7 +1001,7 @@
     "gastroenteroloji"
    ],
    "not": null,
-   "dogrulama": "2026-11-01"
+   "dogrulama": "2026-11-15"
   },
   {
    "id": "geriatri-kursu-17",
@@ -1112,7 +1112,7 @@
     "kadın sağlığı"
    ],
    "not": "Canlı izleme ve kayda erişim için site üyeliği gerekir.",
-   "dogrulama": "2026-11-01"
+   "dogrulama": "2026-11-15"
   },
   {
    "id": "tahud-tv-usye-2026",
@@ -1140,7 +1140,7 @@
     "solunum yolu enfeksiyonu"
    ],
    "not": "Konuşmacı Doç. Dr. Tuğba Bedir Demirdağ. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-11-01"
+   "dogrulama": "2026-11-15"
   },
   {
    "id": "tahud-tv-rsv-2026",
@@ -1169,7 +1169,7 @@
     "çocuk sağlığı"
    ],
    "not": "Konuşmacı Doç. Dr. Emel Okulu. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-11-01"
+   "dogrulama": "2026-11-15"
   },
   {
    "id": "asm30-soguk-alginligi-2026",
@@ -1197,7 +1197,7 @@
     "solunum"
    ],
    "not": "Canlı izleme ve kayda erişim için site üyeliği gerekir.",
-   "dogrulama": "2026-11-01"
+   "dogrulama": "2026-11-15"
   },
   {
    "id": "asi-kongresi-2026",
@@ -1252,7 +1252,7 @@
     "yaşlı sağlığı"
    ],
    "not": "Konuşmacı Prof. Dr. Dilşad Sindel, moderatör Dr. Bilge Mehmetzade. Canlı izleme ve kayda erişim için site üyeliği gerekir.",
-   "dogrulama": "2026-11-01"
+   "dogrulama": "2026-11-15"
   },
   {
    "id": "tahud-tv-kalp-yetersizligi-2026",
@@ -1387,7 +1387,7 @@
     "gastroenteroloji"
    ],
    "not": "Konuşmacı Uzm. Dr. Ender Ergüder, oturum başkanı Prof. Dr. Güzin Zeren Öztürk. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-11-01"
+   "dogrulama": "2026-11-15"
   },
   {
    "id": "tahud-tv-migren-2026",
@@ -1415,7 +1415,7 @@
     "migren"
    ],
    "not": "Konuşmacı Uzm. Dr. Gökçen Hatipoğlu. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-11-01"
+   "dogrulama": "2026-11-15"
   },
   {
    "id": "daahk-2027",
@@ -1490,7 +1490,7 @@
    },
    "konu": [],
    "not": "Önemli tarihler sitede görsel olarak yayımlanmış; metin olarak doğrulanınca eklenecek.",
-   "dogrulama": "2026-10-12"
+   "dogrulama": "2026-11-15"
   },
   {
    "id": "egekon-2027",
@@ -1568,7 +1568,7 @@
    },
    "konu": [],
    "not": "Tarihler henüz açıklanmadı (sitede 'güncellenmektedir').",
-   "dogrulama": "2026-11-01"
+   "dogrulama": "2026-11-15"
   },
   {
    "id": "tekirdag-ah-kongresi-2026",
@@ -1627,6 +1627,87 @@
    ],
    "not": "Bildiriler sözlü ve yüz yüze sunulur; bildiri son günü 20 Kasım 2026 Cuma saat 17:00, kabul bildirimi 25 Kasım 2026 Çarşamba. Kayıt ücreti asistan 6.408 TL, uzman 8.640 TL (KDV dahil).",
    "dogrulama": "2026-11-08"
+  },
+  {
+   "id": "asm30-viral-bakteriyel-2026",
+   "ad": "ASM'de 30 Dakika: Birinci Basamakta Viral mi, Bakteriyel mi? Klinik Karar Süreci",
+   "tur": "webinar",
+   "duzey": 4,
+   "kapsam": "ulusal",
+   "baslangic": "2026-11-25",
+   "bitis": "2026-11-25",
+   "saat": "12.15–13.00",
+   "sehir": null,
+   "yer": null,
+   "bicim": "cevrimici",
+   "duzenleyen": "İSTAHED Akademi (İstanbul Aile Hekimleri Derneği)",
+   "ucret": null,
+   "url": "https://istahedakademi.com/event/birinci-basamakta-viral-mi-bakteriyel-mi-klinik-karar-sureci/",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [
+    "enfeksiyon",
+    "akılcı antibiyotik"
+   ],
+   "not": "Canlı izleme ve kayda erişim için site üyeliği gerekir (yalnızca hekimler).",
+   "dogrulama": "2026-11-15"
+  },
+  {
+   "id": "asm30-mantar-klinik-2026",
+   "ad": "ASM'de 30 Dakika: Mantar Tedavisinde Klinik Yaklaşım: Doğru Hastaya Doğru Tedavi",
+   "tur": "webinar",
+   "duzey": 4,
+   "kapsam": "ulusal",
+   "baslangic": "2026-12-02",
+   "bitis": "2026-12-02",
+   "saat": "12.15–13.00",
+   "sehir": null,
+   "yer": null,
+   "bicim": "cevrimici",
+   "duzenleyen": "İSTAHED Akademi (İstanbul Aile Hekimleri Derneği)",
+   "ucret": null,
+   "url": "https://istahedakademi.com/event/mantar-tedavisinde-klinik-yaklasim-dogru-hastaya-dogru-tedavi/",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [
+    "dermatoloji",
+    "enfeksiyon"
+   ],
+   "not": "Canlı izleme ve kayda erişim için site üyeliği gerekir (yalnızca hekimler).",
+   "dogrulama": "2026-11-15"
+  },
+  {
+   "id": "guz-okulu-21",
+   "ad": "21. Aile Hekimliği Güz Okulu",
+   "tur": "okul",
+   "duzey": 3,
+   "kapsam": "ulusal",
+   "baslangic": "2027-09-22",
+   "bitis": "2027-09-26",
+   "saat": null,
+   "sehir": null,
+   "yer": null,
+   "bicim": "yuz-yuze",
+   "duzenleyen": "Türkiye Aile Hekimliği Vakfı (TAHEV)",
+   "ucret": null,
+   "url": "https://www.guzokulu.org/",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [],
+   "not": "Resmi sitede yalnızca tarih açıklandı; yer, kayıt ve bildiri bölümleri hazırlanıyor. Bilimsel sekretarya TAHEV.",
+   "dogrulama": "2026-11-15"
   }
  ]
 }

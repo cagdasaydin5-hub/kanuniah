@@ -4,6 +4,253 @@
  },
  "issues": [
   {
+   "id": "2026-11-15",
+   "title": "Hafta 46",
+   "range": "9 – 15 Kasım 2026",
+   "date": "2026-11-15",
+   "items": [
+    {
+     "id": "stream-statin-birakma-yasli",
+     "pmid": "43001742",
+     "doi": "10.1056/NEJMoa2606634",
+     "journal": "N Engl J Med",
+     "date": "2026-11-07",
+     "title_en": "Discontinuing Statins in Older Adults without Cardiovascular Disease",
+     "title": "Kardiyovasküler hastalığı olmayan ≥70 yaş çoklu kronik hastalıklı bireylerde statini bırakmak 2 yılda devam ettirmekten kötü değil (non-inferior)",
+     "design": "Uluslararası açık etiketli RKÇ (STREAM) · n=1880 · ort. yaş 77,5 · medyan izlem 103 hafta",
+     "tags": [
+      "yaşlı sağlığı",
+      "statin",
+      "ilaç azaltma (deprescribing)",
+      "primer koruma"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 2,
+      "etki": 2
+     },
+     "effect": "Pratiği değiştirebilir",
+     "what": "Primer korunma amacıyla statin kullanan, en az iki kronik hastalığı olan ≥70 yaş bireyler statini bırakma ya da sürdürme kollarına ayrıldı. Birincil sonlanım (ölümcül olmayan MI, iskemik inme ya da tüm nedenli ölüm) açısından 2 yıllık olaysız sağkalım farkı −2,0 hafta (%95 GA −3,7 ile −0,3) idi ve önceden belirlenen −5,2 haftalık sınırın içinde kaldı. Ham olay oranı bırakma kolunda %12,7, devam kolunda %9,2; ciddi advers olay %43,0'e karşı %39,8 idi.",
+     "practice": "Çoklu ilaç kullanan, çoklu kronik hastalığı olan ileri yaştaki hastada primer koruma statininin bırakılması, kısa vadede kabul edilebilir bir seçenek olarak hastayla birlikte konuşulabilir. Ham olay sayısının bırakma kolunda daha yüksek olması nedeniyle karar bireysel risk, yaşam beklentisi ve hasta tercihine göre verilmelidir.",
+     "limits": "Açık etiketli tasarım; izlem yalnızca 2 yıl; non-inferiorite sınırı olay sayısındaki mutlak farkı dışlamaya yetmeyebilir; bilinen kardiyovasküler hastalığı olanlar dahil edilmedi.",
+     "rel": [
+      "esc-lipid-2025",
+      "acc-aha-lipid-2026",
+      "yasli-degerlendirme-ah"
+     ]
+    },
+    {
+     "id": "optimal-stroke-sks120",
+     "pmid": "43001741",
+     "doi": "10.1056/NEJMoa2612924",
+     "journal": "N Engl J Med",
+     "date": "2026-11-07",
+     "title_en": "Intensive Blood-Pressure Control in Patients with Previous Ischemic Stroke",
+     "title": "Geçirilmiş iskemik inme/GİA'lı hastada sistolik hedef <120 mmHg, <140 mmHg'ye göre majör kardiyovasküler olayları azaltıyor",
+     "design": "Çok merkezli açık etiketli RKÇ (OPTIMAL-STROKE), Brezilya, 30 merkez · n=4368 · medyan izlem 3,9 yıl",
+     "tags": [
+      "hipertansiyon",
+      "inme sonrası ikincil korunma",
+      "kardiyovasküler"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 2,
+      "etki": 2
+     },
+     "effect": "Pratiği değiştirebilir",
+     "what": "İzlemde ortalama sistolik basınç yoğun kolda 122,0, standart kolda 135,2 mmHg idi. Birincil bileşik sonlanım (KV ölüm, ölümcül olmayan MI ya da inme, kararsız angina veya kalp yetersizliği nedeniyle yatış) yoğun kolda %10,9, standart kolda %13,5 oldu (HR 0,79; %95 GA 0,67–0,94). Ciddi advers olaylar benzerdi; ancak bileşik böbrek sonlanımı (eGFR'de ≥%50 kalıcı düşüş ya da son dönem böbrek hastalığı) yoğun kolda daha sıktı.",
+     "practice": "İnme ya da GİA geçirmiş, tolere eden hastada sistolik basıncı 120'li değerlere indirmeyi hedeflemek kardiyovasküler olayları azaltabilir. Yoğun hedef izlenirken böbrek fonksiyonu (kreatinin/eGFR), ortostatik semptomlar ve düşme riski düzenli kontrol edilmelidir.",
+     "limits": "Açık etiketli; tek ülkede yapıldı; böbrek olumsuz etkisi dikkat gerektiriyor; hemorajik inme sonrası hastalar kapsanmıyor.",
+     "rel": [
+      "thur-2025",
+      "esc-ht-2024",
+      "hsgm-ht-2025"
+     ]
+    },
+    {
+     "id": "optimal-diabetes-sks120",
+     "pmid": "43001746",
+     "doi": "10.1056/NEJMoa2612922",
+     "journal": "N Engl J Med",
+     "date": "2026-11-07",
+     "title_en": "Intensive Blood-Pressure Lowering in Patients with Type 2 Diabetes",
+     "title": "Tip 2 diyabette sistolik hedef <120 mmHg, <140 mmHg'ye göre majör kardiyovasküler olayları anlamlı azaltmadı",
+     "design": "Çok merkezli açık etiketli RKÇ (OPTIMAL-DIABETES), Brezilya · n=9476 · medyan izlem 4,0 yıl",
+     "tags": [
+      "diyabet",
+      "hipertansiyon",
+      "kardiyovasküler"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Mevcut yaklaşımı destekler",
+     "what": "Yüksek kardiyovasküler riskli, hipertansif tip 2 diyabetlilerde izlemde ortalama sistolik basınç yoğun kolda 121,8, standart kolda 135,4 mmHg idi. Birincil bileşik sonlanım %6,0'ya karşı %6,7 oldu (HR 0,90; %95 GA 0,77–1,06; p=0,20). Ciddi advers olaylar benzerdi (%14,9 ve %14,6).",
+     "practice": "Diyabetli hipertansif hastada sistolik basıncı 120'nin altına zorlamak bu çalışmada anlamlı ek yarar sağlamadı; aynı hafta yayımlanan BPROAD bilişsel analizinde de demans/hafif bilişsel bozulma bileşiği değişmedi (BMJ). Kılavuz hedefleri ve hastanın toleransı esas alınarak bireysel hedef belirlenmeye devam edilir.",
+     "limits": "Açık etiketli; olay oranı beklenenden düşük olduğundan güç sınırlı olabilir; tek ülke; önceki BPROAD sonuçlarıyla birlikte yorumlanmalı.",
+     "rel": [
+      "ada-soc-2026",
+      "temd-dm-2026",
+      "thur-2025",
+      "esc-ht-2024"
+     ]
+    },
+    {
+     "id": "tek-tablet-ekip-ht",
+     "pmid": "43000001",
+     "doi": "10.1001/jama.2026.24169",
+     "journal": "JAMA",
+     "date": "2026-11-08",
+     "title_en": "Implementation of Single-Pill Combination Therapy Through Team-Based Care for Hypertension Control in Resource-Constrained Settings: A Cluster Randomized Clinical Trial",
+     "title": "Birinci basamakta ekip temelli bakımla uygulanan tek tablet kombinasyon tedavisi, kontrolsüz hipertansiyonda sistolik basıncı 18 ayda 10 mmHg daha fazla düşürdü",
+     "design": "Pragmatik küme randomize çalışma, Kolombiya ve Jamaika'da 40 birinci basamak kliniği · n=1706 · 18 ay (+24 ay izlem)",
+     "tags": [
+      "hipertansiyon",
+      "birinci basamak",
+      "ilaç uyumu",
+      "ekip temelli bakım"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 0,
+      "bb": 2,
+      "etki": 2
+     },
+     "effect": "Pratiği değiştirebilir",
+     "what": "Müdahale kliniklerinde hekim-hemşire eğitimi, sağlık koçluğu, evde kan basıncı ölçümü ve geri bildirimle tek tablet kombinasyonlar kullanıldı. Sistolik basınç müdahale grubunda 19,1, standart bakımda 9,0 mmHg düştü (fark −10,1 mmHg; %95 GA −13,3 ile −6,9). 18. ayda <130/80 mmHg'ye ulaşma oranı %69,5'e karşı %29,2 idi; ciddi advers olaylar benzerdi (%7,9 ve %9,9).",
+     "practice": "Kontrolsüz hipertansiyonda tedaviyi erken dönemde tek tablette sabit kombinasyonla yoğunlaştırmak, ev ölçümü ve hemşire/ekip izlemiyle birleştirildiğinde ASM düzeyinde kontrol oranını belirgin artırabilir.",
+     "limits": "Açık etiketli; birincil sonlanım kan basıncı (ara sonlanım); kaynakları kısıtlı iki ülkede yapıldı; müdahale çok bileşenli olduğundan hangi bileşenin etkili olduğu ayrıştırılamıyor.",
+     "rel": [
+      "thur-2025",
+      "hsgm-ht-2025",
+      "esc-ht-2024"
+     ]
+    },
+    {
+     "id": "survodutid-cvot",
+     "pmid": "43003106",
+     "doi": "10.1016/S0140-6736(26)02140-9",
+     "journal": "Lancet",
+     "date": "2026-11-09",
+     "title_en": "Cardiovascular outcomes with survodutide in adults with obesity at increased cardiovascular risk (SYNCHRONIZE-CVOT): a double-blind, randomised, placebo-controlled, phase 3 trial",
+     "title": "Glukagon/GLP-1 ikili agonisti survodutid, obezitede kardiyovasküler olay riskini artırmıyor (güvenlik çalışması); gastrointestinal yan etkiye bağlı bırakma sık",
+     "design": "Faz 3, çift kör, plasebo kontrollü RKÇ (SYNCHRONIZE-CVOT), 34 ülke · n=5530 · medyan 22 ay",
+     "tags": [
+      "obezite",
+      "kardiyovasküler güvenlilik",
+      "inkretin tedavileri"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 1,
+      "etki": 0
+     },
+     "effect": "Bilgi amaçlı",
+     "what": "BKİ ≥27 ve yerleşik KVH ya da risk faktörleri olan erişkinlerde birincil bileşik sonlanım survodutid kollarında %3,7, plaseboda %4,1 oldu (HR 0,89; %95 GA 0,67–1,18; non-inferiorite sağlandı). Bulantı %48–49'a karşı %12, kusma %32–34'e karşı %5 idi; gastrointestinal yan etki nedeniyle tedaviyi bırakma %19–21'e karşı %2 oldu.",
+     "practice": "Survodutid henüz rutin kullanımda değil; çalışma yalnızca kardiyovasküler güvenliliği gösteriyor, yararı göstermiyor. İnkretin temelli yeni ajanlarda gastrointestinal yan etkiler tedaviye uyumu belirleyen ana etken olarak danışmanlıkta ele alınmalı.",
+     "limits": "Güvenlik (non-inferiorite) çalışması, üstünlük için güçlendirilmemiş; izlem kısa; üretici destekli.",
+     "rel": [
+      "temd-obezite-2024",
+      "who-glp1-obezite-2025"
+     ]
+    },
+    {
+     "id": "orforglipron-uyku-apnesi",
+     "pmid": "43002161",
+     "doi": "10.1001/jama.2026.24080",
+     "journal": "JAMA",
+     "date": "2026-11-09",
+     "title_en": "Orforglipron for Obstructive Sleep Apnea: Results From 2 Randomized Clinical Trials (ATTAIN-OSA)",
+     "title": "Oral GLP-1 agonisti orforglipron, obez/fazla kilolu orta-ağır OUA'lı erişkinlerde apne-hipopne indeksini 52 haftada plaseboya göre saatte 12–13 olay azalttı",
+     "design": "İki faz 3, çift kör, plasebo kontrollü RKÇ (ATTAIN-OSA), 9 ülke · n=363 ve n=349 · 52 hafta",
+     "tags": [
+      "obezite",
+      "obstrüktif uyku apnesi",
+      "inkretin tedavileri"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 0,
+      "bb": 1,
+      "etki": 1
+     },
+     "effect": "Mevcut yaklaşımı destekler",
+     "what": "PAP kullanmayanlarda (çalışma 1) AHİ değişimi orforglipron ile −17,8, plaseboyla −4,5 oldu (fark −13,2; %95 GA −17,7 ile −8,7); PAP kullananlarda (çalışma 2) fark −12,0 (%95 GA −17,1 ile −6,9) idi. Yedi temel ikincil sonlanımın altısı (hipoksik yük, uykuyla ilişkili bozulma skoru dahil) orforglipron lehineydi. Gastrointestinal olaylar %68–71'e karşı %37 sıklıktaydı.",
+     "practice": "Obezite ile birlikte orta-ağır uyku apnesi olan hastada kilo kaybı sağlayan farmakoterapi OUA şiddetini azaltabilir; ancak AHİ ortalama 50'nin üzerinde başladığından çoğu hastada PAP gereksinimi sürer. Horlama ve gündüz uykululuğu olan obez hastayı OUA açısından sorgulamak ve uygun olanı uyku değerlendirmesine yönlendirmek önemini koruyor.",
+     "limits": "Birincil sonlanım AHİ (ara sonlanım); kardiyovasküler sonuç ve uzun dönem veri yok; üretici destekli; orforglipron Türkiye'de ruhsatlı değil.",
+     "rel": [
+      "temd-obezite-2024",
+      "who-glp1-obezite-2025"
+     ]
+    },
+    {
+     "id": "cochrane-gebelik-d-vitamini-doz",
+     "pmid": "43012372",
+     "doi": "10.1002/14651858.CD013446.pub2",
+     "journal": "Cochrane Database Syst Rev",
+     "date": "2026-11-11",
+     "title_en": "Regimens of vitamin D supplementation for women during pregnancy",
+     "title": "Gebelikte yüksek doz D vitamini, düşük doza göre preeklampsi, gestasyonel diyabet, preterm doğum ve düşük doğum ağırlığını azaltmıyor",
+     "design": "Cochrane sistematik derleme ve meta-analiz (güncelleme) · 25 RKÇ, 7008 gebe, 14 ülke",
+     "tags": [
+      "gebelik",
+      "D vitamini",
+      "doğum öncesi bakım"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Mevcut yaklaşımı destekler",
+     "what": ">600 IU/gün ile ≤600 IU/gün karşılaştırıldığında preeklampsi (RR 0,90; %95 GA 0,65–1,25), gestasyonel diyabet (RR 0,85; 0,52–1,40), preterm doğum (RR 1,02; 0,78–1,32) ve düşük doğum ağırlığı (RR 0,90; 0,71–1,14) açısından belirgin fark bulunmadı. ≥4000 IU/gün ile <4000 IU/gün karşılaştırmasında da sonuçlar benzerdi; kanıt kesinliği çoğunlukla düşüktü. Advers olay az bildirildi ve gruplar arasında fark görülmedi.",
+     "practice": "Gebelikte rutin D vitamini desteği ulusal programa göre sürdürülür; maternal ya da yenidoğan sonuçlarını iyileştirmek amacıyla standart dozun üzerine çıkmayı destekleyen kanıt yok.",
+     "limits": "Çalışmaların yan riski karışık; çoğu sonuçta kesinlik düşük; doz rejimleri ve başlangıç D vitamini düzeyleri heterojen.",
+     "rel": [
+      "dob-rehberi-2026",
+      "d-vitamini-demir"
+     ]
+    },
+    {
+     "id": "hpv-asi-sms-hekim-egitimi",
+     "pmid": "43024238",
+     "doi": "10.1001/jamanetworkopen.2026.42247",
+     "journal": "JAMA Netw Open",
+     "date": "2026-11-02",
+     "title_en": "Clinician Training, Text Messages, and Human Papillomavirus Vaccination Among Children Aged 10 to 12 Years: A Randomized Clinical Trial",
+     "title": "Hekim iletişim eğitimi ve ebeveynlere SMS, randomizasyona göre analizde 10–12 yaş HPV aşılamasını artırmadı; mesajı fiilen alan ailelerde aşılama daha yüksekti",
+     "design": "İki düzeyli iç içe RKÇ, Florida'da 30 çocuk birinci basamak kliniği · 59 hekim, 7234 çocuk · 2 yıl izlem",
+     "tags": [
+      "aşılama",
+      "HPV",
+      "iletişim",
+      "hatırlatma sistemleri"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 0,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Mevcut yaklaşımı destekler",
+     "what": "Klinikler 'paket' (HPV'yi diğer ergen aşılarıyla birlikte sunma), 'kanserden korunma odaklı' ya da ertelenmiş eğitim gruplarına; çocuklar da buna uygun SMS ya da mesajsız gruplara ayrıldı. Randomize grup karşılaştırmasında aşıya başlama ve tamamlama oranları farklı değildi. Mesajı fiilen alanlarda başlama (RR 1,17; %95 GA 1,08–1,26) ve tamamlama (RR 1,29; 1,06–1,56) daha yüksekti; ancak bu analiz randomizasyonu korumuyor.",
+     "practice": "Ebeveynlere yönelik hatırlatma mesajlarının ulaştırılabildiği durumda aşılamaya katkı sağlayabileceği düşünülebilir; kısa bir hekim iletişim eğitimi tek başına aşı oranını değiştirmedi. ASM'de aşı hatırlatma sistemleri ile güçlü ve net hekim önerisi birlikte kullanılmalıdır.",
+     "limits": "Tek eyalet; tüm kliniklerde zamanla belirgin artış olduğundan grup farkını saptamak güçleşti; 'mesajı alanlar' analizi gözlemsel nitelikte.",
+     "rel": [
+      "asi-takvimi"
+     ]
+    }
+   ]
+  },
+  {
    "id": "2026-11-08",
    "title": "Hafta 45",
    "range": "31 Ekim – 8 Kasım 2026",
