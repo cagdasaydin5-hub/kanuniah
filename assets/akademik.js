@@ -137,10 +137,14 @@
     k.appendChild(bas);
     if (h.seminer.length) k.appendChild(seminerler(h, kisi));
     var alt = el("p", "ak-kart-alt");
-    [["Makale", h.makale], ["Olgu", h.olgu]].forEach(function (x) {
+    [["Makale", h.makale, "makale"], ["Olgu", h.olgu, "olgu"]].forEach(function (x) {
       if (!x[1].length) return;
       alt.appendChild(el("span", "ak-et", x[0]));
-      alt.appendChild(document.createTextNode(x[1].join(", ") + "   "));
+      x[1].forEach(function (a, i) {
+        if (i) alt.appendChild(document.createTextNode(", "));
+        alt.appendChild(sunumLink(x[2], a, h.tarih, el("span", null, a)));
+      });
+      alt.appendChild(document.createTextNode("   "));
     });
     if (h.danisman) { alt.appendChild(el("span", "ak-et", "Danışman")); alt.appendChild(document.createTextNode(tamAd(h.danisman))); }
     if (alt.childNodes.length) k.appendChild(alt);
