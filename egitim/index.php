@@ -41,7 +41,6 @@ if (rol()) {
     $h = file_get_contents(__DIR__ . '/' . $f);
     $yon = rol() === 'yonetici'
         ? '<a class="tile" href="yonetim.php"><b>Dosya yönetimi</b><span>Yükle, klasör aç, yeniden adlandır, taşı, sil · yalnızca yönetici</span></a>'
-          . '<a class="tile" href="api-anahtari.php"><b>API anahtarı</b><span>Haftalık güncelleme görevinin siteye yazma anahtarı · yalnızca yönetici</span></a>'
         : '';
     echo str_replace('<!--YONETIM-->', $yon, $h);
     exit;

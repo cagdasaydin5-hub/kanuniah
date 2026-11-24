@@ -169,25 +169,6 @@ Repo ayarlarında (Settings → Secrets and variables → Actions) şu gizli de�
 | `FTP_PASSWORD` | O hesabın şifresi |
 | `FTP_DIR` | Yükleme klasörü, ör. `/domains/kanuniah.tr/public_html/` (sonu `/` ile bitmeli) |
 
-## Haftalık güncelleme uç noktası (`admin/guncelle.php`)
-
-Haftalık güncelleme görevi `data/rehberler.json`, `makaleler.json`, `etkinlikler.json` ve `meta.json` dosyalarını
-git ya da FTP olmadan doğrudan sunucuya yazar; değişiklik hemen sitede görünür.
-
-- **Anahtar:** Eğitim › API anahtarı (`egitim/api-anahtari.php`, yalnızca yönetici). Anahtar bir kez gösterilir;
-  sunucuda yalnızca sha256 özeti durur (`admin/.htanahtar.php`, depoda yok). Yenisi eskisini hemen geçersiz kılar.
-- **Durum:** `GET /admin/guncelle.php`, başlık `Authorization: Bearer <anahtar>` (olmazsa `X-Anahtar: <anahtar>`).
-- **Yazma:** `POST /admin/guncelle.php`, gövde `{"dosyalar": {"makaleler": {...}, "meta": {...}}, "not": "Haftalık güncelleme 2026-11-29"}`.
-  Yalnızca bu dört dosya yazılabilir. `"deneme": true` yalnızca denetler.
-- **Denetim:** `tools/validate.py`'nin bu dosyalara ilişkin kuralları sunucuda da uygulanır (gönderilmeyen dosyalar sunucudaki hâliyle);
-  hata varsa hiçbir dosya yazılmaz, yanıtta hata listesi döner.
-- **Güvenlik:** Önce yedek (`admin/.yedek/`, dosya başına son 30 sürüm), sonra geçici dosya + rename. Her istek
-  `admin/.yedek/kayit.log`'a bir satır yazar. Aynı IP'den saatte 10 yanlış anahtar → o IP bir saat kilitli.
-  `admin/.htaccess` yalnızca `guncelle.php`'yi açar.
-- **sitemap.xml:** Değişen sayfaların `lastmod`'u `meta.checked` tarihine çekilir.
-- **Asıl kopya sunucuda:** Bu dört dosyanın güncel hâli canlı sitededir (`https://kanuniah.tr/data/*.json`). Depodaki
-  kopyaları değiştiren bir gönderim yayınlanmaz (deploy.yml ilk adımı durdurur); böylece eski kopya canlı içeriğin üzerine yazılmaz.
-
 ## İçerik kuralları
 
 - Yalnızca resmi kaynaklara link; belge kopyası yok.

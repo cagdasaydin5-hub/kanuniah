@@ -296,11 +296,35 @@
    ]
   },
   {
-   "id": "gold-2026",
+   "id": "gold-2027",
    "cat": "kronik",
    "kind": "guide",
    "scope": "INT",
    "status": "guncel",
+   "title": "GOLD 2027 Raporu ve Cep Kılavuzu (KOAH)",
+   "org": "GOLD",
+   "year": 2027,
+   "pub": "2026-11-15",
+   "summary": "Yıllık güncelleme. Erken, hafif, genç yaşta KOAH ve pre-KOAH tanımları yenilendi; FEV1/FVC oranının yorumu için spirometri ölçütleri genişletildi. A grubunda başlangıç tedavisi önerisi değiştirildi; aşılama bilgileri, yeni biyolojik tedaviler ve alevlenme sonrası kardiyovasküler risk bölümleri güncellendi. Pulmoner rehabilitasyon, fiziksel aktivite ve öz yönetim bölümleri genişletildi; farmakolojik ve farmakolojik olmayan kontrol listeleri eklendi.",
+   "note": "Rapor v1.0 15 Kasım 2026, temel değişiklikler özeti 13 Kasım 2026 tarihli. A grubu tedavisindeki yeni ifade için rapor metnine bakın.",
+   "url": "https://goldcopd.org/2027-gold-report-and-pocket-guide/",
+   "alt": [
+    {
+     "label": "Temel değişiklikler (PDF)",
+     "url": "https://goldcopd.org/wp-content/uploads/2026/11/KEY-CHANGES-GOLD-2027-13Nov2026.pdf"
+    }
+   ],
+   "kw": "koah copd gold 2027 inhaler alevlenme spirometri pre-koah pulmoner rehabilitasyon",
+   "aud": [
+    "hekim"
+   ]
+  },
+  {
+   "id": "gold-2026",
+   "cat": "kronik",
+   "kind": "guide",
+   "scope": "INT",
+   "status": "arsiv",
    "title": "GOLD 2026 Raporu ve Cep Kılavuzu (KOAH)",
    "org": "GOLD",
    "year": 2026,
