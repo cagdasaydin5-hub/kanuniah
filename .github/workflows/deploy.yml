@@ -17,6 +17,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Haftalık içerik (rehberler, makaleler, etkinlikler, meta) artık sunucuda /admin/guncelle.php ile yazılır.
+      # Depodaki eski kopyası canlı sürümün üzerine yazılmasın diye bu dosyaları değiştiren gönderim yayınlanmaz.
+      - name: Haftalık içerik dosyaları depodan yüklenmesin
+        if: github.event_name == 'push' && github.event.before != '0000000000000000000000000000000000000000'
+        run: |
+          git fetch -q --depth=1 origin "${{ github.event.before }}" || exit 0
+          if git diff --name-only "${{ github.event.before }}" HEAD | grep -E '^data/(rehberler|makaleler|etkinlikler|meta)\.json$'; then
+            echo "::error::Bu dosyalar canlı sitede /admin/guncelle.php ile güncelleniyor; depodan yüklenirse canlı içerik eskir. Değişikliği uç nokta üzerinden yapın."
+            exit 1
+          fi
+
       - name: Araç dizini ve service worker'ı üret
         run: python3 tools/build_pwa.py
 
