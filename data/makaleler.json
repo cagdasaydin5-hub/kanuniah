@@ -4,6 +4,248 @@
  },
  "issues": [
   {
+   "id": "2026-11-22",
+   "title": "Hafta 47",
+   "range": "16 – 22 Kasım 2026",
+   "date": "2026-11-22",
+   "items": [
+    {
+     "id": "step-young-semaglutid-cocuk",
+     "pmid": "43037562",
+     "doi": "10.1056/NEJMoa2604058",
+     "journal": "N Engl J Med",
+     "date": "2026-11-16",
+     "title_en": "Semaglutide for the Treatment of Obesity in Children 6 to <12 Years of Age.",
+     "title": "6–12 yaş obez çocuklarda haftalık semaglutid 68 haftada BKİ'yi plaseboya göre yaklaşık 16 puan daha fazla düşürdü",
+     "design": "Faz 3 çift kör plasebo kontrollü RKÇ (STEP Young) · n=167 · 2:1 randomizasyon · 104 hafta tedavi + 7 hafta arınma",
+     "tags": [
+      "obezite",
+      "pediatri",
+      "GLP-1 RA"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 0,
+      "bb": 1,
+      "etki": 1
+     },
+     "effect": "Dikkat gerektirir",
+     "what": "Yaşam tarzı danışmanlığına ek olarak semaglutid ya da plasebo verildi. 68. haftada BKİ değişimi semaglutidle %−13,5, plaseboyla %+2,7 idi (fark −16,2 puan; %95 GA −19,4 ile −12,9). BKİ kategorisinde düşüş %79'a karşı %23 oldu; obezite eşiğinin (yaş-cinsiyete göre 95. persentil) altına inenler %38'e karşı %2 idi. 104. haftada fark −17,8 puan olarak sürdü. Gastrointestinal yan etkiler semaglutidle daha sıktı.",
+     "practice": "Okul çağı obez çocukta ilaç tedavisi bundan sonra daha sık gündeme gelecek; birinci basamağın rolü erken tanı, yaşam tarzı danışmanlığı ve çocuk endokrinolojisine uygun yönlendirmedir. Bu yaş grubunda semaglutid ruhsatı ve geri ödeme durumu ayrıca kontrol edilmelidir.",
+     "limits": "Küçük örneklem; ilaç firması destekli; birincil sonlanım ara sonuç (BKİ); uzun dönem büyüme, ergenlik ve ilaç bırakıldıktan sonraki kilo seyri belirsiz.",
+     "rel": [
+      "temd-obezite-2024",
+      "who-glp1-obezite-2025",
+      "bce-izlem-2018"
+     ]
+    },
+    {
+     "id": "surmount-adolescents-tirzepatid",
+     "pmid": "43035096",
+     "doi": "10.1001/jama.2026.23420",
+     "journal": "JAMA",
+     "date": "2026-11-15",
+     "title_en": "Tirzepatide in Adolescents With Obesity: The SURMOUNT-ADOLESCENTS Randomized Clinical Trial.",
+     "title": "Obez ergenlerde tirzepatid 72 haftada BKİ'yi %18,5 azalttı; plaseboda BKİ değişmedi",
+     "design": "Faz 3 çift kör plasebo kontrollü RKÇ (SURMOUNT-ADOLESCENTS) · n=160 · 12–<18 yaş · 72 hafta · 6 ülke",
+     "tags": [
+      "obezite",
+      "ergen sağlığı",
+      "GIP/GLP-1 RA"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 0,
+      "bb": 1,
+      "etki": 1
+     },
+     "effect": "Dikkat gerektirir",
+     "what": "Obez ya da en az bir obeziteye bağlı komplikasyonu olan fazla kilolu ergenlere sağlıklı yaşam programına ek olarak tirzepatid (en yüksek tolere edilen doz 5, 10 ya da 15 mg) veya plasebo verildi. 72. haftada BKİ tirzepatidle %18,5 azaldı, plaseboyla %0,5 arttı (fark −19,0 puan; %95 GA −23,9 ile −14,1). BKİ'de en az %5 azalma %79,6'ya karşı %28,5 idi; 10 önemli ikincil sonlanımın tümü tirzepatid lehineydi. En sık yan etkiler hafif-orta gastrointestinal yakınmalardı.",
+     "practice": "Ergen obezitesinde ilaç seçeneklerinin genişlediğini gösteriyor; aile hekimi komplikasyon taraması, yaşam tarzı desteği ve uygun hastanın uzmana yönlendirilmesinde rol alır. Türkiye'de ergenlerde ruhsat durumu ayrıca kontrol edilmelidir.",
+     "limits": "İlaç firması destekli; ara sonlanım (BKİ); 72 hafta sonrası ve ilaç bırakıldığında kilo seyri, büyüme ve psikososyal etkiler bilinmiyor.",
+     "rel": [
+      "temd-obezite-2024",
+      "who-glp1-obezite-2025",
+      "ergen-cep"
+     ]
+    },
+    {
+     "id": "cochrane-pr-koah-alevlenme",
+     "pmid": "43042775",
+     "doi": "10.1002/14651858.CD005305.pub5",
+     "journal": "Cochrane Database Syst Rev",
+     "date": "2026-11-17",
+     "title_en": "Pulmonary rehabilitation following exacerbations of chronic obstructive pulmonary disease.",
+     "title": "KOAH alevlenmesi sonrası pulmoner rehabilitasyon yeniden yatışı azaltıyor, yaşam kalitesi ve yürüme mesafesini belirgin artırıyor",
+     "design": "Cochrane sistematik derleme ve meta-analiz (güncelleme) · 40 RKÇ · n=2825",
+     "tags": [
+      "KOAH",
+      "rehabilitasyon",
+      "kronik hastalık"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 2,
+      "etki": 2
+     },
+     "effect": "Pratiği değiştirebilir",
+     "what": "Alevlenme sonrası en az egzersiz eğitimi içeren rehabilitasyon olağan bakımla karşılaştırıldı. Rehabilitasyon yeniden yatış riskini muhtemelen azaltıyor (OR 0,52; %95 GA 0,32–0,84; orta kesinlik). SGRQ toplam skorunda 9,05 puanlık iyileşme (minimal önemli fark 4 puan) ve 6 dakika yürüme mesafesinde 57,8 m artış yüksek kesinlikte gösterildi. Mortalite üzerindeki etki belirsiz (OR 0,84; %95 GA 0,49–1,43; düşük kesinlik).",
+     "practice": "KOAH alevlenmesiyle yatıp taburcu olan hastanın pulmoner rehabilitasyona yönlendirilmesi, taburculuk sonrası ilk aile hekimi görüşmesinin rutin bir parçası olmalı. Evde sağlık kapsamındaki hastalarda ev temelli egzersiz programları da seçenek olarak düşünülebilir.",
+     "limits": "Programlar arasında yüksek heterojenlik; yaşam kalitesi sonuçlarında körleme yok; bazı yeni çalışmalarda yatış ve mortalite yararı görülmedi; küçük çalışma etkisi olasılığı.",
+     "rel": [
+      "gold-2027",
+      "gogus-evde-saglik"
+     ]
+    },
+    {
+     "id": "bproad-kognisyon-dm",
+     "pmid": "43020520",
+     "doi": "10.1136/bmj-2026-101209",
+     "journal": "BMJ",
+     "date": "2026-11-12",
+     "title_en": "Effect of intensive blood pressure control on cognitive outcomes and brain structures in adults with type 2 diabetes: prespecified analysis of secondary outcomes of BPROAD randomised controlled trial.",
+     "title": "Tip 2 diyabette sistolik KB hedefinin <120 mmHg tutulması demans ya da hafif bilişsel bozukluğu azaltmadı, ama zararı da görülmedi",
+     "design": "Çok merkezli açık etiketli RKÇ'nin önceden belirlenmiş ikincil analizi (BPROAD) · n=12 434 · medyan izlem 3,8 yıl · Çin",
+     "tags": [
+      "hipertansiyon",
+      "diyabet",
+      "bilişsel bozukluk"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Mevcut yaklaşımı destekler",
+     "what": "≥50 yaş, KB'si yüksek ve kardiyovasküler riski artmış tip 2 diyabetlilerde yoğun (<120 mmHg) ve standart (<140 mmHg) sistolik hedef karşılaştırıldı. Bir yılda ortalama sistolik KB 121,6'ya karşı 133,2 mmHg idi. Demans ya da hafif bilişsel bozukluk 100 kişi-yılda 3,69'a karşı 3,89 olayla farklı değildi (HR 0,96; %95 GA 0,86–1,06). MR alt grubunda yoğun kolda beyaz cevher lezyon artışı daha azdı.",
+     "practice": "Diyabetli hipertansif hastada yoğun KB hedefi seçilirken bilişsel koruma beklentisiyle karar verilmemeli; hedef kardiyovasküler yarar, tolerans ve düşme riskine göre bireyselleştirilmeli. Yoğun kontrolün bilişi kötüleştirmediği bulgusu güven verici.",
+     "limits": "İkincil analiz; açık etiket; yalnızca Çin popülasyonu; MR alt grubu küçük ve izlem kaybı fazla; 4 yıllık izlem demans gelişimi için kısa olabilir.",
+     "rel": [
+      "thur-2025",
+      "esc-ht-2024",
+      "temd-dm-2026",
+      "ada-soc-2026"
+     ]
+    },
+    {
+     "id": "comeback-fiziksel-aktivite",
+     "pmid": "43052007",
+     "doi": "10.1136/bmj-2026-101157",
+     "journal": "BMJ",
+     "date": "2026-11-18",
+     "title_en": "Physical activity coaching and text messaging for adults with mobility limitations (ComeBACK): hybrid type 1 effectiveness implementation randomised controlled trial.",
+     "title": "Hareket kısıtlılığı olan erişkinlerde telefonla fizyoterapist koçluğu günlük adım sayısını yaklaşık 900 artırdı; yalnızca SMS etkisiz kaldı",
+     "design": "Üç kollu pragmatik RKÇ (ComeBACK) · n=512 · ort. yaş 69 · 6 ay · Avustralya",
+     "tags": [
+      "yaşlı sağlığı",
+      "fiziksel aktivite",
+      "multimorbidite"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 0,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Mevcut yaklaşımı destekler",
+     "what": "800 m yürümekte güçlük çeken ancak evden yardımsız çıkabilen erişkinler 2 haftada bir telefonla fizyoterapist koçluğu, tek yönlü SMS ya da bekleme listesine ayrıldı. Altıncı ayda koçluk grubunda günlük adım bekleme listesine göre 931 (%95 GA 409–1452), SMS grubuna göre 571 fazlaydı. SMS grubu ile bekleme listesi arasında anlamlı fark yoktu (359 adım). Ciddi yan etki görülmedi.",
+     "practice": "Çoklu kronik hastalığı ve hareket kısıtlılığı olan yaşlıda kişiye özel, düzenli takipli aktivite danışmanlığı etkili; yalnızca hatırlatma mesajı yeterli olmayabilir. Kronik hastalık izlem görüşmelerinde kısa hedefli aktivite danışmanlığı ve izlem planlanabilir.",
+     "limits": "Birincil sonlanım adım sayısı (ara sonuç); katılımcı ve fizyoterapist kör değil; etki orta düzeyde; 6 ay sonrası kalıcılık belirsiz.",
+     "rel": [
+      "yasli-degerlendirme-ah",
+      "yasli-tani-tedavi"
+     ]
+    },
+    {
+     "id": "cochrane-demir-destegi-cocuk",
+     "pmid": "43039028",
+     "doi": "10.1002/14651858.CD013227.pub2",
+     "journal": "Cochrane Database Syst Rev",
+     "date": "2026-11-17",
+     "title_en": "Daily iron supplementation for prevention or treatment of iron-deficiency anaemia in infants, children, and adolescents.",
+     "title": "0–19 yaşta günlük oral demir desteği demir eksikliği anemisini belirgin azaltıyor, büyüme ve enfeksiyon sıklığını değiştirmiyor",
+     "design": "Cochrane sistematik derleme ve meta-analiz · 101 çalışma meta-analizde · n=50 325",
+     "tags": [
+      "pediatri",
+      "demir eksikliği",
+      "koruyucu sağlık"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 0,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Mevcut yaklaşımı destekler",
+     "what": "Tek başına demir, plaseboya ya da girişimsizliğe göre demir eksikliği anemisini muhtemelen azaltıyor (RR 0,24; %95 GA 0,20–0,30; orta kesinlik). Boy ve kilo z skorları, öksürük, ateş ve solunum yolu hastalığı üzerine etkisi yok ya da çok az (yüksek kesinlik). Kusma ve ishalde fark düşük kesinlikte belirsiz; dışkı renginde koyulaşma artıyor.",
+     "practice": "Bebeklik ve çocuklukta demir destek programının anemiyi önlemedeki yararını destekliyor; ailelere dışkı renginin koyulaşabileceği ve bunun zararsız olduğu anlatılmalı. Enfeksiyon riskini artırmadığı bulgusu danışmanlıkta kullanılabilir.",
+     "limits": "Çalışmaların çoğu düşük-orta gelirli ülkelerden; anemi ve demir eksikliği sonuçlarında kanıt kesinliği çok düşük; doz ve süre çalışmalar arasında farklı.",
+     "rel": [
+      "d-vitamini-demir",
+      "bce-izlem-2018"
+     ]
+    },
+    {
+     "id": "direnc-egzersizi-depresyon-ma",
+     "pmid": "43037982",
+     "doi": "10.1001/jamanetworkopen.2026.44254",
+     "journal": "JAMA Netw Open",
+     "date": "2026-11-02",
+     "title_en": "Resistance Exercise Training for Depressive Symptoms: A Meta-Analysis and Meta-Regression Analysis.",
+     "title": "Direnç egzersizi depresif belirtileri azaltıyor; etki aktif karşılaştırmalara göre de anlamlı",
+     "design": "Sistematik derleme, meta-analiz ve meta-regresyon · 80 RKÇ · n=6123",
+     "tags": [
+      "depresyon",
+      "egzersiz",
+      "ruh sağlığı"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Mevcut yaklaşımı destekler",
+     "what": "En az 3 haftalık direnç (kuvvet) egzersizi tüm karşılaştırmalarda küçük düzeyde antidepresan etkiyle ilişkiliydi (Δ=0,32; %95 GA 0,25–0,39). Etki inaktif kontrollere göre daha büyük (Δ=0,54), aerobik egzersiz, gevşeme ya da eğitim gibi aktif karşılaştırmalara göre daha küçük ama anlamlıydı (Δ=0,21). Ruhsal hastalığı olanlarda etki daha belirgindi (Δ=0,40).",
+     "practice": "Depresif belirtileri olan hastaya egzersiz önerirken kuvvet egzersizi de somut bir seçenek olarak verilebilir; tedavinin yerine değil, tamamlayıcısı olarak önerilmeli.",
+     "limits": "Çalışmalar arası yüksek heterojenlik; gizli randomizasyon olan çalışmalarda etki daha küçük; katılımcıların çoğu ruhsal hastalık tanısı olmayan ya da başka hastalığı olan bireyler.",
+     "rel": [
+      "nice-cks"
+     ]
+    },
+    {
+     "id": "cochrane-zerdecal-osteoartrit",
+     "pmid": "43051256",
+     "doi": "10.1002/14651858.CD014683.pub2",
+     "journal": "Cochrane Database Syst Rev",
+     "date": "2026-11-19",
+     "title_en": "Curcuma longa (turmeric) or its active ingredients for osteoarthritis.",
+     "title": "Diz osteoartritinde zerdeçal (Curcuma longa) plaseboya göre ağrı, fonksiyon ve yaşam kalitesinde anlamlı fark yaratmıyor",
+     "design": "Cochrane sistematik derleme ve meta-analiz · 9 RKÇ · n=1245 (plasebo karşılaştırması 4 RKÇ, n=379)",
+     "tags": [
+      "osteoartrit",
+      "bitkisel ürün",
+      "kas-iskelet"
+     ],
+     "score": {
+      "kanit": 3,
+      "poem": 1,
+      "bb": 2,
+      "etki": 1
+     },
+     "effect": "Dikkat gerektirir",
+     "what": "Üç aya kadar izlemde zerdeçal ağrıyı plaseboya göre 0–10 ölçeğinde 0,72 puan daha fazla azalttı; bu fark klinik anlamlılık eşiği olarak kabul edilen 1,5 puanın altında kaldı. Fonksiyon ve yaşam kalitesinde fark yoktu (düşük kesinlik). Hastanın bildirdiği tedavi başarısı 1000'de 107'ye karşı 191 idi (RR 1,78). Yan etkiler konusunda kanıt çok belirsiz.",
+     "practice": "Diz osteoartritinde zerdeçal takviyesi soran hastaya kanıtın zayıf olduğu ve anlamlı ağrı yararı beklenmemesi gerektiği söylenebilir; egzersiz ve kilo verme temel tedavi olarak kalmalı.",
+     "limits": "Kısa (≤3 ay) ve küçük çalışmalar; farklı formülasyonlar; yalnızca diz osteoartriti; yayın yanlılığı şüphesi.",
+     "rel": [
+      "nice-cks"
+     ]
+    }
+   ]
+  },
+  {
    "id": "2026-11-15",
    "title": "Hafta 46",
    "range": "9 – 15 Kasım 2026",

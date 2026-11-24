@@ -1260,15 +1260,15 @@
    "tur": "webinar",
    "duzey": 4,
    "kapsam": "ulusal",
-   "baslangic": "2026-12-01",
-   "bitis": "2026-12-01",
+   "baslangic": "2026-12-15",
+   "bitis": "2026-12-15",
    "saat": "19.30–20.30",
    "sehir": null,
    "yer": "tahudtv.com.tr",
    "bicim": "cevrimici",
    "duzenleyen": "Türkiye Aile Hekimleri Uzmanlık Derneği (TAHUD)",
    "ucret": "ucretsiz",
-   "url": "https://tahud.org.tr/tahud-tv/nt-probnp-kilavuzlugunda-birinci-basamakta-kalp-yetersizliginin-erken-tanisi-ve-yonetimi-1-aralik-2026-1930",
+   "url": "https://tahud.org.tr/tahud-tv/15-aralik-2026-1930-nt-probnp-kilavuzlugunda-birinci-basamakta-kalp-yetersizliginin-erken-tanisi-ve-yonetimi",
    "kaynak": null,
    "tarihler": {
     "bildiri": null,
@@ -1279,7 +1279,7 @@
     "kalp yetersizliği"
    ],
    "not": "Konuşmacılar Prof. Dr. Ahmet Çelik, Prof. Dr. Simten Malha. İzlemek için tahudtv.com.tr kaydı gerekir.",
-   "dogrulama": "2026-10-12"
+   "dogrulama": "2026-11-22"
   },
   {
    "id": "uhsk-2026",
@@ -1707,7 +1707,195 @@
    },
    "konu": [],
    "not": "Resmi sitede yalnızca tarih açıklandı; yer, kayıt ve bildiri bölümleri hazırlanıyor. Bilimsel sekretarya TAHEV.",
-   "dogrulama": "2026-11-15"
+   "dogrulama": "2026-11-22"
+  },
+  {
+   "id": "guney-2027",
+   "ad": "Güney Aile Hekimliği Kongresi 2027 (3. Uluslararası, 8. Ulusal)",
+   "tur": "kongre",
+   "duzey": 2,
+   "kapsam": "uluslararasi",
+   "baslangic": "2027-05-10",
+   "bitis": "2027-05-13",
+   "saat": null,
+   "sehir": "KKTC",
+   "yer": "Limak Cyprus Deluxe Otel",
+   "bicim": "yuz-yuze",
+   "duzenleyen": null,
+   "ucret": "ucretli",
+   "url": "https://guneyaile.com/",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": "2027-03-14",
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [],
+   "not": "Bildiri kabul bildirimleri 4 Nisan 2027'ye kadar. 17 Ocak 2027'ye kadar iptalde %50 iade. İZAHED 2027 ile aynı tarihlerde.",
+   "dogrulama": "2026-11-22"
+  },
+  {
+   "id": "ankakon-2027",
+   "ad": "15. Ankara Aile Hekimliği Kongresi (ANKAKON 2027)",
+   "tur": "kongre",
+   "duzey": 2,
+   "kapsam": "ulusal",
+   "baslangic": "2027-10-16",
+   "bitis": "2027-10-20",
+   "saat": null,
+   "sehir": "Antalya",
+   "yer": "Juju Premier Palace Hotel",
+   "bicim": null,
+   "duzenleyen": "Ankara Aile Hekimliği Derneği",
+   "ucret": null,
+   "url": "https://www.ankakon.org/",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": "2027-09-18",
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [],
+   "not": null,
+   "dogrulama": "2026-11-22"
+  },
+  {
+   "id": "asm30-mikrobiyom-2026",
+   "ad": "ASM'de 30 Dakika: Olgular ile Mikrobiyom Dedektifliği – Hedefe Yönelik Özelleşmiş Probiyotikler",
+   "tur": "webinar",
+   "duzey": 4,
+   "kapsam": "ulusal",
+   "baslangic": "2026-11-24",
+   "bitis": "2026-11-24",
+   "saat": "12.15",
+   "sehir": null,
+   "yer": null,
+   "bicim": "cevrimici",
+   "duzenleyen": "İSTAHED Akademi (İstanbul Aile Hekimleri Derneği)",
+   "ucret": null,
+   "url": "https://istahedakademi.com/yaklasan-egitimler/",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [
+    "gastroenteroloji"
+   ],
+   "not": "Canlı izleme ve kayda erişim için site üyeliği gerekir.",
+   "dogrulama": "2026-11-22"
+  },
+  {
+   "id": "asm30-cocuk-yemiyor-2026",
+   "ad": "ASM'de 30 Dakika: Çocuğum Yemiyor – Gelişmiyor",
+   "tur": "webinar",
+   "duzey": 4,
+   "kapsam": "ulusal",
+   "baslangic": "2026-12-01",
+   "bitis": "2026-12-01",
+   "saat": "12.15",
+   "sehir": null,
+   "yer": null,
+   "bicim": "cevrimici",
+   "duzenleyen": "İSTAHED Akademi (İstanbul Aile Hekimleri Derneği)",
+   "ucret": null,
+   "url": "https://istahedakademi.com/yaklasan-egitimler/",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [
+    "çocuk sağlığı"
+   ],
+   "not": "Canlı izleme ve kayda erişim için site üyeliği gerekir.",
+   "dogrulama": "2026-11-22"
+  },
+  {
+   "id": "asm30-nsaii-2026",
+   "ad": "ASM'de 30 Dakika: Soğuk Algınlığı, Grip ve Akut Ağrıların Semptomatik Tedavisi – NSAİİ Seçimi",
+   "tur": "webinar",
+   "duzey": 4,
+   "kapsam": "ulusal",
+   "baslangic": "2026-12-09",
+   "bitis": "2026-12-09",
+   "saat": "12.15",
+   "sehir": null,
+   "yer": null,
+   "bicim": "cevrimici",
+   "duzenleyen": "İSTAHED Akademi (İstanbul Aile Hekimleri Derneği)",
+   "ucret": null,
+   "url": "https://istahedakademi.com/yaklasan-egitimler/",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [
+    "üst solunum yolu",
+    "ağrı"
+   ],
+   "not": "Canlı izleme ve kayda erişim için site üyeliği gerekir.",
+   "dogrulama": "2026-11-22"
+  },
+  {
+   "id": "asm30-kas-iskelet-agri-2026",
+   "ad": "ASM'de 30 Dakika: Akut Kas-İskelet Ağrısında Fonksiyonel İyileşmeye Giden Yol",
+   "tur": "webinar",
+   "duzey": 4,
+   "kapsam": "ulusal",
+   "baslangic": "2026-12-17",
+   "bitis": "2026-12-17",
+   "saat": "12.15",
+   "sehir": null,
+   "yer": null,
+   "bicim": "cevrimici",
+   "duzenleyen": "İSTAHED Akademi (İstanbul Aile Hekimleri Derneği)",
+   "ucret": null,
+   "url": "https://istahedakademi.com/yaklasan-egitimler/",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [
+    "ağrı",
+    "kas-iskelet"
+   ],
+   "not": "Canlı izleme ve kayda erişim için site üyeliği gerekir.",
+   "dogrulama": "2026-11-22"
+  },
+  {
+   "id": "asm30-serviks-hpv-2027",
+   "ad": "ASM'de 30 Dakika: Kanseri Aşmak – Serviks Kanseri ve HPV'de Birinci Basamağın Yeri",
+   "tur": "webinar",
+   "duzey": 4,
+   "kapsam": "ulusal",
+   "baslangic": "2027-01-13",
+   "bitis": "2027-01-13",
+   "saat": "12.15",
+   "sehir": null,
+   "yer": null,
+   "bicim": "cevrimici",
+   "duzenleyen": "İSTAHED Akademi (İstanbul Aile Hekimleri Derneği)",
+   "ucret": null,
+   "url": "https://istahedakademi.com/yaklasan-egitimler/",
+   "kaynak": null,
+   "tarihler": {
+    "bildiri": null,
+    "erken_kayit": null,
+    "burs": null
+   },
+   "konu": [
+    "kanser taraması",
+    "HPV"
+   ],
+   "not": "Canlı izleme ve kayda erişim için site üyeliği gerekir.",
+   "dogrulama": "2026-11-22"
   }
  ]
 }
