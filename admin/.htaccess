@@ -1,0 +1,17 @@
+# Yalnızca güncelleme uç noktası açık; anahtar özeti, yedekler ve kayıt kapalı.
+Options -Indexes
+<FilesMatch ".*">
+  Require all denied
+</FilesMatch>
+<Files "guncelle.php">
+  Require all granted
+</Files>
+# Bazı PHP kurulumları Authorization başlığını betiğe iletmez
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP:Authorization} .
+  RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow"
+</IfModule>
